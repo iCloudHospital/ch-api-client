@@ -1,5 +1,5 @@
 {
-  "name": "out",
+  "name": "cp-api-client",
   "version": "1.0.0",
   "description": "usage:",
   "main": "index.js",
@@ -8,10 +8,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/node": "^13.9.0",
-    "axios": "^0.19.2",
-    "typescript": "^3.8.3"
-  }
+  "license": "ISC"
 }
