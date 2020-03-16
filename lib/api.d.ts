@@ -926,6 +926,85 @@ export interface BookingsViewModel {
 /**
  *
  * @export
+ * @interface CHAdminItemViewModel
+ */
+export interface CHAdminItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    userName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    firstName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    lastName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    fullname?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    phone?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    email?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    photo?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    photoThumbnail?: string;
+    /**
+     *
+     * @type {Gender}
+     * @memberof CHAdminItemViewModel
+     */
+    gender?: Gender;
+    /**
+     *
+     * @type {Date}
+     * @memberof CHAdminItemViewModel
+     */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof CHAdminItemViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
  * @interface CHAdminViewModel
  */
 export interface CHAdminViewModel {
@@ -937,10 +1016,22 @@ export interface CHAdminViewModel {
     userType?: string;
     /**
      *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof CHAdminViewModel
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof CHAdminViewModel
      */
     locations?: Array<UserLocationViewModel>;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminViewModel
+     */
+    id?: string;
     /**
      *
      * @type {string}
@@ -1016,16 +1107,95 @@ export interface CHAdminViewModel {
 export interface CHAdminsViewModel {
     /**
      *
-     * @type {Array<UserItemViewModel>}
+     * @type {Array<CHAdminItemViewModel>}
      * @memberof CHAdminsViewModel
      */
-    items?: Array<UserItemViewModel>;
+    items?: Array<CHAdminItemViewModel>;
     /**
      *
      * @type {PagedListMetaData}
      * @memberof CHAdminsViewModel
      */
     metaData?: PagedListMetaData;
+}
+/**
+ *
+ * @export
+ * @interface CHManagerItemViewModel
+ */
+export interface CHManagerItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    userName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    firstName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    lastName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    fullname?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    phone?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    email?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    photo?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    photoThumbnail?: string;
+    /**
+     *
+     * @type {Gender}
+     * @memberof CHManagerItemViewModel
+     */
+    gender?: Gender;
+    /**
+     *
+     * @type {Date}
+     * @memberof CHManagerItemViewModel
+     */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof CHManagerItemViewModel
+     */
+    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -1041,10 +1211,22 @@ export interface CHManagerViewModel {
     userType?: string;
     /**
      *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof CHManagerViewModel
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof CHManagerViewModel
      */
     locations?: Array<UserLocationViewModel>;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerViewModel
+     */
+    id?: string;
     /**
      *
      * @type {string}
@@ -1120,10 +1302,10 @@ export interface CHManagerViewModel {
 export interface CHManagersViewModel {
     /**
      *
-     * @type {Array<UserItemViewModel>}
+     * @type {Array<CHManagerItemViewModel>}
      * @memberof CHManagersViewModel
      */
-    items?: Array<UserItemViewModel>;
+    items?: Array<CHManagerItemViewModel>;
     /**
      *
      * @type {PagedListMetaData}
@@ -1314,24 +1496,6 @@ export interface CountriesViewModel {
      * @memberof CountriesViewModel
      */
     metaData?: PagedListMetaData;
-    /**
-     *
-     * @type {number}
-     * @memberof CountriesViewModel
-     */
-    totalHospitalsCount?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof CountriesViewModel
-     */
-    totalDoctorsCount?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof CountriesViewModel
-     */
-    totalSpecialitiesCount?: number;
 }
 /**
  *
@@ -1616,16 +1780,22 @@ export interface CreateCHAdminCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof CreateCHAdminCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof CreateCHAdminCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof CreateCHAdminCommand
      */
     locations?: Array<UserLocationViewModel>;
-    /**
-     *
-     * @type {AuditableEntity}
-     * @memberof CreateCHAdminCommand
-     */
-    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -1689,16 +1859,22 @@ export interface CreateCHManagerCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof CreateCHManagerCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof CreateCHManagerCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof CreateCHManagerCommand
      */
     locations?: Array<UserLocationViewModel>;
-    /**
-     *
-     * @type {AuditableEntity}
-     * @memberof CreateCHManagerCommand
-     */
-    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -1728,6 +1904,56 @@ export interface CreateCountryCommand {
 /**
  *
  * @export
+ * @interface CreateDepartmentCommand
+ */
+export interface CreateDepartmentCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDepartmentCommand
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDepartmentCommand
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDepartmentCommand
+     */
+    additionalInfo?: string;
+}
+/**
+ *
+ * @export
+ * @interface CreateDoctorCertificateCommand
+ */
+export interface CreateDoctorCertificateCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDoctorCertificateCommand
+     */
+    certificate?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof CreateDoctorCertificateCommand
+     */
+    activeFrom?: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof CreateDoctorCertificateCommand
+     */
+    activeTo?: Date;
+}
+/**
+ *
+ * @export
  * @interface CreateDoctorCommand
  */
 export interface CreateDoctorCommand {
@@ -1749,6 +1975,36 @@ export interface CreateDoctorCommand {
      * @memberof CreateDoctorCommand
      */
     hospitalId?: string;
+    /**
+     *
+     * @type {Array<DoctorEducationViewModel>}
+     * @memberof CreateDoctorCommand
+     */
+    educations?: Array<DoctorEducationViewModel>;
+    /**
+     *
+     * @type {Array<DoctorPortfolioViewModel>}
+     * @memberof CreateDoctorCommand
+     */
+    portfolios?: Array<DoctorPortfolioViewModel>;
+    /**
+     *
+     * @type {Array<DoctorSpecialtyViewModel>}
+     * @memberof CreateDoctorCommand
+     */
+    specialties?: Array<DoctorSpecialtyViewModel>;
+    /**
+     *
+     * @type {Array<DoctorCertificateViewModel>}
+     * @memberof CreateDoctorCommand
+     */
+    certificates?: Array<DoctorCertificateViewModel>;
+    /**
+     *
+     * @type {Array<AwardViewModel>}
+     * @memberof CreateDoctorCommand
+     */
+    awards?: Array<AwardViewModel>;
     /**
      *
      * @type {string}
@@ -1793,16 +2049,53 @@ export interface CreateDoctorCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof CreateDoctorCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof CreateDoctorCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof CreateDoctorCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+ *
+ * @export
+ * @interface CreateDoctorReviewCommand
+ */
+export interface CreateDoctorReviewCommand {
     /**
      *
-     * @type {AuditableEntity}
-     * @memberof CreateDoctorCommand
+     * @type {string}
+     * @memberof CreateDoctorReviewCommand
      */
-    auditableEntity?: AuditableEntity;
+    body?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateDoctorReviewCommand
+     */
+    recommended?: boolean;
+    /**
+     *
+     * @type {ReviewCategory}
+     * @memberof CreateDoctorReviewCommand
+     */
+    reviewCategory?: ReviewCategory;
+    /**
+     *
+     * @type {number}
+     * @memberof CreateDoctorReviewCommand
+     */
+    rate?: number;
 }
 /**
  *
@@ -1923,6 +2216,37 @@ export interface CreateHospitalCommand {
 /**
  *
  * @export
+ * @interface CreateHospitalReviewCommand
+ */
+export interface CreateHospitalReviewCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateHospitalReviewCommand
+     */
+    body?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateHospitalReviewCommand
+     */
+    recommended?: boolean;
+    /**
+     *
+     * @type {ReviewCategory}
+     * @memberof CreateHospitalReviewCommand
+     */
+    reviewCategory?: ReviewCategory;
+    /**
+     *
+     * @type {number}
+     * @memberof CreateHospitalReviewCommand
+     */
+    rate?: number;
+}
+/**
+ *
+ * @export
  * @interface CreateManagerCommand
  */
 export interface CreateManagerCommand {
@@ -1988,16 +2312,22 @@ export interface CreateManagerCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof CreateManagerCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof CreateManagerCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof CreateManagerCommand
      */
     locations?: Array<UserLocationViewModel>;
-    /**
-     *
-     * @type {AuditableEntity}
-     * @memberof CreateManagerCommand
-     */
-    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -2061,16 +2391,22 @@ export interface CreatePartnerCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof CreatePartnerCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof CreatePartnerCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof CreatePartnerCommand
      */
     locations?: Array<UserLocationViewModel>;
-    /**
-     *
-     * @type {AuditableEntity}
-     * @memberof CreatePartnerCommand
-     */
-    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -2140,16 +2476,22 @@ export interface CreatePatientCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof CreatePatientCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof CreatePatientCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof CreatePatientCommand
      */
     locations?: Array<UserLocationViewModel>;
-    /**
-     *
-     * @type {AuditableEntity}
-     * @memberof CreatePatientCommand
-     */
-    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -2302,6 +2644,99 @@ export interface Department {
 /**
  *
  * @export
+ * @interface DepartmentItemViewModel
+ */
+export interface DepartmentItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DepartmentItemViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DepartmentItemViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DepartmentItemViewModel
+     */
+    hospitalName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DepartmentItemViewModel
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DepartmentItemViewModel
+     */
+    additionalInfo?: string;
+}
+/**
+ *
+ * @export
+ * @interface DepartmentViewModel
+ */
+export interface DepartmentViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DepartmentViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DepartmentViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DepartmentViewModel
+     */
+    hospitalName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DepartmentViewModel
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DepartmentViewModel
+     */
+    additionalInfo?: string;
+}
+/**
+ *
+ * @export
+ * @interface DepartmentsViewModel
+ */
+export interface DepartmentsViewModel {
+    /**
+     *
+     * @type {Array<DepartmentItemViewModel>}
+     * @memberof DepartmentsViewModel
+     */
+    items?: Array<DepartmentItemViewModel>;
+    /**
+     *
+     * @type {PagedListMetaData}
+     * @memberof DepartmentsViewModel
+     */
+    metaData?: PagedListMetaData;
+}
+/**
+ *
+ * @export
  * @interface Device
  */
 export interface Device {
@@ -2418,12 +2853,6 @@ export declare enum Dimension {
 export interface Doctor {
     /**
      *
-     * @type {string}
-     * @memberof Doctor
-     */
-    code?: string;
-    /**
-     *
      * @type {Date}
      * @memberof Doctor
      */
@@ -2433,37 +2862,31 @@ export interface Doctor {
      * @type {Array<DoctorReview>}
      * @memberof Doctor
      */
-    reviews?: Array<DoctorReview>;
-    /**
-     *
-     * @type {Array<DoctorLanguage>}
-     * @memberof Doctor
-     */
-    languages?: Array<DoctorLanguage>;
+    doctorReviews?: Array<DoctorReview>;
     /**
      *
      * @type {Array<DoctorEducation>}
      * @memberof Doctor
      */
-    educations?: Array<DoctorEducation>;
+    doctorEducations?: Array<DoctorEducation>;
     /**
      *
      * @type {Array<DoctorPortfolio>}
      * @memberof Doctor
      */
-    portfolios?: Array<DoctorPortfolio>;
+    doctorPortfolios?: Array<DoctorPortfolio>;
     /**
      *
      * @type {Array<DoctorSpecialty>}
      * @memberof Doctor
      */
-    specialties?: Array<DoctorSpecialty>;
+    doctorSpecialties?: Array<DoctorSpecialty>;
     /**
      *
      * @type {Array<DoctorCertificate>}
      * @memberof Doctor
      */
-    certificates?: Array<DoctorCertificate>;
+    doctorCertificates?: Array<DoctorCertificate>;
     /**
      *
      * @type {Array<DoctorAffiliation>}
@@ -2475,7 +2898,7 @@ export interface Doctor {
      * @type {Array<Award>}
      * @memberof Doctor
      */
-    awards?: Array<Award>;
+    doctorAwards?: Array<Award>;
     /**
      *
      * @type {string}
@@ -2556,16 +2979,16 @@ export interface Doctor {
     articles?: Array<Article>;
     /**
      *
-     * @type {Array<Media>}
-     * @memberof Doctor
-     */
-    medias?: Array<Media>;
-    /**
-     *
      * @type {Array<UserLocation>}
      * @memberof Doctor
      */
     locations?: Array<UserLocation>;
+    /**
+     *
+     * @type {Array<UserLanguage>}
+     * @memberof Doctor
+     */
+    languages?: Array<UserLanguage>;
     /**
      *
      * @type {AuditableEntity}
@@ -2607,37 +3030,6 @@ export interface DoctorAffiliation {
 /**
  *
  * @export
- * @interface DoctorAffiliationItemViewModel
- */
-export interface DoctorAffiliationItemViewModel {
-    /**
-     *
-     * @type {string}
-     * @memberof DoctorAffiliationItemViewModel
-     */
-    hospitalId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof DoctorAffiliationItemViewModel
-     */
-    hospitalName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof DoctorAffiliationItemViewModel
-     */
-    doctorId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof DoctorAffiliationItemViewModel
-     */
-    doctorName?: string;
-}
-/**
- *
- * @export
  * @interface DoctorAffiliationViewModel
  */
 export interface DoctorAffiliationViewModel {
@@ -2646,18 +3038,6 @@ export interface DoctorAffiliationViewModel {
      * @type {string}
      * @memberof DoctorAffiliationViewModel
      */
-    hospitalId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof DoctorAffiliationViewModel
-     */
-    hospitalName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof DoctorAffiliationViewModel
-     */
     doctorId?: string;
     /**
      *
@@ -2665,6 +3045,18 @@ export interface DoctorAffiliationViewModel {
      * @memberof DoctorAffiliationViewModel
      */
     doctorName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorAffiliationViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorAffiliationViewModel
+     */
+    hospitalName?: string;
 }
 /**
  *
@@ -2714,6 +3106,111 @@ export interface DoctorCertificate {
      * @memberof DoctorCertificate
      */
     activeTo?: Date;
+}
+/**
+ *
+ * @export
+ * @interface DoctorCertificateItemViewModel
+ */
+export interface DoctorCertificateItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorCertificateItemViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorCertificateItemViewModel
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorCertificateItemViewModel
+     */
+    doctorName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorCertificateItemViewModel
+     */
+    certificate?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof DoctorCertificateItemViewModel
+     */
+    activeFrom?: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof DoctorCertificateItemViewModel
+     */
+    activeTo?: Date;
+}
+/**
+ *
+ * @export
+ * @interface DoctorCertificateViewModel
+ */
+export interface DoctorCertificateViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorCertificateViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorCertificateViewModel
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorCertificateViewModel
+     */
+    doctorName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorCertificateViewModel
+     */
+    certificate?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof DoctorCertificateViewModel
+     */
+    activeFrom?: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof DoctorCertificateViewModel
+     */
+    activeTo?: Date;
+}
+/**
+ *
+ * @export
+ * @interface DoctorCertificatesViewModel
+ */
+export interface DoctorCertificatesViewModel {
+    /**
+     *
+     * @type {Array<DoctorCertificateItemViewModel>}
+     * @memberof DoctorCertificatesViewModel
+     */
+    items?: Array<DoctorCertificateItemViewModel>;
+    /**
+     *
+     * @type {PagedListMetaData}
+     * @memberof DoctorCertificatesViewModel
+     */
+    metaData?: PagedListMetaData;
 }
 /**
  *
@@ -2773,33 +3270,227 @@ export interface DoctorEducation {
 /**
  *
  * @export
- * @interface DoctorLanguage
+ * @interface DoctorEducationItemViewModel
  */
-export interface DoctorLanguage {
+export interface DoctorEducationItemViewModel {
     /**
      *
      * @type {string}
-     * @memberof DoctorLanguage
+     * @memberof DoctorEducationItemViewModel
      */
     id?: string;
     /**
      *
      * @type {string}
-     * @memberof DoctorLanguage
+     * @memberof DoctorEducationItemViewModel
      */
     doctorId?: string;
     /**
      *
-     * @type {Doctor}
-     * @memberof DoctorLanguage
+     * @type {string}
+     * @memberof DoctorEducationItemViewModel
      */
-    doctor?: Doctor;
+    doctorName?: string;
     /**
      *
      * @type {string}
-     * @memberof DoctorLanguage
+     * @memberof DoctorEducationItemViewModel
      */
-    language?: string;
+    institution?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorEducationItemViewModel
+     */
+    qualification?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof DoctorEducationItemViewModel
+     */
+    graduationDate?: Date;
+}
+/**
+ *
+ * @export
+ * @interface DoctorEducationViewModel
+ */
+export interface DoctorEducationViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorEducationViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorEducationViewModel
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorEducationViewModel
+     */
+    doctorName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorEducationViewModel
+     */
+    institution?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorEducationViewModel
+     */
+    qualification?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof DoctorEducationViewModel
+     */
+    graduationDate?: Date;
+}
+/**
+ *
+ * @export
+ * @interface DoctorItemViewModel
+ */
+export interface DoctorItemViewModel {
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorItemViewModel
+     */
+    doctorReviewsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorItemViewModel
+     */
+    doctorEducationsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorItemViewModel
+     */
+    doctorPortfoliosCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorItemViewModel
+     */
+    doctorSpecialtiesCount?: number;
+    /**
+     *
+     * @type {Array<DoctorSpecialtyItemViewModel>}
+     * @memberof DoctorItemViewModel
+     */
+    specialties?: Array<DoctorSpecialtyItemViewModel>;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorItemViewModel
+     */
+    doctorCertificatesCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorItemViewModel
+     */
+    doctorAffiliationsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorItemViewModel
+     */
+    articlesCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorItemViewModel
+     */
+    languagesCountCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorItemViewModel
+     */
+    doctorAwardsCount?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    userName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    firstName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    lastName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    fullname?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    phone?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    email?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    photo?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    photoThumbnail?: string;
+    /**
+     *
+     * @type {Gender}
+     * @memberof DoctorItemViewModel
+     */
+    gender?: Gender;
+    /**
+     *
+     * @type {Date}
+     * @memberof DoctorItemViewModel
+     */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof DoctorItemViewModel
+     */
+    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -2853,6 +3544,104 @@ export interface DoctorPortfolio {
      *
      * @type {string}
      * @memberof DoctorPortfolio
+     */
+    photoAfter?: string;
+}
+/**
+ *
+ * @export
+ * @interface DoctorPortfolioItemViewModel
+ */
+export interface DoctorPortfolioItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioItemViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioItemViewModel
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioItemViewModel
+     */
+    doctorName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioItemViewModel
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioItemViewModel
+     */
+    description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioItemViewModel
+     */
+    photoBefore?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioItemViewModel
+     */
+    photoAfter?: string;
+}
+/**
+ *
+ * @export
+ * @interface DoctorPortfolioViewModel
+ */
+export interface DoctorPortfolioViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioViewModel
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioViewModel
+     */
+    doctorName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioViewModel
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioViewModel
+     */
+    description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioViewModel
+     */
+    photoBefore?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorPortfolioViewModel
      */
     photoAfter?: string;
 }
@@ -2914,6 +3703,135 @@ export interface DoctorReview {
 /**
  *
  * @export
+ * @interface DoctorReviewItemViewModel
+ */
+export interface DoctorReviewItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorReviewItemViewModel
+     */
+    patientId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorReviewItemViewModel
+     */
+    patientName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorReviewItemViewModel
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorReviewItemViewModel
+     */
+    doctorName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorReviewItemViewModel
+     */
+    body?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DoctorReviewItemViewModel
+     */
+    recommended?: boolean;
+    /**
+     *
+     * @type {ReviewCategory}
+     * @memberof DoctorReviewItemViewModel
+     */
+    reviewCategory?: ReviewCategory;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorReviewItemViewModel
+     */
+    rate?: number;
+}
+/**
+ *
+ * @export
+ * @interface DoctorReviewViewModel
+ */
+export interface DoctorReviewViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorReviewViewModel
+     */
+    patientId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorReviewViewModel
+     */
+    patientName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorReviewViewModel
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorReviewViewModel
+     */
+    doctorName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorReviewViewModel
+     */
+    body?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DoctorReviewViewModel
+     */
+    recommended?: boolean;
+    /**
+     *
+     * @type {ReviewCategory}
+     * @memberof DoctorReviewViewModel
+     */
+    reviewCategory?: ReviewCategory;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorReviewViewModel
+     */
+    rate?: number;
+}
+/**
+ *
+ * @export
+ * @interface DoctorReviewsViewModel
+ */
+export interface DoctorReviewsViewModel {
+    /**
+     *
+     * @type {Array<DoctorReviewItemViewModel>}
+     * @memberof DoctorReviewsViewModel
+     */
+    items?: Array<DoctorReviewItemViewModel>;
+    /**
+     *
+     * @type {PagedListMetaData}
+     * @memberof DoctorReviewsViewModel
+     */
+    metaData?: PagedListMetaData;
+}
+/**
+ *
+ * @export
  * @interface DoctorSpecialty
  */
 export interface DoctorSpecialty {
@@ -2951,15 +3869,71 @@ export interface DoctorSpecialty {
 /**
  *
  * @export
- * @interface DoctorViewModel
+ * @interface DoctorSpecialtyItemViewModel
  */
-export interface DoctorViewModel {
+export interface DoctorSpecialtyItemViewModel {
     /**
      *
      * @type {string}
-     * @memberof DoctorViewModel
+     * @memberof DoctorSpecialtyItemViewModel
      */
-    code?: string;
+    specialtyId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorSpecialtyItemViewModel
+     */
+    specialtyName?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorSpecialtyItemViewModel
+     */
+    order?: number;
+}
+/**
+ *
+ * @export
+ * @interface DoctorSpecialtyViewModel
+ */
+export interface DoctorSpecialtyViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorSpecialtyViewModel
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorSpecialtyViewModel
+     */
+    doctorName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorSpecialtyViewModel
+     */
+    specialtyId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorSpecialtyViewModel
+     */
+    specialtyName?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorSpecialtyViewModel
+     */
+    order?: number;
+}
+/**
+ *
+ * @export
+ * @interface DoctorViewModel
+ */
+export interface DoctorViewModel {
     /**
      *
      * @type {Date}
@@ -2968,52 +3942,52 @@ export interface DoctorViewModel {
     startPracticeDate?: Date;
     /**
      *
-     * @type {Array<DoctorReview>}
+     * @type {Array<DoctorReviewItemViewModel>}
      * @memberof DoctorViewModel
      */
-    reviews?: Array<DoctorReview>;
+    doctorReviews?: Array<DoctorReviewItemViewModel>;
     /**
      *
-     * @type {Array<DoctorLanguage>}
+     * @type {Array<DoctorEducationItemViewModel>}
      * @memberof DoctorViewModel
      */
-    languages?: Array<DoctorLanguage>;
+    doctorEducations?: Array<DoctorEducationItemViewModel>;
     /**
      *
-     * @type {Array<DoctorEducation>}
+     * @type {Array<DoctorPortfolioItemViewModel>}
      * @memberof DoctorViewModel
      */
-    educations?: Array<DoctorEducation>;
+    doctorPortfolios?: Array<DoctorPortfolioItemViewModel>;
     /**
      *
-     * @type {Array<DoctorPortfolio>}
+     * @type {Array<DoctorSpecialtyItemViewModel>}
      * @memberof DoctorViewModel
      */
-    portfolios?: Array<DoctorPortfolio>;
+    doctorSpecialties?: Array<DoctorSpecialtyItemViewModel>;
     /**
      *
-     * @type {Array<DoctorCertificate>}
+     * @type {Array<DoctorCertificateItemViewModel>}
      * @memberof DoctorViewModel
      */
-    certificates?: Array<DoctorCertificate>;
+    doctorCertificates?: Array<DoctorCertificateItemViewModel>;
     /**
      *
-     * @type {Array<DoctorAffiliationViewModel>}
+     * @type {Array<HospitalAffiliationViewModel>}
      * @memberof DoctorViewModel
      */
-    doctorAffiliations?: Array<DoctorAffiliationViewModel>;
+    doctorAffiliations?: Array<HospitalAffiliationViewModel>;
+    /**
+     *
+     * @type {Array<Article>}
+     * @memberof DoctorViewModel
+     */
+    articles?: Array<Article>;
     /**
      *
      * @type {Array<AwardViewModel>}
      * @memberof DoctorViewModel
      */
-    awards?: Array<AwardViewModel>;
-    /**
-     *
-     * @type {Array<Specialty>}
-     * @memberof DoctorViewModel
-     */
-    specialties?: Array<Specialty>;
+    doctorAwards?: Array<AwardViewModel>;
     /**
      *
      * @type {string}
@@ -3022,10 +3996,22 @@ export interface DoctorViewModel {
     userType?: string;
     /**
      *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof DoctorViewModel
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof DoctorViewModel
      */
     locations?: Array<UserLocationViewModel>;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorViewModel
+     */
+    id?: string;
     /**
      *
      * @type {string}
@@ -3101,10 +4087,10 @@ export interface DoctorViewModel {
 export interface DoctorsViewModel {
     /**
      *
-     * @type {Array<UserItemViewModel>}
+     * @type {Array<DoctorItemViewModel>}
      * @memberof DoctorsViewModel
      */
-    items?: Array<UserItemViewModel>;
+    items?: Array<DoctorItemViewModel>;
     /**
      *
      * @type {PagedListMetaData}
@@ -3736,6 +4722,56 @@ export interface HospitalAccreditation {
 /**
  *
  * @export
+ * @interface HospitalAccreditationItemViewModel
+ */
+export interface HospitalAccreditationItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalAccreditationItemViewModel
+     */
+    accreditationId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalAccreditationItemViewModel
+     */
+    accreditationName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalAccreditationItemViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalAccreditationItemViewModel
+     */
+    hospitalName?: string;
+}
+/**
+ *
+ * @export
+ * @interface HospitalAffiliationViewModel
+ */
+export interface HospitalAffiliationViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalAffiliationViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalAffiliationViewModel
+     */
+    hospitalName?: string;
+}
+/**
+ *
+ * @export
  * @interface HospitalItemViewModel
  */
 export interface HospitalItemViewModel {
@@ -3751,12 +4787,6 @@ export interface HospitalItemViewModel {
      * @memberof HospitalItemViewModel
      */
     name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof HospitalItemViewModel
-     */
-    normalizedName?: string;
     /**
      *
      * @type {string}
@@ -3813,6 +4843,66 @@ export interface HospitalItemViewModel {
     countryName?: string;
     /**
      *
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    articlesCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    packagesCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    equipmentsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    reviewsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    departmentsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    specialtiesCount?: number;
+    /**
+     *
+     * @type {Array<HospitalSpecialtyItemViewModel>}
+     * @memberof HospitalItemViewModel
+     */
+    specialties?: Array<HospitalSpecialtyItemViewModel>;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    accreditationsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    doctorAffiliationsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    managerAffiliationsCount?: number;
+    /**
+     *
      * @type {Array<AwardViewModel>}
      * @memberof HospitalItemViewModel
      */
@@ -3859,7 +4949,7 @@ export interface HospitalReview {
      * @type {string}
      * @memberof HospitalReview
      */
-    hospitaltId?: string;
+    hospitalId?: string;
     /**
      *
      * @type {Hospital}
@@ -3890,6 +4980,135 @@ export interface HospitalReview {
      * @memberof HospitalReview
      */
     rate?: number;
+}
+/**
+ *
+ * @export
+ * @interface HospitalReviewItemViewModel
+ */
+export interface HospitalReviewItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalReviewItemViewModel
+     */
+    patientId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalReviewItemViewModel
+     */
+    patientName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalReviewItemViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalReviewItemViewModel
+     */
+    hospitalName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalReviewItemViewModel
+     */
+    body?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof HospitalReviewItemViewModel
+     */
+    recommended?: boolean;
+    /**
+     *
+     * @type {ReviewCategory}
+     * @memberof HospitalReviewItemViewModel
+     */
+    reviewCategory?: ReviewCategory;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalReviewItemViewModel
+     */
+    rate?: number;
+}
+/**
+ *
+ * @export
+ * @interface HospitalReviewViewModel
+ */
+export interface HospitalReviewViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalReviewViewModel
+     */
+    patientId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalReviewViewModel
+     */
+    patientName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalReviewViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalReviewViewModel
+     */
+    hospitalName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalReviewViewModel
+     */
+    body?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof HospitalReviewViewModel
+     */
+    recommended?: boolean;
+    /**
+     *
+     * @type {ReviewCategory}
+     * @memberof HospitalReviewViewModel
+     */
+    reviewCategory?: ReviewCategory;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalReviewViewModel
+     */
+    rate?: number;
+}
+/**
+ *
+ * @export
+ * @interface HospitalReviewsViewModel
+ */
+export interface HospitalReviewsViewModel {
+    /**
+     *
+     * @type {Array<HospitalReviewItemViewModel>}
+     * @memberof HospitalReviewsViewModel
+     */
+    items?: Array<HospitalReviewItemViewModel>;
+    /**
+     *
+     * @type {PagedListMetaData}
+     * @memberof HospitalReviewsViewModel
+     */
+    metaData?: PagedListMetaData;
 }
 /**
  *
@@ -4009,10 +5228,10 @@ export interface HospitalSpecialtyItemViewModel {
     order?: number;
     /**
      *
-     * @type {Date}
+     * @type {AuditableEntity}
      * @memberof HospitalSpecialtyItemViewModel
      */
-    created?: Date;
+    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -4064,10 +5283,10 @@ export interface HospitalSpecialtyViewModel {
     order?: number;
     /**
      *
-     * @type {Date}
+     * @type {AuditableEntity}
      * @memberof HospitalSpecialtyViewModel
      */
-    created?: Date;
+    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -4089,22 +5308,34 @@ export interface HospitalViewModel {
     equipments?: Array<EquipmentItemViewModel>;
     /**
      *
-     * @type {Array<HospitalSpecialtyItemViewModel>}
+     * @type {Array<HospitalReviewItemViewModel>}
      * @memberof HospitalViewModel
      */
-    specialties?: Array<HospitalSpecialtyItemViewModel>;
+    reviews?: Array<HospitalReviewItemViewModel>;
     /**
      *
-     * @type {Array<DoctorAffiliationItemViewModel>}
+     * @type {Array<DepartmentItemViewModel>}
      * @memberof HospitalViewModel
      */
-    doctorAffiliations?: Array<DoctorAffiliationItemViewModel>;
+    departments?: Array<DepartmentItemViewModel>;
     /**
      *
-     * @type {Array<ManagerAffiliationItemViewModel>}
+     * @type {Array<HospitalAccreditationItemViewModel>}
      * @memberof HospitalViewModel
      */
-    managerAffiliations?: Array<ManagerAffiliationItemViewModel>;
+    accreditations?: Array<HospitalAccreditationItemViewModel>;
+    /**
+     *
+     * @type {Array<UserAffiliationViewModel>}
+     * @memberof HospitalViewModel
+     */
+    doctorAffiliations?: Array<UserAffiliationViewModel>;
+    /**
+     *
+     * @type {Array<UserAffiliationViewModel>}
+     * @memberof HospitalViewModel
+     */
+    managerAffiliations?: Array<UserAffiliationViewModel>;
     /**
      *
      * @type {string}
@@ -4117,12 +5348,6 @@ export interface HospitalViewModel {
      * @memberof HospitalViewModel
      */
     name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof HospitalViewModel
-     */
-    normalizedName?: string;
     /**
      *
      * @type {string}
@@ -4177,6 +5402,66 @@ export interface HospitalViewModel {
      * @memberof HospitalViewModel
      */
     countryName?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    articlesCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    packagesCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    equipmentsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    reviewsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    departmentsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    specialtiesCount?: number;
+    /**
+     *
+     * @type {Array<HospitalSpecialtyItemViewModel>}
+     * @memberof HospitalViewModel
+     */
+    specialties?: Array<HospitalSpecialtyItemViewModel>;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    accreditationsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    doctorAffiliationsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    managerAffiliationsCount?: number;
     /**
      *
      * @type {Array<AwardViewModel>}
@@ -4333,16 +5618,16 @@ export interface LocationViewModel {
 export interface Manager {
     /**
      *
-     * @type {Array<ManagerAffiliation>}
-     * @memberof Manager
-     */
-    affiliations?: Array<ManagerAffiliation>;
-    /**
-     *
      * @type {Array<Account>}
      * @memberof Manager
      */
     accounts?: Array<Account>;
+    /**
+     *
+     * @type {Array<ManagerAffiliation>}
+     * @memberof Manager
+     */
+    affiliations?: Array<ManagerAffiliation>;
     /**
      *
      * @type {string}
@@ -4423,16 +5708,16 @@ export interface Manager {
     articles?: Array<Article>;
     /**
      *
-     * @type {Array<Media>}
-     * @memberof Manager
-     */
-    medias?: Array<Media>;
-    /**
-     *
      * @type {Array<UserLocation>}
      * @memberof Manager
      */
     locations?: Array<UserLocation>;
+    /**
+     *
+     * @type {Array<UserLanguage>}
+     * @memberof Manager
+     */
+    languages?: Array<UserLanguage>;
     /**
      *
      * @type {AuditableEntity}
@@ -4474,37 +5759,6 @@ export interface ManagerAffiliation {
 /**
  *
  * @export
- * @interface ManagerAffiliationItemViewModel
- */
-export interface ManagerAffiliationItemViewModel {
-    /**
-     *
-     * @type {string}
-     * @memberof ManagerAffiliationItemViewModel
-     */
-    hospitalId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ManagerAffiliationItemViewModel
-     */
-    hospitalName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ManagerAffiliationItemViewModel
-     */
-    managerId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ManagerAffiliationItemViewModel
-     */
-    managerName?: string;
-}
-/**
- *
- * @export
  * @interface ManagerAffiliationViewModel
  */
 export interface ManagerAffiliationViewModel {
@@ -4513,18 +5767,6 @@ export interface ManagerAffiliationViewModel {
      * @type {string}
      * @memberof ManagerAffiliationViewModel
      */
-    hospitalId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ManagerAffiliationViewModel
-     */
-    hospitalName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof ManagerAffiliationViewModel
-     */
     managerId?: string;
     /**
      *
@@ -4532,6 +5774,18 @@ export interface ManagerAffiliationViewModel {
      * @memberof ManagerAffiliationViewModel
      */
     managerName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ManagerAffiliationViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ManagerAffiliationViewModel
+     */
+    hospitalName?: string;
 }
 /**
  *
@@ -4553,10 +5807,22 @@ export interface ManagerViewModel {
     userType?: string;
     /**
      *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof ManagerViewModel
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof ManagerViewModel
      */
     locations?: Array<UserLocationViewModel>;
+    /**
+     *
+     * @type {string}
+     * @memberof ManagerViewModel
+     */
+    id?: string;
     /**
      *
      * @type {string}
@@ -4642,6 +5908,16 @@ export interface ManagersViewModel {
      * @memberof ManagersViewModel
      */
     metaData?: PagedListMetaData;
+}
+/**
+ *
+ * @export
+ * @enum {string}
+ */
+export declare enum MarketingType {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -4992,6 +6268,91 @@ export interface PagedListMetaData {
 /**
  *
  * @export
+ * @interface PartnerItemViewModel
+ */
+export interface PartnerItemViewModel {
+    /**
+     *
+     * @type {number}
+     * @memberof PartnerItemViewModel
+     */
+    referralCount?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    userName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    firstName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    lastName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    fullname?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    phone?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    email?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    photo?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    photoThumbnail?: string;
+    /**
+     *
+     * @type {Gender}
+     * @memberof PartnerItemViewModel
+     */
+    gender?: Gender;
+    /**
+     *
+     * @type {Date}
+     * @memberof PartnerItemViewModel
+     */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof PartnerItemViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
  * @interface PartnerViewModel
  */
 export interface PartnerViewModel {
@@ -5015,10 +6376,22 @@ export interface PartnerViewModel {
     userType?: string;
     /**
      *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof PartnerViewModel
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof PartnerViewModel
      */
     locations?: Array<UserLocationViewModel>;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerViewModel
+     */
+    id?: string;
     /**
      *
      * @type {string}
@@ -5094,10 +6467,10 @@ export interface PartnerViewModel {
 export interface PartnersViewModel {
     /**
      *
-     * @type {Array<UserItemViewModel>}
+     * @type {Array<PartnerItemViewModel>}
      * @memberof PartnersViewModel
      */
-    items?: Array<UserItemViewModel>;
+    items?: Array<PartnerItemViewModel>;
     /**
      *
      * @type {PagedListMetaData}
@@ -5245,22 +6618,77 @@ export interface Patient {
     articles?: Array<Article>;
     /**
      *
-     * @type {Array<Media>}
-     * @memberof Patient
-     */
-    medias?: Array<Media>;
-    /**
-     *
      * @type {Array<UserLocation>}
      * @memberof Patient
      */
     locations?: Array<UserLocation>;
     /**
      *
+     * @type {Array<UserLanguage>}
+     * @memberof Patient
+     */
+    languages?: Array<UserLanguage>;
+    /**
+     *
      * @type {AuditableEntity}
      * @memberof Patient
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface PatientItemViewModel
+ */
+export interface PatientItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof PatientItemViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PatientItemViewModel
+     */
+    firstName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PatientItemViewModel
+     */
+    lastName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PatientItemViewModel
+     */
+    fullname?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PatientItemViewModel
+     */
+    normalizedName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PatientItemViewModel
+     */
+    photo?: string;
+    /**
+     *
+     * @type {Gender}
+     * @memberof PatientItemViewModel
+     */
+    gender?: Gender;
+    /**
+     *
+     * @type {Date}
+     * @memberof PatientItemViewModel
+     */
+    dateOfBirth?: Date;
 }
 /**
  *
@@ -5294,10 +6722,22 @@ export interface PatientViewModel {
     userType?: string;
     /**
      *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof PatientViewModel
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof PatientViewModel
      */
     locations?: Array<UserLocationViewModel>;
+    /**
+     *
+     * @type {string}
+     * @memberof PatientViewModel
+     */
+    id?: string;
     /**
      *
      * @type {string}
@@ -5373,10 +6813,10 @@ export interface PatientViewModel {
 export interface PatientsViewModel {
     /**
      *
-     * @type {Array<UserItemViewModel>}
+     * @type {Array<PatientItemViewModel>}
      * @memberof PatientsViewModel
      */
-    items?: Array<UserItemViewModel>;
+    items?: Array<PatientItemViewModel>;
     /**
      *
      * @type {PagedListMetaData}
@@ -6206,6 +7646,12 @@ export interface SpecialtyType {
     description?: string;
     /**
      *
+     * @type {MarketingType}
+     * @memberof SpecialtyType
+     */
+    marketingType?: MarketingType;
+    /**
+     *
      * @type {AuditableEntity}
      * @memberof SpecialtyType
      */
@@ -6385,6 +7831,18 @@ export interface UpdateCHAdminCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof UpdateCHAdminCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof UpdateCHAdminCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof UpdateCHAdminCommand
      */
@@ -6434,6 +7892,18 @@ export interface UpdateCHManagerCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof UpdateCHManagerCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof UpdateCHManagerCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof UpdateCHManagerCommand
      */
@@ -6463,6 +7933,50 @@ export interface UpdateCountryCommand {
      * @memberof UpdateCountryCommand
      */
     medias?: Array<MediaViewModel>;
+}
+/**
+ *
+ * @export
+ * @interface UpdateDepartmentCommand
+ */
+export interface UpdateDepartmentCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDepartmentCommand
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDepartmentCommand
+     */
+    additionalInfo?: string;
+}
+/**
+ *
+ * @export
+ * @interface UpdateDoctorCertificateCommand
+ */
+export interface UpdateDoctorCertificateCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDoctorCertificateCommand
+     */
+    certificate?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof UpdateDoctorCertificateCommand
+     */
+    activeFrom?: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof UpdateDoctorCertificateCommand
+     */
+    activeTo?: Date;
 }
 /**
  *
@@ -6508,10 +8022,53 @@ export interface UpdateDoctorCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof UpdateDoctorCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof UpdateDoctorCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof UpdateDoctorCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+ *
+ * @export
+ * @interface UpdateDoctorReviewCommand
+ */
+export interface UpdateDoctorReviewCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDoctorReviewCommand
+     */
+    body?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof UpdateDoctorReviewCommand
+     */
+    recommended?: boolean;
+    /**
+     *
+     * @type {ReviewCategory}
+     * @memberof UpdateDoctorReviewCommand
+     */
+    reviewCategory?: ReviewCategory;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateDoctorReviewCommand
+     */
+    rate?: number;
 }
 /**
  *
@@ -6576,34 +8133,40 @@ export interface UpdateHospitalCommand {
     equipments?: Array<EquipmentItemViewModel>;
     /**
      *
-     * @type {Array<HospitalSpecialtyItemViewModel>}
+     * @type {Array<HospitalReviewItemViewModel>}
      * @memberof UpdateHospitalCommand
      */
-    specialties?: Array<HospitalSpecialtyItemViewModel>;
+    reviews?: Array<HospitalReviewItemViewModel>;
     /**
      *
-     * @type {Array<DoctorAffiliationItemViewModel>}
+     * @type {Array<DepartmentItemViewModel>}
      * @memberof UpdateHospitalCommand
      */
-    doctorAffiliations?: Array<DoctorAffiliationItemViewModel>;
+    departments?: Array<DepartmentItemViewModel>;
     /**
      *
-     * @type {Array<ManagerAffiliationItemViewModel>}
+     * @type {Array<HospitalAccreditationItemViewModel>}
      * @memberof UpdateHospitalCommand
      */
-    managerAffiliations?: Array<ManagerAffiliationItemViewModel>;
+    accreditations?: Array<HospitalAccreditationItemViewModel>;
+    /**
+     *
+     * @type {Array<UserAffiliationViewModel>}
+     * @memberof UpdateHospitalCommand
+     */
+    doctorAffiliations?: Array<UserAffiliationViewModel>;
+    /**
+     *
+     * @type {Array<UserAffiliationViewModel>}
+     * @memberof UpdateHospitalCommand
+     */
+    managerAffiliations?: Array<UserAffiliationViewModel>;
     /**
      *
      * @type {string}
      * @memberof UpdateHospitalCommand
      */
     name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UpdateHospitalCommand
-     */
-    normalizedName?: string;
     /**
      *
      * @type {string}
@@ -6654,6 +8217,66 @@ export interface UpdateHospitalCommand {
     countryName?: string;
     /**
      *
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    articlesCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    packagesCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    equipmentsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    reviewsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    departmentsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    specialtiesCount?: number;
+    /**
+     *
+     * @type {Array<HospitalSpecialtyItemViewModel>}
+     * @memberof UpdateHospitalCommand
+     */
+    specialties?: Array<HospitalSpecialtyItemViewModel>;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    accreditationsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    doctorAffiliationsCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    managerAffiliationsCount?: number;
+    /**
+     *
      * @type {Array<AwardViewModel>}
      * @memberof UpdateHospitalCommand
      */
@@ -6676,6 +8299,37 @@ export interface UpdateHospitalCommand {
      * @memberof UpdateHospitalCommand
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface UpdateHospitalReviewCommand
+ */
+export interface UpdateHospitalReviewCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateHospitalReviewCommand
+     */
+    body?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof UpdateHospitalReviewCommand
+     */
+    recommended?: boolean;
+    /**
+     *
+     * @type {ReviewCategory}
+     * @memberof UpdateHospitalReviewCommand
+     */
+    reviewCategory?: ReviewCategory;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateHospitalReviewCommand
+     */
+    rate?: number;
 }
 /**
  *
@@ -6734,6 +8388,18 @@ export interface UpdateManagerCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof UpdateManagerCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof UpdateManagerCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof UpdateManagerCommand
      */
@@ -6783,6 +8449,18 @@ export interface UpdatePartnerCommand {
     dateOfBirth?: Date;
     /**
      *
+     * @type {Array<MediaViewModel>}
+     * @memberof UpdatePartnerCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof UpdatePartnerCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof UpdatePartnerCommand
      */
@@ -6830,6 +8508,18 @@ export interface UpdatePatientCommand {
      * @memberof UpdatePatientCommand
      */
     dateOfBirth?: Date;
+    /**
+     *
+     * @type {Array<MediaViewModel>}
+     * @memberof UpdatePatientCommand
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof UpdatePatientCommand
+     */
+    languages?: Array<UserLanguageViewModel>;
     /**
      *
      * @type {Array<UserLocationViewModel>}
@@ -7040,16 +8730,16 @@ export interface User {
     articles?: Array<Article>;
     /**
      *
-     * @type {Array<Media>}
-     * @memberof User
-     */
-    medias?: Array<Media>;
-    /**
-     *
      * @type {Array<UserLocation>}
      * @memberof User
      */
     locations?: Array<UserLocation>;
+    /**
+     *
+     * @type {Array<UserLanguage>}
+     * @memberof User
+     */
+    languages?: Array<UserLanguage>;
     /**
      *
      * @type {AuditableEntity}
@@ -7060,9 +8750,34 @@ export interface User {
 /**
  *
  * @export
+ * @interface UserAffiliationViewModel
+ */
+export interface UserAffiliationViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof UserAffiliationViewModel
+     */
+    userId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UserAffiliationViewModel
+     */
+    userName?: string;
+}
+/**
+ *
+ * @export
  * @interface UserItemViewModel
  */
 export interface UserItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof UserItemViewModel
+     */
+    id?: string;
     /**
      *
      * @type {string}
@@ -7129,6 +8844,44 @@ export interface UserItemViewModel {
      * @memberof UserItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface UserLanguage
+ */
+export interface UserLanguage {
+    /**
+     *
+     * @type {string}
+     * @memberof UserLanguage
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UserLanguage
+     */
+    language?: string;
+}
+/**
+ *
+ * @export
+ * @interface UserLanguageViewModel
+ */
+export interface UserLanguageViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof UserLanguageViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UserLanguageViewModel
+     */
+    language?: string;
 }
 /**
  *
@@ -7269,10 +9022,22 @@ export interface UserViewModel {
     userType?: string;
     /**
      *
+     * @type {Array<UserLanguageViewModel>}
+     * @memberof UserViewModel
+     */
+    languages?: Array<UserLanguageViewModel>;
+    /**
+     *
      * @type {Array<UserLocationViewModel>}
      * @memberof UserViewModel
      */
     locations?: Array<UserLocationViewModel>;
+    /**
+     *
+     * @type {string}
+     * @memberof UserViewModel
+     */
+    id?: string;
     /**
      *
      * @type {string}
@@ -8663,6 +10428,867 @@ export declare class CountriesApi extends BaseAPI {
     apiV1CountriesPost(body?: CreateCountryCommand, options?: any): AxiosPromise<string>;
 }
 /**
+ * DepartmentApi - axios parameter creator
+ * @export
+ */
+export declare const DepartmentApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     * Sample request:        GET /api/v1/hospitals/departments
+     * @summary Get all department.
+     * @param {string} [id]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {string} [name]
+     * @param {string} [additionalInfo]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsDepartmentsGet(id?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, name?: string | undefined, additionalInfo?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/departments/1
+     * @summary Delete department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdDelete(hospitalId: string, departmentId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/departments/1
+     * @summary Get department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdGet(hospitalId: string, departmentId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/departments/1
+     * @summary Create department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {CreateDepartmentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPost(hospitalId: string, departmentId: string, body?: CreateDepartmentCommand | undefined, options?: any): RequestArgs;
+    /**
+     * Sample request:
+     * @summary Update department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {UpdateDepartmentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, body?: UpdateDepartmentCommand | undefined, options?: any): RequestArgs;
+};
+/**
+ * DepartmentApi - functional programming interface
+ * @export
+ */
+export declare const DepartmentApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * Sample request:        GET /api/v1/hospitals/departments
+     * @summary Get all department.
+     * @param {string} [id]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {string} [name]
+     * @param {string} [additionalInfo]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsDepartmentsGet(id?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, name?: string | undefined, additionalInfo?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DepartmentsViewModel>;
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/departments/1
+     * @summary Delete department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdDelete(hospitalId: string, departmentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/departments/1
+     * @summary Get department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdGet(hospitalId: string, departmentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DepartmentViewModel>;
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/departments/1
+     * @summary Create department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {CreateDepartmentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPost(hospitalId: string, departmentId: string, body?: CreateDepartmentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Department>;
+    /**
+     * Sample request:
+     * @summary Update department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {UpdateDepartmentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, body?: UpdateDepartmentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+};
+/**
+ * DepartmentApi - factory interface
+ * @export
+ */
+export declare const DepartmentApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * Sample request:        GET /api/v1/hospitals/departments
+     * @summary Get all department.
+     * @param {string} [id]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {string} [name]
+     * @param {string} [additionalInfo]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsDepartmentsGet(id?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, name?: string | undefined, additionalInfo?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DepartmentsViewModel>;
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/departments/1
+     * @summary Delete department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdDelete(hospitalId: string, departmentId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/departments/1
+     * @summary Get department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdGet(hospitalId: string, departmentId: string, options?: any): AxiosPromise<DepartmentViewModel>;
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/departments/1
+     * @summary Create department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {CreateDepartmentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPost(hospitalId: string, departmentId: string, body?: CreateDepartmentCommand | undefined, options?: any): AxiosPromise<Department>;
+    /**
+     * Sample request:
+     * @summary Update department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {UpdateDepartmentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, body?: UpdateDepartmentCommand | undefined, options?: any): AxiosPromise<boolean>;
+};
+/**
+ * DepartmentApi - object-oriented interface
+ * @export
+ * @class DepartmentApi
+ * @extends {BaseAPI}
+ */
+export declare class DepartmentApi extends BaseAPI {
+    /**
+     * Sample request:        GET /api/v1/hospitals/departments
+     * @summary Get all department.
+     * @param {string} [id]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {string} [name]
+     * @param {string} [additionalInfo]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepartmentApi
+     */
+    apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DepartmentsViewModel>;
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/departments/1
+     * @summary Delete department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepartmentApi
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdDelete(hospitalId: string, departmentId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/departments/1
+     * @summary Get department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepartmentApi
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdGet(hospitalId: string, departmentId: string, options?: any): AxiosPromise<DepartmentViewModel>;
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/departments/1
+     * @summary Create department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {CreateDepartmentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepartmentApi
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPost(hospitalId: string, departmentId: string, body?: CreateDepartmentCommand, options?: any): AxiosPromise<Department>;
+    /**
+     * Sample request:
+     * @summary Update department.
+     * @param {string} hospitalId
+     * @param {string} departmentId
+     * @param {UpdateDepartmentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DepartmentApi
+     */
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, body?: UpdateDepartmentCommand, options?: any): AxiosPromise<boolean>;
+}
+/**
+ * DoctorCertificatesApi - axios parameter creator
+ * @export
+ */
+export declare const DoctorCertificatesApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     * Sample request:        GET /api/v1/doctors/certificates
+     * @summary Get all certificates.
+     * @param {string} [id]
+     * @param {string} [doctorId]
+     * @param {string} [doctorName]
+     * @param {string} [certificate]
+     * @param {Date} [activeFrom]
+     * @param {Date} [activeTo]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsCertificatesGet(id?: string | undefined, doctorId?: string | undefined, doctorName?: string | undefined, certificate?: string | undefined, activeFrom?: Date | undefined, activeTo?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/certificates/1
+     * @summary Delete certificate.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdDelete(doctorId: string, certificateId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:        GET /api/v1/doctors/1/certificates/1
+     * @summary Get certificate.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdGet(doctorId: string, certificateId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:
+     * @summary Update department.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {UpdateDoctorCertificateCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdPut(doctorId: string, certificateId: string, body?: UpdateDoctorCertificateCommand | undefined, options?: any): RequestArgs;
+    /**
+     * Sample request:        POST /api/v1/doctors/1/certificates/1
+     * @summary Create certificate.
+     * @param {string} doctorId
+     * @param {CreateDoctorCertificateCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesPost(doctorId: string, body?: CreateDoctorCertificateCommand | undefined, options?: any): RequestArgs;
+};
+/**
+ * DoctorCertificatesApi - functional programming interface
+ * @export
+ */
+export declare const DoctorCertificatesApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * Sample request:        GET /api/v1/doctors/certificates
+     * @summary Get all certificates.
+     * @param {string} [id]
+     * @param {string} [doctorId]
+     * @param {string} [doctorName]
+     * @param {string} [certificate]
+     * @param {Date} [activeFrom]
+     * @param {Date} [activeTo]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsCertificatesGet(id?: string | undefined, doctorId?: string | undefined, doctorName?: string | undefined, certificate?: string | undefined, activeFrom?: Date | undefined, activeTo?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorCertificatesViewModel>;
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/certificates/1
+     * @summary Delete certificate.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdDelete(doctorId: string, certificateId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/doctors/1/certificates/1
+     * @summary Get certificate.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdGet(doctorId: string, certificateId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorCertificateViewModel>;
+    /**
+     * Sample request:
+     * @summary Update department.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {UpdateDoctorCertificateCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdPut(doctorId: string, certificateId: string, body?: UpdateDoctorCertificateCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     * Sample request:        POST /api/v1/doctors/1/certificates/1
+     * @summary Create certificate.
+     * @param {string} doctorId
+     * @param {CreateDoctorCertificateCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesPost(doctorId: string, body?: CreateDoctorCertificateCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorCertificate>;
+};
+/**
+ * DoctorCertificatesApi - factory interface
+ * @export
+ */
+export declare const DoctorCertificatesApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * Sample request:        GET /api/v1/doctors/certificates
+     * @summary Get all certificates.
+     * @param {string} [id]
+     * @param {string} [doctorId]
+     * @param {string} [doctorName]
+     * @param {string} [certificate]
+     * @param {Date} [activeFrom]
+     * @param {Date} [activeTo]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsCertificatesGet(id?: string | undefined, doctorId?: string | undefined, doctorName?: string | undefined, certificate?: string | undefined, activeFrom?: Date | undefined, activeTo?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DoctorCertificatesViewModel>;
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/certificates/1
+     * @summary Delete certificate.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdDelete(doctorId: string, certificateId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/doctors/1/certificates/1
+     * @summary Get certificate.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdGet(doctorId: string, certificateId: string, options?: any): AxiosPromise<DoctorCertificateViewModel>;
+    /**
+     * Sample request:
+     * @summary Update department.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {UpdateDoctorCertificateCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdPut(doctorId: string, certificateId: string, body?: UpdateDoctorCertificateCommand | undefined, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        POST /api/v1/doctors/1/certificates/1
+     * @summary Create certificate.
+     * @param {string} doctorId
+     * @param {CreateDoctorCertificateCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdCertificatesPost(doctorId: string, body?: CreateDoctorCertificateCommand | undefined, options?: any): AxiosPromise<DoctorCertificate>;
+};
+/**
+ * DoctorCertificatesApi - object-oriented interface
+ * @export
+ * @class DoctorCertificatesApi
+ * @extends {BaseAPI}
+ */
+export declare class DoctorCertificatesApi extends BaseAPI {
+    /**
+     * Sample request:        GET /api/v1/doctors/certificates
+     * @summary Get all certificates.
+     * @param {string} [id]
+     * @param {string} [doctorId]
+     * @param {string} [doctorName]
+     * @param {string} [certificate]
+     * @param {Date} [activeFrom]
+     * @param {Date} [activeTo]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorCertificatesApi
+     */
+    apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: Date, activeTo?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorCertificatesViewModel>;
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/certificates/1
+     * @summary Delete certificate.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorCertificatesApi
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdDelete(doctorId: string, certificateId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/doctors/1/certificates/1
+     * @summary Get certificate.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorCertificatesApi
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdGet(doctorId: string, certificateId: string, options?: any): AxiosPromise<DoctorCertificateViewModel>;
+    /**
+     * Sample request:
+     * @summary Update department.
+     * @param {string} doctorId
+     * @param {string} certificateId
+     * @param {UpdateDoctorCertificateCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorCertificatesApi
+     */
+    apiV1DoctorsDoctorIdCertificatesCertificateIdPut(doctorId: string, certificateId: string, body?: UpdateDoctorCertificateCommand, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        POST /api/v1/doctors/1/certificates/1
+     * @summary Create certificate.
+     * @param {string} doctorId
+     * @param {CreateDoctorCertificateCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorCertificatesApi
+     */
+    apiV1DoctorsDoctorIdCertificatesPost(doctorId: string, body?: CreateDoctorCertificateCommand, options?: any): AxiosPromise<DoctorCertificate>;
+}
+/**
+ * DoctorReviewsApi - axios parameter creator
+ * @export
+ */
+export declare const DoctorReviewsApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/reviews/1
+     * @summary Delete review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdDelete(doctorId: string, patientId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:        GET /api/v1/doctors/1/reviews/1
+     * @summary Get review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdGet(doctorId: string, patientId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:
+     * @summary Update review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {UpdateDoctorReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdPut(doctorId: string, patientId: string, body?: UpdateDoctorReviewCommand | undefined, options?: any): RequestArgs;
+    /**
+     * Sample request:        POST /api/v1/doctors/1/reviews/1
+     * @summary Create review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {CreateDoctorReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPost(doctorId: string, patientId: string, body?: CreateDoctorReviewCommand | undefined, options?: any): RequestArgs;
+    /**
+     * Sample request:        GET /api/v1/doctors/reviews
+     * @summary Get all reviews.
+     * @param {string} [doctorId]
+     * @param {string} [doctorName]
+     * @param {string} [patientId]
+     * @param {string} [patientName]
+     * @param {string} [body]
+     * @param {boolean} [recommended]
+     * @param {object} [reviewCategory]
+     * @param {number} [rate]
+     * @param {Date} [created]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+};
+/**
+ * DoctorReviewsApi - functional programming interface
+ * @export
+ */
+export declare const DoctorReviewsApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/reviews/1
+     * @summary Delete review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdDelete(doctorId: string, patientId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/doctors/1/reviews/1
+     * @summary Get review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdGet(doctorId: string, patientId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReviewViewModel>;
+    /**
+     * Sample request:
+     * @summary Update review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {UpdateDoctorReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdPut(doctorId: string, patientId: string, body?: UpdateDoctorReviewCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     * Sample request:        POST /api/v1/doctors/1/reviews/1
+     * @summary Create review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {CreateDoctorReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPost(doctorId: string, patientId: string, body?: CreateDoctorReviewCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReview>;
+    /**
+     * Sample request:        GET /api/v1/doctors/reviews
+     * @summary Get all reviews.
+     * @param {string} [doctorId]
+     * @param {string} [doctorName]
+     * @param {string} [patientId]
+     * @param {string} [patientName]
+     * @param {string} [body]
+     * @param {boolean} [recommended]
+     * @param {object} [reviewCategory]
+     * @param {number} [rate]
+     * @param {Date} [created]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReviewsViewModel>;
+};
+/**
+ * DoctorReviewsApi - factory interface
+ * @export
+ */
+export declare const DoctorReviewsApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/reviews/1
+     * @summary Delete review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdDelete(doctorId: string, patientId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/doctors/1/reviews/1
+     * @summary Get review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdGet(doctorId: string, patientId: string, options?: any): AxiosPromise<DoctorReviewViewModel>;
+    /**
+     * Sample request:
+     * @summary Update review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {UpdateDoctorReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdPut(doctorId: string, patientId: string, body?: UpdateDoctorReviewCommand | undefined, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        POST /api/v1/doctors/1/reviews/1
+     * @summary Create review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {CreateDoctorReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdReviewsPost(doctorId: string, patientId: string, body?: CreateDoctorReviewCommand | undefined, options?: any): AxiosPromise<DoctorReview>;
+    /**
+     * Sample request:        GET /api/v1/doctors/reviews
+     * @summary Get all reviews.
+     * @param {string} [doctorId]
+     * @param {string} [doctorName]
+     * @param {string} [patientId]
+     * @param {string} [patientName]
+     * @param {string} [body]
+     * @param {boolean} [recommended]
+     * @param {object} [reviewCategory]
+     * @param {number} [rate]
+     * @param {Date} [created]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DoctorReviewsViewModel>;
+};
+/**
+ * DoctorReviewsApi - object-oriented interface
+ * @export
+ * @class DoctorReviewsApi
+ * @extends {BaseAPI}
+ */
+export declare class DoctorReviewsApi extends BaseAPI {
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/reviews/1
+     * @summary Delete review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorReviewsApi
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdDelete(doctorId: string, patientId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/doctors/1/reviews/1
+     * @summary Get review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorReviewsApi
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdGet(doctorId: string, patientId: string, options?: any): AxiosPromise<DoctorReviewViewModel>;
+    /**
+     * Sample request:
+     * @summary Update review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {UpdateDoctorReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorReviewsApi
+     */
+    apiV1DoctorsDoctorIdReviewsPatientIdPut(doctorId: string, patientId: string, body?: UpdateDoctorReviewCommand, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        POST /api/v1/doctors/1/reviews/1
+     * @summary Create review.
+     * @param {string} doctorId
+     * @param {string} patientId
+     * @param {CreateDoctorReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorReviewsApi
+     */
+    apiV1DoctorsDoctorIdReviewsPost(doctorId: string, patientId: string, body?: CreateDoctorReviewCommand, options?: any): AxiosPromise<DoctorReview>;
+    /**
+     * Sample request:        GET /api/v1/doctors/reviews
+     * @summary Get all reviews.
+     * @param {string} [doctorId]
+     * @param {string} [doctorName]
+     * @param {string} [patientId]
+     * @param {string} [patientName]
+     * @param {string} [body]
+     * @param {boolean} [recommended]
+     * @param {object} [reviewCategory]
+     * @param {number} [rate]
+     * @param {Date} [created]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorReviewsApi
+     */
+    apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorReviewsViewModel>;
+}
+/**
+ * DoctorSpecialtiesApi - axios parameter creator
+ * @export
+ */
+export declare const DoctorSpecialtiesApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     * Sample request:        POST /api/v1/doctors/1/specialty/1
+     * @summary Link a doctor to a specialty.
+     * @param {string} doctorId
+     * @param {string} specialtyId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdSpecialtySpecialtyIdPost(doctorId: string, specialtyId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/specialty/1
+     * @summary Remove link between the doctor and the specialty.
+     * @param {string} doctorId
+     * @param {string} specailtyId
+     * @param {string} hospitalId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsHospitalIdDoctorsDoctorIdDelete(doctorId: string, specailtyId: string, hospitalId: string, options?: any): RequestArgs;
+};
+/**
+ * DoctorSpecialtiesApi - functional programming interface
+ * @export
+ */
+export declare const DoctorSpecialtiesApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * Sample request:        POST /api/v1/doctors/1/specialty/1
+     * @summary Link a doctor to a specialty.
+     * @param {string} doctorId
+     * @param {string} specialtyId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdSpecialtySpecialtyIdPost(doctorId: string, specialtyId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorSpecialtyViewModel>;
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/specialty/1
+     * @summary Remove link between the doctor and the specialty.
+     * @param {string} doctorId
+     * @param {string} specailtyId
+     * @param {string} hospitalId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsHospitalIdDoctorsDoctorIdDelete(doctorId: string, specailtyId: string, hospitalId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+};
+/**
+ * DoctorSpecialtiesApi - factory interface
+ * @export
+ */
+export declare const DoctorSpecialtiesApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * Sample request:        POST /api/v1/doctors/1/specialty/1
+     * @summary Link a doctor to a specialty.
+     * @param {string} doctorId
+     * @param {string} specialtyId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsDoctorIdSpecialtySpecialtyIdPost(doctorId: string, specialtyId: string, options?: any): AxiosPromise<DoctorSpecialtyViewModel>;
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/specialty/1
+     * @summary Remove link between the doctor and the specialty.
+     * @param {string} doctorId
+     * @param {string} specailtyId
+     * @param {string} hospitalId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsHospitalIdDoctorsDoctorIdDelete(doctorId: string, specailtyId: string, hospitalId: string, options?: any): AxiosPromise<boolean>;
+};
+/**
+ * DoctorSpecialtiesApi - object-oriented interface
+ * @export
+ * @class DoctorSpecialtiesApi
+ * @extends {BaseAPI}
+ */
+export declare class DoctorSpecialtiesApi extends BaseAPI {
+    /**
+     * Sample request:        POST /api/v1/doctors/1/specialty/1
+     * @summary Link a doctor to a specialty.
+     * @param {string} doctorId
+     * @param {string} specialtyId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorSpecialtiesApi
+     */
+    apiV1DoctorsDoctorIdSpecialtySpecialtyIdPost(doctorId: string, specialtyId: string, options?: any): AxiosPromise<DoctorSpecialtyViewModel>;
+    /**
+     * Sample request:        DELETE /api/v1/doctors/1/specialty/1
+     * @summary Remove link between the doctor and the specialty.
+     * @param {string} doctorId
+     * @param {string} specailtyId
+     * @param {string} hospitalId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorSpecialtiesApi
+     */
+    apiV1DoctorsHospitalIdDoctorsDoctorIdDelete(doctorId: string, specailtyId: string, hospitalId: string, options?: any): AxiosPromise<boolean>;
+}
+/**
  * DoctorsApi - axios parameter creator
  * @export
  */
@@ -8931,12 +11557,12 @@ export declare const EquipmentsApiAxiosParamCreator: (configuration?: Configurat
     /**
      * Sample request:        GET /api/v1/hospitals/1/equipments/1
      * @summary Get equipment.
-     * @param {number} hospitalId
+     * @param {string} hospitalId
      * @param {string} equipmentId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: number, equipmentId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: string, equipmentId: string, options?: any): RequestArgs;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/equipments/1      {          \"description\": \"Upgraded medical equipment\"      }
      * @summary Update equipment.
@@ -8991,12 +11617,12 @@ export declare const EquipmentsApiFp: (configuration?: Configuration | undefined
     /**
      * Sample request:        GET /api/v1/hospitals/1/equipments/1
      * @summary Get equipment.
-     * @param {number} hospitalId
+     * @param {string} hospitalId
      * @param {string} equipmentId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: number, equipmentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EquipmentViewModel>;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: string, equipmentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EquipmentViewModel>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/equipments/1      {          \"description\": \"Upgraded medical equipment\"      }
      * @summary Update equipment.
@@ -9051,12 +11677,12 @@ export declare const EquipmentsApiFactory: (configuration?: Configuration | unde
     /**
      * Sample request:        GET /api/v1/hospitals/1/equipments/1
      * @summary Get equipment.
-     * @param {number} hospitalId
+     * @param {string} hospitalId
      * @param {string} equipmentId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: number, equipmentId: string, options?: any): AxiosPromise<EquipmentViewModel>;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: string, equipmentId: string, options?: any): AxiosPromise<EquipmentViewModel>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/equipments/1      {          \"description\": \"Upgraded medical equipment\"      }
      * @summary Update equipment.
@@ -9115,13 +11741,13 @@ export declare class EquipmentsApi extends BaseAPI {
     /**
      * Sample request:        GET /api/v1/hospitals/1/equipments/1
      * @summary Get equipment.
-     * @param {number} hospitalId
+     * @param {string} hospitalId
      * @param {string} equipmentId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof EquipmentsApi
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: number, equipmentId: string, options?: any): AxiosPromise<EquipmentViewModel>;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: string, equipmentId: string, options?: any): AxiosPromise<EquipmentViewModel>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/equipments/1      {          \"description\": \"Upgraded medical equipment\"      }
      * @summary Update equipment.
@@ -9143,6 +11769,269 @@ export declare class EquipmentsApi extends BaseAPI {
      * @memberof EquipmentsApi
      */
     apiV1HospitalsHospitalIdEquipmentsPost(hospitalId: string, body?: CreateEquipmentCommand, options?: any): AxiosPromise<string>;
+}
+/**
+ * HospitalReviewsApi - axios parameter creator
+ * @export
+ */
+export declare const HospitalReviewsApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/reviews/1
+     * @summary Delete review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdDelete(hospitalId: string, patientId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/reviews/1
+     * @summary Get review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdGet(hospitalId: string, patientId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:
+     * @summary Update review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {UpdateHospitalReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdPut(hospitalId: string, patientId: string, body?: UpdateHospitalReviewCommand | undefined, options?: any): RequestArgs;
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/reviews/1
+     * @summary Create review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {CreateHospitalReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPost(hospitalId: string, patientId: string, body?: CreateHospitalReviewCommand | undefined, options?: any): RequestArgs;
+    /**
+     * Sample request:        GET /api/v1/hospitals/reviews
+     * @summary Get all reviews.
+     * @param {string} [patientId]
+     * @param {string} [patientName]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {string} [body]
+     * @param {boolean} [recommended]
+     * @param {object} [reviewCategory]
+     * @param {number} [rate]
+     * @param {Date} [created]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+};
+/**
+ * HospitalReviewsApi - functional programming interface
+ * @export
+ */
+export declare const HospitalReviewsApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/reviews/1
+     * @summary Delete review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdDelete(hospitalId: string, patientId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/reviews/1
+     * @summary Get review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdGet(hospitalId: string, patientId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReviewViewModel>;
+    /**
+     * Sample request:
+     * @summary Update review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {UpdateHospitalReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdPut(hospitalId: string, patientId: string, body?: UpdateHospitalReviewCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/reviews/1
+     * @summary Create review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {CreateHospitalReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPost(hospitalId: string, patientId: string, body?: CreateHospitalReviewCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReview>;
+    /**
+     * Sample request:        GET /api/v1/hospitals/reviews
+     * @summary Get all reviews.
+     * @param {string} [patientId]
+     * @param {string} [patientName]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {string} [body]
+     * @param {boolean} [recommended]
+     * @param {object} [reviewCategory]
+     * @param {number} [rate]
+     * @param {Date} [created]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReviewsViewModel>;
+};
+/**
+ * HospitalReviewsApi - factory interface
+ * @export
+ */
+export declare const HospitalReviewsApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/reviews/1
+     * @summary Delete review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdDelete(hospitalId: string, patientId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/reviews/1
+     * @summary Get review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdGet(hospitalId: string, patientId: string, options?: any): AxiosPromise<HospitalReviewViewModel>;
+    /**
+     * Sample request:
+     * @summary Update review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {UpdateHospitalReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdPut(hospitalId: string, patientId: string, body?: UpdateHospitalReviewCommand | undefined, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/reviews/1
+     * @summary Create review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {CreateHospitalReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdReviewsPost(hospitalId: string, patientId: string, body?: CreateHospitalReviewCommand | undefined, options?: any): AxiosPromise<HospitalReview>;
+    /**
+     * Sample request:        GET /api/v1/hospitals/reviews
+     * @summary Get all reviews.
+     * @param {string} [patientId]
+     * @param {string} [patientName]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {string} [body]
+     * @param {boolean} [recommended]
+     * @param {object} [reviewCategory]
+     * @param {number} [rate]
+     * @param {Date} [created]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalReviewsViewModel>;
+};
+/**
+ * HospitalReviewsApi - object-oriented interface
+ * @export
+ * @class HospitalReviewsApi
+ * @extends {BaseAPI}
+ */
+export declare class HospitalReviewsApi extends BaseAPI {
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/reviews/1
+     * @summary Delete review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HospitalReviewsApi
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdDelete(hospitalId: string, patientId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/reviews/1
+     * @summary Get review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HospitalReviewsApi
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdGet(hospitalId: string, patientId: string, options?: any): AxiosPromise<HospitalReviewViewModel>;
+    /**
+     * Sample request:
+     * @summary Update review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {UpdateHospitalReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HospitalReviewsApi
+     */
+    apiV1HospitalsHospitalIdReviewsPatientIdPut(hospitalId: string, patientId: string, body?: UpdateHospitalReviewCommand, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/reviews/1
+     * @summary Create review.
+     * @param {string} hospitalId
+     * @param {string} patientId
+     * @param {CreateHospitalReviewCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HospitalReviewsApi
+     */
+    apiV1HospitalsHospitalIdReviewsPost(hospitalId: string, patientId: string, body?: CreateHospitalReviewCommand, options?: any): AxiosPromise<HospitalReview>;
+    /**
+     * Sample request:        GET /api/v1/hospitals/reviews
+     * @summary Get all reviews.
+     * @param {string} [patientId]
+     * @param {string} [patientName]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {string} [body]
+     * @param {boolean} [recommended]
+     * @param {object} [reviewCategory]
+     * @param {number} [rate]
+     * @param {Date} [created]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HospitalReviewsApi
+     */
+    apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalReviewsViewModel>;
 }
 /**
  * HospitalSpecialtiesApi - axios parameter creator
@@ -10551,13 +13440,13 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
     /**
      * Sample request:        GET /api/v1/hospitals/1/specialties/1/services/1
      * @summary Get service.
-     * @param {number} hospitalId
-     * @param {number} specialtyId
+     * @param {string} hospitalId
+     * @param {string} specialtyId
      * @param {string} serviceId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: number, specialtyId: number, serviceId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: string, specialtyId: string, serviceId: string, options?: any): RequestArgs;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/specialties/1/services/1      {          \"name\": \"Extended analysis of blood\",          \"description\": \"Extended analysis of blood description.\",          \"minPrice\": 1000,          \"maxPrice\": 2600,          \"priceReuqest\": false      }
      * @summary Update service.
@@ -10586,6 +13475,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [name]
      * @param {string} [description]
      * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {object} [procedure]
@@ -10597,7 +13487,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * ServicesApi - functional programming interface
@@ -10627,13 +13517,13 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
     /**
      * Sample request:        GET /api/v1/hospitals/1/specialties/1/services/1
      * @summary Get service.
-     * @param {number} hospitalId
-     * @param {number} specialtyId
+     * @param {string} hospitalId
+     * @param {string} specialtyId
      * @param {string} serviceId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: number, specialtyId: number, serviceId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServiceViewModel>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: string, specialtyId: string, serviceId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServiceViewModel>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/specialties/1/services/1      {          \"name\": \"Extended analysis of blood\",          \"description\": \"Extended analysis of blood description.\",          \"minPrice\": 1000,          \"maxPrice\": 2600,          \"priceReuqest\": false      }
      * @summary Update service.
@@ -10662,6 +13552,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [name]
      * @param {string} [description]
      * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {object} [procedure]
@@ -10673,7 +13564,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>;
 };
 /**
  * ServicesApi - factory interface
@@ -10703,13 +13594,13 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
     /**
      * Sample request:        GET /api/v1/hospitals/1/specialties/1/services/1
      * @summary Get service.
-     * @param {number} hospitalId
-     * @param {number} specialtyId
+     * @param {string} hospitalId
+     * @param {string} specialtyId
      * @param {string} serviceId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: number, specialtyId: number, serviceId: string, options?: any): AxiosPromise<ServiceViewModel>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: string, specialtyId: string, serviceId: string, options?: any): AxiosPromise<ServiceViewModel>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/specialties/1/services/1      {          \"name\": \"Extended analysis of blood\",          \"description\": \"Extended analysis of blood description.\",          \"minPrice\": 1000,          \"maxPrice\": 2600,          \"priceReuqest\": false      }
      * @summary Update service.
@@ -10738,6 +13629,7 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @param {string} [name]
      * @param {string} [description]
      * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {object} [procedure]
@@ -10749,7 +13641,7 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ServicesViewModel>;
 };
 /**
  * ServicesApi - object-oriented interface
@@ -10783,14 +13675,14 @@ export declare class ServicesApi extends BaseAPI {
     /**
      * Sample request:        GET /api/v1/hospitals/1/specialties/1/services/1
      * @summary Get service.
-     * @param {number} hospitalId
-     * @param {number} specialtyId
+     * @param {string} hospitalId
+     * @param {string} specialtyId
      * @param {string} serviceId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: number, specialtyId: number, serviceId: string, options?: any): AxiosPromise<ServiceViewModel>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: string, specialtyId: string, serviceId: string, options?: any): AxiosPromise<ServiceViewModel>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/specialties/1/services/1      {          \"name\": \"Extended analysis of blood\",          \"description\": \"Extended analysis of blood description.\",          \"minPrice\": 1000,          \"maxPrice\": 2600,          \"priceReuqest\": false      }
      * @summary Update service.
@@ -10821,6 +13713,7 @@ export declare class ServicesApi extends BaseAPI {
      * @param {string} [name]
      * @param {string} [description]
      * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {object} [procedure]
@@ -10833,7 +13726,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, specialtyId?: string, specialtyTypeId?: string, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel>;
 }
 /**
  * SpecialtiesApi - axios parameter creator
