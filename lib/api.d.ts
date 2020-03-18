@@ -3413,7 +3413,7 @@ export interface DoctorItemViewModel {
      * @type {Array<DoctorSpecialtyItemViewModel>}
      * @memberof DoctorItemViewModel
      */
-    specialties?: Array<DoctorSpecialtyItemViewModel>;
+    doctorSpecialties?: Array<DoctorSpecialtyItemViewModel>;
     /**
      *
      * @type {number}
@@ -3428,6 +3428,12 @@ export interface DoctorItemViewModel {
     doctorAffiliationsCount?: number;
     /**
      *
+     * @type {Array<HospitalAffiliationViewModel>}
+     * @memberof DoctorItemViewModel
+     */
+    doctorAffiliations?: Array<HospitalAffiliationViewModel>;
+    /**
+     *
      * @type {number}
      * @memberof DoctorItemViewModel
      */
@@ -3438,12 +3444,6 @@ export interface DoctorItemViewModel {
      * @memberof DoctorItemViewModel
      */
     languagesCountCount?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof DoctorItemViewModel
-     */
-    doctorAwardsCount?: number;
     /**
      *
      * @type {string}
