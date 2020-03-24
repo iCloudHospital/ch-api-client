@@ -2884,6 +2884,12 @@ export interface Doctor {
     startPracticeDate?: Date;
     /**
      *
+     * @type {string}
+     * @memberof Doctor
+     */
+    overview?: string;
+    /**
+     *
      * @type {Array<DoctorReview>}
      * @memberof Doctor
      */
@@ -3334,6 +3340,18 @@ export interface DoctorEducationItemViewModel {
      * @memberof DoctorEducationItemViewModel
      */
     graduationDate?: Date;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorEducationItemViewModel
+     */
+    graduationYear?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorEducationItemViewModel
+     */
+    graduationMonth?: number;
 }
 /**
  *
@@ -3377,6 +3395,18 @@ export interface DoctorEducationViewModel {
      * @memberof DoctorEducationViewModel
      */
     graduationDate?: Date;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorEducationViewModel
+     */
+    graduationYear?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorEducationViewModel
+     */
+    graduationMonth?: number;
 }
 /**
  *
@@ -3977,6 +4007,18 @@ export interface DoctorViewModel {
      * @memberof DoctorViewModel
      */
     startPracticeDate?: Date;
+    /**
+     *
+     * @type {number}
+     * @memberof DoctorViewModel
+     */
+    yearOfExperience?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorViewModel
+     */
+    overview?: string;
     /**
      *
      * @type {Array<DoctorReviewItemViewModel>}
@@ -4759,37 +4801,6 @@ export interface HospitalAccreditation {
 /**
  *
  * @export
- * @interface HospitalAccreditationItemViewModel
- */
-export interface HospitalAccreditationItemViewModel {
-    /**
-     *
-     * @type {string}
-     * @memberof HospitalAccreditationItemViewModel
-     */
-    accreditationId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof HospitalAccreditationItemViewModel
-     */
-    accreditationName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof HospitalAccreditationItemViewModel
-     */
-    hospitalId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof HospitalAccreditationItemViewModel
-     */
-    hospitalName?: string;
-}
-/**
- *
- * @export
  * @interface HospitalAffiliationViewModel
  */
 export interface HospitalAffiliationViewModel {
@@ -5331,48 +5342,6 @@ export interface HospitalSpecialtyViewModel {
  * @interface HospitalViewModel
  */
 export interface HospitalViewModel {
-    /**
-     *
-     * @type {Array<ArticleItemViewModel>}
-     * @memberof HospitalViewModel
-     */
-    articles?: Array<ArticleItemViewModel>;
-    /**
-     *
-     * @type {Array<EquipmentItemViewModel>}
-     * @memberof HospitalViewModel
-     */
-    equipments?: Array<EquipmentItemViewModel>;
-    /**
-     *
-     * @type {Array<HospitalReviewItemViewModel>}
-     * @memberof HospitalViewModel
-     */
-    reviews?: Array<HospitalReviewItemViewModel>;
-    /**
-     *
-     * @type {Array<DepartmentItemViewModel>}
-     * @memberof HospitalViewModel
-     */
-    departments?: Array<DepartmentItemViewModel>;
-    /**
-     *
-     * @type {Array<HospitalAccreditationItemViewModel>}
-     * @memberof HospitalViewModel
-     */
-    accreditations?: Array<HospitalAccreditationItemViewModel>;
-    /**
-     *
-     * @type {Array<UserAffiliationViewModel>}
-     * @memberof HospitalViewModel
-     */
-    doctorAffiliations?: Array<UserAffiliationViewModel>;
-    /**
-     *
-     * @type {Array<UserAffiliationViewModel>}
-     * @memberof HospitalViewModel
-     */
-    managerAffiliations?: Array<UserAffiliationViewModel>;
     /**
      *
      * @type {string}
@@ -8146,6 +8115,12 @@ export interface UpdateDoctorCommand {
     startPracticeDate?: Date;
     /**
      *
+     * @type {string}
+     * @memberof UpdateDoctorCommand
+     */
+    overview?: string;
+    /**
+     *
      * @type {Array<DoctorEducationItemViewModel>}
      * @memberof UpdateDoctorCommand
      */
@@ -8277,12 +8252,6 @@ export interface UpdateEquipmentCommand {
      * @type {string}
      * @memberof UpdateEquipmentCommand
      */
-    hospitalId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UpdateEquipmentCommand
-     */
     hospitalName?: string;
     /**
      *
@@ -8303,48 +8272,6 @@ export interface UpdateEquipmentCommand {
  * @interface UpdateHospitalCommand
  */
 export interface UpdateHospitalCommand {
-    /**
-     *
-     * @type {Array<ArticleItemViewModel>}
-     * @memberof UpdateHospitalCommand
-     */
-    articles?: Array<ArticleItemViewModel>;
-    /**
-     *
-     * @type {Array<EquipmentItemViewModel>}
-     * @memberof UpdateHospitalCommand
-     */
-    equipments?: Array<EquipmentItemViewModel>;
-    /**
-     *
-     * @type {Array<HospitalReviewItemViewModel>}
-     * @memberof UpdateHospitalCommand
-     */
-    reviews?: Array<HospitalReviewItemViewModel>;
-    /**
-     *
-     * @type {Array<DepartmentItemViewModel>}
-     * @memberof UpdateHospitalCommand
-     */
-    departments?: Array<DepartmentItemViewModel>;
-    /**
-     *
-     * @type {Array<HospitalAccreditationItemViewModel>}
-     * @memberof UpdateHospitalCommand
-     */
-    accreditations?: Array<HospitalAccreditationItemViewModel>;
-    /**
-     *
-     * @type {Array<UserAffiliationViewModel>}
-     * @memberof UpdateHospitalCommand
-     */
-    doctorAffiliations?: Array<UserAffiliationViewModel>;
-    /**
-     *
-     * @type {Array<UserAffiliationViewModel>}
-     * @memberof UpdateHospitalCommand
-     */
-    managerAffiliations?: Array<UserAffiliationViewModel>;
     /**
      *
      * @type {string}
@@ -8949,25 +8876,6 @@ export interface User {
      * @memberof User
      */
     auditableEntity?: AuditableEntity;
-}
-/**
- *
- * @export
- * @interface UserAffiliationViewModel
- */
-export interface UserAffiliationViewModel {
-    /**
-     *
-     * @type {string}
-     * @memberof UserAffiliationViewModel
-     */
-    userId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UserAffiliationViewModel
-     */
-    userName?: string;
 }
 /**
  *
