@@ -2196,6 +2196,12 @@ export interface CreateHospitalCommand {
     countryId?: string;
     /**
      *
+     * @type {MarketingType}
+     * @memberof CreateHospitalCommand
+     */
+    marketingType?: MarketingType;
+    /**
+     *
      * @type {Array<AwardViewModel>}
      * @memberof CreateHospitalCommand
      */
@@ -4645,6 +4651,12 @@ export interface Hospital {
      * @type {string}
      * @memberof Hospital
      */
+    normalizedDescription?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Hospital
+     */
     logo?: string;
     /**
      *
@@ -4688,6 +4700,12 @@ export interface Hospital {
      * @memberof Hospital
      */
     country?: Country;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof Hospital
+     */
+    marketingType?: MarketingType;
     /**
      *
      * @type {Array<Article>}
@@ -4889,6 +4907,12 @@ export interface HospitalItemViewModel {
      * @memberof HospitalItemViewModel
      */
     countryName?: string;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof HospitalItemViewModel
+     */
+    marketingType?: MarketingType;
     /**
      *
      * @type {number}
@@ -5280,6 +5304,12 @@ export interface HospitalSpecialtyItemViewModel {
      * @memberof HospitalSpecialtyItemViewModel
      */
     auditableEntity?: AuditableEntity;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof HospitalSpecialtyItemViewModel
+     */
+    marketingType?: MarketingType;
 }
 /**
  *
@@ -5335,6 +5365,12 @@ export interface HospitalSpecialtyViewModel {
      * @memberof HospitalSpecialtyViewModel
      */
     auditableEntity?: AuditableEntity;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof HospitalSpecialtyViewModel
+     */
+    marketingType?: MarketingType;
 }
 /**
  *
@@ -5408,6 +5444,12 @@ export interface HospitalViewModel {
      * @memberof HospitalViewModel
      */
     countryName?: string;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof HospitalViewModel
+     */
+    marketingType?: MarketingType;
     /**
      *
      * @type {number}
@@ -8326,6 +8368,12 @@ export interface UpdateHospitalCommand {
      * @memberof UpdateHospitalCommand
      */
     countryName?: string;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof UpdateHospitalCommand
+     */
+    marketingType?: MarketingType;
     /**
      *
      * @type {number}
@@ -12371,6 +12419,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
+     * @param {object} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -12378,7 +12427,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -12426,6 +12475,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
+     * @param {object} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -12433,7 +12483,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -12481,6 +12531,7 @@ export declare const HospitalsApiFactory: (configuration?: Configuration | undef
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
+     * @param {object} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -12488,7 +12539,7 @@ export declare const HospitalsApiFactory: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -12538,6 +12589,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
+     * @param {object} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -12546,7 +12598,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -13593,6 +13645,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [hospitalName]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
+     * @param {string} [specialtyTypeName]
      * @param {object} [marketingType]
      * @param {object} [procedure]
      * @param {Date} [created]
@@ -13603,7 +13656,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * ServicesApi - functional programming interface
@@ -13671,6 +13724,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [hospitalName]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
+     * @param {string} [specialtyTypeName]
      * @param {object} [marketingType]
      * @param {object} [procedure]
      * @param {Date} [created]
@@ -13681,7 +13735,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>;
 };
 /**
  * ServicesApi - factory interface
@@ -13749,6 +13803,7 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @param {string} [hospitalName]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
+     * @param {string} [specialtyTypeName]
      * @param {object} [marketingType]
      * @param {object} [procedure]
      * @param {Date} [created]
@@ -13759,7 +13814,7 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ServicesViewModel>;
 };
 /**
  * ServicesApi - object-oriented interface
@@ -13834,6 +13889,7 @@ export declare class ServicesApi extends BaseAPI {
      * @param {string} [hospitalName]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
+     * @param {string} [specialtyTypeName]
      * @param {object} [marketingType]
      * @param {object} [procedure]
      * @param {Date} [created]
@@ -13845,7 +13901,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel>;
 }
 /**
  * SpecialtiesApi - axios parameter creator
