@@ -6127,8 +6127,8 @@ export enum Ordinates {
     Spatial2 = 'Spatial2',
     // Spatial2 = 'Spatial2',
     XY = 'XY',
-    // Z = 'Z',
     Z = 'Z',
+    // Z = 'Z',
     XYZ = 'XYZ',
     Spatial4 = 'Spatial4',
     Spatial5 = 'Spatial5',
@@ -6144,8 +6144,8 @@ export enum Ordinates {
     Spatial15 = 'Spatial15',
     Spatial16 = 'Spatial16',
     AllSpatialOrdinates = 'AllSpatialOrdinates',
-    M = 'M',
     // M = 'M',
+    M = 'M',
     XYM = 'XYM',
     XYZM = 'XYZM',
     Measure2 = 'Measure2',
@@ -7414,6 +7414,31 @@ export interface Service {
      * @memberof Service
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface ServiceCountViewModel
+ */
+export interface ServiceCountViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceCountViewModel
+     */
+    specialtyTypeId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceCountViewModel
+     */
+    specialtyTypeName?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServiceCountViewModel
+     */
+    serviceCount?: number;
 }
 /**
  * 
@@ -14247,10 +14272,11 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options: any = {}): RequestArgs {
+        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, marketingType?: object, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/doctors`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -14309,6 +14335,10 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
 
             if (hospitalId !== undefined) {
                 localVarQueryParameter['hospitalId'] = hospitalId;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['marketingType'] = marketingType;
             }
 
 
@@ -14432,11 +14462,12 @@ export const DoctorsApiFp = function(configuration?: Configuration) {
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorsViewModel> {
-            const localVarAxiosArgs = DoctorsApiAxiosParamCreator(configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, options);
+        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, marketingType?: object, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorsViewModel> {
+            const localVarAxiosArgs = DoctorsApiAxiosParamCreator(configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, marketingType, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -14510,11 +14541,12 @@ export const DoctorsApiFactory = function (configuration?: Configuration, basePa
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): AxiosPromise<DoctorsViewModel> {
-            return DoctorsApiFp(configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, options)(axios, basePath);
+        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, marketingType?: object, options?: any): AxiosPromise<DoctorsViewModel> {
+            return DoctorsApiFp(configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, marketingType, options)(axios, basePath);
         },
         /**
          * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
@@ -14587,12 +14619,13 @@ export class DoctorsApi extends BaseAPI {
      * @param {Date} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {string} [hospitalId] 
+     * @param {object} [marketingType] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    public apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any) {
-        return DoctorsApiFp(this.configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, options)(this.axios, this.basePath);
+    public apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, marketingType?: object, options?: any) {
+        return DoctorsApiFp(this.configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, marketingType, options)(this.axios, this.basePath);
     }
 
     /**
@@ -18985,6 +19018,40 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
+         * 
+         * @summary Get service counts.
+         * @param {string} [specialtyTypeId] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsServicecountGet(specialtyTypeId?: string, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/hospitals/servicecount`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (specialtyTypeId !== undefined) {
+                localVarQueryParameter['specialtyTypeId'] = specialtyTypeId;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Sample request:        GET /api/v1/hospitals/services
          * @summary Get all services.
          * @param {string} [id] 
@@ -19183,6 +19250,20 @@ export const ServicesApiFp = function(configuration?: Configuration) {
             };
         },
         /**
+         * 
+         * @summary Get service counts.
+         * @param {string} [specialtyTypeId] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsServicecountGet(specialtyTypeId?: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServiceCountViewModel> {
+            const localVarAxiosArgs = ServicesApiAxiosParamCreator(configuration).apiV1HospitalsServicecountGet(specialtyTypeId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * Sample request:        GET /api/v1/hospitals/services
          * @summary Get all services.
          * @param {string} [id] 
@@ -19279,6 +19360,16 @@ export const ServicesApiFactory = function (configuration?: Configuration, baseP
          */
         apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, body?: UpdateServiceSequenceCommand, options?: any): AxiosPromise<boolean> {
             return ServicesApiFp(configuration).apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId, specialtyId, body, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Get service counts.
+         * @param {string} [specialtyTypeId] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsServicecountGet(specialtyTypeId?: string, options?: any): AxiosPromise<ServiceCountViewModel> {
+            return ServicesApiFp(configuration).apiV1HospitalsServicecountGet(specialtyTypeId, options)(axios, basePath);
         },
         /**
          * Sample request:        GET /api/v1/hospitals/services
@@ -19383,6 +19474,18 @@ export class ServicesApi extends BaseAPI {
      */
     public apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, body?: UpdateServiceSequenceCommand, options?: any) {
         return ServicesApiFp(this.configuration).apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId, specialtyId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Get service counts.
+     * @param {string} [specialtyTypeId] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServicesApi
+     */
+    public apiV1HospitalsServicecountGet(specialtyTypeId?: string, options?: any) {
+        return ServicesApiFp(this.configuration).apiV1HospitalsServicecountGet(specialtyTypeId, options)(this.axios, this.basePath);
     }
 
     /**

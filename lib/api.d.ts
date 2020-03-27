@@ -7389,6 +7389,31 @@ export interface Service {
 /**
  *
  * @export
+ * @interface ServiceCountViewModel
+ */
+export interface ServiceCountViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceCountViewModel
+     */
+    specialtyTypeId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceCountViewModel
+     */
+    specialtyTypeName?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof ServiceCountViewModel
+     */
+    serviceCount?: number;
+}
+/**
+ *
+ * @export
  * @interface ServiceItemViewModel
  */
 export interface ServiceItemViewModel {
@@ -11491,10 +11516,11 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @param {Date} [lastRetrieved]
      * @param {boolean} [current]
      * @param {string} [hospitalId]
+     * @param {object} [marketingType]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): RequestArgs;
+    apiV1DoctorsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -11548,10 +11574,11 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @param {Date} [lastRetrieved]
      * @param {boolean} [current]
      * @param {string} [hospitalId]
+     * @param {object} [marketingType]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorsViewModel>;
+    apiV1DoctorsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorsViewModel>;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -11605,10 +11632,11 @@ export declare const DoctorsApiFactory: (configuration?: Configuration | undefin
      * @param {Date} [lastRetrieved]
      * @param {boolean} [current]
      * @param {string} [hospitalId]
+     * @param {object} [marketingType]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): AxiosPromise<DoctorsViewModel>;
+    apiV1DoctorsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, options?: any): AxiosPromise<DoctorsViewModel>;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -11667,11 +11695,12 @@ export declare class DoctorsApi extends BaseAPI {
      * @param {Date} [lastRetrieved]
      * @param {boolean} [current]
      * @param {string} [hospitalId]
+     * @param {object} [marketingType]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): AxiosPromise<DoctorsViewModel>;
+    apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, marketingType?: object, options?: any): AxiosPromise<DoctorsViewModel>;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -13636,6 +13665,14 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      */
     apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, body?: UpdateServiceSequenceCommand | undefined, options?: any): RequestArgs;
     /**
+     *
+     * @summary Get service counts.
+     * @param {string} [specialtyTypeId]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsServicecountGet(specialtyTypeId?: string | undefined, options?: any): RequestArgs;
+    /**
      * Sample request:        GET /api/v1/hospitals/services
      * @summary Get all services.
      * @param {string} [id]
@@ -13715,6 +13752,14 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      */
     apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, body?: UpdateServiceSequenceCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
+     *
+     * @summary Get service counts.
+     * @param {string} [specialtyTypeId]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsServicecountGet(specialtyTypeId?: string | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServiceCountViewModel>;
+    /**
      * Sample request:        GET /api/v1/hospitals/services
      * @summary Get all services.
      * @param {string} [id]
@@ -13793,6 +13838,14 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, body?: UpdateServiceSequenceCommand | undefined, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get service counts.
+     * @param {string} [specialtyTypeId]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsServicecountGet(specialtyTypeId?: string | undefined, options?: any): AxiosPromise<ServiceCountViewModel>;
     /**
      * Sample request:        GET /api/v1/hospitals/services
      * @summary Get all services.
@@ -13879,6 +13932,15 @@ export declare class ServicesApi extends BaseAPI {
      * @memberof ServicesApi
      */
     apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, body?: UpdateServiceSequenceCommand, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get service counts.
+     * @param {string} [specialtyTypeId]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServicesApi
+     */
+    apiV1HospitalsServicecountGet(specialtyTypeId?: string, options?: any): AxiosPromise<ServiceCountViewModel>;
     /**
      * Sample request:        GET /api/v1/hospitals/services
      * @summary Get all services.
