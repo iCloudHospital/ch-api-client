@@ -219,13 +219,19 @@ export interface ArticleItemViewModel {
      * @type {string}
      * @memberof ArticleItemViewModel
      */
-    authorName?: string;
+    userName?: string;
     /**
      * 
      * @type {string}
      * @memberof ArticleItemViewModel
      */
     hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ArticleItemViewModel
+     */
+    hospitalName?: string;
     /**
      * 
      * @type {Array<Tag>}
@@ -303,13 +309,19 @@ export interface ArticleViewModel {
      * @type {string}
      * @memberof ArticleViewModel
      */
-    authorName?: string;
+    userName?: string;
     /**
      * 
      * @type {string}
      * @memberof ArticleViewModel
      */
     hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ArticleViewModel
+     */
+    hospitalName?: string;
     /**
      * 
      * @type {Array<Tag>}
@@ -1601,6 +1613,12 @@ export interface CountryItemViewModel {
     specialitiesCount?: number;
     /**
      * 
+     * @type {number}
+     * @memberof CountryItemViewModel
+     */
+    packagesCount?: number;
+    /**
+     * 
      * @type {Array<MediaViewModel>}
      * @memberof CountryItemViewModel
      */
@@ -1656,6 +1674,12 @@ export interface CountryViewModel {
     specialitiesCount?: number;
     /**
      * 
+     * @type {number}
+     * @memberof CountryViewModel
+     */
+    packagesCount?: number;
+    /**
+     * 
      * @type {Array<MediaViewModel>}
      * @memberof CountryViewModel
      */
@@ -1697,12 +1721,6 @@ export interface CreateArticleCommand {
      * @memberof CreateArticleCommand
      */
     status?: ArticleStatus;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateArticleCommand
-     */
-    hospitalId?: string;
     /**
      * 
      * @type {Array<Tag>}
@@ -2229,6 +2247,61 @@ export interface CreateHospitalCommand {
      * @memberof CreateHospitalCommand
      */
     location?: LocationViewModel;
+}
+/**
+ * 
+ * @export
+ * @interface CreateHospitalPackageCommand
+ */
+export interface CreateHospitalPackageCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateHospitalPackageCommand
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateHospitalPackageCommand
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateHospitalPackageCommand
+     */
+    accomodation?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateHospitalPackageCommand
+     */
+    trnasfer?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateHospitalPackageCommand
+     */
+    bonus?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof CreateHospitalPackageCommand
+     */
+    packagePrice?: number;
+    /**
+     * 
+     * @type {PackageStatus}
+     * @memberof CreateHospitalPackageCommand
+     */
+    packageStatus?: PackageStatus;
+    /**
+     * 
+     * @type {Array<ServiceViewModel>}
+     * @memberof CreateHospitalPackageCommand
+     */
+    services?: Array<ServiceViewModel>;
 }
 /**
  * 
@@ -3136,6 +3209,18 @@ export interface DoctorAffiliationViewModel {
      * @memberof DoctorAffiliationViewModel
      */
     countryName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DoctorAffiliationViewModel
+     */
+    cityName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DoctorAffiliationViewModel
+     */
+    stateName?: string;
 }
 /**
  * 
@@ -4919,6 +5004,18 @@ export interface HospitalAffiliationViewModel {
      * @memberof HospitalAffiliationViewModel
      */
     countryName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalAffiliationViewModel
+     */
+    cityName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalAffiliationViewModel
+     */
+    stateName?: string;
 }
 /**
  * 
@@ -5082,6 +5179,177 @@ export interface HospitalItemViewModel {
      * @memberof HospitalItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface HospitalPackageItemViewModel
+ */
+export interface HospitalPackageItemViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageItemViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageItemViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageItemViewModel
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageItemViewModel
+     */
+    hospitalName?: string;
+    /**
+     * 
+     * @type {PackageStatus}
+     * @memberof HospitalPackageItemViewModel
+     */
+    packageStatus?: PackageStatus;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalPackageItemViewModel
+     */
+    packagePrice?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalPackageItemViewModel
+     */
+    managerCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalPackageItemViewModel
+     */
+    serviceCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalPackageItemViewModel
+     */
+    bookingCount?: number;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof HospitalPackageItemViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface HospitalPackageViewModel
+ */
+export interface HospitalPackageViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageViewModel
+     */
+    accomodation?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageViewModel
+     */
+    trnasfer?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageViewModel
+     */
+    bonus?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageViewModel
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalPackageViewModel
+     */
+    hospitalName?: string;
+    /**
+     * 
+     * @type {PackageStatus}
+     * @memberof HospitalPackageViewModel
+     */
+    packageStatus?: PackageStatus;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalPackageViewModel
+     */
+    packagePrice?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalPackageViewModel
+     */
+    managerCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalPackageViewModel
+     */
+    serviceCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalPackageViewModel
+     */
+    bookingCount?: number;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof HospitalPackageViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface HospitalPackagesViewModel
+ */
+export interface HospitalPackagesViewModel {
+    /**
+     * 
+     * @type {Array<HospitalPackageItemViewModel>}
+     * @memberof HospitalPackagesViewModel
+     */
+    items?: Array<HospitalPackageItemViewModel>;
+    /**
+     * 
+     * @type {PagedListMetaData}
+     * @memberof HospitalPackagesViewModel
+     */
+    metaData?: PagedListMetaData;
 }
 /**
  * 
@@ -5931,6 +6199,18 @@ export interface ManagerAffiliationViewModel {
      * @memberof ManagerAffiliationViewModel
      */
     countryName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagerAffiliationViewModel
+     */
+    cityName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagerAffiliationViewModel
+     */
+    stateName?: string;
 }
 /**
  * 
@@ -6206,13 +6486,13 @@ export enum OgcGeometryType {
  */
 export enum Ordinates {
     None = 'None',
-    Spatial1 = 'Spatial1',
     // Spatial1 = 'Spatial1',
-    Spatial2 = 'Spatial2',
+    Spatial1 = 'Spatial1',
     // Spatial2 = 'Spatial2',
+    Spatial2 = 'Spatial2',
     XY = 'XY',
-    Z = 'Z',
     // Z = 'Z',
+    Z = 'Z',
     XYZ = 'XYZ',
     Spatial4 = 'Spatial4',
     Spatial5 = 'Spatial5',
@@ -6319,16 +6599,16 @@ export interface Package {
     packagePrice?: number;
     /**
      * 
+     * @type {Array<PackageService>}
+     * @memberof Package
+     */
+    packageServices?: Array<PackageService>;
+    /**
+     * 
      * @type {Array<Manager>}
      * @memberof Package
      */
     managers?: Array<Manager>;
-    /**
-     * 
-     * @type {Array<Service>}
-     * @memberof Package
-     */
-    services?: Array<Service>;
     /**
      * 
      * @type {Array<Booking>}
@@ -6341,6 +6621,43 @@ export interface Package {
      * @memberof Package
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface PackageService
+ */
+export interface PackageService {
+    /**
+     * 
+     * @type {string}
+     * @memberof PackageService
+     */
+    packageId?: string;
+    /**
+     * 
+     * @type {Package}
+     * @memberof PackageService
+     */
+    _package?: Package;
+    /**
+     * 
+     * @type {string}
+     * @memberof PackageService
+     */
+    serviceId?: string;
+    /**
+     * 
+     * @type {Service}
+     * @memberof PackageService
+     */
+    service?: Service;
+    /**
+     * 
+     * @type {number}
+     * @memberof PackageService
+     */
+    order?: number;
 }
 /**
  * 
@@ -7452,6 +7769,18 @@ export interface Service {
     specialtyId?: string;
     /**
      * 
+     * @type {string}
+     * @memberof Service
+     */
+    packageServiceId?: string;
+    /**
+     * 
+     * @type {PackageService}
+     * @memberof Service
+     */
+    packageService?: PackageService;
+    /**
+     * 
      * @type {HospitalSpecialty}
      * @memberof Service
      */
@@ -7486,6 +7815,12 @@ export interface Service {
      * @memberof Service
      */
     order?: number;
+    /**
+     * 
+     * @type {Array<PackageService>}
+     * @memberof Service
+     */
+    packageServices?: Array<PackageService>;
     /**
      * 
      * @type {Array<Assessment>}
@@ -8594,6 +8929,79 @@ export interface UpdateHospitalCommand {
      * 
      * @type {AuditableEntity}
      * @memberof UpdateHospitalCommand
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface UpdateHospitalPackageCommand
+ */
+export interface UpdateHospitalPackageCommand {
+    /**
+     * 
+     * @type {PackageStatus}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    packageStatus?: PackageStatus;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    packagePrice?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    accomodation?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    trnasfer?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    bonus?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    hospitalName?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    managerCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    serviceCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    bookingCount?: number;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof UpdateHospitalPackageCommand
      */
     auditableEntity?: AuditableEntity;
 }
@@ -9816,16 +10224,22 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Sample request:        GET /api/v1/hospitals/1/articles
          * @summary Get all articles.
+         * @param {string} [id] 
+         * @param {string} [title] 
+         * @param {string} [description] 
+         * @param {object} [status] 
+         * @param {string} [userId] 
+         * @param {string} [userName] 
+         * @param {string} [hospitalId] 
+         * @param {string} [tag] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
-         * @param {string} [searchString] 
-         * @param {string} [hospitalId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsArticlesGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, hospitalId?: string, options: any = {}): RequestArgs {
+        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, userId?: string, userName?: string, hospitalId?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/articles`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -9835,6 +10249,38 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['Id'] = id;
+            }
+
+            if (title !== undefined) {
+                localVarQueryParameter['Title'] = title;
+            }
+
+            if (description !== undefined) {
+                localVarQueryParameter['Description'] = description;
+            }
+
+            if (status !== undefined) {
+                localVarQueryParameter['Status'] = status;
+            }
+
+            if (userId !== undefined) {
+                localVarQueryParameter['UserId'] = userId;
+            }
+
+            if (userName !== undefined) {
+                localVarQueryParameter['UserName'] = userName;
+            }
+
+            if (hospitalId !== undefined) {
+                localVarQueryParameter['HospitalId'] = hospitalId;
+            }
+
+            if (tag !== undefined) {
+                localVarQueryParameter['Tag'] = tag;
+            }
 
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
@@ -9852,14 +10298,6 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
 
             if (current !== undefined) {
                 localVarQueryParameter['Current'] = current;
-            }
-
-            if (searchString !== undefined) {
-                localVarQueryParameter['searchString'] = searchString;
-            }
-
-            if (hospitalId !== undefined) {
-                localVarQueryParameter['hospitalId'] = hospitalId;
             }
 
 
@@ -10081,17 +10519,23 @@ export const ArticlesApiFp = function(configuration?: Configuration) {
         /**
          * Sample request:        GET /api/v1/hospitals/1/articles
          * @summary Get all articles.
+         * @param {string} [id] 
+         * @param {string} [title] 
+         * @param {string} [description] 
+         * @param {object} [status] 
+         * @param {string} [userId] 
+         * @param {string} [userName] 
+         * @param {string} [hospitalId] 
+         * @param {string} [tag] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
-         * @param {string} [searchString] 
-         * @param {string} [hospitalId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsArticlesGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, hospitalId?: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ArticlesViewModel> {
-            const localVarAxiosArgs = ArticlesApiAxiosParamCreator(configuration).apiV1HospitalsArticlesGet(page, limit, lastRetrieved, current, searchString, hospitalId, options);
+        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, userId?: string, userName?: string, hospitalId?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ArticlesViewModel> {
+            const localVarAxiosArgs = ArticlesApiAxiosParamCreator(configuration).apiV1HospitalsArticlesGet(id, title, description, status, userId, userName, hospitalId, tag, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -10170,17 +10614,23 @@ export const ArticlesApiFactory = function (configuration?: Configuration, baseP
         /**
          * Sample request:        GET /api/v1/hospitals/1/articles
          * @summary Get all articles.
+         * @param {string} [id] 
+         * @param {string} [title] 
+         * @param {string} [description] 
+         * @param {object} [status] 
+         * @param {string} [userId] 
+         * @param {string} [userName] 
+         * @param {string} [hospitalId] 
+         * @param {string} [tag] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
-         * @param {string} [searchString] 
-         * @param {string} [hospitalId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsArticlesGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, hospitalId?: string, options?: any): AxiosPromise<ArticlesViewModel> {
-            return ArticlesApiFp(configuration).apiV1HospitalsArticlesGet(page, limit, lastRetrieved, current, searchString, hospitalId, options)(axios, basePath);
+        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, userId?: string, userName?: string, hospitalId?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel> {
+            return ArticlesApiFp(configuration).apiV1HospitalsArticlesGet(id, title, description, status, userId, userName, hospitalId, tag, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        DELETE /api/v1/hospitals/1/articles/1
@@ -10240,18 +10690,24 @@ export class ArticlesApi extends BaseAPI {
     /**
      * Sample request:        GET /api/v1/hospitals/1/articles
      * @summary Get all articles.
+     * @param {string} [id] 
+     * @param {string} [title] 
+     * @param {string} [description] 
+     * @param {object} [status] 
+     * @param {string} [userId] 
+     * @param {string} [userName] 
+     * @param {string} [hospitalId] 
+     * @param {string} [tag] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
      * @param {boolean} [current] 
-     * @param {string} [searchString] 
-     * @param {string} [hospitalId] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    public apiV1HospitalsArticlesGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, hospitalId?: string, options?: any) {
-        return ArticlesApiFp(this.configuration).apiV1HospitalsArticlesGet(page, limit, lastRetrieved, current, searchString, hospitalId, options)(this.axios, this.basePath);
+    public apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, userId?: string, userName?: string, hospitalId?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return ArticlesApiFp(this.configuration).apiV1HospitalsArticlesGet(id, title, description, status, userId, userName, hospitalId, tag, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
@@ -17631,6 +18087,551 @@ export class MoviesApi extends BaseAPI {
      */
     public apiV1MoviesPost(options?: any) {
         return MoviesApiFp(this.configuration).apiV1MoviesPost(options)(this.axios, this.basePath);
+    }
+
+}
+
+
+/**
+ * PackagesApi - axios parameter creator
+ * @export
+ */
+export const PackagesApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        DELETE /api/v1/hospitals/1/packages/1
+         * @summary Delete package.
+         * @param {string} hospitalId 
+         * @param {string} equipmentId 
+         * @param {string} packageId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdDelete.');
+            }
+            // verify required parameter 'equipmentId' is not null or undefined
+            if (equipmentId === null || equipmentId === undefined) {
+                throw new RequiredError('equipmentId','Required parameter equipmentId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdDelete.');
+            }
+            // verify required parameter 'packageId' is not null or undefined
+            if (packageId === null || packageId === undefined) {
+                throw new RequiredError('packageId','Required parameter packageId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdDelete.');
+            }
+            const localVarPath = `/api/v1/hospitals/{hospitalId}/packages/{packageId}`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
+                .replace(`{${"equipmentId"}}`, encodeURIComponent(String(equipmentId)))
+                .replace(`{${"packageId"}}`, encodeURIComponent(String(packageId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/packages/1
+         * @summary Get package.
+         * @param {string} hospitalId 
+         * @param {string} equipmentId 
+         * @param {string} packageId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdGet.');
+            }
+            // verify required parameter 'equipmentId' is not null or undefined
+            if (equipmentId === null || equipmentId === undefined) {
+                throw new RequiredError('equipmentId','Required parameter equipmentId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdGet.');
+            }
+            // verify required parameter 'packageId' is not null or undefined
+            if (packageId === null || packageId === undefined) {
+                throw new RequiredError('packageId','Required parameter packageId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdGet.');
+            }
+            const localVarPath = `/api/v1/hospitals/{hospitalId}/packages/{packageId}`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
+                .replace(`{${"equipmentId"}}`, encodeURIComponent(String(equipmentId)))
+                .replace(`{${"packageId"}}`, encodeURIComponent(String(packageId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
+         * @summary Update package.
+         * @param {string} hospitalId 
+         * @param {string} packageId 
+         * @param {UpdateHospitalPackageCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId: string, packageId: string, body?: UpdateHospitalPackageCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdPut.');
+            }
+            // verify required parameter 'packageId' is not null or undefined
+            if (packageId === null || packageId === undefined) {
+                throw new RequiredError('packageId','Required parameter packageId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdPut.');
+            }
+            const localVarPath = `/api/v1/hospitals/{hospitalId}/packages/{packageId}`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
+                .replace(`{${"packageId"}}`, encodeURIComponent(String(packageId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        POST /api/v1/hospitals/1/packages      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical package\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
+         * @summary Create an package and add to a hospital.
+         * @param {string} hospitalId 
+         * @param {CreateHospitalPackageCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPost(hospitalId: string, body?: CreateHospitalPackageCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPost.');
+            }
+            const localVarPath = `/api/v1/hospitals/{hospitalId}/packages`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/packages      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Medical\"      }
+         * @summary Get all packages.
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [hospitalId] 
+         * @param {string} [hospitalName] 
+         * @param {object} [packageStatus] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/hospitals/packages`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['Id'] = id;
+            }
+
+            if (name !== undefined) {
+                localVarQueryParameter['Name'] = name;
+            }
+
+            if (hospitalId !== undefined) {
+                localVarQueryParameter['HospitalId'] = hospitalId;
+            }
+
+            if (hospitalName !== undefined) {
+                localVarQueryParameter['HospitalName'] = hospitalName;
+            }
+
+            if (packageStatus !== undefined) {
+                localVarQueryParameter['PackageStatus'] = packageStatus;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * PackagesApi - functional programming interface
+ * @export
+ */
+export const PackagesApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        DELETE /api/v1/hospitals/1/packages/1
+         * @summary Delete package.
+         * @param {string} hospitalId 
+         * @param {string} equipmentId 
+         * @param {string} packageId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, equipmentId, packageId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/packages/1
+         * @summary Get package.
+         * @param {string} hospitalId 
+         * @param {string} equipmentId 
+         * @param {string} packageId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalPackageViewModel> {
+            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, equipmentId, packageId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
+         * @summary Update package.
+         * @param {string} hospitalId 
+         * @param {string} packageId 
+         * @param {UpdateHospitalPackageCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId: string, packageId: string, body?: UpdateHospitalPackageCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId, packageId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        POST /api/v1/hospitals/1/packages      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical package\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
+         * @summary Create an package and add to a hospital.
+         * @param {string} hospitalId 
+         * @param {CreateHospitalPackageCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPost(hospitalId: string, body?: CreateHospitalPackageCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPost(hospitalId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/packages      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Medical\"      }
+         * @summary Get all packages.
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [hospitalId] 
+         * @param {string} [hospitalName] 
+         * @param {object} [packageStatus] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalPackagesViewModel> {
+            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsPackagesGet(id, name, hospitalId, hospitalName, packageStatus, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * PackagesApi - factory interface
+ * @export
+ */
+export const PackagesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * Sample request:        DELETE /api/v1/hospitals/1/packages/1
+         * @summary Delete package.
+         * @param {string} hospitalId 
+         * @param {string} equipmentId 
+         * @param {string} packageId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options?: any): AxiosPromise<boolean> {
+            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, equipmentId, packageId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/packages/1
+         * @summary Get package.
+         * @param {string} hospitalId 
+         * @param {string} equipmentId 
+         * @param {string} packageId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options?: any): AxiosPromise<HospitalPackageViewModel> {
+            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, equipmentId, packageId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
+         * @summary Update package.
+         * @param {string} hospitalId 
+         * @param {string} packageId 
+         * @param {UpdateHospitalPackageCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId: string, packageId: string, body?: UpdateHospitalPackageCommand, options?: any): AxiosPromise<boolean> {
+            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId, packageId, body, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        POST /api/v1/hospitals/1/packages      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical package\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
+         * @summary Create an package and add to a hospital.
+         * @param {string} hospitalId 
+         * @param {CreateHospitalPackageCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdPackagesPost(hospitalId: string, body?: CreateHospitalPackageCommand, options?: any): AxiosPromise<string> {
+            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPost(hospitalId, body, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/packages      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Medical\"      }
+         * @summary Get all packages.
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [hospitalId] 
+         * @param {string} [hospitalName] 
+         * @param {object} [packageStatus] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalPackagesViewModel> {
+            return PackagesApiFp(configuration).apiV1HospitalsPackagesGet(id, name, hospitalId, hospitalName, packageStatus, page, limit, lastRetrieved, current, options)(axios, basePath);
+        },
+    };
+};
+
+/**
+ * PackagesApi - object-oriented interface
+ * @export
+ * @class PackagesApi
+ * @extends {BaseAPI}
+ */
+export class PackagesApi extends BaseAPI {
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/packages/1
+     * @summary Delete package.
+     * @param {string} hospitalId 
+     * @param {string} equipmentId 
+     * @param {string} packageId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PackagesApi
+     */
+    public apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options?: any) {
+        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, equipmentId, packageId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/packages/1
+     * @summary Get package.
+     * @param {string} hospitalId 
+     * @param {string} equipmentId 
+     * @param {string} packageId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PackagesApi
+     */
+    public apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options?: any) {
+        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, equipmentId, packageId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
+     * @summary Update package.
+     * @param {string} hospitalId 
+     * @param {string} packageId 
+     * @param {UpdateHospitalPackageCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PackagesApi
+     */
+    public apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId: string, packageId: string, body?: UpdateHospitalPackageCommand, options?: any) {
+        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId, packageId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/packages      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical package\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
+     * @summary Create an package and add to a hospital.
+     * @param {string} hospitalId 
+     * @param {CreateHospitalPackageCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PackagesApi
+     */
+    public apiV1HospitalsHospitalIdPackagesPost(hospitalId: string, body?: CreateHospitalPackageCommand, options?: any) {
+        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPost(hospitalId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/packages      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Medical\"      }
+     * @summary Get all packages.
+     * @param {string} [id] 
+     * @param {string} [name] 
+     * @param {string} [hospitalId] 
+     * @param {string} [hospitalName] 
+     * @param {object} [packageStatus] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PackagesApi
+     */
+    public apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return PackagesApiFp(this.configuration).apiV1HospitalsPackagesGet(id, name, hospitalId, hospitalName, packageStatus, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
 }
