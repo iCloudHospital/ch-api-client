@@ -537,22 +537,22 @@ export interface AuditableEntity {
     deletedBy?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof AuditableEntity
      */
-    createdDate?: Date;
+    createdDate?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof AuditableEntity
      */
-    updatedDate?: Date;
+    updatedDate?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof AuditableEntity
      */
-    deletedDate?: Date;
+    deletedDate?: string;
     /**
      * 
      * @type {boolean}
@@ -592,10 +592,10 @@ export interface Award {
     image?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof Award
      */
-    date?: Date;
+    date?: string;
 }
 /**
  * 
@@ -623,10 +623,10 @@ export interface AwardViewModel {
     image?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof AwardViewModel
      */
-    date?: Date;
+    date?: string;
 }
 /**
  * 
@@ -678,28 +678,28 @@ export interface Booking {
     applicationFee?: number;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof Booking
      */
-    approximateDateStart?: Date;
+    approximateDateStart?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof Booking
      */
-    approximateDateEnd?: Date;
+    approximateDateEnd?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof Booking
      */
-    confirmedDateStart?: Date;
+    confirmedDateStart?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof Booking
      */
-    confirmedDateEnd?: Date;
+    confirmedDateEnd?: string;
     /**
      * 
      * @type {BookingStatus}
@@ -848,28 +848,28 @@ export interface BookingItemViewModel {
     applicationFee?: number;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof BookingItemViewModel
      */
-    approximateDateStart?: Date;
+    approximateDateStart?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof BookingItemViewModel
      */
-    approximateDateEnd?: Date;
+    approximateDateEnd?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof BookingItemViewModel
      */
-    confirmedDateStart?: Date;
+    confirmedDateStart?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof BookingItemViewModel
      */
-    confirmedDateEnd?: Date;
+    confirmedDateEnd?: string;
     /**
      * 
      * @type {BookingStatus}
@@ -934,28 +934,28 @@ export interface BookingViewModel {
     applicationFee?: number;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof BookingViewModel
      */
-    approximateDateStart?: Date;
+    approximateDateStart?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof BookingViewModel
      */
-    approximateDateEnd?: Date;
+    approximateDateEnd?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof BookingViewModel
      */
-    confirmedDateStart?: Date;
+    confirmedDateStart?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof BookingViewModel
      */
-    confirmedDateEnd?: Date;
+    confirmedDateEnd?: string;
     /**
      * 
      * @type {BookingStatus}
@@ -1050,10 +1050,10 @@ export interface CHAdminItemViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CHAdminItemViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -1147,10 +1147,10 @@ export interface CHAdminViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CHAdminViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -1245,10 +1245,10 @@ export interface CHManagerItemViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CHManagerItemViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -1342,10 +1342,10 @@ export interface CHManagerViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CHManagerViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -1411,10 +1411,10 @@ export interface ChangeLog {
     actorId?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof ChangeLog
      */
-    createdDate?: Date;
+    createdDate?: string;
 }
 /**
  * 
@@ -1785,16 +1785,16 @@ export interface CreateBookingCommand {
     packageId?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CreateBookingCommand
      */
-    approximateDateStart?: Date;
+    approximateDateStart?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CreateBookingCommand
      */
-    approximateDateEnd?: Date;
+    approximateDateEnd?: string;
 }
 /**
  * 
@@ -1840,10 +1840,10 @@ export interface CreateCHAdminCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CreateCHAdminCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -1919,10 +1919,10 @@ export interface CreateCHManagerCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CreateCHManagerCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -2006,16 +2006,16 @@ export interface CreateDoctorCertificateCommand {
     certificate?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CreateDoctorCertificateCommand
      */
-    activeFrom?: Date;
+    activeFrom?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CreateDoctorCertificateCommand
      */
-    activeTo?: Date;
+    activeTo?: string;
 }
 /**
  * 
@@ -2109,10 +2109,10 @@ export interface CreateDoctorCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CreateDoctorCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -2433,10 +2433,10 @@ export interface CreateManagerCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CreateManagerCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -2512,10 +2512,10 @@ export interface CreatePartnerCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CreatePartnerCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -2597,10 +2597,10 @@ export interface CreatePatientCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof CreatePatientCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -3006,10 +3006,10 @@ export enum Dimension {
 export interface Doctor {
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof Doctor
      */
-    startPracticeDate?: Date;
+    startPracticeDate?: string;
     /**
      * 
      * @type {string}
@@ -3126,10 +3126,10 @@ export interface Doctor {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof Doctor
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<Device>}
@@ -3297,16 +3297,16 @@ export interface DoctorCertificate {
     normalizedCertificate?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorCertificate
      */
-    activeFrom?: Date;
+    activeFrom?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorCertificate
      */
-    activeTo?: Date;
+    activeTo?: string;
 }
 /**
  * 
@@ -3340,16 +3340,16 @@ export interface DoctorCertificateItemViewModel {
     certificate?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorCertificateItemViewModel
      */
-    activeFrom?: Date;
+    activeFrom?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorCertificateItemViewModel
      */
-    activeTo?: Date;
+    activeTo?: string;
 }
 /**
  * 
@@ -3383,16 +3383,16 @@ export interface DoctorCertificateViewModel {
     certificate?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorCertificateViewModel
      */
-    activeFrom?: Date;
+    activeFrom?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorCertificateViewModel
      */
-    activeTo?: Date;
+    activeTo?: string;
 }
 /**
  * 
@@ -3463,10 +3463,10 @@ export interface DoctorEducation {
     normalizedQualification?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorEducation
      */
-    graduationDate?: Date;
+    graduationDate?: string;
 }
 /**
  * 
@@ -3506,10 +3506,10 @@ export interface DoctorEducationItemViewModel {
     qualification?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorEducationItemViewModel
      */
-    graduationDate?: Date;
+    graduationDate?: string;
     /**
      * 
      * @type {number}
@@ -3561,10 +3561,10 @@ export interface DoctorEducationViewModel {
     qualification?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorEducationViewModel
      */
-    graduationDate?: Date;
+    graduationDate?: string;
     /**
      * 
      * @type {number}
@@ -3706,10 +3706,10 @@ export interface DoctorItemViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorItemViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -4197,10 +4197,10 @@ export interface DoctorSpecialtyViewModel {
 export interface DoctorViewModel {
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorViewModel
      */
-    startPracticeDate?: Date;
+    startPracticeDate?: string;
     /**
      * 
      * @type {number}
@@ -4347,10 +4347,10 @@ export interface DoctorViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof DoctorViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -6128,10 +6128,10 @@ export interface Manager {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof Manager
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<Device>}
@@ -6341,10 +6341,10 @@ export interface ManagerViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof ManagerViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -6523,13 +6523,13 @@ export enum OgcGeometryType {
  */
 export enum Ordinates {
     None = 'None',
-    // Spatial1 = 'Spatial1',
     Spatial1 = 'Spatial1',
-    // Spatial2 = 'Spatial2',
+    // Spatial1 = 'Spatial1',
     Spatial2 = 'Spatial2',
+    // Spatial2 = 'Spatial2',
     XY = 'XY',
-    // Z = 'Z',
     Z = 'Z',
+    // Z = 'Z',
     XYZ = 'XYZ',
     Spatial4 = 'Spatial4',
     Spatial5 = 'Spatial5',
@@ -6847,10 +6847,10 @@ export interface PartnerItemViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof PartnerItemViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -6956,10 +6956,10 @@ export interface PartnerViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof PartnerViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -7108,10 +7108,10 @@ export interface Patient {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof Patient
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<Device>}
@@ -7211,10 +7211,10 @@ export interface PatientItemViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof PatientItemViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -7326,10 +7326,10 @@ export interface PatientViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof PatientViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -8283,10 +8283,10 @@ export interface SpecialtyTypeItemViewModel {
     marketingType?: MarketingType;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof SpecialtyTypeItemViewModel
      */
-    created?: Date;
+    created?: string;
 }
 /**
  * 
@@ -8320,10 +8320,10 @@ export interface SpecialtyTypeViewModel {
     marketingType?: MarketingType;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof SpecialtyTypeViewModel
      */
-    created?: Date;
+    created?: string;
 }
 /**
  * 
@@ -8499,16 +8499,16 @@ export interface UpdateArticleCommand {
 export interface UpdateBookingCommand {
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdateBookingCommand
      */
-    approximateDateStart?: Date;
+    approximateDateStart?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdateBookingCommand
      */
-    approximateDateEnd?: Date;
+    approximateDateEnd?: string;
 }
 /**
  * 
@@ -8548,10 +8548,10 @@ export interface UpdateCHAdminCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdateCHAdminCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<UserLanguageViewModel>}
@@ -8603,10 +8603,10 @@ export interface UpdateCHManagerCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdateCHManagerCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<UserLanguageViewModel>}
@@ -8678,16 +8678,16 @@ export interface UpdateDoctorCertificateCommand {
     certificate?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdateDoctorCertificateCommand
      */
-    activeFrom?: Date;
+    activeFrom?: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdateDoctorCertificateCommand
      */
-    activeTo?: Date;
+    activeTo?: string;
 }
 /**
  * 
@@ -8697,10 +8697,10 @@ export interface UpdateDoctorCertificateCommand {
 export interface UpdateDoctorCommand {
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdateDoctorCommand
      */
-    startPracticeDate?: Date;
+    startPracticeDate?: string;
     /**
      * 
      * @type {string}
@@ -8769,10 +8769,10 @@ export interface UpdateDoctorCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdateDoctorCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<UserLanguageViewModel>}
@@ -9160,10 +9160,10 @@ export interface UpdateManagerCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdateManagerCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<UserLanguageViewModel>}
@@ -9215,10 +9215,10 @@ export interface UpdatePartnerCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdatePartnerCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<UserLanguageViewModel>}
@@ -9270,10 +9270,10 @@ export interface UpdatePatientCommand {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdatePatientCommand
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<UserLanguageViewModel>}
@@ -9436,10 +9436,10 @@ export interface UpdateSpecialtyTypeCommand {
     marketingType?: MarketingType;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UpdateSpecialtyTypeCommand
      */
-    created?: Date;
+    created?: string;
 }
 /**
  * 
@@ -9509,10 +9509,10 @@ export interface User {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof User
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {Array<Device>}
@@ -9612,10 +9612,10 @@ export interface UserItemViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UserItemViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -9873,10 +9873,10 @@ export interface UserViewModel {
     gender?: Gender;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof UserViewModel
      */
-    dateOfBirth?: Date;
+    dateOfBirth?: string;
     /**
      * 
      * @type {AuditableEntity}
@@ -9944,7 +9944,8 @@ export const AffiliationsApiAxiosParamCreator = function (configuration?: Config
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -9994,7 +9995,8 @@ export const AffiliationsApiAxiosParamCreator = function (configuration?: Config
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -10044,7 +10046,8 @@ export const AffiliationsApiAxiosParamCreator = function (configuration?: Config
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -10094,7 +10097,8 @@ export const AffiliationsApiAxiosParamCreator = function (configuration?: Config
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -10308,7 +10312,7 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [tag] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -10383,7 +10387,8 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -10433,7 +10438,8 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -10474,7 +10480,8 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -10527,7 +10534,8 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -10576,7 +10584,8 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -10608,7 +10617,7 @@ export const ArticlesApiFp = function(configuration?: Configuration) {
          * @param {string} [tag] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -10704,7 +10713,7 @@ export const ArticlesApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [tag] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -10781,7 +10790,7 @@ export class ArticlesApi extends BaseAPI {
      * @param {string} [tag] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -10890,7 +10899,8 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -10934,7 +10944,8 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -10981,7 +10992,8 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -10995,7 +11007,7 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
          * @summary Get all bookings.
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [searchString] 
          * @param {boolean} [isOpen] 
@@ -11003,7 +11015,7 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options: any = {}): RequestArgs {
+        apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: string, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/bookings`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -11058,7 +11070,8 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -11099,7 +11112,8 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -11165,7 +11179,7 @@ export const BookingsApiFp = function(configuration?: Configuration) {
          * @summary Get all bookings.
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [searchString] 
          * @param {boolean} [isOpen] 
@@ -11173,7 +11187,7 @@ export const BookingsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<BookingsViewModel> {
+        apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: string, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<BookingsViewModel> {
             const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsGet(page, limit, lastRetrieved, current, searchString, isOpen, bookingStatus, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -11239,7 +11253,7 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
          * @summary Get all bookings.
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [searchString] 
          * @param {boolean} [isOpen] 
@@ -11247,7 +11261,7 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options?: any): AxiosPromise<BookingsViewModel> {
+        apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: string, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options?: any): AxiosPromise<BookingsViewModel> {
             return BookingsApiFp(configuration).apiV1BookingsGet(page, limit, lastRetrieved, current, searchString, isOpen, bookingStatus, options)(axios, basePath);
         },
         /**
@@ -11312,7 +11326,7 @@ export class BookingsApi extends BaseAPI {
      * @summary Get all bookings.
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {string} [searchString] 
      * @param {boolean} [isOpen] 
@@ -11321,7 +11335,7 @@ export class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    public apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options?: any) {
+    public apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: string, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options?: any) {
         return BookingsApiFp(this.configuration).apiV1BookingsGet(page, limit, lastRetrieved, current, searchString, isOpen, bookingStatus, options)(this.axios, this.basePath);
     }
 
@@ -11383,7 +11397,8 @@ export const CHAdminsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -11427,7 +11442,8 @@ export const CHAdminsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -11474,7 +11490,8 @@ export const CHAdminsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -11490,16 +11507,16 @@ export const CHAdminsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/chadmins`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -11570,7 +11587,8 @@ export const CHAdminsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -11611,7 +11629,8 @@ export const CHAdminsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -11679,16 +11698,16 @@ export const CHAdminsApiFp = function(configuration?: Configuration) {
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CHAdminsViewModel> {
+        apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CHAdminsViewModel> {
             const localVarAxiosArgs = CHAdminsApiAxiosParamCreator(configuration).apiV1ChadminsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -11756,16 +11775,16 @@ export const CHAdminsApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CHAdminsViewModel> {
+        apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<CHAdminsViewModel> {
             return CHAdminsApiFp(configuration).apiV1ChadminsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -11832,17 +11851,17 @@ export class CHAdminsApi extends BaseAPI {
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
-     * @param {Date} [dateOfBirth] 
-     * @param {Date} [created] 
+     * @param {string} [dateOfBirth] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CHAdminsApi
      */
-    public apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return CHAdminsApiFp(this.configuration).apiV1ChadminsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -11904,7 +11923,8 @@ export const CHManagersApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -11954,7 +11974,8 @@ export const CHManagersApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -12001,7 +12022,8 @@ export const CHManagersApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -12017,16 +12039,16 @@ export const CHManagersApiAxiosParamCreator = function (configuration?: Configur
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/chmanagers`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -12097,7 +12119,8 @@ export const CHManagersApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -12138,7 +12161,8 @@ export const CHManagersApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -12207,16 +12231,16 @@ export const CHManagersApiFp = function(configuration?: Configuration) {
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CHManagersViewModel> {
+        apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CHManagersViewModel> {
             const localVarAxiosArgs = CHManagersApiAxiosParamCreator(configuration).apiV1ChmanagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -12285,16 +12309,16 @@ export const CHManagersApiFactory = function (configuration?: Configuration, bas
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CHManagersViewModel> {
+        apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<CHManagersViewModel> {
             return CHManagersApiFp(configuration).apiV1ChmanagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -12362,17 +12386,17 @@ export class CHManagersApi extends BaseAPI {
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
-     * @param {Date} [dateOfBirth] 
-     * @param {Date} [created] 
+     * @param {string} [dateOfBirth] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CHManagersApi
      */
-    public apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return CHManagersApiFp(this.configuration).apiV1ChmanagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -12434,7 +12458,8 @@ export const CountriesApiAxiosParamCreator = function (configuration?: Configura
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -12469,7 +12494,8 @@ export const CountriesApiAxiosParamCreator = function (configuration?: Configura
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -12516,7 +12542,8 @@ export const CountriesApiAxiosParamCreator = function (configuration?: Configura
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -12531,15 +12558,15 @@ export const CountriesApiAxiosParamCreator = function (configuration?: Configura
          * @param {string} [id] 
          * @param {string} [name] 
          * @param {string} [description] 
-         * @param {Date} [createdDate] 
+         * @param {string} [createdDate] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CountriesGet(id?: string, name?: string, description?: string, createdDate?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1CountriesGet(id?: string, name?: string, description?: string, createdDate?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/countries`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -12591,7 +12618,8 @@ export const CountriesApiAxiosParamCreator = function (configuration?: Configura
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -12632,7 +12660,8 @@ export const CountriesApiAxiosParamCreator = function (configuration?: Configura
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -12699,15 +12728,15 @@ export const CountriesApiFp = function(configuration?: Configuration) {
          * @param {string} [id] 
          * @param {string} [name] 
          * @param {string} [description] 
-         * @param {Date} [createdDate] 
+         * @param {string} [createdDate] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CountriesGet(id?: string, name?: string, description?: string, createdDate?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CountriesViewModel> {
+        apiV1CountriesGet(id?: string, name?: string, description?: string, createdDate?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CountriesViewModel> {
             const localVarAxiosArgs = CountriesApiAxiosParamCreator(configuration).apiV1CountriesGet(id, name, description, createdDate, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -12774,15 +12803,15 @@ export const CountriesApiFactory = function (configuration?: Configuration, base
          * @param {string} [id] 
          * @param {string} [name] 
          * @param {string} [description] 
-         * @param {Date} [createdDate] 
+         * @param {string} [createdDate] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CountriesGet(id?: string, name?: string, description?: string, createdDate?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CountriesViewModel> {
+        apiV1CountriesGet(id?: string, name?: string, description?: string, createdDate?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<CountriesViewModel> {
             return CountriesApiFp(configuration).apiV1CountriesGet(id, name, description, createdDate, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -12848,16 +12877,16 @@ export class CountriesApi extends BaseAPI {
      * @param {string} [id] 
      * @param {string} [name] 
      * @param {string} [description] 
-     * @param {Date} [createdDate] 
+     * @param {string} [createdDate] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CountriesApi
      */
-    public apiV1CountriesGet(id?: string, name?: string, description?: string, createdDate?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1CountriesGet(id?: string, name?: string, description?: string, createdDate?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return CountriesApiFp(this.configuration).apiV1CountriesGet(id, name, description, createdDate, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -12892,12 +12921,12 @@ export const DepartmentApiAxiosParamCreator = function (configuration?: Configur
          * @param {string} [additionalInfo] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/departments`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -12951,7 +12980,8 @@ export const DepartmentApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13001,7 +13031,8 @@ export const DepartmentApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13042,7 +13073,8 @@ export const DepartmentApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13095,7 +13127,8 @@ export const DepartmentApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -13150,7 +13183,8 @@ export const DepartmentApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -13178,12 +13212,12 @@ export const DepartmentApiFp = function(configuration?: Configuration) {
          * @param {string} [additionalInfo] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepartmentsViewModel> {
+        apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepartmentsViewModel> {
             const localVarAxiosArgs = DepartmentApiAxiosParamCreator(configuration).apiV1HospitalsDepartmentsGet(id, hospitalId, hospitalName, name, additionalInfo, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -13271,12 +13305,12 @@ export const DepartmentApiFactory = function (configuration?: Configuration, bas
          * @param {string} [additionalInfo] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DepartmentsViewModel> {
+        apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<DepartmentsViewModel> {
             return DepartmentApiFp(configuration).apiV1HospitalsDepartmentsGet(id, hospitalId, hospitalName, name, additionalInfo, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -13345,13 +13379,13 @@ export class DepartmentApi extends BaseAPI {
      * @param {string} [additionalInfo] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DepartmentApi
      */
-    public apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return DepartmentApiFp(this.configuration).apiV1HospitalsDepartmentsGet(id, hospitalId, hospitalName, name, additionalInfo, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -13425,16 +13459,16 @@ export const DoctorCertificatesApiAxiosParamCreator = function (configuration?: 
          * @param {string} [doctorId] 
          * @param {string} [doctorName] 
          * @param {string} [certificate] 
-         * @param {Date} [activeFrom] 
-         * @param {Date} [activeTo] 
+         * @param {string} [activeFrom] 
+         * @param {string} [activeTo] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: Date, activeTo?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: string, activeTo?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/doctors/certificates`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -13496,7 +13530,8 @@ export const DoctorCertificatesApiAxiosParamCreator = function (configuration?: 
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13546,7 +13581,8 @@ export const DoctorCertificatesApiAxiosParamCreator = function (configuration?: 
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13587,7 +13623,8 @@ export const DoctorCertificatesApiAxiosParamCreator = function (configuration?: 
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13640,7 +13677,8 @@ export const DoctorCertificatesApiAxiosParamCreator = function (configuration?: 
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -13689,7 +13727,8 @@ export const DoctorCertificatesApiAxiosParamCreator = function (configuration?: 
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -13714,16 +13753,16 @@ export const DoctorCertificatesApiFp = function(configuration?: Configuration) {
          * @param {string} [doctorId] 
          * @param {string} [doctorName] 
          * @param {string} [certificate] 
-         * @param {Date} [activeFrom] 
-         * @param {Date} [activeTo] 
+         * @param {string} [activeFrom] 
+         * @param {string} [activeTo] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: Date, activeTo?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorCertificatesViewModel> {
+        apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: string, activeTo?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorCertificatesViewModel> {
             const localVarAxiosArgs = DoctorCertificatesApiAxiosParamCreator(configuration).apiV1DoctorsCertificatesGet(id, doctorId, doctorName, certificate, activeFrom, activeTo, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -13807,16 +13846,16 @@ export const DoctorCertificatesApiFactory = function (configuration?: Configurat
          * @param {string} [doctorId] 
          * @param {string} [doctorName] 
          * @param {string} [certificate] 
-         * @param {Date} [activeFrom] 
-         * @param {Date} [activeTo] 
+         * @param {string} [activeFrom] 
+         * @param {string} [activeTo] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: Date, activeTo?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorCertificatesViewModel> {
+        apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: string, activeTo?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<DoctorCertificatesViewModel> {
             return DoctorCertificatesApiFp(configuration).apiV1DoctorsCertificatesGet(id, doctorId, doctorName, certificate, activeFrom, activeTo, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -13881,17 +13920,17 @@ export class DoctorCertificatesApi extends BaseAPI {
      * @param {string} [doctorId] 
      * @param {string} [doctorName] 
      * @param {string} [certificate] 
-     * @param {Date} [activeFrom] 
-     * @param {Date} [activeTo] 
+     * @param {string} [activeFrom] 
+     * @param {string} [activeTo] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DoctorCertificatesApi
      */
-    public apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: Date, activeTo?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: string, activeTo?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return DoctorCertificatesApiFp(this.configuration).apiV1DoctorsCertificatesGet(id, doctorId, doctorName, certificate, activeFrom, activeTo, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -14000,7 +14039,8 @@ export const DoctorReviewsApiAxiosParamCreator = function (configuration?: Confi
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -14041,7 +14081,8 @@ export const DoctorReviewsApiAxiosParamCreator = function (configuration?: Confi
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -14094,7 +14135,8 @@ export const DoctorReviewsApiAxiosParamCreator = function (configuration?: Confi
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -14149,7 +14191,8 @@ export const DoctorReviewsApiAxiosParamCreator = function (configuration?: Confi
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -14169,15 +14212,15 @@ export const DoctorReviewsApiAxiosParamCreator = function (configuration?: Confi
          * @param {boolean} [recommended] 
          * @param {object} [reviewCategory] 
          * @param {number} [rate] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/doctors/reviews`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -14249,7 +14292,8 @@ export const DoctorReviewsApiAxiosParamCreator = function (configuration?: Confi
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -14338,15 +14382,15 @@ export const DoctorReviewsApiFp = function(configuration?: Configuration) {
          * @param {boolean} [recommended] 
          * @param {object} [reviewCategory] 
          * @param {number} [rate] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorReviewsViewModel> {
+        apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorReviewsViewModel> {
             const localVarAxiosArgs = DoctorReviewsApiAxiosParamCreator(configuration).apiV1DoctorsReviewsGet(doctorId, doctorName, patientId, patientName, body, recommended, reviewCategory, rate, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -14419,15 +14463,15 @@ export const DoctorReviewsApiFactory = function (configuration?: Configuration, 
          * @param {boolean} [recommended] 
          * @param {object} [reviewCategory] 
          * @param {number} [rate] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorReviewsViewModel> {
+        apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<DoctorReviewsViewModel> {
             return DoctorReviewsApiFp(configuration).apiV1DoctorsReviewsGet(doctorId, doctorName, patientId, patientName, body, recommended, reviewCategory, rate, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
     };
@@ -14505,16 +14549,16 @@ export class DoctorReviewsApi extends BaseAPI {
      * @param {boolean} [recommended] 
      * @param {object} [reviewCategory] 
      * @param {number} [rate] 
-     * @param {Date} [created] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DoctorReviewsApi
      */
-    public apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return DoctorReviewsApiFp(this.configuration).apiV1DoctorsReviewsGet(doctorId, doctorName, patientId, patientName, body, recommended, reviewCategory, rate, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -14570,7 +14614,8 @@ export const DoctorSpecialtiesApiAxiosParamCreator = function (configuration?: C
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -14626,7 +14671,8 @@ export const DoctorSpecialtiesApiAxiosParamCreator = function (configuration?: C
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -14788,7 +14834,8 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -14823,7 +14870,8 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -14870,7 +14918,8 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -14886,11 +14935,11 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [countryId] 
          * @param {string} [hospitalId] 
@@ -14898,7 +14947,7 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, options: any = {}): RequestArgs {
+        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/doctors`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -14972,7 +15021,8 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -15013,7 +15063,8 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -15081,11 +15132,11 @@ export const DoctorsApiFp = function(configuration?: Configuration) {
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [countryId] 
          * @param {string} [hospitalId] 
@@ -15093,7 +15144,7 @@ export const DoctorsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorsViewModel> {
+        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorsViewModel> {
             const localVarAxiosArgs = DoctorsApiAxiosParamCreator(configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, countryId, hospitalId, marketingType, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -15161,11 +15212,11 @@ export const DoctorsApiFactory = function (configuration?: Configuration, basePa
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [countryId] 
          * @param {string} [hospitalId] 
@@ -15173,7 +15224,7 @@ export const DoctorsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, options?: any): AxiosPromise<DoctorsViewModel> {
+        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, options?: any): AxiosPromise<DoctorsViewModel> {
             return DoctorsApiFp(configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, countryId, hospitalId, marketingType, options)(axios, basePath);
         },
         /**
@@ -15240,11 +15291,11 @@ export class DoctorsApi extends BaseAPI {
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
-     * @param {Date} [dateOfBirth] 
-     * @param {Date} [created] 
+     * @param {string} [dateOfBirth] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {string} [countryId] 
      * @param {string} [hospitalId] 
@@ -15253,7 +15304,7 @@ export class DoctorsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    public apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, options?: any) {
+    public apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, options?: any) {
         return DoctorsApiFp(this.configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, countryId, hospitalId, marketingType, options)(this.axios, this.basePath);
     }
 
@@ -15286,15 +15337,15 @@ export const EquipmentsApiAxiosParamCreator = function (configuration?: Configur
          * @param {string} [description] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsEquipmentsGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsEquipmentsGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/equipments`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -15354,7 +15405,8 @@ export const EquipmentsApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -15404,7 +15456,8 @@ export const EquipmentsApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -15445,7 +15498,8 @@ export const EquipmentsApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -15498,7 +15552,8 @@ export const EquipmentsApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -15547,7 +15602,8 @@ export const EquipmentsApiAxiosParamCreator = function (configuration?: Configur
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -15573,15 +15629,15 @@ export const EquipmentsApiFp = function(configuration?: Configuration) {
          * @param {string} [description] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsEquipmentsGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<EquipmentsViewModel> {
+        apiV1HospitalsEquipmentsGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<EquipmentsViewModel> {
             const localVarAxiosArgs = EquipmentsApiAxiosParamCreator(configuration).apiV1HospitalsEquipmentsGet(id, name, description, hospitalId, hospitalName, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -15666,15 +15722,15 @@ export const EquipmentsApiFactory = function (configuration?: Configuration, bas
          * @param {string} [description] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsEquipmentsGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<EquipmentsViewModel> {
+        apiV1HospitalsEquipmentsGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<EquipmentsViewModel> {
             return EquipmentsApiFp(configuration).apiV1HospitalsEquipmentsGet(id, name, description, hospitalId, hospitalName, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -15740,16 +15796,16 @@ export class EquipmentsApi extends BaseAPI {
      * @param {string} [description] 
      * @param {string} [hospitalId] 
      * @param {string} [hospitalName] 
-     * @param {Date} [created] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof EquipmentsApi
      */
-    public apiV1HospitalsEquipmentsGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1HospitalsEquipmentsGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return EquipmentsApiFp(this.configuration).apiV1HospitalsEquipmentsGet(id, name, description, hospitalId, hospitalName, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -15858,7 +15914,8 @@ export const HospitalReviewsApiAxiosParamCreator = function (configuration?: Con
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -15899,7 +15956,8 @@ export const HospitalReviewsApiAxiosParamCreator = function (configuration?: Con
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -15952,7 +16010,8 @@ export const HospitalReviewsApiAxiosParamCreator = function (configuration?: Con
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -16007,7 +16066,8 @@ export const HospitalReviewsApiAxiosParamCreator = function (configuration?: Con
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -16027,15 +16087,15 @@ export const HospitalReviewsApiAxiosParamCreator = function (configuration?: Con
          * @param {boolean} [recommended] 
          * @param {object} [reviewCategory] 
          * @param {number} [rate] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/reviews`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -16107,7 +16167,8 @@ export const HospitalReviewsApiAxiosParamCreator = function (configuration?: Con
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -16196,15 +16257,15 @@ export const HospitalReviewsApiFp = function(configuration?: Configuration) {
          * @param {boolean} [recommended] 
          * @param {object} [reviewCategory] 
          * @param {number} [rate] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalReviewsViewModel> {
+        apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalReviewsViewModel> {
             const localVarAxiosArgs = HospitalReviewsApiAxiosParamCreator(configuration).apiV1HospitalsReviewsGet(patientId, patientName, hospitalId, hospitalName, body, recommended, reviewCategory, rate, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -16277,15 +16338,15 @@ export const HospitalReviewsApiFactory = function (configuration?: Configuration
          * @param {boolean} [recommended] 
          * @param {object} [reviewCategory] 
          * @param {number} [rate] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalReviewsViewModel> {
+        apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<HospitalReviewsViewModel> {
             return HospitalReviewsApiFp(configuration).apiV1HospitalsReviewsGet(patientId, patientName, hospitalId, hospitalName, body, recommended, reviewCategory, rate, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
     };
@@ -16363,16 +16424,16 @@ export class HospitalReviewsApi extends BaseAPI {
      * @param {boolean} [recommended] 
      * @param {object} [reviewCategory] 
      * @param {number} [rate] 
-     * @param {Date} [created] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof HospitalReviewsApi
      */
-    public apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return HospitalReviewsApiFp(this.configuration).apiV1HospitalsReviewsGet(patientId, patientName, hospitalId, hospitalName, body, recommended, reviewCategory, rate, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -16428,7 +16489,8 @@ export const HospitalSpecialtiesApiAxiosParamCreator = function (configuration?:
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -16478,7 +16540,8 @@ export const HospitalSpecialtiesApiAxiosParamCreator = function (configuration?:
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -16531,7 +16594,8 @@ export const HospitalSpecialtiesApiAxiosParamCreator = function (configuration?:
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -16549,15 +16613,15 @@ export const HospitalSpecialtiesApiAxiosParamCreator = function (configuration?:
          * @param {string} [specialtyName] 
          * @param {string} [specialtyTypeId] 
          * @param {object} [marketingType] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/specialties`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -16621,7 +16685,8 @@ export const HospitalSpecialtiesApiAxiosParamCreator = function (configuration?:
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -16692,15 +16757,15 @@ export const HospitalSpecialtiesApiFp = function(configuration?: Configuration) 
          * @param {string} [specialtyName] 
          * @param {string} [specialtyTypeId] 
          * @param {object} [marketingType] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalSpecialtiesViewModel> {
+        apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalSpecialtiesViewModel> {
             const localVarAxiosArgs = HospitalSpecialtiesApiAxiosParamCreator(configuration).apiV1HospitalsSpecialtiesGet(hospitalId, hospitalName, specialtyId, specialtyName, specialtyTypeId, marketingType, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -16759,15 +16824,15 @@ export const HospitalSpecialtiesApiFactory = function (configuration?: Configura
          * @param {string} [specialtyName] 
          * @param {string} [specialtyTypeId] 
          * @param {object} [marketingType] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalSpecialtiesViewModel> {
+        apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<HospitalSpecialtiesViewModel> {
             return HospitalSpecialtiesApiFp(configuration).apiV1HospitalsSpecialtiesGet(hospitalId, hospitalName, specialtyId, specialtyName, specialtyTypeId, marketingType, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
     };
@@ -16829,16 +16894,16 @@ export class HospitalSpecialtiesApi extends BaseAPI {
      * @param {string} [specialtyName] 
      * @param {string} [specialtyTypeId] 
      * @param {object} [marketingType] 
-     * @param {Date} [created] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof HospitalSpecialtiesApi
      */
-    public apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return HospitalSpecialtiesApiFp(this.configuration).apiV1HospitalsSpecialtiesGet(hospitalId, hospitalName, specialtyId, specialtyName, specialtyTypeId, marketingType, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -16858,16 +16923,16 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {string} [countryId] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -16927,7 +16992,8 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -16971,7 +17037,8 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -17006,7 +17073,8 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -17053,7 +17121,8 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -17096,7 +17165,8 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -17121,16 +17191,16 @@ export const HospitalsApiFp = function(configuration?: Configuration) {
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {string} [countryId] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
+        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
             const localVarAxiosArgs = HospitalsApiAxiosParamCreator(configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -17210,16 +17280,16 @@ export const HospitalsApiFactory = function (configuration?: Configuration, base
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {string} [countryId] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
+        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
             return HospitalsApiFp(configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -17280,17 +17350,17 @@ export class HospitalsApi extends BaseAPI {
      * @param {string} [name] 
      * @param {string} [description] 
      * @param {string} [countryId] 
-     * @param {Date} [created] 
+     * @param {string} [created] 
      * @param {object} [marketingType] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    public apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return HospitalsApiFp(this.configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -17383,7 +17453,8 @@ export const IdentityApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -17490,7 +17561,8 @@ export const ImagesApiAxiosParamCreator = function (configuration?: Configuratio
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -17571,17 +17643,17 @@ export const ManagersApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [hospitalId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options: any = {}): RequestArgs {
+        apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, hospitalId?: string, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/managers`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -17647,7 +17719,8 @@ export const ManagersApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -17691,7 +17764,8 @@ export const ManagersApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -17726,7 +17800,8 @@ export const ManagersApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -17773,7 +17848,8 @@ export const ManagersApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -17816,7 +17892,8 @@ export const ManagersApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -17841,17 +17918,17 @@ export const ManagersApiFp = function(configuration?: Configuration) {
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [hospitalId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagersViewModel> {
+        apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, hospitalId?: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagersViewModel> {
             const localVarAxiosArgs = ManagersApiAxiosParamCreator(configuration).apiV1ManagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -17931,17 +18008,17 @@ export const ManagersApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {string} [hospitalId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): AxiosPromise<ManagersViewModel> {
+        apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, hospitalId?: string, options?: any): AxiosPromise<ManagersViewModel> {
             return ManagersApiFp(configuration).apiV1ManagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, options)(axios, basePath);
         },
         /**
@@ -18002,18 +18079,18 @@ export class ManagersApi extends BaseAPI {
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
-     * @param {Date} [dateOfBirth] 
-     * @param {Date} [created] 
+     * @param {string} [dateOfBirth] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {string} [hospitalId] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ManagersApi
      */
-    public apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any) {
+    public apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, hospitalId?: string, options?: any) {
         return ManagersApiFp(this.configuration).apiV1ManagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, options)(this.axios, this.basePath);
     }
 
@@ -18105,7 +18182,8 @@ export const MoviesApiAxiosParamCreator = function (configuration?: Configuratio
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -18228,7 +18306,8 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -18275,7 +18354,8 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -18328,7 +18408,8 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -18377,7 +18458,8 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -18396,12 +18478,12 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {object} [packageStatus] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/packages`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -18455,7 +18537,8 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -18544,12 +18627,12 @@ export const PackagesApiFp = function(configuration?: Configuration) {
          * @param {object} [packageStatus] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalPackagesViewModel> {
+        apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalPackagesViewModel> {
             const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsPackagesGet(id, name, hospitalId, hospitalName, packageStatus, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -18622,12 +18705,12 @@ export const PackagesApiFactory = function (configuration?: Configuration, baseP
          * @param {object} [packageStatus] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalPackagesViewModel> {
+        apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<HospitalPackagesViewModel> {
             return PackagesApiFp(configuration).apiV1HospitalsPackagesGet(id, name, hospitalId, hospitalName, packageStatus, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
     };
@@ -18705,13 +18788,13 @@ export class PackagesApi extends BaseAPI {
      * @param {object} [packageStatus] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PackagesApi
      */
-    public apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return PackagesApiFp(this.configuration).apiV1HospitalsPackagesGet(id, name, hospitalId, hospitalName, packageStatus, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -18731,16 +18814,16 @@ export const PartnersApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/partners`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -18802,7 +18885,8 @@ export const PartnersApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -18846,7 +18930,8 @@ export const PartnersApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -18881,7 +18966,8 @@ export const PartnersApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -18928,7 +19014,8 @@ export const PartnersApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -18971,7 +19058,8 @@ export const PartnersApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -18996,16 +19084,16 @@ export const PartnersApiFp = function(configuration?: Configuration) {
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnersViewModel> {
+        apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnersViewModel> {
             const localVarAxiosArgs = PartnersApiAxiosParamCreator(configuration).apiV1PartnersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -19085,16 +19173,16 @@ export const PartnersApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<PartnersViewModel> {
+        apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<PartnersViewModel> {
             return PartnersApiFp(configuration).apiV1PartnersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -19155,17 +19243,17 @@ export class PartnersApi extends BaseAPI {
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
-     * @param {Date} [dateOfBirth] 
-     * @param {Date} [created] 
+     * @param {string} [dateOfBirth] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PartnersApi
      */
-    public apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return PartnersApiFp(this.configuration).apiV1PartnersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -19234,16 +19322,16 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/patients`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -19305,7 +19393,8 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -19349,7 +19438,8 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -19384,7 +19474,8 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -19431,7 +19522,8 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -19474,7 +19566,8 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -19499,16 +19592,16 @@ export const PatientsApiFp = function(configuration?: Configuration) {
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PatientsViewModel> {
+        apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PatientsViewModel> {
             const localVarAxiosArgs = PatientsApiAxiosParamCreator(configuration).apiV1PatientsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -19588,16 +19681,16 @@ export const PatientsApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
-         * @param {Date} [dateOfBirth] 
-         * @param {Date} [created] 
+         * @param {string} [dateOfBirth] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<PatientsViewModel> {
+        apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<PatientsViewModel> {
             return PatientsApiFp(configuration).apiV1PatientsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -19658,17 +19751,17 @@ export class PatientsApi extends BaseAPI {
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
-     * @param {Date} [dateOfBirth] 
-     * @param {Date} [created] 
+     * @param {string} [dateOfBirth] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PatientsApi
      */
-    public apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return PatientsApiFp(this.configuration).apiV1PatientsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -19764,7 +19857,8 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -19804,7 +19898,8 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -19963,7 +20058,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -20021,7 +20117,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -20068,7 +20165,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -20127,7 +20225,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -20182,7 +20281,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -20218,7 +20318,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -20238,15 +20339,15 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [specialtyTypeName] 
          * @param {object} [marketingType] 
          * @param {object} [procedure] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/services`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -20326,7 +20427,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -20450,15 +20552,15 @@ export const ServicesApiFp = function(configuration?: Configuration) {
          * @param {string} [specialtyTypeName] 
          * @param {object} [marketingType] 
          * @param {object} [procedure] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesViewModel> {
+        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesViewModel> {
             const localVarAxiosArgs = ServicesApiAxiosParamCreator(configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -20558,15 +20660,15 @@ export const ServicesApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [specialtyTypeName] 
          * @param {object} [marketingType] 
          * @param {object} [procedure] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel> {
+        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<ServicesViewModel> {
             return ServicesApiFp(configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
     };
@@ -20675,16 +20777,16 @@ export class ServicesApi extends BaseAPI {
      * @param {string} [specialtyTypeName] 
      * @param {object} [marketingType] 
      * @param {object} [procedure] 
-     * @param {Date} [created] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    public apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return ServicesApiFp(this.configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -20704,15 +20806,15 @@ export const SpecialtiesApiAxiosParamCreator = function (configuration?: Configu
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {string} [specialtyTypeId] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SpecialtiesGet(id?: string, name?: string, description?: string, specialtyTypeId?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1SpecialtiesGet(id?: string, name?: string, description?: string, specialtyTypeId?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/specialties`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -20768,7 +20870,8 @@ export const SpecialtiesApiAxiosParamCreator = function (configuration?: Configu
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -20814,7 +20917,8 @@ export const SpecialtiesApiAxiosParamCreator = function (configuration?: Configu
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -20860,7 +20964,8 @@ export const SpecialtiesApiAxiosParamCreator = function (configuration?: Configu
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -20895,7 +21000,8 @@ export const SpecialtiesApiAxiosParamCreator = function (configuration?: Configu
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -20942,7 +21048,8 @@ export const SpecialtiesApiAxiosParamCreator = function (configuration?: Configu
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -20967,15 +21074,15 @@ export const SpecialtiesApiFp = function(configuration?: Configuration) {
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {string} [specialtyTypeId] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SpecialtiesGet(id?: string, name?: string, description?: string, specialtyTypeId?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtiesViewModel> {
+        apiV1SpecialtiesGet(id?: string, name?: string, description?: string, specialtyTypeId?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtiesViewModel> {
             const localVarAxiosArgs = SpecialtiesApiAxiosParamCreator(configuration).apiV1SpecialtiesGet(id, name, description, specialtyTypeId, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -21056,15 +21163,15 @@ export const SpecialtiesApiFactory = function (configuration?: Configuration, ba
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {string} [specialtyTypeId] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SpecialtiesGet(id?: string, name?: string, description?: string, specialtyTypeId?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtiesViewModel> {
+        apiV1SpecialtiesGet(id?: string, name?: string, description?: string, specialtyTypeId?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<SpecialtiesViewModel> {
             return SpecialtiesApiFp(configuration).apiV1SpecialtiesGet(id, name, description, specialtyTypeId, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -21126,16 +21233,16 @@ export class SpecialtiesApi extends BaseAPI {
      * @param {string} [name] 
      * @param {string} [description] 
      * @param {string} [specialtyTypeId] 
-     * @param {Date} [created] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SpecialtiesApi
      */
-    public apiV1SpecialtiesGet(id?: string, name?: string, description?: string, specialtyTypeId?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1SpecialtiesGet(id?: string, name?: string, description?: string, specialtyTypeId?: string, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return SpecialtiesApiFp(this.configuration).apiV1SpecialtiesGet(id, name, description, specialtyTypeId, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
@@ -21205,15 +21312,15 @@ export const SpecialtyTypesApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {object} [marketingType] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/specialtytypes`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -21269,7 +21376,8 @@ export const SpecialtyTypesApiAxiosParamCreator = function (configuration?: Conf
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -21315,7 +21423,8 @@ export const SpecialtyTypesApiAxiosParamCreator = function (configuration?: Conf
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -21361,7 +21470,8 @@ export const SpecialtyTypesApiAxiosParamCreator = function (configuration?: Conf
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -21396,7 +21506,8 @@ export const SpecialtyTypesApiAxiosParamCreator = function (configuration?: Conf
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -21443,7 +21554,8 @@ export const SpecialtyTypesApiAxiosParamCreator = function (configuration?: Conf
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
@@ -21468,15 +21580,15 @@ export const SpecialtyTypesApiFp = function(configuration?: Configuration) {
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {object} [marketingType] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtyTypesViewModel> {
+        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtyTypesViewModel> {
             const localVarAxiosArgs = SpecialtyTypesApiAxiosParamCreator(configuration).apiV1SpecialtytypesGet(id, name, description, marketingType, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -21557,15 +21669,15 @@ export const SpecialtyTypesApiFactory = function (configuration?: Configuration,
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {object} [marketingType] 
-         * @param {Date} [created] 
+         * @param {string} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
+         * @param {string} [lastRetrieved] 
          * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtyTypesViewModel> {
+        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any): AxiosPromise<SpecialtyTypesViewModel> {
             return SpecialtyTypesApiFp(configuration).apiV1SpecialtytypesGet(id, name, description, marketingType, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
@@ -21627,16 +21739,16 @@ export class SpecialtyTypesApi extends BaseAPI {
      * @param {string} [name] 
      * @param {string} [description] 
      * @param {object} [marketingType] 
-     * @param {Date} [created] 
+     * @param {string} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
+     * @param {string} [lastRetrieved] 
      * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SpecialtyTypesApi
      */
-    public apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+    public apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: string, page?: number, limit?: number, lastRetrieved?: string, current?: boolean, options?: any) {
         return SpecialtyTypesApiFp(this.configuration).apiV1SpecialtytypesGet(id, name, description, marketingType, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 

@@ -16,4 +16,5 @@ let result = new CountriesApi(config)
 !!!
 openapi-generator generate -g typescript-axios -o outDir -i https://api-int.icloudhospital.com/swagger/v1/swagger.json --skip-validate-spec
 
+openapi-generator generate -g typescript-axios -o outDir -i https://api-int.icloudhospital.com/swagger/v1/swagger.json --skip-validate-spec
 npx tsc
