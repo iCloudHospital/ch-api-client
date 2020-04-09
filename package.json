@@ -1,6 +1,6 @@
 {
   "name": "ch-api-client",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "usage:",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "openapi-generator": "^0.1.35",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
