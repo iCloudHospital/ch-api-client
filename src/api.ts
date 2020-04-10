@@ -2512,6 +2512,31 @@ export interface CreatePatientCommand {
 /**
  * 
  * @export
+ * @interface CreateServiceCategoryCommand
+ */
+export interface CreateServiceCategoryCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateServiceCategoryCommand
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateServiceCategoryCommand
+     */
+    description?: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CreateServiceCategoryCommand
+     */
+    services?: Array<string>;
+}
+/**
+ * 
+ * @export
  * @interface CreateServiceCommand
  */
 export interface CreateServiceCommand {
@@ -2570,6 +2595,31 @@ export interface CreateSpecialtyCommand {
      * @memberof CreateSpecialtyCommand
      */
     description?: string;
+}
+/**
+ * 
+ * @export
+ * @interface CreateSpecialtyTypeCategoryCommand
+ */
+export interface CreateSpecialtyTypeCategoryCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateSpecialtyTypeCategoryCommand
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateSpecialtyTypeCategoryCommand
+     */
+    description?: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CreateSpecialtyTypeCategoryCommand
+     */
+    specialtyTypes?: Array<string>;
 }
 /**
  * 
@@ -4899,6 +4949,12 @@ export interface HospitalPackageItemViewModel {
     serviceCount?: number;
     /**
      * 
+     * @type {Array<PackageServiceItemViewModel>}
+     * @memberof HospitalPackageItemViewModel
+     */
+    packageServices?: Array<PackageServiceItemViewModel>;
+    /**
+     * 
      * @type {number}
      * @memberof HospitalPackageItemViewModel
      */
@@ -4982,6 +5038,12 @@ export interface HospitalPackageViewModel {
      * @memberof HospitalPackageViewModel
      */
     serviceCount?: number;
+    /**
+     * 
+     * @type {Array<PackageServiceItemViewModel>}
+     * @memberof HospitalPackageViewModel
+     */
+    packageServices?: Array<PackageServiceItemViewModel>;
     /**
      * 
      * @type {number}
@@ -6141,6 +6203,12 @@ export interface Package {
      * @type {string}
      * @memberof Package
      */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Package
+     */
     hospitalId?: string;
     /**
      * 
@@ -6237,6 +6305,49 @@ export interface PackageService {
      * 
      * @type {number}
      * @memberof PackageService
+     */
+    order?: number;
+}
+/**
+ * 
+ * @export
+ * @interface PackageServiceItemViewModel
+ */
+export interface PackageServiceItemViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof PackageServiceItemViewModel
+     */
+    packageId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PackageServiceItemViewModel
+     */
+    packageName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PackageServiceItemViewModel
+     */
+    serviceId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PackageServiceItemViewModel
+     */
+    serviceName?: string;
+    /**
+     * 
+     * @type {Procedure}
+     * @memberof PackageServiceItemViewModel
+     */
+    procedure?: Procedure;
+    /**
+     * 
+     * @type {number}
+     * @memberof PackageServiceItemViewModel
      */
     order?: number;
 }
@@ -7118,6 +7229,12 @@ export interface Service {
      * @type {string}
      * @memberof Service
      */
+    normalizedDescription?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Service
+     */
     hospitalId?: string;
     /**
      * 
@@ -7149,6 +7266,12 @@ export interface Service {
      * @memberof Service
      */
     procedure?: Procedure;
+    /**
+     * 
+     * @type {string}
+     * @memberof Service
+     */
+    serviceCategoryId?: string;
     /**
      * 
      * @type {number}
@@ -7195,27 +7318,119 @@ export interface Service {
 /**
  * 
  * @export
- * @interface ServiceCountViewModel
+ * @interface ServiceCategoriesViewModel
  */
-export interface ServiceCountViewModel {
+export interface ServiceCategoriesViewModel {
+    /**
+     * 
+     * @type {Array<ServiceCategoryItemViewModel>}
+     * @memberof ServiceCategoriesViewModel
+     */
+    items?: Array<ServiceCategoryItemViewModel>;
+    /**
+     * 
+     * @type {PagedListMetaData}
+     * @memberof ServiceCategoriesViewModel
+     */
+    metaData?: PagedListMetaData;
+}
+/**
+ * 
+ * @export
+ * @interface ServiceCategoryItemViewModel
+ */
+export interface ServiceCategoryItemViewModel {
     /**
      * 
      * @type {string}
-     * @memberof ServiceCountViewModel
+     * @memberof ServiceCategoryItemViewModel
      */
-    specialtyTypeId?: string;
+    id?: string;
     /**
      * 
      * @type {string}
-     * @memberof ServiceCountViewModel
+     * @memberof ServiceCategoryItemViewModel
      */
-    specialtyTypeName?: string;
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceCategoryItemViewModel
+     */
+    normalizedName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceCategoryItemViewModel
+     */
+    description?: string;
     /**
      * 
      * @type {number}
-     * @memberof ServiceCountViewModel
+     * @memberof ServiceCategoryItemViewModel
+     */
+    order?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServiceCategoryItemViewModel
      */
     serviceCount?: number;
+    /**
+     * 
+     * @type {Array<ServiceItemViewModel>}
+     * @memberof ServiceCategoryItemViewModel
+     */
+    services?: Array<ServiceItemViewModel>;
+}
+/**
+ * 
+ * @export
+ * @interface ServiceCategoryViewModel
+ */
+export interface ServiceCategoryViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceCategoryViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceCategoryViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceCategoryViewModel
+     */
+    normalizedName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceCategoryViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServiceCategoryViewModel
+     */
+    order?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServiceCategoryViewModel
+     */
+    serviceCount?: number;
+    /**
+     * 
+     * @type {Array<ServiceItemViewModel>}
+     * @memberof ServiceCategoryViewModel
+     */
+    services?: Array<ServiceItemViewModel>;
 }
 /**
  * 
@@ -7277,6 +7492,12 @@ export interface ServiceItemViewModel {
      * @memberof ServiceItemViewModel
      */
     priceReuqest?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceItemViewModel
+     */
+    category?: string;
     /**
      * 
      * @type {number}
@@ -7374,6 +7595,12 @@ export interface ServiceViewModel {
      * @memberof ServiceViewModel
      */
     priceReuqest?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceViewModel
+     */
+    category?: string;
     /**
      * 
      * @type {number}
@@ -7567,10 +7794,127 @@ export interface SpecialtyType {
     marketingType?: MarketingType;
     /**
      * 
+     * @type {string}
+     * @memberof SpecialtyType
+     */
+    specialtyTypeCategoryId?: string;
+    /**
+     * 
+     * @type {Array<Specialty>}
+     * @memberof SpecialtyType
+     */
+    specialties?: Array<Specialty>;
+    /**
+     * 
      * @type {AuditableEntity}
      * @memberof SpecialtyType
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface SpecialtyTypeCategoriesViewModel
+ */
+export interface SpecialtyTypeCategoriesViewModel {
+    /**
+     * 
+     * @type {Array<SpecialtyTypeCategoryItemViewModel>}
+     * @memberof SpecialtyTypeCategoriesViewModel
+     */
+    items?: Array<SpecialtyTypeCategoryItemViewModel>;
+    /**
+     * 
+     * @type {PagedListMetaData}
+     * @memberof SpecialtyTypeCategoriesViewModel
+     */
+    metaData?: PagedListMetaData;
+}
+/**
+ * 
+ * @export
+ * @interface SpecialtyTypeCategoryItemViewModel
+ */
+export interface SpecialtyTypeCategoryItemViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtyTypeCategoryItemViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtyTypeCategoryItemViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtyTypeCategoryItemViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtyTypeCategoryItemViewModel
+     */
+    order?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtyTypeCategoryItemViewModel
+     */
+    specialtyTypeCount?: number;
+    /**
+     * 
+     * @type {Array<SpecialtyTypeItemViewModel>}
+     * @memberof SpecialtyTypeCategoryItemViewModel
+     */
+    specialtyTypes?: Array<SpecialtyTypeItemViewModel>;
+}
+/**
+ * 
+ * @export
+ * @interface SpecialtyTypeCategoryViewModel
+ */
+export interface SpecialtyTypeCategoryViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtyTypeCategoryViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtyTypeCategoryViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtyTypeCategoryViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtyTypeCategoryViewModel
+     */
+    order?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtyTypeCategoryViewModel
+     */
+    specialtyTypeCount?: number;
+    /**
+     * 
+     * @type {Array<SpecialtyTypeItemViewModel>}
+     * @memberof SpecialtyTypeCategoryViewModel
+     */
+    specialtyTypes?: Array<SpecialtyTypeItemViewModel>;
 }
 /**
  * 
@@ -7602,6 +7946,24 @@ export interface SpecialtyTypeItemViewModel {
      * @memberof SpecialtyTypeItemViewModel
      */
     marketingType?: MarketingType;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtyTypeItemViewModel
+     */
+    specialtyCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtyTypeItemViewModel
+     */
+    hospitalSpecialtyCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtyTypeItemViewModel
+     */
+    serviceCount?: number;
     /**
      * 
      * @type {Date}
@@ -7639,6 +8001,24 @@ export interface SpecialtyTypeViewModel {
      * @memberof SpecialtyTypeViewModel
      */
     marketingType?: MarketingType;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtyTypeViewModel
+     */
+    specialtyCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtyTypeViewModel
+     */
+    hospitalSpecialtyCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtyTypeViewModel
+     */
+    serviceCount?: number;
     /**
      * 
      * @type {Date}
@@ -8388,6 +8768,12 @@ export interface UpdateHospitalPackageCommand {
     serviceCount?: number;
     /**
      * 
+     * @type {Array<PackageServiceItemViewModel>}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    packageServices?: Array<PackageServiceItemViewModel>;
+    /**
+     * 
      * @type {number}
      * @memberof UpdateHospitalPackageCommand
      */
@@ -8611,6 +8997,61 @@ export interface UpdatePatientCommand {
 /**
  * 
  * @export
+ * @interface UpdateServiceCategoryCommand
+ */
+export interface UpdateServiceCategoryCommand {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof UpdateServiceCategoryCommand
+     */
+    selectedServices?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateServiceCategoryCommand
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateServiceCategoryCommand
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateServiceCategoryCommand
+     */
+    normalizedName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateServiceCategoryCommand
+     */
+    description?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateServiceCategoryCommand
+     */
+    order?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateServiceCategoryCommand
+     */
+    serviceCount?: number;
+    /**
+     * 
+     * @type {Array<ServiceItemViewModel>}
+     * @memberof UpdateServiceCategoryCommand
+     */
+    services?: Array<ServiceItemViewModel>;
+}
+/**
+ * 
+ * @export
  * @interface UpdateServiceCommand
  */
 export interface UpdateServiceCommand {
@@ -8676,6 +9117,12 @@ export interface UpdateServiceCommand {
     priceReuqest?: boolean;
     /**
      * 
+     * @type {string}
+     * @memberof UpdateServiceCommand
+     */
+    category?: string;
+    /**
+     * 
      * @type {number}
      * @memberof UpdateServiceCommand
      */
@@ -8734,6 +9181,55 @@ export interface UpdateSpecialtyCommand {
 /**
  * 
  * @export
+ * @interface UpdateSpecialtyTypeCategoryCommand
+ */
+export interface UpdateSpecialtyTypeCategoryCommand {
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof UpdateSpecialtyTypeCategoryCommand
+     */
+    selectedSpecialtyTypes?: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateSpecialtyTypeCategoryCommand
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateSpecialtyTypeCategoryCommand
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateSpecialtyTypeCategoryCommand
+     */
+    description?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateSpecialtyTypeCategoryCommand
+     */
+    order?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateSpecialtyTypeCategoryCommand
+     */
+    specialtyTypeCount?: number;
+    /**
+     * 
+     * @type {Array<SpecialtyTypeItemViewModel>}
+     * @memberof UpdateSpecialtyTypeCategoryCommand
+     */
+    specialtyTypes?: Array<SpecialtyTypeItemViewModel>;
+}
+/**
+ * 
+ * @export
  * @interface UpdateSpecialtyTypeCommand
  */
 export interface UpdateSpecialtyTypeCommand {
@@ -8755,6 +9251,24 @@ export interface UpdateSpecialtyTypeCommand {
      * @memberof UpdateSpecialtyTypeCommand
      */
     marketingType?: MarketingType;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateSpecialtyTypeCommand
+     */
+    specialtyCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateSpecialtyTypeCommand
+     */
+    hospitalSpecialtyCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateSpecialtyTypeCommand
+     */
+    serviceCount?: number;
     /**
      * 
      * @type {Date}
@@ -19227,6 +19741,481 @@ export class ProfilesApi extends BaseAPI {
 
 
 /**
+ * ServiceCategoriesApi - axios parameter creator
+ * @export
+ */
+export const ServiceCategoriesApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        GET /api/v1/ServiceCategories
+         * @summary Get all ServiceCategories.
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [description] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/servicecategories`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['Id'] = id;
+            }
+
+            if (name !== undefined) {
+                localVarQueryParameter['Name'] = name;
+            }
+
+            if (description !== undefined) {
+                localVarQueryParameter['Description'] = description;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        POST /api/v1/ServiceCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Create ServiceCategory.
+         * @param {CreateServiceCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesPost(body?: CreateServiceCategoryCommand, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/servicecategories`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        DELETE /api/v1/ServiceCategories/1
+         * @summary Delete ServiceCategory.
+         * @param {string} serviceCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'serviceCategoryId' is not null or undefined
+            if (serviceCategoryId === null || serviceCategoryId === undefined) {
+                throw new RequiredError('serviceCategoryId','Required parameter serviceCategoryId was null or undefined when calling apiV1ServicecategoriesServiceCategoryIdDelete.');
+            }
+            const localVarPath = `/api/v1/servicecategories/{serviceCategoryId}`
+                .replace(`{${"ServiceCategoryId"}}`, encodeURIComponent(String(serviceCategoryId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/ServiceCategories/1
+         * @summary Get ServiceCategory.
+         * @param {string} serviceCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'serviceCategoryId' is not null or undefined
+            if (serviceCategoryId === null || serviceCategoryId === undefined) {
+                throw new RequiredError('serviceCategoryId','Required parameter serviceCategoryId was null or undefined when calling apiV1ServicecategoriesServiceCategoryIdGet.');
+            }
+            const localVarPath = `/api/v1/servicecategories/{serviceCategoryId}`
+                .replace(`{${"ServiceCategoryId"}}`, encodeURIComponent(String(serviceCategoryId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/ServiceCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Update ServiceCategory
+         * @param {string} serviceCategoryId 
+         * @param {UpdateServiceCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId: string, body?: UpdateServiceCategoryCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'serviceCategoryId' is not null or undefined
+            if (serviceCategoryId === null || serviceCategoryId === undefined) {
+                throw new RequiredError('serviceCategoryId','Required parameter serviceCategoryId was null or undefined when calling apiV1ServicecategoriesServiceCategoryIdPut.');
+            }
+            const localVarPath = `/api/v1/servicecategories/{serviceCategoryId}`
+                .replace(`{${"ServiceCategoryId"}}`, encodeURIComponent(String(serviceCategoryId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * ServiceCategoriesApi - functional programming interface
+ * @export
+ */
+export const ServiceCategoriesApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        GET /api/v1/ServiceCategories
+         * @summary Get all ServiceCategories.
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [description] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServiceCategoriesViewModel> {
+            const localVarAxiosArgs = ServiceCategoriesApiAxiosParamCreator(configuration).apiV1ServicecategoriesGet(id, name, description, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        POST /api/v1/ServiceCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Create ServiceCategory.
+         * @param {CreateServiceCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesPost(body?: CreateServiceCategoryCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = ServiceCategoriesApiAxiosParamCreator(configuration).apiV1ServicecategoriesPost(body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        DELETE /api/v1/ServiceCategories/1
+         * @summary Delete ServiceCategory.
+         * @param {string} serviceCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = ServiceCategoriesApiAxiosParamCreator(configuration).apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/ServiceCategories/1
+         * @summary Get ServiceCategory.
+         * @param {string} serviceCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServiceCategoryViewModel> {
+            const localVarAxiosArgs = ServiceCategoriesApiAxiosParamCreator(configuration).apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/ServiceCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Update ServiceCategory
+         * @param {string} serviceCategoryId 
+         * @param {UpdateServiceCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId: string, body?: UpdateServiceCategoryCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = ServiceCategoriesApiAxiosParamCreator(configuration).apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * ServiceCategoriesApi - factory interface
+ * @export
+ */
+export const ServiceCategoriesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * Sample request:        GET /api/v1/ServiceCategories
+         * @summary Get all ServiceCategories.
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [description] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServiceCategoriesViewModel> {
+            return ServiceCategoriesApiFp(configuration).apiV1ServicecategoriesGet(id, name, description, page, limit, lastRetrieved, current, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        POST /api/v1/ServiceCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Create ServiceCategory.
+         * @param {CreateServiceCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesPost(body?: CreateServiceCategoryCommand, options?: any): AxiosPromise<string> {
+            return ServiceCategoriesApiFp(configuration).apiV1ServicecategoriesPost(body, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        DELETE /api/v1/ServiceCategories/1
+         * @summary Delete ServiceCategory.
+         * @param {string} serviceCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId: string, options?: any): AxiosPromise<boolean> {
+            return ServiceCategoriesApiFp(configuration).apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        GET /api/v1/ServiceCategories/1
+         * @summary Get ServiceCategory.
+         * @param {string} serviceCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId: string, options?: any): AxiosPromise<ServiceCategoryViewModel> {
+            return ServiceCategoriesApiFp(configuration).apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        PUT /api/v1/ServiceCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Update ServiceCategory
+         * @param {string} serviceCategoryId 
+         * @param {UpdateServiceCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId: string, body?: UpdateServiceCategoryCommand, options?: any): AxiosPromise<boolean> {
+            return ServiceCategoriesApiFp(configuration).apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId, body, options)(axios, basePath);
+        },
+    };
+};
+
+/**
+ * ServiceCategoriesApi - object-oriented interface
+ * @export
+ * @class ServiceCategoriesApi
+ * @extends {BaseAPI}
+ */
+export class ServiceCategoriesApi extends BaseAPI {
+    /**
+     * Sample request:        GET /api/v1/ServiceCategories
+     * @summary Get all ServiceCategories.
+     * @param {string} [id] 
+     * @param {string} [name] 
+     * @param {string} [description] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceCategoriesApi
+     */
+    public apiV1ServicecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return ServiceCategoriesApiFp(this.configuration).apiV1ServicecategoriesGet(id, name, description, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        POST /api/v1/ServiceCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+     * @summary Create ServiceCategory.
+     * @param {CreateServiceCategoryCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceCategoriesApi
+     */
+    public apiV1ServicecategoriesPost(body?: CreateServiceCategoryCommand, options?: any) {
+        return ServiceCategoriesApiFp(this.configuration).apiV1ServicecategoriesPost(body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        DELETE /api/v1/ServiceCategories/1
+     * @summary Delete ServiceCategory.
+     * @param {string} serviceCategoryId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceCategoriesApi
+     */
+    public apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId: string, options?: any) {
+        return ServiceCategoriesApiFp(this.configuration).apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        GET /api/v1/ServiceCategories/1
+     * @summary Get ServiceCategory.
+     * @param {string} serviceCategoryId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceCategoriesApi
+     */
+    public apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId: string, options?: any) {
+        return ServiceCategoriesApiFp(this.configuration).apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        PUT /api/v1/ServiceCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+     * @summary Update ServiceCategory
+     * @param {string} serviceCategoryId 
+     * @param {UpdateServiceCategoryCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ServiceCategoriesApi
+     */
+    public apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId: string, body?: UpdateServiceCategoryCommand, options?: any) {
+        return ServiceCategoriesApiFp(this.configuration).apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId, body, options)(this.axios, this.basePath);
+    }
+
+}
+
+
+/**
  * ServicesApi - axios parameter creator
  * @export
  */
@@ -19507,40 +20496,6 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * 
-         * @summary Get service counts.
-         * @param {string} [specialtyTypeId] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsServicecountGet(specialtyTypeId?: string, options: any = {}): RequestArgs {
-            const localVarPath = `/api/v1/hospitals/servicecount`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (specialtyTypeId !== undefined) {
-                localVarQueryParameter['specialtyTypeId'] = specialtyTypeId;
-            }
-
-
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * Sample request:        GET /api/v1/hospitals/services
          * @summary Get all services.
          * @param {string} [id] 
@@ -19553,6 +20508,8 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [specialtyTypeName] 
          * @param {object} [marketingType] 
          * @param {object} [procedure] 
+         * @param {string} [category] 
+         * @param {boolean} [hasCategory] 
          * @param {Date} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -19561,7 +20518,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, category?: string, hasCategory?: boolean, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/services`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -19610,6 +20567,14 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
 
             if (procedure !== undefined) {
                 localVarQueryParameter['Procedure'] = procedure;
+            }
+
+            if (category !== undefined) {
+                localVarQueryParameter['Category'] = category;
+            }
+
+            if (hasCategory !== undefined) {
+                localVarQueryParameter['HasCategory'] = hasCategory;
             }
 
             if (created !== undefined) {
@@ -19739,20 +20704,6 @@ export const ServicesApiFp = function(configuration?: Configuration) {
             };
         },
         /**
-         * 
-         * @summary Get service counts.
-         * @param {string} [specialtyTypeId] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsServicecountGet(specialtyTypeId?: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServiceCountViewModel> {
-            const localVarAxiosArgs = ServicesApiAxiosParamCreator(configuration).apiV1HospitalsServicecountGet(specialtyTypeId, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
          * Sample request:        GET /api/v1/hospitals/services
          * @summary Get all services.
          * @param {string} [id] 
@@ -19765,6 +20716,8 @@ export const ServicesApiFp = function(configuration?: Configuration) {
          * @param {string} [specialtyTypeName] 
          * @param {object} [marketingType] 
          * @param {object} [procedure] 
+         * @param {string} [category] 
+         * @param {boolean} [hasCategory] 
          * @param {Date} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -19773,8 +20726,8 @@ export const ServicesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesViewModel> {
-            const localVarAxiosArgs = ServicesApiAxiosParamCreator(configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options);
+        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, category?: string, hasCategory?: boolean, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesViewModel> {
+            const localVarAxiosArgs = ServicesApiAxiosParamCreator(configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, category, hasCategory, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -19851,16 +20804,6 @@ export const ServicesApiFactory = function (configuration?: Configuration, baseP
             return ServicesApiFp(configuration).apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId, specialtyId, body, options)(axios, basePath);
         },
         /**
-         * 
-         * @summary Get service counts.
-         * @param {string} [specialtyTypeId] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsServicecountGet(specialtyTypeId?: string, options?: any): AxiosPromise<ServiceCountViewModel> {
-            return ServicesApiFp(configuration).apiV1HospitalsServicecountGet(specialtyTypeId, options)(axios, basePath);
-        },
-        /**
          * Sample request:        GET /api/v1/hospitals/services
          * @summary Get all services.
          * @param {string} [id] 
@@ -19873,6 +20816,8 @@ export const ServicesApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [specialtyTypeName] 
          * @param {object} [marketingType] 
          * @param {object} [procedure] 
+         * @param {string} [category] 
+         * @param {boolean} [hasCategory] 
          * @param {Date} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -19881,8 +20826,8 @@ export const ServicesApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel> {
-            return ServicesApiFp(configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, category?: string, hasCategory?: boolean, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel> {
+            return ServicesApiFp(configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, category, hasCategory, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
     };
 };
@@ -19966,18 +20911,6 @@ export class ServicesApi extends BaseAPI {
     }
 
     /**
-     * 
-     * @summary Get service counts.
-     * @param {string} [specialtyTypeId] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ServicesApi
-     */
-    public apiV1HospitalsServicecountGet(specialtyTypeId?: string, options?: any) {
-        return ServicesApiFp(this.configuration).apiV1HospitalsServicecountGet(specialtyTypeId, options)(this.axios, this.basePath);
-    }
-
-    /**
      * Sample request:        GET /api/v1/hospitals/services
      * @summary Get all services.
      * @param {string} [id] 
@@ -19990,6 +20923,8 @@ export class ServicesApi extends BaseAPI {
      * @param {string} [specialtyTypeName] 
      * @param {object} [marketingType] 
      * @param {object} [procedure] 
+     * @param {string} [category] 
+     * @param {boolean} [hasCategory] 
      * @param {Date} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
@@ -19999,8 +20934,8 @@ export class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    public apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return ServicesApiFp(this.configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, category?: string, hasCategory?: boolean, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return ServicesApiFp(this.configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, category, hasCategory, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
 }
@@ -20508,6 +21443,481 @@ export class SpecialtiesApi extends BaseAPI {
 
 
 /**
+ * SpecialtyTypeCategoriesApi - axios parameter creator
+ * @export
+ */
+export const SpecialtyTypeCategoriesApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        GET /api/v1/SpecialtyTypeCategories
+         * @summary Get all SpecialtyTypeCategories.
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [description] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/specialtytypecategories`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['Id'] = id;
+            }
+
+            if (name !== undefined) {
+                localVarQueryParameter['Name'] = name;
+            }
+
+            if (description !== undefined) {
+                localVarQueryParameter['Description'] = description;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        POST /api/v1/SpecialtyTypeCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Create specialtyTypeCategory.
+         * @param {CreateSpecialtyTypeCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesPost(body?: CreateSpecialtyTypeCategoryCommand, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/specialtytypecategories`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        DELETE /api/v1/SpecialtyTypeCategories/1
+         * @summary Delete specialtyTypeCategory.
+         * @param {string} specialtyTypeCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'specialtyTypeCategoryId' is not null or undefined
+            if (specialtyTypeCategoryId === null || specialtyTypeCategoryId === undefined) {
+                throw new RequiredError('specialtyTypeCategoryId','Required parameter specialtyTypeCategoryId was null or undefined when calling apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete.');
+            }
+            const localVarPath = `/api/v1/specialtytypecategories/{specialtyTypeCategoryId}`
+                .replace(`{${"specialtyTypeCategoryId"}}`, encodeURIComponent(String(specialtyTypeCategoryId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/SpecialtyTypeCategories/1
+         * @summary Get specialtyTypeCategory.
+         * @param {string} specialtyTypeCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'specialtyTypeCategoryId' is not null or undefined
+            if (specialtyTypeCategoryId === null || specialtyTypeCategoryId === undefined) {
+                throw new RequiredError('specialtyTypeCategoryId','Required parameter specialtyTypeCategoryId was null or undefined when calling apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet.');
+            }
+            const localVarPath = `/api/v1/specialtytypecategories/{specialtyTypeCategoryId}`
+                .replace(`{${"specialtyTypeCategoryId"}}`, encodeURIComponent(String(specialtyTypeCategoryId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/SpecialtyTypeCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Update specialtyTypeCategory
+         * @param {string} specialtyTypeCategoryId 
+         * @param {UpdateSpecialtyTypeCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId: string, body?: UpdateSpecialtyTypeCategoryCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'specialtyTypeCategoryId' is not null or undefined
+            if (specialtyTypeCategoryId === null || specialtyTypeCategoryId === undefined) {
+                throw new RequiredError('specialtyTypeCategoryId','Required parameter specialtyTypeCategoryId was null or undefined when calling apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut.');
+            }
+            const localVarPath = `/api/v1/specialtytypecategories/{specialtyTypeCategoryId}`
+                .replace(`{${"specialtyTypeCategoryId"}}`, encodeURIComponent(String(specialtyTypeCategoryId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * SpecialtyTypeCategoriesApi - functional programming interface
+ * @export
+ */
+export const SpecialtyTypeCategoriesApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        GET /api/v1/SpecialtyTypeCategories
+         * @summary Get all SpecialtyTypeCategories.
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [description] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtyTypeCategoriesViewModel> {
+            const localVarAxiosArgs = SpecialtyTypeCategoriesApiAxiosParamCreator(configuration).apiV1SpecialtytypecategoriesGet(id, name, description, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        POST /api/v1/SpecialtyTypeCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Create specialtyTypeCategory.
+         * @param {CreateSpecialtyTypeCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesPost(body?: CreateSpecialtyTypeCategoryCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = SpecialtyTypeCategoriesApiAxiosParamCreator(configuration).apiV1SpecialtytypecategoriesPost(body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        DELETE /api/v1/SpecialtyTypeCategories/1
+         * @summary Delete specialtyTypeCategory.
+         * @param {string} specialtyTypeCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = SpecialtyTypeCategoriesApiAxiosParamCreator(configuration).apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/SpecialtyTypeCategories/1
+         * @summary Get specialtyTypeCategory.
+         * @param {string} specialtyTypeCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtyTypeCategoryViewModel> {
+            const localVarAxiosArgs = SpecialtyTypeCategoriesApiAxiosParamCreator(configuration).apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/SpecialtyTypeCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Update specialtyTypeCategory
+         * @param {string} specialtyTypeCategoryId 
+         * @param {UpdateSpecialtyTypeCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId: string, body?: UpdateSpecialtyTypeCategoryCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = SpecialtyTypeCategoriesApiAxiosParamCreator(configuration).apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * SpecialtyTypeCategoriesApi - factory interface
+ * @export
+ */
+export const SpecialtyTypeCategoriesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * Sample request:        GET /api/v1/SpecialtyTypeCategories
+         * @summary Get all SpecialtyTypeCategories.
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [description] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtyTypeCategoriesViewModel> {
+            return SpecialtyTypeCategoriesApiFp(configuration).apiV1SpecialtytypecategoriesGet(id, name, description, page, limit, lastRetrieved, current, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        POST /api/v1/SpecialtyTypeCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Create specialtyTypeCategory.
+         * @param {CreateSpecialtyTypeCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesPost(body?: CreateSpecialtyTypeCategoryCommand, options?: any): AxiosPromise<string> {
+            return SpecialtyTypeCategoriesApiFp(configuration).apiV1SpecialtytypecategoriesPost(body, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        DELETE /api/v1/SpecialtyTypeCategories/1
+         * @summary Delete specialtyTypeCategory.
+         * @param {string} specialtyTypeCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId: string, options?: any): AxiosPromise<boolean> {
+            return SpecialtyTypeCategoriesApiFp(configuration).apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        GET /api/v1/SpecialtyTypeCategories/1
+         * @summary Get specialtyTypeCategory.
+         * @param {string} specialtyTypeCategoryId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId: string, options?: any): AxiosPromise<SpecialtyTypeCategoryViewModel> {
+            return SpecialtyTypeCategoriesApiFp(configuration).apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        PUT /api/v1/SpecialtyTypeCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+         * @summary Update specialtyTypeCategory
+         * @param {string} specialtyTypeCategoryId 
+         * @param {UpdateSpecialtyTypeCategoryCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId: string, body?: UpdateSpecialtyTypeCategoryCommand, options?: any): AxiosPromise<boolean> {
+            return SpecialtyTypeCategoriesApiFp(configuration).apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId, body, options)(axios, basePath);
+        },
+    };
+};
+
+/**
+ * SpecialtyTypeCategoriesApi - object-oriented interface
+ * @export
+ * @class SpecialtyTypeCategoriesApi
+ * @extends {BaseAPI}
+ */
+export class SpecialtyTypeCategoriesApi extends BaseAPI {
+    /**
+     * Sample request:        GET /api/v1/SpecialtyTypeCategories
+     * @summary Get all SpecialtyTypeCategories.
+     * @param {string} [id] 
+     * @param {string} [name] 
+     * @param {string} [description] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SpecialtyTypeCategoriesApi
+     */
+    public apiV1SpecialtytypecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return SpecialtyTypeCategoriesApiFp(this.configuration).apiV1SpecialtytypecategoriesGet(id, name, description, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        POST /api/v1/SpecialtyTypeCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+     * @summary Create specialtyTypeCategory.
+     * @param {CreateSpecialtyTypeCategoryCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SpecialtyTypeCategoriesApi
+     */
+    public apiV1SpecialtytypecategoriesPost(body?: CreateSpecialtyTypeCategoryCommand, options?: any) {
+        return SpecialtyTypeCategoriesApiFp(this.configuration).apiV1SpecialtytypecategoriesPost(body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        DELETE /api/v1/SpecialtyTypeCategories/1
+     * @summary Delete specialtyTypeCategory.
+     * @param {string} specialtyTypeCategoryId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SpecialtyTypeCategoriesApi
+     */
+    public apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId: string, options?: any) {
+        return SpecialtyTypeCategoriesApiFp(this.configuration).apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        GET /api/v1/SpecialtyTypeCategories/1
+     * @summary Get specialtyTypeCategory.
+     * @param {string} specialtyTypeCategoryId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SpecialtyTypeCategoriesApi
+     */
+    public apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId: string, options?: any) {
+        return SpecialtyTypeCategoriesApiFp(this.configuration).apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        PUT /api/v1/SpecialtyTypeCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
+     * @summary Update specialtyTypeCategory
+     * @param {string} specialtyTypeCategoryId 
+     * @param {UpdateSpecialtyTypeCategoryCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SpecialtyTypeCategoriesApi
+     */
+    public apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId: string, body?: UpdateSpecialtyTypeCategoryCommand, options?: any) {
+        return SpecialtyTypeCategoriesApiFp(this.configuration).apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId, body, options)(this.axios, this.basePath);
+    }
+
+}
+
+
+/**
  * SpecialtyTypesApi - axios parameter creator
  * @export
  */
@@ -20520,6 +21930,7 @@ export const SpecialtyTypesApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {object} [marketingType] 
+         * @param {boolean} [hasCategory] 
          * @param {Date} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -20528,7 +21939,7 @@ export const SpecialtyTypesApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, hasCategory?: boolean, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/specialtytypes`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -20553,6 +21964,10 @@ export const SpecialtyTypesApiAxiosParamCreator = function (configuration?: Conf
 
             if (marketingType !== undefined) {
                 localVarQueryParameter['MarketingType'] = marketingType;
+            }
+
+            if (hasCategory !== undefined) {
+                localVarQueryParameter['HasCategory'] = hasCategory;
             }
 
             if (created !== undefined) {
@@ -20783,6 +22198,7 @@ export const SpecialtyTypesApiFp = function(configuration?: Configuration) {
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {object} [marketingType] 
+         * @param {boolean} [hasCategory] 
          * @param {Date} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -20791,8 +22207,8 @@ export const SpecialtyTypesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtyTypesViewModel> {
-            const localVarAxiosArgs = SpecialtyTypesApiAxiosParamCreator(configuration).apiV1SpecialtytypesGet(id, name, description, marketingType, created, page, limit, lastRetrieved, current, options);
+        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, hasCategory?: boolean, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtyTypesViewModel> {
+            const localVarAxiosArgs = SpecialtyTypesApiAxiosParamCreator(configuration).apiV1SpecialtytypesGet(id, name, description, marketingType, hasCategory, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -20872,6 +22288,7 @@ export const SpecialtyTypesApiFactory = function (configuration?: Configuration,
          * @param {string} [name] 
          * @param {string} [description] 
          * @param {object} [marketingType] 
+         * @param {boolean} [hasCategory] 
          * @param {Date} [created] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -20880,8 +22297,8 @@ export const SpecialtyTypesApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtyTypesViewModel> {
-            return SpecialtyTypesApiFp(configuration).apiV1SpecialtytypesGet(id, name, description, marketingType, created, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, hasCategory?: boolean, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtyTypesViewModel> {
+            return SpecialtyTypesApiFp(configuration).apiV1SpecialtytypesGet(id, name, description, marketingType, hasCategory, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
@@ -20942,6 +22359,7 @@ export class SpecialtyTypesApi extends BaseAPI {
      * @param {string} [name] 
      * @param {string} [description] 
      * @param {object} [marketingType] 
+     * @param {boolean} [hasCategory] 
      * @param {Date} [created] 
      * @param {number} [page] 
      * @param {number} [limit] 
@@ -20951,8 +22369,8 @@ export class SpecialtyTypesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypesApi
      */
-    public apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return SpecialtyTypesApiFp(this.configuration).apiV1SpecialtytypesGet(id, name, description, marketingType, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, hasCategory?: boolean, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return SpecialtyTypesApiFp(this.configuration).apiV1SpecialtytypesGet(id, name, description, marketingType, hasCategory, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
