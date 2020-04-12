@@ -7473,12 +7473,6 @@ export interface ServiceItemViewModel {
     priceReuqest?: boolean;
     /**
      *
-     * @type {string}
-     * @memberof ServiceItemViewModel
-     */
-    category?: string;
-    /**
-     *
      * @type {number}
      * @memberof ServiceItemViewModel
      */
@@ -7574,12 +7568,6 @@ export interface ServiceViewModel {
      * @memberof ServiceViewModel
      */
     priceReuqest?: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof ServiceViewModel
-     */
-    category?: string;
     /**
      *
      * @type {number}
@@ -9094,12 +9082,6 @@ export interface UpdateServiceCommand {
      * @memberof UpdateServiceCommand
      */
     priceReuqest?: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof UpdateServiceCommand
-     */
-    category?: string;
     /**
      *
      * @type {number}
@@ -14581,8 +14563,6 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [specialtyTypeName]
      * @param {object} [marketingType]
      * @param {object} [procedure]
-     * @param {string} [category]
-     * @param {boolean} [hasCategory]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -14591,7 +14571,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, category?: string | undefined, hasCategory?: boolean | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * ServicesApi - functional programming interface
@@ -14662,8 +14642,6 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [specialtyTypeName]
      * @param {object} [marketingType]
      * @param {object} [procedure]
-     * @param {string} [category]
-     * @param {boolean} [hasCategory]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -14672,7 +14650,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, category?: string | undefined, hasCategory?: boolean | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>;
 };
 /**
  * ServicesApi - factory interface
@@ -14743,8 +14721,6 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @param {string} [specialtyTypeName]
      * @param {object} [marketingType]
      * @param {object} [procedure]
-     * @param {string} [category]
-     * @param {boolean} [hasCategory]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -14753,7 +14729,7 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, category?: string | undefined, hasCategory?: boolean | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ServicesViewModel>;
 };
 /**
  * ServicesApi - object-oriented interface
@@ -14831,8 +14807,6 @@ export declare class ServicesApi extends BaseAPI {
      * @param {string} [specialtyTypeName]
      * @param {object} [marketingType]
      * @param {object} [procedure]
-     * @param {string} [category]
-     * @param {boolean} [hasCategory]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -14842,7 +14816,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, category?: string, hasCategory?: boolean, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel>;
 }
 /**
  * SpecialtiesApi - axios parameter creator
@@ -15306,7 +15280,6 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      * @param {string} [name]
      * @param {string} [description]
      * @param {object} [marketingType]
-     * @param {boolean} [hasCategory]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -15315,7 +15288,7 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: object | undefined, hasCategory?: boolean | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
@@ -15363,7 +15336,6 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      * @param {string} [name]
      * @param {string} [description]
      * @param {object} [marketingType]
-     * @param {boolean} [hasCategory]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -15372,7 +15344,7 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: object | undefined, hasCategory?: boolean | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypesViewModel>;
+    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypesViewModel>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
@@ -15420,7 +15392,6 @@ export declare const SpecialtyTypesApiFactory: (configuration?: Configuration | 
      * @param {string} [name]
      * @param {string} [description]
      * @param {object} [marketingType]
-     * @param {boolean} [hasCategory]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -15429,7 +15400,7 @@ export declare const SpecialtyTypesApiFactory: (configuration?: Configuration | 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: object | undefined, hasCategory?: boolean | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<SpecialtyTypesViewModel>;
+    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<SpecialtyTypesViewModel>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
@@ -15479,7 +15450,6 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      * @param {string} [name]
      * @param {string} [description]
      * @param {object} [marketingType]
-     * @param {boolean} [hasCategory]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -15489,7 +15459,7 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypesApi
      */
-    apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, hasCategory?: boolean, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtyTypesViewModel>;
+    apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtyTypesViewModel>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
