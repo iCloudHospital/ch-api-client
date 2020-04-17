@@ -8969,6 +8969,12 @@ export interface UpdatePatientCommand {
 export interface UpdateServiceCategoryCommand {
     /**
      *
+     * @type {number}
+     * @memberof UpdateServiceCategoryCommand
+     */
+    order?: number;
+    /**
+     *
      * @type {Array<string>}
      * @memberof UpdateServiceCategoryCommand
      */
@@ -8997,12 +9003,6 @@ export interface UpdateServiceCategoryCommand {
      * @memberof UpdateServiceCategoryCommand
      */
     description?: string;
-    /**
-     *
-     * @type {number}
-     * @memberof UpdateServiceCategoryCommand
-     */
-    order?: number;
     /**
      *
      * @type {number}
@@ -13525,6 +13525,7 @@ export declare const PackagesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [name]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {object} [marketingType]
      * @param {object} [packageStatus]
      * @param {number} [page]
      * @param {number} [limit]
@@ -13533,7 +13534,7 @@ export declare const PackagesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsPackagesGet(id?: string | undefined, name?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, packageStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsPackagesGet(id?: string | undefined, name?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, marketingType?: object | undefined, packageStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * PackagesApi - functional programming interface
@@ -13586,6 +13587,7 @@ export declare const PackagesApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [name]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {object} [marketingType]
      * @param {object} [packageStatus]
      * @param {number} [page]
      * @param {number} [limit]
@@ -13594,7 +13596,7 @@ export declare const PackagesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsPackagesGet(id?: string | undefined, name?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, packageStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalPackagesViewModel>;
+    apiV1HospitalsPackagesGet(id?: string | undefined, name?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, marketingType?: object | undefined, packageStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalPackagesViewModel>;
 };
 /**
  * PackagesApi - factory interface
@@ -13647,6 +13649,7 @@ export declare const PackagesApiFactory: (configuration?: Configuration | undefi
      * @param {string} [name]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {object} [marketingType]
      * @param {object} [packageStatus]
      * @param {number} [page]
      * @param {number} [limit]
@@ -13655,7 +13658,7 @@ export declare const PackagesApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsPackagesGet(id?: string | undefined, name?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, packageStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalPackagesViewModel>;
+    apiV1HospitalsPackagesGet(id?: string | undefined, name?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, marketingType?: object | undefined, packageStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalPackagesViewModel>;
 };
 /**
  * PackagesApi - object-oriented interface
@@ -13714,6 +13717,7 @@ export declare class PackagesApi extends BaseAPI {
      * @param {string} [name]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {object} [marketingType]
      * @param {object} [packageStatus]
      * @param {number} [page]
      * @param {number} [limit]
@@ -13723,7 +13727,7 @@ export declare class PackagesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PackagesApi
      */
-    apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalPackagesViewModel>;
+    apiV1HospitalsPackagesGet(id?: string, name?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalPackagesViewModel>;
 }
 /**
  * PartnersApi - axios parameter creator
