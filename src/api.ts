@@ -18036,19 +18036,14 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
          * Sample request:        DELETE /api/v1/hospitals/1/packages/1
          * @summary Delete package.
          * @param {string} hospitalId 
-         * @param {string} equipmentId 
          * @param {string} packageId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options: any = {}): RequestArgs {
+        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options: any = {}): RequestArgs {
             // verify required parameter 'hospitalId' is not null or undefined
             if (hospitalId === null || hospitalId === undefined) {
                 throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdDelete.');
-            }
-            // verify required parameter 'equipmentId' is not null or undefined
-            if (equipmentId === null || equipmentId === undefined) {
-                throw new RequiredError('equipmentId','Required parameter equipmentId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdDelete.');
             }
             // verify required parameter 'packageId' is not null or undefined
             if (packageId === null || packageId === undefined) {
@@ -18056,7 +18051,6 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
             }
             const localVarPath = `/api/v1/hospitals/{hospitalId}/packages/{packageId}`
                 .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
-                .replace(`{${"equipmentId"}}`, encodeURIComponent(String(equipmentId)))
                 .replace(`{${"packageId"}}`, encodeURIComponent(String(packageId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -18092,19 +18086,14 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
          * Sample request:        GET /api/v1/hospitals/1/packages/1
          * @summary Get package.
          * @param {string} hospitalId 
-         * @param {string} equipmentId 
          * @param {string} packageId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options: any = {}): RequestArgs {
+        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options: any = {}): RequestArgs {
             // verify required parameter 'hospitalId' is not null or undefined
             if (hospitalId === null || hospitalId === undefined) {
                 throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdGet.');
-            }
-            // verify required parameter 'equipmentId' is not null or undefined
-            if (equipmentId === null || equipmentId === undefined) {
-                throw new RequiredError('equipmentId','Required parameter equipmentId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdGet.');
             }
             // verify required parameter 'packageId' is not null or undefined
             if (packageId === null || packageId === undefined) {
@@ -18112,7 +18101,6 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
             }
             const localVarPath = `/api/v1/hospitals/{hospitalId}/packages/{packageId}`
                 .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
-                .replace(`{${"equipmentId"}}`, encodeURIComponent(String(equipmentId)))
                 .replace(`{${"packageId"}}`, encodeURIComponent(String(packageId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -18338,13 +18326,12 @@ export const PackagesApiFp = function(configuration?: Configuration) {
          * Sample request:        DELETE /api/v1/hospitals/1/packages/1
          * @summary Delete package.
          * @param {string} hospitalId 
-         * @param {string} equipmentId 
          * @param {string} packageId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
-            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, equipmentId, packageId, options);
+        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, packageId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -18354,13 +18341,12 @@ export const PackagesApiFp = function(configuration?: Configuration) {
          * Sample request:        GET /api/v1/hospitals/1/packages/1
          * @summary Get package.
          * @param {string} hospitalId 
-         * @param {string} equipmentId 
          * @param {string} packageId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalPackageViewModel> {
-            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, equipmentId, packageId, options);
+        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalPackageViewModel> {
+            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, packageId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -18434,25 +18420,23 @@ export const PackagesApiFactory = function (configuration?: Configuration, baseP
          * Sample request:        DELETE /api/v1/hospitals/1/packages/1
          * @summary Delete package.
          * @param {string} hospitalId 
-         * @param {string} equipmentId 
          * @param {string} packageId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options?: any): AxiosPromise<boolean> {
-            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, equipmentId, packageId, options)(axios, basePath);
+        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options?: any): AxiosPromise<boolean> {
+            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, packageId, options)(axios, basePath);
         },
         /**
          * Sample request:        GET /api/v1/hospitals/1/packages/1
          * @summary Get package.
          * @param {string} hospitalId 
-         * @param {string} equipmentId 
          * @param {string} packageId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options?: any): AxiosPromise<HospitalPackageViewModel> {
-            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, equipmentId, packageId, options)(axios, basePath);
+        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options?: any): AxiosPromise<HospitalPackageViewModel> {
+            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, packageId, options)(axios, basePath);
         },
         /**
          * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
@@ -18511,28 +18495,26 @@ export class PackagesApi extends BaseAPI {
      * Sample request:        DELETE /api/v1/hospitals/1/packages/1
      * @summary Delete package.
      * @param {string} hospitalId 
-     * @param {string} equipmentId 
      * @param {string} packageId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PackagesApi
      */
-    public apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options?: any) {
-        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, equipmentId, packageId, options)(this.axios, this.basePath);
+    public apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options?: any) {
+        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, packageId, options)(this.axios, this.basePath);
     }
 
     /**
      * Sample request:        GET /api/v1/hospitals/1/packages/1
      * @summary Get package.
      * @param {string} hospitalId 
-     * @param {string} equipmentId 
      * @param {string} packageId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PackagesApi
      */
-    public apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options?: any) {
-        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, equipmentId, packageId, options)(this.axios, this.basePath);
+    public apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options?: any) {
+        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, packageId, options)(this.axios, this.basePath);
     }
 
     /**

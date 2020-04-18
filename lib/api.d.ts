@@ -13525,22 +13525,20 @@ export declare const PackagesApiAxiosParamCreator: (configuration?: Configuratio
      * Sample request:        DELETE /api/v1/hospitals/1/packages/1
      * @summary Delete package.
      * @param {string} hospitalId
-     * @param {string} equipmentId
      * @param {string} packageId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options?: any): RequestArgs;
     /**
      * Sample request:        GET /api/v1/hospitals/1/packages/1
      * @summary Get package.
      * @param {string} hospitalId
-     * @param {string} equipmentId
      * @param {string} packageId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options?: any): RequestArgs;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
      * @summary Update package.
@@ -13588,22 +13586,20 @@ export declare const PackagesApiFp: (configuration?: Configuration | undefined) 
      * Sample request:        DELETE /api/v1/hospitals/1/packages/1
      * @summary Delete package.
      * @param {string} hospitalId
-     * @param {string} equipmentId
      * @param {string} packageId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/packages/1
      * @summary Get package.
      * @param {string} hospitalId
-     * @param {string} equipmentId
      * @param {string} packageId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalPackageViewModel>;
+    apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalPackageViewModel>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
      * @summary Update package.
@@ -13651,22 +13647,20 @@ export declare const PackagesApiFactory: (configuration?: Configuration | undefi
      * Sample request:        DELETE /api/v1/hospitals/1/packages/1
      * @summary Delete package.
      * @param {string} hospitalId
-     * @param {string} equipmentId
      * @param {string} packageId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options?: any): AxiosPromise<boolean>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/packages/1
      * @summary Get package.
      * @param {string} hospitalId
-     * @param {string} equipmentId
      * @param {string} packageId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options?: any): AxiosPromise<HospitalPackageViewModel>;
+    apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options?: any): AxiosPromise<HospitalPackageViewModel>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
      * @summary Update package.
@@ -13716,24 +13710,22 @@ export declare class PackagesApi extends BaseAPI {
      * Sample request:        DELETE /api/v1/hospitals/1/packages/1
      * @summary Delete package.
      * @param {string} hospitalId
-     * @param {string} equipmentId
      * @param {string} packageId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PackagesApi
      */
-    apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, equipmentId: string, packageId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options?: any): AxiosPromise<boolean>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/packages/1
      * @summary Get package.
      * @param {string} hospitalId
-     * @param {string} equipmentId
      * @param {string} packageId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PackagesApi
      */
-    apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, equipmentId: string, packageId: string, options?: any): AxiosPromise<HospitalPackageViewModel>;
+    apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options?: any): AxiosPromise<HospitalPackageViewModel>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
      * @summary Update package.
