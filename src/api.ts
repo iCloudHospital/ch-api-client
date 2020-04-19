@@ -2512,6 +2512,62 @@ export interface CreatePatientCommand {
 /**
  * 
  * @export
+ * @interface CreateQuestionCommand
+ */
+export interface CreateQuestionCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateQuestionCommand
+     */
+    title?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateQuestionCommand
+     */
+    body?: string;
+    /**
+     * 
+     * @type {QuestionType}
+     * @memberof CreateQuestionCommand
+     */
+    questionType?: QuestionType;
+    /**
+     * 
+     * @type {QuestionStatus}
+     * @memberof CreateQuestionCommand
+     */
+    questionStatus?: QuestionStatus;
+    /**
+     * 
+     * @type {Array<MediaViewModel>}
+     * @memberof CreateQuestionCommand
+     */
+    medias?: Array<MediaViewModel>;
+}
+/**
+ * 
+ * @export
+ * @interface CreateQuestionCommentCommand
+ */
+export interface CreateQuestionCommentCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateQuestionCommentCommand
+     */
+    body?: string;
+    /**
+     * 
+     * @type {Array<MediaViewModel>}
+     * @memberof CreateQuestionCommentCommand
+     */
+    medias?: Array<MediaViewModel>;
+}
+/**
+ * 
+ * @export
  * @interface CreateServiceCategoryCommand
  */
 export interface CreateServiceCategoryCommand {
@@ -3067,6 +3123,12 @@ export interface Doctor {
      * @memberof Doctor
      */
     articles?: Array<Article>;
+    /**
+     * 
+     * @type {Array<QuestionComment>}
+     * @memberof Doctor
+     */
+    questionComments?: Array<QuestionComment>;
     /**
      * 
      * @type {Array<UserLocation>}
@@ -4585,6 +4647,12 @@ export interface Hospital {
     articles?: Array<Article>;
     /**
      * 
+     * @type {Array<Question>}
+     * @memberof Hospital
+     */
+    questions?: Array<Question>;
+    /**
+     * 
      * @type {Array<Package>}
      * @memberof Hospital
      */
@@ -5828,6 +5896,12 @@ export interface Manager {
     articles?: Array<Article>;
     /**
      * 
+     * @type {Array<QuestionComment>}
+     * @memberof Manager
+     */
+    questionComments?: Array<QuestionComment>;
+    /**
+     * 
      * @type {Array<UserLocation>}
      * @memberof Manager
      */
@@ -6667,6 +6741,12 @@ export interface Patient {
     nationality?: string;
     /**
      * 
+     * @type {Array<Question>}
+     * @memberof Patient
+     */
+    questions?: Array<Question>;
+    /**
+     * 
      * @type {Array<Booking>}
      * @memberof Patient
      */
@@ -6779,6 +6859,12 @@ export interface Patient {
      * @memberof Patient
      */
     articles?: Array<Article>;
+    /**
+     * 
+     * @type {Array<QuestionComment>}
+     * @memberof Patient
+     */
+    questionComments?: Array<QuestionComment>;
     /**
      * 
      * @type {Array<UserLocation>}
@@ -7159,6 +7245,458 @@ export enum Procedure {
     Diagnostic = 'Diagnostic'
 }
 
+/**
+ * 
+ * @export
+ * @interface Question
+ */
+export interface Question {
+    /**
+     * 
+     * @type {string}
+     * @memberof Question
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Question
+     */
+    title?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Question
+     */
+    normalizedTitle?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Question
+     */
+    body?: string;
+    /**
+     * 
+     * @type {QuestionType}
+     * @memberof Question
+     */
+    questionType?: QuestionType;
+    /**
+     * 
+     * @type {QuestionStatus}
+     * @memberof Question
+     */
+    questionStatus?: QuestionStatus;
+    /**
+     * 
+     * @type {string}
+     * @memberof Question
+     */
+    patientId?: string;
+    /**
+     * 
+     * @type {Patient}
+     * @memberof Question
+     */
+    patient?: Patient;
+    /**
+     * 
+     * @type {string}
+     * @memberof Question
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {Hospital}
+     * @memberof Question
+     */
+    hospital?: Hospital;
+    /**
+     * 
+     * @type {Array<QuestionComment>}
+     * @memberof Question
+     */
+    questionComments?: Array<QuestionComment>;
+    /**
+     * 
+     * @type {Array<Media>}
+     * @memberof Question
+     */
+    medias?: Array<Media>;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof Question
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface QuestionComment
+ */
+export interface QuestionComment {
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionComment
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionComment
+     */
+    userId?: string;
+    /**
+     * 
+     * @type {User}
+     * @memberof QuestionComment
+     */
+    user?: User;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionComment
+     */
+    questionId?: string;
+    /**
+     * 
+     * @type {Question}
+     * @memberof QuestionComment
+     */
+    question?: Question;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionComment
+     */
+    body?: string;
+    /**
+     * 
+     * @type {Array<Media>}
+     * @memberof QuestionComment
+     */
+    medias?: Array<Media>;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof QuestionComment
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface QuestionCommentItemViewModel
+ */
+export interface QuestionCommentItemViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentItemViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentItemViewModel
+     */
+    userId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentItemViewModel
+     */
+    userName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentItemViewModel
+     */
+    questionId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentItemViewModel
+     */
+    questionTitle?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentItemViewModel
+     */
+    body?: string;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof QuestionCommentItemViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface QuestionCommentViewModel
+ */
+export interface QuestionCommentViewModel {
+    /**
+     * 
+     * @type {Array<MediaViewModel>}
+     * @memberof QuestionCommentViewModel
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentViewModel
+     */
+    userId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentViewModel
+     */
+    userName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentViewModel
+     */
+    questionId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentViewModel
+     */
+    questionTitle?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentViewModel
+     */
+    body?: string;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof QuestionCommentViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface QuestionCommentsViewModel
+ */
+export interface QuestionCommentsViewModel {
+    /**
+     * 
+     * @type {Array<QuestionCommentItemViewModel>}
+     * @memberof QuestionCommentsViewModel
+     */
+    items?: Array<QuestionCommentItemViewModel>;
+    /**
+     * 
+     * @type {PagedListMetaData}
+     * @memberof QuestionCommentsViewModel
+     */
+    metaData?: PagedListMetaData;
+}
+/**
+ * 
+ * @export
+ * @interface QuestionItemViewModel
+ */
+export interface QuestionItemViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionItemViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionItemViewModel
+     */
+    title?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionItemViewModel
+     */
+    patientId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionItemViewModel
+     */
+    patientName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionItemViewModel
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionItemViewModel
+     */
+    hospitalName?: string;
+    /**
+     * 
+     * @type {QuestionType}
+     * @memberof QuestionItemViewModel
+     */
+    questionType?: QuestionType;
+    /**
+     * 
+     * @type {QuestionStatus}
+     * @memberof QuestionItemViewModel
+     */
+    questionStatus?: QuestionStatus;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionItemViewModel
+     */
+    questionCommentsCount?: number;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof QuestionItemViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+export enum QuestionStatus {
+    New = 'New',
+    Answered = 'Answered',
+    Replied = 'Replied',
+    Archived = 'Archived'
+}
+
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
+export enum QuestionType {
+    General = 'General',
+    Health = 'Health',
+    Treatment = 'Treatment',
+    Travel = 'Travel'
+}
+
+/**
+ * 
+ * @export
+ * @interface QuestionViewModel
+ */
+export interface QuestionViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    body?: string;
+    /**
+     * 
+     * @type {Array<MediaViewModel>}
+     * @memberof QuestionViewModel
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    title?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    patientId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    patientName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    hospitalName?: string;
+    /**
+     * 
+     * @type {QuestionType}
+     * @memberof QuestionViewModel
+     */
+    questionType?: QuestionType;
+    /**
+     * 
+     * @type {QuestionStatus}
+     * @memberof QuestionViewModel
+     */
+    questionStatus?: QuestionStatus;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewModel
+     */
+    questionCommentsCount?: number;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof QuestionViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface QuestionsViewModel
+ */
+export interface QuestionsViewModel {
+    /**
+     * 
+     * @type {Array<QuestionItemViewModel>}
+     * @memberof QuestionsViewModel
+     */
+    items?: Array<QuestionItemViewModel>;
+    /**
+     * 
+     * @type {PagedListMetaData}
+     * @memberof QuestionsViewModel
+     */
+    metaData?: PagedListMetaData;
+}
 /**
  * 
  * @export
@@ -9021,6 +9559,62 @@ export interface UpdatePatientCommand {
 /**
  * 
  * @export
+ * @interface UpdateQuestionCommand
+ */
+export interface UpdateQuestionCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateQuestionCommand
+     */
+    title?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateQuestionCommand
+     */
+    body?: string;
+    /**
+     * 
+     * @type {QuestionType}
+     * @memberof UpdateQuestionCommand
+     */
+    questionType?: QuestionType;
+    /**
+     * 
+     * @type {QuestionStatus}
+     * @memberof UpdateQuestionCommand
+     */
+    questionStatus?: QuestionStatus;
+    /**
+     * 
+     * @type {Array<MediaViewModel>}
+     * @memberof UpdateQuestionCommand
+     */
+    medias?: Array<MediaViewModel>;
+}
+/**
+ * 
+ * @export
+ * @interface UpdateQuestionCommentCommand
+ */
+export interface UpdateQuestionCommentCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateQuestionCommentCommand
+     */
+    body?: string;
+    /**
+     * 
+     * @type {Array<MediaViewModel>}
+     * @memberof UpdateQuestionCommentCommand
+     */
+    medias?: Array<MediaViewModel>;
+}
+/**
+ * 
+ * @export
  * @interface UpdateServiceCategoryCommand
  */
 export interface UpdateServiceCategoryCommand {
@@ -9384,6 +9978,12 @@ export interface User {
      * @memberof User
      */
     articles?: Array<Article>;
+    /**
+     * 
+     * @type {Array<QuestionComment>}
+     * @memberof User
+     */
+    questionComments?: Array<QuestionComment>;
     /**
      * 
      * @type {Array<UserLocation>}
@@ -19757,6 +20357,1124 @@ export class ProfilesApi extends BaseAPI {
      */
     public apiV1ProfilesGet(options?: any) {
         return ProfilesApiFp(this.configuration).apiV1ProfilesGet(options)(this.axios, this.basePath);
+    }
+
+}
+
+
+/**
+ * QuestionCommentsApi - axios parameter creator
+ * @export
+ */
+export const QuestionCommentsApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        POST /api/v1/hospitals/1/questions/1/questionComment      {          \"title\": \"Hospital questionComment\",          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Create an questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {CreateQuestionCommentCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId: string, questionId: string, body?: CreateQuestionCommentCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsPost.');
+            }
+            // verify required parameter 'questionId' is not null or undefined
+            if (questionId === null || questionId === undefined) {
+                throw new RequiredError('questionId','Required parameter questionId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsPost.');
+            }
+            const localVarPath = `/api/v1/questions/{questionId}/questioncomments`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
+                .replace(`{${"questionId"}}`, encodeURIComponent(String(questionId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        DELETE /api/v1/hospitals/1/questions/1/questionComments/1
+         * @summary Delete questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {string} questionCommentId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId: string, questionId: string, questionCommentId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete.');
+            }
+            // verify required parameter 'questionId' is not null or undefined
+            if (questionId === null || questionId === undefined) {
+                throw new RequiredError('questionId','Required parameter questionId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete.');
+            }
+            // verify required parameter 'questionCommentId' is not null or undefined
+            if (questionCommentId === null || questionCommentId === undefined) {
+                throw new RequiredError('questionCommentId','Required parameter questionCommentId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete.');
+            }
+            const localVarPath = `/api/v1/questions/{questionId}/questioncomments/{questionCommentId}`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
+                .replace(`{${"questionId"}}`, encodeURIComponent(String(questionId)))
+                .replace(`{${"questionCommentId"}}`, encodeURIComponent(String(questionCommentId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questionComment/1
+         * @summary Get questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {string} questionCommentId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId: string, questionId: string, questionCommentId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet.');
+            }
+            // verify required parameter 'questionId' is not null or undefined
+            if (questionId === null || questionId === undefined) {
+                throw new RequiredError('questionId','Required parameter questionId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet.');
+            }
+            // verify required parameter 'questionCommentId' is not null or undefined
+            if (questionCommentId === null || questionCommentId === undefined) {
+                throw new RequiredError('questionCommentId','Required parameter questionCommentId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet.');
+            }
+            const localVarPath = `/api/v1/questions/{questionId}/questioncomments/{questionCommentId}`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
+                .replace(`{${"questionId"}}`, encodeURIComponent(String(questionId)))
+                .replace(`{${"questionCommentId"}}`, encodeURIComponent(String(questionCommentId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/hospitals/1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
+         * @summary Update questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {string} questionCommentId 
+         * @param {UpdateQuestionCommentCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId: string, questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut.');
+            }
+            // verify required parameter 'questionId' is not null or undefined
+            if (questionId === null || questionId === undefined) {
+                throw new RequiredError('questionId','Required parameter questionId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut.');
+            }
+            // verify required parameter 'questionCommentId' is not null or undefined
+            if (questionCommentId === null || questionCommentId === undefined) {
+                throw new RequiredError('questionCommentId','Required parameter questionCommentId was null or undefined when calling apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut.');
+            }
+            const localVarPath = `/api/v1/questions/{questionId}/questioncomments/{questionCommentId}`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
+                .replace(`{${"questionId"}}`, encodeURIComponent(String(questionId)))
+                .replace(`{${"questionCommentId"}}`, encodeURIComponent(String(questionCommentId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questionComment
+         * @summary Get all questionComment.
+         * @param {string} [id] 
+         * @param {string} [userId] 
+         * @param {string} [questionId] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestioncommentsGet(id?: string, userId?: string, questionId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/questions/questioncomments`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+            if (id !== undefined) {
+                localVarQueryParameter['Id'] = id;
+            }
+
+            if (userId !== undefined) {
+                localVarQueryParameter['UserId'] = userId;
+            }
+
+            if (questionId !== undefined) {
+                localVarQueryParameter['QuestionId'] = questionId;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * QuestionCommentsApi - functional programming interface
+ * @export
+ */
+export const QuestionCommentsApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        POST /api/v1/hospitals/1/questions/1/questionComment      {          \"title\": \"Hospital questionComment\",          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Create an questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {CreateQuestionCommentCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId: string, questionId: string, body?: CreateQuestionCommentCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = QuestionCommentsApiAxiosParamCreator(configuration).apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId, questionId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        DELETE /api/v1/hospitals/1/questions/1/questionComments/1
+         * @summary Delete questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {string} questionCommentId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId: string, questionId: string, questionCommentId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = QuestionCommentsApiAxiosParamCreator(configuration).apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId, questionId, questionCommentId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questionComment/1
+         * @summary Get questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {string} questionCommentId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId: string, questionId: string, questionCommentId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<QuestionCommentViewModel> {
+            const localVarAxiosArgs = QuestionCommentsApiAxiosParamCreator(configuration).apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId, questionId, questionCommentId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/hospitals/1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
+         * @summary Update questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {string} questionCommentId 
+         * @param {UpdateQuestionCommentCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId: string, questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = QuestionCommentsApiAxiosParamCreator(configuration).apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId, questionId, questionCommentId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questionComment
+         * @summary Get all questionComment.
+         * @param {string} [id] 
+         * @param {string} [userId] 
+         * @param {string} [questionId] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestioncommentsGet(id?: string, userId?: string, questionId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<QuestionCommentsViewModel> {
+            const localVarAxiosArgs = QuestionCommentsApiAxiosParamCreator(configuration).apiV1QuestionsQuestioncommentsGet(id, userId, questionId, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * QuestionCommentsApi - factory interface
+ * @export
+ */
+export const QuestionCommentsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * Sample request:        POST /api/v1/hospitals/1/questions/1/questionComment      {          \"title\": \"Hospital questionComment\",          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Create an questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {CreateQuestionCommentCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId: string, questionId: string, body?: CreateQuestionCommentCommand, options?: any): AxiosPromise<string> {
+            return QuestionCommentsApiFp(configuration).apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId, questionId, body, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        DELETE /api/v1/hospitals/1/questions/1/questionComments/1
+         * @summary Delete questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {string} questionCommentId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId: string, questionId: string, questionCommentId: string, options?: any): AxiosPromise<boolean> {
+            return QuestionCommentsApiFp(configuration).apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId, questionId, questionCommentId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questionComment/1
+         * @summary Get questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {string} questionCommentId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId: string, questionId: string, questionCommentId: string, options?: any): AxiosPromise<QuestionCommentViewModel> {
+            return QuestionCommentsApiFp(configuration).apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId, questionId, questionCommentId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        PUT /api/v1/hospitals/1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
+         * @summary Update questionComment.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {string} questionCommentId 
+         * @param {UpdateQuestionCommentCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId: string, questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand, options?: any): AxiosPromise<boolean> {
+            return QuestionCommentsApiFp(configuration).apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId, questionId, questionCommentId, body, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questionComment
+         * @summary Get all questionComment.
+         * @param {string} [id] 
+         * @param {string} [userId] 
+         * @param {string} [questionId] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1QuestionsQuestioncommentsGet(id?: string, userId?: string, questionId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<QuestionCommentsViewModel> {
+            return QuestionCommentsApiFp(configuration).apiV1QuestionsQuestioncommentsGet(id, userId, questionId, page, limit, lastRetrieved, current, options)(axios, basePath);
+        },
+    };
+};
+
+/**
+ * QuestionCommentsApi - object-oriented interface
+ * @export
+ * @class QuestionCommentsApi
+ * @extends {BaseAPI}
+ */
+export class QuestionCommentsApi extends BaseAPI {
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/questions/1/questionComment      {          \"title\": \"Hospital questionComment\",          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+     * @summary Create an questionComment.
+     * @param {string} hospitalId 
+     * @param {string} questionId 
+     * @param {CreateQuestionCommentCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionCommentsApi
+     */
+    public apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId: string, questionId: string, body?: CreateQuestionCommentCommand, options?: any) {
+        return QuestionCommentsApiFp(this.configuration).apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId, questionId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/questions/1/questionComments/1
+     * @summary Delete questionComment.
+     * @param {string} hospitalId 
+     * @param {string} questionId 
+     * @param {string} questionCommentId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionCommentsApi
+     */
+    public apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId: string, questionId: string, questionCommentId: string, options?: any) {
+        return QuestionCommentsApiFp(this.configuration).apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId, questionId, questionCommentId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/questionComment/1
+     * @summary Get questionComment.
+     * @param {string} hospitalId 
+     * @param {string} questionId 
+     * @param {string} questionCommentId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionCommentsApi
+     */
+    public apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId: string, questionId: string, questionCommentId: string, options?: any) {
+        return QuestionCommentsApiFp(this.configuration).apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId, questionId, questionCommentId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        PUT /api/v1/hospitals/1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
+     * @summary Update questionComment.
+     * @param {string} hospitalId 
+     * @param {string} questionId 
+     * @param {string} questionCommentId 
+     * @param {UpdateQuestionCommentCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionCommentsApi
+     */
+    public apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId: string, questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand, options?: any) {
+        return QuestionCommentsApiFp(this.configuration).apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId, questionId, questionCommentId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/questionComment
+     * @summary Get all questionComment.
+     * @param {string} [id] 
+     * @param {string} [userId] 
+     * @param {string} [questionId] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionCommentsApi
+     */
+    public apiV1QuestionsQuestioncommentsGet(id?: string, userId?: string, questionId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return QuestionCommentsApiFp(this.configuration).apiV1QuestionsQuestioncommentsGet(id, userId, questionId, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    }
+
+}
+
+
+/**
+ * QuestionsApi - axios parameter creator
+ * @export
+ */
+export const QuestionsApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        POST /api/v1/hospitals/1/questions      {          \"title\": \"Hospital question\",          \"description\": \"This is a question.\",          \"body\": \"question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Create an question.
+         * @param {string} hospitalId 
+         * @param {CreateQuestionCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsPost(hospitalId: string, body?: CreateQuestionCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdQuestionsPost.');
+            }
+            const localVarPath = `/api/v1/hospitals/{hospitalId}/questions`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        DELETE /api/v1/hospitals/1/questions/1
+         * @summary Delete question.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId: string, questionId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdQuestionsQuestionIdDelete.');
+            }
+            // verify required parameter 'questionId' is not null or undefined
+            if (questionId === null || questionId === undefined) {
+                throw new RequiredError('questionId','Required parameter questionId was null or undefined when calling apiV1HospitalsHospitalIdQuestionsQuestionIdDelete.');
+            }
+            const localVarPath = `/api/v1/hospitals/{hospitalId}/questions/{questionId}`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
+                .replace(`{${"questionId"}}`, encodeURIComponent(String(questionId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questions/1
+         * @summary Get question.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId: string, questionId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdQuestionsQuestionIdGet.');
+            }
+            // verify required parameter 'questionId' is not null or undefined
+            if (questionId === null || questionId === undefined) {
+                throw new RequiredError('questionId','Required parameter questionId was null or undefined when calling apiV1HospitalsHospitalIdQuestionsQuestionIdGet.');
+            }
+            const localVarPath = `/api/v1/hospitals/{hospitalId}/questions/{questionId}`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
+                .replace(`{${"questionId"}}`, encodeURIComponent(String(questionId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/hospitals/1/questions/1      {          \"title\": \"Samsung Hospital\",          \"description\": \"This is an question.\",          \"body\": \"updated question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,        ///                   \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Update question.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {UpdateQuestionCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId: string, questionId: string, body?: UpdateQuestionCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'hospitalId' is not null or undefined
+            if (hospitalId === null || hospitalId === undefined) {
+                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdQuestionsQuestionIdPut.');
+            }
+            // verify required parameter 'questionId' is not null or undefined
+            if (questionId === null || questionId === undefined) {
+                throw new RequiredError('questionId','Required parameter questionId was null or undefined when calling apiV1HospitalsHospitalIdQuestionsQuestionIdPut.');
+            }
+            const localVarPath = `/api/v1/hospitals/{hospitalId}/questions/{questionId}`
+                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
+                .replace(`{${"questionId"}}`, encodeURIComponent(String(questionId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questions
+         * @summary Get all questions.
+         * @param {string} [id] 
+         * @param {string} [title] 
+         * @param {string} [hospitalId] 
+         * @param {string} [patientId] 
+         * @param {object} [questionType] 
+         * @param {object} [questionStatus] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsQuestionsGet(id?: string, title?: string, hospitalId?: string, patientId?: string, questionType?: object, questionStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/hospitals/questions`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+            if (id !== undefined) {
+                localVarQueryParameter['Id'] = id;
+            }
+
+            if (title !== undefined) {
+                localVarQueryParameter['Title'] = title;
+            }
+
+            if (hospitalId !== undefined) {
+                localVarQueryParameter['HospitalId'] = hospitalId;
+            }
+
+            if (patientId !== undefined) {
+                localVarQueryParameter['PatientId'] = patientId;
+            }
+
+            if (questionType !== undefined) {
+                localVarQueryParameter['QuestionType'] = questionType;
+            }
+
+            if (questionStatus !== undefined) {
+                localVarQueryParameter['QuestionStatus'] = questionStatus;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * QuestionsApi - functional programming interface
+ * @export
+ */
+export const QuestionsApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        POST /api/v1/hospitals/1/questions      {          \"title\": \"Hospital question\",          \"description\": \"This is a question.\",          \"body\": \"question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Create an question.
+         * @param {string} hospitalId 
+         * @param {CreateQuestionCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsPost(hospitalId: string, body?: CreateQuestionCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = QuestionsApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdQuestionsPost(hospitalId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        DELETE /api/v1/hospitals/1/questions/1
+         * @summary Delete question.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId: string, questionId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = QuestionsApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId, questionId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questions/1
+         * @summary Get question.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId: string, questionId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<QuestionViewModel> {
+            const localVarAxiosArgs = QuestionsApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId, questionId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/hospitals/1/questions/1      {          \"title\": \"Samsung Hospital\",          \"description\": \"This is an question.\",          \"body\": \"updated question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,        ///                   \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Update question.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {UpdateQuestionCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId: string, questionId: string, body?: UpdateQuestionCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = QuestionsApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId, questionId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questions
+         * @summary Get all questions.
+         * @param {string} [id] 
+         * @param {string} [title] 
+         * @param {string} [hospitalId] 
+         * @param {string} [patientId] 
+         * @param {object} [questionType] 
+         * @param {object} [questionStatus] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsQuestionsGet(id?: string, title?: string, hospitalId?: string, patientId?: string, questionType?: object, questionStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<QuestionsViewModel> {
+            const localVarAxiosArgs = QuestionsApiAxiosParamCreator(configuration).apiV1HospitalsQuestionsGet(id, title, hospitalId, patientId, questionType, questionStatus, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * QuestionsApi - factory interface
+ * @export
+ */
+export const QuestionsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * Sample request:        POST /api/v1/hospitals/1/questions      {          \"title\": \"Hospital question\",          \"description\": \"This is a question.\",          \"body\": \"question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Create an question.
+         * @param {string} hospitalId 
+         * @param {CreateQuestionCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsPost(hospitalId: string, body?: CreateQuestionCommand, options?: any): AxiosPromise<string> {
+            return QuestionsApiFp(configuration).apiV1HospitalsHospitalIdQuestionsPost(hospitalId, body, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        DELETE /api/v1/hospitals/1/questions/1
+         * @summary Delete question.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId: string, questionId: string, options?: any): AxiosPromise<boolean> {
+            return QuestionsApiFp(configuration).apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId, questionId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questions/1
+         * @summary Get question.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId: string, questionId: string, options?: any): AxiosPromise<QuestionViewModel> {
+            return QuestionsApiFp(configuration).apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId, questionId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        PUT /api/v1/hospitals/1/questions/1      {          \"title\": \"Samsung Hospital\",          \"description\": \"This is an question.\",          \"body\": \"updated question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,        ///                   \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Update question.
+         * @param {string} hospitalId 
+         * @param {string} questionId 
+         * @param {UpdateQuestionCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId: string, questionId: string, body?: UpdateQuestionCommand, options?: any): AxiosPromise<boolean> {
+            return QuestionsApiFp(configuration).apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId, questionId, body, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        GET /api/v1/hospitals/1/questions
+         * @summary Get all questions.
+         * @param {string} [id] 
+         * @param {string} [title] 
+         * @param {string} [hospitalId] 
+         * @param {string} [patientId] 
+         * @param {object} [questionType] 
+         * @param {object} [questionStatus] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsQuestionsGet(id?: string, title?: string, hospitalId?: string, patientId?: string, questionType?: object, questionStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<QuestionsViewModel> {
+            return QuestionsApiFp(configuration).apiV1HospitalsQuestionsGet(id, title, hospitalId, patientId, questionType, questionStatus, page, limit, lastRetrieved, current, options)(axios, basePath);
+        },
+    };
+};
+
+/**
+ * QuestionsApi - object-oriented interface
+ * @export
+ * @class QuestionsApi
+ * @extends {BaseAPI}
+ */
+export class QuestionsApi extends BaseAPI {
+    /**
+     * Sample request:        POST /api/v1/hospitals/1/questions      {          \"title\": \"Hospital question\",          \"description\": \"This is a question.\",          \"body\": \"question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+     * @summary Create an question.
+     * @param {string} hospitalId 
+     * @param {CreateQuestionCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionsApi
+     */
+    public apiV1HospitalsHospitalIdQuestionsPost(hospitalId: string, body?: CreateQuestionCommand, options?: any) {
+        return QuestionsApiFp(this.configuration).apiV1HospitalsHospitalIdQuestionsPost(hospitalId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        DELETE /api/v1/hospitals/1/questions/1
+     * @summary Delete question.
+     * @param {string} hospitalId 
+     * @param {string} questionId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionsApi
+     */
+    public apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId: string, questionId: string, options?: any) {
+        return QuestionsApiFp(this.configuration).apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId, questionId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/questions/1
+     * @summary Get question.
+     * @param {string} hospitalId 
+     * @param {string} questionId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionsApi
+     */
+    public apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId: string, questionId: string, options?: any) {
+        return QuestionsApiFp(this.configuration).apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId, questionId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        PUT /api/v1/hospitals/1/questions/1      {          \"title\": \"Samsung Hospital\",          \"description\": \"This is an question.\",          \"body\": \"updated question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,        ///                   \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+     * @summary Update question.
+     * @param {string} hospitalId 
+     * @param {string} questionId 
+     * @param {UpdateQuestionCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionsApi
+     */
+    public apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId: string, questionId: string, body?: UpdateQuestionCommand, options?: any) {
+        return QuestionsApiFp(this.configuration).apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId, questionId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        GET /api/v1/hospitals/1/questions
+     * @summary Get all questions.
+     * @param {string} [id] 
+     * @param {string} [title] 
+     * @param {string} [hospitalId] 
+     * @param {string} [patientId] 
+     * @param {object} [questionType] 
+     * @param {object} [questionStatus] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionsApi
+     */
+    public apiV1HospitalsQuestionsGet(id?: string, title?: string, hospitalId?: string, patientId?: string, questionType?: object, questionStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return QuestionsApiFp(this.configuration).apiV1HospitalsQuestionsGet(id, title, hospitalId, patientId, questionType, questionStatus, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
 }
