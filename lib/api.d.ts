@@ -14921,52 +14921,12 @@ export declare class ProfilesApi extends BaseAPI {
  */
 export declare const QuestionCommentsApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
-     * Sample request:        POST /api/v1/hospitals/1/questions/1/questionComment      {          \"title\": \"Hospital questionComment\",          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
-     * @summary Create an questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {CreateQuestionCommentCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId: string, questionId: string, body?: CreateQuestionCommentCommand | undefined, options?: any): RequestArgs;
-    /**
-     * Sample request:        DELETE /api/v1/hospitals/1/questions/1/questionComments/1
-     * @summary Delete questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId: string, questionId: string, questionCommentId: string, options?: any): RequestArgs;
-    /**
-     * Sample request:        GET /api/v1/hospitals/1/questionComment/1
-     * @summary Get questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId: string, questionId: string, questionCommentId: string, options?: any): RequestArgs;
-    /**
-     * Sample request:        PUT /api/v1/hospitals/1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
-     * @summary Update questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {UpdateQuestionCommentCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId: string, questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand | undefined, options?: any): RequestArgs;
-    /**
-     * Sample request:        GET /api/v1/hospitals/1/questionComment
+     * Sample request:        GET /api/v1/questionComment
      * @summary Get all questionComment.
+     * @param {string} questionId
      * @param {string} [id]
      * @param {string} [userId]
-     * @param {string} [questionId]
+     * @param {string} [questionId2]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -14974,7 +14934,44 @@ export declare const QuestionCommentsApiAxiosParamCreator: (configuration?: Conf
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestioncommentsGet(id?: string | undefined, userId?: string | undefined, questionId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1QuestionsQuestionIdQuestioncommentsGet(questionId: string, id?: string | undefined, userId?: string | undefined, questionId2?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    /**
+     * Sample request:        POST /api/v1/questions/1/questionComment      {          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+     * @summary Create an questionComment.
+     * @param {string} questionId
+     * @param {CreateQuestionCommentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsPost(questionId: string, body?: CreateQuestionCommentCommand | undefined, options?: any): RequestArgs;
+    /**
+     * Sample request:        DELETE /api/v1/questions/1/questionComments/1
+     * @summary Delete questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(questionId: string, questionCommentId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:        GET /api/v1/questionComment/1
+     * @summary Get questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(questionId: string, questionCommentId: string, options?: any): RequestArgs;
+    /**
+     * Sample request:        PUT /api/v1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
+     * @summary Update questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {UpdateQuestionCommentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand | undefined, options?: any): RequestArgs;
 };
 /**
  * QuestionCommentsApi - functional programming interface
@@ -14982,52 +14979,12 @@ export declare const QuestionCommentsApiAxiosParamCreator: (configuration?: Conf
  */
 export declare const QuestionCommentsApiFp: (configuration?: Configuration | undefined) => {
     /**
-     * Sample request:        POST /api/v1/hospitals/1/questions/1/questionComment      {          \"title\": \"Hospital questionComment\",          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
-     * @summary Create an questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {CreateQuestionCommentCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId: string, questionId: string, body?: CreateQuestionCommentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
-    /**
-     * Sample request:        DELETE /api/v1/hospitals/1/questions/1/questionComments/1
-     * @summary Delete questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId: string, questionId: string, questionCommentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
-    /**
-     * Sample request:        GET /api/v1/hospitals/1/questionComment/1
-     * @summary Get questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId: string, questionId: string, questionCommentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionCommentViewModel>;
-    /**
-     * Sample request:        PUT /api/v1/hospitals/1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
-     * @summary Update questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {UpdateQuestionCommentCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId: string, questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
-    /**
-     * Sample request:        GET /api/v1/hospitals/1/questionComment
+     * Sample request:        GET /api/v1/questionComment
      * @summary Get all questionComment.
+     * @param {string} questionId
      * @param {string} [id]
      * @param {string} [userId]
-     * @param {string} [questionId]
+     * @param {string} [questionId2]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -15035,7 +14992,44 @@ export declare const QuestionCommentsApiFp: (configuration?: Configuration | und
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestioncommentsGet(id?: string | undefined, userId?: string | undefined, questionId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionCommentsViewModel>;
+    apiV1QuestionsQuestionIdQuestioncommentsGet(questionId: string, id?: string | undefined, userId?: string | undefined, questionId2?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionCommentsViewModel>;
+    /**
+     * Sample request:        POST /api/v1/questions/1/questionComment      {          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+     * @summary Create an questionComment.
+     * @param {string} questionId
+     * @param {CreateQuestionCommentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsPost(questionId: string, body?: CreateQuestionCommentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     * Sample request:        DELETE /api/v1/questions/1/questionComments/1
+     * @summary Delete questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(questionId: string, questionCommentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/questionComment/1
+     * @summary Get questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(questionId: string, questionCommentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionCommentViewModel>;
+    /**
+     * Sample request:        PUT /api/v1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
+     * @summary Update questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {UpdateQuestionCommentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
 };
 /**
  * QuestionCommentsApi - factory interface
@@ -15043,52 +15037,12 @@ export declare const QuestionCommentsApiFp: (configuration?: Configuration | und
  */
 export declare const QuestionCommentsApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
     /**
-     * Sample request:        POST /api/v1/hospitals/1/questions/1/questionComment      {          \"title\": \"Hospital questionComment\",          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
-     * @summary Create an questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {CreateQuestionCommentCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId: string, questionId: string, body?: CreateQuestionCommentCommand | undefined, options?: any): AxiosPromise<string>;
-    /**
-     * Sample request:        DELETE /api/v1/hospitals/1/questions/1/questionComments/1
-     * @summary Delete questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId: string, questionId: string, questionCommentId: string, options?: any): AxiosPromise<boolean>;
-    /**
-     * Sample request:        GET /api/v1/hospitals/1/questionComment/1
-     * @summary Get questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId: string, questionId: string, questionCommentId: string, options?: any): AxiosPromise<QuestionCommentViewModel>;
-    /**
-     * Sample request:        PUT /api/v1/hospitals/1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
-     * @summary Update questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {UpdateQuestionCommentCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId: string, questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand | undefined, options?: any): AxiosPromise<boolean>;
-    /**
-     * Sample request:        GET /api/v1/hospitals/1/questionComment
+     * Sample request:        GET /api/v1/questionComment
      * @summary Get all questionComment.
+     * @param {string} questionId
      * @param {string} [id]
      * @param {string} [userId]
-     * @param {string} [questionId]
+     * @param {string} [questionId2]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -15096,7 +15050,44 @@ export declare const QuestionCommentsApiFactory: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestioncommentsGet(id?: string | undefined, userId?: string | undefined, questionId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<QuestionCommentsViewModel>;
+    apiV1QuestionsQuestionIdQuestioncommentsGet(questionId: string, id?: string | undefined, userId?: string | undefined, questionId2?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<QuestionCommentsViewModel>;
+    /**
+     * Sample request:        POST /api/v1/questions/1/questionComment      {          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+     * @summary Create an questionComment.
+     * @param {string} questionId
+     * @param {CreateQuestionCommentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsPost(questionId: string, body?: CreateQuestionCommentCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     * Sample request:        DELETE /api/v1/questions/1/questionComments/1
+     * @summary Delete questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(questionId: string, questionCommentId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/questionComment/1
+     * @summary Get questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(questionId: string, questionCommentId: string, options?: any): AxiosPromise<QuestionCommentViewModel>;
+    /**
+     * Sample request:        PUT /api/v1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
+     * @summary Update questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {UpdateQuestionCommentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand | undefined, options?: any): AxiosPromise<boolean>;
 };
 /**
  * QuestionCommentsApi - object-oriented interface
@@ -15106,56 +15097,12 @@ export declare const QuestionCommentsApiFactory: (configuration?: Configuration 
  */
 export declare class QuestionCommentsApi extends BaseAPI {
     /**
-     * Sample request:        POST /api/v1/hospitals/1/questions/1/questionComment      {          \"title\": \"Hospital questionComment\",          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
-     * @summary Create an questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {CreateQuestionCommentCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof QuestionCommentsApi
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsPost(hospitalId: string, questionId: string, body?: CreateQuestionCommentCommand, options?: any): AxiosPromise<string>;
-    /**
-     * Sample request:        DELETE /api/v1/hospitals/1/questions/1/questionComments/1
-     * @summary Delete questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof QuestionCommentsApi
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(hospitalId: string, questionId: string, questionCommentId: string, options?: any): AxiosPromise<boolean>;
-    /**
-     * Sample request:        GET /api/v1/hospitals/1/questionComment/1
-     * @summary Get questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof QuestionCommentsApi
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(hospitalId: string, questionId: string, questionCommentId: string, options?: any): AxiosPromise<QuestionCommentViewModel>;
-    /**
-     * Sample request:        PUT /api/v1/hospitals/1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
-     * @summary Update questionComment.
-     * @param {string} hospitalId
-     * @param {string} questionId
-     * @param {string} questionCommentId
-     * @param {UpdateQuestionCommentCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof QuestionCommentsApi
-     */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(hospitalId: string, questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand, options?: any): AxiosPromise<boolean>;
-    /**
-     * Sample request:        GET /api/v1/hospitals/1/questionComment
+     * Sample request:        GET /api/v1/questionComment
      * @summary Get all questionComment.
+     * @param {string} questionId
      * @param {string} [id]
      * @param {string} [userId]
-     * @param {string} [questionId]
+     * @param {string} [questionId2]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -15164,7 +15111,48 @@ export declare class QuestionCommentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionCommentsApi
      */
-    apiV1QuestionsQuestioncommentsGet(id?: string, userId?: string, questionId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<QuestionCommentsViewModel>;
+    apiV1QuestionsQuestionIdQuestioncommentsGet(questionId: string, id?: string, userId?: string, questionId2?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<QuestionCommentsViewModel>;
+    /**
+     * Sample request:        POST /api/v1/questions/1/questionComment      {          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+     * @summary Create an questionComment.
+     * @param {string} questionId
+     * @param {CreateQuestionCommentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionCommentsApi
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsPost(questionId: string, body?: CreateQuestionCommentCommand, options?: any): AxiosPromise<string>;
+    /**
+     * Sample request:        DELETE /api/v1/questions/1/questionComments/1
+     * @summary Delete questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionCommentsApi
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(questionId: string, questionCommentId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     * Sample request:        GET /api/v1/questionComment/1
+     * @summary Get questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionCommentsApi
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(questionId: string, questionCommentId: string, options?: any): AxiosPromise<QuestionCommentViewModel>;
+    /**
+     * Sample request:        PUT /api/v1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
+     * @summary Update questionComment.
+     * @param {string} questionId
+     * @param {string} questionCommentId
+     * @param {UpdateQuestionCommentCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionCommentsApi
+     */
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(questionId: string, questionCommentId: string, body?: UpdateQuestionCommentCommand, options?: any): AxiosPromise<boolean>;
 }
 /**
  * QuestionsApi - axios parameter creator
