@@ -227,10 +227,10 @@ export interface ArticleItemViewModel {
     hospitalName?: string;
     /**
      *
-     * @type {Array<ArticleTag>}
+     * @type {Array<ArticleTagViewModel>}
      * @memberof ArticleItemViewModel
      */
-    articleTags?: Array<ArticleTag>;
+    articleTags?: Array<ArticleTagViewModel>;
     /**
      *
      * @type {Array<MediaViewModel>}
@@ -288,6 +288,31 @@ export interface ArticleTag {
      *
      * @type {number}
      * @memberof ArticleTag
+     */
+    order?: number;
+}
+/**
+ *
+ * @export
+ * @interface ArticleTagViewModel
+ */
+export interface ArticleTagViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof ArticleTagViewModel
+     */
+    articleId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ArticleTagViewModel
+     */
+    tagId?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof ArticleTagViewModel
      */
     order?: number;
 }
@@ -353,10 +378,10 @@ export interface ArticleViewModel {
     hospitalName?: string;
     /**
      *
-     * @type {Array<ArticleTag>}
+     * @type {Array<ArticleTagViewModel>}
      * @memberof ArticleViewModel
      */
-    articleTags?: Array<ArticleTag>;
+    articleTags?: Array<ArticleTagViewModel>;
     /**
      *
      * @type {Array<MediaViewModel>}
@@ -1638,10 +1663,10 @@ export interface CreateArticleCommand {
     status?: ArticleStatus;
     /**
      *
-     * @type {Array<ArticleTag>}
+     * @type {Array<ArticleTagViewModel>}
      * @memberof CreateArticleCommand
      */
-    articleTags?: Array<ArticleTag>;
+    articleTags?: Array<ArticleTagViewModel>;
     /**
      *
      * @type {Array<MediaViewModel>}
@@ -8687,12 +8712,6 @@ export interface UpdateArticleCommand {
      * @type {string}
      * @memberof UpdateArticleCommand
      */
-    id?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UpdateArticleCommand
-     */
     title?: string;
     /**
      *
@@ -8714,46 +8733,16 @@ export interface UpdateArticleCommand {
     status?: ArticleStatus;
     /**
      *
-     * @type {string}
+     * @type {Array<ArticleTagViewModel>}
      * @memberof UpdateArticleCommand
      */
-    userId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UpdateArticleCommand
-     */
-    userName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UpdateArticleCommand
-     */
-    hospitalId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof UpdateArticleCommand
-     */
-    hospitalName?: string;
-    /**
-     *
-     * @type {Array<ArticleTag>}
-     * @memberof UpdateArticleCommand
-     */
-    articleTags?: Array<ArticleTag>;
+    articleTags?: Array<ArticleTagViewModel>;
     /**
      *
      * @type {Array<MediaViewModel>}
      * @memberof UpdateArticleCommand
      */
     medias?: Array<MediaViewModel>;
-    /**
-     *
-     * @type {AuditableEntity}
-     * @memberof UpdateArticleCommand
-     */
-    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -13521,6 +13510,22 @@ export declare class HospitalSpecialtiesApi extends BaseAPI {
  */
 export declare const HospitalsApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
     /**
+     *
+     * @param {string} [id]
+     * @param {string} [name]
+     * @param {string} [description]
+     * @param {string} [countryId]
+     * @param {Date} [created]
+     * @param {object} [marketingType]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
      * @param {string} [id]
@@ -13577,6 +13582,22 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
  */
 export declare const HospitalsApiFp: (configuration?: Configuration | undefined) => {
     /**
+     *
+     * @param {string} [id]
+     * @param {string} [name]
+     * @param {string} [description]
+     * @param {string} [countryId]
+     * @param {Date} [created]
+     * @param {object} [marketingType]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>;
+    /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
      * @param {string} [id]
@@ -13632,6 +13653,22 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
  * @export
  */
 export declare const HospitalsApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     *
+     * @param {string} [id]
+     * @param {string} [name]
+     * @param {string} [description]
+     * @param {string} [countryId]
+     * @param {Date} [created]
+     * @param {object} [marketingType]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
@@ -13690,6 +13727,23 @@ export declare const HospitalsApiFactory: (configuration?: Configuration | undef
  * @extends {BaseAPI}
  */
 export declare class HospitalsApi extends BaseAPI {
+    /**
+     *
+     * @param {string} [id]
+     * @param {string} [name]
+     * @param {string} [description]
+     * @param {string} [countryId]
+     * @param {Date} [created]
+     * @param {object} [marketingType]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HospitalsApi
+     */
+    apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.

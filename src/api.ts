@@ -234,10 +234,10 @@ export interface ArticleItemViewModel {
     hospitalName?: string;
     /**
      * 
-     * @type {Array<ArticleTag>}
+     * @type {Array<ArticleTagViewModel>}
      * @memberof ArticleItemViewModel
      */
-    articleTags?: Array<ArticleTag>;
+    articleTags?: Array<ArticleTagViewModel>;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -296,6 +296,31 @@ export interface ArticleTag {
      * 
      * @type {number}
      * @memberof ArticleTag
+     */
+    order?: number;
+}
+/**
+ * 
+ * @export
+ * @interface ArticleTagViewModel
+ */
+export interface ArticleTagViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof ArticleTagViewModel
+     */
+    articleId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ArticleTagViewModel
+     */
+    tagId?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ArticleTagViewModel
      */
     order?: number;
 }
@@ -361,10 +386,10 @@ export interface ArticleViewModel {
     hospitalName?: string;
     /**
      * 
-     * @type {Array<ArticleTag>}
+     * @type {Array<ArticleTagViewModel>}
      * @memberof ArticleViewModel
      */
-    articleTags?: Array<ArticleTag>;
+    articleTags?: Array<ArticleTagViewModel>;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -1649,10 +1674,10 @@ export interface CreateArticleCommand {
     status?: ArticleStatus;
     /**
      * 
-     * @type {Array<ArticleTag>}
+     * @type {Array<ArticleTagViewModel>}
      * @memberof CreateArticleCommand
      */
-    articleTags?: Array<ArticleTag>;
+    articleTags?: Array<ArticleTagViewModel>;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -8710,12 +8735,6 @@ export interface UpdateArticleCommand {
      * @type {string}
      * @memberof UpdateArticleCommand
      */
-    id?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateArticleCommand
-     */
     title?: string;
     /**
      * 
@@ -8737,46 +8756,16 @@ export interface UpdateArticleCommand {
     status?: ArticleStatus;
     /**
      * 
-     * @type {string}
+     * @type {Array<ArticleTagViewModel>}
      * @memberof UpdateArticleCommand
      */
-    userId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateArticleCommand
-     */
-    userName?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateArticleCommand
-     */
-    hospitalId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateArticleCommand
-     */
-    hospitalName?: string;
-    /**
-     * 
-     * @type {Array<ArticleTag>}
-     * @memberof UpdateArticleCommand
-     */
-    articleTags?: Array<ArticleTag>;
+    articleTags?: Array<ArticleTagViewModel>;
     /**
      * 
      * @type {Array<MediaViewModel>}
      * @memberof UpdateArticleCommand
      */
     medias?: Array<MediaViewModel>;
-    /**
-     * 
-     * @type {AuditableEntity}
-     * @memberof UpdateArticleCommand
-     */
-    auditableEntity?: AuditableEntity;
 }
 /**
  * 
@@ -17329,6 +17318,97 @@ export class HospitalSpecialtiesApi extends BaseAPI {
 export const HospitalsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
+         * 
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [description] 
+         * @param {string} [countryId] 
+         * @param {Date} [created] 
+         * @param {object} [marketingType] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/hospitals/current`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+            if (id !== undefined) {
+                localVarQueryParameter['Id'] = id;
+            }
+
+            if (name !== undefined) {
+                localVarQueryParameter['Name'] = name;
+            }
+
+            if (description !== undefined) {
+                localVarQueryParameter['Description'] = description;
+            }
+
+            if (countryId !== undefined) {
+                localVarQueryParameter['CountryId'] = countryId;
+            }
+
+            if (created !== undefined) {
+                localVarQueryParameter['Created'] = (created as any instanceof Date) ?
+                    (created as any).toISOString() :
+                    created;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['MarketingType'] = marketingType;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
          * @summary Get all hospitals.
          * @param {string} [id] 
@@ -17592,6 +17672,28 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
 export const HospitalsApiFp = function(configuration?: Configuration) {
     return {
         /**
+         * 
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [description] 
+         * @param {string} [countryId] 
+         * @param {Date} [created] 
+         * @param {object} [marketingType] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
+            const localVarAxiosArgs = HospitalsApiAxiosParamCreator(configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
          * @summary Get all hospitals.
          * @param {string} [id] 
@@ -17681,6 +17783,24 @@ export const HospitalsApiFp = function(configuration?: Configuration) {
 export const HospitalsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     return {
         /**
+         * 
+         * @param {string} [id] 
+         * @param {string} [name] 
+         * @param {string} [description] 
+         * @param {string} [countryId] 
+         * @param {Date} [created] 
+         * @param {object} [marketingType] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
+            return HospitalsApiFp(configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, page, limit, lastRetrieved, current, options)(axios, basePath);
+        },
+        /**
          * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
          * @summary Get all hospitals.
          * @param {string} [id] 
@@ -17750,6 +17870,26 @@ export const HospitalsApiFactory = function (configuration?: Configuration, base
  * @extends {BaseAPI}
  */
 export class HospitalsApi extends BaseAPI {
+    /**
+     * 
+     * @param {string} [id] 
+     * @param {string} [name] 
+     * @param {string} [description] 
+     * @param {string} [countryId] 
+     * @param {Date} [created] 
+     * @param {object} [marketingType] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HospitalsApi
+     */
+    public apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return HospitalsApiFp(this.configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    }
+
     /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
