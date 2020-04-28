@@ -7414,6 +7414,12 @@ export interface QuestionCommentItemViewModel {
      * @type {string}
      * @memberof QuestionCommentItemViewModel
      */
+    fullName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentItemViewModel
+     */
     questionId?: string;
     /**
      * 
@@ -7464,6 +7470,12 @@ export interface QuestionCommentViewModel {
      * @memberof QuestionCommentViewModel
      */
     userName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionCommentViewModel
+     */
+    fullName?: string;
     /**
      * 
      * @type {string}
@@ -7531,13 +7543,19 @@ export interface QuestionItemViewModel {
      * @type {string}
      * @memberof QuestionItemViewModel
      */
-    patientId?: string;
+    userId?: string;
     /**
      * 
      * @type {string}
      * @memberof QuestionItemViewModel
      */
-    patientName?: string;
+    userName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionItemViewModel
+     */
+    fullName?: string;
     /**
      * 
      * @type {string}
@@ -7634,13 +7652,19 @@ export interface QuestionViewModel {
      * @type {string}
      * @memberof QuestionViewModel
      */
-    patientId?: string;
+    userId?: string;
     /**
      * 
      * @type {string}
      * @memberof QuestionViewModel
      */
-    patientName?: string;
+    userName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    fullName?: string;
     /**
      * 
      * @type {string}
