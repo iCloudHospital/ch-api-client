@@ -124,6 +124,12 @@ export interface Article {
     status?: ArticleStatus;
     /**
      *
+     * @type {MarketingType}
+     * @memberof Article
+     */
+    marketingType?: MarketingType;
+    /**
+     *
      * @type {string}
      * @memberof Article
      */
@@ -201,6 +207,12 @@ export interface ArticleItemViewModel {
      * @memberof ArticleItemViewModel
      */
     status?: ArticleStatus;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof ArticleItemViewModel
+     */
+    marketingType?: MarketingType;
     /**
      *
      * @type {string}
@@ -352,6 +364,12 @@ export interface ArticleViewModel {
      * @memberof ArticleViewModel
      */
     status?: ArticleStatus;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof ArticleViewModel
+     */
+    marketingType?: MarketingType;
     /**
      *
      * @type {string}
@@ -1661,6 +1679,12 @@ export interface CreateArticleCommand {
      * @memberof CreateArticleCommand
      */
     status?: ArticleStatus;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof CreateArticleCommand
+     */
+    marketingType?: MarketingType;
     /**
      *
      * @type {Array<ArticleTagViewModel>}
@@ -8739,6 +8763,12 @@ export interface UpdateArticleCommand {
     status?: ArticleStatus;
     /**
      *
+     * @type {MarketingType}
+     * @memberof UpdateArticleCommand
+     */
+    marketingType?: MarketingType;
+    /**
+     *
      * @type {Array<ArticleTagViewModel>}
      * @memberof UpdateArticleCommand
      */
@@ -10619,6 +10649,7 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [title]
      * @param {string} [description]
      * @param {object} [status]
+     * @param {object} [marketingType]
      * @param {string} [userId]
      * @param {string} [userName]
      * @param {string} [hospitalId]
@@ -10631,7 +10662,7 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, marketingType?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.
@@ -10682,6 +10713,7 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [title]
      * @param {string} [description]
      * @param {object} [status]
+     * @param {object} [marketingType]
      * @param {string} [userId]
      * @param {string} [userName]
      * @param {string} [hospitalId]
@@ -10694,7 +10726,7 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticlesViewModel>;
+    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, marketingType?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticlesViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.
@@ -10745,6 +10777,7 @@ export declare const ArticlesApiFactory: (configuration?: Configuration | undefi
      * @param {string} [title]
      * @param {string} [description]
      * @param {object} [status]
+     * @param {object} [marketingType]
      * @param {string} [userId]
      * @param {string} [userName]
      * @param {string} [hospitalId]
@@ -10757,7 +10790,7 @@ export declare const ArticlesApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ArticlesViewModel>;
+    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, marketingType?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ArticlesViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.
@@ -10810,6 +10843,7 @@ export declare class ArticlesApi extends BaseAPI {
      * @param {string} [title]
      * @param {string} [description]
      * @param {object} [status]
+     * @param {object} [marketingType]
      * @param {string} [userId]
      * @param {string} [userName]
      * @param {string} [hospitalId]
@@ -10823,7 +10857,7 @@ export declare class ArticlesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel>;
+    apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.

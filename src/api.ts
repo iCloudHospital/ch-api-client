@@ -131,6 +131,12 @@ export interface Article {
     status?: ArticleStatus;
     /**
      * 
+     * @type {MarketingType}
+     * @memberof Article
+     */
+    marketingType?: MarketingType;
+    /**
+     * 
      * @type {string}
      * @memberof Article
      */
@@ -208,6 +214,12 @@ export interface ArticleItemViewModel {
      * @memberof ArticleItemViewModel
      */
     status?: ArticleStatus;
+    /**
+     * 
+     * @type {MarketingType}
+     * @memberof ArticleItemViewModel
+     */
+    marketingType?: MarketingType;
     /**
      * 
      * @type {string}
@@ -360,6 +372,12 @@ export interface ArticleViewModel {
      * @memberof ArticleViewModel
      */
     status?: ArticleStatus;
+    /**
+     * 
+     * @type {MarketingType}
+     * @memberof ArticleViewModel
+     */
+    marketingType?: MarketingType;
     /**
      * 
      * @type {string}
@@ -1672,6 +1690,12 @@ export interface CreateArticleCommand {
      * @memberof CreateArticleCommand
      */
     status?: ArticleStatus;
+    /**
+     * 
+     * @type {MarketingType}
+     * @memberof CreateArticleCommand
+     */
+    marketingType?: MarketingType;
     /**
      * 
      * @type {Array<ArticleTagViewModel>}
@@ -8762,6 +8786,12 @@ export interface UpdateArticleCommand {
     status?: ArticleStatus;
     /**
      * 
+     * @type {MarketingType}
+     * @memberof UpdateArticleCommand
+     */
+    marketingType?: MarketingType;
+    /**
+     * 
      * @type {Array<ArticleTagViewModel>}
      * @memberof UpdateArticleCommand
      */
@@ -10865,6 +10895,7 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [title] 
          * @param {string} [description] 
          * @param {object} [status] 
+         * @param {object} [marketingType] 
          * @param {string} [userId] 
          * @param {string} [userName] 
          * @param {string} [hospitalId] 
@@ -10877,7 +10908,7 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/articles`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -10902,6 +10933,10 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
 
             if (status !== undefined) {
                 localVarQueryParameter['Status'] = status;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['MarketingType'] = marketingType;
             }
 
             if (userId !== undefined) {
@@ -11165,6 +11200,7 @@ export const ArticlesApiFp = function(configuration?: Configuration) {
          * @param {string} [title] 
          * @param {string} [description] 
          * @param {object} [status] 
+         * @param {object} [marketingType] 
          * @param {string} [userId] 
          * @param {string} [userName] 
          * @param {string} [hospitalId] 
@@ -11177,8 +11213,8 @@ export const ArticlesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ArticlesViewModel> {
-            const localVarAxiosArgs = ArticlesApiAxiosParamCreator(configuration).apiV1HospitalsArticlesGet(id, title, description, status, userId, userName, hospitalId, hospitalName, tag, page, limit, lastRetrieved, current, options);
+        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ArticlesViewModel> {
+            const localVarAxiosArgs = ArticlesApiAxiosParamCreator(configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, tag, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -11261,6 +11297,7 @@ export const ArticlesApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [title] 
          * @param {string} [description] 
          * @param {object} [status] 
+         * @param {object} [marketingType] 
          * @param {string} [userId] 
          * @param {string} [userName] 
          * @param {string} [hospitalId] 
@@ -11273,8 +11310,8 @@ export const ArticlesApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel> {
-            return ArticlesApiFp(configuration).apiV1HospitalsArticlesGet(id, title, description, status, userId, userName, hospitalId, hospitalName, tag, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel> {
+            return ArticlesApiFp(configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, tag, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        DELETE /api/v1/hospitals/1/articles/1
@@ -11338,6 +11375,7 @@ export class ArticlesApi extends BaseAPI {
      * @param {string} [title] 
      * @param {string} [description] 
      * @param {object} [status] 
+     * @param {object} [marketingType] 
      * @param {string} [userId] 
      * @param {string} [userName] 
      * @param {string} [hospitalId] 
@@ -11351,8 +11389,8 @@ export class ArticlesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    public apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return ArticlesApiFp(this.configuration).apiV1HospitalsArticlesGet(id, title, description, status, userId, userName, hospitalId, hospitalName, tag, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return ArticlesApiFp(this.configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, tag, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
