@@ -9814,6 +9814,12 @@ export interface UpdateSpecialtyCommand {
      * @type {string}
      * @memberof UpdateSpecialtyCommand
      */
+    specialtyTypeId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateSpecialtyCommand
+     */
     specialtyTypeName?: string;
     /**
      *
@@ -9828,6 +9834,12 @@ export interface UpdateSpecialtyCommand {
  * @interface UpdateSpecialtyTypeCategoryCommand
  */
 export interface UpdateSpecialtyTypeCategoryCommand {
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateSpecialtyTypeCategoryCommand
+     */
+    order?: number;
     /**
      *
      * @type {Array<string>}
@@ -9852,12 +9864,6 @@ export interface UpdateSpecialtyTypeCategoryCommand {
      * @memberof UpdateSpecialtyTypeCategoryCommand
      */
     description?: string;
-    /**
-     *
-     * @type {number}
-     * @memberof UpdateSpecialtyTypeCategoryCommand
-     */
-    order?: number;
     /**
      *
      * @type {number}
