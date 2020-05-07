@@ -1473,6 +1473,19 @@ export enum ChargeStatus {
 /**
  * 
  * @export
+ * @interface ConfirmEmailCommand
+ */
+export interface ConfirmEmailCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof ConfirmEmailCommand
+     */
+    code?: string;
+}
+/**
+ * 
+ * @export
  * @interface CountriesViewModel
  */
 export interface CountriesViewModel {
@@ -20587,6 +20600,48 @@ export const ProfilesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
+         * 
+         * @param {ConfirmEmailCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ProfilesConfirmemailPost(body?: ConfirmEmailCommand, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/profiles/confirmemail`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Sample request:        GET /api/v1/profiles
          * @summary Get current user\'s profile.
          * @param {*} [options] Override http request option.
@@ -20648,6 +20703,19 @@ export const ProfilesApiFp = function(configuration?: Configuration) {
             };
         },
         /**
+         * 
+         * @param {ConfirmEmailCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ProfilesConfirmemailPost(body?: ConfirmEmailCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = ProfilesApiAxiosParamCreator(configuration).apiV1ProfilesConfirmemailPost(body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * Sample request:        GET /api/v1/profiles
          * @summary Get current user\'s profile.
          * @param {*} [options] Override http request option.
@@ -20680,6 +20748,15 @@ export const ProfilesApiFactory = function (configuration?: Configuration, baseP
             return ProfilesApiFp(configuration).apiV1ProfilesChangeemailPost(body, options)(axios, basePath);
         },
         /**
+         * 
+         * @param {ConfirmEmailCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ProfilesConfirmemailPost(body?: ConfirmEmailCommand, options?: any): AxiosPromise<boolean> {
+            return ProfilesApiFp(configuration).apiV1ProfilesConfirmemailPost(body, options)(axios, basePath);
+        },
+        /**
          * Sample request:        GET /api/v1/profiles
          * @summary Get current user\'s profile.
          * @param {*} [options] Override http request option.
@@ -20708,6 +20785,17 @@ export class ProfilesApi extends BaseAPI {
      */
     public apiV1ProfilesChangeemailPost(body?: ChangeEmailCommand, options?: any) {
         return ProfilesApiFp(this.configuration).apiV1ProfilesChangeemailPost(body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @param {ConfirmEmailCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProfilesApi
+     */
+    public apiV1ProfilesConfirmemailPost(body?: ConfirmEmailCommand, options?: any) {
+        return ProfilesApiFp(this.configuration).apiV1ProfilesConfirmemailPost(body, options)(this.axios, this.basePath);
     }
 
     /**

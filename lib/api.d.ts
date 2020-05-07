@@ -1462,6 +1462,19 @@ export declare enum ChargeStatus {
 /**
  *
  * @export
+ * @interface ConfirmEmailCommand
+ */
+export interface ConfirmEmailCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof ConfirmEmailCommand
+     */
+    code?: string;
+}
+/**
+ *
+ * @export
  * @interface CountriesViewModel
  */
 export interface CountriesViewModel {
@@ -15085,6 +15098,13 @@ export declare const ProfilesApiAxiosParamCreator: (configuration?: Configuratio
      */
     apiV1ProfilesChangeemailPost(body?: ChangeEmailCommand | undefined, options?: any): RequestArgs;
     /**
+     *
+     * @param {ConfirmEmailCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ProfilesConfirmemailPost(body?: ConfirmEmailCommand | undefined, options?: any): RequestArgs;
+    /**
      * Sample request:        GET /api/v1/profiles
      * @summary Get current user\'s profile.
      * @param {*} [options] Override http request option.
@@ -15106,6 +15126,13 @@ export declare const ProfilesApiFp: (configuration?: Configuration | undefined) 
      */
     apiV1ProfilesChangeemailPost(body?: ChangeEmailCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
+     *
+     * @param {ConfirmEmailCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ProfilesConfirmemailPost(body?: ConfirmEmailCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
      * Sample request:        GET /api/v1/profiles
      * @summary Get current user\'s profile.
      * @param {*} [options] Override http request option.
@@ -15126,6 +15153,13 @@ export declare const ProfilesApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1ProfilesChangeemailPost(body?: ChangeEmailCommand | undefined, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @param {ConfirmEmailCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ProfilesConfirmemailPost(body?: ConfirmEmailCommand | undefined, options?: any): AxiosPromise<boolean>;
     /**
      * Sample request:        GET /api/v1/profiles
      * @summary Get current user\'s profile.
@@ -15150,6 +15184,14 @@ export declare class ProfilesApi extends BaseAPI {
      * @memberof ProfilesApi
      */
     apiV1ProfilesChangeemailPost(body?: ChangeEmailCommand, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @param {ConfirmEmailCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ProfilesApi
+     */
+    apiV1ProfilesConfirmemailPost(body?: ConfirmEmailCommand, options?: any): AxiosPromise<boolean>;
     /**
      * Sample request:        GET /api/v1/profiles
      * @summary Get current user\'s profile.
