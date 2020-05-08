@@ -246,10 +246,10 @@ export interface ArticleItemViewModel {
     hospitalName?: string;
     /**
      * 
-     * @type {Array<ArticleTagViewModel>}
+     * @type {Array<ArticleTagItemViewModel>}
      * @memberof ArticleItemViewModel
      */
-    articleTags?: Array<ArticleTagViewModel>;
+    articleTags?: Array<ArticleTagItemViewModel>;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -314,25 +314,25 @@ export interface ArticleTag {
 /**
  * 
  * @export
- * @interface ArticleTagViewModel
+ * @interface ArticleTagItemViewModel
  */
-export interface ArticleTagViewModel {
+export interface ArticleTagItemViewModel {
     /**
      * 
      * @type {string}
-     * @memberof ArticleTagViewModel
+     * @memberof ArticleTagItemViewModel
      */
     articleId?: string;
     /**
      * 
      * @type {string}
-     * @memberof ArticleTagViewModel
+     * @memberof ArticleTagItemViewModel
      */
     tagId?: string;
     /**
      * 
      * @type {number}
-     * @memberof ArticleTagViewModel
+     * @memberof ArticleTagItemViewModel
      */
     order?: number;
 }
@@ -404,10 +404,10 @@ export interface ArticleViewModel {
     hospitalName?: string;
     /**
      * 
-     * @type {Array<ArticleTagViewModel>}
+     * @type {Array<ArticleTagItemViewModel>}
      * @memberof ArticleViewModel
      */
-    articleTags?: Array<ArticleTagViewModel>;
+    articleTags?: Array<ArticleTagItemViewModel>;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -1711,10 +1711,10 @@ export interface CreateArticleCommand {
     marketingType?: MarketingType;
     /**
      * 
-     * @type {Array<ArticleTagViewModel>}
+     * @type {Array<ArticleTagItemViewModel>}
      * @memberof CreateArticleCommand
      */
-    articleTags?: Array<ArticleTagViewModel>;
+    articleTags?: Array<ArticleTagItemViewModel>;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -2259,6 +2259,18 @@ export interface CreateHospitalPackageCommand {
      * @type {string}
      * @memberof CreateHospitalPackageCommand
      */
+    photo?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateHospitalPackageCommand
+     */
+    photoThumbnail?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateHospitalPackageCommand
+     */
     accomodation?: string;
     /**
      * 
@@ -2763,6 +2775,43 @@ export interface CreateSpecialtyTypeCommand {
      * @memberof CreateSpecialtyTypeCommand
      */
     marketingType?: MarketingType;
+}
+/**
+ * 
+ * @export
+ * @interface CreateYoutubeCommand
+ */
+export interface CreateYoutubeCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateYoutubeCommand
+     */
+    title?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateYoutubeCommand
+     */
+    description?: string;
+    /**
+     * 
+     * @type {Array<YoutubeTagItemViewModel>}
+     * @memberof CreateYoutubeCommand
+     */
+    youtubeTags?: Array<YoutubeTagItemViewModel>;
+    /**
+     * 
+     * @type {MarketingType}
+     * @memberof CreateYoutubeCommand
+     */
+    marketingType?: MarketingType;
+    /**
+     * 
+     * @type {Array<MediaViewModel>}
+     * @memberof CreateYoutubeCommand
+     */
+    medias?: Array<MediaViewModel>;
 }
 /**
  * 
@@ -8859,10 +8908,10 @@ export interface UpdateArticleCommand {
     marketingType?: MarketingType;
     /**
      * 
-     * @type {Array<ArticleTagViewModel>}
+     * @type {Array<ArticleTagItemViewModel>}
      * @memberof UpdateArticleCommand
      */
-    articleTags?: Array<ArticleTagViewModel>;
+    articleTags?: Array<ArticleTagItemViewModel>;
     /**
      * 
      * @type {Array<MediaViewModel>}
@@ -10037,6 +10086,43 @@ export interface UpdateSpecialtyTypeCommand {
 /**
  * 
  * @export
+ * @interface UpdateYoutubeCommand
+ */
+export interface UpdateYoutubeCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateYoutubeCommand
+     */
+    title?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateYoutubeCommand
+     */
+    description?: string;
+    /**
+     * 
+     * @type {Array<YoutubeTagItemViewModel>}
+     * @memberof UpdateYoutubeCommand
+     */
+    youtubeTags?: Array<YoutubeTagItemViewModel>;
+    /**
+     * 
+     * @type {MarketingType}
+     * @memberof UpdateYoutubeCommand
+     */
+    marketingType?: MarketingType;
+    /**
+     * 
+     * @type {Array<MediaViewModel>}
+     * @memberof UpdateYoutubeCommand
+     */
+    medias?: Array<MediaViewModel>;
+}
+/**
+ * 
+ * @export
  * @interface User
  */
 export interface User {
@@ -10545,6 +10631,55 @@ export interface Youtube {
 /**
  * 
  * @export
+ * @interface YoutubeItemViewModel
+ */
+export interface YoutubeItemViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof YoutubeItemViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof YoutubeItemViewModel
+     */
+    title?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof YoutubeItemViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {Array<YoutubeTagItemViewModel>}
+     * @memberof YoutubeItemViewModel
+     */
+    youtubeTags?: Array<YoutubeTagItemViewModel>;
+    /**
+     * 
+     * @type {MarketingType}
+     * @memberof YoutubeItemViewModel
+     */
+    marketingType?: MarketingType;
+    /**
+     * 
+     * @type {Array<MediaViewModel>}
+     * @memberof YoutubeItemViewModel
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof YoutubeItemViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
  * @interface YoutubeTag
  */
 export interface YoutubeTag {
@@ -10578,6 +10713,99 @@ export interface YoutubeTag {
      * @memberof YoutubeTag
      */
     order?: number;
+}
+/**
+ * 
+ * @export
+ * @interface YoutubeTagItemViewModel
+ */
+export interface YoutubeTagItemViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof YoutubeTagItemViewModel
+     */
+    youtubeId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof YoutubeTagItemViewModel
+     */
+    tagId?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof YoutubeTagItemViewModel
+     */
+    order?: number;
+}
+/**
+ * 
+ * @export
+ * @interface YoutubeViewModel
+ */
+export interface YoutubeViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof YoutubeViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof YoutubeViewModel
+     */
+    title?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof YoutubeViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {Array<YoutubeTagItemViewModel>}
+     * @memberof YoutubeViewModel
+     */
+    youtubeTags?: Array<YoutubeTagItemViewModel>;
+    /**
+     * 
+     * @type {MarketingType}
+     * @memberof YoutubeViewModel
+     */
+    marketingType?: MarketingType;
+    /**
+     * 
+     * @type {Array<MediaViewModel>}
+     * @memberof YoutubeViewModel
+     */
+    medias?: Array<MediaViewModel>;
+    /**
+     * 
+     * @type {AuditableEntity}
+     * @memberof YoutubeViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface YoutubesViewModel
+ */
+export interface YoutubesViewModel {
+    /**
+     * 
+     * @type {Array<YoutubeItemViewModel>}
+     * @memberof YoutubesViewModel
+     */
+    items?: Array<YoutubeItemViewModel>;
+    /**
+     * 
+     * @type {PagedListMetaData}
+     * @memberof YoutubesViewModel
+     */
+    metaData?: PagedListMetaData;
 }
 
 /**
@@ -24632,6 +24860,505 @@ export class SpecialtyTypesApi extends BaseAPI {
      */
     public apiV1SpecialtytypesSpecialtyTypeIdPut(specialtyTypeId: string, body?: UpdateSpecialtyTypeCommand, options?: any) {
         return SpecialtyTypesApiFp(this.configuration).apiV1SpecialtytypesSpecialtyTypeIdPut(specialtyTypeId, body, options)(this.axios, this.basePath);
+    }
+
+}
+
+
+/**
+ * YoutubesApi - axios parameter creator
+ * @export
+ */
+export const YoutubesApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        GET /api/v1/youtubes
+         * @summary Get all youtubes.
+         * @param {string} [id] 
+         * @param {string} [title] 
+         * @param {string} [normalizedTitle] 
+         * @param {string} [description] 
+         * @param {object} [marketingType] 
+         * @param {string} [tag] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesGet(id?: string, title?: string, normalizedTitle?: string, description?: string, marketingType?: object, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/youtubes`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (id !== undefined) {
+                localVarQueryParameter['Id'] = id;
+            }
+
+            if (title !== undefined) {
+                localVarQueryParameter['Title'] = title;
+            }
+
+            if (normalizedTitle !== undefined) {
+                localVarQueryParameter['NormalizedTitle'] = normalizedTitle;
+            }
+
+            if (description !== undefined) {
+                localVarQueryParameter['Description'] = description;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['MarketingType'] = marketingType;
+            }
+
+            if (tag !== undefined) {
+                localVarQueryParameter['Tag'] = tag;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Create an youtube.
+         * @param {CreateYoutubeCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesPost(body?: CreateYoutubeCommand, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/youtubes`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        DELETE /api/v1/youtubes/1
+         * @summary Delete youtube.
+         * @param {string} youtubeId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesYoutubeIdDelete(youtubeId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'youtubeId' is not null or undefined
+            if (youtubeId === null || youtubeId === undefined) {
+                throw new RequiredError('youtubeId','Required parameter youtubeId was null or undefined when calling apiV1YoutubesYoutubeIdDelete.');
+            }
+            const localVarPath = `/api/v1/youtubes/{youtubeId}`
+                .replace(`{${"youtubeId"}}`, encodeURIComponent(String(youtubeId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/youtubes/1
+         * @summary Get youtube.
+         * @param {string} youtubeId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesYoutubeIdGet(youtubeId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'youtubeId' is not null or undefined
+            if (youtubeId === null || youtubeId === undefined) {
+                throw new RequiredError('youtubeId','Required parameter youtubeId was null or undefined when calling apiV1YoutubesYoutubeIdGet.');
+            }
+            const localVarPath = `/api/v1/youtubes/{youtubeId}`
+                .replace(`{${"youtubeId"}}`, encodeURIComponent(String(youtubeId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/youtubes/1      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",                  \"tags\": [            {              \"value\": \"youtubetag1\",              \"order\": 0            },            {              \"value\": \"youtubetag2\",              \"order\": 0            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Update youtube.
+         * @param {string} youtubeId 
+         * @param {UpdateYoutubeCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesYoutubeIdPut(youtubeId: string, body?: UpdateYoutubeCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'youtubeId' is not null or undefined
+            if (youtubeId === null || youtubeId === undefined) {
+                throw new RequiredError('youtubeId','Required parameter youtubeId was null or undefined when calling apiV1YoutubesYoutubeIdPut.');
+            }
+            const localVarPath = `/api/v1/youtubes/{youtubeId}`
+                .replace(`{${"youtubeId"}}`, encodeURIComponent(String(youtubeId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * YoutubesApi - functional programming interface
+ * @export
+ */
+export const YoutubesApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * Sample request:        GET /api/v1/youtubes
+         * @summary Get all youtubes.
+         * @param {string} [id] 
+         * @param {string} [title] 
+         * @param {string} [normalizedTitle] 
+         * @param {string} [description] 
+         * @param {object} [marketingType] 
+         * @param {string} [tag] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesGet(id?: string, title?: string, normalizedTitle?: string, description?: string, marketingType?: object, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<YoutubesViewModel> {
+            const localVarAxiosArgs = YoutubesApiAxiosParamCreator(configuration).apiV1YoutubesGet(id, title, normalizedTitle, description, marketingType, tag, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Create an youtube.
+         * @param {CreateYoutubeCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesPost(body?: CreateYoutubeCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = YoutubesApiAxiosParamCreator(configuration).apiV1YoutubesPost(body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        DELETE /api/v1/youtubes/1
+         * @summary Delete youtube.
+         * @param {string} youtubeId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesYoutubeIdDelete(youtubeId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = YoutubesApiAxiosParamCreator(configuration).apiV1YoutubesYoutubeIdDelete(youtubeId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        GET /api/v1/youtubes/1
+         * @summary Get youtube.
+         * @param {string} youtubeId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesYoutubeIdGet(youtubeId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<YoutubeViewModel> {
+            const localVarAxiosArgs = YoutubesApiAxiosParamCreator(configuration).apiV1YoutubesYoutubeIdGet(youtubeId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * Sample request:        PUT /api/v1/youtubes/1      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",                  \"tags\": [            {              \"value\": \"youtubetag1\",              \"order\": 0            },            {              \"value\": \"youtubetag2\",              \"order\": 0            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Update youtube.
+         * @param {string} youtubeId 
+         * @param {UpdateYoutubeCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesYoutubeIdPut(youtubeId: string, body?: UpdateYoutubeCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = YoutubesApiAxiosParamCreator(configuration).apiV1YoutubesYoutubeIdPut(youtubeId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * YoutubesApi - factory interface
+ * @export
+ */
+export const YoutubesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * Sample request:        GET /api/v1/youtubes
+         * @summary Get all youtubes.
+         * @param {string} [id] 
+         * @param {string} [title] 
+         * @param {string} [normalizedTitle] 
+         * @param {string} [description] 
+         * @param {object} [marketingType] 
+         * @param {string} [tag] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesGet(id?: string, title?: string, normalizedTitle?: string, description?: string, marketingType?: object, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<YoutubesViewModel> {
+            return YoutubesApiFp(configuration).apiV1YoutubesGet(id, title, normalizedTitle, description, marketingType, tag, page, limit, lastRetrieved, current, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Create an youtube.
+         * @param {CreateYoutubeCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesPost(body?: CreateYoutubeCommand, options?: any): AxiosPromise<string> {
+            return YoutubesApiFp(configuration).apiV1YoutubesPost(body, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        DELETE /api/v1/youtubes/1
+         * @summary Delete youtube.
+         * @param {string} youtubeId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesYoutubeIdDelete(youtubeId: string, options?: any): AxiosPromise<boolean> {
+            return YoutubesApiFp(configuration).apiV1YoutubesYoutubeIdDelete(youtubeId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        GET /api/v1/youtubes/1
+         * @summary Get youtube.
+         * @param {string} youtubeId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesYoutubeIdGet(youtubeId: string, options?: any): AxiosPromise<YoutubeViewModel> {
+            return YoutubesApiFp(configuration).apiV1YoutubesYoutubeIdGet(youtubeId, options)(axios, basePath);
+        },
+        /**
+         * Sample request:        PUT /api/v1/youtubes/1      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",                  \"tags\": [            {              \"value\": \"youtubetag1\",              \"order\": 0            },            {              \"value\": \"youtubetag2\",              \"order\": 0            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+         * @summary Update youtube.
+         * @param {string} youtubeId 
+         * @param {UpdateYoutubeCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1YoutubesYoutubeIdPut(youtubeId: string, body?: UpdateYoutubeCommand, options?: any): AxiosPromise<boolean> {
+            return YoutubesApiFp(configuration).apiV1YoutubesYoutubeIdPut(youtubeId, body, options)(axios, basePath);
+        },
+    };
+};
+
+/**
+ * YoutubesApi - object-oriented interface
+ * @export
+ * @class YoutubesApi
+ * @extends {BaseAPI}
+ */
+export class YoutubesApi extends BaseAPI {
+    /**
+     * Sample request:        GET /api/v1/youtubes
+     * @summary Get all youtubes.
+     * @param {string} [id] 
+     * @param {string} [title] 
+     * @param {string} [normalizedTitle] 
+     * @param {string} [description] 
+     * @param {object} [marketingType] 
+     * @param {string} [tag] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YoutubesApi
+     */
+    public apiV1YoutubesGet(id?: string, title?: string, normalizedTitle?: string, description?: string, marketingType?: object, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return YoutubesApiFp(this.configuration).apiV1YoutubesGet(id, title, normalizedTitle, description, marketingType, tag, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+     * @summary Create an youtube.
+     * @param {CreateYoutubeCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YoutubesApi
+     */
+    public apiV1YoutubesPost(body?: CreateYoutubeCommand, options?: any) {
+        return YoutubesApiFp(this.configuration).apiV1YoutubesPost(body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        DELETE /api/v1/youtubes/1
+     * @summary Delete youtube.
+     * @param {string} youtubeId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YoutubesApi
+     */
+    public apiV1YoutubesYoutubeIdDelete(youtubeId: string, options?: any) {
+        return YoutubesApiFp(this.configuration).apiV1YoutubesYoutubeIdDelete(youtubeId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        GET /api/v1/youtubes/1
+     * @summary Get youtube.
+     * @param {string} youtubeId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YoutubesApi
+     */
+    public apiV1YoutubesYoutubeIdGet(youtubeId: string, options?: any) {
+        return YoutubesApiFp(this.configuration).apiV1YoutubesYoutubeIdGet(youtubeId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * Sample request:        PUT /api/v1/youtubes/1      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",                  \"tags\": [            {              \"value\": \"youtubetag1\",              \"order\": 0            },            {              \"value\": \"youtubetag2\",              \"order\": 0            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
+     * @summary Update youtube.
+     * @param {string} youtubeId 
+     * @param {UpdateYoutubeCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YoutubesApi
+     */
+    public apiV1YoutubesYoutubeIdPut(youtubeId: string, body?: UpdateYoutubeCommand, options?: any) {
+        return YoutubesApiFp(this.configuration).apiV1YoutubesYoutubeIdPut(youtubeId, body, options)(this.axios, this.basePath);
     }
 
 }
