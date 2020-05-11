@@ -2298,6 +2298,18 @@ export interface CreateHospitalPackageCommand {
     packageStatus?: PackageStatus;
     /**
      * 
+     * @type {MarketingType}
+     * @memberof CreateHospitalPackageCommand
+     */
+    marketingType?: MarketingType;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CreateHospitalPackageCommand
+     */
+    refundable?: boolean;
+    /**
+     * 
      * @type {Array<ServiceViewModel>}
      * @memberof CreateHospitalPackageCommand
      */
@@ -2796,6 +2808,12 @@ export interface CreateYoutubeCommand {
     description?: string;
     /**
      * 
+     * @type {string}
+     * @memberof CreateYoutubeCommand
+     */
+    url?: string;
+    /**
+     * 
      * @type {Array<YoutubeTagItemViewModel>}
      * @memberof CreateYoutubeCommand
      */
@@ -2806,12 +2824,6 @@ export interface CreateYoutubeCommand {
      * @memberof CreateYoutubeCommand
      */
     marketingType?: MarketingType;
-    /**
-     * 
-     * @type {Array<MediaViewModel>}
-     * @memberof CreateYoutubeCommand
-     */
-    medias?: Array<MediaViewModel>;
 }
 /**
  * 
@@ -5110,6 +5122,12 @@ export interface HospitalPackageItemViewModel {
     packageStatus?: PackageStatus;
     /**
      * 
+     * @type {MarketingType}
+     * @memberof HospitalPackageItemViewModel
+     */
+    marketingType?: MarketingType;
+    /**
+     * 
      * @type {boolean}
      * @memberof HospitalPackageItemViewModel
      */
@@ -5217,6 +5235,12 @@ export interface HospitalPackageViewModel {
      * @memberof HospitalPackageViewModel
      */
     packageStatus?: PackageStatus;
+    /**
+     * 
+     * @type {MarketingType}
+     * @memberof HospitalPackageViewModel
+     */
+    marketingType?: MarketingType;
     /**
      * 
      * @type {boolean}
@@ -6443,6 +6467,12 @@ export interface Package {
      * @memberof Package
      */
     packageStatus?: PackageStatus;
+    /**
+     * 
+     * @type {MarketingType}
+     * @memberof Package
+     */
+    marketingType?: MarketingType;
     /**
      * 
      * @type {boolean}
@@ -9441,24 +9471,6 @@ export interface UpdateHospitalCommand {
 export interface UpdateHospitalPackageCommand {
     /**
      * 
-     * @type {PackageStatus}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    packageStatus?: PackageStatus;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    refundable?: boolean;
-    /**
-     * 
-     * @type {number}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    packagePrice?: number;
-    /**
-     * 
      * @type {string}
      * @memberof UpdateHospitalPackageCommand
      */
@@ -9489,6 +9501,24 @@ export interface UpdateHospitalPackageCommand {
     hospitalName?: string;
     /**
      * 
+     * @type {PackageStatus}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    packageStatus?: PackageStatus;
+    /**
+     * 
+     * @type {MarketingType}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    marketingType?: MarketingType;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    refundable?: boolean;
+    /**
+     * 
      * @type {string}
      * @memberof UpdateHospitalPackageCommand
      */
@@ -9499,6 +9529,12 @@ export interface UpdateHospitalPackageCommand {
      * @memberof UpdateHospitalPackageCommand
      */
     photoThumbnail?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateHospitalPackageCommand
+     */
+    packagePrice?: number;
     /**
      * 
      * @type {number}
@@ -10103,6 +10139,12 @@ export interface UpdateYoutubeCommand {
     description?: string;
     /**
      * 
+     * @type {string}
+     * @memberof UpdateYoutubeCommand
+     */
+    url?: string;
+    /**
+     * 
      * @type {Array<YoutubeTagItemViewModel>}
      * @memberof UpdateYoutubeCommand
      */
@@ -10113,12 +10155,6 @@ export interface UpdateYoutubeCommand {
      * @memberof UpdateYoutubeCommand
      */
     marketingType?: MarketingType;
-    /**
-     * 
-     * @type {Array<MediaViewModel>}
-     * @memberof UpdateYoutubeCommand
-     */
-    medias?: Array<MediaViewModel>;
 }
 /**
  * 
@@ -10605,6 +10641,12 @@ export interface Youtube {
     description?: string;
     /**
      * 
+     * @type {string}
+     * @memberof Youtube
+     */
+    url?: string;
+    /**
+     * 
      * @type {Array<YoutubeTag>}
      * @memberof Youtube
      */
@@ -10615,12 +10657,6 @@ export interface Youtube {
      * @memberof Youtube
      */
     marketingType?: MarketingType;
-    /**
-     * 
-     * @type {Array<Media>}
-     * @memberof Youtube
-     */
-    medias?: Array<Media>;
     /**
      * 
      * @type {AuditableEntity}
@@ -10654,6 +10690,12 @@ export interface YoutubeItemViewModel {
     description?: string;
     /**
      * 
+     * @type {string}
+     * @memberof YoutubeItemViewModel
+     */
+    url?: string;
+    /**
+     * 
      * @type {Array<YoutubeTagItemViewModel>}
      * @memberof YoutubeItemViewModel
      */
@@ -10664,12 +10706,6 @@ export interface YoutubeItemViewModel {
      * @memberof YoutubeItemViewModel
      */
     marketingType?: MarketingType;
-    /**
-     * 
-     * @type {Array<MediaViewModel>}
-     * @memberof YoutubeItemViewModel
-     */
-    medias?: Array<MediaViewModel>;
     /**
      * 
      * @type {AuditableEntity}
@@ -10765,6 +10801,12 @@ export interface YoutubeViewModel {
     description?: string;
     /**
      * 
+     * @type {string}
+     * @memberof YoutubeViewModel
+     */
+    url?: string;
+    /**
+     * 
      * @type {Array<YoutubeTagItemViewModel>}
      * @memberof YoutubeViewModel
      */
@@ -10775,12 +10817,6 @@ export interface YoutubeViewModel {
      * @memberof YoutubeViewModel
      */
     marketingType?: MarketingType;
-    /**
-     * 
-     * @type {Array<MediaViewModel>}
-     * @memberof YoutubeViewModel
-     */
-    medias?: Array<MediaViewModel>;
     /**
      * 
      * @type {AuditableEntity}
