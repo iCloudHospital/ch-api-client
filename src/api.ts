@@ -1601,6 +1601,12 @@ export interface CountryItemViewModel {
     packagesCount?: number;
     /**
      * 
+     * @type {number}
+     * @memberof CountryItemViewModel
+     */
+    articlesCount?: number;
+    /**
+     * 
      * @type {Array<MediaViewModel>}
      * @memberof CountryItemViewModel
      */
@@ -1660,6 +1666,12 @@ export interface CountryViewModel {
      * @memberof CountryViewModel
      */
     packagesCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof CountryViewModel
+     */
+    articlesCount?: number;
     /**
      * 
      * @type {Array<MediaViewModel>}
