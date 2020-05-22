@@ -5049,12 +5049,6 @@ export interface HospitalItemViewModel {
     specialtiesCount?: number;
     /**
      * 
-     * @type {Array<HospitalSpecialtyItemViewModel>}
-     * @memberof HospitalItemViewModel
-     */
-    specialties?: Array<HospitalSpecialtyItemViewModel>;
-    /**
-     * 
      * @type {number}
      * @memberof HospitalItemViewModel
      */
@@ -5709,6 +5703,12 @@ export interface HospitalSpecialtyViewModel {
 export interface HospitalViewModel {
     /**
      * 
+     * @type {Array<HospitalSpecialtyItemViewModel>}
+     * @memberof HospitalViewModel
+     */
+    specialties?: Array<HospitalSpecialtyItemViewModel>;
+    /**
+     * 
      * @type {string}
      * @memberof HospitalViewModel
      */
@@ -5815,12 +5815,6 @@ export interface HospitalViewModel {
      * @memberof HospitalViewModel
      */
     specialtiesCount?: number;
-    /**
-     * 
-     * @type {Array<HospitalSpecialtyItemViewModel>}
-     * @memberof HospitalViewModel
-     */
-    specialties?: Array<HospitalSpecialtyItemViewModel>;
     /**
      * 
      * @type {number}
@@ -9332,6 +9326,12 @@ export interface UpdateEquipmentCommand {
 export interface UpdateHospitalCommand {
     /**
      * 
+     * @type {Array<HospitalSpecialtyItemViewModel>}
+     * @memberof UpdateHospitalCommand
+     */
+    specialties?: Array<HospitalSpecialtyItemViewModel>;
+    /**
+     * 
      * @type {string}
      * @memberof UpdateHospitalCommand
      */
@@ -9426,12 +9426,6 @@ export interface UpdateHospitalCommand {
      * @memberof UpdateHospitalCommand
      */
     specialtiesCount?: number;
-    /**
-     * 
-     * @type {Array<HospitalSpecialtyItemViewModel>}
-     * @memberof UpdateHospitalCommand
-     */
-    specialties?: Array<HospitalSpecialtyItemViewModel>;
     /**
      * 
      * @type {number}
