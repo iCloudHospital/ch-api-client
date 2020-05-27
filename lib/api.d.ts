@@ -14769,6 +14769,8 @@ export declare const PackagesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [hospitalName]
      * @param {object} [marketingType]
      * @param {object} [packageStatus]
+     * @param {string} [specialtyTypeId]
+     * @param {string} [serviceId]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -14776,7 +14778,7 @@ export declare const PackagesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsPackagesGet(relatedPackageId?: string | undefined, name?: string | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, marketingType?: object | undefined, packageStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsPackagesGet(relatedPackageId?: string | undefined, name?: string | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, marketingType?: object | undefined, packageStatus?: object | undefined, specialtyTypeId?: string | undefined, serviceId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * PackagesApi - functional programming interface
@@ -14830,6 +14832,8 @@ export declare const PackagesApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [hospitalName]
      * @param {object} [marketingType]
      * @param {object} [packageStatus]
+     * @param {string} [specialtyTypeId]
+     * @param {string} [serviceId]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -14837,7 +14841,7 @@ export declare const PackagesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsPackagesGet(relatedPackageId?: string | undefined, name?: string | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, marketingType?: object | undefined, packageStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalPackagesViewModel>;
+    apiV1HospitalsPackagesGet(relatedPackageId?: string | undefined, name?: string | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, marketingType?: object | undefined, packageStatus?: object | undefined, specialtyTypeId?: string | undefined, serviceId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalPackagesViewModel>;
 };
 /**
  * PackagesApi - factory interface
@@ -14891,6 +14895,8 @@ export declare const PackagesApiFactory: (configuration?: Configuration | undefi
      * @param {string} [hospitalName]
      * @param {object} [marketingType]
      * @param {object} [packageStatus]
+     * @param {string} [specialtyTypeId]
+     * @param {string} [serviceId]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -14898,7 +14904,7 @@ export declare const PackagesApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsPackagesGet(relatedPackageId?: string | undefined, name?: string | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, marketingType?: object | undefined, packageStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalPackagesViewModel>;
+    apiV1HospitalsPackagesGet(relatedPackageId?: string | undefined, name?: string | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, marketingType?: object | undefined, packageStatus?: object | undefined, specialtyTypeId?: string | undefined, serviceId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalPackagesViewModel>;
 };
 /**
  * PackagesApi - object-oriented interface
@@ -14958,6 +14964,8 @@ export declare class PackagesApi extends BaseAPI {
      * @param {string} [hospitalName]
      * @param {object} [marketingType]
      * @param {object} [packageStatus]
+     * @param {string} [specialtyTypeId]
+     * @param {string} [serviceId]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -14966,7 +14974,7 @@ export declare class PackagesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PackagesApi
      */
-    apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalPackagesViewModel>;
+    apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, specialtyTypeId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalPackagesViewModel>;
 }
 /**
  * PartnersApi - axios parameter creator

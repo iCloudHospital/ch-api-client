@@ -19562,6 +19562,8 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [hospitalName] 
          * @param {object} [marketingType] 
          * @param {object} [packageStatus] 
+         * @param {string} [specialtyTypeId] 
+         * @param {string} [serviceId] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -19569,7 +19571,7 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, specialtyTypeId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/packages`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -19606,6 +19608,14 @@ export const PackagesApiAxiosParamCreator = function (configuration?: Configurat
 
             if (packageStatus !== undefined) {
                 localVarQueryParameter['PackageStatus'] = packageStatus;
+            }
+
+            if (specialtyTypeId !== undefined) {
+                localVarQueryParameter['SpecialtyTypeId'] = specialtyTypeId;
+            }
+
+            if (serviceId !== undefined) {
+                localVarQueryParameter['ServiceId'] = serviceId;
             }
 
             if (page !== undefined) {
@@ -19718,6 +19728,8 @@ export const PackagesApiFp = function(configuration?: Configuration) {
          * @param {string} [hospitalName] 
          * @param {object} [marketingType] 
          * @param {object} [packageStatus] 
+         * @param {string} [specialtyTypeId] 
+         * @param {string} [serviceId] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -19725,8 +19737,8 @@ export const PackagesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalPackagesViewModel> {
-            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsPackagesGet(relatedPackageId, name, countryId, hospitalId, hospitalName, marketingType, packageStatus, page, limit, lastRetrieved, current, options);
+        apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, specialtyTypeId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalPackagesViewModel> {
+            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsPackagesGet(relatedPackageId, name, countryId, hospitalId, hospitalName, marketingType, packageStatus, specialtyTypeId, serviceId, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -19796,6 +19808,8 @@ export const PackagesApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [hospitalName] 
          * @param {object} [marketingType] 
          * @param {object} [packageStatus] 
+         * @param {string} [specialtyTypeId] 
+         * @param {string} [serviceId] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -19803,8 +19817,8 @@ export const PackagesApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalPackagesViewModel> {
-            return PackagesApiFp(configuration).apiV1HospitalsPackagesGet(relatedPackageId, name, countryId, hospitalId, hospitalName, marketingType, packageStatus, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, specialtyTypeId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalPackagesViewModel> {
+            return PackagesApiFp(configuration).apiV1HospitalsPackagesGet(relatedPackageId, name, countryId, hospitalId, hospitalName, marketingType, packageStatus, specialtyTypeId, serviceId, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
     };
 };
@@ -19879,6 +19893,8 @@ export class PackagesApi extends BaseAPI {
      * @param {string} [hospitalName] 
      * @param {object} [marketingType] 
      * @param {object} [packageStatus] 
+     * @param {string} [specialtyTypeId] 
+     * @param {string} [serviceId] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -19887,8 +19903,8 @@ export class PackagesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PackagesApi
      */
-    public apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return PackagesApiFp(this.configuration).apiV1HospitalsPackagesGet(relatedPackageId, name, countryId, hospitalId, hospitalName, marketingType, packageStatus, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, specialtyTypeId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return PackagesApiFp(this.configuration).apiV1HospitalsPackagesGet(relatedPackageId, name, countryId, hospitalId, hospitalName, marketingType, packageStatus, specialtyTypeId, serviceId, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
 }
