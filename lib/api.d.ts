@@ -1922,6 +1922,110 @@ export interface CreateCountryCommand {
 /**
  *
  * @export
+ * @interface CreateDealCommand
+ */
+export interface CreateDealCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDealCommand
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDealCommand
+     */
+    description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDealCommand
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof CreateDealCommand
+     */
+    marketingType?: MarketingType;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDealCommand
+     */
+    photo?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDealCommand
+     */
+    photoThumbnail?: string;
+    /**
+     *
+     * @type {Array<MediaViewModel>}
+     * @memberof CreateDealCommand
+     */
+    medias?: Array<MediaViewModel>;
+}
+/**
+ *
+ * @export
+ * @interface CreateDealPackageCommand
+ */
+export interface CreateDealPackageCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDealPackageCommand
+     */
+    dealId?: string;
+    /**
+     *
+     * @type {RefundPolicy}
+     * @memberof CreateDealPackageCommand
+     */
+    refundPolicy?: RefundPolicy;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDealPackageCommand
+     */
+    additionalServices?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDealPackageCommand
+     */
+    accomodation?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDealPackageCommand
+     */
+    transfer?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDealPackageCommand
+     */
+    bonus?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof CreateDealPackageCommand
+     */
+    price?: number;
+    /**
+     *
+     * @type {Array<ServiceViewModel>}
+     * @memberof CreateDealPackageCommand
+     */
+    dealPackageServices?: Array<ServiceViewModel>;
+}
+/**
+ *
+ * @export
  * @interface CreateDepartmentCommand
  */
 export interface CreateDepartmentCommand {
@@ -2278,7 +2382,7 @@ export interface CreateHospitalPackageCommand {
      * @type {string}
      * @memberof CreateHospitalPackageCommand
      */
-    trnasfer?: string;
+    transfer?: string;
     /**
      *
      * @type {string}
@@ -2868,6 +2972,494 @@ export interface Customer {
      * @memberof Customer
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface Deal
+ */
+export interface Deal {
+    /**
+     *
+     * @type {string}
+     * @memberof Deal
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Deal
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Deal
+     */
+    normalizedName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Deal
+     */
+    description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Deal
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {Hospital}
+     * @memberof Deal
+     */
+    hospital?: Hospital;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof Deal
+     */
+    marketingType?: MarketingType;
+    /**
+     *
+     * @type {string}
+     * @memberof Deal
+     */
+    photo?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Deal
+     */
+    photoThumbnail?: string;
+    /**
+     *
+     * @type {Array<DealPackage>}
+     * @memberof Deal
+     */
+    dealPackages?: Array<DealPackage>;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof Deal
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface DealItemViewModel
+ */
+export interface DealItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DealItemViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealItemViewModel
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealItemViewModel
+     */
+    normalizedName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealItemViewModel
+     */
+    description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealItemViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealItemViewModel
+     */
+    hospitalName?: string;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof DealItemViewModel
+     */
+    marketingType?: MarketingType;
+    /**
+     *
+     * @type {string}
+     * @memberof DealItemViewModel
+     */
+    photo?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealItemViewModel
+     */
+    photoThumbnail?: string;
+    /**
+     *
+     * @type {Array<DealPackageItemViewModel>}
+     * @memberof DealItemViewModel
+     */
+    dealPackages?: Array<DealPackageItemViewModel>;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof DealItemViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface DealPackage
+ */
+export interface DealPackage {
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackage
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackage
+     */
+    dealId?: string;
+    /**
+     *
+     * @type {Deal}
+     * @memberof DealPackage
+     */
+    deal?: Deal;
+    /**
+     *
+     * @type {RefundPolicy}
+     * @memberof DealPackage
+     */
+    refundPolicy?: RefundPolicy;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackage
+     */
+    additionalServices?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackage
+     */
+    accomodation?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackage
+     */
+    transfer?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackage
+     */
+    bonus?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof DealPackage
+     */
+    price?: number;
+    /**
+     *
+     * @type {Array<DealPackageService>}
+     * @memberof DealPackage
+     */
+    dealPackageServices?: Array<DealPackageService>;
+    /**
+     *
+     * @type {Array<Manager>}
+     * @memberof DealPackage
+     */
+    managers?: Array<Manager>;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof DealPackage
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface DealPackageItemViewModel
+ */
+export interface DealPackageItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageItemViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageItemViewModel
+     */
+    dealId?: string;
+    /**
+     *
+     * @type {RefundPolicy}
+     * @memberof DealPackageItemViewModel
+     */
+    refundPolicy?: RefundPolicy;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageItemViewModel
+     */
+    additionalServices?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageItemViewModel
+     */
+    accomodation?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageItemViewModel
+     */
+    transfer?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageItemViewModel
+     */
+    bonus?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof DealPackageItemViewModel
+     */
+    price?: number;
+    /**
+     *
+     * @type {Array<ServiceViewModel>}
+     * @memberof DealPackageItemViewModel
+     */
+    services?: Array<ServiceViewModel>;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof DealPackageItemViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface DealPackageService
+ */
+export interface DealPackageService {
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageService
+     */
+    dealPackageId?: string;
+    /**
+     *
+     * @type {DealPackage}
+     * @memberof DealPackageService
+     */
+    dealPackage?: DealPackage;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageService
+     */
+    serviceId?: string;
+    /**
+     *
+     * @type {Service}
+     * @memberof DealPackageService
+     */
+    service?: Service;
+    /**
+     *
+     * @type {number}
+     * @memberof DealPackageService
+     */
+    order?: number;
+}
+/**
+ *
+ * @export
+ * @interface DealPackageViewModel
+ */
+export interface DealPackageViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageViewModel
+     */
+    dealId?: string;
+    /**
+     *
+     * @type {RefundPolicy}
+     * @memberof DealPackageViewModel
+     */
+    refundPolicy?: RefundPolicy;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageViewModel
+     */
+    additionalServices?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageViewModel
+     */
+    accomodation?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageViewModel
+     */
+    transfer?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealPackageViewModel
+     */
+    bonus?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof DealPackageViewModel
+     */
+    price?: number;
+    /**
+     *
+     * @type {Array<ServiceViewModel>}
+     * @memberof DealPackageViewModel
+     */
+    services?: Array<ServiceViewModel>;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof DealPackageViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface DealViewModel
+ */
+export interface DealViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DealViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealViewModel
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealViewModel
+     */
+    normalizedName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealViewModel
+     */
+    description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealViewModel
+     */
+    hospitalName?: string;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof DealViewModel
+     */
+    marketingType?: MarketingType;
+    /**
+     *
+     * @type {string}
+     * @memberof DealViewModel
+     */
+    photo?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealViewModel
+     */
+    photoThumbnail?: string;
+    /**
+     *
+     * @type {Array<DealPackageItemViewModel>}
+     * @memberof DealViewModel
+     */
+    dealPackages?: Array<DealPackageItemViewModel>;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof DealViewModel
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface DealsViewModel
+ */
+export interface DealsViewModel {
+    /**
+     *
+     * @type {Array<DealItemViewModel>}
+     * @memberof DealsViewModel
+     */
+    items?: Array<DealItemViewModel>;
+    /**
+     *
+     * @type {PagedListMetaData}
+     * @memberof DealsViewModel
+     */
+    metaData?: PagedListMetaData;
 }
 /**
  *
@@ -7796,7 +8388,8 @@ export declare enum QuestionType {
     General = "General",
     Health = "Health",
     Treatment = "Treatment",
-    Travel = "Travel"
+    Travel = "Travel",
+    Consult = "Consult"
 }
 /**
  *
@@ -7901,6 +8494,16 @@ export interface QuestionsViewModel {
      * @memberof QuestionsViewModel
      */
     metaData?: PagedListMetaData;
+}
+/**
+ *
+ * @export
+ * @enum {string}
+ */
+export declare enum RefundPolicy {
+    NonRefundable = "NonRefundable",
+    Refundable = "Refundable",
+    PartialRefundable = "PartialRefundable"
 }
 /**
  *
@@ -8042,6 +8645,12 @@ export interface Service {
      * @memberof Service
      */
     packageServices?: Array<PackageService>;
+    /**
+     *
+     * @type {Array<DealPackageService>}
+     * @memberof Service
+     */
+    dealPackageServices?: Array<DealPackageService>;
     /**
      *
      * @type {Array<Assessment>}
@@ -9085,6 +9694,134 @@ export interface UpdateCountryCommand {
      * @memberof UpdateCountryCommand
      */
     medias?: Array<MediaViewModel>;
+}
+/**
+ *
+ * @export
+ * @interface UpdateDealCommand
+ */
+export interface UpdateDealCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealCommand
+     */
+    photo?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealCommand
+     */
+    photoThumbnail?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealCommand
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealCommand
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealCommand
+     */
+    normalizedName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealCommand
+     */
+    description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealCommand
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealCommand
+     */
+    hospitalName?: string;
+    /**
+     *
+     * @type {MarketingType}
+     * @memberof UpdateDealCommand
+     */
+    marketingType?: MarketingType;
+    /**
+     *
+     * @type {Array<DealPackageItemViewModel>}
+     * @memberof UpdateDealCommand
+     */
+    dealPackages?: Array<DealPackageItemViewModel>;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof UpdateDealCommand
+     */
+    auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface UpdateDealPackageCommand
+ */
+export interface UpdateDealPackageCommand {
+    /**
+     *
+     * @type {RefundPolicy}
+     * @memberof UpdateDealPackageCommand
+     */
+    refundPolicy?: RefundPolicy;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealPackageCommand
+     */
+    additionalServices?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealPackageCommand
+     */
+    accomodation?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealPackageCommand
+     */
+    transfer?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealPackageCommand
+     */
+    bonus?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateDealPackageCommand
+     */
+    price?: number;
+    /**
+     *
+     * @type {Array<ServiceViewModel>}
+     * @memberof UpdateDealPackageCommand
+     */
+    services?: Array<ServiceViewModel>;
+    /**
+     *
+     * @type {AuditableEntity}
+     * @memberof UpdateDealPackageCommand
+     */
+    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -12172,6 +12909,411 @@ export declare class CountriesApi extends BaseAPI {
      * @memberof CountriesApi
      */
     apiV1CountriesPost(body?: CreateCountryCommand, options?: any): AxiosPromise<string>;
+}
+/**
+ * DealPackagesApi - axios parameter creator
+ * @export
+ */
+export declare const DealPackagesApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     *
+     * @summary Delete deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPackageIdDelete(dealId: string, packageId: string, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPackageIdGet(dealId: string, packageId: string, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Update deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {UpdateDealPackageCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPackageIdPut(dealId: string, packageId: string, body?: UpdateDealPackageCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Create deal package.
+     * @param {string} dealId
+     * @param {CreateDealPackageCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPost(dealId: string, body?: CreateDealPackageCommand | undefined, options?: any): RequestArgs;
+};
+/**
+ * DealPackagesApi - functional programming interface
+ * @export
+ */
+export declare const DealPackagesApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     *
+     * @summary Delete deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPackageIdDelete(dealId: string, packageId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPackageIdGet(dealId: string, packageId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealPackageViewModel>;
+    /**
+     *
+     * @summary Update deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {UpdateDealPackageCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPackageIdPut(dealId: string, packageId: string, body?: UpdateDealPackageCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Create deal package.
+     * @param {string} dealId
+     * @param {CreateDealPackageCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPost(dealId: string, body?: CreateDealPackageCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+};
+/**
+ * DealPackagesApi - factory interface
+ * @export
+ */
+export declare const DealPackagesApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     *
+     * @summary Delete deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPackageIdDelete(dealId: string, packageId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPackageIdGet(dealId: string, packageId: string, options?: any): AxiosPromise<DealPackageViewModel>;
+    /**
+     *
+     * @summary Update deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {UpdateDealPackageCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPackageIdPut(dealId: string, packageId: string, body?: UpdateDealPackageCommand | undefined, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Create deal package.
+     * @param {string} dealId
+     * @param {CreateDealPackageCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPackagesPost(dealId: string, body?: CreateDealPackageCommand | undefined, options?: any): AxiosPromise<string>;
+};
+/**
+ * DealPackagesApi - object-oriented interface
+ * @export
+ * @class DealPackagesApi
+ * @extends {BaseAPI}
+ */
+export declare class DealPackagesApi extends BaseAPI {
+    /**
+     *
+     * @summary Delete deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DealPackagesApi
+     */
+    apiV1DealsDealIdPackagesPackageIdDelete(dealId: string, packageId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DealPackagesApi
+     */
+    apiV1DealsDealIdPackagesPackageIdGet(dealId: string, packageId: string, options?: any): AxiosPromise<DealPackageViewModel>;
+    /**
+     *
+     * @summary Update deal package.
+     * @param {string} dealId
+     * @param {string} packageId
+     * @param {UpdateDealPackageCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DealPackagesApi
+     */
+    apiV1DealsDealIdPackagesPackageIdPut(dealId: string, packageId: string, body?: UpdateDealPackageCommand, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Create deal package.
+     * @param {string} dealId
+     * @param {CreateDealPackageCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DealPackagesApi
+     */
+    apiV1DealsDealIdPackagesPost(dealId: string, body?: CreateDealPackageCommand, options?: any): AxiosPromise<string>;
+}
+/**
+ * DealsApi - axios parameter creator
+ * @export
+ */
+export declare const DealsApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     *
+     * @summary Delete deal.
+     * @param {string} dealId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdDelete(dealId: string, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get deal.
+     * @param {string} dealId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdGet(dealId: string, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Update deal.
+     * @param {string} dealId
+     * @param {UpdateDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPut(dealId: string, body?: UpdateDealCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get all deals.
+     * @param {string} [id]
+     * @param {string} [name]
+     * @param {object} [marketingType]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Create deal.
+     * @param {CreateDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsPost(body?: CreateDealCommand | undefined, options?: any): RequestArgs;
+};
+/**
+ * DealsApi - functional programming interface
+ * @export
+ */
+export declare const DealsApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     *
+     * @summary Delete deal.
+     * @param {string} dealId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdDelete(dealId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get deal.
+     * @param {string} dealId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdGet(dealId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealViewModel>;
+    /**
+     *
+     * @summary Update deal.
+     * @param {string} dealId
+     * @param {UpdateDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPut(dealId: string, body?: UpdateDealCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get all deals.
+     * @param {string} [id]
+     * @param {string} [name]
+     * @param {object} [marketingType]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealsViewModel>;
+    /**
+     *
+     * @summary Create deal.
+     * @param {CreateDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsPost(body?: CreateDealCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+};
+/**
+ * DealsApi - factory interface
+ * @export
+ */
+export declare const DealsApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     *
+     * @summary Delete deal.
+     * @param {string} dealId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdDelete(dealId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get deal.
+     * @param {string} dealId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdGet(dealId: string, options?: any): AxiosPromise<DealViewModel>;
+    /**
+     *
+     * @summary Update deal.
+     * @param {string} dealId
+     * @param {UpdateDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsDealIdPut(dealId: string, body?: UpdateDealCommand | undefined, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get all deals.
+     * @param {string} [id]
+     * @param {string} [name]
+     * @param {object} [marketingType]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DealsViewModel>;
+    /**
+     *
+     * @summary Create deal.
+     * @param {CreateDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsPost(body?: CreateDealCommand | undefined, options?: any): AxiosPromise<string>;
+};
+/**
+ * DealsApi - object-oriented interface
+ * @export
+ * @class DealsApi
+ * @extends {BaseAPI}
+ */
+export declare class DealsApi extends BaseAPI {
+    /**
+     *
+     * @summary Delete deal.
+     * @param {string} dealId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DealsApi
+     */
+    apiV1DealsDealIdDelete(dealId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get deal.
+     * @param {string} dealId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DealsApi
+     */
+    apiV1DealsDealIdGet(dealId: string, options?: any): AxiosPromise<DealViewModel>;
+    /**
+     *
+     * @summary Update deal.
+     * @param {string} dealId
+     * @param {UpdateDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DealsApi
+     */
+    apiV1DealsDealIdPut(dealId: string, body?: UpdateDealCommand, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get all deals.
+     * @param {string} [id]
+     * @param {string} [name]
+     * @param {object} [marketingType]
+     * @param {string} [hospitalId]
+     * @param {string} [hospitalName]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DealsApi
+     */
+    apiV1DealsGet(id?: string, name?: string, marketingType?: object, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealsViewModel>;
+    /**
+     *
+     * @summary Create deal.
+     * @param {CreateDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DealsApi
+     */
+    apiV1DealsPost(body?: CreateDealCommand, options?: any): AxiosPromise<string>;
 }
 /**
  * DepartmentApi - axios parameter creator
