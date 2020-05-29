@@ -2743,6 +2743,18 @@ export interface CreateQuestionCommand {
     questionStatus?: QuestionStatus;
     /**
      * 
+     * @type {string}
+     * @memberof CreateQuestionCommand
+     */
+    dealPackageId?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof CreateQuestionCommand
+     */
+    quantity?: number;
+    /**
+     * 
      * @type {Array<MediaViewModel>}
      * @memberof CreateQuestionCommand
      */
@@ -3204,6 +3216,12 @@ export interface DealPackage {
     managers?: Array<Manager>;
     /**
      * 
+     * @type {Array<Question>}
+     * @memberof DealPackage
+     */
+    questions?: Array<Question>;
+    /**
+     * 
      * @type {AuditableEntity}
      * @memberof DealPackage
      */
@@ -3265,10 +3283,16 @@ export interface DealPackageItemViewModel {
     price?: number;
     /**
      * 
-     * @type {Array<ServiceViewModel>}
+     * @type {number}
      * @memberof DealPackageItemViewModel
      */
-    services?: Array<ServiceViewModel>;
+    serviceCount?: number;
+    /**
+     * 
+     * @type {Array<DealPackageServiceItemViewModel>}
+     * @memberof DealPackageItemViewModel
+     */
+    dealPackageServices?: Array<DealPackageServiceItemViewModel>;
     /**
      * 
      * @type {AuditableEntity}
@@ -3310,6 +3334,43 @@ export interface DealPackageService {
      * 
      * @type {number}
      * @memberof DealPackageService
+     */
+    order?: number;
+}
+/**
+ * 
+ * @export
+ * @interface DealPackageServiceItemViewModel
+ */
+export interface DealPackageServiceItemViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageServiceItemViewModel
+     */
+    dealPackageId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageServiceItemViewModel
+     */
+    serviceId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageServiceItemViewModel
+     */
+    serviceName?: string;
+    /**
+     * 
+     * @type {Procedure}
+     * @memberof DealPackageServiceItemViewModel
+     */
+    procedure?: Procedure;
+    /**
+     * 
+     * @type {number}
+     * @memberof DealPackageServiceItemViewModel
      */
     order?: number;
 }
@@ -3369,10 +3430,16 @@ export interface DealPackageViewModel {
     price?: number;
     /**
      * 
-     * @type {Array<ServiceViewModel>}
+     * @type {number}
      * @memberof DealPackageViewModel
      */
-    services?: Array<ServiceViewModel>;
+    serviceCount?: number;
+    /**
+     * 
+     * @type {Array<DealPackageServiceItemViewModel>}
+     * @memberof DealPackageViewModel
+     */
+    dealPackageServices?: Array<DealPackageServiceItemViewModel>;
     /**
      * 
      * @type {AuditableEntity}
@@ -8106,6 +8173,24 @@ export interface Question {
     hospital?: Hospital;
     /**
      * 
+     * @type {string}
+     * @memberof Question
+     */
+    dealPackageId?: string;
+    /**
+     * 
+     * @type {DealPackage}
+     * @memberof Question
+     */
+    dealPackage?: DealPackage;
+    /**
+     * 
+     * @type {number}
+     * @memberof Question
+     */
+    quantity?: number;
+    /**
+     * 
      * @type {Array<QuestionComment>}
      * @memberof Question
      */
@@ -8381,6 +8466,36 @@ export interface QuestionItemViewModel {
     questionCommentsCount?: number;
     /**
      * 
+     * @type {string}
+     * @memberof QuestionItemViewModel
+     */
+    dealId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionItemViewModel
+     */
+    dealName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionItemViewModel
+     */
+    dealPackageId?: string;
+    /**
+     * 
+     * @type {RefundPolicy}
+     * @memberof QuestionItemViewModel
+     */
+    refundPolicy?: RefundPolicy;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionItemViewModel
+     */
+    quantity?: number;
+    /**
+     * 
      * @type {AuditableEntity}
      * @memberof QuestionItemViewModel
      */
@@ -8489,6 +8604,36 @@ export interface QuestionViewModel {
      * @memberof QuestionViewModel
      */
     questionCommentsCount?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    dealId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    dealName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof QuestionViewModel
+     */
+    dealPackageId?: string;
+    /**
+     * 
+     * @type {RefundPolicy}
+     * @memberof QuestionViewModel
+     */
+    refundPolicy?: RefundPolicy;
+    /**
+     * 
+     * @type {number}
+     * @memberof QuestionViewModel
+     */
+    quantity?: number;
     /**
      * 
      * @type {AuditableEntity}
@@ -9836,10 +9981,16 @@ export interface UpdateDealPackageCommand {
     price?: number;
     /**
      * 
-     * @type {Array<ServiceViewModel>}
+     * @type {number}
      * @memberof UpdateDealPackageCommand
      */
-    services?: Array<ServiceViewModel>;
+    serviceCount?: number;
+    /**
+     * 
+     * @type {Array<DealPackageServiceItemViewModel>}
+     * @memberof UpdateDealPackageCommand
+     */
+    dealPackageServices?: Array<DealPackageServiceItemViewModel>;
     /**
      * 
      * @type {AuditableEntity}
@@ -15116,6 +15267,7 @@ export const DealsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} [id] 
          * @param {string} [name] 
          * @param {object} [marketingType] 
+         * @param {string} [countryId] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
          * @param {number} [page] 
@@ -15125,7 +15277,7 @@ export const DealsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DealsGet(id?: string, name?: string, marketingType?: object, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/deals`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -15146,6 +15298,10 @@ export const DealsApiAxiosParamCreator = function (configuration?: Configuration
 
             if (marketingType !== undefined) {
                 localVarQueryParameter['MarketingType'] = marketingType;
+            }
+
+            if (countryId !== undefined) {
+                localVarQueryParameter['CountryId'] = countryId;
             }
 
             if (hospitalId !== undefined) {
@@ -15287,6 +15443,7 @@ export const DealsApiFp = function(configuration?: Configuration) {
          * @param {string} [id] 
          * @param {string} [name] 
          * @param {object} [marketingType] 
+         * @param {string} [countryId] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
          * @param {number} [page] 
@@ -15296,8 +15453,8 @@ export const DealsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DealsGet(id?: string, name?: string, marketingType?: object, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DealsViewModel> {
-            const localVarAxiosArgs = DealsApiAxiosParamCreator(configuration).apiV1DealsGet(id, name, marketingType, hospitalId, hospitalName, page, limit, lastRetrieved, current, options);
+        apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DealsViewModel> {
+            const localVarAxiosArgs = DealsApiAxiosParamCreator(configuration).apiV1DealsGet(id, name, marketingType, countryId, hospitalId, hospitalName, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -15363,6 +15520,7 @@ export const DealsApiFactory = function (configuration?: Configuration, basePath
          * @param {string} [id] 
          * @param {string} [name] 
          * @param {object} [marketingType] 
+         * @param {string} [countryId] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
          * @param {number} [page] 
@@ -15372,8 +15530,8 @@ export const DealsApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DealsGet(id?: string, name?: string, marketingType?: object, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealsViewModel> {
-            return DealsApiFp(configuration).apiV1DealsGet(id, name, marketingType, hospitalId, hospitalName, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealsViewModel> {
+            return DealsApiFp(configuration).apiV1DealsGet(id, name, marketingType, countryId, hospitalId, hospitalName, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * 
@@ -15438,6 +15596,7 @@ export class DealsApi extends BaseAPI {
      * @param {string} [id] 
      * @param {string} [name] 
      * @param {object} [marketingType] 
+     * @param {string} [countryId] 
      * @param {string} [hospitalId] 
      * @param {string} [hospitalName] 
      * @param {number} [page] 
@@ -15448,8 +15607,8 @@ export class DealsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealsApi
      */
-    public apiV1DealsGet(id?: string, name?: string, marketingType?: object, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return DealsApiFp(this.configuration).apiV1DealsGet(id, name, marketingType, hospitalId, hospitalName, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return DealsApiFp(this.configuration).apiV1DealsGet(id, name, marketingType, countryId, hospitalId, hospitalName, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
