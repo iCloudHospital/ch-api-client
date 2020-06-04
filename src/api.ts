@@ -1,6 +1,6 @@
 // tslint:disable
 /**
- * Swagger UI - Cloud Hospital
+ * Swagger UI - Cloud Hospital Api-INT
  * Cloud Hospital application with Swagger, Swashbuckle, and API versioning.
  *
  * The version of the OpenAPI document: 1
@@ -12152,6 +12152,7 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [hospitalName] 
          * @param {string} [countryId] 
          * @param {string} [tag] 
+         * @param {string} [exceptHospitalId] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -12159,7 +12160,7 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/articles`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -12212,6 +12213,10 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
 
             if (tag !== undefined) {
                 localVarQueryParameter['Tag'] = tag;
+            }
+
+            if (exceptHospitalId !== undefined) {
+                localVarQueryParameter['ExceptHospitalId'] = exceptHospitalId;
             }
 
             if (page !== undefined) {
@@ -12462,6 +12467,7 @@ export const ArticlesApiFp = function(configuration?: Configuration) {
          * @param {string} [hospitalName] 
          * @param {string} [countryId] 
          * @param {string} [tag] 
+         * @param {string} [exceptHospitalId] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -12469,8 +12475,8 @@ export const ArticlesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ArticlesViewModel> {
-            const localVarAxiosArgs = ArticlesApiAxiosParamCreator(configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, countryId, tag, page, limit, lastRetrieved, current, options);
+        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ArticlesViewModel> {
+            const localVarAxiosArgs = ArticlesApiAxiosParamCreator(configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, countryId, tag, exceptHospitalId, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -12560,6 +12566,7 @@ export const ArticlesApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [hospitalName] 
          * @param {string} [countryId] 
          * @param {string} [tag] 
+         * @param {string} [exceptHospitalId] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -12567,8 +12574,8 @@ export const ArticlesApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel> {
-            return ArticlesApiFp(configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, countryId, tag, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel> {
+            return ArticlesApiFp(configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, countryId, tag, exceptHospitalId, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        DELETE /api/v1/hospitals/1/articles/1
@@ -12639,6 +12646,7 @@ export class ArticlesApi extends BaseAPI {
      * @param {string} [hospitalName] 
      * @param {string} [countryId] 
      * @param {string} [tag] 
+     * @param {string} [exceptHospitalId] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -12647,8 +12655,8 @@ export class ArticlesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    public apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return ArticlesApiFp(this.configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, countryId, tag, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return ArticlesApiFp(this.configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, countryId, tag, exceptHospitalId, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
@@ -22225,6 +22233,15 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
             if (id !== undefined) {
                 localVarQueryParameter['Id'] = id;
             }
@@ -22349,6 +22366,15 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
 
 
     
