@@ -4032,13 +4032,13 @@ export interface DoctorAffiliationViewModel {
      * @type {string}
      * @memberof DoctorAffiliationViewModel
      */
-    cityName?: string;
+    stateName?: string;
     /**
      * 
      * @type {string}
      * @memberof DoctorAffiliationViewModel
      */
-    stateName?: string;
+    cityName?: string;
 }
 /**
  * 
@@ -4419,12 +4419,6 @@ export interface DoctorItemViewModel {
      * @memberof DoctorItemViewModel
      */
     articlesCount?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof DoctorItemViewModel
-     */
-    languagesCountCount?: number;
     /**
      * 
      * @type {string}
@@ -5584,13 +5578,13 @@ export interface HospitalAffiliationViewModel {
      * @type {string}
      * @memberof HospitalAffiliationViewModel
      */
-    cityName?: string;
+    stateName?: string;
     /**
      * 
      * @type {string}
      * @memberof HospitalAffiliationViewModel
      */
-    stateName?: string;
+    cityName?: string;
 }
 /**
  * 
@@ -6833,13 +6827,13 @@ export interface ManagerAffiliationViewModel {
      * @type {string}
      * @memberof ManagerAffiliationViewModel
      */
-    cityName?: string;
+    stateName?: string;
     /**
      * 
      * @type {string}
      * @memberof ManagerAffiliationViewModel
      */
-    stateName?: string;
+    cityName?: string;
 }
 /**
  * 
@@ -24069,6 +24063,143 @@ export class QuestionsApi extends BaseAPI {
      */
     public apiV1HospitalsQuestionsGet(id?: string, title?: string, hospitalId?: string, patientId?: string, questionType?: object, questionStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
         return QuestionsApiFp(this.configuration).apiV1HospitalsQuestionsGet(id, title, hospitalId, patientId, questionType, questionStatus, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    }
+
+}
+
+
+/**
+ * SearchApi - axios parameter creator
+ * @export
+ */
+export const SearchApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {string} [searchTerm] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SearchGet(searchTerm?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/search`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (searchTerm !== undefined) {
+                localVarQueryParameter['SearchTerm'] = searchTerm;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * SearchApi - functional programming interface
+ * @export
+ */
+export const SearchApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {string} [searchTerm] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SearchGet(searchTerm?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void> {
+            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchGet(searchTerm, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * SearchApi - factory interface
+ * @export
+ */
+export const SearchApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * 
+         * @param {string} [searchTerm] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SearchGet(searchTerm?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<void> {
+            return SearchApiFp(configuration).apiV1SearchGet(searchTerm, page, limit, lastRetrieved, current, options)(axios, basePath);
+        },
+    };
+};
+
+/**
+ * SearchApi - object-oriented interface
+ * @export
+ * @class SearchApi
+ * @extends {BaseAPI}
+ */
+export class SearchApi extends BaseAPI {
+    /**
+     * 
+     * @param {string} [searchTerm] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SearchApi
+     */
+    public apiV1SearchGet(searchTerm?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return SearchApiFp(this.configuration).apiV1SearchGet(searchTerm, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
 }

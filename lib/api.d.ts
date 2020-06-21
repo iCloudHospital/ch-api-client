@@ -4021,13 +4021,13 @@ export interface DoctorAffiliationViewModel {
      * @type {string}
      * @memberof DoctorAffiliationViewModel
      */
-    cityName?: string;
+    stateName?: string;
     /**
      *
      * @type {string}
      * @memberof DoctorAffiliationViewModel
      */
-    stateName?: string;
+    cityName?: string;
 }
 /**
  *
@@ -4408,12 +4408,6 @@ export interface DoctorItemViewModel {
      * @memberof DoctorItemViewModel
      */
     articlesCount?: number;
-    /**
-     *
-     * @type {number}
-     * @memberof DoctorItemViewModel
-     */
-    languagesCountCount?: number;
     /**
      *
      * @type {string}
@@ -5572,13 +5566,13 @@ export interface HospitalAffiliationViewModel {
      * @type {string}
      * @memberof HospitalAffiliationViewModel
      */
-    cityName?: string;
+    stateName?: string;
     /**
      *
      * @type {string}
      * @memberof HospitalAffiliationViewModel
      */
-    stateName?: string;
+    cityName?: string;
 }
 /**
  *
@@ -6821,13 +6815,13 @@ export interface ManagerAffiliationViewModel {
      * @type {string}
      * @memberof ManagerAffiliationViewModel
      */
-    cityName?: string;
+    stateName?: string;
     /**
      *
      * @type {string}
      * @memberof ManagerAffiliationViewModel
      */
-    stateName?: string;
+    cityName?: string;
 }
 /**
  *
@@ -17341,6 +17335,77 @@ export declare class QuestionsApi extends BaseAPI {
      * @memberof QuestionsApi
      */
     apiV1HospitalsQuestionsGet(id?: string, title?: string, hospitalId?: string, patientId?: string, questionType?: object, questionStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<QuestionsViewModel>;
+}
+/**
+ * SearchApi - axios parameter creator
+ * @export
+ */
+export declare const SearchApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     *
+     * @param {string} [searchTerm]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1SearchGet(searchTerm?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+};
+/**
+ * SearchApi - functional programming interface
+ * @export
+ */
+export declare const SearchApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     *
+     * @param {string} [searchTerm]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1SearchGet(searchTerm?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>;
+};
+/**
+ * SearchApi - factory interface
+ * @export
+ */
+export declare const SearchApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     *
+     * @param {string} [searchTerm]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1SearchGet(searchTerm?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<void>;
+};
+/**
+ * SearchApi - object-oriented interface
+ * @export
+ * @class SearchApi
+ * @extends {BaseAPI}
+ */
+export declare class SearchApi extends BaseAPI {
+    /**
+     *
+     * @param {string} [searchTerm]
+     * @param {number} [page]
+     * @param {number} [limit]
+     * @param {Date} [lastRetrieved]
+     * @param {boolean} [current]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SearchApi
+     */
+    apiV1SearchGet(searchTerm?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<void>;
 }
 /**
  * ServiceCategoriesApi - axios parameter creator

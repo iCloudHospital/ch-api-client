@@ -1,6 +1,6 @@
 {
   "name": "ch-api-client",
-  "version": "4.9.0",
+  "version": "5.0.0",
   "description": "usage:",
   "main": "index.js",
   "scripts": {
