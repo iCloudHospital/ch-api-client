@@ -266,6 +266,43 @@ export interface ArticleItemViewModel {
 /**
  * 
  * @export
+ * @interface ArticleSearchViewModel
+ */
+export interface ArticleSearchViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof ArticleSearchViewModel
+     */
+    title?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ArticleSearchViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ArticleSearchViewModel
+     */
+    body?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ArticleSearchViewModel
+     */
+    status?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof ArticleSearchViewModel
+     */
+    marketingType?: number;
+}
+/**
+ * 
+ * @export
  * @enum {string}
  */
 export enum ArticleStatus {
@@ -670,6 +707,43 @@ export interface AwardViewModel {
      * @memberof AwardViewModel
      */
     date?: Date;
+}
+/**
+ * 
+ * @export
+ * @interface AzureSearchViewModel
+ */
+export interface AzureSearchViewModel {
+    /**
+     * 
+     * @type {HospitalSearchResultViewModel}
+     * @memberof AzureSearchViewModel
+     */
+    hospitals?: HospitalSearchResultViewModel;
+    /**
+     * 
+     * @type {DoctorSearchResultViewModel}
+     * @memberof AzureSearchViewModel
+     */
+    doctors?: DoctorSearchResultViewModel;
+    /**
+     * 
+     * @type {DealSearchResultViewModel}
+     * @memberof AzureSearchViewModel
+     */
+    deals?: DealSearchResultViewModel;
+    /**
+     * 
+     * @type {SpecialtySearchResultViewModel}
+     * @memberof AzureSearchViewModel
+     */
+    specialties?: SpecialtySearchResultViewModel;
+    /**
+     * 
+     * @type {EquipmentSearchResultViewModel}
+     * @memberof AzureSearchViewModel
+     */
+    equipments?: EquipmentSearchResultViewModel;
 }
 /**
  * 
@@ -3303,6 +3377,97 @@ export interface DealPackageItemViewModel {
 /**
  * 
  * @export
+ * @interface DealPackageSearchViewModel
+ */
+export interface DealPackageSearchViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    specialtyId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    specialtyName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    specialtyTypeId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    specialtyTypeName?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof DealPackageSearchViewModel
+     */
+    order?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof DealPackageSearchViewModel
+     */
+    refundPolicy?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    additionalServices?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    accomodation?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    transfer?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageSearchViewModel
+     */
+    bonus?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof DealPackageSearchViewModel
+     */
+    price?: number;
+}
+/**
+ * 
+ * @export
  * @interface DealPackageService
  */
 export interface DealPackageService {
@@ -3446,6 +3611,92 @@ export interface DealPackageViewModel {
      * @memberof DealPackageViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface DealSearchResultViewModel
+ */
+export interface DealSearchResultViewModel {
+    /**
+     * 
+     * @type {Array<DealSearchViewModel>}
+     * @memberof DealSearchResultViewModel
+     */
+    items?: Array<DealSearchViewModel>;
+    /**
+     * 
+     * @type {SearchMetaData}
+     * @memberof DealSearchResultViewModel
+     */
+    metaData?: SearchMetaData;
+}
+/**
+ * 
+ * @export
+ * @interface DealSearchViewModel
+ */
+export interface DealSearchViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof DealSearchViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealSearchViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealSearchViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof DealSearchViewModel
+     */
+    marketingType?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealSearchViewModel
+     */
+    photo?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealSearchViewModel
+     */
+    photoThumbnail?: string;
+    /**
+     * 
+     * @type {HospitalSearchViewModel}
+     * @memberof DealSearchViewModel
+     */
+    hospital?: HospitalSearchViewModel;
+    /**
+     * 
+     * @type {Array<DealPackageSearchViewModel>}
+     * @memberof DealSearchViewModel
+     */
+    nonRefundable?: Array<DealPackageSearchViewModel>;
+    /**
+     * 
+     * @type {Array<DealPackageSearchViewModel>}
+     * @memberof DealSearchViewModel
+     */
+    refundable?: Array<DealPackageSearchViewModel>;
+    /**
+     * 
+     * @type {Array<DealPackageSearchViewModel>}
+     * @memberof DealSearchViewModel
+     */
+    partialRefundable?: Array<DealPackageSearchViewModel>;
 }
 /**
  * 
@@ -4844,6 +5095,25 @@ export interface DoctorReviewsViewModel {
 /**
  * 
  * @export
+ * @interface DoctorSearchResultViewModel
+ */
+export interface DoctorSearchResultViewModel {
+    /**
+     * 
+     * @type {Array<DoctorItemViewModel>}
+     * @memberof DoctorSearchResultViewModel
+     */
+    items?: Array<DoctorItemViewModel>;
+    /**
+     * 
+     * @type {SearchMetaData}
+     * @memberof DoctorSearchResultViewModel
+     */
+    metaData?: SearchMetaData;
+}
+/**
+ * 
+ * @export
  * @interface DoctorSpecialty
  */
 export interface DoctorSpecialty {
@@ -5255,6 +5525,68 @@ export interface EquipmentItemViewModel {
      * @memberof EquipmentItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface EquipmentSearchResultViewModel
+ */
+export interface EquipmentSearchResultViewModel {
+    /**
+     * 
+     * @type {Array<EquipmentSearchViewModel>}
+     * @memberof EquipmentSearchResultViewModel
+     */
+    items?: Array<EquipmentSearchViewModel>;
+    /**
+     * 
+     * @type {SearchMetaData}
+     * @memberof EquipmentSearchResultViewModel
+     */
+    metaData?: SearchMetaData;
+}
+/**
+ * 
+ * @export
+ * @interface EquipmentSearchViewModel
+ */
+export interface EquipmentSearchViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof EquipmentSearchViewModel
+     */
+    equipmentId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EquipmentSearchViewModel
+     */
+    equipmentName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof EquipmentSearchViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {HospitalSearchViewModel}
+     * @memberof EquipmentSearchViewModel
+     */
+    hospital?: HospitalSearchViewModel;
+    /**
+     * 
+     * @type {Array<MediaSearchViewModel>}
+     * @memberof EquipmentSearchViewModel
+     */
+    medias?: Array<MediaSearchViewModel>;
+    /**
+     * 
+     * @type {number}
+     * @memberof EquipmentSearchViewModel
+     */
+    order?: number;
 }
 /**
  * 
@@ -6161,6 +6493,176 @@ export interface HospitalReviewsViewModel {
 /**
  * 
  * @export
+ * @interface HospitalSearchResultViewModel
+ */
+export interface HospitalSearchResultViewModel {
+    /**
+     * 
+     * @type {Array<HospitalItemViewModel>}
+     * @memberof HospitalSearchResultViewModel
+     */
+    items?: Array<HospitalItemViewModel>;
+    /**
+     * 
+     * @type {SearchMetaData}
+     * @memberof HospitalSearchResultViewModel
+     */
+    metaData?: SearchMetaData;
+}
+/**
+ * 
+ * @export
+ * @interface HospitalSearchViewModel
+ */
+export interface HospitalSearchViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    logo?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    overview?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchViewModel
+     */
+    bedsCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchViewModel
+     */
+    operationRoomsCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchViewModel
+     */
+    icuBedsCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchViewModel
+     */
+    medicalStaffCount?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    countryId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    countryName?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchViewModel
+     */
+    marketingType?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchViewModel
+     */
+    latitude?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchViewModel
+     */
+    longitude?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    country?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    state?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    county?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    city?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    zipCode?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchViewModel
+     */
+    address?: string;
+    /**
+     * 
+     * @type {Array<ArticleSearchViewModel>}
+     * @memberof HospitalSearchViewModel
+     */
+    articles?: Array<ArticleSearchViewModel>;
+    /**
+     * 
+     * @type {Array<EquipmentSearchViewModel>}
+     * @memberof HospitalSearchViewModel
+     */
+    equipments?: Array<EquipmentSearchViewModel>;
+    /**
+     * 
+     * @type {Array<ServiceSearchViewModel>}
+     * @memberof HospitalSearchViewModel
+     */
+    services?: Array<ServiceSearchViewModel>;
+    /**
+     * 
+     * @type {Array<MediaSearchViewModel>}
+     * @memberof HospitalSearchViewModel
+     */
+    medias?: Array<MediaSearchViewModel>;
+}
+/**
+ * 
+ * @export
  * @interface HospitalSpecialtiesViewModel
  */
 export interface HospitalSpecialtiesViewModel {
@@ -7020,6 +7522,49 @@ export interface Media {
      * 
      * @type {number}
      * @memberof Media
+     */
+    order?: number;
+}
+/**
+ * 
+ * @export
+ * @interface MediaSearchViewModel
+ */
+export interface MediaSearchViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof MediaSearchViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof MediaSearchViewModel
+     */
+    mediaType?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof MediaSearchViewModel
+     */
+    url?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MediaSearchViewModel
+     */
+    thumbnailUrl?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof MediaSearchViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof MediaSearchViewModel
      */
     order?: number;
 }
@@ -8703,6 +9248,37 @@ export enum ReviewCategory {
 /**
  * 
  * @export
+ * @interface SearchMetaData
+ */
+export interface SearchMetaData {
+    /**
+     * 
+     * @type {number}
+     * @memberof SearchMetaData
+     */
+    pageCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof SearchMetaData
+     */
+    totalItemCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof SearchMetaData
+     */
+    pageNumber?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof SearchMetaData
+     */
+    pageSize?: number;
+}
+/**
+ * 
+ * @export
  * @interface Service
  */
 export interface Service {
@@ -9050,6 +9626,37 @@ export interface ServiceItemViewModel {
 /**
  * 
  * @export
+ * @interface ServiceSearchViewModel
+ */
+export interface ServiceSearchViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceSearchViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ServiceSearchViewModel
+     */
+    procedure?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceSearchViewModel
+     */
+    specialtyName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ServiceSearchViewModel
+     */
+    specialtyTypeName?: string;
+}
+/**
+ * 
+ * @export
  * @interface ServiceViewModel
  */
 export interface ServiceViewModel {
@@ -9291,6 +9898,86 @@ export interface SpecialtyItemViewModel {
      * @memberof SpecialtyItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface SpecialtySearchResultViewModel
+ */
+export interface SpecialtySearchResultViewModel {
+    /**
+     * 
+     * @type {Array<SpecialtySearchViewModel>}
+     * @memberof SpecialtySearchResultViewModel
+     */
+    items?: Array<SpecialtySearchViewModel>;
+    /**
+     * 
+     * @type {SearchMetaData}
+     * @memberof SpecialtySearchResultViewModel
+     */
+    metaData?: SearchMetaData;
+}
+/**
+ * 
+ * @export
+ * @interface SpecialtySearchViewModel
+ */
+export interface SpecialtySearchViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtySearchViewModel
+     */
+    specialtyId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtySearchViewModel
+     */
+    specialtyName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtySearchViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtySearchViewModel
+     */
+    specialtyTypeId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtySearchViewModel
+     */
+    specialtyTypeName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtySearchViewModel
+     */
+    specialtyTypeCategoryId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtySearchViewModel
+     */
+    specialtyTypeCategoryName?: string;
+    /**
+     * 
+     * @type {HospitalSearchViewModel}
+     * @memberof SpecialtySearchViewModel
+     */
+    hospital?: HospitalSearchViewModel;
+    /**
+     * 
+     * @type {number}
+     * @memberof SpecialtySearchViewModel
+     */
+    order?: number;
 }
 /**
  * 
@@ -24148,7 +24835,7 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchGet(searchTerm?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void> {
+        apiV1SearchGet(searchTerm?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<AzureSearchViewModel> {
             const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchGet(searchTerm, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -24174,7 +24861,7 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchGet(searchTerm?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<void> {
+        apiV1SearchGet(searchTerm?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<AzureSearchViewModel> {
             return SearchApiFp(configuration).apiV1SearchGet(searchTerm, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
     };
