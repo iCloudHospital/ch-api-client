@@ -9816,12 +9816,6 @@ export interface SpecialtySearchResultViewModel {
 export interface SpecialtySearchViewModel {
     /**
      *
-     * @type {number}
-     * @memberof SpecialtySearchViewModel
-     */
-    marketingType?: number;
-    /**
-     *
      * @type {HospitalSearchItemViewModel}
      * @memberof SpecialtySearchViewModel
      */
@@ -9868,6 +9862,12 @@ export interface SpecialtySearchViewModel {
      * @memberof SpecialtySearchViewModel
      */
     specialtyTypeCategoryName?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof SpecialtySearchViewModel
+     */
+    marketingType?: number;
     /**
      *
      * @type {number}
