@@ -266,43 +266,6 @@ export interface ArticleItemViewModel {
 /**
  * 
  * @export
- * @interface ArticleSearchViewModel
- */
-export interface ArticleSearchViewModel {
-    /**
-     * 
-     * @type {string}
-     * @memberof ArticleSearchViewModel
-     */
-    title?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ArticleSearchViewModel
-     */
-    description?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ArticleSearchViewModel
-     */
-    body?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ArticleSearchViewModel
-     */
-    status?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof ArticleSearchViewModel
-     */
-    marketingType?: number;
-}
-/**
- * 
- * @export
  * @enum {string}
  */
 export enum ArticleStatus {
@@ -3675,10 +3638,10 @@ export interface DealSearchViewModel {
     photoThumbnail?: string;
     /**
      * 
-     * @type {HospitalSearchViewModel}
+     * @type {HospitalSearchItemViewModel}
      * @memberof DealSearchViewModel
      */
-    hospital?: HospitalSearchViewModel;
+    hospital?: HospitalSearchItemViewModel;
     /**
      * 
      * @type {Array<DealPackageSearchViewModel>}
@@ -5571,10 +5534,10 @@ export interface EquipmentSearchViewModel {
     description?: string;
     /**
      * 
-     * @type {HospitalSearchViewModel}
+     * @type {HospitalSearchItemViewModel}
      * @memberof EquipmentSearchViewModel
      */
-    hospital?: HospitalSearchViewModel;
+    hospital?: HospitalSearchItemViewModel;
     /**
      * 
      * @type {Array<MediaSearchViewModel>}
@@ -6493,6 +6456,139 @@ export interface HospitalReviewsViewModel {
 /**
  * 
  * @export
+ * @interface HospitalSearchItemViewModel
+ */
+export interface HospitalSearchItemViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    logo?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    overview?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchItemViewModel
+     */
+    bedsCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchItemViewModel
+     */
+    operationRoomsCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchItemViewModel
+     */
+    icuBedsCount?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchItemViewModel
+     */
+    medicalStaffCount?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    countryId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    countryName?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchItemViewModel
+     */
+    marketingType?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchItemViewModel
+     */
+    latitude?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchItemViewModel
+     */
+    longitude?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    country?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    state?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    county?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    city?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    zipCode?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    address?: string;
+    /**
+     * 
+     * @type {Array<MediaSearchViewModel>}
+     * @memberof HospitalSearchItemViewModel
+     */
+    medias?: Array<MediaSearchViewModel>;
+}
+/**
+ * 
+ * @export
  * @interface HospitalSearchResultViewModel
  */
 export interface HospitalSearchResultViewModel {
@@ -6508,157 +6604,6 @@ export interface HospitalSearchResultViewModel {
      * @memberof HospitalSearchResultViewModel
      */
     metaData?: SearchMetaData;
-}
-/**
- * 
- * @export
- * @interface HospitalSearchViewModel
- */
-export interface HospitalSearchViewModel {
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    id?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    description?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    logo?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    overview?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalSearchViewModel
-     */
-    bedsCount?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalSearchViewModel
-     */
-    operationRoomsCount?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalSearchViewModel
-     */
-    icuBedsCount?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalSearchViewModel
-     */
-    medicalStaffCount?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    countryId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    countryName?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalSearchViewModel
-     */
-    marketingType?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalSearchViewModel
-     */
-    latitude?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalSearchViewModel
-     */
-    longitude?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    country?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    state?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    county?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    city?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    zipCode?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalSearchViewModel
-     */
-    address?: string;
-    /**
-     * 
-     * @type {Array<ArticleSearchViewModel>}
-     * @memberof HospitalSearchViewModel
-     */
-    articles?: Array<ArticleSearchViewModel>;
-    /**
-     * 
-     * @type {Array<EquipmentSearchViewModel>}
-     * @memberof HospitalSearchViewModel
-     */
-    equipments?: Array<EquipmentSearchViewModel>;
-    /**
-     * 
-     * @type {Array<ServiceSearchViewModel>}
-     * @memberof HospitalSearchViewModel
-     */
-    services?: Array<ServiceSearchViewModel>;
-    /**
-     * 
-     * @type {Array<MediaSearchViewModel>}
-     * @memberof HospitalSearchViewModel
-     */
-    medias?: Array<MediaSearchViewModel>;
 }
 /**
  * 
@@ -9626,37 +9571,6 @@ export interface ServiceItemViewModel {
 /**
  * 
  * @export
- * @interface ServiceSearchViewModel
- */
-export interface ServiceSearchViewModel {
-    /**
-     * 
-     * @type {string}
-     * @memberof ServiceSearchViewModel
-     */
-    name?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof ServiceSearchViewModel
-     */
-    procedure?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServiceSearchViewModel
-     */
-    specialtyName?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof ServiceSearchViewModel
-     */
-    specialtyTypeName?: string;
-}
-/**
- * 
- * @export
  * @interface ServiceViewModel
  */
 export interface ServiceViewModel {
@@ -9926,6 +9840,18 @@ export interface SpecialtySearchResultViewModel {
 export interface SpecialtySearchViewModel {
     /**
      * 
+     * @type {number}
+     * @memberof SpecialtySearchViewModel
+     */
+    marketingType?: number;
+    /**
+     * 
+     * @type {HospitalSearchItemViewModel}
+     * @memberof SpecialtySearchViewModel
+     */
+    hospital?: HospitalSearchItemViewModel;
+    /**
+     * 
      * @type {string}
      * @memberof SpecialtySearchViewModel
      */
@@ -9966,12 +9892,6 @@ export interface SpecialtySearchViewModel {
      * @memberof SpecialtySearchViewModel
      */
     specialtyTypeCategoryName?: string;
-    /**
-     * 
-     * @type {HospitalSearchViewModel}
-     * @memberof SpecialtySearchViewModel
-     */
-    hospital?: HospitalSearchViewModel;
     /**
      * 
      * @type {number}
@@ -24765,6 +24685,9 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -24772,7 +24695,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/search/deals`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -24788,7 +24711,19 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
             }
 
             if (countOnly !== undefined) {
-                localVarQueryParameter['countOnly'] = countOnly;
+                localVarQueryParameter['CountOnly'] = countOnly;
+            }
+
+            if (countryId !== undefined) {
+                localVarQueryParameter['CountryId'] = countryId;
+            }
+
+            if (hospitalId !== undefined) {
+                localVarQueryParameter['HospitalId'] = hospitalId;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['MarketingType'] = marketingType;
             }
 
             if (page !== undefined) {
@@ -24825,6 +24760,9 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -24832,7 +24770,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/search/doctors`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -24848,7 +24786,19 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
             }
 
             if (countOnly !== undefined) {
-                localVarQueryParameter['countOnly'] = countOnly;
+                localVarQueryParameter['CountOnly'] = countOnly;
+            }
+
+            if (countryId !== undefined) {
+                localVarQueryParameter['CountryId'] = countryId;
+            }
+
+            if (hospitalId !== undefined) {
+                localVarQueryParameter['HospitalId'] = hospitalId;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['MarketingType'] = marketingType;
             }
 
             if (page !== undefined) {
@@ -24885,6 +24835,9 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -24892,7 +24845,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/search/equipments`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -24908,7 +24861,19 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
             }
 
             if (countOnly !== undefined) {
-                localVarQueryParameter['countOnly'] = countOnly;
+                localVarQueryParameter['CountOnly'] = countOnly;
+            }
+
+            if (countryId !== undefined) {
+                localVarQueryParameter['CountryId'] = countryId;
+            }
+
+            if (hospitalId !== undefined) {
+                localVarQueryParameter['HospitalId'] = hospitalId;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['MarketingType'] = marketingType;
             }
 
             if (page !== undefined) {
@@ -24945,6 +24910,9 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -24952,7 +24920,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/search/getcount`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -24968,7 +24936,19 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
             }
 
             if (countOnly !== undefined) {
-                localVarQueryParameter['countOnly'] = countOnly;
+                localVarQueryParameter['CountOnly'] = countOnly;
+            }
+
+            if (countryId !== undefined) {
+                localVarQueryParameter['CountryId'] = countryId;
+            }
+
+            if (hospitalId !== undefined) {
+                localVarQueryParameter['HospitalId'] = hospitalId;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['MarketingType'] = marketingType;
             }
 
             if (page !== undefined) {
@@ -25005,6 +24985,9 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25012,7 +24995,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/search/hospitals`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -25028,7 +25011,19 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
             }
 
             if (countOnly !== undefined) {
-                localVarQueryParameter['countOnly'] = countOnly;
+                localVarQueryParameter['CountOnly'] = countOnly;
+            }
+
+            if (countryId !== undefined) {
+                localVarQueryParameter['CountryId'] = countryId;
+            }
+
+            if (hospitalId !== undefined) {
+                localVarQueryParameter['HospitalId'] = hospitalId;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['MarketingType'] = marketingType;
             }
 
             if (page !== undefined) {
@@ -25065,6 +25060,9 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25072,7 +25070,7 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/search/specialties`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -25088,7 +25086,19 @@ export const SearchApiAxiosParamCreator = function (configuration?: Configuratio
             }
 
             if (countOnly !== undefined) {
-                localVarQueryParameter['countOnly'] = countOnly;
+                localVarQueryParameter['CountOnly'] = countOnly;
+            }
+
+            if (countryId !== undefined) {
+                localVarQueryParameter['CountryId'] = countryId;
+            }
+
+            if (hospitalId !== undefined) {
+                localVarQueryParameter['HospitalId'] = hospitalId;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['MarketingType'] = marketingType;
             }
 
             if (page !== undefined) {
@@ -25134,6 +25144,9 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25141,8 +25154,8 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DealSearchResultViewModel> {
-            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchDealsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options);
+        apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DealSearchResultViewModel> {
+            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchDealsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -25152,6 +25165,9 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25159,8 +25175,8 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorSearchResultViewModel> {
-            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchDoctorsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options);
+        apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorSearchResultViewModel> {
+            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchDoctorsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -25170,6 +25186,9 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25177,8 +25196,8 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<EquipmentSearchResultViewModel> {
-            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchEquipmentsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options);
+        apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<EquipmentSearchResultViewModel> {
+            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchEquipmentsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -25188,6 +25207,9 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25195,8 +25217,8 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<AzureSearchViewModel> {
-            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchGetcountGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options);
+        apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<AzureSearchViewModel> {
+            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchGetcountGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -25206,6 +25228,9 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25213,8 +25238,8 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalSearchResultViewModel> {
-            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchHospitalsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options);
+        apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalSearchResultViewModel> {
+            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchHospitalsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -25224,6 +25249,9 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25231,8 +25259,8 @@ export const SearchApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtySearchResultViewModel> {
-            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchSpecialtiesGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options);
+        apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtySearchResultViewModel> {
+            const localVarAxiosArgs = SearchApiAxiosParamCreator(configuration).apiV1SearchSpecialtiesGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -25251,6 +25279,9 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25258,13 +25289,16 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealSearchResultViewModel> {
-            return SearchApiFp(configuration).apiV1SearchDealsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealSearchResultViewModel> {
+            return SearchApiFp(configuration).apiV1SearchDealsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25272,13 +25306,16 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorSearchResultViewModel> {
-            return SearchApiFp(configuration).apiV1SearchDoctorsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorSearchResultViewModel> {
+            return SearchApiFp(configuration).apiV1SearchDoctorsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25286,13 +25323,16 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<EquipmentSearchResultViewModel> {
-            return SearchApiFp(configuration).apiV1SearchEquipmentsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<EquipmentSearchResultViewModel> {
+            return SearchApiFp(configuration).apiV1SearchEquipmentsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25300,13 +25340,16 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<AzureSearchViewModel> {
-            return SearchApiFp(configuration).apiV1SearchGetcountGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<AzureSearchViewModel> {
+            return SearchApiFp(configuration).apiV1SearchGetcountGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25314,13 +25357,16 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalSearchResultViewModel> {
-            return SearchApiFp(configuration).apiV1SearchHospitalsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalSearchResultViewModel> {
+            return SearchApiFp(configuration).apiV1SearchHospitalsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * 
          * @param {string} [searchTerm] 
          * @param {boolean} [countOnly] 
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -25328,8 +25374,8 @@ export const SearchApiFactory = function (configuration?: Configuration, basePat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtySearchResultViewModel> {
-            return SearchApiFp(configuration).apiV1SearchSpecialtiesGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtySearchResultViewModel> {
+            return SearchApiFp(configuration).apiV1SearchSpecialtiesGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
     };
 };
@@ -25345,6 +25391,9 @@ export class SearchApi extends BaseAPI {
      * 
      * @param {string} [searchTerm] 
      * @param {boolean} [countOnly] 
+     * @param {string} [countryId] 
+     * @param {string} [hospitalId] 
+     * @param {object} [marketingType] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -25353,14 +25402,17 @@ export class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    public apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return SearchApiFp(this.configuration).apiV1SearchDealsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return SearchApiFp(this.configuration).apiV1SearchDealsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
      * 
      * @param {string} [searchTerm] 
      * @param {boolean} [countOnly] 
+     * @param {string} [countryId] 
+     * @param {string} [hospitalId] 
+     * @param {object} [marketingType] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -25369,14 +25421,17 @@ export class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    public apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return SearchApiFp(this.configuration).apiV1SearchDoctorsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return SearchApiFp(this.configuration).apiV1SearchDoctorsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
      * 
      * @param {string} [searchTerm] 
      * @param {boolean} [countOnly] 
+     * @param {string} [countryId] 
+     * @param {string} [hospitalId] 
+     * @param {object} [marketingType] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -25385,14 +25440,17 @@ export class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    public apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return SearchApiFp(this.configuration).apiV1SearchEquipmentsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return SearchApiFp(this.configuration).apiV1SearchEquipmentsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
      * 
      * @param {string} [searchTerm] 
      * @param {boolean} [countOnly] 
+     * @param {string} [countryId] 
+     * @param {string} [hospitalId] 
+     * @param {object} [marketingType] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -25401,14 +25459,17 @@ export class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    public apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return SearchApiFp(this.configuration).apiV1SearchGetcountGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return SearchApiFp(this.configuration).apiV1SearchGetcountGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
      * 
      * @param {string} [searchTerm] 
      * @param {boolean} [countOnly] 
+     * @param {string} [countryId] 
+     * @param {string} [hospitalId] 
+     * @param {object} [marketingType] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -25417,14 +25478,17 @@ export class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    public apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return SearchApiFp(this.configuration).apiV1SearchHospitalsGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return SearchApiFp(this.configuration).apiV1SearchHospitalsGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
      * 
      * @param {string} [searchTerm] 
      * @param {boolean} [countOnly] 
+     * @param {string} [countryId] 
+     * @param {string} [hospitalId] 
+     * @param {object} [marketingType] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -25433,8 +25497,8 @@ export class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    public apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return SearchApiFp(this.configuration).apiV1SearchSpecialtiesGet(searchTerm, countOnly, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return SearchApiFp(this.configuration).apiV1SearchSpecialtiesGet(searchTerm, countOnly, countryId, hospitalId, marketingType, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
 }
