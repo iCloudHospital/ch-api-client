@@ -3546,48 +3546,6 @@ export interface DealPackageSearchViewModel {
     id?: string;
     /**
      *
-     * @type {string}
-     * @memberof DealPackageSearchViewModel
-     */
-    name?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof DealPackageSearchViewModel
-     */
-    description?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof DealPackageSearchViewModel
-     */
-    specialtyId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof DealPackageSearchViewModel
-     */
-    specialtyName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof DealPackageSearchViewModel
-     */
-    specialtyTypeId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof DealPackageSearchViewModel
-     */
-    specialtyTypeName?: string;
-    /**
-     *
-     * @type {number}
-     * @memberof DealPackageSearchViewModel
-     */
-    order?: number;
-    /**
-     *
      * @type {number}
      * @memberof DealPackageSearchViewModel
      */
@@ -3622,6 +3580,12 @@ export interface DealPackageSearchViewModel {
      * @memberof DealPackageSearchViewModel
      */
     price?: number;
+    /**
+     *
+     * @type {Array<ServiceSearchViewModel>}
+     * @memberof DealPackageSearchViewModel
+     */
+    services?: Array<ServiceSearchViewModel>;
 }
 /**
  *
@@ -3842,19 +3806,7 @@ export interface DealSearchViewModel {
      * @type {Array<DealPackageSearchViewModel>}
      * @memberof DealSearchViewModel
      */
-    nonRefundable?: Array<DealPackageSearchViewModel>;
-    /**
-     *
-     * @type {Array<DealPackageSearchViewModel>}
-     * @memberof DealSearchViewModel
-     */
-    refundable?: Array<DealPackageSearchViewModel>;
-    /**
-     *
-     * @type {Array<DealPackageSearchViewModel>}
-     * @memberof DealSearchViewModel
-     */
-    partialRefundable?: Array<DealPackageSearchViewModel>;
+    packages?: Array<DealPackageSearchViewModel>;
 }
 /**
  *
@@ -9308,6 +9260,67 @@ export interface ServiceItemViewModel {
      * @memberof ServiceItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface ServiceSearchViewModel
+ */
+export interface ServiceSearchViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceSearchViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceSearchViewModel
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceSearchViewModel
+     */
+    description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceSearchViewModel
+     */
+    specialtyId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceSearchViewModel
+     */
+    specialtyName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceSearchViewModel
+     */
+    specialtyTypeId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceSearchViewModel
+     */
+    specialtyTypeName?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof ServiceSearchViewModel
+     */
+    procedure?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof ServiceSearchViewModel
+     */
+    order?: number;
 }
 /**
  *
