@@ -90,6 +90,25 @@ export interface Accreditation {
 /**
  * 
  * @export
+ * @interface ApproveBookingCommand
+ */
+export interface ApproveBookingCommand {
+    /**
+     * 
+     * @type {Date}
+     * @memberof ApproveBookingCommand
+     */
+    confirmedDateStart?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ApproveBookingCommand
+     */
+    confirmedDateEnd?: Date;
+}
+/**
+ * 
+ * @export
  * @interface Article
  */
 export interface Article {
@@ -737,13 +756,13 @@ export interface Booking {
      * @type {string}
      * @memberof Booking
      */
-    packageId?: string;
+    dealPackageId?: string;
     /**
      * 
-     * @type {Package}
+     * @type {DealPackage}
      * @memberof Booking
      */
-    _package?: Package;
+    dealPackage?: DealPackage;
     /**
      * 
      * @type {number}
@@ -756,6 +775,30 @@ export interface Booking {
      * @memberof Booking
      */
     applicationFee?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Booking
+     */
+    quantity?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Booking
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Booking
+     */
+    email?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Booking
+     */
+    phone?: string;
     /**
      * 
      * @type {Date}
@@ -907,13 +950,43 @@ export interface BookingItemViewModel {
      * @type {string}
      * @memberof BookingItemViewModel
      */
-    packageId?: string;
+    patientName?: string;
     /**
      * 
      * @type {string}
      * @memberof BookingItemViewModel
      */
-    managerId?: string;
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    hospitalName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    dealId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    dealName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    dealPackageId?: string;
+    /**
+     * 
+     * @type {RefundPolicy}
+     * @memberof BookingItemViewModel
+     */
+    refundPolicy?: RefundPolicy;
     /**
      * 
      * @type {number}
@@ -926,6 +999,30 @@ export interface BookingItemViewModel {
      * @memberof BookingItemViewModel
      */
     applicationFee?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof BookingItemViewModel
+     */
+    quantity?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    email?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    phone?: string;
     /**
      * 
      * @type {Date}
@@ -956,6 +1053,36 @@ export interface BookingItemViewModel {
      * @memberof BookingItemViewModel
      */
     bookingStatus?: BookingStatus;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingItemViewModel
+     */
+    canUpdate?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingItemViewModel
+     */
+    canApprove?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingItemViewModel
+     */
+    canReject?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingItemViewModel
+     */
+    canPay?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingItemViewModel
+     */
+    canCancel?: boolean;
 }
 /**
  * 
@@ -993,13 +1120,43 @@ export interface BookingViewModel {
      * @type {string}
      * @memberof BookingViewModel
      */
-    packageId?: string;
+    patientName?: string;
     /**
      * 
      * @type {string}
      * @memberof BookingViewModel
      */
-    managerId?: string;
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    hospitalName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    dealId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    dealName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    dealPackageId?: string;
+    /**
+     * 
+     * @type {RefundPolicy}
+     * @memberof BookingViewModel
+     */
+    refundPolicy?: RefundPolicy;
     /**
      * 
      * @type {number}
@@ -1012,6 +1169,30 @@ export interface BookingViewModel {
      * @memberof BookingViewModel
      */
     applicationFee?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof BookingViewModel
+     */
+    quantity?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    email?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    phone?: string;
     /**
      * 
      * @type {Date}
@@ -1042,6 +1223,36 @@ export interface BookingViewModel {
      * @memberof BookingViewModel
      */
     bookingStatus?: BookingStatus;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingViewModel
+     */
+    canUpdate?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingViewModel
+     */
+    canApprove?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingViewModel
+     */
+    canReject?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingViewModel
+     */
+    canPay?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingViewModel
+     */
+    canCancel?: boolean;
 }
 /**
  * 
@@ -1591,6 +1802,44 @@ export interface Country {
 /**
  * 
  * @export
+ * @interface CountryCodeItemViewModel
+ */
+export interface CountryCodeItemViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof CountryCodeItemViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CountryCodeItemViewModel
+     */
+    dialCodes?: Array<string>;
+}
+/**
+ * 
+ * @export
+ * @interface CountryCodesViewModel
+ */
+export interface CountryCodesViewModel {
+    /**
+     * 
+     * @type {Array<CountryCodeItemViewModel>}
+     * @memberof CountryCodesViewModel
+     */
+    items?: Array<CountryCodeItemViewModel>;
+    /**
+     * 
+     * @type {PagedListMetaData}
+     * @memberof CountryCodesViewModel
+     */
+    metaData?: PagedListMetaData;
+}
+/**
+ * 
+ * @export
  * @interface CountryItemViewModel
  */
 export interface CountryItemViewModel {
@@ -1782,7 +2031,31 @@ export interface CreateBookingCommand {
      * @type {string}
      * @memberof CreateBookingCommand
      */
-    packageId?: string;
+    dealPackageId?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof CreateBookingCommand
+     */
+    quantity?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingCommand
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingCommand
+     */
+    email?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingCommand
+     */
+    phone?: string;
     /**
      * 
      * @type {Date}
@@ -1795,6 +2068,12 @@ export interface CreateBookingCommand {
      * @memberof CreateBookingCommand
      */
     approximateDateEnd?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingCommand
+     */
+    comment?: string;
 }
 /**
  * 
@@ -2388,85 +2667,6 @@ export interface CreateHospitalCommand {
      * @memberof CreateHospitalCommand
      */
     location?: LocationViewModel;
-}
-/**
- * 
- * @export
- * @interface CreateHospitalPackageCommand
- */
-export interface CreateHospitalPackageCommand {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateHospitalPackageCommand
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateHospitalPackageCommand
-     */
-    hospitalId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateHospitalPackageCommand
-     */
-    photo?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateHospitalPackageCommand
-     */
-    photoThumbnail?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateHospitalPackageCommand
-     */
-    accomodation?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateHospitalPackageCommand
-     */
-    transfer?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateHospitalPackageCommand
-     */
-    bonus?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof CreateHospitalPackageCommand
-     */
-    packagePrice?: number;
-    /**
-     * 
-     * @type {PackageStatus}
-     * @memberof CreateHospitalPackageCommand
-     */
-    packageStatus?: PackageStatus;
-    /**
-     * 
-     * @type {MarketingType}
-     * @memberof CreateHospitalPackageCommand
-     */
-    marketingType?: MarketingType;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof CreateHospitalPackageCommand
-     */
-    refundable?: boolean;
-    /**
-     * 
-     * @type {Array<ServiceViewModel>}
-     * @memberof CreateHospitalPackageCommand
-     */
-    services?: Array<ServiceViewModel>;
 }
 /**
  * 
@@ -3257,6 +3457,12 @@ export interface DealPackage {
      * @memberof DealPackage
      */
     questions?: Array<Question>;
+    /**
+     * 
+     * @type {Array<Booking>}
+     * @memberof DealPackage
+     */
+    bookings?: Array<Booking>;
     /**
      * 
      * @type {AuditableEntity}
@@ -5736,10 +5942,10 @@ export interface Hospital {
     questions?: Array<Question>;
     /**
      * 
-     * @type {Array<Package>}
+     * @type {Array<Deal>}
      * @memberof Hospital
      */
-    packages?: Array<Package>;
+    deals?: Array<Deal>;
     /**
      * 
      * @type {Array<Equipment>}
@@ -6037,237 +6243,6 @@ export interface HospitalItemViewModel {
      * @memberof HospitalItemViewModel
      */
     auditableEntity?: AuditableEntity;
-}
-/**
- * 
- * @export
- * @interface HospitalPackageItemViewModel
- */
-export interface HospitalPackageItemViewModel {
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageItemViewModel
-     */
-    id?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageItemViewModel
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageItemViewModel
-     */
-    hospitalId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageItemViewModel
-     */
-    hospitalName?: string;
-    /**
-     * 
-     * @type {PackageStatus}
-     * @memberof HospitalPackageItemViewModel
-     */
-    packageStatus?: PackageStatus;
-    /**
-     * 
-     * @type {MarketingType}
-     * @memberof HospitalPackageItemViewModel
-     */
-    marketingType?: MarketingType;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof HospitalPackageItemViewModel
-     */
-    refundable?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageItemViewModel
-     */
-    photo?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageItemViewModel
-     */
-    photoThumbnail?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalPackageItemViewModel
-     */
-    packagePrice?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalPackageItemViewModel
-     */
-    managerCount?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalPackageItemViewModel
-     */
-    serviceCount?: number;
-    /**
-     * 
-     * @type {Array<PackageServiceItemViewModel>}
-     * @memberof HospitalPackageItemViewModel
-     */
-    packageServices?: Array<PackageServiceItemViewModel>;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalPackageItemViewModel
-     */
-    bookingCount?: number;
-    /**
-     * 
-     * @type {AuditableEntity}
-     * @memberof HospitalPackageItemViewModel
-     */
-    auditableEntity?: AuditableEntity;
-}
-/**
- * 
- * @export
- * @interface HospitalPackageViewModel
- */
-export interface HospitalPackageViewModel {
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageViewModel
-     */
-    accomodation?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageViewModel
-     */
-    trnasfer?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageViewModel
-     */
-    bonus?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageViewModel
-     */
-    id?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageViewModel
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageViewModel
-     */
-    hospitalId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageViewModel
-     */
-    hospitalName?: string;
-    /**
-     * 
-     * @type {PackageStatus}
-     * @memberof HospitalPackageViewModel
-     */
-    packageStatus?: PackageStatus;
-    /**
-     * 
-     * @type {MarketingType}
-     * @memberof HospitalPackageViewModel
-     */
-    marketingType?: MarketingType;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof HospitalPackageViewModel
-     */
-    refundable?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageViewModel
-     */
-    photo?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof HospitalPackageViewModel
-     */
-    photoThumbnail?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalPackageViewModel
-     */
-    packagePrice?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalPackageViewModel
-     */
-    managerCount?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalPackageViewModel
-     */
-    serviceCount?: number;
-    /**
-     * 
-     * @type {Array<PackageServiceItemViewModel>}
-     * @memberof HospitalPackageViewModel
-     */
-    packageServices?: Array<PackageServiceItemViewModel>;
-    /**
-     * 
-     * @type {number}
-     * @memberof HospitalPackageViewModel
-     */
-    bookingCount?: number;
-    /**
-     * 
-     * @type {AuditableEntity}
-     * @memberof HospitalPackageViewModel
-     */
-    auditableEntity?: AuditableEntity;
-}
-/**
- * 
- * @export
- * @interface HospitalPackagesViewModel
- */
-export interface HospitalPackagesViewModel {
-    /**
-     * 
-     * @type {Array<HospitalPackageItemViewModel>}
-     * @memberof HospitalPackagesViewModel
-     */
-    items?: Array<HospitalPackageItemViewModel>;
-    /**
-     * 
-     * @type {PagedListMetaData}
-     * @memberof HospitalPackagesViewModel
-     */
-    metaData?: PagedListMetaData;
 }
 /**
  * 
@@ -7571,217 +7546,6 @@ export interface MediaViewModel {
 /**
  * 
  * @export
- * @interface Package
- */
-export interface Package {
-    /**
-     * 
-     * @type {string}
-     * @memberof Package
-     */
-    id?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Package
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Package
-     */
-    normalizedName?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Package
-     */
-    description?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Package
-     */
-    hospitalId?: string;
-    /**
-     * 
-     * @type {Hospital}
-     * @memberof Package
-     */
-    hospital?: Hospital;
-    /**
-     * 
-     * @type {PackageStatus}
-     * @memberof Package
-     */
-    packageStatus?: PackageStatus;
-    /**
-     * 
-     * @type {MarketingType}
-     * @memberof Package
-     */
-    marketingType?: MarketingType;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof Package
-     */
-    refundable?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof Package
-     */
-    photo?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Package
-     */
-    photoThumbnail?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Package
-     */
-    accomodation?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Package
-     */
-    trnasfer?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof Package
-     */
-    bonus?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof Package
-     */
-    packagePrice?: number;
-    /**
-     * 
-     * @type {Array<PackageService>}
-     * @memberof Package
-     */
-    packageServices?: Array<PackageService>;
-    /**
-     * 
-     * @type {Array<Manager>}
-     * @memberof Package
-     */
-    managers?: Array<Manager>;
-    /**
-     * 
-     * @type {Array<Booking>}
-     * @memberof Package
-     */
-    bookings?: Array<Booking>;
-    /**
-     * 
-     * @type {AuditableEntity}
-     * @memberof Package
-     */
-    auditableEntity?: AuditableEntity;
-}
-/**
- * 
- * @export
- * @interface PackageService
- */
-export interface PackageService {
-    /**
-     * 
-     * @type {string}
-     * @memberof PackageService
-     */
-    packageId?: string;
-    /**
-     * 
-     * @type {Package}
-     * @memberof PackageService
-     */
-    _package?: Package;
-    /**
-     * 
-     * @type {string}
-     * @memberof PackageService
-     */
-    serviceId?: string;
-    /**
-     * 
-     * @type {Service}
-     * @memberof PackageService
-     */
-    service?: Service;
-    /**
-     * 
-     * @type {number}
-     * @memberof PackageService
-     */
-    order?: number;
-}
-/**
- * 
- * @export
- * @interface PackageServiceItemViewModel
- */
-export interface PackageServiceItemViewModel {
-    /**
-     * 
-     * @type {string}
-     * @memberof PackageServiceItemViewModel
-     */
-    packageId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof PackageServiceItemViewModel
-     */
-    packageName?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof PackageServiceItemViewModel
-     */
-    serviceId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof PackageServiceItemViewModel
-     */
-    serviceName?: string;
-    /**
-     * 
-     * @type {Procedure}
-     * @memberof PackageServiceItemViewModel
-     */
-    procedure?: Procedure;
-    /**
-     * 
-     * @type {number}
-     * @memberof PackageServiceItemViewModel
-     */
-    order?: number;
-}
-/**
- * 
- * @export
- * @enum {string}
- */
-export enum PackageStatus {
-    New = 'New',
-    Standard = 'Standard'
-}
-
-/**
- * 
- * @export
  * @interface PagedListMetaData
  */
 export interface PagedListMetaData {
@@ -8554,6 +8318,18 @@ export interface Payment {
      * @type {Array<ChangeLog>}
      * @memberof Payment
      */
+    chargeStatusChangeLogs?: Array<ChangeLog>;
+    /**
+     * 
+     * @type {Array<ChangeLog>}
+     * @memberof Payment
+     */
+    refundStatusChangeLogs?: Array<ChangeLog>;
+    /**
+     * 
+     * @type {Array<ChangeLog>}
+     * @memberof Payment
+     */
     paymentStatusChangeLogs?: Array<ChangeLog>;
 }
 /**
@@ -9277,12 +9053,6 @@ export interface Service {
     packageServiceId?: string;
     /**
      * 
-     * @type {PackageService}
-     * @memberof Service
-     */
-    packageService?: PackageService;
-    /**
-     * 
      * @type {HospitalSpecialty}
      * @memberof Service
      */
@@ -9323,12 +9093,6 @@ export interface Service {
      * @memberof Service
      */
     order?: number;
-    /**
-     * 
-     * @type {Array<PackageService>}
-     * @memberof Service
-     */
-    packageServices?: Array<PackageService>;
     /**
      * 
      * @type {Array<DealPackageService>}
@@ -10319,6 +10083,30 @@ export interface UpdateArticleCommand {
 export interface UpdateBookingCommand {
     /**
      * 
+     * @type {number}
+     * @memberof UpdateBookingCommand
+     */
+    quantity?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingCommand
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingCommand
+     */
+    email?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingCommand
+     */
+    phone?: string;
+    /**
+     * 
      * @type {Date}
      * @memberof UpdateBookingCommand
      */
@@ -10329,6 +10117,12 @@ export interface UpdateBookingCommand {
      * @memberof UpdateBookingCommand
      */
     approximateDateEnd?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingCommand
+     */
+    comment?: string;
 }
 /**
  * 
@@ -10956,109 +10750,6 @@ export interface UpdateHospitalCommand {
      * 
      * @type {AuditableEntity}
      * @memberof UpdateHospitalCommand
-     */
-    auditableEntity?: AuditableEntity;
-}
-/**
- * 
- * @export
- * @interface UpdateHospitalPackageCommand
- */
-export interface UpdateHospitalPackageCommand {
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    accomodation?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    trnasfer?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    bonus?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    hospitalName?: string;
-    /**
-     * 
-     * @type {PackageStatus}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    packageStatus?: PackageStatus;
-    /**
-     * 
-     * @type {MarketingType}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    marketingType?: MarketingType;
-    /**
-     * 
-     * @type {boolean}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    refundable?: boolean;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    photo?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    photoThumbnail?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    packagePrice?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    managerCount?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    serviceCount?: number;
-    /**
-     * 
-     * @type {Array<PackageServiceItemViewModel>}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    packageServices?: Array<PackageServiceItemViewModel>;
-    /**
-     * 
-     * @type {number}
-     * @memberof UpdateHospitalPackageCommand
-     */
-    bookingCount?: number;
-    /**
-     * 
-     * @type {AuditableEntity}
-     * @memberof UpdateHospitalPackageCommand
      */
     auditableEntity?: AuditableEntity;
 }
@@ -13323,7 +13014,105 @@ export class ArticlesApi extends BaseAPI {
 export const BookingsApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Sample request:        DELETE /api/v1/bookings/1
+         * 
+         * @summary Approve booking.
+         * @param {string} bookingId 
+         * @param {ApproveBookingCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdApprovePost(bookingId: string, body?: ApproveBookingCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'bookingId' is not null or undefined
+            if (bookingId === null || bookingId === undefined) {
+                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdApprovePost.');
+            }
+            const localVarPath = `/api/v1/bookings/{bookingId}/approve`
+                .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Cancel booking.
+         * @param {string} bookingId 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object, options: any = {}): RequestArgs {
+            // verify required parameter 'bookingId' is not null or undefined
+            if (bookingId === null || bookingId === undefined) {
+                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdCancelPost.');
+            }
+            const localVarPath = `/api/v1/bookings/{bookingId}/cancel`
+                .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Delete booking.
          * @param {string} bookingId 
          * @param {*} [options] Override http request option.
@@ -13367,7 +13156,7 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Sample request:        GET /api/v1/bookings/1
+         * 
          * @summary Get booking.
          * @param {string} bookingId 
          * @param {*} [options] Override http request option.
@@ -13411,7 +13200,7 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Smaple request:        PUT /api/v1/bookings/1      {          \"approximateDateStart\": \"2020-02-28T06:21:09.698Z\",          \"approximateDateEnd\": \"2020-02-28T06:21:09.698Z\"      }
+         * 
          * @summary Update booking.
          * @param {string} bookingId 
          * @param {UpdateBookingCommand} [body] 
@@ -13460,19 +13249,68 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Samaple request:        GET /api/v1/bookings
+         * 
+         * @summary Reject booking.
+         * @param {string} bookingId 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object, options: any = {}): RequestArgs {
+            // verify required parameter 'bookingId' is not null or undefined
+            if (bookingId === null || bookingId === undefined) {
+                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdRejectPost.');
+            }
+            const localVarPath = `/api/v1/bookings/{bookingId}/reject`
+                .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Get all bookings.
+         * @param {string} [searchString] 
+         * @param {boolean} [isOpen] 
+         * @param {object} [bookingStatus] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
-         * @param {string} [searchString] 
-         * @param {boolean} [isOpen] 
-         * @param {object} [bookingStatus] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options: any = {}): RequestArgs {
+        apiV1BookingsGet(searchString?: string, isOpen?: boolean, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/bookings`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -13490,6 +13328,18 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
                     ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
                     : configuration.accessToken;
                 localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+            if (searchString !== undefined) {
+                localVarQueryParameter['SearchString'] = searchString;
+            }
+
+            if (isOpen !== undefined) {
+                localVarQueryParameter['IsOpen'] = isOpen;
+            }
+
+            if (bookingStatus !== undefined) {
+                localVarQueryParameter['BookingStatus'] = bookingStatus;
             }
 
             if (page !== undefined) {
@@ -13510,18 +13360,6 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['Current'] = current;
             }
 
-            if (searchString !== undefined) {
-                localVarQueryParameter['searchString'] = searchString;
-            }
-
-            if (isOpen !== undefined) {
-                localVarQueryParameter['isOpen'] = isOpen;
-            }
-
-            if (bookingStatus !== undefined) {
-                localVarQueryParameter['bookingStatus'] = bookingStatus;
-            }
-
 
     
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
@@ -13535,7 +13373,7 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Sample request:        POST /api/v1/bookings      {          \"packageId\": 1,          \"approximateDateStart\": \"2020-02-28T06:21:09.698Z\",          \"approximateDateEnd\": \"2020-02-28T06:21:09.698Z\"      }
+         * 
          * @summary Create a booking.
          * @param {CreateBookingCommand} [body] 
          * @param {*} [options] Override http request option.
@@ -13587,7 +13425,37 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
 export const BookingsApiFp = function(configuration?: Configuration) {
     return {
         /**
-         * Sample request:        DELETE /api/v1/bookings/1
+         * 
+         * @summary Approve booking.
+         * @param {string} bookingId 
+         * @param {ApproveBookingCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdApprovePost(bookingId: string, body?: ApproveBookingCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdApprovePost(bookingId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Cancel booking.
+         * @param {string} bookingId 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdCancelPost(bookingId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
          * @summary Delete booking.
          * @param {string} bookingId 
          * @param {*} [options] Override http request option.
@@ -13601,7 +13469,7 @@ export const BookingsApiFp = function(configuration?: Configuration) {
             };
         },
         /**
-         * Sample request:        GET /api/v1/bookings/1
+         * 
          * @summary Get booking.
          * @param {string} bookingId 
          * @param {*} [options] Override http request option.
@@ -13615,7 +13483,7 @@ export const BookingsApiFp = function(configuration?: Configuration) {
             };
         },
         /**
-         * Smaple request:        PUT /api/v1/bookings/1      {          \"approximateDateStart\": \"2020-02-28T06:21:09.698Z\",          \"approximateDateEnd\": \"2020-02-28T06:21:09.698Z\"      }
+         * 
          * @summary Update booking.
          * @param {string} bookingId 
          * @param {UpdateBookingCommand} [body] 
@@ -13630,27 +13498,42 @@ export const BookingsApiFp = function(configuration?: Configuration) {
             };
         },
         /**
-         * Samaple request:        GET /api/v1/bookings
-         * @summary Get all bookings.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
-         * @param {string} [searchString] 
-         * @param {boolean} [isOpen] 
-         * @param {object} [bookingStatus] 
+         * 
+         * @summary Reject booking.
+         * @param {string} bookingId 
+         * @param {object} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<BookingsViewModel> {
-            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsGet(page, limit, lastRetrieved, current, searchString, isOpen, bookingStatus, options);
+        apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdRejectPost(bookingId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
             };
         },
         /**
-         * Sample request:        POST /api/v1/bookings      {          \"packageId\": 1,          \"approximateDateStart\": \"2020-02-28T06:21:09.698Z\",          \"approximateDateEnd\": \"2020-02-28T06:21:09.698Z\"      }
+         * 
+         * @summary Get all bookings.
+         * @param {string} [searchString] 
+         * @param {boolean} [isOpen] 
+         * @param {object} [bookingStatus] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsGet(searchString?: string, isOpen?: boolean, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<BookingsViewModel> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsGet(searchString, isOpen, bookingStatus, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
          * @summary Create a booking.
          * @param {CreateBookingCommand} [body] 
          * @param {*} [options] Override http request option.
@@ -13673,7 +13556,29 @@ export const BookingsApiFp = function(configuration?: Configuration) {
 export const BookingsApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     return {
         /**
-         * Sample request:        DELETE /api/v1/bookings/1
+         * 
+         * @summary Approve booking.
+         * @param {string} bookingId 
+         * @param {ApproveBookingCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdApprovePost(bookingId: string, body?: ApproveBookingCommand, options?: any): AxiosPromise<boolean> {
+            return BookingsApiFp(configuration).apiV1BookingsBookingIdApprovePost(bookingId, body, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Cancel booking.
+         * @param {string} bookingId 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object, options?: any): AxiosPromise<boolean> {
+            return BookingsApiFp(configuration).apiV1BookingsBookingIdCancelPost(bookingId, body, options)(axios, basePath);
+        },
+        /**
+         * 
          * @summary Delete booking.
          * @param {string} bookingId 
          * @param {*} [options] Override http request option.
@@ -13683,7 +13588,7 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
             return BookingsApiFp(configuration).apiV1BookingsBookingIdDelete(bookingId, options)(axios, basePath);
         },
         /**
-         * Sample request:        GET /api/v1/bookings/1
+         * 
          * @summary Get booking.
          * @param {string} bookingId 
          * @param {*} [options] Override http request option.
@@ -13693,7 +13598,7 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
             return BookingsApiFp(configuration).apiV1BookingsBookingIdGet(bookingId, options)(axios, basePath);
         },
         /**
-         * Smaple request:        PUT /api/v1/bookings/1      {          \"approximateDateStart\": \"2020-02-28T06:21:09.698Z\",          \"approximateDateEnd\": \"2020-02-28T06:21:09.698Z\"      }
+         * 
          * @summary Update booking.
          * @param {string} bookingId 
          * @param {UpdateBookingCommand} [body] 
@@ -13704,23 +13609,34 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
             return BookingsApiFp(configuration).apiV1BookingsBookingIdPut(bookingId, body, options)(axios, basePath);
         },
         /**
-         * Samaple request:        GET /api/v1/bookings
+         * 
+         * @summary Reject booking.
+         * @param {string} bookingId 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object, options?: any): AxiosPromise<boolean> {
+            return BookingsApiFp(configuration).apiV1BookingsBookingIdRejectPost(bookingId, body, options)(axios, basePath);
+        },
+        /**
+         * 
          * @summary Get all bookings.
+         * @param {string} [searchString] 
+         * @param {boolean} [isOpen] 
+         * @param {object} [bookingStatus] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
-         * @param {string} [searchString] 
-         * @param {boolean} [isOpen] 
-         * @param {object} [bookingStatus] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options?: any): AxiosPromise<BookingsViewModel> {
-            return BookingsApiFp(configuration).apiV1BookingsGet(page, limit, lastRetrieved, current, searchString, isOpen, bookingStatus, options)(axios, basePath);
+        apiV1BookingsGet(searchString?: string, isOpen?: boolean, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<BookingsViewModel> {
+            return BookingsApiFp(configuration).apiV1BookingsGet(searchString, isOpen, bookingStatus, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
-         * Sample request:        POST /api/v1/bookings      {          \"packageId\": 1,          \"approximateDateStart\": \"2020-02-28T06:21:09.698Z\",          \"approximateDateEnd\": \"2020-02-28T06:21:09.698Z\"      }
+         * 
          * @summary Create a booking.
          * @param {CreateBookingCommand} [body] 
          * @param {*} [options] Override http request option.
@@ -13740,7 +13656,33 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
  */
 export class BookingsApi extends BaseAPI {
     /**
-     * Sample request:        DELETE /api/v1/bookings/1
+     * 
+     * @summary Approve booking.
+     * @param {string} bookingId 
+     * @param {ApproveBookingCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    public apiV1BookingsBookingIdApprovePost(bookingId: string, body?: ApproveBookingCommand, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdApprovePost(bookingId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Cancel booking.
+     * @param {string} bookingId 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    public apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdCancelPost(bookingId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
      * @summary Delete booking.
      * @param {string} bookingId 
      * @param {*} [options] Override http request option.
@@ -13752,7 +13694,7 @@ export class BookingsApi extends BaseAPI {
     }
 
     /**
-     * Sample request:        GET /api/v1/bookings/1
+     * 
      * @summary Get booking.
      * @param {string} bookingId 
      * @param {*} [options] Override http request option.
@@ -13764,7 +13706,7 @@ export class BookingsApi extends BaseAPI {
     }
 
     /**
-     * Smaple request:        PUT /api/v1/bookings/1      {          \"approximateDateStart\": \"2020-02-28T06:21:09.698Z\",          \"approximateDateEnd\": \"2020-02-28T06:21:09.698Z\"      }
+     * 
      * @summary Update booking.
      * @param {string} bookingId 
      * @param {UpdateBookingCommand} [body] 
@@ -13777,25 +13719,38 @@ export class BookingsApi extends BaseAPI {
     }
 
     /**
-     * Samaple request:        GET /api/v1/bookings
-     * @summary Get all bookings.
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
-     * @param {boolean} [current] 
-     * @param {string} [searchString] 
-     * @param {boolean} [isOpen] 
-     * @param {object} [bookingStatus] 
+     * 
+     * @summary Reject booking.
+     * @param {string} bookingId 
+     * @param {object} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    public apiV1BookingsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, searchString?: string, isOpen?: boolean, bookingStatus?: object, options?: any) {
-        return BookingsApiFp(this.configuration).apiV1BookingsGet(page, limit, lastRetrieved, current, searchString, isOpen, bookingStatus, options)(this.axios, this.basePath);
+    public apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdRejectPost(bookingId, body, options)(this.axios, this.basePath);
     }
 
     /**
-     * Sample request:        POST /api/v1/bookings      {          \"packageId\": 1,          \"approximateDateStart\": \"2020-02-28T06:21:09.698Z\",          \"approximateDateEnd\": \"2020-02-28T06:21:09.698Z\"      }
+     * 
+     * @summary Get all bookings.
+     * @param {string} [searchString] 
+     * @param {boolean} [isOpen] 
+     * @param {object} [bookingStatus] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    public apiV1BookingsGet(searchString?: string, isOpen?: boolean, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsGet(searchString, isOpen, bookingStatus, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
      * @summary Create a booking.
      * @param {CreateBookingCommand} [body] 
      * @param {*} [options] Override http request option.
@@ -16766,6 +16721,147 @@ export class DepartmentApi extends BaseAPI {
      */
     public apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, body?: UpdateDepartmentCommand, options?: any) {
         return DepartmentApiFp(this.configuration).apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId, departmentId, body, options)(this.axios, this.basePath);
+    }
+
+}
+
+
+/**
+ * DirectoriesApi - axios parameter creator
+ * @export
+ */
+export const DirectoriesApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @summary Get all CountryCode.
+         * @param {string} [name] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DirectoriesCountriesGet(name?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/directories/countries`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            if (name !== undefined) {
+                localVarQueryParameter['Name'] = name;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * DirectoriesApi - functional programming interface
+ * @export
+ */
+export const DirectoriesApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @summary Get all CountryCode.
+         * @param {string} [name] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DirectoriesCountriesGet(name?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CountryCodesViewModel> {
+            const localVarAxiosArgs = DirectoriesApiAxiosParamCreator(configuration).apiV1DirectoriesCountriesGet(name, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * DirectoriesApi - factory interface
+ * @export
+ */
+export const DirectoriesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * 
+         * @summary Get all CountryCode.
+         * @param {string} [name] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DirectoriesCountriesGet(name?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CountryCodesViewModel> {
+            return DirectoriesApiFp(configuration).apiV1DirectoriesCountriesGet(name, page, limit, lastRetrieved, current, options)(axios, basePath);
+        },
+    };
+};
+
+/**
+ * DirectoriesApi - object-oriented interface
+ * @export
+ * @class DirectoriesApi
+ * @extends {BaseAPI}
+ */
+export class DirectoriesApi extends BaseAPI {
+    /**
+     * 
+     * @summary Get all CountryCode.
+     * @param {string} [name] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DirectoriesApi
+     */
+    public apiV1DirectoriesCountriesGet(name?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return DirectoriesApiFp(this.configuration).apiV1DirectoriesCountriesGet(name, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
 }
@@ -20229,6 +20325,7 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -20236,7 +20333,7 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/current`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -20294,6 +20391,10 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
                 localVarQueryParameter['ServiceId'] = serviceId;
             }
 
+            if (showHidden !== undefined) {
+                localVarQueryParameter['ShowHidden'] = showHidden;
+            }
+
             if (page !== undefined) {
                 localVarQueryParameter['page'] = page;
             }
@@ -20336,6 +20437,7 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -20343,7 +20445,7 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -20390,6 +20492,10 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
 
             if (serviceId !== undefined) {
                 localVarQueryParameter['ServiceId'] = serviceId;
+            }
+
+            if (showHidden !== undefined) {
+                localVarQueryParameter['ShowHidden'] = showHidden;
             }
 
             if (page !== undefined) {
@@ -20613,6 +20719,7 @@ export const HospitalsApiFp = function(configuration?: Configuration) {
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -20620,8 +20727,8 @@ export const HospitalsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
-            const localVarAxiosArgs = HospitalsApiAxiosParamCreator(configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, page, limit, lastRetrieved, current, options);
+        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
+            const localVarAxiosArgs = HospitalsApiAxiosParamCreator(configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -20639,6 +20746,7 @@ export const HospitalsApiFp = function(configuration?: Configuration) {
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -20646,8 +20754,8 @@ export const HospitalsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
-            const localVarAxiosArgs = HospitalsApiAxiosParamCreator(configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, page, limit, lastRetrieved, current, options);
+        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
+            const localVarAxiosArgs = HospitalsApiAxiosParamCreator(configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -20730,6 +20838,7 @@ export const HospitalsApiFactory = function (configuration?: Configuration, base
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -20737,8 +20846,8 @@ export const HospitalsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
-            return HospitalsApiFp(configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
+            return HospitalsApiFp(configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
@@ -20752,6 +20861,7 @@ export const HospitalsApiFactory = function (configuration?: Configuration, base
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -20759,8 +20869,8 @@ export const HospitalsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
-            return HospitalsApiFp(configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
+            return HospitalsApiFp(configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        DELETE /api/v1/hospitals/1
@@ -20824,6 +20934,7 @@ export class HospitalsApi extends BaseAPI {
      * @param {string} [specialtyTypeId] 
      * @param {string} [specialtyId] 
      * @param {string} [serviceId] 
+     * @param {boolean} [showHidden] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -20832,8 +20943,8 @@ export class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    public apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return HospitalsApiFp(this.configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return HospitalsApiFp(this.configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
@@ -20848,6 +20959,7 @@ export class HospitalsApi extends BaseAPI {
      * @param {string} [specialtyTypeId] 
      * @param {string} [specialtyId] 
      * @param {string} [serviceId] 
+     * @param {boolean} [showHidden] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -20856,8 +20968,8 @@ export class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    public apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return HospitalsApiFp(this.configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return HospitalsApiFp(this.configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
@@ -21734,565 +21846,6 @@ export class MoviesApi extends BaseAPI {
      */
     public apiV1MoviesPost(options?: any) {
         return MoviesApiFp(this.configuration).apiV1MoviesPost(options)(this.axios, this.basePath);
-    }
-
-}
-
-
-/**
- * PackagesApi - axios parameter creator
- * @export
- */
-export const PackagesApiAxiosParamCreator = function (configuration?: Configuration) {
-    return {
-        /**
-         * Sample request:        DELETE /api/v1/hospitals/1/packages/1
-         * @summary Delete package.
-         * @param {string} hospitalId 
-         * @param {string} packageId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options: any = {}): RequestArgs {
-            // verify required parameter 'hospitalId' is not null or undefined
-            if (hospitalId === null || hospitalId === undefined) {
-                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdDelete.');
-            }
-            // verify required parameter 'packageId' is not null or undefined
-            if (packageId === null || packageId === undefined) {
-                throw new RequiredError('packageId','Required parameter packageId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdDelete.');
-            }
-            const localVarPath = `/api/v1/hospitals/{hospitalId}/packages/{packageId}`
-                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
-                .replace(`{${"packageId"}}`, encodeURIComponent(String(packageId)));
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication oauth2 required
-            // oauth required
-            if (configuration && configuration.accessToken) {
-                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
-                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
-                    : configuration.accessToken;
-                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
-            }
-
-
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Sample request:        GET /api/v1/hospitals/1/packages/1
-         * @summary Get package.
-         * @param {string} hospitalId 
-         * @param {string} packageId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options: any = {}): RequestArgs {
-            // verify required parameter 'hospitalId' is not null or undefined
-            if (hospitalId === null || hospitalId === undefined) {
-                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdGet.');
-            }
-            // verify required parameter 'packageId' is not null or undefined
-            if (packageId === null || packageId === undefined) {
-                throw new RequiredError('packageId','Required parameter packageId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdGet.');
-            }
-            const localVarPath = `/api/v1/hospitals/{hospitalId}/packages/{packageId}`
-                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
-                .replace(`{${"packageId"}}`, encodeURIComponent(String(packageId)));
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
-         * @summary Update package.
-         * @param {string} hospitalId 
-         * @param {string} packageId 
-         * @param {UpdateHospitalPackageCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId: string, packageId: string, body?: UpdateHospitalPackageCommand, options: any = {}): RequestArgs {
-            // verify required parameter 'hospitalId' is not null or undefined
-            if (hospitalId === null || hospitalId === undefined) {
-                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdPut.');
-            }
-            // verify required parameter 'packageId' is not null or undefined
-            if (packageId === null || packageId === undefined) {
-                throw new RequiredError('packageId','Required parameter packageId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPackageIdPut.');
-            }
-            const localVarPath = `/api/v1/hospitals/{hospitalId}/packages/{packageId}`
-                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
-                .replace(`{${"packageId"}}`, encodeURIComponent(String(packageId)));
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication oauth2 required
-            // oauth required
-            if (configuration && configuration.accessToken) {
-                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
-                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
-                    : configuration.accessToken;
-                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
-            }
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Sample request:        POST /api/v1/hospitals/1/packages      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical package\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
-         * @summary Create an package and add to a hospital.
-         * @param {string} hospitalId 
-         * @param {CreateHospitalPackageCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPost(hospitalId: string, body?: CreateHospitalPackageCommand, options: any = {}): RequestArgs {
-            // verify required parameter 'hospitalId' is not null or undefined
-            if (hospitalId === null || hospitalId === undefined) {
-                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdPackagesPost.');
-            }
-            const localVarPath = `/api/v1/hospitals/{hospitalId}/packages`
-                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)));
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication oauth2 required
-            // oauth required
-            if (configuration && configuration.accessToken) {
-                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
-                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
-                    : configuration.accessToken;
-                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
-            }
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Sample request:        GET /api/v1/hospitals/1/packages      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Medical\"      }
-         * @summary Get all packages.
-         * @param {string} [relatedPackageId] 
-         * @param {string} [name] 
-         * @param {string} [countryId] 
-         * @param {string} [hospitalId] 
-         * @param {string} [hospitalName] 
-         * @param {object} [marketingType] 
-         * @param {object} [packageStatus] 
-         * @param {string} [specialtyTypeId] 
-         * @param {string} [serviceId] 
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, specialtyTypeId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
-            const localVarPath = `/api/v1/hospitals/packages`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (relatedPackageId !== undefined) {
-                localVarQueryParameter['RelatedPackageId'] = relatedPackageId;
-            }
-
-            if (name !== undefined) {
-                localVarQueryParameter['Name'] = name;
-            }
-
-            if (countryId !== undefined) {
-                localVarQueryParameter['CountryId'] = countryId;
-            }
-
-            if (hospitalId !== undefined) {
-                localVarQueryParameter['HospitalId'] = hospitalId;
-            }
-
-            if (hospitalName !== undefined) {
-                localVarQueryParameter['HospitalName'] = hospitalName;
-            }
-
-            if (marketingType !== undefined) {
-                localVarQueryParameter['MarketingType'] = marketingType;
-            }
-
-            if (packageStatus !== undefined) {
-                localVarQueryParameter['PackageStatus'] = packageStatus;
-            }
-
-            if (specialtyTypeId !== undefined) {
-                localVarQueryParameter['SpecialtyTypeId'] = specialtyTypeId;
-            }
-
-            if (serviceId !== undefined) {
-                localVarQueryParameter['ServiceId'] = serviceId;
-            }
-
-            if (page !== undefined) {
-                localVarQueryParameter['page'] = page;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (lastRetrieved !== undefined) {
-                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
-                    (lastRetrieved as any).toISOString() :
-                    lastRetrieved;
-            }
-
-            if (current !== undefined) {
-                localVarQueryParameter['Current'] = current;
-            }
-
-
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-    }
-};
-
-/**
- * PackagesApi - functional programming interface
- * @export
- */
-export const PackagesApiFp = function(configuration?: Configuration) {
-    return {
-        /**
-         * Sample request:        DELETE /api/v1/hospitals/1/packages/1
-         * @summary Delete package.
-         * @param {string} hospitalId 
-         * @param {string} packageId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
-            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, packageId, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * Sample request:        GET /api/v1/hospitals/1/packages/1
-         * @summary Get package.
-         * @param {string} hospitalId 
-         * @param {string} packageId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalPackageViewModel> {
-            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, packageId, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
-         * @summary Update package.
-         * @param {string} hospitalId 
-         * @param {string} packageId 
-         * @param {UpdateHospitalPackageCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId: string, packageId: string, body?: UpdateHospitalPackageCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
-            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId, packageId, body, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * Sample request:        POST /api/v1/hospitals/1/packages      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical package\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
-         * @summary Create an package and add to a hospital.
-         * @param {string} hospitalId 
-         * @param {CreateHospitalPackageCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPost(hospitalId: string, body?: CreateHospitalPackageCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
-            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdPackagesPost(hospitalId, body, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * Sample request:        GET /api/v1/hospitals/1/packages      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Medical\"      }
-         * @summary Get all packages.
-         * @param {string} [relatedPackageId] 
-         * @param {string} [name] 
-         * @param {string} [countryId] 
-         * @param {string} [hospitalId] 
-         * @param {string} [hospitalName] 
-         * @param {object} [marketingType] 
-         * @param {object} [packageStatus] 
-         * @param {string} [specialtyTypeId] 
-         * @param {string} [serviceId] 
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, specialtyTypeId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalPackagesViewModel> {
-            const localVarAxiosArgs = PackagesApiAxiosParamCreator(configuration).apiV1HospitalsPackagesGet(relatedPackageId, name, countryId, hospitalId, hospitalName, marketingType, packageStatus, specialtyTypeId, serviceId, page, limit, lastRetrieved, current, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-    }
-};
-
-/**
- * PackagesApi - factory interface
- * @export
- */
-export const PackagesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    return {
-        /**
-         * Sample request:        DELETE /api/v1/hospitals/1/packages/1
-         * @summary Delete package.
-         * @param {string} hospitalId 
-         * @param {string} packageId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options?: any): AxiosPromise<boolean> {
-            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, packageId, options)(axios, basePath);
-        },
-        /**
-         * Sample request:        GET /api/v1/hospitals/1/packages/1
-         * @summary Get package.
-         * @param {string} hospitalId 
-         * @param {string} packageId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options?: any): AxiosPromise<HospitalPackageViewModel> {
-            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, packageId, options)(axios, basePath);
-        },
-        /**
-         * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
-         * @summary Update package.
-         * @param {string} hospitalId 
-         * @param {string} packageId 
-         * @param {UpdateHospitalPackageCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId: string, packageId: string, body?: UpdateHospitalPackageCommand, options?: any): AxiosPromise<boolean> {
-            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId, packageId, body, options)(axios, basePath);
-        },
-        /**
-         * Sample request:        POST /api/v1/hospitals/1/packages      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical package\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
-         * @summary Create an package and add to a hospital.
-         * @param {string} hospitalId 
-         * @param {CreateHospitalPackageCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdPackagesPost(hospitalId: string, body?: CreateHospitalPackageCommand, options?: any): AxiosPromise<string> {
-            return PackagesApiFp(configuration).apiV1HospitalsHospitalIdPackagesPost(hospitalId, body, options)(axios, basePath);
-        },
-        /**
-         * Sample request:        GET /api/v1/hospitals/1/packages      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Medical\"      }
-         * @summary Get all packages.
-         * @param {string} [relatedPackageId] 
-         * @param {string} [name] 
-         * @param {string} [countryId] 
-         * @param {string} [hospitalId] 
-         * @param {string} [hospitalName] 
-         * @param {object} [marketingType] 
-         * @param {object} [packageStatus] 
-         * @param {string} [specialtyTypeId] 
-         * @param {string} [serviceId] 
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, specialtyTypeId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalPackagesViewModel> {
-            return PackagesApiFp(configuration).apiV1HospitalsPackagesGet(relatedPackageId, name, countryId, hospitalId, hospitalName, marketingType, packageStatus, specialtyTypeId, serviceId, page, limit, lastRetrieved, current, options)(axios, basePath);
-        },
-    };
-};
-
-/**
- * PackagesApi - object-oriented interface
- * @export
- * @class PackagesApi
- * @extends {BaseAPI}
- */
-export class PackagesApi extends BaseAPI {
-    /**
-     * Sample request:        DELETE /api/v1/hospitals/1/packages/1
-     * @summary Delete package.
-     * @param {string} hospitalId 
-     * @param {string} packageId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof PackagesApi
-     */
-    public apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId: string, packageId: string, options?: any) {
-        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPackageIdDelete(hospitalId, packageId, options)(this.axios, this.basePath);
-    }
-
-    /**
-     * Sample request:        GET /api/v1/hospitals/1/packages/1
-     * @summary Get package.
-     * @param {string} hospitalId 
-     * @param {string} packageId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof PackagesApi
-     */
-    public apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId: string, packageId: string, options?: any) {
-        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPackageIdGet(hospitalId, packageId, options)(this.axios, this.basePath);
-    }
-
-    /**
-     * Sample request:        PUT /api/v1/hospitals/1/packages/1      {          \"description\": \"Upgraded medical package\"      }
-     * @summary Update package.
-     * @param {string} hospitalId 
-     * @param {string} packageId 
-     * @param {UpdateHospitalPackageCommand} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof PackagesApi
-     */
-    public apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId: string, packageId: string, body?: UpdateHospitalPackageCommand, options?: any) {
-        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPackageIdPut(hospitalId, packageId, body, options)(this.axios, this.basePath);
-    }
-
-    /**
-     * Sample request:        POST /api/v1/hospitals/1/packages      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical package\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
-     * @summary Create an package and add to a hospital.
-     * @param {string} hospitalId 
-     * @param {CreateHospitalPackageCommand} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof PackagesApi
-     */
-    public apiV1HospitalsHospitalIdPackagesPost(hospitalId: string, body?: CreateHospitalPackageCommand, options?: any) {
-        return PackagesApiFp(this.configuration).apiV1HospitalsHospitalIdPackagesPost(hospitalId, body, options)(this.axios, this.basePath);
-    }
-
-    /**
-     * Sample request:        GET /api/v1/hospitals/1/packages      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Medical\"      }
-     * @summary Get all packages.
-     * @param {string} [relatedPackageId] 
-     * @param {string} [name] 
-     * @param {string} [countryId] 
-     * @param {string} [hospitalId] 
-     * @param {string} [hospitalName] 
-     * @param {object} [marketingType] 
-     * @param {object} [packageStatus] 
-     * @param {string} [specialtyTypeId] 
-     * @param {string} [serviceId] 
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
-     * @param {boolean} [current] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof PackagesApi
-     */
-    public apiV1HospitalsPackagesGet(relatedPackageId?: string, name?: string, countryId?: string, hospitalId?: string, hospitalName?: string, marketingType?: object, packageStatus?: object, specialtyTypeId?: string, serviceId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return PackagesApiFp(this.configuration).apiV1HospitalsPackagesGet(relatedPackageId, name, countryId, hospitalId, hospitalName, marketingType, packageStatus, specialtyTypeId, serviceId, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
 }
