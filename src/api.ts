@@ -3490,6 +3490,24 @@ export interface DealPackageItemViewModel {
     dealId?: string;
     /**
      * 
+     * @type {string}
+     * @memberof DealPackageItemViewModel
+     */
+    dealName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageItemViewModel
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageItemViewModel
+     */
+    hospitalName?: string;
+    /**
+     * 
      * @type {RefundPolicy}
      * @memberof DealPackageItemViewModel
      */
@@ -3690,6 +3708,24 @@ export interface DealPackageViewModel {
      * @memberof DealPackageViewModel
      */
     dealId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageViewModel
+     */
+    dealName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageViewModel
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DealPackageViewModel
+     */
+    hospitalName?: string;
     /**
      * 
      * @type {RefundPolicy}
@@ -10351,6 +10387,24 @@ export interface UpdateDealCommand {
  * @interface UpdateDealPackageCommand
  */
 export interface UpdateDealPackageCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateDealPackageCommand
+     */
+    dealName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateDealPackageCommand
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateDealPackageCommand
+     */
+    hospitalName?: string;
     /**
      * 
      * @type {RefundPolicy}
