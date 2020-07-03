@@ -765,6 +765,36 @@ export interface Booking {
     dealPackage?: DealPackage;
     /**
      * 
+     * @type {string}
+     * @memberof Booking
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {Hospital}
+     * @memberof Booking
+     */
+    hospital?: Hospital;
+    /**
+     * 
+     * @type {string}
+     * @memberof Booking
+     */
+    doctorId?: string;
+    /**
+     * 
+     * @type {Doctor}
+     * @memberof Booking
+     */
+    doctor?: Doctor;
+    /**
+     * 
+     * @type {string}
+     * @memberof Booking
+     */
+    language?: string;
+    /**
+     * 
      * @type {number}
      * @memberof Booking
      */
@@ -801,6 +831,12 @@ export interface Booking {
     phone?: string;
     /**
      * 
+     * @type {Gender}
+     * @memberof Booking
+     */
+    gender?: Gender;
+    /**
+     * 
      * @type {Date}
      * @memberof Booking
      */
@@ -823,6 +859,12 @@ export interface Booking {
      * @memberof Booking
      */
     confirmedDateEnd?: Date;
+    /**
+     * 
+     * @type {BookingType}
+     * @memberof Booking
+     */
+    bookingType?: BookingType;
     /**
      * 
      * @type {BookingStatus}
@@ -956,18 +998,6 @@ export interface BookingItemViewModel {
      * @type {string}
      * @memberof BookingItemViewModel
      */
-    hospitalId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingItemViewModel
-     */
-    hospitalName?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingItemViewModel
-     */
     dealId?: string;
     /**
      * 
@@ -981,6 +1011,30 @@ export interface BookingItemViewModel {
      * @memberof BookingItemViewModel
      */
     dealPackageId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    hospitalName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    doctorId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    doctorName?: string;
     /**
      * 
      * @type {RefundPolicy}
@@ -1025,6 +1079,12 @@ export interface BookingItemViewModel {
     phone?: string;
     /**
      * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    comment?: string;
+    /**
+     * 
      * @type {Date}
      * @memberof BookingItemViewModel
      */
@@ -1047,6 +1107,12 @@ export interface BookingItemViewModel {
      * @memberof BookingItemViewModel
      */
     confirmedDateEnd?: Date;
+    /**
+     * 
+     * @type {BookingType}
+     * @memberof BookingItemViewModel
+     */
+    bookingType?: BookingType;
     /**
      * 
      * @type {BookingStatus}
@@ -1100,6 +1166,16 @@ export enum BookingStatus {
 /**
  * 
  * @export
+ * @enum {string}
+ */
+export enum BookingType {
+    Deal = 'Deal',
+    TeleHealth = 'TeleHealth'
+}
+
+/**
+ * 
+ * @export
  * @interface BookingViewModel
  */
 export interface BookingViewModel {
@@ -1126,18 +1202,6 @@ export interface BookingViewModel {
      * @type {string}
      * @memberof BookingViewModel
      */
-    hospitalId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingViewModel
-     */
-    hospitalName?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingViewModel
-     */
     dealId?: string;
     /**
      * 
@@ -1151,6 +1215,30 @@ export interface BookingViewModel {
      * @memberof BookingViewModel
      */
     dealPackageId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    hospitalName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    doctorId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    doctorName?: string;
     /**
      * 
      * @type {RefundPolicy}
@@ -1195,6 +1283,12 @@ export interface BookingViewModel {
     phone?: string;
     /**
      * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    comment?: string;
+    /**
+     * 
      * @type {Date}
      * @memberof BookingViewModel
      */
@@ -1217,6 +1311,12 @@ export interface BookingViewModel {
      * @memberof BookingViewModel
      */
     confirmedDateEnd?: Date;
+    /**
+     * 
+     * @type {BookingType}
+     * @memberof BookingViewModel
+     */
+    bookingType?: BookingType;
     /**
      * 
      * @type {BookingStatus}
@@ -2023,55 +2123,55 @@ export interface CreateArticleCommand {
 /**
  * 
  * @export
- * @interface CreateBookingCommand
+ * @interface CreateBookingDealCommand
  */
-export interface CreateBookingCommand {
+export interface CreateBookingDealCommand {
     /**
      * 
      * @type {string}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     dealPackageId?: string;
     /**
      * 
      * @type {number}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     quantity?: number;
     /**
      * 
      * @type {string}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     name?: string;
     /**
      * 
      * @type {string}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     email?: string;
     /**
      * 
      * @type {string}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     phone?: string;
     /**
      * 
      * @type {Date}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     approximateDateStart?: Date;
     /**
      * 
      * @type {Date}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     approximateDateEnd?: Date;
     /**
      * 
      * @type {string}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     comment?: string;
 }
@@ -4237,6 +4337,12 @@ export interface Doctor {
     doctorAffiliations?: Array<DoctorAffiliation>;
     /**
      * 
+     * @type {Array<Booking>}
+     * @memberof Doctor
+     */
+    bookings?: Array<Booking>;
+    /**
+     * 
      * @type {Array<Award>}
      * @memberof Doctor
      */
@@ -5978,6 +6084,12 @@ export interface Hospital {
     managerAffiliations?: Array<ManagerAffiliation>;
     /**
      * 
+     * @type {Array<Booking>}
+     * @memberof Hospital
+     */
+    bookings?: Array<Booking>;
+    /**
+     * 
      * @type {Array<Award>}
      * @memberof Hospital
      */
@@ -6629,12 +6741,6 @@ export interface HospitalSpecialty {
      * @memberof HospitalSpecialty
      */
     services?: Array<Service>;
-    /**
-     * 
-     * @type {AuditableEntity}
-     * @memberof HospitalSpecialty
-     */
-    auditableEntity?: AuditableEntity;
 }
 /**
  * 
@@ -10127,49 +10233,49 @@ export interface UpdateArticleCommand {
 /**
  * 
  * @export
- * @interface UpdateBookingCommand
+ * @interface UpdateBookingDealCommand
  */
-export interface UpdateBookingCommand {
+export interface UpdateBookingDealCommand {
     /**
      * 
      * @type {number}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     quantity?: number;
     /**
      * 
      * @type {string}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     name?: string;
     /**
      * 
      * @type {string}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     email?: string;
     /**
      * 
      * @type {string}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     phone?: string;
     /**
      * 
      * @type {Date}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     approximateDateStart?: Date;
     /**
      * 
      * @type {Date}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     approximateDateEnd?: Date;
     /**
      * 
      * @type {string}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     comment?: string;
 }
@@ -13180,17 +13286,17 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * 
-         * @summary Delete booking.
+         * @summary Delete deal booking.
          * @param {string} bookingId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsBookingIdDelete(bookingId: string, options: any = {}): RequestArgs {
+        apiV1BookingsBookingIdDealDelete(bookingId: string, options: any = {}): RequestArgs {
             // verify required parameter 'bookingId' is not null or undefined
             if (bookingId === null || bookingId === undefined) {
-                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdDelete.');
+                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdDealDelete.');
             }
-            const localVarPath = `/api/v1/bookings/{bookingId}`
+            const localVarPath = `/api/v1/bookings/{bookingId}/deal`
                 .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -13216,6 +13322,55 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Update deal booking.
+         * @param {string} bookingId 
+         * @param {UpdateBookingDealCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'bookingId' is not null or undefined
+            if (bookingId === null || bookingId === undefined) {
+                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdDealPut.');
+            }
+            const localVarPath = `/api/v1/bookings/{bookingId}/deal`
+                .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13260,55 +13415,6 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Update booking.
-         * @param {string} bookingId 
-         * @param {UpdateBookingCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1BookingsBookingIdPut(bookingId: string, body?: UpdateBookingCommand, options: any = {}): RequestArgs {
-            // verify required parameter 'bookingId' is not null or undefined
-            if (bookingId === null || bookingId === undefined) {
-                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdPut.');
-            }
-            const localVarPath = `/api/v1/bookings/{bookingId}`
-                .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication oauth2 required
-            // oauth required
-            if (configuration && configuration.accessToken) {
-                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
-                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
-                    : configuration.accessToken;
-                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
-            }
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13366,9 +13472,54 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * 
+         * @summary Create a deal booking.
+         * @param {CreateBookingDealCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsDealPost(body?: CreateBookingDealCommand, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/bookings/deal`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Get all bookings.
          * @param {string} [searchString] 
          * @param {boolean} [isOpen] 
+         * @param {boolean} [isCompleted] 
+         * @param {object} [bookingType] 
          * @param {object} [bookingStatus] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -13377,7 +13528,7 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsGet(searchString?: string, isOpen?: boolean, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1BookingsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, bookingType?: object, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/bookings`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -13403,6 +13554,14 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
 
             if (isOpen !== undefined) {
                 localVarQueryParameter['IsOpen'] = isOpen;
+            }
+
+            if (isCompleted !== undefined) {
+                localVarQueryParameter['IsCompleted'] = isCompleted;
+            }
+
+            if (bookingType !== undefined) {
+                localVarQueryParameter['BookingType'] = bookingType;
             }
 
             if (bookingStatus !== undefined) {
@@ -13433,49 +13592,6 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Create a booking.
-         * @param {CreateBookingCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1BookingsPost(body?: CreateBookingCommand, options: any = {}): RequestArgs {
-            const localVarPath = `/api/v1/bookings`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication oauth2 required
-            // oauth required
-            if (configuration && configuration.accessToken) {
-                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
-                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
-                    : configuration.accessToken;
-                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
-            }
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13523,13 +13639,28 @@ export const BookingsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Delete booking.
+         * @summary Delete deal booking.
          * @param {string} bookingId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsBookingIdDelete(bookingId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
-            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdDelete(bookingId, options);
+        apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdDealDelete(bookingId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Update deal booking.
+         * @param {string} bookingId 
+         * @param {UpdateBookingDealCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdDealPut(bookingId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -13544,21 +13675,6 @@ export const BookingsApiFp = function(configuration?: Configuration) {
          */
         apiV1BookingsBookingIdGet(bookingId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<BookingViewModel> {
             const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdGet(bookingId, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * 
-         * @summary Update booking.
-         * @param {string} bookingId 
-         * @param {UpdateBookingCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1BookingsBookingIdPut(bookingId: string, body?: UpdateBookingCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
-            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdPut(bookingId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -13581,9 +13697,25 @@ export const BookingsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Create a deal booking.
+         * @param {CreateBookingDealCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsDealPost(body?: CreateBookingDealCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsDealPost(body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
          * @summary Get all bookings.
          * @param {string} [searchString] 
          * @param {boolean} [isOpen] 
+         * @param {boolean} [isCompleted] 
+         * @param {object} [bookingType] 
          * @param {object} [bookingStatus] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -13592,22 +13724,8 @@ export const BookingsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsGet(searchString?: string, isOpen?: boolean, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<BookingsViewModel> {
-            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsGet(searchString, isOpen, bookingStatus, page, limit, lastRetrieved, current, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * 
-         * @summary Create a booking.
-         * @param {CreateBookingCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1BookingsPost(body?: CreateBookingCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
-            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsPost(body, options);
+        apiV1BookingsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, bookingType?: object, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<BookingsViewModel> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsGet(searchString, isOpen, isCompleted, bookingType, bookingStatus, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -13646,13 +13764,24 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
         },
         /**
          * 
-         * @summary Delete booking.
+         * @summary Delete deal booking.
          * @param {string} bookingId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsBookingIdDelete(bookingId: string, options?: any): AxiosPromise<boolean> {
-            return BookingsApiFp(configuration).apiV1BookingsBookingIdDelete(bookingId, options)(axios, basePath);
+        apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): AxiosPromise<boolean> {
+            return BookingsApiFp(configuration).apiV1BookingsBookingIdDealDelete(bookingId, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Update deal booking.
+         * @param {string} bookingId 
+         * @param {UpdateBookingDealCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand, options?: any): AxiosPromise<boolean> {
+            return BookingsApiFp(configuration).apiV1BookingsBookingIdDealPut(bookingId, body, options)(axios, basePath);
         },
         /**
          * 
@@ -13663,17 +13792,6 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
          */
         apiV1BookingsBookingIdGet(bookingId: string, options?: any): AxiosPromise<BookingViewModel> {
             return BookingsApiFp(configuration).apiV1BookingsBookingIdGet(bookingId, options)(axios, basePath);
-        },
-        /**
-         * 
-         * @summary Update booking.
-         * @param {string} bookingId 
-         * @param {UpdateBookingCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1BookingsBookingIdPut(bookingId: string, body?: UpdateBookingCommand, options?: any): AxiosPromise<boolean> {
-            return BookingsApiFp(configuration).apiV1BookingsBookingIdPut(bookingId, body, options)(axios, basePath);
         },
         /**
          * 
@@ -13688,9 +13806,21 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
         },
         /**
          * 
+         * @summary Create a deal booking.
+         * @param {CreateBookingDealCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsDealPost(body?: CreateBookingDealCommand, options?: any): AxiosPromise<string> {
+            return BookingsApiFp(configuration).apiV1BookingsDealPost(body, options)(axios, basePath);
+        },
+        /**
+         * 
          * @summary Get all bookings.
          * @param {string} [searchString] 
          * @param {boolean} [isOpen] 
+         * @param {boolean} [isCompleted] 
+         * @param {object} [bookingType] 
          * @param {object} [bookingStatus] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -13699,18 +13829,8 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsGet(searchString?: string, isOpen?: boolean, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<BookingsViewModel> {
-            return BookingsApiFp(configuration).apiV1BookingsGet(searchString, isOpen, bookingStatus, page, limit, lastRetrieved, current, options)(axios, basePath);
-        },
-        /**
-         * 
-         * @summary Create a booking.
-         * @param {CreateBookingCommand} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1BookingsPost(body?: CreateBookingCommand, options?: any): AxiosPromise<string> {
-            return BookingsApiFp(configuration).apiV1BookingsPost(body, options)(axios, basePath);
+        apiV1BookingsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, bookingType?: object, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<BookingsViewModel> {
+            return BookingsApiFp(configuration).apiV1BookingsGet(searchString, isOpen, isCompleted, bookingType, bookingStatus, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
     };
 };
@@ -13750,14 +13870,27 @@ export class BookingsApi extends BaseAPI {
 
     /**
      * 
-     * @summary Delete booking.
+     * @summary Delete deal booking.
      * @param {string} bookingId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    public apiV1BookingsBookingIdDelete(bookingId: string, options?: any) {
-        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdDelete(bookingId, options)(this.axios, this.basePath);
+    public apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdDealDelete(bookingId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Update deal booking.
+     * @param {string} bookingId 
+     * @param {UpdateBookingDealCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    public apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdDealPut(bookingId, body, options)(this.axios, this.basePath);
     }
 
     /**
@@ -13770,19 +13903,6 @@ export class BookingsApi extends BaseAPI {
      */
     public apiV1BookingsBookingIdGet(bookingId: string, options?: any) {
         return BookingsApiFp(this.configuration).apiV1BookingsBookingIdGet(bookingId, options)(this.axios, this.basePath);
-    }
-
-    /**
-     * 
-     * @summary Update booking.
-     * @param {string} bookingId 
-     * @param {UpdateBookingCommand} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BookingsApi
-     */
-    public apiV1BookingsBookingIdPut(bookingId: string, body?: UpdateBookingCommand, options?: any) {
-        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdPut(bookingId, body, options)(this.axios, this.basePath);
     }
 
     /**
@@ -13800,9 +13920,23 @@ export class BookingsApi extends BaseAPI {
 
     /**
      * 
+     * @summary Create a deal booking.
+     * @param {CreateBookingDealCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    public apiV1BookingsDealPost(body?: CreateBookingDealCommand, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsDealPost(body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
      * @summary Get all bookings.
      * @param {string} [searchString] 
      * @param {boolean} [isOpen] 
+     * @param {boolean} [isCompleted] 
+     * @param {object} [bookingType] 
      * @param {object} [bookingStatus] 
      * @param {number} [page] 
      * @param {number} [limit] 
@@ -13812,20 +13946,8 @@ export class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    public apiV1BookingsGet(searchString?: string, isOpen?: boolean, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return BookingsApiFp(this.configuration).apiV1BookingsGet(searchString, isOpen, bookingStatus, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
-    }
-
-    /**
-     * 
-     * @summary Create a booking.
-     * @param {CreateBookingCommand} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BookingsApi
-     */
-    public apiV1BookingsPost(body?: CreateBookingCommand, options?: any) {
-        return BookingsApiFp(this.configuration).apiV1BookingsPost(body, options)(this.axios, this.basePath);
+    public apiV1BookingsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, bookingType?: object, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsGet(searchString, isOpen, isCompleted, bookingType, bookingStatus, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
 }

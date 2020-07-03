@@ -756,6 +756,36 @@ export interface Booking {
     dealPackage?: DealPackage;
     /**
      *
+     * @type {string}
+     * @memberof Booking
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {Hospital}
+     * @memberof Booking
+     */
+    hospital?: Hospital;
+    /**
+     *
+     * @type {string}
+     * @memberof Booking
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {Doctor}
+     * @memberof Booking
+     */
+    doctor?: Doctor;
+    /**
+     *
+     * @type {string}
+     * @memberof Booking
+     */
+    language?: string;
+    /**
+     *
      * @type {number}
      * @memberof Booking
      */
@@ -792,6 +822,12 @@ export interface Booking {
     phone?: string;
     /**
      *
+     * @type {Gender}
+     * @memberof Booking
+     */
+    gender?: Gender;
+    /**
+     *
      * @type {Date}
      * @memberof Booking
      */
@@ -814,6 +850,12 @@ export interface Booking {
      * @memberof Booking
      */
     confirmedDateEnd?: Date;
+    /**
+     *
+     * @type {BookingType}
+     * @memberof Booking
+     */
+    bookingType?: BookingType;
     /**
      *
      * @type {BookingStatus}
@@ -947,18 +989,6 @@ export interface BookingItemViewModel {
      * @type {string}
      * @memberof BookingItemViewModel
      */
-    hospitalId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof BookingItemViewModel
-     */
-    hospitalName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof BookingItemViewModel
-     */
     dealId?: string;
     /**
      *
@@ -972,6 +1002,30 @@ export interface BookingItemViewModel {
      * @memberof BookingItemViewModel
      */
     dealPackageId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    hospitalName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    doctorName?: string;
     /**
      *
      * @type {RefundPolicy}
@@ -1016,6 +1070,12 @@ export interface BookingItemViewModel {
     phone?: string;
     /**
      *
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    comment?: string;
+    /**
+     *
      * @type {Date}
      * @memberof BookingItemViewModel
      */
@@ -1038,6 +1098,12 @@ export interface BookingItemViewModel {
      * @memberof BookingItemViewModel
      */
     confirmedDateEnd?: Date;
+    /**
+     *
+     * @type {BookingType}
+     * @memberof BookingItemViewModel
+     */
+    bookingType?: BookingType;
     /**
      *
      * @type {BookingStatus}
@@ -1090,6 +1156,15 @@ export declare enum BookingStatus {
 /**
  *
  * @export
+ * @enum {string}
+ */
+export declare enum BookingType {
+    Deal = "Deal",
+    TeleHealth = "TeleHealth"
+}
+/**
+ *
+ * @export
  * @interface BookingViewModel
  */
 export interface BookingViewModel {
@@ -1116,18 +1191,6 @@ export interface BookingViewModel {
      * @type {string}
      * @memberof BookingViewModel
      */
-    hospitalId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof BookingViewModel
-     */
-    hospitalName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof BookingViewModel
-     */
     dealId?: string;
     /**
      *
@@ -1141,6 +1204,30 @@ export interface BookingViewModel {
      * @memberof BookingViewModel
      */
     dealPackageId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    hospitalName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    doctorName?: string;
     /**
      *
      * @type {RefundPolicy}
@@ -1185,6 +1272,12 @@ export interface BookingViewModel {
     phone?: string;
     /**
      *
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    comment?: string;
+    /**
+     *
      * @type {Date}
      * @memberof BookingViewModel
      */
@@ -1207,6 +1300,12 @@ export interface BookingViewModel {
      * @memberof BookingViewModel
      */
     confirmedDateEnd?: Date;
+    /**
+     *
+     * @type {BookingType}
+     * @memberof BookingViewModel
+     */
+    bookingType?: BookingType;
     /**
      *
      * @type {BookingStatus}
@@ -2012,55 +2111,55 @@ export interface CreateArticleCommand {
 /**
  *
  * @export
- * @interface CreateBookingCommand
+ * @interface CreateBookingDealCommand
  */
-export interface CreateBookingCommand {
+export interface CreateBookingDealCommand {
     /**
      *
      * @type {string}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     dealPackageId?: string;
     /**
      *
      * @type {number}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     quantity?: number;
     /**
      *
      * @type {string}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     name?: string;
     /**
      *
      * @type {string}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     email?: string;
     /**
      *
      * @type {string}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     phone?: string;
     /**
      *
      * @type {Date}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     approximateDateStart?: Date;
     /**
      *
      * @type {Date}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     approximateDateEnd?: Date;
     /**
      *
      * @type {string}
-     * @memberof CreateBookingCommand
+     * @memberof CreateBookingDealCommand
      */
     comment?: string;
 }
@@ -4226,6 +4325,12 @@ export interface Doctor {
     doctorAffiliations?: Array<DoctorAffiliation>;
     /**
      *
+     * @type {Array<Booking>}
+     * @memberof Doctor
+     */
+    bookings?: Array<Booking>;
+    /**
+     *
      * @type {Array<Award>}
      * @memberof Doctor
      */
@@ -5966,6 +6071,12 @@ export interface Hospital {
     managerAffiliations?: Array<ManagerAffiliation>;
     /**
      *
+     * @type {Array<Booking>}
+     * @memberof Hospital
+     */
+    bookings?: Array<Booking>;
+    /**
+     *
      * @type {Array<Award>}
      * @memberof Hospital
      */
@@ -6617,12 +6728,6 @@ export interface HospitalSpecialty {
      * @memberof HospitalSpecialty
      */
     services?: Array<Service>;
-    /**
-     *
-     * @type {AuditableEntity}
-     * @memberof HospitalSpecialty
-     */
-    auditableEntity?: AuditableEntity;
 }
 /**
  *
@@ -10104,49 +10209,49 @@ export interface UpdateArticleCommand {
 /**
  *
  * @export
- * @interface UpdateBookingCommand
+ * @interface UpdateBookingDealCommand
  */
-export interface UpdateBookingCommand {
+export interface UpdateBookingDealCommand {
     /**
      *
      * @type {number}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     quantity?: number;
     /**
      *
      * @type {string}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     name?: string;
     /**
      *
      * @type {string}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     email?: string;
     /**
      *
      * @type {string}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     phone?: string;
     /**
      *
      * @type {Date}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     approximateDateStart?: Date;
     /**
      *
      * @type {Date}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     approximateDateEnd?: Date;
     /**
      *
      * @type {string}
-     * @memberof UpdateBookingCommand
+     * @memberof UpdateBookingDealCommand
      */
     comment?: string;
 }
@@ -12542,12 +12647,21 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
     apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object | undefined, options?: any): RequestArgs;
     /**
      *
-     * @summary Delete booking.
+     * @summary Delete deal booking.
      * @param {string} bookingId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): RequestArgs;
+    apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Update deal booking.
+     * @param {string} bookingId
+     * @param {UpdateBookingDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand | undefined, options?: any): RequestArgs;
     /**
      *
      * @summary Get booking.
@@ -12556,15 +12670,6 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdGet(bookingId: string, options?: any): RequestArgs;
-    /**
-     *
-     * @summary Update booking.
-     * @param {string} bookingId
-     * @param {UpdateBookingCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1BookingsBookingIdPut(bookingId: string, body?: UpdateBookingCommand | undefined, options?: any): RequestArgs;
     /**
      *
      * @summary Reject booking.
@@ -12576,9 +12681,19 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
     apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object | undefined, options?: any): RequestArgs;
     /**
      *
+     * @summary Create a deal booking.
+     * @param {CreateBookingDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsDealPost(body?: CreateBookingDealCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
      * @summary Get all bookings.
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
+     * @param {boolean} [isCompleted]
+     * @param {object} [bookingType]
      * @param {object} [bookingStatus]
      * @param {number} [page]
      * @param {number} [limit]
@@ -12587,15 +12702,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, bookingStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
-    /**
-     *
-     * @summary Create a booking.
-     * @param {CreateBookingCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): RequestArgs;
+    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, bookingType?: object | undefined, bookingStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * BookingsApi - functional programming interface
@@ -12622,12 +12729,21 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
     apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
      *
-     * @summary Delete booking.
+     * @summary Delete deal booking.
      * @param {string} bookingId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Update deal booking.
+     * @param {string} bookingId
+     * @param {UpdateBookingDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
      *
      * @summary Get booking.
@@ -12636,15 +12752,6 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdGet(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BookingViewModel>;
-    /**
-     *
-     * @summary Update booking.
-     * @param {string} bookingId
-     * @param {UpdateBookingCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1BookingsBookingIdPut(bookingId: string, body?: UpdateBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
      *
      * @summary Reject booking.
@@ -12656,9 +12763,19 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
     apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
      *
+     * @summary Create a deal booking.
+     * @param {CreateBookingDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsDealPost(body?: CreateBookingDealCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
      * @summary Get all bookings.
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
+     * @param {boolean} [isCompleted]
+     * @param {object} [bookingType]
      * @param {object} [bookingStatus]
      * @param {number} [page]
      * @param {number} [limit]
@@ -12667,15 +12784,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, bookingStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BookingsViewModel>;
-    /**
-     *
-     * @summary Create a booking.
-     * @param {CreateBookingCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, bookingType?: object | undefined, bookingStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BookingsViewModel>;
 };
 /**
  * BookingsApi - factory interface
@@ -12702,12 +12811,21 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
     apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object | undefined, options?: any): AxiosPromise<boolean>;
     /**
      *
-     * @summary Delete booking.
+     * @summary Delete deal booking.
      * @param {string} bookingId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Update deal booking.
+     * @param {string} bookingId
+     * @param {UpdateBookingDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand | undefined, options?: any): AxiosPromise<boolean>;
     /**
      *
      * @summary Get booking.
@@ -12716,15 +12834,6 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdGet(bookingId: string, options?: any): AxiosPromise<BookingViewModel>;
-    /**
-     *
-     * @summary Update booking.
-     * @param {string} bookingId
-     * @param {UpdateBookingCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1BookingsBookingIdPut(bookingId: string, body?: UpdateBookingCommand | undefined, options?: any): AxiosPromise<boolean>;
     /**
      *
      * @summary Reject booking.
@@ -12736,9 +12845,19 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
     apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object | undefined, options?: any): AxiosPromise<boolean>;
     /**
      *
+     * @summary Create a deal booking.
+     * @param {CreateBookingDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsDealPost(body?: CreateBookingDealCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
      * @summary Get all bookings.
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
+     * @param {boolean} [isCompleted]
+     * @param {object} [bookingType]
      * @param {object} [bookingStatus]
      * @param {number} [page]
      * @param {number} [limit]
@@ -12747,15 +12866,7 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, bookingStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<BookingsViewModel>;
-    /**
-     *
-     * @summary Create a booking.
-     * @param {CreateBookingCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): AxiosPromise<string>;
+    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, bookingType?: object | undefined, bookingStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<BookingsViewModel>;
 };
 /**
  * BookingsApi - object-oriented interface
@@ -12786,13 +12897,23 @@ export declare class BookingsApi extends BaseAPI {
     apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object, options?: any): AxiosPromise<boolean>;
     /**
      *
-     * @summary Delete booking.
+     * @summary Delete deal booking.
      * @param {string} bookingId
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Update deal booking.
+     * @param {string} bookingId
+     * @param {UpdateBookingDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand, options?: any): AxiosPromise<boolean>;
     /**
      *
      * @summary Get booking.
@@ -12802,16 +12923,6 @@ export declare class BookingsApi extends BaseAPI {
      * @memberof BookingsApi
      */
     apiV1BookingsBookingIdGet(bookingId: string, options?: any): AxiosPromise<BookingViewModel>;
-    /**
-     *
-     * @summary Update booking.
-     * @param {string} bookingId
-     * @param {UpdateBookingCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BookingsApi
-     */
-    apiV1BookingsBookingIdPut(bookingId: string, body?: UpdateBookingCommand, options?: any): AxiosPromise<boolean>;
     /**
      *
      * @summary Reject booking.
@@ -12824,9 +12935,20 @@ export declare class BookingsApi extends BaseAPI {
     apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object, options?: any): AxiosPromise<boolean>;
     /**
      *
+     * @summary Create a deal booking.
+     * @param {CreateBookingDealCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    apiV1BookingsDealPost(body?: CreateBookingDealCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
      * @summary Get all bookings.
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
+     * @param {boolean} [isCompleted]
+     * @param {object} [bookingType]
      * @param {object} [bookingStatus]
      * @param {number} [page]
      * @param {number} [limit]
@@ -12836,16 +12958,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsGet(searchString?: string, isOpen?: boolean, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<BookingsViewModel>;
-    /**
-     *
-     * @summary Create a booking.
-     * @param {CreateBookingCommand} [body]
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BookingsApi
-     */
-    apiV1BookingsPost(body?: CreateBookingCommand, options?: any): AxiosPromise<string>;
+    apiV1BookingsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, bookingType?: object, bookingStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<BookingsViewModel>;
 }
 /**
  * CHAdminsApi - axios parameter creator
