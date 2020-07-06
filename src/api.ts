@@ -9039,6 +9039,25 @@ export enum RefundStatus {
 /**
  * 
  * @export
+ * @interface RejectBookingCommand
+ */
+export interface RejectBookingCommand {
+    /**
+     * 
+     * @type {RejectReason}
+     * @memberof RejectBookingCommand
+     */
+    rejectReason?: RejectReason;
+    /**
+     * 
+     * @type {string}
+     * @memberof RejectBookingCommand
+     */
+    comment?: string;
+}
+/**
+ * 
+ * @export
  * @enum {string}
  */
 export enum RejectReason {
@@ -13425,11 +13444,11 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Reject booking.
          * @param {string} bookingId 
-         * @param {object} [body] 
+         * @param {RejectBookingCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object, options: any = {}): RequestArgs {
+        apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand, options: any = {}): RequestArgs {
             // verify required parameter 'bookingId' is not null or undefined
             if (bookingId === null || bookingId === undefined) {
                 throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdRejectPost.');
@@ -13684,11 +13703,11 @@ export const BookingsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Reject booking.
          * @param {string} bookingId 
-         * @param {object} [body] 
+         * @param {RejectBookingCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+        apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
             const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdRejectPost(bookingId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -13797,11 +13816,11 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
          * 
          * @summary Reject booking.
          * @param {string} bookingId 
-         * @param {object} [body] 
+         * @param {RejectBookingCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object, options?: any): AxiosPromise<boolean> {
+        apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand, options?: any): AxiosPromise<boolean> {
             return BookingsApiFp(configuration).apiV1BookingsBookingIdRejectPost(bookingId, body, options)(axios, basePath);
         },
         /**
@@ -13909,12 +13928,12 @@ export class BookingsApi extends BaseAPI {
      * 
      * @summary Reject booking.
      * @param {string} bookingId 
-     * @param {object} [body] 
+     * @param {RejectBookingCommand} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    public apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object, options?: any) {
+    public apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand, options?: any) {
         return BookingsApiFp(this.configuration).apiV1BookingsBookingIdRejectPost(bookingId, body, options)(this.axios, this.basePath);
     }
 

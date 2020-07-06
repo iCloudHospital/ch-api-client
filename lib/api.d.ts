@@ -9017,6 +9017,25 @@ export declare enum RefundStatus {
 /**
  *
  * @export
+ * @interface RejectBookingCommand
+ */
+export interface RejectBookingCommand {
+    /**
+     *
+     * @type {RejectReason}
+     * @memberof RejectBookingCommand
+     */
+    rejectReason?: RejectReason;
+    /**
+     *
+     * @type {string}
+     * @memberof RejectBookingCommand
+     */
+    comment?: string;
+}
+/**
+ *
+ * @export
  * @enum {string}
  */
 export declare enum RejectReason {
@@ -12674,11 +12693,11 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      *
      * @summary Reject booking.
      * @param {string} bookingId
-     * @param {object} [body]
+     * @param {RejectBookingCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object | undefined, options?: any): RequestArgs;
+    apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand | undefined, options?: any): RequestArgs;
     /**
      *
      * @summary Create a deal booking.
@@ -12756,11 +12775,11 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      *
      * @summary Reject booking.
      * @param {string} bookingId
-     * @param {object} [body]
+     * @param {RejectBookingCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
      *
      * @summary Create a deal booking.
@@ -12838,11 +12857,11 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
      *
      * @summary Reject booking.
      * @param {string} bookingId
-     * @param {object} [body]
+     * @param {RejectBookingCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object | undefined, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand | undefined, options?: any): AxiosPromise<boolean>;
     /**
      *
      * @summary Create a deal booking.
@@ -12927,12 +12946,12 @@ export declare class BookingsApi extends BaseAPI {
      *
      * @summary Reject booking.
      * @param {string} bookingId
-     * @param {object} [body]
+     * @param {RejectBookingCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdRejectPost(bookingId: string, body?: object, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand, options?: any): AxiosPromise<boolean>;
     /**
      *
      * @summary Create a deal booking.
