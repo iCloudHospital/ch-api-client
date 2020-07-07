@@ -831,6 +831,12 @@ export interface Booking {
      * @type {Date}
      * @memberof Booking
      */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof Booking
+     */
     approximateDateStart?: Date;
     /**
      *
@@ -1160,7 +1166,7 @@ export declare enum BookingStatus {
  */
 export declare enum BookingType {
     Deal = "Deal",
-    TeleHealth = "TeleHealth"
+    Consult = "Consult"
 }
 /**
  *
@@ -2107,6 +2113,79 @@ export interface CreateArticleCommand {
      * @memberof CreateArticleCommand
      */
     medias?: Array<MediaViewModel>;
+}
+/**
+ *
+ * @export
+ * @interface CreateBookingConsultCommand
+ */
+export interface CreateBookingConsultCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    language?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof CreateBookingConsultCommand
+     */
+    quantity?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    email?: string;
+    /**
+     *
+     * @type {Gender}
+     * @memberof CreateBookingConsultCommand
+     */
+    gender?: Gender;
+    /**
+     *
+     * @type {Date}
+     * @memberof CreateBookingConsultCommand
+     */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof CreateBookingConsultCommand
+     */
+    approximateDateStart?: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof CreateBookingConsultCommand
+     */
+    approximateDateEnd?: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    comment?: string;
 }
 /**
  *
@@ -10228,6 +10307,79 @@ export interface UpdateArticleCommand {
 /**
  *
  * @export
+ * @interface UpdateBookingConsultCommand
+ */
+export interface UpdateBookingConsultCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    hospitalId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    doctorId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    language?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateBookingConsultCommand
+     */
+    quantity?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    email?: string;
+    /**
+     *
+     * @type {Gender}
+     * @memberof UpdateBookingConsultCommand
+     */
+    gender?: Gender;
+    /**
+     *
+     * @type {Date}
+     * @memberof UpdateBookingConsultCommand
+     */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof UpdateBookingConsultCommand
+     */
+    approximateDateStart?: Date;
+    /**
+     *
+     * @type {Date}
+     * @memberof UpdateBookingConsultCommand
+     */
+    approximateDateEnd?: Date;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    comment?: string;
+}
+/**
+ *
+ * @export
  * @interface UpdateBookingDealCommand
  */
 export interface UpdateBookingDealCommand {
@@ -12666,12 +12818,13 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
     apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object | undefined, options?: any): RequestArgs;
     /**
      *
-     * @summary Delete deal booking.
+     * @summary Update consult booking.
      * @param {string} bookingId
+     * @param {UpdateBookingConsultCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): RequestArgs;
+    apiV1BookingsBookingIdConsultPut(bookingId: string, body?: UpdateBookingConsultCommand | undefined, options?: any): RequestArgs;
     /**
      *
      * @summary Update deal booking.
@@ -12681,6 +12834,14 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Delete booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): RequestArgs;
     /**
      *
      * @summary Get booking.
@@ -12698,6 +12859,14 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Create a consult booking.
+     * @param {CreateBookingConsultCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsConsultPost(body?: CreateBookingConsultCommand | undefined, options?: any): RequestArgs;
     /**
      *
      * @summary Create a deal booking.
@@ -12748,12 +12917,13 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
     apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
      *
-     * @summary Delete deal booking.
+     * @summary Update consult booking.
      * @param {string} bookingId
+     * @param {UpdateBookingConsultCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1BookingsBookingIdConsultPut(bookingId: string, body?: UpdateBookingConsultCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
      *
      * @summary Update deal booking.
@@ -12763,6 +12933,14 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Delete booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
      *
      * @summary Get booking.
@@ -12780,6 +12958,14 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Create a consult booking.
+     * @param {CreateBookingConsultCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsConsultPost(body?: CreateBookingConsultCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
     /**
      *
      * @summary Create a deal booking.
@@ -12830,12 +13016,13 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
     apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object | undefined, options?: any): AxiosPromise<boolean>;
     /**
      *
-     * @summary Delete deal booking.
+     * @summary Update consult booking.
      * @param {string} bookingId
+     * @param {UpdateBookingConsultCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdConsultPut(bookingId: string, body?: UpdateBookingConsultCommand | undefined, options?: any): AxiosPromise<boolean>;
     /**
      *
      * @summary Update deal booking.
@@ -12845,6 +13032,14 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand | undefined, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Delete booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): AxiosPromise<boolean>;
     /**
      *
      * @summary Get booking.
@@ -12862,6 +13057,14 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand | undefined, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Create a consult booking.
+     * @param {CreateBookingConsultCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsConsultPost(body?: CreateBookingConsultCommand | undefined, options?: any): AxiosPromise<string>;
     /**
      *
      * @summary Create a deal booking.
@@ -12916,13 +13119,14 @@ export declare class BookingsApi extends BaseAPI {
     apiV1BookingsBookingIdCancelPost(bookingId: string, body?: object, options?: any): AxiosPromise<boolean>;
     /**
      *
-     * @summary Delete deal booking.
+     * @summary Update consult booking.
      * @param {string} bookingId
+     * @param {UpdateBookingConsultCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdConsultPut(bookingId: string, body?: UpdateBookingConsultCommand, options?: any): AxiosPromise<boolean>;
     /**
      *
      * @summary Update deal booking.
@@ -12933,6 +13137,15 @@ export declare class BookingsApi extends BaseAPI {
      * @memberof BookingsApi
      */
     apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Delete booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): AxiosPromise<boolean>;
     /**
      *
      * @summary Get booking.
@@ -12952,6 +13165,15 @@ export declare class BookingsApi extends BaseAPI {
      * @memberof BookingsApi
      */
     apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Create a consult booking.
+     * @param {CreateBookingConsultCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    apiV1BookingsConsultPost(body?: CreateBookingConsultCommand, options?: any): AxiosPromise<string>;
     /**
      *
      * @summary Create a deal booking.

@@ -840,6 +840,12 @@ export interface Booking {
      * @type {Date}
      * @memberof Booking
      */
+    dateOfBirth?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof Booking
+     */
     approximateDateStart?: Date;
     /**
      * 
@@ -1170,7 +1176,7 @@ export enum BookingStatus {
  */
 export enum BookingType {
     Deal = 'Deal',
-    TeleHealth = 'TeleHealth'
+    Consult = 'Consult'
 }
 
 /**
@@ -2119,6 +2125,79 @@ export interface CreateArticleCommand {
      * @memberof CreateArticleCommand
      */
     medias?: Array<MediaViewModel>;
+}
+/**
+ * 
+ * @export
+ * @interface CreateBookingConsultCommand
+ */
+export interface CreateBookingConsultCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    doctorId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    language?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof CreateBookingConsultCommand
+     */
+    quantity?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    email?: string;
+    /**
+     * 
+     * @type {Gender}
+     * @memberof CreateBookingConsultCommand
+     */
+    gender?: Gender;
+    /**
+     * 
+     * @type {Date}
+     * @memberof CreateBookingConsultCommand
+     */
+    dateOfBirth?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof CreateBookingConsultCommand
+     */
+    approximateDateStart?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof CreateBookingConsultCommand
+     */
+    approximateDateEnd?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    comment?: string;
 }
 /**
  * 
@@ -10252,6 +10331,79 @@ export interface UpdateArticleCommand {
 /**
  * 
  * @export
+ * @interface UpdateBookingConsultCommand
+ */
+export interface UpdateBookingConsultCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    doctorId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    language?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateBookingConsultCommand
+     */
+    quantity?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    email?: string;
+    /**
+     * 
+     * @type {Gender}
+     * @memberof UpdateBookingConsultCommand
+     */
+    gender?: Gender;
+    /**
+     * 
+     * @type {Date}
+     * @memberof UpdateBookingConsultCommand
+     */
+    dateOfBirth?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof UpdateBookingConsultCommand
+     */
+    approximateDateStart?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof UpdateBookingConsultCommand
+     */
+    approximateDateEnd?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    comment?: string;
+}
+/**
+ * 
+ * @export
  * @interface UpdateBookingDealCommand
  */
 export interface UpdateBookingDealCommand {
@@ -13305,24 +13457,25 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * 
-         * @summary Delete deal booking.
+         * @summary Update consult booking.
          * @param {string} bookingId 
+         * @param {UpdateBookingConsultCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsBookingIdDealDelete(bookingId: string, options: any = {}): RequestArgs {
+        apiV1BookingsBookingIdConsultPut(bookingId: string, body?: UpdateBookingConsultCommand, options: any = {}): RequestArgs {
             // verify required parameter 'bookingId' is not null or undefined
             if (bookingId === null || bookingId === undefined) {
-                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdDealDelete.');
+                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdConsultPut.');
             }
-            const localVarPath = `/api/v1/bookings/{bookingId}/deal`
+            const localVarPath = `/api/v1/bookings/{bookingId}/consult`
                 .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -13337,10 +13490,14 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
 
 
     
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13390,6 +13547,50 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
             localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Delete booking.
+         * @param {string} bookingId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdDelete(bookingId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'bookingId' is not null or undefined
+            if (bookingId === null || bookingId === undefined) {
+                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdDelete.');
+            }
+            const localVarPath = `/api/v1/bookings/{bookingId}`
+                .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -13455,6 +13656,49 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
             }
             const localVarPath = `/api/v1/bookings/{bookingId}/reject`
                 .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Create a consult booking.
+         * @param {CreateBookingConsultCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsConsultPost(body?: CreateBookingConsultCommand, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/bookings/consult`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
@@ -13658,13 +13902,14 @@ export const BookingsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Delete deal booking.
+         * @summary Update consult booking.
          * @param {string} bookingId 
+         * @param {UpdateBookingConsultCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
-            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdDealDelete(bookingId, options);
+        apiV1BookingsBookingIdConsultPut(bookingId: string, body?: UpdateBookingConsultCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdConsultPut(bookingId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -13680,6 +13925,20 @@ export const BookingsApiFp = function(configuration?: Configuration) {
          */
         apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
             const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdDealPut(bookingId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Delete booking.
+         * @param {string} bookingId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdDelete(bookingId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdDelete(bookingId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -13709,6 +13968,20 @@ export const BookingsApiFp = function(configuration?: Configuration) {
          */
         apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
             const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdRejectPost(bookingId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Create a consult booking.
+         * @param {CreateBookingConsultCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsConsultPost(body?: CreateBookingConsultCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsConsultPost(body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -13783,13 +14056,14 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
         },
         /**
          * 
-         * @summary Delete deal booking.
+         * @summary Update consult booking.
          * @param {string} bookingId 
+         * @param {UpdateBookingConsultCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any): AxiosPromise<boolean> {
-            return BookingsApiFp(configuration).apiV1BookingsBookingIdDealDelete(bookingId, options)(axios, basePath);
+        apiV1BookingsBookingIdConsultPut(bookingId: string, body?: UpdateBookingConsultCommand, options?: any): AxiosPromise<boolean> {
+            return BookingsApiFp(configuration).apiV1BookingsBookingIdConsultPut(bookingId, body, options)(axios, basePath);
         },
         /**
          * 
@@ -13801,6 +14075,16 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
          */
         apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand, options?: any): AxiosPromise<boolean> {
             return BookingsApiFp(configuration).apiV1BookingsBookingIdDealPut(bookingId, body, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Delete booking.
+         * @param {string} bookingId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdDelete(bookingId: string, options?: any): AxiosPromise<boolean> {
+            return BookingsApiFp(configuration).apiV1BookingsBookingIdDelete(bookingId, options)(axios, basePath);
         },
         /**
          * 
@@ -13822,6 +14106,16 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
          */
         apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand, options?: any): AxiosPromise<boolean> {
             return BookingsApiFp(configuration).apiV1BookingsBookingIdRejectPost(bookingId, body, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Create a consult booking.
+         * @param {CreateBookingConsultCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsConsultPost(body?: CreateBookingConsultCommand, options?: any): AxiosPromise<string> {
+            return BookingsApiFp(configuration).apiV1BookingsConsultPost(body, options)(axios, basePath);
         },
         /**
          * 
@@ -13889,14 +14183,15 @@ export class BookingsApi extends BaseAPI {
 
     /**
      * 
-     * @summary Delete deal booking.
+     * @summary Update consult booking.
      * @param {string} bookingId 
+     * @param {UpdateBookingConsultCommand} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    public apiV1BookingsBookingIdDealDelete(bookingId: string, options?: any) {
-        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdDealDelete(bookingId, options)(this.axios, this.basePath);
+    public apiV1BookingsBookingIdConsultPut(bookingId: string, body?: UpdateBookingConsultCommand, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdConsultPut(bookingId, body, options)(this.axios, this.basePath);
     }
 
     /**
@@ -13910,6 +14205,18 @@ export class BookingsApi extends BaseAPI {
      */
     public apiV1BookingsBookingIdDealPut(bookingId: string, body?: UpdateBookingDealCommand, options?: any) {
         return BookingsApiFp(this.configuration).apiV1BookingsBookingIdDealPut(bookingId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Delete booking.
+     * @param {string} bookingId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    public apiV1BookingsBookingIdDelete(bookingId: string, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdDelete(bookingId, options)(this.axios, this.basePath);
     }
 
     /**
@@ -13935,6 +14242,18 @@ export class BookingsApi extends BaseAPI {
      */
     public apiV1BookingsBookingIdRejectPost(bookingId: string, body?: RejectBookingCommand, options?: any) {
         return BookingsApiFp(this.configuration).apiV1BookingsBookingIdRejectPost(bookingId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Create a consult booking.
+     * @param {CreateBookingConsultCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    public apiV1BookingsConsultPost(body?: CreateBookingConsultCommand, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsConsultPost(body, options)(this.axios, this.basePath);
     }
 
     /**
