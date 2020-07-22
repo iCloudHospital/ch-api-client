@@ -105,6 +105,12 @@ export interface ApproveBookingCommand {
      * @memberof ApproveBookingCommand
      */
     confirmedDateEnd?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ApproveBookingCommand
+     */
+    doctorId?: string;
 }
 /**
  * 
@@ -756,6 +762,18 @@ export interface Booking {
      * @type {string}
      * @memberof Booking
      */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {Hospital}
+     * @memberof Booking
+     */
+    hospital?: Hospital;
+    /**
+     * 
+     * @type {string}
+     * @memberof Booking
+     */
     dealPackageId?: string;
     /**
      * 
@@ -768,13 +786,19 @@ export interface Booking {
      * @type {string}
      * @memberof Booking
      */
-    hospitalId?: string;
+    specialtyId?: string;
     /**
      * 
-     * @type {Hospital}
+     * @type {Specialty}
      * @memberof Booking
      */
-    hospital?: Hospital;
+    specialty?: Specialty;
+    /**
+     * 
+     * @type {string}
+     * @memberof Booking
+     */
+    specialtyComment?: string;
     /**
      * 
      * @type {string}
@@ -813,6 +837,12 @@ export interface Booking {
     quantity?: number;
     /**
      * 
+     * @type {boolean}
+     * @memberof Booking
+     */
+    isAccountHolder?: boolean;
+    /**
+     * 
      * @type {string}
      * @memberof Booking
      */
@@ -835,6 +865,12 @@ export interface Booking {
      * @memberof Booking
      */
     gender?: Gender;
+    /**
+     * 
+     * @type {ChannelType}
+     * @memberof Booking
+     */
+    channelType?: ChannelType;
     /**
      * 
      * @type {Date}
@@ -986,36 +1022,6 @@ export interface BookingConsultViewModel {
      * @type {string}
      * @memberof BookingConsultViewModel
      */
-    doctorId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingConsultViewModel
-     */
-    doctorName?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingConsultViewModel
-     */
-    language?: string;
-    /**
-     * 
-     * @type {Gender}
-     * @memberof BookingConsultViewModel
-     */
-    gender?: Gender;
-    /**
-     * 
-     * @type {Date}
-     * @memberof BookingConsultViewModel
-     */
-    dateOfBirth?: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingConsultViewModel
-     */
     id?: string;
     /**
      * 
@@ -1046,31 +1052,37 @@ export interface BookingConsultViewModel {
      * @type {string}
      * @memberof BookingConsultViewModel
      */
-    productName?: string;
+    doctorId?: string;
     /**
      * 
-     * @type {RefundPolicy}
+     * @type {string}
      * @memberof BookingConsultViewModel
      */
-    refundPolicy?: RefundPolicy;
+    doctorName?: string;
     /**
      * 
-     * @type {number}
+     * @type {string}
      * @memberof BookingConsultViewModel
      */
-    fee?: number;
+    specialtyId?: string;
     /**
      * 
-     * @type {number}
+     * @type {string}
      * @memberof BookingConsultViewModel
      */
-    applicationFee?: number;
+    specialtyName?: string;
     /**
      * 
-     * @type {number}
+     * @type {string}
      * @memberof BookingConsultViewModel
      */
-    quantity?: number;
+    specialtyComment?: string;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof BookingConsultViewModel
+     */
+    isAccountHolder?: boolean;
     /**
      * 
      * @type {string}
@@ -1085,10 +1097,28 @@ export interface BookingConsultViewModel {
     email?: string;
     /**
      * 
+     * @type {Gender}
+     * @memberof BookingConsultViewModel
+     */
+    gender?: Gender;
+    /**
+     * 
+     * @type {ChannelType}
+     * @memberof BookingConsultViewModel
+     */
+    channelType?: ChannelType;
+    /**
+     * 
+     * @type {Date}
+     * @memberof BookingConsultViewModel
+     */
+    dateOfBirth?: Date;
+    /**
+     * 
      * @type {string}
      * @memberof BookingConsultViewModel
      */
-    phone?: string;
+    language?: string;
     /**
      * 
      * @type {string}
@@ -1121,10 +1151,16 @@ export interface BookingConsultViewModel {
     confirmedDateEnd?: Date;
     /**
      * 
-     * @type {BookingType}
+     * @type {number}
      * @memberof BookingConsultViewModel
      */
-    bookingType?: BookingType;
+    fee?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof BookingConsultViewModel
+     */
+    applicationFee?: number;
     /**
      * 
      * @type {BookingStatus}
@@ -1173,24 +1209,6 @@ export interface BookingDealViewModel {
      * @type {string}
      * @memberof BookingDealViewModel
      */
-    dealId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingDealViewModel
-     */
-    dealName?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingDealViewModel
-     */
-    dealPackageId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingDealViewModel
-     */
     id?: string;
     /**
      * 
@@ -1221,25 +1239,25 @@ export interface BookingDealViewModel {
      * @type {string}
      * @memberof BookingDealViewModel
      */
-    productName?: string;
+    dealId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingDealViewModel
+     */
+    dealName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingDealViewModel
+     */
+    dealPackageId?: string;
     /**
      * 
      * @type {RefundPolicy}
      * @memberof BookingDealViewModel
      */
     refundPolicy?: RefundPolicy;
-    /**
-     * 
-     * @type {number}
-     * @memberof BookingDealViewModel
-     */
-    fee?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof BookingDealViewModel
-     */
-    applicationFee?: number;
     /**
      * 
      * @type {number}
@@ -1296,16 +1314,22 @@ export interface BookingDealViewModel {
     confirmedDateEnd?: Date;
     /**
      * 
-     * @type {BookingType}
-     * @memberof BookingDealViewModel
-     */
-    bookingType?: BookingType;
-    /**
-     * 
      * @type {BookingStatus}
      * @memberof BookingDealViewModel
      */
     bookingStatus?: BookingStatus;
+    /**
+     * 
+     * @type {number}
+     * @memberof BookingDealViewModel
+     */
+    fee?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof BookingDealViewModel
+     */
+    applicationFee?: number;
     /**
      * 
      * @type {boolean}
@@ -1381,52 +1405,16 @@ export interface BookingItemViewModel {
     productName?: string;
     /**
      * 
-     * @type {RefundPolicy}
+     * @type {BookingType}
      * @memberof BookingItemViewModel
      */
-    refundPolicy?: RefundPolicy;
+    bookingType?: BookingType;
     /**
      * 
-     * @type {number}
+     * @type {BookingStatus}
      * @memberof BookingItemViewModel
      */
-    fee?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof BookingItemViewModel
-     */
-    applicationFee?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof BookingItemViewModel
-     */
-    quantity?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingItemViewModel
-     */
-    name?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingItemViewModel
-     */
-    email?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingItemViewModel
-     */
-    phone?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof BookingItemViewModel
-     */
-    comment?: string;
+    bookingStatus?: BookingStatus;
     /**
      * 
      * @type {Date}
@@ -1453,16 +1441,28 @@ export interface BookingItemViewModel {
     confirmedDateEnd?: Date;
     /**
      * 
-     * @type {BookingType}
+     * @type {RefundPolicy}
      * @memberof BookingItemViewModel
      */
-    bookingType?: BookingType;
+    refundPolicy?: RefundPolicy;
     /**
      * 
-     * @type {BookingStatus}
+     * @type {number}
      * @memberof BookingItemViewModel
      */
-    bookingStatus?: BookingStatus;
+    fee?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof BookingItemViewModel
+     */
+    applicationFee?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    comment?: string;
     /**
      * 
      * @type {boolean}
@@ -1514,7 +1514,7 @@ export enum BookingStatus {
  */
 export enum BookingType {
     Deal = 'Deal',
-    Consult = 'Consult'
+    Consultation = 'Consultation'
 }
 
 /**
@@ -1975,6 +1975,16 @@ export interface ChangeLog {
  * @export
  * @enum {string}
  */
+export enum ChannelType {
+    Online = 'Online',
+    Offline = 'Offline'
+}
+
+/**
+ * 
+ * @export
+ * @enum {string}
+ */
 export enum ChargeStatus {
     Pending = 'Pending',
     Succeeded = 'Succeeded',
@@ -2061,44 +2071,6 @@ export interface Country {
      * @memberof Country
      */
     auditableEntity?: AuditableEntity;
-}
-/**
- * 
- * @export
- * @interface CountryCodeItemViewModel
- */
-export interface CountryCodeItemViewModel {
-    /**
-     * 
-     * @type {string}
-     * @memberof CountryCodeItemViewModel
-     */
-    name?: string;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof CountryCodeItemViewModel
-     */
-    dialCodes?: Array<string>;
-}
-/**
- * 
- * @export
- * @interface CountryCodesViewModel
- */
-export interface CountryCodesViewModel {
-    /**
-     * 
-     * @type {Array<CountryCodeItemViewModel>}
-     * @memberof CountryCodesViewModel
-     */
-    items?: Array<CountryCodeItemViewModel>;
-    /**
-     * 
-     * @type {PagedListMetaData}
-     * @memberof CountryCodesViewModel
-     */
-    metaData?: PagedListMetaData;
 }
 /**
  * 
@@ -2300,6 +2272,18 @@ export interface CreateBookingConsultCommand {
      * @type {string}
      * @memberof CreateBookingConsultCommand
      */
+    specialtyId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    specialtyComment?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
     doctorId?: string;
     /**
      * 
@@ -2307,6 +2291,18 @@ export interface CreateBookingConsultCommand {
      * @memberof CreateBookingConsultCommand
      */
     language?: string;
+    /**
+     * 
+     * @type {ChannelType}
+     * @memberof CreateBookingConsultCommand
+     */
+    channelType?: ChannelType;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CreateBookingConsultCommand
+     */
+    isAccountHolder?: boolean;
     /**
      * 
      * @type {string}
@@ -2321,16 +2317,16 @@ export interface CreateBookingConsultCommand {
     email?: string;
     /**
      * 
-     * @type {Gender}
-     * @memberof CreateBookingConsultCommand
-     */
-    gender?: Gender;
-    /**
-     * 
      * @type {Date}
      * @memberof CreateBookingConsultCommand
      */
     dateOfBirth?: Date;
+    /**
+     * 
+     * @type {Gender}
+     * @memberof CreateBookingConsultCommand
+     */
+    gender?: Gender;
     /**
      * 
      * @type {Date}
@@ -2762,6 +2758,18 @@ export interface CreateDoctorCommand {
     hospitalId?: string;
     /**
      * 
+     * @type {boolean}
+     * @memberof CreateDoctorCommand
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof CreateDoctorCommand
+     */
+    consultationFee?: number;
+    /**
+     * 
      * @type {Array<DoctorEducationViewModel>}
      * @memberof CreateDoctorCommand
      */
@@ -2985,6 +2993,18 @@ export interface CreateHospitalCommand {
      * @memberof CreateHospitalCommand
      */
     marketingType?: MarketingType;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CreateHospitalCommand
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof CreateHospitalCommand
+     */
+    consultationFee?: number;
     /**
      * 
      * @type {Array<AwardViewModel>}
@@ -4537,6 +4557,18 @@ export interface Doctor {
     overview?: string;
     /**
      * 
+     * @type {boolean}
+     * @memberof Doctor
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof Doctor
+     */
+    consultationFee?: number;
+    /**
+     * 
      * @type {Array<DoctorReview>}
      * @memberof Doctor
      */
@@ -4655,6 +4687,12 @@ export interface Doctor {
      * @memberof Doctor
      */
     dateOfBirth?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof Doctor
+     */
+    timeZone?: string;
     /**
      * 
      * @type {Array<Device>}
@@ -5115,6 +5153,18 @@ export interface DoctorEducationViewModel {
  * @interface DoctorItemViewModel
  */
 export interface DoctorItemViewModel {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DoctorItemViewModel
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof DoctorItemViewModel
+     */
+    consultationFee?: number;
     /**
      * 
      * @type {number}
@@ -5759,6 +5809,18 @@ export interface DoctorViewModel {
     overview?: string;
     /**
      * 
+     * @type {boolean}
+     * @memberof DoctorViewModel
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof DoctorViewModel
+     */
+    consultationFee?: number;
+    /**
+     * 
      * @type {Array<DoctorReviewItemViewModel>}
      * @memberof DoctorViewModel
      */
@@ -6260,6 +6322,18 @@ export interface Hospital {
     marketingType?: MarketingType;
     /**
      * 
+     * @type {boolean}
+     * @memberof Hospital
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof Hospital
+     */
+    consultationFee?: number;
+    /**
+     * 
      * @type {Array<Article>}
      * @memberof Hospital
      */
@@ -6501,6 +6575,18 @@ export interface HospitalItemViewModel {
      * @memberof HospitalItemViewModel
      */
     marketingType?: MarketingType;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof HospitalItemViewModel
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    consultationFee?: number;
     /**
      * 
      * @type {number}
@@ -7186,6 +7272,18 @@ export interface HospitalViewModel {
     marketingType?: MarketingType;
     /**
      * 
+     * @type {boolean}
+     * @memberof HospitalViewModel
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    consultationFee?: number;
+    /**
+     * 
      * @type {number}
      * @memberof HospitalViewModel
      */
@@ -7464,6 +7562,12 @@ export interface Manager {
      * @memberof Manager
      */
     dateOfBirth?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof Manager
+     */
+    timeZone?: string;
     /**
      * 
      * @type {Array<Device>}
@@ -8285,6 +8389,12 @@ export interface Patient {
      * @memberof Patient
      */
     dateOfBirth?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof Patient
+     */
+    timeZone?: string;
     /**
      * 
      * @type {Array<Device>}
@@ -10496,7 +10606,13 @@ export interface UpdateBookingConsultCommand {
      * @type {string}
      * @memberof UpdateBookingConsultCommand
      */
-    hospitalId?: string;
+    specialtyId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    specialtyComment?: string;
     /**
      * 
      * @type {string}
@@ -10511,6 +10627,18 @@ export interface UpdateBookingConsultCommand {
     language?: string;
     /**
      * 
+     * @type {ChannelType}
+     * @memberof UpdateBookingConsultCommand
+     */
+    channelType?: ChannelType;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UpdateBookingConsultCommand
+     */
+    isAccountHolder?: boolean;
+    /**
+     * 
      * @type {string}
      * @memberof UpdateBookingConsultCommand
      */
@@ -10523,16 +10651,16 @@ export interface UpdateBookingConsultCommand {
     email?: string;
     /**
      * 
-     * @type {Gender}
-     * @memberof UpdateBookingConsultCommand
-     */
-    gender?: Gender;
-    /**
-     * 
      * @type {Date}
      * @memberof UpdateBookingConsultCommand
      */
     dateOfBirth?: Date;
+    /**
+     * 
+     * @type {Gender}
+     * @memberof UpdateBookingConsultCommand
+     */
+    gender?: Gender;
     /**
      * 
      * @type {Date}
@@ -10952,6 +11080,18 @@ export interface UpdateDoctorCommand {
     overview?: string;
     /**
      * 
+     * @type {boolean}
+     * @memberof UpdateDoctorCommand
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateDoctorCommand
+     */
+    consultationFee?: number;
+    /**
+     * 
      * @type {Array<DoctorEducationItemViewModel>}
      * @memberof UpdateDoctorCommand
      */
@@ -11169,6 +11309,18 @@ export interface UpdateHospitalCommand {
      * @memberof UpdateHospitalCommand
      */
     marketingType?: MarketingType;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UpdateHospitalCommand
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    consultationFee?: number;
     /**
      * 
      * @type {number}
@@ -11910,6 +12062,12 @@ export interface User {
      * @memberof User
      */
     dateOfBirth?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof User
+     */
+    timeZone?: string;
     /**
      * 
      * @type {Array<Device>}
@@ -17485,147 +17643,6 @@ export class DepartmentApi extends BaseAPI {
 
 
 /**
- * DirectoriesApi - axios parameter creator
- * @export
- */
-export const DirectoriesApiAxiosParamCreator = function (configuration?: Configuration) {
-    return {
-        /**
-         * 
-         * @summary Get all CountryCode.
-         * @param {string} [name] 
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1DirectoriesCountriesGet(name?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
-            const localVarPath = `/api/v1/directories/countries`;
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            if (name !== undefined) {
-                localVarQueryParameter['Name'] = name;
-            }
-
-            if (page !== undefined) {
-                localVarQueryParameter['page'] = page;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (lastRetrieved !== undefined) {
-                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
-                    (lastRetrieved as any).toISOString() :
-                    lastRetrieved;
-            }
-
-            if (current !== undefined) {
-                localVarQueryParameter['Current'] = current;
-            }
-
-
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-    }
-};
-
-/**
- * DirectoriesApi - functional programming interface
- * @export
- */
-export const DirectoriesApiFp = function(configuration?: Configuration) {
-    return {
-        /**
-         * 
-         * @summary Get all CountryCode.
-         * @param {string} [name] 
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1DirectoriesCountriesGet(name?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CountryCodesViewModel> {
-            const localVarAxiosArgs = DirectoriesApiAxiosParamCreator(configuration).apiV1DirectoriesCountriesGet(name, page, limit, lastRetrieved, current, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-    }
-};
-
-/**
- * DirectoriesApi - factory interface
- * @export
- */
-export const DirectoriesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    return {
-        /**
-         * 
-         * @summary Get all CountryCode.
-         * @param {string} [name] 
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1DirectoriesCountriesGet(name?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CountryCodesViewModel> {
-            return DirectoriesApiFp(configuration).apiV1DirectoriesCountriesGet(name, page, limit, lastRetrieved, current, options)(axios, basePath);
-        },
-    };
-};
-
-/**
- * DirectoriesApi - object-oriented interface
- * @export
- * @class DirectoriesApi
- * @extends {BaseAPI}
- */
-export class DirectoriesApi extends BaseAPI {
-    /**
-     * 
-     * @summary Get all CountryCode.
-     * @param {string} [name] 
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
-     * @param {boolean} [current] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof DirectoriesApi
-     */
-    public apiV1DirectoriesCountriesGet(name?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return DirectoriesApiFp(this.configuration).apiV1DirectoriesCountriesGet(name, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
-    }
-
-}
-
-
-/**
  * DoctorCertificatesApi - axios parameter creator
  * @export
  */
@@ -19093,8 +19110,14 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Sample request:        GET /api/v1/doctors      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"doctor\"
+         * 
          * @summary Get all hospital doctors.
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
+         * @param {string} [specialtyId] 
+         * @param {string} [specialtyTypeId] 
+         * @param {boolean} [consultationEnabled] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
@@ -19105,14 +19128,10 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
-         * @param {string} [countryId] 
-         * @param {string} [hospitalId] 
-         * @param {object} [marketingType] 
-         * @param {string} [specialtyTypeId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, specialtyTypeId?: string, options: any = {}): RequestArgs {
+        apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/doctors`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -19122,6 +19141,30 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
+
+            if (countryId !== undefined) {
+                localVarQueryParameter['CountryId'] = countryId;
+            }
+
+            if (hospitalId !== undefined) {
+                localVarQueryParameter['HospitalId'] = hospitalId;
+            }
+
+            if (marketingType !== undefined) {
+                localVarQueryParameter['MarketingType'] = marketingType;
+            }
+
+            if (specialtyId !== undefined) {
+                localVarQueryParameter['SpecialtyId'] = specialtyId;
+            }
+
+            if (specialtyTypeId !== undefined) {
+                localVarQueryParameter['SpecialtyTypeId'] = specialtyTypeId;
+            }
+
+            if (consultationEnabled !== undefined) {
+                localVarQueryParameter['ConsultationEnabled'] = consultationEnabled;
+            }
 
             if (id !== undefined) {
                 localVarQueryParameter['Id'] = id;
@@ -19167,22 +19210,6 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
 
             if (current !== undefined) {
                 localVarQueryParameter['Current'] = current;
-            }
-
-            if (countryId !== undefined) {
-                localVarQueryParameter['countryId'] = countryId;
-            }
-
-            if (hospitalId !== undefined) {
-                localVarQueryParameter['hospitalId'] = hospitalId;
-            }
-
-            if (marketingType !== undefined) {
-                localVarQueryParameter['marketingType'] = marketingType;
-            }
-
-            if (specialtyTypeId !== undefined) {
-                localVarQueryParameter['specialtyTypeId'] = specialtyTypeId;
             }
 
 
@@ -19293,8 +19320,14 @@ export const DoctorsApiFp = function(configuration?: Configuration) {
             };
         },
         /**
-         * Sample request:        GET /api/v1/doctors      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"doctor\"
+         * 
          * @summary Get all hospital doctors.
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
+         * @param {string} [specialtyId] 
+         * @param {string} [specialtyTypeId] 
+         * @param {boolean} [consultationEnabled] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
@@ -19305,15 +19338,11 @@ export const DoctorsApiFp = function(configuration?: Configuration) {
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
-         * @param {string} [countryId] 
-         * @param {string} [hospitalId] 
-         * @param {object} [marketingType] 
-         * @param {string} [specialtyTypeId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, specialtyTypeId?: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorsViewModel> {
-            const localVarAxiosArgs = DoctorsApiAxiosParamCreator(configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, countryId, hospitalId, marketingType, specialtyTypeId, options);
+        apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorsViewModel> {
+            const localVarAxiosArgs = DoctorsApiAxiosParamCreator(configuration).apiV1DoctorsGet(countryId, hospitalId, marketingType, specialtyId, specialtyTypeId, consultationEnabled, id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -19374,8 +19403,14 @@ export const DoctorsApiFactory = function (configuration?: Configuration, basePa
             return DoctorsApiFp(configuration).apiV1DoctorsDoctorIdPut(doctorId, body, options)(axios, basePath);
         },
         /**
-         * Sample request:        GET /api/v1/doctors      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"doctor\"
+         * 
          * @summary Get all hospital doctors.
+         * @param {string} [countryId] 
+         * @param {string} [hospitalId] 
+         * @param {object} [marketingType] 
+         * @param {string} [specialtyId] 
+         * @param {string} [specialtyTypeId] 
+         * @param {boolean} [consultationEnabled] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
@@ -19386,15 +19421,11 @@ export const DoctorsApiFactory = function (configuration?: Configuration, basePa
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
          * @param {boolean} [current] 
-         * @param {string} [countryId] 
-         * @param {string} [hospitalId] 
-         * @param {object} [marketingType] 
-         * @param {string} [specialtyTypeId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, specialtyTypeId?: string, options?: any): AxiosPromise<DoctorsViewModel> {
-            return DoctorsApiFp(configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, countryId, hospitalId, marketingType, specialtyTypeId, options)(axios, basePath);
+        apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorsViewModel> {
+            return DoctorsApiFp(configuration).apiV1DoctorsGet(countryId, hospitalId, marketingType, specialtyId, specialtyTypeId, consultationEnabled, id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
@@ -19454,8 +19485,14 @@ export class DoctorsApi extends BaseAPI {
     }
 
     /**
-     * Sample request:        GET /api/v1/doctors      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"doctor\"
+     * 
      * @summary Get all hospital doctors.
+     * @param {string} [countryId] 
+     * @param {string} [hospitalId] 
+     * @param {object} [marketingType] 
+     * @param {string} [specialtyId] 
+     * @param {string} [specialtyTypeId] 
+     * @param {boolean} [consultationEnabled] 
      * @param {string} [id] 
      * @param {string} [fullname] 
      * @param {string} [email] 
@@ -19466,16 +19503,12 @@ export class DoctorsApi extends BaseAPI {
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
      * @param {boolean} [current] 
-     * @param {string} [countryId] 
-     * @param {string} [hospitalId] 
-     * @param {object} [marketingType] 
-     * @param {string} [specialtyTypeId] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    public apiV1DoctorsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, specialtyTypeId?: string, options?: any) {
-        return DoctorsApiFp(this.configuration).apiV1DoctorsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, countryId, hospitalId, marketingType, specialtyTypeId, options)(this.axios, this.basePath);
+    public apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return DoctorsApiFp(this.configuration).apiV1DoctorsGet(countryId, hospitalId, marketingType, specialtyId, specialtyTypeId, consultationEnabled, id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
