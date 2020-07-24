@@ -2710,6 +2710,62 @@ export interface CreateDepartmentCommand {
 /**
  * 
  * @export
+ * @interface CreateDeviceCommand
+ */
+export interface CreateDeviceCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateDeviceCommand
+     */
+    token?: string;
+    /**
+     * 
+     * @type {Platform}
+     * @memberof CreateDeviceCommand
+     */
+    platform?: Platform;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CreateDeviceCommand
+     */
+    appAlert?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CreateDeviceCommand
+     */
+    eventAlert?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof CreateDeviceCommand
+     */
+    noticeAlert?: boolean;
+}
+/**
+ * 
+ * @export
+ * @interface CreateDeviceLoginCommand
+ */
+export interface CreateDeviceLoginCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateDeviceLoginCommand
+     */
+    version?: string;
+    /**
+     * 
+     * @type {LocationViewModel}
+     * @memberof CreateDeviceLoginCommand
+     */
+    location?: LocationViewModel;
+}
+/**
+ * 
+ * @export
  * @interface CreateDoctorCertificateCommand
  */
 export interface CreateDoctorCertificateCommand {
@@ -4483,6 +4539,18 @@ export interface Device {
     noticeAlert?: boolean;
     /**
      * 
+     * @type {string}
+     * @memberof Device
+     */
+    userId?: string;
+    /**
+     * 
+     * @type {User}
+     * @memberof Device
+     */
+    user?: User;
+    /**
+     * 
      * @type {Array<DeviceLogin>}
      * @memberof Device
      */
@@ -4536,6 +4604,49 @@ export interface DeviceLogin {
      * @memberof DeviceLogin
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ * 
+ * @export
+ * @interface DeviceViewModel
+ */
+export interface DeviceViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof DeviceViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DeviceViewModel
+     */
+    token?: string;
+    /**
+     * 
+     * @type {Platform}
+     * @memberof DeviceViewModel
+     */
+    platform?: Platform;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeviceViewModel
+     */
+    appAlert?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeviceViewModel
+     */
+    eventAlert?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof DeviceViewModel
+     */
+    noticeAlert?: boolean;
 }
 /**
  * 
@@ -7697,6 +7808,12 @@ export interface ManagerAffiliationViewModel {
  * @interface ManagerViewModel
  */
 export interface ManagerViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagerViewModel
+     */
+    hospitalId?: string;
     /**
      * 
      * @type {Array<ManagerAffiliationViewModel>}
@@ -11038,6 +11155,31 @@ export interface UpdateDepartmentCommand {
 /**
  * 
  * @export
+ * @interface UpdateDeviceCommand
+ */
+export interface UpdateDeviceCommand {
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UpdateDeviceCommand
+     */
+    appAlert?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UpdateDeviceCommand
+     */
+    eventAlert?: boolean;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof UpdateDeviceCommand
+     */
+    noticeAlert?: boolean;
+}
+/**
+ * 
+ * @export
  * @interface UpdateDoctorCertificateCommand
  */
 export interface UpdateDoctorCertificateCommand {
@@ -11450,6 +11592,12 @@ export interface UpdateHospitalSpecialtySequenceCommand {
  * @interface UpdateManagerCommand
  */
 export interface UpdateManagerCommand {
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateManagerCommand
+     */
+    hospitalId?: string;
     /**
      * 
      * @type {string}
@@ -17637,6 +17785,458 @@ export class DepartmentApi extends BaseAPI {
      */
     public apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, body?: UpdateDepartmentCommand, options?: any) {
         return DepartmentApiFp(this.configuration).apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId, departmentId, body, options)(this.axios, this.basePath);
+    }
+
+}
+
+
+/**
+ * DevicesApi - axios parameter creator
+ * @export
+ */
+export const DevicesApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @summary Delete device.
+         * @param {string} deviceId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdDelete(deviceId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'deviceId' is not null or undefined
+            if (deviceId === null || deviceId === undefined) {
+                throw new RequiredError('deviceId','Required parameter deviceId was null or undefined when calling apiV1DevicesDeviceIdDelete.');
+            }
+            const localVarPath = `/api/v1/devices/{deviceId}`
+                .replace(`{${"deviceId"}}`, encodeURIComponent(String(deviceId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get device.
+         * @param {string} deviceId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdGet(deviceId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'deviceId' is not null or undefined
+            if (deviceId === null || deviceId === undefined) {
+                throw new RequiredError('deviceId','Required parameter deviceId was null or undefined when calling apiV1DevicesDeviceIdGet.');
+            }
+            const localVarPath = `/api/v1/devices/{deviceId}`
+                .replace(`{${"deviceId"}}`, encodeURIComponent(String(deviceId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Create device login.
+         * @param {string} deviceId 
+         * @param {CreateDeviceLoginCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdLoginsPost(deviceId: string, body?: CreateDeviceLoginCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'deviceId' is not null or undefined
+            if (deviceId === null || deviceId === undefined) {
+                throw new RequiredError('deviceId','Required parameter deviceId was null or undefined when calling apiV1DevicesDeviceIdLoginsPost.');
+            }
+            const localVarPath = `/api/v1/devices/{deviceId}/logins`
+                .replace(`{${"deviceId"}}`, encodeURIComponent(String(deviceId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Update device.
+         * @param {string} deviceId 
+         * @param {UpdateDeviceCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdPut(deviceId: string, body?: UpdateDeviceCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'deviceId' is not null or undefined
+            if (deviceId === null || deviceId === undefined) {
+                throw new RequiredError('deviceId','Required parameter deviceId was null or undefined when calling apiV1DevicesDeviceIdPut.');
+            }
+            const localVarPath = `/api/v1/devices/{deviceId}`
+                .replace(`{${"deviceId"}}`, encodeURIComponent(String(deviceId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Create device.
+         * @param {CreateDeviceCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesPost(body?: CreateDeviceCommand, options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/devices`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * DevicesApi - functional programming interface
+ * @export
+ */
+export const DevicesApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @summary Delete device.
+         * @param {string} deviceId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = DevicesApiAxiosParamCreator(configuration).apiV1DevicesDeviceIdDelete(deviceId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Get device.
+         * @param {string} deviceId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdGet(deviceId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeviceViewModel> {
+            const localVarAxiosArgs = DevicesApiAxiosParamCreator(configuration).apiV1DevicesDeviceIdGet(deviceId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Create device login.
+         * @param {string} deviceId 
+         * @param {CreateDeviceLoginCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdLoginsPost(deviceId: string, body?: CreateDeviceLoginCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = DevicesApiAxiosParamCreator(configuration).apiV1DevicesDeviceIdLoginsPost(deviceId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Update device.
+         * @param {string} deviceId 
+         * @param {UpdateDeviceCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdPut(deviceId: string, body?: UpdateDeviceCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<boolean> {
+            const localVarAxiosArgs = DevicesApiAxiosParamCreator(configuration).apiV1DevicesDeviceIdPut(deviceId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Create device.
+         * @param {CreateDeviceCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesPost(body?: CreateDeviceCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = DevicesApiAxiosParamCreator(configuration).apiV1DevicesPost(body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * DevicesApi - factory interface
+ * @export
+ */
+export const DevicesApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * 
+         * @summary Delete device.
+         * @param {string} deviceId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): AxiosPromise<boolean> {
+            return DevicesApiFp(configuration).apiV1DevicesDeviceIdDelete(deviceId, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Get device.
+         * @param {string} deviceId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdGet(deviceId: string, options?: any): AxiosPromise<DeviceViewModel> {
+            return DevicesApiFp(configuration).apiV1DevicesDeviceIdGet(deviceId, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Create device login.
+         * @param {string} deviceId 
+         * @param {CreateDeviceLoginCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdLoginsPost(deviceId: string, body?: CreateDeviceLoginCommand, options?: any): AxiosPromise<string> {
+            return DevicesApiFp(configuration).apiV1DevicesDeviceIdLoginsPost(deviceId, body, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Update device.
+         * @param {string} deviceId 
+         * @param {UpdateDeviceCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesDeviceIdPut(deviceId: string, body?: UpdateDeviceCommand, options?: any): AxiosPromise<boolean> {
+            return DevicesApiFp(configuration).apiV1DevicesDeviceIdPut(deviceId, body, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Create device.
+         * @param {CreateDeviceCommand} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1DevicesPost(body?: CreateDeviceCommand, options?: any): AxiosPromise<string> {
+            return DevicesApiFp(configuration).apiV1DevicesPost(body, options)(axios, basePath);
+        },
+    };
+};
+
+/**
+ * DevicesApi - object-oriented interface
+ * @export
+ * @class DevicesApi
+ * @extends {BaseAPI}
+ */
+export class DevicesApi extends BaseAPI {
+    /**
+     * 
+     * @summary Delete device.
+     * @param {string} deviceId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DevicesApi
+     */
+    public apiV1DevicesDeviceIdDelete(deviceId: string, options?: any) {
+        return DevicesApiFp(this.configuration).apiV1DevicesDeviceIdDelete(deviceId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Get device.
+     * @param {string} deviceId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DevicesApi
+     */
+    public apiV1DevicesDeviceIdGet(deviceId: string, options?: any) {
+        return DevicesApiFp(this.configuration).apiV1DevicesDeviceIdGet(deviceId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Create device login.
+     * @param {string} deviceId 
+     * @param {CreateDeviceLoginCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DevicesApi
+     */
+    public apiV1DevicesDeviceIdLoginsPost(deviceId: string, body?: CreateDeviceLoginCommand, options?: any) {
+        return DevicesApiFp(this.configuration).apiV1DevicesDeviceIdLoginsPost(deviceId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Update device.
+     * @param {string} deviceId 
+     * @param {UpdateDeviceCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DevicesApi
+     */
+    public apiV1DevicesDeviceIdPut(deviceId: string, body?: UpdateDeviceCommand, options?: any) {
+        return DevicesApiFp(this.configuration).apiV1DevicesDeviceIdPut(deviceId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Create device.
+     * @param {CreateDeviceCommand} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DevicesApi
+     */
+    public apiV1DevicesPost(body?: CreateDeviceCommand, options?: any) {
+        return DevicesApiFp(this.configuration).apiV1DevicesPost(body, options)(this.axios, this.basePath);
     }
 
 }

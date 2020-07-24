@@ -2697,6 +2697,62 @@ export interface CreateDepartmentCommand {
 /**
  *
  * @export
+ * @interface CreateDeviceCommand
+ */
+export interface CreateDeviceCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDeviceCommand
+     */
+    token?: string;
+    /**
+     *
+     * @type {Platform}
+     * @memberof CreateDeviceCommand
+     */
+    platform?: Platform;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateDeviceCommand
+     */
+    appAlert?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateDeviceCommand
+     */
+    eventAlert?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof CreateDeviceCommand
+     */
+    noticeAlert?: boolean;
+}
+/**
+ *
+ * @export
+ * @interface CreateDeviceLoginCommand
+ */
+export interface CreateDeviceLoginCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateDeviceLoginCommand
+     */
+    version?: string;
+    /**
+     *
+     * @type {LocationViewModel}
+     * @memberof CreateDeviceLoginCommand
+     */
+    location?: LocationViewModel;
+}
+/**
+ *
+ * @export
  * @interface CreateDoctorCertificateCommand
  */
 export interface CreateDoctorCertificateCommand {
@@ -4470,6 +4526,18 @@ export interface Device {
     noticeAlert?: boolean;
     /**
      *
+     * @type {string}
+     * @memberof Device
+     */
+    userId?: string;
+    /**
+     *
+     * @type {User}
+     * @memberof Device
+     */
+    user?: User;
+    /**
+     *
      * @type {Array<DeviceLogin>}
      * @memberof Device
      */
@@ -4523,6 +4591,49 @@ export interface DeviceLogin {
      * @memberof DeviceLogin
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+ *
+ * @export
+ * @interface DeviceViewModel
+ */
+export interface DeviceViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DeviceViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DeviceViewModel
+     */
+    token?: string;
+    /**
+     *
+     * @type {Platform}
+     * @memberof DeviceViewModel
+     */
+    platform?: Platform;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DeviceViewModel
+     */
+    appAlert?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DeviceViewModel
+     */
+    eventAlert?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DeviceViewModel
+     */
+    noticeAlert?: boolean;
 }
 /**
  *
@@ -7683,6 +7794,12 @@ export interface ManagerAffiliationViewModel {
  * @interface ManagerViewModel
  */
 export interface ManagerViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof ManagerViewModel
+     */
+    hospitalId?: string;
     /**
      *
      * @type {Array<ManagerAffiliationViewModel>}
@@ -11013,6 +11130,31 @@ export interface UpdateDepartmentCommand {
 /**
  *
  * @export
+ * @interface UpdateDeviceCommand
+ */
+export interface UpdateDeviceCommand {
+    /**
+     *
+     * @type {boolean}
+     * @memberof UpdateDeviceCommand
+     */
+    appAlert?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof UpdateDeviceCommand
+     */
+    eventAlert?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof UpdateDeviceCommand
+     */
+    noticeAlert?: boolean;
+}
+/**
+ *
+ * @export
  * @interface UpdateDoctorCertificateCommand
  */
 export interface UpdateDoctorCertificateCommand {
@@ -11425,6 +11567,12 @@ export interface UpdateHospitalSpecialtySequenceCommand {
  * @interface UpdateManagerCommand
  */
 export interface UpdateManagerCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateManagerCommand
+     */
+    hospitalId?: string;
     /**
      *
      * @type {string}
@@ -14886,6 +15034,205 @@ export declare class DepartmentApi extends BaseAPI {
      * @memberof DepartmentApi
      */
     apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, body?: UpdateDepartmentCommand, options?: any): AxiosPromise<boolean>;
+}
+/**
+ * DevicesApi - axios parameter creator
+ * @export
+ */
+export declare const DevicesApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     *
+     * @summary Delete device.
+     * @param {string} deviceId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get device.
+     * @param {string} deviceId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdGet(deviceId: string, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Create device login.
+     * @param {string} deviceId
+     * @param {CreateDeviceLoginCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdLoginsPost(deviceId: string, body?: CreateDeviceLoginCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Update device.
+     * @param {string} deviceId
+     * @param {UpdateDeviceCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdPut(deviceId: string, body?: UpdateDeviceCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Create device.
+     * @param {CreateDeviceCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesPost(body?: CreateDeviceCommand | undefined, options?: any): RequestArgs;
+};
+/**
+ * DevicesApi - functional programming interface
+ * @export
+ */
+export declare const DevicesApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     *
+     * @summary Delete device.
+     * @param {string} deviceId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get device.
+     * @param {string} deviceId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdGet(deviceId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DeviceViewModel>;
+    /**
+     *
+     * @summary Create device login.
+     * @param {string} deviceId
+     * @param {CreateDeviceLoginCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdLoginsPost(deviceId: string, body?: CreateDeviceLoginCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
+     * @summary Update device.
+     * @param {string} deviceId
+     * @param {UpdateDeviceCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdPut(deviceId: string, body?: UpdateDeviceCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Create device.
+     * @param {CreateDeviceCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesPost(body?: CreateDeviceCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+};
+/**
+ * DevicesApi - factory interface
+ * @export
+ */
+export declare const DevicesApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     *
+     * @summary Delete device.
+     * @param {string} deviceId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get device.
+     * @param {string} deviceId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdGet(deviceId: string, options?: any): AxiosPromise<DeviceViewModel>;
+    /**
+     *
+     * @summary Create device login.
+     * @param {string} deviceId
+     * @param {CreateDeviceLoginCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdLoginsPost(deviceId: string, body?: CreateDeviceLoginCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Update device.
+     * @param {string} deviceId
+     * @param {UpdateDeviceCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesDeviceIdPut(deviceId: string, body?: UpdateDeviceCommand | undefined, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Create device.
+     * @param {CreateDeviceCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DevicesPost(body?: CreateDeviceCommand | undefined, options?: any): AxiosPromise<string>;
+};
+/**
+ * DevicesApi - object-oriented interface
+ * @export
+ * @class DevicesApi
+ * @extends {BaseAPI}
+ */
+export declare class DevicesApi extends BaseAPI {
+    /**
+     *
+     * @summary Delete device.
+     * @param {string} deviceId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DevicesApi
+     */
+    apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Get device.
+     * @param {string} deviceId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DevicesApi
+     */
+    apiV1DevicesDeviceIdGet(deviceId: string, options?: any): AxiosPromise<DeviceViewModel>;
+    /**
+     *
+     * @summary Create device login.
+     * @param {string} deviceId
+     * @param {CreateDeviceLoginCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DevicesApi
+     */
+    apiV1DevicesDeviceIdLoginsPost(deviceId: string, body?: CreateDeviceLoginCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Update device.
+     * @param {string} deviceId
+     * @param {UpdateDeviceCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DevicesApi
+     */
+    apiV1DevicesDeviceIdPut(deviceId: string, body?: UpdateDeviceCommand, options?: any): AxiosPromise<boolean>;
+    /**
+     *
+     * @summary Create device.
+     * @param {CreateDeviceCommand} [body]
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DevicesApi
+     */
+    apiV1DevicesPost(body?: CreateDeviceCommand, options?: any): AxiosPromise<string>;
 }
 /**
  * DoctorCertificatesApi - axios parameter creator
