@@ -846,7 +846,13 @@ export interface Booking {
      * @type {string}
      * @memberof Booking
      */
-    name?: string;
+    firstName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Booking
+     */
+    lastName?: string;
     /**
      * 
      * @type {string}
@@ -1088,7 +1094,13 @@ export interface BookingConsultViewModel {
      * @type {string}
      * @memberof BookingConsultViewModel
      */
-    name?: string;
+    firstName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingConsultViewModel
+     */
+    lastName?: string;
     /**
      * 
      * @type {string}
@@ -1269,7 +1281,13 @@ export interface BookingDealViewModel {
      * @type {string}
      * @memberof BookingDealViewModel
      */
-    name?: string;
+    firstName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingDealViewModel
+     */
+    lastName?: string;
     /**
      * 
      * @type {string}
@@ -2308,7 +2326,13 @@ export interface CreateBookingConsultCommand {
      * @type {string}
      * @memberof CreateBookingConsultCommand
      */
-    name?: string;
+    firstName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingConsultCommand
+     */
+    lastName?: string;
     /**
      * 
      * @type {string}
@@ -2375,7 +2399,13 @@ export interface CreateBookingDealCommand {
      * @type {string}
      * @memberof CreateBookingDealCommand
      */
-    name?: string;
+    firstName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingDealCommand
+     */
+    lastName?: string;
     /**
      * 
      * @type {string}
@@ -10241,10 +10271,10 @@ export interface SpecialtySearchResultViewModel {
 export interface SpecialtySearchViewModel {
     /**
      * 
-     * @type {HospitalSearchItemViewModel}
+     * @type {Array<HospitalSearchItemViewModel>}
      * @memberof SpecialtySearchViewModel
      */
-    hospital?: HospitalSearchItemViewModel;
+    hospitals?: Array<HospitalSearchItemViewModel>;
     /**
      * 
      * @type {string}
@@ -10759,7 +10789,13 @@ export interface UpdateBookingConsultCommand {
      * @type {string}
      * @memberof UpdateBookingConsultCommand
      */
-    name?: string;
+    firstName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingConsultCommand
+     */
+    lastName?: string;
     /**
      * 
      * @type {string}
@@ -10814,7 +10850,13 @@ export interface UpdateBookingDealCommand {
      * @type {string}
      * @memberof UpdateBookingDealCommand
      */
-    name?: string;
+    firstName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingDealCommand
+     */
+    lastName?: string;
     /**
      * 
      * @type {string}
