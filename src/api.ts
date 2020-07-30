@@ -2762,6 +2762,12 @@ export interface CreateConsultationCommand {
      * @type {string}
      * @memberof CreateConsultationCommand
      */
+    dealId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateConsultationCommand
+     */
     language?: string;
     /**
      * 
