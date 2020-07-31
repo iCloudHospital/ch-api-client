@@ -710,6 +710,18 @@ export interface Booking {
     phone?: string;
     /**
      *
+     * @type {Date}
+     * @memberof Booking
+     */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {Gender}
+     * @memberof Booking
+     */
+    gender?: Gender;
+    /**
+     *
      * @type {string}
      * @memberof Booking
      */
@@ -897,6 +909,18 @@ export interface BookingItemViewModel {
     phone?: string;
     /**
      *
+     * @type {Date}
+     * @memberof BookingItemViewModel
+     */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {Gender}
+     * @memberof BookingItemViewModel
+     */
+    gender?: Gender;
+    /**
+     *
      * @type {string}
      * @memberof BookingItemViewModel
      */
@@ -1064,6 +1088,18 @@ export interface BookingViewModel {
      * @memberof BookingViewModel
      */
     phone?: string;
+    /**
+     *
+     * @type {Date}
+     * @memberof BookingViewModel
+     */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {Gender}
+     * @memberof BookingViewModel
+     */
+    gender?: Gender;
     /**
      *
      * @type {string}
@@ -1717,6 +1753,12 @@ export interface Consultation {
     email?: string;
     /**
      *
+     * @type {string}
+     * @memberof Consultation
+     */
+    phone?: string;
+    /**
+     *
      * @type {Date}
      * @memberof Consultation
      */
@@ -1946,6 +1988,12 @@ export interface ConsultationItemViewModel {
     email?: string;
     /**
      *
+     * @type {string}
+     * @memberof ConsultationItemViewModel
+     */
+    phone?: string;
+    /**
+     *
      * @type {Date}
      * @memberof ConsultationItemViewModel
      */
@@ -2165,6 +2213,12 @@ export interface ConsultationViewModel {
      * @memberof ConsultationViewModel
      */
     email?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ConsultationViewModel
+     */
+    phone?: string;
     /**
      *
      * @type {Date}
@@ -2579,6 +2633,18 @@ export interface CreateBookingCommand {
      * @type {Date}
      * @memberof CreateBookingCommand
      */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {Gender}
+     * @memberof CreateBookingCommand
+     */
+    gender?: Gender;
+    /**
+     *
+     * @type {Date}
+     * @memberof CreateBookingCommand
+     */
     approximateDateStart?: Date;
     /**
      *
@@ -2805,6 +2871,12 @@ export interface CreateConsultationCommand {
      * @memberof CreateConsultationCommand
      */
     email?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConsultationCommand
+     */
+    phone?: string;
     /**
      *
      * @type {Date}
@@ -11047,6 +11119,18 @@ export interface UpdateBookingCommand {
      * @type {Date}
      * @memberof UpdateBookingCommand
      */
+    dateOfBirth?: Date;
+    /**
+     *
+     * @type {Gender}
+     * @memberof UpdateBookingCommand
+     */
+    gender?: Gender;
+    /**
+     *
+     * @type {Date}
+     * @memberof UpdateBookingCommand
+     */
     approximateDateStart?: Date;
     /**
      *
@@ -11231,6 +11315,12 @@ export interface UpdateConsultationCommand {
      * @memberof UpdateConsultationCommand
      */
     email?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateConsultationCommand
+     */
+    phone?: string;
     /**
      *
      * @type {Date}
