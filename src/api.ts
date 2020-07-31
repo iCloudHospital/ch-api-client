@@ -854,7 +854,7 @@ export interface BookingItemViewModel {
      * @type {string}
      * @memberof BookingItemViewModel
      */
-    deallId?: string;
+    dealId?: string;
     /**
      * 
      * @type {string}
@@ -1024,7 +1024,7 @@ export interface BookingViewModel {
      * @type {string}
      * @memberof BookingViewModel
      */
-    deallId?: string;
+    dealId?: string;
     /**
      * 
      * @type {string}
@@ -11109,6 +11109,12 @@ export interface UpdateCHAdminCommand {
      * @type {string}
      * @memberof UpdateCHAdminCommand
      */
+    phone?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateCHAdminCommand
+     */
     photo?: string;
     /**
      * 
@@ -11159,6 +11165,12 @@ export interface UpdateCHManagerCommand {
      * @memberof UpdateCHManagerCommand
      */
     lastName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateCHManagerCommand
+     */
+    phone?: string;
     /**
      * 
      * @type {string}
@@ -11598,6 +11610,12 @@ export interface UpdateDoctorCommand {
      * @type {string}
      * @memberof UpdateDoctorCommand
      */
+    phone?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateDoctorCommand
+     */
     photo?: string;
     /**
      * 
@@ -11934,6 +11952,12 @@ export interface UpdateManagerCommand {
      * @type {string}
      * @memberof UpdateManagerCommand
      */
+    phone?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateManagerCommand
+     */
     photo?: string;
     /**
      * 
@@ -11989,6 +12013,12 @@ export interface UpdatePartnerCommand {
      * @type {string}
      * @memberof UpdatePartnerCommand
      */
+    phone?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdatePartnerCommand
+     */
     photo?: string;
     /**
      * 
@@ -12039,6 +12069,12 @@ export interface UpdatePatientCommand {
      * @memberof UpdatePatientCommand
      */
     lastName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdatePatientCommand
+     */
+    phone?: string;
     /**
      * 
      * @type {string}
@@ -15038,20 +15074,20 @@ export const CHAdminsApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Sample request:        GET /api/v1/chadmin      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"admin\"      }
          * @summary Get cloud hospital admin users.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChadminsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options: any = {}): RequestArgs {
+        apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/chadmins`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -15069,24 +15105,6 @@ export const CHAdminsApiAxiosParamCreator = function (configuration?: Configurat
                     ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
                     : configuration.accessToken;
                 localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
-            }
-
-            if (page !== undefined) {
-                localVarQueryParameter['page'] = page;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (lastRetrieved !== undefined) {
-                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
-                    (lastRetrieved as any).toISOString() :
-                    lastRetrieved;
-            }
-
-            if (current !== undefined) {
-                localVarQueryParameter['Current'] = current;
             }
 
             if (id !== undefined) {
@@ -15115,6 +15133,24 @@ export const CHAdminsApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['Created'] = (created as any instanceof Date) ?
                     (created as any).toISOString() :
                     created;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
             }
 
 
@@ -15227,21 +15263,21 @@ export const CHAdminsApiFp = function(configuration?: Configuration) {
         /**
          * Sample request:        GET /api/v1/chadmin      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"admin\"      }
          * @summary Get cloud hospital admin users.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChadminsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CHAdminsViewModel> {
-            const localVarAxiosArgs = CHAdminsApiAxiosParamCreator(configuration).apiV1ChadminsGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options);
+        apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CHAdminsViewModel> {
+            const localVarAxiosArgs = CHAdminsApiAxiosParamCreator(configuration).apiV1ChadminsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -15304,21 +15340,21 @@ export const CHAdminsApiFactory = function (configuration?: Configuration, baseP
         /**
          * Sample request:        GET /api/v1/chadmin      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"admin\"      }
          * @summary Get cloud hospital admin users.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChadminsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any): AxiosPromise<CHAdminsViewModel> {
-            return CHAdminsApiFp(configuration).apiV1ChadminsGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options)(axios, basePath);
+        apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CHAdminsViewModel> {
+            return CHAdminsApiFp(configuration).apiV1ChadminsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        POST /api/v1/chadmins      {          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
@@ -15380,22 +15416,22 @@ export class CHAdminsApi extends BaseAPI {
     /**
      * Sample request:        GET /api/v1/chadmin      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"admin\"      }
      * @summary Get cloud hospital admin users.
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
-     * @param {boolean} [current] 
      * @param {string} [id] 
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
      * @param {Date} [dateOfBirth] 
      * @param {Date} [created] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CHAdminsApi
      */
-    public apiV1ChadminsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any) {
-        return CHAdminsApiFp(this.configuration).apiV1ChadminsGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options)(this.axios, this.basePath);
+    public apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return CHAdminsApiFp(this.configuration).apiV1ChadminsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
@@ -15565,20 +15601,20 @@ export const CHManagersApiAxiosParamCreator = function (configuration?: Configur
         /**
          * Sample request:        GET /api/v1/chmanagers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"chmanager\"      }
          * @summary Get cloud hospital managers.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChmanagersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options: any = {}): RequestArgs {
+        apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/chmanagers`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -15596,24 +15632,6 @@ export const CHManagersApiAxiosParamCreator = function (configuration?: Configur
                     ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
                     : configuration.accessToken;
                 localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
-            }
-
-            if (page !== undefined) {
-                localVarQueryParameter['page'] = page;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (lastRetrieved !== undefined) {
-                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
-                    (lastRetrieved as any).toISOString() :
-                    lastRetrieved;
-            }
-
-            if (current !== undefined) {
-                localVarQueryParameter['Current'] = current;
             }
 
             if (id !== undefined) {
@@ -15642,6 +15660,24 @@ export const CHManagersApiAxiosParamCreator = function (configuration?: Configur
                 localVarQueryParameter['Created'] = (created as any instanceof Date) ?
                     (created as any).toISOString() :
                     created;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
             }
 
 
@@ -15755,21 +15791,21 @@ export const CHManagersApiFp = function(configuration?: Configuration) {
         /**
          * Sample request:        GET /api/v1/chmanagers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"chmanager\"      }
          * @summary Get cloud hospital managers.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChmanagersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CHManagersViewModel> {
-            const localVarAxiosArgs = CHManagersApiAxiosParamCreator(configuration).apiV1ChmanagersGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options);
+        apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CHManagersViewModel> {
+            const localVarAxiosArgs = CHManagersApiAxiosParamCreator(configuration).apiV1ChmanagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -15833,21 +15869,21 @@ export const CHManagersApiFactory = function (configuration?: Configuration, bas
         /**
          * Sample request:        GET /api/v1/chmanagers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"chmanager\"      }
          * @summary Get cloud hospital managers.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ChmanagersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any): AxiosPromise<CHManagersViewModel> {
-            return CHManagersApiFp(configuration).apiV1ChmanagersGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options)(axios, basePath);
+        apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CHManagersViewModel> {
+            return CHManagersApiFp(configuration).apiV1ChmanagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        POST /api/v1/chmanagers      {          \"userName\": \"chmanager\",          \"email\": \"chmanger@icloudhospital.com\",          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [             {             \"locationType\": \"LivesIn\",             \"latitude\": 0,             \"longitude\": 0,             \"country\": \"string\",             \"state\": \"string\",             \"county\": \"string\",             \"city\": \"string\",             \"zipCode\": \"string\",             \"address\": \"string\"             }          ]       }
@@ -15910,22 +15946,22 @@ export class CHManagersApi extends BaseAPI {
     /**
      * Sample request:        GET /api/v1/chmanagers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"chmanager\"      }
      * @summary Get cloud hospital managers.
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
-     * @param {boolean} [current] 
      * @param {string} [id] 
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
      * @param {Date} [dateOfBirth] 
      * @param {Date} [created] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CHManagersApi
      */
-    public apiV1ChmanagersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any) {
-        return CHManagersApiFp(this.configuration).apiV1ChmanagersGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options)(this.axios, this.basePath);
+    public apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return CHManagersApiFp(this.configuration).apiV1ChmanagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
@@ -23457,21 +23493,21 @@ export const ManagersApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Sample request:        GET /api/v1/managers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"manager\"      }
          * @summary Get all hospital managers.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {string} [hospitalId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ManagersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, hospitalId?: string, options: any = {}): RequestArgs {
+        apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/managers`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -23481,24 +23517,6 @@ export const ManagersApiAxiosParamCreator = function (configuration?: Configurat
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
-
-            if (page !== undefined) {
-                localVarQueryParameter['page'] = page;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (lastRetrieved !== undefined) {
-                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
-                    (lastRetrieved as any).toISOString() :
-                    lastRetrieved;
-            }
-
-            if (current !== undefined) {
-                localVarQueryParameter['Current'] = current;
-            }
 
             if (id !== undefined) {
                 localVarQueryParameter['Id'] = id;
@@ -23526,6 +23544,24 @@ export const ManagersApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['Created'] = (created as any instanceof Date) ?
                     (created as any).toISOString() :
                     created;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
             }
 
             if (hospitalId !== undefined) {
@@ -23727,22 +23763,22 @@ export const ManagersApiFp = function(configuration?: Configuration) {
         /**
          * Sample request:        GET /api/v1/managers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"manager\"      }
          * @summary Get all hospital managers.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {string} [hospitalId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ManagersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, hospitalId?: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagersViewModel> {
-            const localVarAxiosArgs = ManagersApiAxiosParamCreator(configuration).apiV1ManagersGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, hospitalId, options);
+        apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ManagersViewModel> {
+            const localVarAxiosArgs = ManagersApiAxiosParamCreator(configuration).apiV1ManagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23817,22 +23853,22 @@ export const ManagersApiFactory = function (configuration?: Configuration, baseP
         /**
          * Sample request:        GET /api/v1/managers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"manager\"      }
          * @summary Get all hospital managers.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {string} [hospitalId] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ManagersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, hospitalId?: string, options?: any): AxiosPromise<ManagersViewModel> {
-            return ManagersApiFp(configuration).apiV1ManagersGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, hospitalId, options)(axios, basePath);
+        apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): AxiosPromise<ManagersViewModel> {
+            return ManagersApiFp(configuration).apiV1ManagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, options)(axios, basePath);
         },
         /**
          * Sample request:        DELETE /api/v1/managers/1
@@ -23888,23 +23924,23 @@ export class ManagersApi extends BaseAPI {
     /**
      * Sample request:        GET /api/v1/managers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"manager\"      }
      * @summary Get all hospital managers.
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
-     * @param {boolean} [current] 
      * @param {string} [id] 
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
      * @param {Date} [dateOfBirth] 
      * @param {Date} [created] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
      * @param {string} [hospitalId] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ManagersApi
      */
-    public apiV1ManagersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, hospitalId?: string, options?: any) {
-        return ManagersApiFp(this.configuration).apiV1ManagersGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, hospitalId, options)(this.axios, this.basePath);
+    public apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any) {
+        return ManagersApiFp(this.configuration).apiV1ManagersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, hospitalId, options)(this.axios, this.basePath);
     }
 
     /**
@@ -24072,20 +24108,20 @@ export const PartnersApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Sample request:        GET /api/v1/partners      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"patner\"      }
          * @summary Get all partners.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PartnersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options: any = {}): RequestArgs {
+        apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/partners`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -24095,24 +24131,6 @@ export const PartnersApiAxiosParamCreator = function (configuration?: Configurat
             const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
-
-            if (page !== undefined) {
-                localVarQueryParameter['page'] = page;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (lastRetrieved !== undefined) {
-                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
-                    (lastRetrieved as any).toISOString() :
-                    lastRetrieved;
-            }
-
-            if (current !== undefined) {
-                localVarQueryParameter['Current'] = current;
-            }
 
             if (id !== undefined) {
                 localVarQueryParameter['Id'] = id;
@@ -24140,6 +24158,24 @@ export const PartnersApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['Created'] = (created as any instanceof Date) ?
                     (created as any).toISOString() :
                     created;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
             }
 
 
@@ -24337,21 +24373,21 @@ export const PartnersApiFp = function(configuration?: Configuration) {
         /**
          * Sample request:        GET /api/v1/partners      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"patner\"      }
          * @summary Get all partners.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PartnersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnersViewModel> {
-            const localVarAxiosArgs = PartnersApiAxiosParamCreator(configuration).apiV1PartnersGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options);
+        apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnersViewModel> {
+            const localVarAxiosArgs = PartnersApiAxiosParamCreator(configuration).apiV1PartnersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -24426,21 +24462,21 @@ export const PartnersApiFactory = function (configuration?: Configuration, baseP
         /**
          * Sample request:        GET /api/v1/partners      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"patner\"      }
          * @summary Get all partners.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PartnersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any): AxiosPromise<PartnersViewModel> {
-            return PartnersApiFp(configuration).apiV1PartnersGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options)(axios, basePath);
+        apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<PartnersViewModel> {
+            return PartnersApiFp(configuration).apiV1PartnersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        DELETE /api/v1/partners/1
@@ -24496,22 +24532,22 @@ export class PartnersApi extends BaseAPI {
     /**
      * Sample request:        GET /api/v1/partners      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"patner\"      }
      * @summary Get all partners.
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
-     * @param {boolean} [current] 
      * @param {string} [id] 
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
      * @param {Date} [dateOfBirth] 
      * @param {Date} [created] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PartnersApi
      */
-    public apiV1PartnersGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any) {
-        return PartnersApiFp(this.configuration).apiV1PartnersGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options)(this.axios, this.basePath);
+    public apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return PartnersApiFp(this.configuration).apiV1PartnersGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
@@ -24575,20 +24611,20 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * Sample request:        GET /api/v1/patients      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"patient\"      }
          * @summary Get all patients.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PatientsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options: any = {}): RequestArgs {
+        apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/patients`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -24606,24 +24642,6 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
                     ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
                     : configuration.accessToken;
                 localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
-            }
-
-            if (page !== undefined) {
-                localVarQueryParameter['page'] = page;
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = limit;
-            }
-
-            if (lastRetrieved !== undefined) {
-                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
-                    (lastRetrieved as any).toISOString() :
-                    lastRetrieved;
-            }
-
-            if (current !== undefined) {
-                localVarQueryParameter['Current'] = current;
             }
 
             if (id !== undefined) {
@@ -24652,6 +24670,24 @@ export const PatientsApiAxiosParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['Created'] = (created as any instanceof Date) ?
                     (created as any).toISOString() :
                     created;
+            }
+
+            if (page !== undefined) {
+                localVarQueryParameter['page'] = page;
+            }
+
+            if (limit !== undefined) {
+                localVarQueryParameter['limit'] = limit;
+            }
+
+            if (lastRetrieved !== undefined) {
+                localVarQueryParameter['lastRetrieved'] = (lastRetrieved as any instanceof Date) ?
+                    (lastRetrieved as any).toISOString() :
+                    lastRetrieved;
+            }
+
+            if (current !== undefined) {
+                localVarQueryParameter['Current'] = current;
             }
 
 
@@ -24858,21 +24894,21 @@ export const PatientsApiFp = function(configuration?: Configuration) {
         /**
          * Sample request:        GET /api/v1/patients      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"patient\"      }
          * @summary Get all patients.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PatientsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PatientsViewModel> {
-            const localVarAxiosArgs = PatientsApiAxiosParamCreator(configuration).apiV1PatientsGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options);
+        apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PatientsViewModel> {
+            const localVarAxiosArgs = PatientsApiAxiosParamCreator(configuration).apiV1PatientsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -24947,21 +24983,21 @@ export const PatientsApiFactory = function (configuration?: Configuration, baseP
         /**
          * Sample request:        GET /api/v1/patients      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"patient\"      }
          * @summary Get all patients.
-         * @param {number} [page] 
-         * @param {number} [limit] 
-         * @param {Date} [lastRetrieved] 
-         * @param {boolean} [current] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
          * @param {object} [gender] 
          * @param {Date} [dateOfBirth] 
          * @param {Date} [created] 
+         * @param {number} [page] 
+         * @param {number} [limit] 
+         * @param {Date} [lastRetrieved] 
+         * @param {boolean} [current] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1PatientsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any): AxiosPromise<PatientsViewModel> {
-            return PatientsApiFp(configuration).apiV1PatientsGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options)(axios, basePath);
+        apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<PatientsViewModel> {
+            return PatientsApiFp(configuration).apiV1PatientsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        DELETE /api/v1/patients/1
@@ -25017,22 +25053,22 @@ export class PatientsApi extends BaseAPI {
     /**
      * Sample request:        GET /api/v1/patients      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"patient\"      }
      * @summary Get all patients.
-     * @param {number} [page] 
-     * @param {number} [limit] 
-     * @param {Date} [lastRetrieved] 
-     * @param {boolean} [current] 
      * @param {string} [id] 
      * @param {string} [fullname] 
      * @param {string} [email] 
      * @param {object} [gender] 
      * @param {Date} [dateOfBirth] 
      * @param {Date} [created] 
+     * @param {number} [page] 
+     * @param {number} [limit] 
+     * @param {Date} [lastRetrieved] 
+     * @param {boolean} [current] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PatientsApi
      */
-    public apiV1PatientsGet(page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, options?: any) {
-        return PatientsApiFp(this.configuration).apiV1PatientsGet(page, limit, lastRetrieved, current, id, fullname, email, gender, dateOfBirth, created, options)(this.axios, this.basePath);
+    public apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return PatientsApiFp(this.configuration).apiV1PatientsGet(id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
