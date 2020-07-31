@@ -2022,6 +2022,12 @@ export interface ConsultationItemViewModel {
     comment?: string;
     /**
      * 
+     * @type {string}
+     * @memberof ConsultationItemViewModel
+     */
+    timeRange?: string;
+    /**
+     * 
      * @type {Date}
      * @memberof ConsultationItemViewModel
      */
@@ -2249,6 +2255,12 @@ export interface ConsultationViewModel {
      * @memberof ConsultationViewModel
      */
     comment?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConsultationViewModel
+     */
+    timeRange?: string;
     /**
      * 
      * @type {Date}
@@ -2909,6 +2921,12 @@ export interface CreateConsultationCommand {
     comment?: string;
     /**
      * 
+     * @type {string}
+     * @memberof CreateConsultationCommand
+     */
+    timeRange?: string;
+    /**
+     * 
      * @type {Date}
      * @memberof CreateConsultationCommand
      */
@@ -3428,6 +3446,12 @@ export interface CreateHospitalCommand {
      * @memberof CreateHospitalCommand
      */
     consultationFee?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateHospitalCommand
+     */
+    timeZone?: string;
     /**
      * 
      * @type {Array<AwardViewModel>}
@@ -6806,6 +6830,12 @@ export interface Hospital {
     consultationFee?: number;
     /**
      * 
+     * @type {string}
+     * @memberof Hospital
+     */
+    timeZone?: string;
+    /**
+     * 
      * @type {Array<Article>}
      * @memberof Hospital
      */
@@ -7065,6 +7095,12 @@ export interface HospitalItemViewModel {
      * @memberof HospitalItemViewModel
      */
     consultationFee?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalItemViewModel
+     */
+    timeZone?: string;
     /**
      * 
      * @type {number}
@@ -7760,6 +7796,12 @@ export interface HospitalViewModel {
      * @memberof HospitalViewModel
      */
     consultationFee?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalViewModel
+     */
+    timeZone?: string;
     /**
      * 
      * @type {number}
@@ -11366,6 +11408,12 @@ export interface UpdateConsultationCommand {
     comment?: string;
     /**
      * 
+     * @type {string}
+     * @memberof UpdateConsultationCommand
+     */
+    timeRange?: string;
+    /**
+     * 
      * @type {Date}
      * @memberof UpdateConsultationCommand
      */
@@ -11890,6 +11938,12 @@ export interface UpdateHospitalCommand {
      * @memberof UpdateHospitalCommand
      */
     consultationFee?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateHospitalCommand
+     */
+    timeZone?: string;
     /**
      * 
      * @type {number}
