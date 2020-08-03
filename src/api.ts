@@ -14496,6 +14496,94 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
         },
         /**
          * 
+         * @summary Mark as Paid booking.
+         * @param {string} bookingId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdPaidPost(bookingId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'bookingId' is not null or undefined
+            if (bookingId === null || bookingId === undefined) {
+                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdPaidPost.');
+            }
+            const localVarPath = `/api/v1/bookings/{bookingId}/paid`
+                .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Pay booking.
+         * @param {string} bookingId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdPayPost(bookingId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'bookingId' is not null or undefined
+            if (bookingId === null || bookingId === undefined) {
+                throw new RequiredError('bookingId','Required parameter bookingId was null or undefined when calling apiV1BookingsBookingIdPayPost.');
+            }
+            const localVarPath = `/api/v1/bookings/{bookingId}/pay`
+                .replace(`{${"bookingId"}}`, encodeURIComponent(String(bookingId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Update booking.
          * @param {string} bookingId 
          * @param {UpdateBookingCommand} [body] 
@@ -14720,6 +14808,44 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Get Publishable Key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsPublickeyGet(options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/bookings/publickey`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -14781,6 +14907,34 @@ export const BookingsApiFp = function(configuration?: Configuration) {
          */
         apiV1BookingsBookingIdGet(bookingId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<BookingViewModel> {
             const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdGet(bookingId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Mark as Paid booking.
+         * @param {string} bookingId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdPaidPost(bookingId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Pay booking.
+         * @param {string} bookingId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsBookingIdPayPost(bookingId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -14852,6 +15006,19 @@ export const BookingsApiFp = function(configuration?: Configuration) {
                 return axios.request(axiosRequestArgs);
             };
         },
+        /**
+         * 
+         * @summary Get Publishable Key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsPublickeyGet(options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsPublickeyGet(options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
     }
 };
 
@@ -14904,6 +15071,26 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
         },
         /**
          * 
+         * @summary Mark as Paid booking.
+         * @param {string} bookingId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): AxiosPromise<string> {
+            return BookingsApiFp(configuration).apiV1BookingsBookingIdPaidPost(bookingId, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Pay booking.
+         * @param {string} bookingId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): AxiosPromise<string> {
+            return BookingsApiFp(configuration).apiV1BookingsBookingIdPayPost(bookingId, options)(axios, basePath);
+        },
+        /**
+         * 
          * @summary Update booking.
          * @param {string} bookingId 
          * @param {UpdateBookingCommand} [body] 
@@ -14951,6 +15138,15 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
          */
         apiV1BookingsPost(body?: CreateBookingCommand, options?: any): AxiosPromise<string> {
             return BookingsApiFp(configuration).apiV1BookingsPost(body, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Get Publishable Key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1BookingsPublickeyGet(options?: any): AxiosPromise<string> {
+            return BookingsApiFp(configuration).apiV1BookingsPublickeyGet(options)(axios, basePath);
         },
     };
 };
@@ -15013,6 +15209,30 @@ export class BookingsApi extends BaseAPI {
 
     /**
      * 
+     * @summary Mark as Paid booking.
+     * @param {string} bookingId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    public apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdPaidPost(bookingId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Pay booking.
+     * @param {string} bookingId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    public apiV1BookingsBookingIdPayPost(bookingId: string, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsBookingIdPayPost(bookingId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
      * @summary Update booking.
      * @param {string} bookingId 
      * @param {UpdateBookingCommand} [body] 
@@ -15067,6 +15287,17 @@ export class BookingsApi extends BaseAPI {
      */
     public apiV1BookingsPost(body?: CreateBookingCommand, options?: any) {
         return BookingsApiFp(this.configuration).apiV1BookingsPost(body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Get Publishable Key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    public apiV1BookingsPublickeyGet(options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsPublickeyGet(options)(this.axios, this.basePath);
     }
 
 }
@@ -16312,6 +16543,94 @@ export const ConsultationsApiAxiosParamCreator = function (configuration?: Confi
         },
         /**
          * 
+         * @summary Mark as Paid consultation.
+         * @param {string} consultationId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'consultationId' is not null or undefined
+            if (consultationId === null || consultationId === undefined) {
+                throw new RequiredError('consultationId','Required parameter consultationId was null or undefined when calling apiV1ConsultationsConsultationIdPaidPost.');
+            }
+            const localVarPath = `/api/v1/consultations/{consultationId}/paid`
+                .replace(`{${"consultationId"}}`, encodeURIComponent(String(consultationId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Pay consultation.
+         * @param {string} consultationId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ConsultationsConsultationIdPayPost(consultationId: string, options: any = {}): RequestArgs {
+            // verify required parameter 'consultationId' is not null or undefined
+            if (consultationId === null || consultationId === undefined) {
+                throw new RequiredError('consultationId','Required parameter consultationId was null or undefined when calling apiV1ConsultationsConsultationIdPayPost.');
+            }
+            const localVarPath = `/api/v1/consultations/{consultationId}/pay`
+                .replace(`{${"consultationId"}}`, encodeURIComponent(String(consultationId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Update consultation.
          * @param {string} consultationId 
          * @param {UpdateConsultationCommand} [body] 
@@ -16531,6 +16850,44 @@ export const ConsultationsApiAxiosParamCreator = function (configuration?: Confi
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Get Publishable Key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ConsultationsPublickeyGet(options: any = {}): RequestArgs {
+            const localVarPath = `/api/v1/consultations/publickey`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication oauth2 required
+            // oauth required
+            if (configuration && configuration.accessToken) {
+                const localVarAccessTokenValue = typeof configuration.accessToken === 'function'
+                    ? configuration.accessToken("oauth2", ["CloudHospital_api", "IdentityServerApi"])
+                    : configuration.accessToken;
+                localVarHeaderParameter["Authorization"] = "Bearer " + localVarAccessTokenValue;
+            }
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -16592,6 +16949,34 @@ export const ConsultationsApiFp = function(configuration?: Configuration) {
          */
         apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ConsultationViewModel> {
             const localVarAxiosArgs = ConsultationsApiAxiosParamCreator(configuration).apiV1ConsultationsConsultationIdGet(consultationId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Mark as Paid consultation.
+         * @param {string} consultationId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = ConsultationsApiAxiosParamCreator(configuration).apiV1ConsultationsConsultationIdPaidPost(consultationId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Pay consultation.
+         * @param {string} consultationId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = ConsultationsApiAxiosParamCreator(configuration).apiV1ConsultationsConsultationIdPayPost(consultationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -16662,6 +17047,19 @@ export const ConsultationsApiFp = function(configuration?: Configuration) {
                 return axios.request(axiosRequestArgs);
             };
         },
+        /**
+         * 
+         * @summary Get Publishable Key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ConsultationsPublickeyGet(options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = ConsultationsApiAxiosParamCreator(configuration).apiV1ConsultationsPublickeyGet(options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
     }
 };
 
@@ -16714,6 +17112,26 @@ export const ConsultationsApiFactory = function (configuration?: Configuration, 
         },
         /**
          * 
+         * @summary Mark as Paid consultation.
+         * @param {string} consultationId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any): AxiosPromise<string> {
+            return ConsultationsApiFp(configuration).apiV1ConsultationsConsultationIdPaidPost(consultationId, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Pay consultation.
+         * @param {string} consultationId 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): AxiosPromise<string> {
+            return ConsultationsApiFp(configuration).apiV1ConsultationsConsultationIdPayPost(consultationId, options)(axios, basePath);
+        },
+        /**
+         * 
          * @summary Update consultation.
          * @param {string} consultationId 
          * @param {UpdateConsultationCommand} [body] 
@@ -16760,6 +17178,15 @@ export const ConsultationsApiFactory = function (configuration?: Configuration, 
          */
         apiV1ConsultationsPost(body?: CreateConsultationCommand, options?: any): AxiosPromise<string> {
             return ConsultationsApiFp(configuration).apiV1ConsultationsPost(body, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Get Publishable Key
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1ConsultationsPublickeyGet(options?: any): AxiosPromise<string> {
+            return ConsultationsApiFp(configuration).apiV1ConsultationsPublickeyGet(options)(axios, basePath);
         },
     };
 };
@@ -16822,6 +17249,30 @@ export class ConsultationsApi extends BaseAPI {
 
     /**
      * 
+     * @summary Mark as Paid consultation.
+     * @param {string} consultationId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ConsultationsApi
+     */
+    public apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any) {
+        return ConsultationsApiFp(this.configuration).apiV1ConsultationsConsultationIdPaidPost(consultationId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Pay consultation.
+     * @param {string} consultationId 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ConsultationsApi
+     */
+    public apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any) {
+        return ConsultationsApiFp(this.configuration).apiV1ConsultationsConsultationIdPayPost(consultationId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
      * @summary Update consultation.
      * @param {string} consultationId 
      * @param {UpdateConsultationCommand} [body] 
@@ -16875,6 +17326,17 @@ export class ConsultationsApi extends BaseAPI {
      */
     public apiV1ConsultationsPost(body?: CreateConsultationCommand, options?: any) {
         return ConsultationsApiFp(this.configuration).apiV1ConsultationsPost(body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Get Publishable Key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ConsultationsApi
+     */
+    public apiV1ConsultationsPublickeyGet(options?: any) {
+        return ConsultationsApiFp(this.configuration).apiV1ConsultationsPublickeyGet(options)(this.axios, this.basePath);
     }
 
 }

@@ -13788,6 +13788,22 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
     apiV1BookingsBookingIdGet(bookingId: string, options?: any): RequestArgs;
     /**
      *
+     * @summary Mark as Paid booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Pay booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): RequestArgs;
+    /**
+     *
      * @summary Update booking.
      * @param {string} bookingId
      * @param {UpdateBookingCommand} [body]
@@ -13828,6 +13844,13 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get Publishable Key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsPublickeyGet(options?: any): RequestArgs;
 };
 /**
  * BookingsApi - functional programming interface
@@ -13867,6 +13890,22 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdGet(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BookingViewModel>;
+    /**
+     *
+     * @summary Mark as Paid booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
+     * @summary Pay booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
     /**
      *
      * @summary Update booking.
@@ -13909,6 +13948,13 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @throws {RequiredError}
      */
     apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
+     * @summary Get Publishable Key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsPublickeyGet(options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
 };
 /**
  * BookingsApi - factory interface
@@ -13948,6 +13994,22 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1BookingsBookingIdGet(bookingId: string, options?: any): AxiosPromise<BookingViewModel>;
+    /**
+     *
+     * @summary Mark as Paid booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Pay booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): AxiosPromise<string>;
     /**
      *
      * @summary Update booking.
@@ -13990,6 +14052,13 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get Publishable Key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1BookingsPublickeyGet(options?: any): AxiosPromise<string>;
 };
 /**
  * BookingsApi - object-oriented interface
@@ -14037,6 +14106,24 @@ export declare class BookingsApi extends BaseAPI {
     apiV1BookingsBookingIdGet(bookingId: string, options?: any): AxiosPromise<BookingViewModel>;
     /**
      *
+     * @summary Mark as Paid booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Pay booking.
+     * @param {string} bookingId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): AxiosPromise<string>;
+    /**
+     *
      * @summary Update booking.
      * @param {string} bookingId
      * @param {UpdateBookingCommand} [body]
@@ -14081,6 +14168,14 @@ export declare class BookingsApi extends BaseAPI {
      * @memberof BookingsApi
      */
     apiV1BookingsPost(body?: CreateBookingCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get Publishable Key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof BookingsApi
+     */
+    apiV1BookingsPublickeyGet(options?: any): AxiosPromise<string>;
 }
 /**
  * CHAdminsApi - axios parameter creator
@@ -14588,6 +14683,22 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
     apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): RequestArgs;
     /**
      *
+     * @summary Mark as Paid consultation.
+     * @param {string} consultationId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Pay consultation.
+     * @param {string} consultationId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): RequestArgs;
+    /**
+     *
      * @summary Update consultation.
      * @param {string} consultationId
      * @param {UpdateConsultationCommand} [body]
@@ -14627,6 +14738,13 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @throws {RequiredError}
      */
     apiV1ConsultationsPost(body?: CreateConsultationCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get Publishable Key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ConsultationsPublickeyGet(options?: any): RequestArgs;
 };
 /**
  * ConsultationsApi - functional programming interface
@@ -14668,6 +14786,22 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
     apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ConsultationViewModel>;
     /**
      *
+     * @summary Mark as Paid consultation.
+     * @param {string} consultationId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
+     * @summary Pay consultation.
+     * @param {string} consultationId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
      * @summary Update consultation.
      * @param {string} consultationId
      * @param {UpdateConsultationCommand} [body]
@@ -14707,6 +14841,13 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1ConsultationsPost(body?: CreateConsultationCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
+     * @summary Get Publishable Key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ConsultationsPublickeyGet(options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
 };
 /**
  * ConsultationsApi - factory interface
@@ -14748,6 +14889,22 @@ export declare const ConsultationsApiFactory: (configuration?: Configuration | u
     apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): AxiosPromise<ConsultationViewModel>;
     /**
      *
+     * @summary Mark as Paid consultation.
+     * @param {string} consultationId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Pay consultation.
+     * @param {string} consultationId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): AxiosPromise<string>;
+    /**
+     *
      * @summary Update consultation.
      * @param {string} consultationId
      * @param {UpdateConsultationCommand} [body]
@@ -14787,6 +14944,13 @@ export declare const ConsultationsApiFactory: (configuration?: Configuration | u
      * @throws {RequiredError}
      */
     apiV1ConsultationsPost(body?: CreateConsultationCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get Publishable Key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1ConsultationsPublickeyGet(options?: any): AxiosPromise<string>;
 };
 /**
  * ConsultationsApi - object-oriented interface
@@ -14834,6 +14998,24 @@ export declare class ConsultationsApi extends BaseAPI {
     apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): AxiosPromise<ConsultationViewModel>;
     /**
      *
+     * @summary Mark as Paid consultation.
+     * @param {string} consultationId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ConsultationsApi
+     */
+    apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Pay consultation.
+     * @param {string} consultationId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ConsultationsApi
+     */
+    apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): AxiosPromise<string>;
+    /**
+     *
      * @summary Update consultation.
      * @param {string} consultationId
      * @param {UpdateConsultationCommand} [body]
@@ -14877,6 +15059,14 @@ export declare class ConsultationsApi extends BaseAPI {
      * @memberof ConsultationsApi
      */
     apiV1ConsultationsPost(body?: CreateConsultationCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get Publishable Key
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ConsultationsApi
+     */
+    apiV1ConsultationsPublickeyGet(options?: any): AxiosPromise<string>;
 }
 /**
  * CountriesApi - axios parameter creator
