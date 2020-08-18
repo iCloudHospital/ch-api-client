@@ -996,7 +996,9 @@ export declare enum BookingStatus {
     Rejected = "Rejected",
     Approved = "Approved",
     Paid = "Paid",
-    Canceled = "Canceled"
+    Canceled = "Canceled",
+    RefundRequested = "RefundRequested",
+    Refunded = "Refunded"
 }
 /**
  *
@@ -2099,7 +2101,9 @@ export declare enum ConsultationStatus {
     Rejected = "Rejected",
     Approved = "Approved",
     Paid = "Paid",
-    Canceled = "Canceled"
+    Canceled = "Canceled",
+    RefundRequested = "RefundRequested",
+    Refunded = "Refunded"
 }
 /**
  *
@@ -2603,6 +2607,12 @@ export interface CreateBookingCommand {
      * @type {string}
      * @memberof CreateBookingCommand
      */
+    requestId?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateBookingCommand
+     */
     hospitalId?: string;
     /**
      *
@@ -2823,6 +2833,12 @@ export interface CreateCHManagerCommand {
  * @interface CreateConsultationCommand
  */
 export interface CreateConsultationCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof CreateConsultationCommand
+     */
+    requestId?: string;
     /**
      *
      * @type {ConsultationType}
@@ -13844,13 +13860,6 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): RequestArgs;
-    /**
-     *
-     * @summary Get Publishable Key
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1BookingsPublickeyGet(options?: any): RequestArgs;
 };
 /**
  * BookingsApi - functional programming interface
@@ -13948,13 +13957,6 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @throws {RequiredError}
      */
     apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
-    /**
-     *
-     * @summary Get Publishable Key
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1BookingsPublickeyGet(options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
 };
 /**
  * BookingsApi - factory interface
@@ -14052,13 +14054,6 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): AxiosPromise<string>;
-    /**
-     *
-     * @summary Get Publishable Key
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1BookingsPublickeyGet(options?: any): AxiosPromise<string>;
 };
 /**
  * BookingsApi - object-oriented interface
@@ -14168,14 +14163,6 @@ export declare class BookingsApi extends BaseAPI {
      * @memberof BookingsApi
      */
     apiV1BookingsPost(body?: CreateBookingCommand, options?: any): AxiosPromise<string>;
-    /**
-     *
-     * @summary Get Publishable Key
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof BookingsApi
-     */
-    apiV1BookingsPublickeyGet(options?: any): AxiosPromise<string>;
 }
 /**
  * CHAdminsApi - axios parameter creator
@@ -14683,14 +14670,6 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
     apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): RequestArgs;
     /**
      *
-     * @summary Mark as Paid consultation.
-     * @param {string} consultationId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any): RequestArgs;
-    /**
-     *
      * @summary Pay consultation.
      * @param {string} consultationId
      * @param {*} [options] Override http request option.
@@ -14738,13 +14717,6 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @throws {RequiredError}
      */
     apiV1ConsultationsPost(body?: CreateConsultationCommand | undefined, options?: any): RequestArgs;
-    /**
-     *
-     * @summary Get Publishable Key
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1ConsultationsPublickeyGet(options?: any): RequestArgs;
 };
 /**
  * ConsultationsApi - functional programming interface
@@ -14784,14 +14756,6 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ConsultationViewModel>;
-    /**
-     *
-     * @summary Mark as Paid consultation.
-     * @param {string} consultationId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
     /**
      *
      * @summary Pay consultation.
@@ -14841,13 +14805,6 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1ConsultationsPost(body?: CreateConsultationCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
-    /**
-     *
-     * @summary Get Publishable Key
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1ConsultationsPublickeyGet(options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
 };
 /**
  * ConsultationsApi - factory interface
@@ -14887,14 +14844,6 @@ export declare const ConsultationsApiFactory: (configuration?: Configuration | u
      * @throws {RequiredError}
      */
     apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): AxiosPromise<ConsultationViewModel>;
-    /**
-     *
-     * @summary Mark as Paid consultation.
-     * @param {string} consultationId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any): AxiosPromise<string>;
     /**
      *
      * @summary Pay consultation.
@@ -14944,13 +14893,6 @@ export declare const ConsultationsApiFactory: (configuration?: Configuration | u
      * @throws {RequiredError}
      */
     apiV1ConsultationsPost(body?: CreateConsultationCommand | undefined, options?: any): AxiosPromise<string>;
-    /**
-     *
-     * @summary Get Publishable Key
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1ConsultationsPublickeyGet(options?: any): AxiosPromise<string>;
 };
 /**
  * ConsultationsApi - object-oriented interface
@@ -14996,15 +14938,6 @@ export declare class ConsultationsApi extends BaseAPI {
      * @memberof ConsultationsApi
      */
     apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): AxiosPromise<ConsultationViewModel>;
-    /**
-     *
-     * @summary Mark as Paid consultation.
-     * @param {string} consultationId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ConsultationsApi
-     */
-    apiV1ConsultationsConsultationIdPaidPost(consultationId: string, options?: any): AxiosPromise<string>;
     /**
      *
      * @summary Pay consultation.
@@ -15059,14 +14992,6 @@ export declare class ConsultationsApi extends BaseAPI {
      * @memberof ConsultationsApi
      */
     apiV1ConsultationsPost(body?: CreateConsultationCommand, options?: any): AxiosPromise<string>;
-    /**
-     *
-     * @summary Get Publishable Key
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ConsultationsApi
-     */
-    apiV1ConsultationsPublickeyGet(options?: any): AxiosPromise<string>;
 }
 /**
  * CountriesApi - axios parameter creator
