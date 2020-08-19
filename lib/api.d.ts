@@ -2607,12 +2607,6 @@ export interface CreateBookingCommand {
      * @type {string}
      * @memberof CreateBookingCommand
      */
-    requestId?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof CreateBookingCommand
-     */
     hospitalId?: string;
     /**
      *
@@ -2833,12 +2827,6 @@ export interface CreateCHManagerCommand {
  * @interface CreateConsultationCommand
  */
 export interface CreateConsultationCommand {
-    /**
-     *
-     * @type {string}
-     * @memberof CreateConsultationCommand
-     */
-    requestId?: string;
     /**
      *
      * @type {ConsultationType}
@@ -13855,11 +13843,12 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
     /**
      *
      * @summary Create booking.
+     * @param {string} requestId
      * @param {CreateBookingCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): RequestArgs;
+    apiV1BookingsRequestIdPost(requestId: string, body?: CreateBookingCommand | undefined, options?: any): RequestArgs;
 };
 /**
  * BookingsApi - functional programming interface
@@ -13952,11 +13941,12 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
     /**
      *
      * @summary Create booking.
+     * @param {string} requestId
      * @param {CreateBookingCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1BookingsRequestIdPost(requestId: string, body?: CreateBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
 };
 /**
  * BookingsApi - factory interface
@@ -14049,11 +14039,12 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
     /**
      *
      * @summary Create booking.
+     * @param {string} requestId
      * @param {CreateBookingCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsPost(body?: CreateBookingCommand | undefined, options?: any): AxiosPromise<string>;
+    apiV1BookingsRequestIdPost(requestId: string, body?: CreateBookingCommand | undefined, options?: any): AxiosPromise<string>;
 };
 /**
  * BookingsApi - object-oriented interface
@@ -14157,12 +14148,13 @@ export declare class BookingsApi extends BaseAPI {
     /**
      *
      * @summary Create booking.
+     * @param {string} requestId
      * @param {CreateBookingCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsPost(body?: CreateBookingCommand, options?: any): AxiosPromise<string>;
+    apiV1BookingsRequestIdPost(requestId: string, body?: CreateBookingCommand, options?: any): AxiosPromise<string>;
 }
 /**
  * CHAdminsApi - axios parameter creator
@@ -14711,12 +14703,13 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
     apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
-     * @summary Create deal consultation.
+     * @summary Create consultation.
+     * @param {string} requestId
      * @param {CreateConsultationCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsPost(body?: CreateConsultationCommand | undefined, options?: any): RequestArgs;
+    apiV1ConsultationsRequestIdPost(requestId: string, body?: CreateConsultationCommand | undefined, options?: any): RequestArgs;
 };
 /**
  * ConsultationsApi - functional programming interface
@@ -14799,12 +14792,13 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
     apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ConsultationsViewModel>;
     /**
      *
-     * @summary Create deal consultation.
+     * @summary Create consultation.
+     * @param {string} requestId
      * @param {CreateConsultationCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsPost(body?: CreateConsultationCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1ConsultationsRequestIdPost(requestId: string, body?: CreateConsultationCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
 };
 /**
  * ConsultationsApi - factory interface
@@ -14887,12 +14881,13 @@ export declare const ConsultationsApiFactory: (configuration?: Configuration | u
     apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ConsultationsViewModel>;
     /**
      *
-     * @summary Create deal consultation.
+     * @summary Create consultation.
+     * @param {string} requestId
      * @param {CreateConsultationCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsPost(body?: CreateConsultationCommand | undefined, options?: any): AxiosPromise<string>;
+    apiV1ConsultationsRequestIdPost(requestId: string, body?: CreateConsultationCommand | undefined, options?: any): AxiosPromise<string>;
 };
 /**
  * ConsultationsApi - object-oriented interface
@@ -14985,13 +14980,14 @@ export declare class ConsultationsApi extends BaseAPI {
     apiV1ConsultationsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, status?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ConsultationsViewModel>;
     /**
      *
-     * @summary Create deal consultation.
+     * @summary Create consultation.
+     * @param {string} requestId
      * @param {CreateConsultationCommand} [body]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsPost(body?: CreateConsultationCommand, options?: any): AxiosPromise<string>;
+    apiV1ConsultationsRequestIdPost(requestId: string, body?: CreateConsultationCommand, options?: any): AxiosPromise<string>;
 }
 /**
  * CountriesApi - axios parameter creator

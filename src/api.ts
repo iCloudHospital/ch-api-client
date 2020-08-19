@@ -2619,12 +2619,6 @@ export interface CreateBookingCommand {
      * @type {string}
      * @memberof CreateBookingCommand
      */
-    requestId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateBookingCommand
-     */
     hospitalId?: string;
     /**
      * 
@@ -2845,12 +2839,6 @@ export interface CreateCHManagerCommand {
  * @interface CreateConsultationCommand
  */
 export interface CreateConsultationCommand {
-    /**
-     * 
-     * @type {string}
-     * @memberof CreateConsultationCommand
-     */
-    requestId?: string;
     /**
      * 
      * @type {ConsultationType}
@@ -14784,12 +14772,18 @@ export const BookingsApiAxiosParamCreator = function (configuration?: Configurat
         /**
          * 
          * @summary Create booking.
+         * @param {string} requestId 
          * @param {CreateBookingCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsPost(body?: CreateBookingCommand, options: any = {}): RequestArgs {
-            const localVarPath = `/api/v1/bookings`;
+        apiV1BookingsRequestIdPost(requestId: string, body?: CreateBookingCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'requestId' is not null or undefined
+            if (requestId === null || requestId === undefined) {
+                throw new RequiredError('requestId','Required parameter requestId was null or undefined when calling apiV1BookingsRequestIdPost.');
+            }
+            const localVarPath = `/api/v1/bookings/{requestId}`
+                .replace(`{${"requestId"}}`, encodeURIComponent(String(requestId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
@@ -14973,12 +14967,13 @@ export const BookingsApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create booking.
+         * @param {string} requestId 
          * @param {CreateBookingCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsPost(body?: CreateBookingCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
-            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsPost(body, options);
+        apiV1BookingsRequestIdPost(requestId: string, body?: CreateBookingCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = BookingsApiAxiosParamCreator(configuration).apiV1BookingsRequestIdPost(requestId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -15097,12 +15092,13 @@ export const BookingsApiFactory = function (configuration?: Configuration, baseP
         /**
          * 
          * @summary Create booking.
+         * @param {string} requestId 
          * @param {CreateBookingCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1BookingsPost(body?: CreateBookingCommand, options?: any): AxiosPromise<string> {
-            return BookingsApiFp(configuration).apiV1BookingsPost(body, options)(axios, basePath);
+        apiV1BookingsRequestIdPost(requestId: string, body?: CreateBookingCommand, options?: any): AxiosPromise<string> {
+            return BookingsApiFp(configuration).apiV1BookingsRequestIdPost(requestId, body, options)(axios, basePath);
         },
     };
 };
@@ -15236,13 +15232,14 @@ export class BookingsApi extends BaseAPI {
     /**
      * 
      * @summary Create booking.
+     * @param {string} requestId 
      * @param {CreateBookingCommand} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    public apiV1BookingsPost(body?: CreateBookingCommand, options?: any) {
-        return BookingsApiFp(this.configuration).apiV1BookingsPost(body, options)(this.axios, this.basePath);
+    public apiV1BookingsRequestIdPost(requestId: string, body?: CreateBookingCommand, options?: any) {
+        return BookingsApiFp(this.configuration).apiV1BookingsRequestIdPost(requestId, body, options)(this.axios, this.basePath);
     }
 
 }
@@ -16710,13 +16707,19 @@ export const ConsultationsApiAxiosParamCreator = function (configuration?: Confi
         },
         /**
          * 
-         * @summary Create deal consultation.
+         * @summary Create consultation.
+         * @param {string} requestId 
          * @param {CreateConsultationCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ConsultationsPost(body?: CreateConsultationCommand, options: any = {}): RequestArgs {
-            const localVarPath = `/api/v1/consultations`;
+        apiV1ConsultationsRequestIdPost(requestId: string, body?: CreateConsultationCommand, options: any = {}): RequestArgs {
+            // verify required parameter 'requestId' is not null or undefined
+            if (requestId === null || requestId === undefined) {
+                throw new RequiredError('requestId','Required parameter requestId was null or undefined when calling apiV1ConsultationsRequestIdPost.');
+            }
+            const localVarPath = `/api/v1/consultations/{requestId}`
+                .replace(`{${"requestId"}}`, encodeURIComponent(String(requestId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
@@ -16884,13 +16887,14 @@ export const ConsultationsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Create deal consultation.
+         * @summary Create consultation.
+         * @param {string} requestId 
          * @param {CreateConsultationCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ConsultationsPost(body?: CreateConsultationCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
-            const localVarAxiosArgs = ConsultationsApiAxiosParamCreator(configuration).apiV1ConsultationsPost(body, options);
+        apiV1ConsultationsRequestIdPost(requestId: string, body?: CreateConsultationCommand, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<string> {
+            const localVarAxiosArgs = ConsultationsApiAxiosParamCreator(configuration).apiV1ConsultationsRequestIdPost(requestId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -16997,13 +17001,14 @@ export const ConsultationsApiFactory = function (configuration?: Configuration, 
         },
         /**
          * 
-         * @summary Create deal consultation.
+         * @summary Create consultation.
+         * @param {string} requestId 
          * @param {CreateConsultationCommand} [body] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1ConsultationsPost(body?: CreateConsultationCommand, options?: any): AxiosPromise<string> {
-            return ConsultationsApiFp(configuration).apiV1ConsultationsPost(body, options)(axios, basePath);
+        apiV1ConsultationsRequestIdPost(requestId: string, body?: CreateConsultationCommand, options?: any): AxiosPromise<string> {
+            return ConsultationsApiFp(configuration).apiV1ConsultationsRequestIdPost(requestId, body, options)(axios, basePath);
         },
     };
 };
@@ -17123,14 +17128,15 @@ export class ConsultationsApi extends BaseAPI {
 
     /**
      * 
-     * @summary Create deal consultation.
+     * @summary Create consultation.
+     * @param {string} requestId 
      * @param {CreateConsultationCommand} [body] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    public apiV1ConsultationsPost(body?: CreateConsultationCommand, options?: any) {
-        return ConsultationsApiFp(this.configuration).apiV1ConsultationsPost(body, options)(this.axios, this.basePath);
+    public apiV1ConsultationsRequestIdPost(requestId: string, body?: CreateConsultationCommand, options?: any) {
+        return ConsultationsApiFp(this.configuration).apiV1ConsultationsRequestIdPost(requestId, body, options)(this.axios, this.basePath);
     }
 
 }
