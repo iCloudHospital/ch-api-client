@@ -83,6 +83,31 @@ export interface Accreditation {
 /**
  *
  * @export
+ * @interface AccreditationViewModel
+ */
+export interface AccreditationViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof AccreditationViewModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AccreditationViewModel
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AccreditationViewModel
+     */
+    logo?: string;
+}
+/**
+ *
+ * @export
  * @interface ApproveBookingCommand
  */
 export interface ApproveBookingCommand {
@@ -3395,13 +3420,13 @@ export interface CreateHospitalCommand {
      * @type {number}
      * @memberof CreateHospitalCommand
      */
-    operationRoomsCount?: number;
+    operationsPerYear?: number;
     /**
      *
      * @type {number}
      * @memberof CreateHospitalCommand
      */
-    icuBedsCount?: number;
+    foundationYear?: number;
     /**
      *
      * @type {number}
@@ -6776,19 +6801,25 @@ export interface Hospital {
      * @type {number}
      * @memberof Hospital
      */
-    operationRoomsCount?: number;
+    operationsPerYear?: number;
     /**
      *
      * @type {number}
      * @memberof Hospital
      */
-    icuBedsCount?: number;
+    foundationYear?: number;
     /**
      *
      * @type {number}
      * @memberof Hospital
      */
     medicalStaffCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Hospital
+     */
+    doctorCount?: number;
     /**
      *
      * @type {string}
@@ -7043,19 +7074,25 @@ export interface HospitalItemViewModel {
      * @type {number}
      * @memberof HospitalItemViewModel
      */
-    operationRoomsCount?: number;
+    operationsPerYear?: number;
     /**
      *
      * @type {number}
      * @memberof HospitalItemViewModel
      */
-    icuBedsCount?: number;
+    foundationYear?: number;
     /**
      *
      * @type {number}
      * @memberof HospitalItemViewModel
      */
     medicalStaffCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalItemViewModel
+     */
+    doctorCount?: number;
     /**
      *
      * @type {string}
@@ -7148,6 +7185,12 @@ export interface HospitalItemViewModel {
     managerAffiliationsCount?: number;
     /**
      *
+     * @type {string}
+     * @memberof HospitalItemViewModel
+     */
+    specialtiesSummerized?: string;
+    /**
+     *
      * @type {Array<AwardViewModel>}
      * @memberof HospitalItemViewModel
      */
@@ -7158,6 +7201,12 @@ export interface HospitalItemViewModel {
      * @memberof HospitalItemViewModel
      */
     medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<AccreditationViewModel>}
+     * @memberof HospitalItemViewModel
+     */
+    accreditations?: Array<AccreditationViewModel>;
     /**
      *
      * @type {LocationViewModel}
@@ -7402,19 +7451,25 @@ export interface HospitalSearchItemViewModel {
      * @type {number}
      * @memberof HospitalSearchItemViewModel
      */
-    operationRoomsCount?: number;
+    operationsPerYear?: number;
     /**
      *
      * @type {number}
      * @memberof HospitalSearchItemViewModel
      */
-    icuBedsCount?: number;
+    foundationYear?: number;
     /**
      *
      * @type {number}
      * @memberof HospitalSearchItemViewModel
      */
     medicalStaffCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalSearchItemViewModel
+     */
+    doctorCount?: number;
     /**
      *
      * @type {string}
@@ -7744,19 +7799,25 @@ export interface HospitalViewModel {
      * @type {number}
      * @memberof HospitalViewModel
      */
-    operationRoomsCount?: number;
+    operationsPerYear?: number;
     /**
      *
      * @type {number}
      * @memberof HospitalViewModel
      */
-    icuBedsCount?: number;
+    foundationYear?: number;
     /**
      *
      * @type {number}
      * @memberof HospitalViewModel
      */
     medicalStaffCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof HospitalViewModel
+     */
+    doctorCount?: number;
     /**
      *
      * @type {string}
@@ -7849,6 +7910,12 @@ export interface HospitalViewModel {
     managerAffiliationsCount?: number;
     /**
      *
+     * @type {string}
+     * @memberof HospitalViewModel
+     */
+    specialtiesSummerized?: string;
+    /**
+     *
      * @type {Array<AwardViewModel>}
      * @memberof HospitalViewModel
      */
@@ -7859,6 +7926,12 @@ export interface HospitalViewModel {
      * @memberof HospitalViewModel
      */
     medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<AccreditationViewModel>}
+     * @memberof HospitalViewModel
+     */
+    accreditations?: Array<AccreditationViewModel>;
     /**
      *
      * @type {LocationViewModel}
@@ -11880,19 +11953,25 @@ export interface UpdateHospitalCommand {
      * @type {number}
      * @memberof UpdateHospitalCommand
      */
-    operationRoomsCount?: number;
+    operationsPerYear?: number;
     /**
      *
      * @type {number}
      * @memberof UpdateHospitalCommand
      */
-    icuBedsCount?: number;
+    foundationYear?: number;
     /**
      *
      * @type {number}
      * @memberof UpdateHospitalCommand
      */
     medicalStaffCount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof UpdateHospitalCommand
+     */
+    doctorCount?: number;
     /**
      *
      * @type {string}
@@ -11979,6 +12058,12 @@ export interface UpdateHospitalCommand {
     managerAffiliationsCount?: number;
     /**
      *
+     * @type {string}
+     * @memberof UpdateHospitalCommand
+     */
+    specialtiesSummerized?: string;
+    /**
+     *
      * @type {Array<AwardViewModel>}
      * @memberof UpdateHospitalCommand
      */
@@ -11989,6 +12074,12 @@ export interface UpdateHospitalCommand {
      * @memberof UpdateHospitalCommand
      */
     medias?: Array<MediaViewModel>;
+    /**
+     *
+     * @type {Array<AccreditationViewModel>}
+     * @memberof UpdateHospitalCommand
+     */
+    accreditations?: Array<AccreditationViewModel>;
     /**
      *
      * @type {LocationViewModel}
@@ -17723,7 +17814,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      */
     apiV1HospitalsHospitalIdGet(hospitalId: string, options?: any): RequestArgs;
     /**
-     * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationRoomsCount\": 44,          \"icuBedsCount\": 122,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
+     * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationsPerYear\": 44,          \"foundationYear\": 2012,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
      * @summary Update hospital.
      * @param {string} hospitalId
      * @param {UpdateHospitalCommand} [body]
@@ -17732,7 +17823,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      */
     apiV1HospitalsHospitalIdPut(hospitalId: string, body?: UpdateHospitalCommand | undefined, options?: any): RequestArgs;
     /**
-     * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationRoomsCount\": 34,          \"icuBedsCount\": 12,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
+     * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationsPerYear\": 34,          \"foundationYear\": 2012,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
      * @summary Create a hospital.
      * @param {CreateHospitalCommand} [body]
      * @param {*} [options] Override http request option.
@@ -17803,7 +17894,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      */
     apiV1HospitalsHospitalIdGet(hospitalId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalViewModel>;
     /**
-     * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationRoomsCount\": 44,          \"icuBedsCount\": 122,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
+     * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationsPerYear\": 44,          \"foundationYear\": 2012,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
      * @summary Update hospital.
      * @param {string} hospitalId
      * @param {UpdateHospitalCommand} [body]
@@ -17812,7 +17903,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      */
     apiV1HospitalsHospitalIdPut(hospitalId: string, body?: UpdateHospitalCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
     /**
-     * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationRoomsCount\": 34,          \"icuBedsCount\": 12,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
+     * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationsPerYear\": 34,          \"foundationYear\": 2012,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
      * @summary Create a hospital.
      * @param {CreateHospitalCommand} [body]
      * @param {*} [options] Override http request option.
@@ -17883,7 +17974,7 @@ export declare const HospitalsApiFactory: (configuration?: Configuration | undef
      */
     apiV1HospitalsHospitalIdGet(hospitalId: string, options?: any): AxiosPromise<HospitalViewModel>;
     /**
-     * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationRoomsCount\": 44,          \"icuBedsCount\": 122,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
+     * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationsPerYear\": 44,          \"foundationYear\": 2012,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
      * @summary Update hospital.
      * @param {string} hospitalId
      * @param {UpdateHospitalCommand} [body]
@@ -17892,7 +17983,7 @@ export declare const HospitalsApiFactory: (configuration?: Configuration | undef
      */
     apiV1HospitalsHospitalIdPut(hospitalId: string, body?: UpdateHospitalCommand | undefined, options?: any): AxiosPromise<boolean>;
     /**
-     * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationRoomsCount\": 34,          \"icuBedsCount\": 12,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
+     * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationsPerYear\": 34,          \"foundationYear\": 2012,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
      * @summary Create a hospital.
      * @param {CreateHospitalCommand} [body]
      * @param {*} [options] Override http request option.
@@ -17969,7 +18060,7 @@ export declare class HospitalsApi extends BaseAPI {
      */
     apiV1HospitalsHospitalIdGet(hospitalId: string, options?: any): AxiosPromise<HospitalViewModel>;
     /**
-     * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationRoomsCount\": 44,          \"icuBedsCount\": 122,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
+     * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationsPerYear\": 44,          \"foundationYear\": 2012,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
      * @summary Update hospital.
      * @param {string} hospitalId
      * @param {UpdateHospitalCommand} [body]
@@ -17979,7 +18070,7 @@ export declare class HospitalsApi extends BaseAPI {
      */
     apiV1HospitalsHospitalIdPut(hospitalId: string, body?: UpdateHospitalCommand, options?: any): AxiosPromise<boolean>;
     /**
-     * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationRoomsCount\": 34,          \"icuBedsCount\": 12,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
+     * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationsPerYear\": 34,          \"foundationYear\": 2012,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
      * @summary Create a hospital.
      * @param {CreateHospitalCommand} [body]
      * @param {*} [options] Override http request option.
