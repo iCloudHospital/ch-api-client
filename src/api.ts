@@ -7555,6 +7555,24 @@ export interface HospitalSearchItemViewModel {
      * @memberof HospitalSearchItemViewModel
      */
     medias?: Array<MediaSearchViewModel>;
+    /**
+     * 
+     * @type {boolean}
+     * @memberof HospitalSearchItemViewModel
+     */
+    consultationEnabled?: boolean;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalSearchItemViewModel
+     */
+    consultationFee?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
+    specialtiesSummerized?: string;
 }
 /**
  * 
@@ -7983,6 +8001,18 @@ export interface HospitalsViewModel {
  * @interface Location
  */
 export interface Location {
+    /**
+     * 
+     * @type {number}
+     * @memberof Location
+     */
+    latitude?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Location
+     */
+    longitude?: number;
     /**
      * 
      * @type {string}
@@ -12970,6 +13000,18 @@ export interface UserLanguageViewModel {
  * @interface UserLocation
  */
 export interface UserLocation {
+    /**
+     * 
+     * @type {number}
+     * @memberof UserLocation
+     */
+    latitude?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof UserLocation
+     */
+    longitude?: number;
     /**
      * 
      * @type {string}
@@ -21072,6 +21114,8 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {string} [specialtyId] 
          * @param {string} [specialtyTypeId] 
          * @param {boolean} [consultationEnabled] 
+         * @param {string} [exceptDoctorId] 
+         * @param {Array<string>} [exceptDoctorIds] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
@@ -21085,7 +21129,7 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, exceptDoctorId?: string, exceptDoctorIds?: Array<string>, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/doctors`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -21118,6 +21162,14 @@ export const DoctorsApiAxiosParamCreator = function (configuration?: Configurati
 
             if (consultationEnabled !== undefined) {
                 localVarQueryParameter['ConsultationEnabled'] = consultationEnabled;
+            }
+
+            if (exceptDoctorId !== undefined) {
+                localVarQueryParameter['ExceptDoctorId'] = exceptDoctorId;
+            }
+
+            if (exceptDoctorIds) {
+                localVarQueryParameter['ExceptDoctorIds'] = exceptDoctorIds.join(COLLECTION_FORMATS.csv);
             }
 
             if (id !== undefined) {
@@ -21282,6 +21334,8 @@ export const DoctorsApiFp = function(configuration?: Configuration) {
          * @param {string} [specialtyId] 
          * @param {string} [specialtyTypeId] 
          * @param {boolean} [consultationEnabled] 
+         * @param {string} [exceptDoctorId] 
+         * @param {Array<string>} [exceptDoctorIds] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
@@ -21295,8 +21349,8 @@ export const DoctorsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorsViewModel> {
-            const localVarAxiosArgs = DoctorsApiAxiosParamCreator(configuration).apiV1DoctorsGet(countryId, hospitalId, marketingType, specialtyId, specialtyTypeId, consultationEnabled, id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
+        apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, exceptDoctorId?: string, exceptDoctorIds?: Array<string>, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DoctorsViewModel> {
+            const localVarAxiosArgs = DoctorsApiAxiosParamCreator(configuration).apiV1DoctorsGet(countryId, hospitalId, marketingType, specialtyId, specialtyTypeId, consultationEnabled, exceptDoctorId, exceptDoctorIds, id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -21365,6 +21419,8 @@ export const DoctorsApiFactory = function (configuration?: Configuration, basePa
          * @param {string} [specialtyId] 
          * @param {string} [specialtyTypeId] 
          * @param {boolean} [consultationEnabled] 
+         * @param {string} [exceptDoctorId] 
+         * @param {Array<string>} [exceptDoctorIds] 
          * @param {string} [id] 
          * @param {string} [fullname] 
          * @param {string} [email] 
@@ -21378,8 +21434,8 @@ export const DoctorsApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorsViewModel> {
-            return DoctorsApiFp(configuration).apiV1DoctorsGet(countryId, hospitalId, marketingType, specialtyId, specialtyTypeId, consultationEnabled, id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, exceptDoctorId?: string, exceptDoctorIds?: Array<string>, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorsViewModel> {
+            return DoctorsApiFp(configuration).apiV1DoctorsGet(countryId, hospitalId, marketingType, specialtyId, specialtyTypeId, consultationEnabled, exceptDoctorId, exceptDoctorIds, id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
@@ -21447,6 +21503,8 @@ export class DoctorsApi extends BaseAPI {
      * @param {string} [specialtyId] 
      * @param {string} [specialtyTypeId] 
      * @param {boolean} [consultationEnabled] 
+     * @param {string} [exceptDoctorId] 
+     * @param {Array<string>} [exceptDoctorIds] 
      * @param {string} [id] 
      * @param {string} [fullname] 
      * @param {string} [email] 
@@ -21461,8 +21519,8 @@ export class DoctorsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    public apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return DoctorsApiFp(this.configuration).apiV1DoctorsGet(countryId, hospitalId, marketingType, specialtyId, specialtyTypeId, consultationEnabled, id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, exceptDoctorId?: string, exceptDoctorIds?: Array<string>, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return DoctorsApiFp(this.configuration).apiV1DoctorsGet(countryId, hospitalId, marketingType, specialtyId, specialtyTypeId, consultationEnabled, exceptDoctorId, exceptDoctorIds, id, fullname, email, gender, dateOfBirth, created, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
