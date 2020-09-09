@@ -6943,6 +6943,12 @@ export interface Hospital {
     consultations?: Array<Consultation>;
     /**
      * 
+     * @type {Array<HospitalEvaluation>}
+     * @memberof Hospital
+     */
+    evaluations?: Array<HospitalEvaluation>;
+    /**
+     * 
      * @type {Array<Award>}
      * @memberof Hospital
      */
@@ -7039,6 +7045,104 @@ export interface HospitalAffiliationViewModel {
      * @memberof HospitalAffiliationViewModel
      */
     cityName?: string;
+}
+/**
+ * 
+ * @export
+ * @interface HospitalEvaluation
+ */
+export interface HospitalEvaluation {
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluation
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluation
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {Hospital}
+     * @memberof HospitalEvaluation
+     */
+    hospital?: Hospital;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluation
+     */
+    name?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalEvaluation
+     */
+    stars?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluation
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluation
+     */
+    referenceUrl?: string;
+}
+/**
+ * 
+ * @export
+ * @interface HospitalEvaluationViewModel
+ */
+export interface HospitalEvaluationViewModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluationViewModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluationViewModel
+     */
+    hospitalId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluationViewModel
+     */
+    hospitalName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluationViewModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof HospitalEvaluationViewModel
+     */
+    stars?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluationViewModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalEvaluationViewModel
+     */
+    referenceUrl?: string;
 }
 /**
  * 
@@ -7220,6 +7324,12 @@ export interface HospitalItemViewModel {
      * @memberof HospitalItemViewModel
      */
     accreditations?: Array<AccreditationViewModel>;
+    /**
+     * 
+     * @type {Array<HospitalEvaluationViewModel>}
+     * @memberof HospitalItemViewModel
+     */
+    evaluations?: Array<HospitalEvaluationViewModel>;
     /**
      * 
      * @type {LocationViewModel}
@@ -7963,6 +8073,12 @@ export interface HospitalViewModel {
      * @memberof HospitalViewModel
      */
     accreditations?: Array<AccreditationViewModel>;
+    /**
+     * 
+     * @type {Array<HospitalEvaluationViewModel>}
+     * @memberof HospitalViewModel
+     */
+    evaluations?: Array<HospitalEvaluationViewModel>;
     /**
      * 
      * @type {LocationViewModel}
@@ -12135,6 +12251,12 @@ export interface UpdateHospitalCommand {
      * @memberof UpdateHospitalCommand
      */
     accreditations?: Array<AccreditationViewModel>;
+    /**
+     * 
+     * @type {Array<HospitalEvaluationViewModel>}
+     * @memberof UpdateHospitalCommand
+     */
+    evaluations?: Array<HospitalEvaluationViewModel>;
     /**
      * 
      * @type {LocationViewModel}
