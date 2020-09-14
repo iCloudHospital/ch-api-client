@@ -23250,6 +23250,7 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {string} [exceptHospitalId] 
          * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -23258,7 +23259,7 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals/current`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -23316,6 +23317,10 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
                 localVarQueryParameter['ServiceId'] = serviceId;
             }
 
+            if (exceptHospitalId !== undefined) {
+                localVarQueryParameter['ExceptHospitalId'] = exceptHospitalId;
+            }
+
             if (showHidden !== undefined) {
                 localVarQueryParameter['ShowHidden'] = showHidden;
             }
@@ -23362,6 +23367,7 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {string} [exceptHospitalId] 
          * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -23370,7 +23376,7 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/hospitals`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -23417,6 +23423,10 @@ export const HospitalsApiAxiosParamCreator = function (configuration?: Configura
 
             if (serviceId !== undefined) {
                 localVarQueryParameter['ServiceId'] = serviceId;
+            }
+
+            if (exceptHospitalId !== undefined) {
+                localVarQueryParameter['ExceptHospitalId'] = exceptHospitalId;
             }
 
             if (showHidden !== undefined) {
@@ -23644,6 +23654,7 @@ export const HospitalsApiFp = function(configuration?: Configuration) {
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {string} [exceptHospitalId] 
          * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -23652,8 +23663,8 @@ export const HospitalsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
-            const localVarAxiosArgs = HospitalsApiAxiosParamCreator(configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options);
+        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
+            const localVarAxiosArgs = HospitalsApiAxiosParamCreator(configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, exceptHospitalId, showHidden, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23671,6 +23682,7 @@ export const HospitalsApiFp = function(configuration?: Configuration) {
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {string} [exceptHospitalId] 
          * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -23679,8 +23691,8 @@ export const HospitalsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
-            const localVarAxiosArgs = HospitalsApiAxiosParamCreator(configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options);
+        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<HospitalsViewModel> {
+            const localVarAxiosArgs = HospitalsApiAxiosParamCreator(configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, exceptHospitalId, showHidden, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -23763,6 +23775,7 @@ export const HospitalsApiFactory = function (configuration?: Configuration, base
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {string} [exceptHospitalId] 
          * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -23771,8 +23784,8 @@ export const HospitalsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
-            return HospitalsApiFp(configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
+            return HospitalsApiFp(configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, exceptHospitalId, showHidden, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
@@ -23786,6 +23799,7 @@ export const HospitalsApiFactory = function (configuration?: Configuration, base
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyId] 
          * @param {string} [serviceId] 
+         * @param {string} [exceptHospitalId] 
          * @param {boolean} [showHidden] 
          * @param {number} [page] 
          * @param {number} [limit] 
@@ -23794,8 +23808,8 @@ export const HospitalsApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
-            return HospitalsApiFp(configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel> {
+            return HospitalsApiFp(configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, exceptHospitalId, showHidden, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * Sample request:        DELETE /api/v1/hospitals/1
@@ -23859,6 +23873,7 @@ export class HospitalsApi extends BaseAPI {
      * @param {string} [specialtyTypeId] 
      * @param {string} [specialtyId] 
      * @param {string} [serviceId] 
+     * @param {string} [exceptHospitalId] 
      * @param {boolean} [showHidden] 
      * @param {number} [page] 
      * @param {number} [limit] 
@@ -23868,8 +23883,8 @@ export class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    public apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return HospitalsApiFp(this.configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return HospitalsApiFp(this.configuration).apiV1HospitalsCurrentGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, exceptHospitalId, showHidden, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
@@ -23884,6 +23899,7 @@ export class HospitalsApi extends BaseAPI {
      * @param {string} [specialtyTypeId] 
      * @param {string} [specialtyId] 
      * @param {string} [serviceId] 
+     * @param {string} [exceptHospitalId] 
      * @param {boolean} [showHidden] 
      * @param {number} [page] 
      * @param {number} [limit] 
@@ -23893,8 +23909,8 @@ export class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    public apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return HospitalsApiFp(this.configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, showHidden, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return HospitalsApiFp(this.configuration).apiV1HospitalsGet(id, name, description, countryId, created, marketingType, specialtyTypeId, specialtyId, serviceId, exceptHospitalId, showHidden, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
