@@ -178,6 +178,12 @@ export interface Article {
      * @type {string}
      * @memberof Article
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Article
+     */
     description?: string;
     /**
      *
@@ -258,6 +264,12 @@ export interface ArticleItemViewModel {
      * @memberof ArticleItemViewModel
      */
     title?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ArticleItemViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -415,6 +427,12 @@ export interface ArticleViewModel {
      * @memberof ArticleViewModel
      */
     title?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ArticleViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -4082,6 +4100,12 @@ export interface Deal {
      * @type {string}
      * @memberof Deal
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Deal
+     */
     description?: string;
     /**
      *
@@ -4150,6 +4174,12 @@ export interface DealItemViewModel {
      * @memberof DealItemViewModel
      */
     normalizedName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealItemViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -4643,6 +4673,12 @@ export interface DealSearchViewModel {
      * @type {string}
      * @memberof DealSearchViewModel
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealSearchViewModel
+     */
     description?: string;
     /**
      *
@@ -4699,6 +4735,12 @@ export interface DealViewModel {
      * @memberof DealViewModel
      */
     normalizedName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -5062,6 +5104,12 @@ export interface DeviceViewModel {
  * @interface Doctor
  */
 export interface Doctor {
+    /**
+     *
+     * @type {string}
+     * @memberof Doctor
+     */
+    slug?: string;
     /**
      *
      * @type {Date}
@@ -5666,6 +5714,12 @@ export interface DoctorEducationViewModel {
  * @interface DoctorItemViewModel
  */
 export interface DoctorItemViewModel {
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {boolean}
@@ -6304,6 +6358,12 @@ export interface DoctorSpecialtyViewModel {
 export interface DoctorViewModel {
     /**
      *
+     * @type {string}
+     * @memberof DoctorViewModel
+     */
+    slug?: string;
+    /**
+     *
      * @type {Date}
      * @memberof DoctorViewModel
      */
@@ -6771,6 +6831,12 @@ export interface Hospital {
      * @type {string}
      * @memberof Hospital
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Hospital
+     */
     description?: string;
     /**
      *
@@ -7149,6 +7215,12 @@ export interface HospitalItemViewModel {
      * @memberof HospitalItemViewModel
      */
     name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalItemViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -7537,6 +7609,12 @@ export interface HospitalSearchItemViewModel {
      * @type {string}
      * @memberof HospitalSearchItemViewModel
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalSearchItemViewModel
+     */
     description?: string;
     /**
      *
@@ -7898,6 +7976,12 @@ export interface HospitalViewModel {
      * @memberof HospitalViewModel
      */
     name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HospitalViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -10239,6 +10323,12 @@ export interface Service {
      * @type {string}
      * @memberof Service
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Service
+     */
     description?: string;
     /**
      *
@@ -10459,6 +10549,12 @@ export interface ServiceItemViewModel {
      * @type {string}
      * @memberof ServiceItemViewModel
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceItemViewModel
+     */
     description?: string;
     /**
      *
@@ -10623,6 +10719,12 @@ export interface ServiceViewModel {
      * @type {string}
      * @memberof ServiceViewModel
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceViewModel
+     */
     description?: string;
     /**
      *
@@ -10776,6 +10878,12 @@ export interface Specialty {
      * @type {string}
      * @memberof Specialty
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Specialty
+     */
     specialtyTypeId?: string;
     /**
      *
@@ -10893,6 +11001,12 @@ export interface SpecialtySearchViewModel {
      * @type {string}
      * @memberof SpecialtySearchViewModel
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SpecialtySearchViewModel
+     */
     description?: string;
     /**
      *
@@ -10961,6 +11075,12 @@ export interface SpecialtyType {
      * @memberof SpecialtyType
      */
     description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SpecialtyType
+     */
+    slug?: string;
     /**
      *
      * @type {MarketingType}
@@ -11114,6 +11234,12 @@ export interface SpecialtyTypeItemViewModel {
      * @type {string}
      * @memberof SpecialtyTypeItemViewModel
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SpecialtyTypeItemViewModel
+     */
     description?: string;
     /**
      *
@@ -11164,6 +11290,12 @@ export interface SpecialtyTypeViewModel {
      * @memberof SpecialtyTypeViewModel
      */
     name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SpecialtyTypeViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -11306,6 +11438,12 @@ export interface UpdateArticleCommand {
      * @memberof UpdateArticleCommand
      */
     title?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateArticleCommand
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -11684,6 +11822,12 @@ export interface UpdateDealCommand {
      * @memberof UpdateDealCommand
      */
     normalizedName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealCommand
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -12070,6 +12214,12 @@ export interface UpdateHospitalCommand {
      * @memberof UpdateHospitalCommand
      */
     name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateHospitalCommand
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -12606,6 +12756,12 @@ export interface UpdateServiceCommand {
      * @type {string}
      * @memberof UpdateServiceCommand
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateServiceCommand
+     */
     description?: string;
     /**
      *
@@ -12790,6 +12946,12 @@ export interface UpdateSpecialtyTypeCommand {
      * @type {string}
      * @memberof UpdateSpecialtyTypeCommand
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateSpecialtyTypeCommand
+     */
     description?: string;
     /**
      *
@@ -12834,6 +12996,12 @@ export interface UpdateYoutubeCommand {
      * @memberof UpdateYoutubeCommand
      */
     title?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateYoutubeCommand
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -13357,6 +13525,12 @@ export interface Youtube {
      * @type {string}
      * @memberof Youtube
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Youtube
+     */
     description?: string;
     /**
      *
@@ -13401,6 +13575,12 @@ export interface YoutubeItemViewModel {
      * @memberof YoutubeItemViewModel
      */
     title?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof YoutubeItemViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -13512,6 +13692,12 @@ export interface YoutubeViewModel {
      * @memberof YoutubeViewModel
      */
     title?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof YoutubeViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -13801,6 +13987,15 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, body?: CreateArticleCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get article by slug.
+     * @param {string} hospitalId
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any): RequestArgs;
 };
 /**
  * ArticlesApi - functional programming interface
@@ -13867,6 +14062,15 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @throws {RequiredError}
      */
     apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, body?: CreateArticleCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
+     * @summary Get article by slug.
+     * @param {string} hospitalId
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticleViewModel>;
 };
 /**
  * ArticlesApi - factory interface
@@ -13933,6 +14137,15 @@ export declare const ArticlesApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, body?: CreateArticleCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get article by slug.
+     * @param {string} hospitalId
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any): AxiosPromise<ArticleViewModel>;
 };
 /**
  * ArticlesApi - object-oriented interface
@@ -14006,6 +14219,16 @@ export declare class ArticlesApi extends BaseAPI {
      * @memberof ArticlesApi
      */
     apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, body?: CreateArticleCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get article by slug.
+     * @param {string} hospitalId
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ArticlesApi
+     */
+    apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any): AxiosPromise<ArticleViewModel>;
 }
 /**
  * BookingsApi - axios parameter creator
@@ -15700,6 +15923,14 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @throws {RequiredError}
      */
     apiV1DealsPost(body?: CreateDealCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get deal by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsSlugsSlugGet(slug: string, options?: any): RequestArgs;
 };
 /**
  * DealsApi - functional programming interface
@@ -15756,6 +15987,14 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @throws {RequiredError}
      */
     apiV1DealsPost(body?: CreateDealCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
+     * @summary Get deal by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealViewModel>;
 };
 /**
  * DealsApi - factory interface
@@ -15812,6 +16051,14 @@ export declare const DealsApiFactory: (configuration?: Configuration | undefined
      * @throws {RequiredError}
      */
     apiV1DealsPost(body?: CreateDealCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get deal by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DealsSlugsSlugGet(slug: string, options?: any): AxiosPromise<DealViewModel>;
 };
 /**
  * DealsApi - object-oriented interface
@@ -15875,6 +16122,15 @@ export declare class DealsApi extends BaseAPI {
      * @memberof DealsApi
      */
     apiV1DealsPost(body?: CreateDealCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get deal by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DealsApi
+     */
+    apiV1DealsSlugsSlugGet(slug: string, options?: any): AxiosPromise<DealViewModel>;
 }
 /**
  * DepartmentApi - axios parameter creator
@@ -16999,6 +17255,14 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @throws {RequiredError}
      */
     apiV1DoctorsPost(body?: CreateDoctorCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get hospital doctor by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsSlugsSlugGet(slug: string, options?: any): RequestArgs;
 };
 /**
  * DoctorsApi - functional programming interface
@@ -17063,6 +17327,14 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @throws {RequiredError}
      */
     apiV1DoctorsPost(body?: CreateDoctorCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
+     * @summary Get hospital doctor by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorViewModel>;
 };
 /**
  * DoctorsApi - factory interface
@@ -17127,6 +17399,14 @@ export declare const DoctorsApiFactory: (configuration?: Configuration | undefin
      * @throws {RequiredError}
      */
     apiV1DoctorsPost(body?: CreateDoctorCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get hospital doctor by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1DoctorsSlugsSlugGet(slug: string, options?: any): AxiosPromise<DoctorViewModel>;
 };
 /**
  * DoctorsApi - object-oriented interface
@@ -17198,6 +17478,15 @@ export declare class DoctorsApi extends BaseAPI {
      * @memberof DoctorsApi
      */
     apiV1DoctorsPost(body?: CreateDoctorCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get hospital doctor by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof DoctorsApi
+     */
+    apiV1DoctorsSlugsSlugGet(slug: string, options?: any): AxiosPromise<DoctorViewModel>;
 }
 /**
  * EquipmentsApi - axios parameter creator
@@ -18004,6 +18293,14 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @throws {RequiredError}
      */
     apiV1HospitalsPost(body?: CreateHospitalCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get hospital by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsSlugsSlugGet(slug: string, options?: any): RequestArgs;
 };
 /**
  * HospitalsApi - functional programming interface
@@ -18086,6 +18383,14 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @throws {RequiredError}
      */
     apiV1HospitalsPost(body?: CreateHospitalCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
+     * @summary Get hospital by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalViewModel>;
 };
 /**
  * HospitalsApi - factory interface
@@ -18168,6 +18473,14 @@ export declare const HospitalsApiFactory: (configuration?: Configuration | undef
      * @throws {RequiredError}
      */
     apiV1HospitalsPost(body?: CreateHospitalCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get hospital by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsSlugsSlugGet(slug: string, options?: any): AxiosPromise<HospitalViewModel>;
 };
 /**
  * HospitalsApi - object-oriented interface
@@ -18258,6 +18571,15 @@ export declare class HospitalsApi extends BaseAPI {
      * @memberof HospitalsApi
      */
     apiV1HospitalsPost(body?: CreateHospitalCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get hospital by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HospitalsApi
+     */
+    apiV1HospitalsSlugsSlugGet(slug: string, options?: any): AxiosPromise<HospitalViewModel>;
 }
 /**
  * IdentityApi - axios parameter creator
@@ -21132,6 +21454,14 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      */
     apiV1SpecialtytypesPost(specialtyTypeId?: string | undefined, body?: CreateSpecialtyTypeCommand | undefined, options?: any): RequestArgs;
     /**
+     *
+     * @summary Get specialtyType by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1SpecialtytypesSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    /**
      * Sample request:        DELETE /api/v1/SpecialtyTypes/1
      * @summary Delete specialtyType.
      * @param {string} specialtyTypeId
@@ -21188,6 +21518,14 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      */
     apiV1SpecialtytypesPost(specialtyTypeId?: string | undefined, body?: CreateSpecialtyTypeCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
     /**
+     *
+     * @summary Get specialtyType by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1SpecialtytypesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypeViewModel>;
+    /**
      * Sample request:        DELETE /api/v1/SpecialtyTypes/1
      * @summary Delete specialtyType.
      * @param {string} specialtyTypeId
@@ -21243,6 +21581,14 @@ export declare const SpecialtyTypesApiFactory: (configuration?: Configuration | 
      * @throws {RequiredError}
      */
     apiV1SpecialtytypesPost(specialtyTypeId?: string | undefined, body?: CreateSpecialtyTypeCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get specialtyType by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1SpecialtytypesSlugsSlugGet(slug: string, options?: any): AxiosPromise<SpecialtyTypeViewModel>;
     /**
      * Sample request:        DELETE /api/v1/SpecialtyTypes/1
      * @summary Delete specialtyType.
@@ -21304,6 +21650,15 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      */
     apiV1SpecialtytypesPost(specialtyTypeId?: string, body?: CreateSpecialtyTypeCommand, options?: any): AxiosPromise<string>;
     /**
+     *
+     * @summary Get specialtyType by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SpecialtyTypesApi
+     */
+    apiV1SpecialtytypesSlugsSlugGet(slug: string, options?: any): AxiosPromise<SpecialtyTypeViewModel>;
+    /**
      * Sample request:        DELETE /api/v1/SpecialtyTypes/1
      * @summary Delete specialtyType.
      * @param {string} specialtyTypeId
@@ -21363,6 +21718,14 @@ export declare const YoutubesApiAxiosParamCreator: (configuration?: Configuratio
      */
     apiV1YoutubesPost(body?: CreateYoutubeCommand | undefined, options?: any): RequestArgs;
     /**
+     *
+     * @summary Get youtube by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1YoutubesSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    /**
      * Sample request:        DELETE /api/v1/youtubes/1
      * @summary Delete youtube.
      * @param {string} youtubeId
@@ -21419,6 +21782,14 @@ export declare const YoutubesApiFp: (configuration?: Configuration | undefined) 
      */
     apiV1YoutubesPost(body?: CreateYoutubeCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
     /**
+     *
+     * @summary Get youtube by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1YoutubesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<YoutubeViewModel>;
+    /**
      * Sample request:        DELETE /api/v1/youtubes/1
      * @summary Delete youtube.
      * @param {string} youtubeId
@@ -21474,6 +21845,14 @@ export declare const YoutubesApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1YoutubesPost(body?: CreateYoutubeCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get youtube by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1YoutubesSlugsSlugGet(slug: string, options?: any): AxiosPromise<YoutubeViewModel>;
     /**
      * Sample request:        DELETE /api/v1/youtubes/1
      * @summary Delete youtube.
@@ -21534,6 +21913,15 @@ export declare class YoutubesApi extends BaseAPI {
      * @memberof YoutubesApi
      */
     apiV1YoutubesPost(body?: CreateYoutubeCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get youtube by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof YoutubesApi
+     */
+    apiV1YoutubesSlugsSlugGet(slug: string, options?: any): AxiosPromise<YoutubeViewModel>;
     /**
      * Sample request:        DELETE /api/v1/youtubes/1
      * @summary Delete youtube.
