@@ -320,6 +320,12 @@ export interface ArticleItemViewModel {
     hospitalName?: string;
     /**
      *
+     * @type {string}
+     * @memberof ArticleItemViewModel
+     */
+    hospitalSlug?: string;
+    /**
+     *
      * @type {Array<ArticleTagItemViewModel>}
      * @memberof ArticleItemViewModel
      */
@@ -481,6 +487,12 @@ export interface ArticleViewModel {
      * @memberof ArticleViewModel
      */
     hospitalName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ArticleViewModel
+     */
+    hospitalSlug?: string;
     /**
      *
      * @type {Array<ArticleTagItemViewModel>}
@@ -4200,6 +4212,12 @@ export interface DealItemViewModel {
     hospitalName?: string;
     /**
      *
+     * @type {string}
+     * @memberof DealItemViewModel
+     */
+    hospitalSlug?: string;
+    /**
+     *
      * @type {MarketingType}
      * @memberof DealItemViewModel
      */
@@ -4759,6 +4777,12 @@ export interface DealViewModel {
      * @memberof DealViewModel
      */
     hospitalName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DealViewModel
+     */
+    hospitalSlug?: string;
     /**
      *
      * @type {MarketingType}
@@ -11488,6 +11512,12 @@ export interface UpdateArticleCommand {
     marketingType?: MarketingType;
     /**
      *
+     * @type {string}
+     * @memberof UpdateArticleCommand
+     */
+    hospitalSlug?: string;
+    /**
+     *
      * @type {Array<ArticleTagItemViewModel>}
      * @memberof UpdateArticleCommand
      */
@@ -11864,6 +11894,12 @@ export interface UpdateDealCommand {
      * @memberof UpdateDealCommand
      */
     hospitalName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateDealCommand
+     */
+    hospitalSlug?: string;
     /**
      *
      * @type {MarketingType}
