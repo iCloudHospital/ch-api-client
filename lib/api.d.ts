@@ -5764,6 +5764,12 @@ export interface DoctorItemViewModel {
     consultationFee?: number;
     /**
      *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    overview?: string;
+    /**
+     *
      * @type {number}
      * @memberof DoctorItemViewModel
      */
