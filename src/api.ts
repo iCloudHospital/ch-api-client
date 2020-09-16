@@ -5381,6 +5381,12 @@ export interface DoctorAffiliationViewModel {
      * @type {string}
      * @memberof DoctorAffiliationViewModel
      */
+    hospitalSlug?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof DoctorAffiliationViewModel
+     */
     countryId?: string;
     /**
      * 
@@ -7092,6 +7098,12 @@ export interface HospitalAffiliationViewModel {
      * @type {string}
      * @memberof HospitalAffiliationViewModel
      */
+    hospitalSlug?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HospitalAffiliationViewModel
+     */
     countryId?: string;
     /**
      * 
@@ -8493,6 +8505,12 @@ export interface ManagerAffiliationViewModel {
      * @memberof ManagerAffiliationViewModel
      */
     hospitalName?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ManagerAffiliationViewModel
+     */
+    hospitalSlug?: string;
     /**
      * 
      * @type {string}
