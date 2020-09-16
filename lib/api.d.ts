@@ -13969,6 +13969,14 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      */
     apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, marketingType?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
+     *
+     * @summary Get article by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.
      * @param {string} hospitalId
@@ -14005,15 +14013,6 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @throws {RequiredError}
      */
     apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, body?: CreateArticleCommand | undefined, options?: any): RequestArgs;
-    /**
-     *
-     * @summary Get article by slug.
-     * @param {string} hospitalId
-     * @param {string} slug
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any): RequestArgs;
 };
 /**
  * ArticlesApi - functional programming interface
@@ -14043,6 +14042,14 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @throws {RequiredError}
      */
     apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, marketingType?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticlesViewModel>;
+    /**
+     *
+     * @summary Get article by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticleViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.
@@ -14080,15 +14087,6 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @throws {RequiredError}
      */
     apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, body?: CreateArticleCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
-    /**
-     *
-     * @summary Get article by slug.
-     * @param {string} hospitalId
-     * @param {string} slug
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticleViewModel>;
 };
 /**
  * ArticlesApi - factory interface
@@ -14118,6 +14116,14 @@ export declare const ArticlesApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, marketingType?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ArticlesViewModel>;
+    /**
+     *
+     * @summary Get article by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): AxiosPromise<ArticleViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.
@@ -14155,15 +14161,6 @@ export declare const ArticlesApiFactory: (configuration?: Configuration | undefi
      * @throws {RequiredError}
      */
     apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, body?: CreateArticleCommand | undefined, options?: any): AxiosPromise<string>;
-    /**
-     *
-     * @summary Get article by slug.
-     * @param {string} hospitalId
-     * @param {string} slug
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any): AxiosPromise<ArticleViewModel>;
 };
 /**
  * ArticlesApi - object-oriented interface
@@ -14196,6 +14193,15 @@ export declare class ArticlesApi extends BaseAPI {
      * @memberof ArticlesApi
      */
     apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel>;
+    /**
+     *
+     * @summary Get article by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ArticlesApi
+     */
+    apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): AxiosPromise<ArticleViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.
@@ -14237,16 +14243,6 @@ export declare class ArticlesApi extends BaseAPI {
      * @memberof ArticlesApi
      */
     apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, body?: CreateArticleCommand, options?: any): AxiosPromise<string>;
-    /**
-     *
-     * @summary Get article by slug.
-     * @param {string} hospitalId
-     * @param {string} slug
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ArticlesApi
-     */
-    apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any): AxiosPromise<ArticleViewModel>;
 }
 /**
  * BookingsApi - axios parameter creator

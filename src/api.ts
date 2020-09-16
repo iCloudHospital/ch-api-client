@@ -14305,6 +14305,41 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
             };
         },
         /**
+         * 
+         * @summary Get article by slug.
+         * @param {string} slug 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsArticlesSlugsSlugGet(slug: string, options: any = {}): RequestArgs {
+            // verify required parameter 'slug' is not null or undefined
+            if (slug === null || slug === undefined) {
+                throw new RequiredError('slug','Required parameter slug was null or undefined when calling apiV1HospitalsArticlesSlugsSlugGet.');
+            }
+            const localVarPath = `/api/v1/hospitals/articles/slugs/{slug}`
+                .replace(`{${"slug"}}`, encodeURIComponent(String(slug)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Sample request:        DELETE /api/v1/hospitals/1/articles/1
          * @summary Delete article.
          * @param {string} hospitalId 
@@ -14499,47 +14534,6 @@ export const ArticlesApiAxiosParamCreator = function (configuration?: Configurat
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @summary Get article by slug.
-         * @param {string} hospitalId 
-         * @param {string} slug 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options: any = {}): RequestArgs {
-            // verify required parameter 'hospitalId' is not null or undefined
-            if (hospitalId === null || hospitalId === undefined) {
-                throw new RequiredError('hospitalId','Required parameter hospitalId was null or undefined when calling apiV1HospitalsHospitalIdArticlesSlugsSlugGet.');
-            }
-            // verify required parameter 'slug' is not null or undefined
-            if (slug === null || slug === undefined) {
-                throw new RequiredError('slug','Required parameter slug was null or undefined when calling apiV1HospitalsHospitalIdArticlesSlugsSlugGet.');
-            }
-            const localVarPath = `/api/v1/hospitals/{hospitalId}/articles/slugs/{slug}`
-                .replace(`{${"hospitalId"}}`, encodeURIComponent(String(hospitalId)))
-                .replace(`{${"slug"}}`, encodeURIComponent(String(slug)));
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -14573,6 +14567,20 @@ export const ArticlesApiFp = function(configuration?: Configuration) {
          */
         apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ArticlesViewModel> {
             const localVarAxiosArgs = ArticlesApiAxiosParamCreator(configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, countryId, tag, exceptHospitalId, page, limit, lastRetrieved, current, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Get article by slug.
+         * @param {string} slug 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ArticleViewModel> {
+            const localVarAxiosArgs = ArticlesApiAxiosParamCreator(configuration).apiV1HospitalsArticlesSlugsSlugGet(slug, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -14639,21 +14647,6 @@ export const ArticlesApiFp = function(configuration?: Configuration) {
                 return axios.request(axiosRequestArgs);
             };
         },
-        /**
-         * 
-         * @summary Get article by slug.
-         * @param {string} hospitalId 
-         * @param {string} slug 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<ArticleViewModel> {
-            const localVarAxiosArgs = ArticlesApiAxiosParamCreator(configuration).apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId, slug, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
     }
 };
 
@@ -14687,6 +14680,16 @@ export const ArticlesApiFactory = function (configuration?: Configuration, baseP
          */
         apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel> {
             return ArticlesApiFp(configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, countryId, tag, exceptHospitalId, page, limit, lastRetrieved, current, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Get article by slug.
+         * @param {string} slug 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): AxiosPromise<ArticleViewModel> {
+            return ArticlesApiFp(configuration).apiV1HospitalsArticlesSlugsSlugGet(slug, options)(axios, basePath);
         },
         /**
          * Sample request:        DELETE /api/v1/hospitals/1/articles/1
@@ -14733,17 +14736,6 @@ export const ArticlesApiFactory = function (configuration?: Configuration, baseP
         apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, body?: CreateArticleCommand, options?: any): AxiosPromise<string> {
             return ArticlesApiFp(configuration).apiV1HospitalsHospitalIdArticlesPost(hospitalId, body, options)(axios, basePath);
         },
-        /**
-         * 
-         * @summary Get article by slug.
-         * @param {string} hospitalId 
-         * @param {string} slug 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any): AxiosPromise<ArticleViewModel> {
-            return ArticlesApiFp(configuration).apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId, slug, options)(axios, basePath);
-        },
     };
 };
 
@@ -14779,6 +14771,18 @@ export class ArticlesApi extends BaseAPI {
      */
     public apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
         return ArticlesApiFp(this.configuration).apiV1HospitalsArticlesGet(id, title, description, status, marketingType, userId, userName, hospitalId, hospitalName, countryId, tag, exceptHospitalId, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Get article by slug.
+     * @param {string} slug 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ArticlesApi
+     */
+    public apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any) {
+        return ArticlesApiFp(this.configuration).apiV1HospitalsArticlesSlugsSlugGet(slug, options)(this.axios, this.basePath);
     }
 
     /**
@@ -14832,19 +14836,6 @@ export class ArticlesApi extends BaseAPI {
      */
     public apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, body?: CreateArticleCommand, options?: any) {
         return ArticlesApiFp(this.configuration).apiV1HospitalsHospitalIdArticlesPost(hospitalId, body, options)(this.axios, this.basePath);
-    }
-
-    /**
-     * 
-     * @summary Get article by slug.
-     * @param {string} hospitalId 
-     * @param {string} slug 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ArticlesApi
-     */
-    public apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId: string, slug: string, options?: any) {
-        return ArticlesApiFp(this.configuration).apiV1HospitalsHospitalIdArticlesSlugsSlugGet(hospitalId, slug, options)(this.axios, this.basePath);
     }
 
 }
