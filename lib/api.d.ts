@@ -2448,6 +2448,12 @@ export interface Country {
      * @type {string}
      * @memberof Country
      */
+    slug?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Country
+     */
     description?: string;
     /**
      *
@@ -2486,6 +2492,12 @@ export interface CountryItemViewModel {
      * @memberof CountryItemViewModel
      */
     name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CountryItemViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -2553,6 +2565,12 @@ export interface CountryViewModel {
      * @memberof CountryViewModel
      */
     name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CountryViewModel
+     */
+    slug?: string;
     /**
      *
      * @type {string}
@@ -15576,6 +15594,14 @@ export declare const CountriesApiAxiosParamCreator: (configuration?: Configurati
      * @throws {RequiredError}
      */
     apiV1CountriesPost(body?: CreateCountryCommand | undefined, options?: any): RequestArgs;
+    /**
+     *
+     * @summary Get country by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CountriesSlugsSlugGet(slug: string, options?: any): RequestArgs;
 };
 /**
  * CountriesApi - functional programming interface
@@ -15630,6 +15656,14 @@ export declare const CountriesApiFp: (configuration?: Configuration | undefined)
      * @throws {RequiredError}
      */
     apiV1CountriesPost(body?: CreateCountryCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    /**
+     *
+     * @summary Get country by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CountriesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CountryViewModel>;
 };
 /**
  * CountriesApi - factory interface
@@ -15684,6 +15718,14 @@ export declare const CountriesApiFactory: (configuration?: Configuration | undef
      * @throws {RequiredError}
      */
     apiV1CountriesPost(body?: CreateCountryCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get country by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CountriesSlugsSlugGet(slug: string, options?: any): AxiosPromise<CountryViewModel>;
 };
 /**
  * CountriesApi - object-oriented interface
@@ -15745,6 +15787,15 @@ export declare class CountriesApi extends BaseAPI {
      * @memberof CountriesApi
      */
     apiV1CountriesPost(body?: CreateCountryCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get country by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CountriesApi
+     */
+    apiV1CountriesSlugsSlugGet(slug: string, options?: any): AxiosPromise<CountryViewModel>;
 }
 /**
  * DealPackagesApi - axios parameter creator

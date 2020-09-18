@@ -2460,6 +2460,12 @@ export interface Country {
      * @type {string}
      * @memberof Country
      */
+    slug?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Country
+     */
     description?: string;
     /**
      * 
@@ -2498,6 +2504,12 @@ export interface CountryItemViewModel {
      * @memberof CountryItemViewModel
      */
     name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CountryItemViewModel
+     */
+    slug?: string;
     /**
      * 
      * @type {string}
@@ -2565,6 +2577,12 @@ export interface CountryViewModel {
      * @memberof CountryViewModel
      */
     name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof CountryViewModel
+     */
+    slug?: string;
     /**
      * 
      * @type {string}
@@ -17964,6 +17982,41 @@ export const CountriesApiAxiosParamCreator = function (configuration?: Configura
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Get country by slug.
+         * @param {string} slug 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1CountriesSlugsSlugGet(slug: string, options: any = {}): RequestArgs {
+            // verify required parameter 'slug' is not null or undefined
+            if (slug === null || slug === undefined) {
+                throw new RequiredError('slug','Required parameter slug was null or undefined when calling apiV1CountriesSlugsSlugGet.');
+            }
+            const localVarPath = `/api/v1/countries/slugs/{slug}`
+                .replace(`{${"slug"}}`, encodeURIComponent(String(slug)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -18051,6 +18104,20 @@ export const CountriesApiFp = function(configuration?: Configuration) {
                 return axios.request(axiosRequestArgs);
             };
         },
+        /**
+         * 
+         * @summary Get country by slug.
+         * @param {string} slug 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1CountriesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<CountryViewModel> {
+            const localVarAxiosArgs = CountriesApiAxiosParamCreator(configuration).apiV1CountriesSlugsSlugGet(slug, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
     }
 };
 
@@ -18117,6 +18184,16 @@ export const CountriesApiFactory = function (configuration?: Configuration, base
          */
         apiV1CountriesPost(body?: CreateCountryCommand, options?: any): AxiosPromise<string> {
             return CountriesApiFp(configuration).apiV1CountriesPost(body, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Get country by slug.
+         * @param {string} slug 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1CountriesSlugsSlugGet(slug: string, options?: any): AxiosPromise<CountryViewModel> {
+            return CountriesApiFp(configuration).apiV1CountriesSlugsSlugGet(slug, options)(axios, basePath);
         },
     };
 };
@@ -18194,6 +18271,18 @@ export class CountriesApi extends BaseAPI {
      */
     public apiV1CountriesPost(body?: CreateCountryCommand, options?: any) {
         return CountriesApiFp(this.configuration).apiV1CountriesPost(body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Get country by slug.
+     * @param {string} slug 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CountriesApi
+     */
+    public apiV1CountriesSlugsSlugGet(slug: string, options?: any) {
+        return CountriesApiFp(this.configuration).apiV1CountriesSlugsSlugGet(slug, options)(this.axios, this.basePath);
     }
 
 }
