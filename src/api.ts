@@ -11024,6 +11024,12 @@ export interface SpecialtyItemViewModel {
      * @type {string}
      * @memberof SpecialtyItemViewModel
      */
+    slug?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtyItemViewModel
+     */
     description?: string;
     /**
      * 
@@ -11461,6 +11467,12 @@ export interface SpecialtyViewModel {
      * @memberof SpecialtyViewModel
      */
     name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SpecialtyViewModel
+     */
+    slug?: string;
     /**
      * 
      * @type {string}
@@ -12958,6 +12970,12 @@ export interface UpdateSpecialtyCommand {
      * @memberof UpdateSpecialtyCommand
      */
     name?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateSpecialtyCommand
+     */
+    slug?: string;
     /**
      * 
      * @type {string}
