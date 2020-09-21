@@ -16014,6 +16014,8 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @param {string} [countryId]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {string} [specialtyId]
+     * @param {string} [specialtyTypeId]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -16021,7 +16023,7 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
      * @summary Create deal.
@@ -16078,6 +16080,8 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @param {string} [countryId]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {string} [specialtyId]
+     * @param {string} [specialtyTypeId]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -16085,7 +16089,7 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealsViewModel>;
+    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealsViewModel>;
     /**
      *
      * @summary Create deal.
@@ -16142,6 +16146,8 @@ export declare const DealsApiFactory: (configuration?: Configuration | undefined
      * @param {string} [countryId]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {string} [specialtyId]
+     * @param {string} [specialtyTypeId]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -16149,7 +16155,7 @@ export declare const DealsApiFactory: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DealsViewModel>;
+    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DealsViewModel>;
     /**
      *
      * @summary Create deal.
@@ -16211,6 +16217,8 @@ export declare class DealsApi extends BaseAPI {
      * @param {string} [countryId]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {string} [specialtyId]
+     * @param {string} [specialtyTypeId]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -16219,7 +16227,7 @@ export declare class DealsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealsApi
      */
-    apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealsViewModel>;
+    apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealsViewModel>;
     /**
      *
      * @summary Create deal.
@@ -21111,6 +21119,14 @@ export declare const SpecialtiesApiAxiosParamCreator: (configuration?: Configura
      */
     apiV1SpecialtiesPost(specialtyTypeId?: string | undefined, body?: CreateSpecialtyCommand | undefined, options?: any): RequestArgs;
     /**
+     *
+     * @summary Get specialty by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    /**
      * Sample request:        DELETE /api/v1/specialties/1
      * @summary Delete specialty.
      * @param {string} specialtyId
@@ -21167,6 +21183,14 @@ export declare const SpecialtiesApiFp: (configuration?: Configuration | undefine
      */
     apiV1SpecialtiesPost(specialtyTypeId?: string | undefined, body?: CreateSpecialtyCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
     /**
+     *
+     * @summary Get specialty by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyViewModel>;
+    /**
      * Sample request:        DELETE /api/v1/specialties/1
      * @summary Delete specialty.
      * @param {string} specialtyId
@@ -21222,6 +21246,14 @@ export declare const SpecialtiesApiFactory: (configuration?: Configuration | und
      * @throws {RequiredError}
      */
     apiV1SpecialtiesPost(specialtyTypeId?: string | undefined, body?: CreateSpecialtyCommand | undefined, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get specialty by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): AxiosPromise<SpecialtyViewModel>;
     /**
      * Sample request:        DELETE /api/v1/specialties/1
      * @summary Delete specialty.
@@ -21282,6 +21314,15 @@ export declare class SpecialtiesApi extends BaseAPI {
      * @memberof SpecialtiesApi
      */
     apiV1SpecialtiesPost(specialtyTypeId?: string, body?: CreateSpecialtyCommand, options?: any): AxiosPromise<string>;
+    /**
+     *
+     * @summary Get specialty by slug.
+     * @param {string} slug
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SpecialtiesApi
+     */
+    apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): AxiosPromise<SpecialtyViewModel>;
     /**
      * Sample request:        DELETE /api/v1/specialties/1
      * @summary Delete specialty.

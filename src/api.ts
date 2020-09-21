@@ -18822,6 +18822,8 @@ export const DealsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {string} [countryId] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
+         * @param {string} [specialtyId] 
+         * @param {string} [specialtyTypeId] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -18829,7 +18831,7 @@ export const DealsApiAxiosParamCreator = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
+        apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): RequestArgs {
             const localVarPath = `/api/v1/deals`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -18862,6 +18864,14 @@ export const DealsApiAxiosParamCreator = function (configuration?: Configuration
 
             if (hospitalName !== undefined) {
                 localVarQueryParameter['HospitalName'] = hospitalName;
+            }
+
+            if (specialtyId !== undefined) {
+                localVarQueryParameter['SpecialtyId'] = specialtyId;
+            }
+
+            if (specialtyTypeId !== undefined) {
+                localVarQueryParameter['SpecialtyTypeId'] = specialtyTypeId;
             }
 
             if (page !== undefined) {
@@ -19033,6 +19043,8 @@ export const DealsApiFp = function(configuration?: Configuration) {
          * @param {string} [countryId] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
+         * @param {string} [specialtyId] 
+         * @param {string} [specialtyTypeId] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -19040,8 +19052,8 @@ export const DealsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DealsViewModel> {
-            const localVarAxiosArgs = DealsApiAxiosParamCreator(configuration).apiV1DealsGet(id, name, marketingType, countryId, hospitalId, hospitalName, page, limit, lastRetrieved, current, options);
+        apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<DealsViewModel> {
+            const localVarAxiosArgs = DealsApiAxiosParamCreator(configuration).apiV1DealsGet(id, name, marketingType, countryId, hospitalId, hospitalName, specialtyId, specialtyTypeId, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -19124,6 +19136,8 @@ export const DealsApiFactory = function (configuration?: Configuration, basePath
          * @param {string} [countryId] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
+         * @param {string} [specialtyId] 
+         * @param {string} [specialtyTypeId] 
          * @param {number} [page] 
          * @param {number} [limit] 
          * @param {Date} [lastRetrieved] 
@@ -19131,8 +19145,8 @@ export const DealsApiFactory = function (configuration?: Configuration, basePath
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealsViewModel> {
-            return DealsApiFp(configuration).apiV1DealsGet(id, name, marketingType, countryId, hospitalId, hospitalName, page, limit, lastRetrieved, current, options)(axios, basePath);
+        apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealsViewModel> {
+            return DealsApiFp(configuration).apiV1DealsGet(id, name, marketingType, countryId, hospitalId, hospitalName, specialtyId, specialtyTypeId, page, limit, lastRetrieved, current, options)(axios, basePath);
         },
         /**
          * 
@@ -19210,6 +19224,8 @@ export class DealsApi extends BaseAPI {
      * @param {string} [countryId] 
      * @param {string} [hospitalId] 
      * @param {string} [hospitalName] 
+     * @param {string} [specialtyId] 
+     * @param {string} [specialtyTypeId] 
      * @param {number} [page] 
      * @param {number} [limit] 
      * @param {Date} [lastRetrieved] 
@@ -19218,8 +19234,8 @@ export class DealsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealsApi
      */
-    public apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return DealsApiFp(this.configuration).apiV1DealsGet(id, name, marketingType, countryId, hospitalId, hospitalName, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
+    public apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return DealsApiFp(this.configuration).apiV1DealsGet(id, name, marketingType, countryId, hospitalId, hospitalName, specialtyId, specialtyTypeId, page, limit, lastRetrieved, current, options)(this.axios, this.basePath);
     }
 
     /**
@@ -29935,6 +29951,41 @@ export const SpecialtiesApiAxiosParamCreator = function (configuration?: Configu
             };
         },
         /**
+         * 
+         * @summary Get specialty by slug.
+         * @param {string} slug 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtiesSlugsSlugGet(slug: string, options: any = {}): RequestArgs {
+            // verify required parameter 'slug' is not null or undefined
+            if (slug === null || slug === undefined) {
+                throw new RequiredError('slug','Required parameter slug was null or undefined when calling apiV1SpecialtiesSlugsSlugGet.');
+            }
+            const localVarPath = `/api/v1/specialties/slugs/{slug}`
+                .replace(`{${"slug"}}`, encodeURIComponent(String(slug)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Sample request:        DELETE /api/v1/specialties/1
          * @summary Delete specialty.
          * @param {string} specialtyId 
@@ -30109,6 +30160,20 @@ export const SpecialtiesApiFp = function(configuration?: Configuration) {
             };
         },
         /**
+         * 
+         * @summary Get specialty by slug.
+         * @param {string} slug 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<SpecialtyViewModel> {
+            const localVarAxiosArgs = SpecialtiesApiAxiosParamCreator(configuration).apiV1SpecialtiesSlugsSlugGet(slug, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
          * Sample request:        DELETE /api/v1/specialties/1
          * @summary Delete specialty.
          * @param {string} specialtyId 
@@ -30190,6 +30255,16 @@ export const SpecialtiesApiFactory = function (configuration?: Configuration, ba
             return SpecialtiesApiFp(configuration).apiV1SpecialtiesPost(specialtyTypeId, body, options)(axios, basePath);
         },
         /**
+         * 
+         * @summary Get specialty by slug.
+         * @param {string} slug 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): AxiosPromise<SpecialtyViewModel> {
+            return SpecialtiesApiFp(configuration).apiV1SpecialtiesSlugsSlugGet(slug, options)(axios, basePath);
+        },
+        /**
          * Sample request:        DELETE /api/v1/specialties/1
          * @summary Delete specialty.
          * @param {string} specialtyId 
@@ -30261,6 +30336,18 @@ export class SpecialtiesApi extends BaseAPI {
      */
     public apiV1SpecialtiesPost(specialtyTypeId?: string, body?: CreateSpecialtyCommand, options?: any) {
         return SpecialtiesApiFp(this.configuration).apiV1SpecialtiesPost(specialtyTypeId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Get specialty by slug.
+     * @param {string} slug 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SpecialtiesApi
+     */
+    public apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any) {
+        return SpecialtiesApiFp(this.configuration).apiV1SpecialtiesSlugsSlugGet(slug, options)(this.axios, this.basePath);
     }
 
     /**
