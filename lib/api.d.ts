@@ -26,16 +26,24 @@ export interface Account {
     id?: string;
     /**
      *
-     * @type {VendorType}
+     * @type {string}
      * @memberof Account
      */
-    vendor?: VendorType;
+    vendor?: AccountVendorEnum;
     /**
      *
      * @type {AuditableEntity}
      * @memberof Account
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum AccountVendorEnum {
+    Stripe = "Stripe",
+    WeChat = "WeChat"
 }
 /**
  *
@@ -193,16 +201,16 @@ export interface Article {
     body?: string;
     /**
      *
-     * @type {ArticleStatus}
+     * @type {string}
      * @memberof Article
      */
-    status?: ArticleStatus;
+    status?: ArticleStatusEnum;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof Article
      */
-    marketingType?: MarketingType;
+    marketingType?: ArticleMarketingTypeEnum;
     /**
      *
      * @type {string}
@@ -247,6 +255,24 @@ export interface Article {
     auditableEntity?: AuditableEntity;
 }
 /**
+    * @export
+    * @enum {string}
+    */
+export declare enum ArticleStatusEnum {
+    Draft = "Draft",
+    Active = "Active",
+    Archived = "Archived"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ArticleMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
+}
+/**
  *
  * @export
  * @interface ArticleItemViewModel
@@ -284,16 +310,16 @@ export interface ArticleItemViewModel {
     body?: string;
     /**
      *
-     * @type {ArticleStatus}
+     * @type {string}
      * @memberof ArticleItemViewModel
      */
-    status?: ArticleStatus;
+    status?: ArticleItemViewModelStatusEnum;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof ArticleItemViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: ArticleItemViewModelMarketingTypeEnum;
     /**
      *
      * @type {string}
@@ -344,14 +370,22 @@ export interface ArticleItemViewModel {
     auditableEntity?: AuditableEntity;
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum ArticleStatus {
+    * @export
+    * @enum {string}
+    */
+export declare enum ArticleItemViewModelStatusEnum {
     Draft = "Draft",
     Active = "Active",
     Archived = "Archived"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ArticleItemViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -453,16 +487,16 @@ export interface ArticleViewModel {
     body?: string;
     /**
      *
-     * @type {ArticleStatus}
+     * @type {string}
      * @memberof ArticleViewModel
      */
-    status?: ArticleStatus;
+    status?: ArticleViewModelStatusEnum;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof ArticleViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: ArticleViewModelMarketingTypeEnum;
     /**
      *
      * @type {string}
@@ -511,6 +545,24 @@ export interface ArticleViewModel {
      * @memberof ArticleViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ArticleViewModelStatusEnum {
+    Draft = "Draft",
+    Active = "Active",
+    Archived = "Archived"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ArticleViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -771,10 +823,10 @@ export interface Booking {
     dateOfBirth?: Date;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof Booking
      */
-    gender?: Gender;
+    gender?: BookingGenderEnum;
     /**
      *
      * @type {string}
@@ -819,16 +871,16 @@ export interface Booking {
     applicationFee?: number;
     /**
      *
-     * @type {BookingStatus}
+     * @type {string}
      * @memberof Booking
      */
-    status?: BookingStatus;
+    status?: BookingStatusEnum;
     /**
      *
-     * @type {RejectReason}
+     * @type {string}
      * @memberof Booking
      */
-    rejectReason?: RejectReason;
+    rejectReason?: BookingRejectReasonEnum;
     /**
      *
      * @type {string}
@@ -871,6 +923,40 @@ export interface Booking {
      * @memberof Booking
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingStatusEnum {
+    New = "New",
+    Rejected = "Rejected",
+    Approved = "Approved",
+    Paid = "Paid",
+    Canceled = "Canceled",
+    RefundRequested = "RefundRequested",
+    Refunded = "Refunded"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingRejectReasonEnum {
+    AssessmentNotCompleted = "AssessmentNotCompleted",
+    PaymentNotCompleted = "PaymentNotCompleted",
+    ScheduleNotAvailable = "ScheduleNotAvailable",
+    OtherReason = "OtherReason"
 }
 /**
  *
@@ -928,10 +1014,10 @@ export interface BookingItemViewModel {
     dealPackageId?: string;
     /**
      *
-     * @type {RefundPolicy}
+     * @type {string}
      * @memberof BookingItemViewModel
      */
-    refundPolicy?: RefundPolicy;
+    refundPolicy?: BookingItemViewModelRefundPolicyEnum;
     /**
      *
      * @type {number}
@@ -970,10 +1056,10 @@ export interface BookingItemViewModel {
     dateOfBirth?: Date;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof BookingItemViewModel
      */
-    gender?: Gender;
+    gender?: BookingItemViewModelGenderEnum;
     /**
      *
      * @type {string}
@@ -1018,16 +1104,16 @@ export interface BookingItemViewModel {
     applicationFee?: number;
     /**
      *
-     * @type {BookingStatus}
+     * @type {string}
      * @memberof BookingItemViewModel
      */
-    status?: BookingStatus;
+    status?: BookingItemViewModelStatusEnum;
     /**
      *
-     * @type {RejectReason}
+     * @type {string}
      * @memberof BookingItemViewModel
      */
-    rejectReason?: RejectReason;
+    rejectReason?: BookingItemViewModelRejectReasonEnum;
     /**
      *
      * @type {string}
@@ -1042,11 +1128,30 @@ export interface BookingItemViewModel {
     isOpen?: boolean;
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum BookingStatus {
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingItemViewModelRefundPolicyEnum {
+    NonRefundable = "NonRefundable",
+    Refundable = "Refundable",
+    PartialRefundable = "PartialRefundable"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingItemViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingItemViewModelStatusEnum {
     New = "New",
     Rejected = "Rejected",
     Approved = "Approved",
@@ -1054,6 +1159,16 @@ export declare enum BookingStatus {
     Canceled = "Canceled",
     RefundRequested = "RefundRequested",
     Refunded = "Refunded"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingItemViewModelRejectReasonEnum {
+    AssessmentNotCompleted = "AssessmentNotCompleted",
+    PaymentNotCompleted = "PaymentNotCompleted",
+    ScheduleNotAvailable = "ScheduleNotAvailable",
+    OtherReason = "OtherReason"
 }
 /**
  *
@@ -1111,10 +1226,10 @@ export interface BookingViewModel {
     dealPackageId?: string;
     /**
      *
-     * @type {RefundPolicy}
+     * @type {string}
      * @memberof BookingViewModel
      */
-    refundPolicy?: RefundPolicy;
+    refundPolicy?: BookingViewModelRefundPolicyEnum;
     /**
      *
      * @type {number}
@@ -1153,10 +1268,10 @@ export interface BookingViewModel {
     dateOfBirth?: Date;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof BookingViewModel
      */
-    gender?: Gender;
+    gender?: BookingViewModelGenderEnum;
     /**
      *
      * @type {string}
@@ -1201,16 +1316,16 @@ export interface BookingViewModel {
     applicationFee?: number;
     /**
      *
-     * @type {BookingStatus}
+     * @type {string}
      * @memberof BookingViewModel
      */
-    status?: BookingStatus;
+    status?: BookingViewModelStatusEnum;
     /**
      *
-     * @type {RejectReason}
+     * @type {string}
      * @memberof BookingViewModel
      */
-    rejectReason?: RejectReason;
+    rejectReason?: BookingViewModelRejectReasonEnum;
     /**
      *
      * @type {string}
@@ -1223,6 +1338,49 @@ export interface BookingViewModel {
      * @memberof BookingViewModel
      */
     isOpen?: boolean;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingViewModelRefundPolicyEnum {
+    NonRefundable = "NonRefundable",
+    Refundable = "Refundable",
+    PartialRefundable = "PartialRefundable"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingViewModelStatusEnum {
+    New = "New",
+    Rejected = "Rejected",
+    Approved = "Approved",
+    Paid = "Paid",
+    Canceled = "Canceled",
+    RefundRequested = "RefundRequested",
+    Refunded = "Refunded"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum BookingViewModelRejectReasonEnum {
+    AssessmentNotCompleted = "AssessmentNotCompleted",
+    PaymentNotCompleted = "PaymentNotCompleted",
+    ScheduleNotAvailable = "ScheduleNotAvailable",
+    OtherReason = "OtherReason"
 }
 /**
  *
@@ -1305,10 +1463,10 @@ export interface CHAdminItemViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CHAdminItemViewModel
      */
-    gender?: Gender;
+    gender?: CHAdminItemViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -1321,6 +1479,17 @@ export interface CHAdminItemViewModel {
      * @memberof CHAdminItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CHAdminItemViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -1402,10 +1571,10 @@ export interface CHAdminViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CHAdminViewModel
      */
-    gender?: Gender;
+    gender?: CHAdminViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -1418,6 +1587,17 @@ export interface CHAdminViewModel {
      * @memberof CHAdminViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CHAdminViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -1500,10 +1680,10 @@ export interface CHManagerItemViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CHManagerItemViewModel
      */
-    gender?: Gender;
+    gender?: CHManagerItemViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -1516,6 +1696,17 @@ export interface CHManagerItemViewModel {
      * @memberof CHManagerItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CHManagerItemViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -1597,10 +1788,10 @@ export interface CHManagerViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CHManagerViewModel
      */
-    gender?: Gender;
+    gender?: CHManagerViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -1613,6 +1804,17 @@ export interface CHManagerViewModel {
      * @memberof CHManagerViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CHManagerViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -1680,16 +1882,6 @@ export interface ChangeLog {
 /**
  *
  * @export
- * @enum {string}
- */
-export declare enum ChargeStatus {
-    Pending = "Pending",
-    Succeeded = "Succeeded",
-    Failed = "Failed"
-}
-/**
- *
- * @export
  * @interface ConfirmEmailCommand
  */
 export interface ConfirmEmailCommand {
@@ -1714,10 +1906,10 @@ export interface Consultation {
     id?: string;
     /**
      *
-     * @type {ConsultationType}
+     * @type {string}
      * @memberof Consultation
      */
-    consultationType?: ConsultationType;
+    consultationType?: ConsultationConsultationTypeEnum;
     /**
      *
      * @type {string}
@@ -1822,10 +2014,10 @@ export interface Consultation {
     dateOfBirth?: Date;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof Consultation
      */
-    gender?: Gender;
+    gender?: ConsultationGenderEnum;
     /**
      *
      * @type {string}
@@ -1882,16 +2074,16 @@ export interface Consultation {
     applicationFee?: number;
     /**
      *
-     * @type {ConsultationStatus}
+     * @type {string}
      * @memberof Consultation
      */
-    status?: ConsultationStatus;
+    status?: ConsultationStatusEnum;
     /**
      *
-     * @type {RejectReason}
+     * @type {string}
      * @memberof Consultation
      */
-    rejectReason?: RejectReason;
+    rejectReason?: ConsultationRejectReasonEnum;
     /**
      *
      * @type {string}
@@ -1936,6 +2128,49 @@ export interface Consultation {
     auditableEntity?: AuditableEntity;
 }
 /**
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationConsultationTypeEnum {
+    Hospital = "Hospital",
+    Doctor = "Doctor",
+    Deal = "Deal"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationStatusEnum {
+    New = "New",
+    Rejected = "Rejected",
+    Approved = "Approved",
+    Paid = "Paid",
+    Canceled = "Canceled",
+    RefundRequested = "RefundRequested",
+    Refunded = "Refunded"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationRejectReasonEnum {
+    AssessmentNotCompleted = "AssessmentNotCompleted",
+    PaymentNotCompleted = "PaymentNotCompleted",
+    ScheduleNotAvailable = "ScheduleNotAvailable",
+    OtherReason = "OtherReason"
+}
+/**
  *
  * @export
  * @interface ConsultationItemViewModel
@@ -1949,10 +2184,10 @@ export interface ConsultationItemViewModel {
     id?: string;
     /**
      *
-     * @type {ConsultationType}
+     * @type {string}
      * @memberof ConsultationItemViewModel
      */
-    consultationType?: ConsultationType;
+    consultationType?: ConsultationItemViewModelConsultationTypeEnum;
     /**
      *
      * @type {string}
@@ -2057,10 +2292,10 @@ export interface ConsultationItemViewModel {
     dateOfBirth?: Date;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof ConsultationItemViewModel
      */
-    gender?: Gender;
+    gender?: ConsultationItemViewModelGenderEnum;
     /**
      *
      * @type {string}
@@ -2123,16 +2358,16 @@ export interface ConsultationItemViewModel {
     applicationFee?: number;
     /**
      *
-     * @type {ConsultationStatus}
+     * @type {string}
      * @memberof ConsultationItemViewModel
      */
-    status?: ConsultationStatus;
+    status?: ConsultationItemViewModelStatusEnum;
     /**
      *
-     * @type {RejectReason}
+     * @type {string}
      * @memberof ConsultationItemViewModel
      */
-    rejectReason?: RejectReason;
+    rejectReason?: ConsultationItemViewModelRejectReasonEnum;
     /**
      *
      * @type {boolean}
@@ -2147,11 +2382,30 @@ export interface ConsultationItemViewModel {
     paymentId?: string;
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum ConsultationStatus {
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationItemViewModelConsultationTypeEnum {
+    Hospital = "Hospital",
+    Doctor = "Doctor",
+    Deal = "Deal"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationItemViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationItemViewModelStatusEnum {
     New = "New",
     Rejected = "Rejected",
     Approved = "Approved",
@@ -2161,14 +2415,14 @@ export declare enum ConsultationStatus {
     Refunded = "Refunded"
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum ConsultationType {
-    Hospital = "Hospital",
-    Doctor = "Doctor",
-    Deal = "Deal"
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationItemViewModelRejectReasonEnum {
+    AssessmentNotCompleted = "AssessmentNotCompleted",
+    PaymentNotCompleted = "PaymentNotCompleted",
+    ScheduleNotAvailable = "ScheduleNotAvailable",
+    OtherReason = "OtherReason"
 }
 /**
  *
@@ -2184,10 +2438,10 @@ export interface ConsultationViewModel {
     id?: string;
     /**
      *
-     * @type {ConsultationType}
+     * @type {string}
      * @memberof ConsultationViewModel
      */
-    consultationType?: ConsultationType;
+    consultationType?: ConsultationViewModelConsultationTypeEnum;
     /**
      *
      * @type {string}
@@ -2292,10 +2546,10 @@ export interface ConsultationViewModel {
     dateOfBirth?: Date;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof ConsultationViewModel
      */
-    gender?: Gender;
+    gender?: ConsultationViewModelGenderEnum;
     /**
      *
      * @type {string}
@@ -2358,16 +2612,16 @@ export interface ConsultationViewModel {
     applicationFee?: number;
     /**
      *
-     * @type {ConsultationStatus}
+     * @type {string}
      * @memberof ConsultationViewModel
      */
-    status?: ConsultationStatus;
+    status?: ConsultationViewModelStatusEnum;
     /**
      *
-     * @type {RejectReason}
+     * @type {string}
      * @memberof ConsultationViewModel
      */
-    rejectReason?: RejectReason;
+    rejectReason?: ConsultationViewModelRejectReasonEnum;
     /**
      *
      * @type {boolean}
@@ -2380,6 +2634,49 @@ export interface ConsultationViewModel {
      * @memberof ConsultationViewModel
      */
     paymentId?: string;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationViewModelConsultationTypeEnum {
+    Hospital = "Hospital",
+    Doctor = "Doctor",
+    Deal = "Deal"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationViewModelStatusEnum {
+    New = "New",
+    Rejected = "Rejected",
+    Approved = "Approved",
+    Paid = "Paid",
+    Canceled = "Canceled",
+    RefundRequested = "RefundRequested",
+    Refunded = "Refunded"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ConsultationViewModelRejectReasonEnum {
+    AssessmentNotCompleted = "AssessmentNotCompleted",
+    PaymentNotCompleted = "PaymentNotCompleted",
+    ScheduleNotAvailable = "ScheduleNotAvailable",
+    OtherReason = "OtherReason"
 }
 /**
  *
@@ -2646,16 +2943,16 @@ export interface CreateArticleCommand {
     body?: string;
     /**
      *
-     * @type {ArticleStatus}
+     * @type {string}
      * @memberof CreateArticleCommand
      */
-    status?: ArticleStatus;
+    status?: CreateArticleCommandStatusEnum;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof CreateArticleCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: CreateArticleCommandMarketingTypeEnum;
     /**
      *
      * @type {Array<ArticleTagItemViewModel>}
@@ -2668,6 +2965,24 @@ export interface CreateArticleCommand {
      * @memberof CreateArticleCommand
      */
     medias?: Array<MediaViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateArticleCommandStatusEnum {
+    Draft = "Draft",
+    Active = "Active",
+    Archived = "Archived"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateArticleCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -2725,10 +3040,10 @@ export interface CreateBookingCommand {
     dateOfBirth?: Date;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CreateBookingCommand
      */
-    gender?: Gender;
+    gender?: CreateBookingCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -2747,6 +3062,17 @@ export interface CreateBookingCommand {
      * @memberof CreateBookingCommand
      */
     comment?: string;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateBookingCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -2786,10 +3112,10 @@ export interface CreateCHAdminCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CreateCHAdminCommand
      */
-    gender?: Gender;
+    gender?: CreateCHAdminCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -2814,6 +3140,17 @@ export interface CreateCHAdminCommand {
      * @memberof CreateCHAdminCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateCHAdminCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -2865,10 +3202,10 @@ export interface CreateCHManagerCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CreateCHManagerCommand
      */
-    gender?: Gender;
+    gender?: CreateCHManagerCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -2895,6 +3232,17 @@ export interface CreateCHManagerCommand {
     locations?: Array<UserLocationViewModel>;
 }
 /**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateCHManagerCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
+}
+/**
  *
  * @export
  * @interface CreateConsultationCommand
@@ -2902,10 +3250,10 @@ export interface CreateCHManagerCommand {
 export interface CreateConsultationCommand {
     /**
      *
-     * @type {ConsultationType}
+     * @type {string}
      * @memberof CreateConsultationCommand
      */
-    consultationType?: ConsultationType;
+    consultationType?: CreateConsultationCommandConsultationTypeEnum;
     /**
      *
      * @type {string}
@@ -2974,10 +3322,10 @@ export interface CreateConsultationCommand {
     dateOfBirth?: Date;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CreateConsultationCommand
      */
-    gender?: Gender;
+    gender?: CreateConsultationCommandGenderEnum;
     /**
      *
      * @type {string}
@@ -3002,6 +3350,26 @@ export interface CreateConsultationCommand {
      * @memberof CreateConsultationCommand
      */
     approximateDateEnd?: Date;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateConsultationCommandConsultationTypeEnum {
+    Hospital = "Hospital",
+    Doctor = "Doctor",
+    Deal = "Deal"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateConsultationCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -3054,10 +3422,10 @@ export interface CreateDealCommand {
     hospitalId?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof CreateDealCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: CreateDealCommandMarketingTypeEnum;
     /**
      *
      * @type {string}
@@ -3078,6 +3446,15 @@ export interface CreateDealCommand {
     medias?: Array<MediaViewModel>;
 }
 /**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateDealCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
+}
+/**
  *
  * @export
  * @interface CreateDealPackageCommand
@@ -3091,10 +3468,10 @@ export interface CreateDealPackageCommand {
     dealId?: string;
     /**
      *
-     * @type {RefundPolicy}
+     * @type {string}
      * @memberof CreateDealPackageCommand
      */
-    refundPolicy?: RefundPolicy;
+    refundPolicy?: CreateDealPackageCommandRefundPolicyEnum;
     /**
      *
      * @type {string}
@@ -3131,6 +3508,15 @@ export interface CreateDealPackageCommand {
      * @memberof CreateDealPackageCommand
      */
     dealPackageServices?: Array<ServiceViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateDealPackageCommandRefundPolicyEnum {
+    NonRefundable = "NonRefundable",
+    Refundable = "Refundable",
+    PartialRefundable = "PartialRefundable"
 }
 /**
  *
@@ -3171,10 +3557,10 @@ export interface CreateDeviceCommand {
     token?: string;
     /**
      *
-     * @type {Platform}
+     * @type {string}
      * @memberof CreateDeviceCommand
      */
-    platform?: Platform;
+    platform?: CreateDeviceCommandPlatformEnum;
     /**
      *
      * @type {boolean}
@@ -3193,6 +3579,15 @@ export interface CreateDeviceCommand {
      * @memberof CreateDeviceCommand
      */
     noticeAlert?: boolean;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateDeviceCommandPlatformEnum {
+    Web = "Web",
+    IOS = "iOS",
+    Android = "Android"
 }
 /**
  *
@@ -3336,10 +3731,10 @@ export interface CreateDoctorCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CreateDoctorCommand
      */
-    gender?: Gender;
+    gender?: CreateDoctorCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -3366,6 +3761,17 @@ export interface CreateDoctorCommand {
     locations?: Array<UserLocationViewModel>;
 }
 /**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateDoctorCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
+}
+/**
  *
  * @export
  * @interface CreateDoctorReviewCommand
@@ -3385,16 +3791,26 @@ export interface CreateDoctorReviewCommand {
     recommended?: boolean;
     /**
      *
-     * @type {ReviewCategory}
+     * @type {string}
      * @memberof CreateDoctorReviewCommand
      */
-    reviewCategory?: ReviewCategory;
+    reviewCategory?: CreateDoctorReviewCommandReviewCategoryEnum;
     /**
      *
      * @type {number}
      * @memberof CreateDoctorReviewCommand
      */
     rate?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateDoctorReviewCommandReviewCategoryEnum {
+    Services = "Services",
+    Hospitality = "Hospitality",
+    Transfer = "Transfer",
+    Etc = "Etc"
 }
 /**
  *
@@ -3495,10 +3911,10 @@ export interface CreateHospitalCommand {
     countryId?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof CreateHospitalCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: CreateHospitalCommandMarketingTypeEnum;
     /**
      *
      * @type {boolean}
@@ -3537,6 +3953,15 @@ export interface CreateHospitalCommand {
     location?: LocationViewModel;
 }
 /**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateHospitalCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
+}
+/**
  *
  * @export
  * @interface CreateHospitalReviewCommand
@@ -3556,16 +3981,26 @@ export interface CreateHospitalReviewCommand {
     recommended?: boolean;
     /**
      *
-     * @type {ReviewCategory}
+     * @type {string}
      * @memberof CreateHospitalReviewCommand
      */
-    reviewCategory?: ReviewCategory;
+    reviewCategory?: CreateHospitalReviewCommandReviewCategoryEnum;
     /**
      *
      * @type {number}
      * @memberof CreateHospitalReviewCommand
      */
     rate?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateHospitalReviewCommandReviewCategoryEnum {
+    Services = "Services",
+    Hospitality = "Hospitality",
+    Transfer = "Transfer",
+    Etc = "Etc"
 }
 /**
  *
@@ -3623,10 +4058,10 @@ export interface CreateManagerCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CreateManagerCommand
      */
-    gender?: Gender;
+    gender?: CreateManagerCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -3651,6 +4086,17 @@ export interface CreateManagerCommand {
      * @memberof CreateManagerCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateManagerCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -3702,10 +4148,10 @@ export interface CreatePartnerCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CreatePartnerCommand
      */
-    gender?: Gender;
+    gender?: CreatePartnerCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -3730,6 +4176,17 @@ export interface CreatePartnerCommand {
      * @memberof CreatePartnerCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreatePartnerCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -3787,10 +4244,10 @@ export interface CreatePatientCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof CreatePatientCommand
      */
-    gender?: Gender;
+    gender?: CreatePatientCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -3817,6 +4274,17 @@ export interface CreatePatientCommand {
     locations?: Array<UserLocationViewModel>;
 }
 /**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreatePatientCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
+}
+/**
  *
  * @export
  * @interface CreateQuestionCommand
@@ -3836,16 +4304,16 @@ export interface CreateQuestionCommand {
     body?: string;
     /**
      *
-     * @type {QuestionType}
+     * @type {string}
      * @memberof CreateQuestionCommand
      */
-    questionType?: QuestionType;
+    questionType?: CreateQuestionCommandQuestionTypeEnum;
     /**
      *
-     * @type {QuestionStatus}
+     * @type {string}
      * @memberof CreateQuestionCommand
      */
-    questionStatus?: QuestionStatus;
+    questionStatus?: CreateQuestionCommandQuestionStatusEnum;
     /**
      *
      * @type {string}
@@ -3864,6 +4332,27 @@ export interface CreateQuestionCommand {
      * @memberof CreateQuestionCommand
      */
     medias?: Array<MediaViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateQuestionCommandQuestionTypeEnum {
+    General = "General",
+    Health = "Health",
+    Treatment = "Treatment",
+    Travel = "Travel",
+    Consult = "Consult"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateQuestionCommandQuestionStatusEnum {
+    New = "New",
+    Answered = "Answered",
+    Replied = "Replied",
+    Archived = "Archived"
 }
 /**
  *
@@ -3947,10 +4436,18 @@ export interface CreateServiceCommand {
     priceReuqest?: boolean;
     /**
      *
-     * @type {Procedure}
+     * @type {string}
      * @memberof CreateServiceCommand
      */
-    procedure?: Procedure;
+    procedure?: CreateServiceCommandProcedureEnum;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateServiceCommandProcedureEnum {
+    Treatment = "Treatment",
+    Diagnostic = "Diagnostic"
 }
 /**
  *
@@ -4016,10 +4513,19 @@ export interface CreateSpecialtyTypeCommand {
     description?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof CreateSpecialtyTypeCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: CreateSpecialtyTypeCommandMarketingTypeEnum;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateSpecialtyTypeCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -4053,10 +4559,19 @@ export interface CreateYoutubeCommand {
     youtubeTags?: Array<YoutubeTagItemViewModel>;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof CreateYoutubeCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: CreateYoutubeCommandMarketingTypeEnum;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CreateYoutubeCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -4072,10 +4587,10 @@ export interface Customer {
     id?: string;
     /**
      *
-     * @type {VendorType}
+     * @type {string}
      * @memberof Customer
      */
-    vendor?: VendorType;
+    vendor?: CustomerVendorEnum;
     /**
      *
      * @type {string}
@@ -4100,6 +4615,14 @@ export interface Customer {
      * @memberof Customer
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum CustomerVendorEnum {
+    Stripe = "Stripe",
+    WeChat = "WeChat"
 }
 /**
  *
@@ -4151,10 +4674,10 @@ export interface Deal {
     hospital?: Hospital;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof Deal
      */
-    marketingType?: MarketingType;
+    marketingType?: DealMarketingTypeEnum;
     /**
      *
      * @type {string}
@@ -4179,6 +4702,15 @@ export interface Deal {
      * @memberof Deal
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DealMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -4236,10 +4768,10 @@ export interface DealItemViewModel {
     hospitalSlug?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof DealItemViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: DealItemViewModelMarketingTypeEnum;
     /**
      *
      * @type {string}
@@ -4264,6 +4796,15 @@ export interface DealItemViewModel {
      * @memberof DealItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DealItemViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -4291,10 +4832,10 @@ export interface DealPackage {
     deal?: Deal;
     /**
      *
-     * @type {RefundPolicy}
+     * @type {string}
      * @memberof DealPackage
      */
-    refundPolicy?: RefundPolicy;
+    refundPolicy?: DealPackageRefundPolicyEnum;
     /**
      *
      * @type {string}
@@ -4357,6 +4898,15 @@ export interface DealPackage {
     auditableEntity?: AuditableEntity;
 }
 /**
+    * @export
+    * @enum {string}
+    */
+export declare enum DealPackageRefundPolicyEnum {
+    NonRefundable = "NonRefundable",
+    Refundable = "Refundable",
+    PartialRefundable = "PartialRefundable"
+}
+/**
  *
  * @export
  * @interface DealPackageItemViewModel
@@ -4394,10 +4944,10 @@ export interface DealPackageItemViewModel {
     hospitalName?: string;
     /**
      *
-     * @type {RefundPolicy}
+     * @type {string}
      * @memberof DealPackageItemViewModel
      */
-    refundPolicy?: RefundPolicy;
+    refundPolicy?: DealPackageItemViewModelRefundPolicyEnum;
     /**
      *
      * @type {string}
@@ -4446,6 +4996,15 @@ export interface DealPackageItemViewModel {
      * @memberof DealPackageItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DealPackageItemViewModelRefundPolicyEnum {
+    NonRefundable = "NonRefundable",
+    Refundable = "Refundable",
+    PartialRefundable = "PartialRefundable"
 }
 /**
  *
@@ -4565,16 +5124,24 @@ export interface DealPackageServiceItemViewModel {
     serviceName?: string;
     /**
      *
-     * @type {Procedure}
+     * @type {string}
      * @memberof DealPackageServiceItemViewModel
      */
-    procedure?: Procedure;
+    procedure?: DealPackageServiceItemViewModelProcedureEnum;
     /**
      *
      * @type {number}
      * @memberof DealPackageServiceItemViewModel
      */
     order?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DealPackageServiceItemViewModelProcedureEnum {
+    Treatment = "Treatment",
+    Diagnostic = "Diagnostic"
 }
 /**
  *
@@ -4614,10 +5181,10 @@ export interface DealPackageViewModel {
     hospitalName?: string;
     /**
      *
-     * @type {RefundPolicy}
+     * @type {string}
      * @memberof DealPackageViewModel
      */
-    refundPolicy?: RefundPolicy;
+    refundPolicy?: DealPackageViewModelRefundPolicyEnum;
     /**
      *
      * @type {string}
@@ -4666,6 +5233,15 @@ export interface DealPackageViewModel {
      * @memberof DealPackageViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DealPackageViewModelRefundPolicyEnum {
+    NonRefundable = "NonRefundable",
+    Refundable = "Refundable",
+    PartialRefundable = "PartialRefundable"
 }
 /**
  *
@@ -4803,10 +5379,10 @@ export interface DealViewModel {
     hospitalSlug?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof DealViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: DealViewModelMarketingTypeEnum;
     /**
      *
      * @type {string}
@@ -4831,6 +5407,15 @@ export interface DealViewModel {
      * @memberof DealViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DealViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -5007,10 +5592,10 @@ export interface Device {
     token?: string;
     /**
      *
-     * @type {Platform}
+     * @type {string}
      * @memberof Device
      */
-    platform?: Platform;
+    platform?: DevicePlatformEnum;
     /**
      *
      * @type {boolean}
@@ -5053,6 +5638,15 @@ export interface Device {
      * @memberof Device
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DevicePlatformEnum {
+    Web = "Web",
+    IOS = "iOS",
+    Android = "Android"
 }
 /**
  *
@@ -5117,10 +5711,10 @@ export interface DeviceViewModel {
     token?: string;
     /**
      *
-     * @type {Platform}
+     * @type {string}
      * @memberof DeviceViewModel
      */
-    platform?: Platform;
+    platform?: DeviceViewModelPlatformEnum;
     /**
      *
      * @type {boolean}
@@ -5139,6 +5733,15 @@ export interface DeviceViewModel {
      * @memberof DeviceViewModel
      */
     noticeAlert?: boolean;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DeviceViewModelPlatformEnum {
+    Web = "Web",
+    IOS = "iOS",
+    Android = "Android"
 }
 /**
  *
@@ -5280,10 +5883,10 @@ export interface Doctor {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof Doctor
      */
-    gender?: Gender;
+    gender?: DoctorGenderEnum;
     /**
      *
      * @type {Date}
@@ -5332,6 +5935,17 @@ export interface Doctor {
      * @memberof Doctor
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DoctorGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -5896,10 +6510,10 @@ export interface DoctorItemViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof DoctorItemViewModel
      */
-    gender?: Gender;
+    gender?: DoctorItemViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -5912,6 +6526,17 @@ export interface DoctorItemViewModel {
      * @memberof DoctorItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DoctorItemViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -6122,16 +6747,26 @@ export interface DoctorReview {
     recommended?: boolean;
     /**
      *
-     * @type {ReviewCategory}
+     * @type {string}
      * @memberof DoctorReview
      */
-    reviewCategory?: ReviewCategory;
+    reviewCategory?: DoctorReviewReviewCategoryEnum;
     /**
      *
      * @type {number}
      * @memberof DoctorReview
      */
     rate?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DoctorReviewReviewCategoryEnum {
+    Services = "Services",
+    Hospitality = "Hospitality",
+    Transfer = "Transfer",
+    Etc = "Etc"
 }
 /**
  *
@@ -6177,16 +6812,26 @@ export interface DoctorReviewItemViewModel {
     recommended?: boolean;
     /**
      *
-     * @type {ReviewCategory}
+     * @type {string}
      * @memberof DoctorReviewItemViewModel
      */
-    reviewCategory?: ReviewCategory;
+    reviewCategory?: DoctorReviewItemViewModelReviewCategoryEnum;
     /**
      *
      * @type {number}
      * @memberof DoctorReviewItemViewModel
      */
     rate?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DoctorReviewItemViewModelReviewCategoryEnum {
+    Services = "Services",
+    Hospitality = "Hospitality",
+    Transfer = "Transfer",
+    Etc = "Etc"
 }
 /**
  *
@@ -6232,16 +6877,26 @@ export interface DoctorReviewViewModel {
     recommended?: boolean;
     /**
      *
-     * @type {ReviewCategory}
+     * @type {string}
      * @memberof DoctorReviewViewModel
      */
-    reviewCategory?: ReviewCategory;
+    reviewCategory?: DoctorReviewViewModelReviewCategoryEnum;
     /**
      *
      * @type {number}
      * @memberof DoctorReviewViewModel
      */
     rate?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DoctorReviewViewModelReviewCategoryEnum {
+    Services = "Services",
+    Hospitality = "Hospitality",
+    Transfer = "Transfer",
+    Etc = "Etc"
 }
 /**
  *
@@ -6574,10 +7229,10 @@ export interface DoctorViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof DoctorViewModel
      */
-    gender?: Gender;
+    gender?: DoctorViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -6590,6 +7245,17 @@ export interface DoctorViewModel {
      * @memberof DoctorViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum DoctorViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -6847,18 +7513,6 @@ export interface EquipmentsViewModel {
 /**
  *
  * @export
- * @enum {string}
- */
-export declare enum Gender {
-    NotSpecified = "NotSpecified",
-    Male = "Male",
-    Female = "Female",
-    NonBinary = "NonBinary",
-    PreferNotToSay = "PreferNotToSay"
-}
-/**
- *
- * @export
  * @interface Hospital
  */
 export interface Hospital {
@@ -6954,10 +7608,10 @@ export interface Hospital {
     country?: Country;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof Hospital
      */
-    marketingType?: MarketingType;
+    marketingType?: HospitalMarketingTypeEnum;
     /**
      *
      * @type {boolean}
@@ -7078,6 +7732,15 @@ export interface Hospital {
      * @memberof Hospital
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum HospitalMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -7343,10 +8006,10 @@ export interface HospitalItemViewModel {
     countryName?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof HospitalItemViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: HospitalItemViewModelMarketingTypeEnum;
     /**
      *
      * @type {boolean}
@@ -7463,6 +8126,15 @@ export interface HospitalItemViewModel {
     auditableEntity?: AuditableEntity;
 }
 /**
+    * @export
+    * @enum {string}
+    */
+export declare enum HospitalItemViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
+}
+/**
  *
  * @export
  * @interface HospitalReview
@@ -7506,16 +8178,26 @@ export interface HospitalReview {
     recommended?: boolean;
     /**
      *
-     * @type {ReviewCategory}
+     * @type {string}
      * @memberof HospitalReview
      */
-    reviewCategory?: ReviewCategory;
+    reviewCategory?: HospitalReviewReviewCategoryEnum;
     /**
      *
      * @type {number}
      * @memberof HospitalReview
      */
     rate?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum HospitalReviewReviewCategoryEnum {
+    Services = "Services",
+    Hospitality = "Hospitality",
+    Transfer = "Transfer",
+    Etc = "Etc"
 }
 /**
  *
@@ -7561,16 +8243,26 @@ export interface HospitalReviewItemViewModel {
     recommended?: boolean;
     /**
      *
-     * @type {ReviewCategory}
+     * @type {string}
      * @memberof HospitalReviewItemViewModel
      */
-    reviewCategory?: ReviewCategory;
+    reviewCategory?: HospitalReviewItemViewModelReviewCategoryEnum;
     /**
      *
      * @type {number}
      * @memberof HospitalReviewItemViewModel
      */
     rate?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum HospitalReviewItemViewModelReviewCategoryEnum {
+    Services = "Services",
+    Hospitality = "Hospitality",
+    Transfer = "Transfer",
+    Etc = "Etc"
 }
 /**
  *
@@ -7616,16 +8308,26 @@ export interface HospitalReviewViewModel {
     recommended?: boolean;
     /**
      *
-     * @type {ReviewCategory}
+     * @type {string}
      * @memberof HospitalReviewViewModel
      */
-    reviewCategory?: ReviewCategory;
+    reviewCategory?: HospitalReviewViewModelReviewCategoryEnum;
     /**
      *
      * @type {number}
      * @memberof HospitalReviewViewModel
      */
     rate?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum HospitalReviewViewModelReviewCategoryEnum {
+    Services = "Services",
+    Hospitality = "Hospitality",
+    Transfer = "Transfer",
+    Etc = "Etc"
 }
 /**
  *
@@ -7946,10 +8648,19 @@ export interface HospitalSpecialtyItemViewModel {
     auditableEntity?: AuditableEntity;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof HospitalSpecialtyItemViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: HospitalSpecialtyItemViewModelMarketingTypeEnum;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum HospitalSpecialtyItemViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -8007,10 +8718,19 @@ export interface HospitalSpecialtyViewModel {
     auditableEntity?: AuditableEntity;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof HospitalSpecialtyViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: HospitalSpecialtyViewModelMarketingTypeEnum;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum HospitalSpecialtyViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -8104,10 +8824,10 @@ export interface HospitalViewModel {
     countryName?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof HospitalViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: HospitalViewModelMarketingTypeEnum;
     /**
      *
      * @type {boolean}
@@ -8222,6 +8942,15 @@ export interface HospitalViewModel {
      * @memberof HospitalViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum HospitalViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -8426,10 +9155,10 @@ export interface Manager {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof Manager
      */
-    gender?: Gender;
+    gender?: ManagerGenderEnum;
     /**
      *
      * @type {Date}
@@ -8478,6 +9207,17 @@ export interface Manager {
      * @memberof Manager
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ManagerGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -8663,10 +9403,10 @@ export interface ManagerViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof ManagerViewModel
      */
-    gender?: Gender;
+    gender?: ManagerViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -8679,6 +9419,17 @@ export interface ManagerViewModel {
      * @memberof ManagerViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ManagerViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -8702,16 +9453,6 @@ export interface ManagersViewModel {
 /**
  *
  * @export
- * @enum {string}
- */
-export declare enum MarketingType {
-    Both = "Both",
-    GeneralHealth = "GeneralHealth",
-    Beauty = "Beauty"
-}
-/**
- *
- * @export
  * @interface Media
  */
 export interface Media {
@@ -8723,10 +9464,10 @@ export interface Media {
     id?: string;
     /**
      *
-     * @type {MediaType}
+     * @type {string}
      * @memberof Media
      */
-    mediaType?: MediaType;
+    mediaType?: MediaMediaTypeEnum;
     /**
      *
      * @type {string}
@@ -8763,6 +9504,16 @@ export interface Media {
      * @memberof Media
      */
     order?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum MediaMediaTypeEnum {
+    Photo = "Photo",
+    Video = "Video",
+    Youtube = "Youtube",
+    Document = "Document"
 }
 /**
  *
@@ -8810,17 +9561,6 @@ export interface MediaSearchViewModel {
 /**
  *
  * @export
- * @enum {string}
- */
-export declare enum MediaType {
-    Photo = "Photo",
-    Video = "Video",
-    Youtube = "Youtube",
-    Document = "Document"
-}
-/**
- *
- * @export
  * @interface MediaViewModel
  */
 export interface MediaViewModel {
@@ -8832,10 +9572,10 @@ export interface MediaViewModel {
     id?: string;
     /**
      *
-     * @type {MediaType}
+     * @type {string}
      * @memberof MediaViewModel
      */
-    mediaType?: MediaType;
+    mediaType?: MediaViewModelMediaTypeEnum;
     /**
      *
      * @type {string}
@@ -8860,6 +9600,16 @@ export interface MediaViewModel {
      * @memberof MediaViewModel
      */
     order?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum MediaViewModelMediaTypeEnum {
+    Photo = "Photo",
+    Video = "Video",
+    Youtube = "Youtube",
+    Document = "Document"
 }
 /**
  *
@@ -8996,10 +9746,10 @@ export interface PartnerItemViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof PartnerItemViewModel
      */
-    gender?: Gender;
+    gender?: PartnerItemViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -9012,6 +9762,17 @@ export interface PartnerItemViewModel {
      * @memberof PartnerItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum PartnerItemViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -9105,10 +9866,10 @@ export interface PartnerViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof PartnerViewModel
      */
-    gender?: Gender;
+    gender?: PartnerViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -9121,6 +9882,17 @@ export interface PartnerViewModel {
      * @memberof PartnerViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum PartnerViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -9263,10 +10035,10 @@ export interface Patient {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof Patient
      */
-    gender?: Gender;
+    gender?: PatientGenderEnum;
     /**
      *
      * @type {Date}
@@ -9315,6 +10087,17 @@ export interface Patient {
      * @memberof Patient
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum PatientGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -9378,10 +10161,10 @@ export interface PatientItemViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof PatientItemViewModel
      */
-    gender?: Gender;
+    gender?: PatientItemViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -9394,6 +10177,17 @@ export interface PatientItemViewModel {
      * @memberof PatientItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum PatientItemViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -9493,10 +10287,10 @@ export interface PatientViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof PatientViewModel
      */
-    gender?: Gender;
+    gender?: PatientViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -9509,6 +10303,17 @@ export interface PatientViewModel {
      * @memberof PatientViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum PatientViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -9543,10 +10348,10 @@ export interface Payment {
     id?: string;
     /**
      *
-     * @type {PaymentMethod}
+     * @type {string}
      * @memberof Payment
      */
-    paymentMethod?: PaymentMethod;
+    paymentMethod?: PaymentPaymentMethodEnum;
     /**
      *
      * @type {string}
@@ -9585,22 +10390,22 @@ export interface Payment {
     refundId?: string;
     /**
      *
-     * @type {ChargeStatus}
+     * @type {string}
      * @memberof Payment
      */
-    chargeStatus?: ChargeStatus;
+    chargeStatus?: PaymentChargeStatusEnum;
     /**
      *
-     * @type {RefundStatus}
+     * @type {string}
      * @memberof Payment
      */
-    refundStatus?: RefundStatus;
+    refundStatus?: PaymentRefundStatusEnum;
     /**
      *
-     * @type {PaymentStatus}
+     * @type {string}
      * @memberof Payment
      */
-    paymentStatus?: PaymentStatus;
+    paymentStatus?: PaymentPaymentStatusEnum;
     /**
      *
      * @type {boolean}
@@ -9657,44 +10462,41 @@ export interface Payment {
     paymentStatusChangeLogs?: Array<ChangeLog>;
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum PaymentMethod {
+    * @export
+    * @enum {string}
+    */
+export declare enum PaymentPaymentMethodEnum {
     Stripe = "Stripe",
     Paypal = "Paypal",
     BankTransfer = "BankTransfer"
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum PaymentStatus {
+    * @export
+    * @enum {string}
+    */
+export declare enum PaymentChargeStatusEnum {
+    Pending = "Pending",
+    Succeeded = "Succeeded",
+    Failed = "Failed"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum PaymentRefundStatusEnum {
+    Pending = "Pending",
+    Succeeded = "Succeeded",
+    Failed = "Failed"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum PaymentPaymentStatusEnum {
     Unpaid = "Unpaid",
     Paid = "Paid",
     RefundRequested = "RefundRequested",
     Refunded = "Refunded"
-}
-/**
- *
- * @export
- * @enum {string}
- */
-export declare enum Platform {
-    Web = "Web",
-    IOS = "iOS",
-    Android = "Android"
-}
-/**
- *
- * @export
- * @enum {string}
- */
-export declare enum Procedure {
-    Treatment = "Treatment",
-    Diagnostic = "Diagnostic"
 }
 /**
  *
@@ -9728,16 +10530,16 @@ export interface Question {
     body?: string;
     /**
      *
-     * @type {QuestionType}
+     * @type {string}
      * @memberof Question
      */
-    questionType?: QuestionType;
+    questionType?: QuestionQuestionTypeEnum;
     /**
      *
-     * @type {QuestionStatus}
+     * @type {string}
      * @memberof Question
      */
-    questionStatus?: QuestionStatus;
+    questionStatus?: QuestionQuestionStatusEnum;
     /**
      *
      * @type {string}
@@ -9798,6 +10600,27 @@ export interface Question {
      * @memberof Question
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum QuestionQuestionTypeEnum {
+    General = "General",
+    Health = "Health",
+    Treatment = "Treatment",
+    Travel = "Travel",
+    Consult = "Consult"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum QuestionQuestionStatusEnum {
+    New = "New",
+    Answered = "Answered",
+    Replied = "Replied",
+    Archived = "Archived"
 }
 /**
  *
@@ -10039,16 +10862,16 @@ export interface QuestionItemViewModel {
     hospitalName?: string;
     /**
      *
-     * @type {QuestionType}
+     * @type {string}
      * @memberof QuestionItemViewModel
      */
-    questionType?: QuestionType;
+    questionType?: QuestionItemViewModelQuestionTypeEnum;
     /**
      *
-     * @type {QuestionStatus}
+     * @type {string}
      * @memberof QuestionItemViewModel
      */
-    questionStatus?: QuestionStatus;
+    questionStatus?: QuestionItemViewModelQuestionStatusEnum;
     /**
      *
      * @type {number}
@@ -10075,10 +10898,10 @@ export interface QuestionItemViewModel {
     dealPackageId?: string;
     /**
      *
-     * @type {RefundPolicy}
+     * @type {string}
      * @memberof QuestionItemViewModel
      */
-    refundPolicy?: RefundPolicy;
+    refundPolicy?: QuestionItemViewModelRefundPolicyEnum;
     /**
      *
      * @type {number}
@@ -10093,27 +10916,34 @@ export interface QuestionItemViewModel {
     auditableEntity?: AuditableEntity;
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum QuestionStatus {
+    * @export
+    * @enum {string}
+    */
+export declare enum QuestionItemViewModelQuestionTypeEnum {
+    General = "General",
+    Health = "Health",
+    Treatment = "Treatment",
+    Travel = "Travel",
+    Consult = "Consult"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum QuestionItemViewModelQuestionStatusEnum {
     New = "New",
     Answered = "Answered",
     Replied = "Replied",
     Archived = "Archived"
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum QuestionType {
-    General = "General",
-    Health = "Health",
-    Treatment = "Treatment",
-    Travel = "Travel",
-    Consult = "Consult"
+    * @export
+    * @enum {string}
+    */
+export declare enum QuestionItemViewModelRefundPolicyEnum {
+    NonRefundable = "NonRefundable",
+    Refundable = "Refundable",
+    PartialRefundable = "PartialRefundable"
 }
 /**
  *
@@ -10177,16 +11007,16 @@ export interface QuestionViewModel {
     hospitalName?: string;
     /**
      *
-     * @type {QuestionType}
+     * @type {string}
      * @memberof QuestionViewModel
      */
-    questionType?: QuestionType;
+    questionType?: QuestionViewModelQuestionTypeEnum;
     /**
      *
-     * @type {QuestionStatus}
+     * @type {string}
      * @memberof QuestionViewModel
      */
-    questionStatus?: QuestionStatus;
+    questionStatus?: QuestionViewModelQuestionStatusEnum;
     /**
      *
      * @type {number}
@@ -10213,10 +11043,10 @@ export interface QuestionViewModel {
     dealPackageId?: string;
     /**
      *
-     * @type {RefundPolicy}
+     * @type {string}
      * @memberof QuestionViewModel
      */
-    refundPolicy?: RefundPolicy;
+    refundPolicy?: QuestionViewModelRefundPolicyEnum;
     /**
      *
      * @type {number}
@@ -10229,6 +11059,36 @@ export interface QuestionViewModel {
      * @memberof QuestionViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum QuestionViewModelQuestionTypeEnum {
+    General = "General",
+    Health = "Health",
+    Treatment = "Treatment",
+    Travel = "Travel",
+    Consult = "Consult"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum QuestionViewModelQuestionStatusEnum {
+    New = "New",
+    Answered = "Answered",
+    Replied = "Replied",
+    Archived = "Archived"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum QuestionViewModelRefundPolicyEnum {
+    NonRefundable = "NonRefundable",
+    Refundable = "Refundable",
+    PartialRefundable = "PartialRefundable"
 }
 /**
  *
@@ -10252,41 +11112,31 @@ export interface QuestionsViewModel {
 /**
  *
  * @export
- * @enum {string}
- */
-export declare enum RefundPolicy {
-    NonRefundable = "NonRefundable",
-    Refundable = "Refundable",
-    PartialRefundable = "PartialRefundable"
-}
-/**
- *
- * @export
- * @enum {string}
- */
-export declare enum RefundStatus {
-    Pending = "Pending",
-    Succeeded = "Succeeded",
-    Failed = "Failed"
-}
-/**
- *
- * @export
  * @interface RejectBookingCommand
  */
 export interface RejectBookingCommand {
     /**
      *
-     * @type {RejectReason}
+     * @type {string}
      * @memberof RejectBookingCommand
      */
-    rejectReason?: RejectReason;
+    rejectReason?: RejectBookingCommandRejectReasonEnum;
     /**
      *
      * @type {string}
      * @memberof RejectBookingCommand
      */
     rejectComment?: string;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum RejectBookingCommandRejectReasonEnum {
+    AssessmentNotCompleted = "AssessmentNotCompleted",
+    PaymentNotCompleted = "PaymentNotCompleted",
+    ScheduleNotAvailable = "ScheduleNotAvailable",
+    OtherReason = "OtherReason"
 }
 /**
  *
@@ -10296,10 +11146,10 @@ export interface RejectBookingCommand {
 export interface RejectConsultationCommand {
     /**
      *
-     * @type {RejectReason}
+     * @type {string}
      * @memberof RejectConsultationCommand
      */
-    rejectReason?: RejectReason;
+    rejectReason?: RejectConsultationCommandRejectReasonEnum;
     /**
      *
      * @type {string}
@@ -10308,26 +11158,14 @@ export interface RejectConsultationCommand {
     rejectComment?: string;
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum RejectReason {
+    * @export
+    * @enum {string}
+    */
+export declare enum RejectConsultationCommandRejectReasonEnum {
     AssessmentNotCompleted = "AssessmentNotCompleted",
     PaymentNotCompleted = "PaymentNotCompleted",
     ScheduleNotAvailable = "ScheduleNotAvailable",
     OtherReason = "OtherReason"
-}
-/**
- *
- * @export
- * @enum {string}
- */
-export declare enum ReviewCategory {
-    Services = "Services",
-    Hospitality = "Hospitality",
-    Transfer = "Transfer",
-    Etc = "Etc"
 }
 /**
  *
@@ -10428,10 +11266,10 @@ export interface Service {
     hospitalSpecialty?: HospitalSpecialty;
     /**
      *
-     * @type {Procedure}
+     * @type {string}
      * @memberof Service
      */
-    procedure?: Procedure;
+    procedure?: ServiceProcedureEnum;
     /**
      *
      * @type {string}
@@ -10474,6 +11312,14 @@ export interface Service {
      * @memberof Service
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ServiceProcedureEnum {
+    Treatment = "Treatment",
+    Diagnostic = "Diagnostic"
 }
 /**
  *
@@ -10660,16 +11506,16 @@ export interface ServiceItemViewModel {
     specialtyName?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof ServiceItemViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: ServiceItemViewModelMarketingTypeEnum;
     /**
      *
-     * @type {Procedure}
+     * @type {string}
      * @memberof ServiceItemViewModel
      */
-    procedure?: Procedure;
+    procedure?: ServiceItemViewModelProcedureEnum;
     /**
      *
      * @type {number}
@@ -10700,6 +11546,23 @@ export interface ServiceItemViewModel {
      * @memberof ServiceItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ServiceItemViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ServiceItemViewModelProcedureEnum {
+    Treatment = "Treatment",
+    Diagnostic = "Diagnostic"
 }
 /**
  *
@@ -10830,16 +11693,16 @@ export interface ServiceViewModel {
     specialtyName?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof ServiceViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: ServiceViewModelMarketingTypeEnum;
     /**
      *
-     * @type {Procedure}
+     * @type {string}
      * @memberof ServiceViewModel
      */
-    procedure?: Procedure;
+    procedure?: ServiceViewModelProcedureEnum;
     /**
      *
      * @type {number}
@@ -10870,6 +11733,23 @@ export interface ServiceViewModel {
      * @memberof ServiceViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ServiceViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum ServiceViewModelProcedureEnum {
+    Treatment = "Treatment",
+    Diagnostic = "Diagnostic"
 }
 /**
  *
@@ -11155,10 +12035,10 @@ export interface SpecialtyType {
     slug?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof SpecialtyType
      */
-    marketingType?: MarketingType;
+    marketingType?: SpecialtyTypeMarketingTypeEnum;
     /**
      *
      * @type {string}
@@ -11177,6 +12057,15 @@ export interface SpecialtyType {
      * @memberof SpecialtyType
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum SpecialtyTypeMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -11315,10 +12204,10 @@ export interface SpecialtyTypeItemViewModel {
     description?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof SpecialtyTypeItemViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: SpecialtyTypeItemViewModelMarketingTypeEnum;
     /**
      *
      * @type {number}
@@ -11343,6 +12232,15 @@ export interface SpecialtyTypeItemViewModel {
      * @memberof SpecialtyTypeItemViewModel
      */
     created?: Date;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum SpecialtyTypeItemViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -11376,10 +12274,10 @@ export interface SpecialtyTypeViewModel {
     description?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof SpecialtyTypeViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: SpecialtyTypeViewModelMarketingTypeEnum;
     /**
      *
      * @type {number}
@@ -11404,6 +12302,15 @@ export interface SpecialtyTypeViewModel {
      * @memberof SpecialtyTypeViewModel
      */
     created?: Date;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum SpecialtyTypeViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -11536,16 +12443,16 @@ export interface UpdateArticleCommand {
     body?: string;
     /**
      *
-     * @type {ArticleStatus}
+     * @type {string}
      * @memberof UpdateArticleCommand
      */
-    status?: ArticleStatus;
+    status?: UpdateArticleCommandStatusEnum;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof UpdateArticleCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: UpdateArticleCommandMarketingTypeEnum;
     /**
      *
      * @type {string}
@@ -11564,6 +12471,24 @@ export interface UpdateArticleCommand {
      * @memberof UpdateArticleCommand
      */
     medias?: Array<MediaViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateArticleCommandStatusEnum {
+    Draft = "Draft",
+    Active = "Active",
+    Archived = "Archived"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateArticleCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -11609,10 +12534,10 @@ export interface UpdateBookingCommand {
     dateOfBirth?: Date;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof UpdateBookingCommand
      */
-    gender?: Gender;
+    gender?: UpdateBookingCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -11631,6 +12556,17 @@ export interface UpdateBookingCommand {
      * @memberof UpdateBookingCommand
      */
     comment?: string;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateBookingCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -11670,10 +12606,10 @@ export interface UpdateCHAdminCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof UpdateCHAdminCommand
      */
-    gender?: Gender;
+    gender?: UpdateCHAdminCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -11692,6 +12628,17 @@ export interface UpdateCHAdminCommand {
      * @memberof UpdateCHAdminCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateCHAdminCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -11731,10 +12678,10 @@ export interface UpdateCHManagerCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof UpdateCHManagerCommand
      */
-    gender?: Gender;
+    gender?: UpdateCHManagerCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -11753,6 +12700,17 @@ export interface UpdateCHManagerCommand {
      * @memberof UpdateCHManagerCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateCHManagerCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -11816,10 +12774,10 @@ export interface UpdateConsultationCommand {
     dateOfBirth?: Date;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof UpdateConsultationCommand
      */
-    gender?: Gender;
+    gender?: UpdateConsultationCommandGenderEnum;
     /**
      *
      * @type {string}
@@ -11844,6 +12802,17 @@ export interface UpdateConsultationCommand {
      * @memberof UpdateConsultationCommand
      */
     approximateDateEnd?: Date;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateConsultationCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -11938,10 +12907,10 @@ export interface UpdateDealCommand {
     hospitalSlug?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof UpdateDealCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: UpdateDealCommandMarketingTypeEnum;
     /**
      *
      * @type {Array<DealPackageItemViewModel>}
@@ -11954,6 +12923,15 @@ export interface UpdateDealCommand {
      * @memberof UpdateDealCommand
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateDealCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -11981,10 +12959,10 @@ export interface UpdateDealPackageCommand {
     hospitalName?: string;
     /**
      *
-     * @type {RefundPolicy}
+     * @type {string}
      * @memberof UpdateDealPackageCommand
      */
-    refundPolicy?: RefundPolicy;
+    refundPolicy?: UpdateDealPackageCommandRefundPolicyEnum;
     /**
      *
      * @type {string}
@@ -12033,6 +13011,15 @@ export interface UpdateDealPackageCommand {
      * @memberof UpdateDealPackageCommand
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateDealPackageCommandRefundPolicyEnum {
+    NonRefundable = "NonRefundable",
+    Refundable = "Refundable",
+    PartialRefundable = "PartialRefundable"
 }
 /**
  *
@@ -12195,10 +13182,10 @@ export interface UpdateDoctorCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof UpdateDoctorCommand
      */
-    gender?: Gender;
+    gender?: UpdateDoctorCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -12217,6 +13204,17 @@ export interface UpdateDoctorCommand {
      * @memberof UpdateDoctorCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateDoctorCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -12238,16 +13236,26 @@ export interface UpdateDoctorReviewCommand {
     recommended?: boolean;
     /**
      *
-     * @type {ReviewCategory}
+     * @type {string}
      * @memberof UpdateDoctorReviewCommand
      */
-    reviewCategory?: ReviewCategory;
+    reviewCategory?: UpdateDoctorReviewCommandReviewCategoryEnum;
     /**
      *
      * @type {number}
      * @memberof UpdateDoctorReviewCommand
      */
     rate?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateDoctorReviewCommandReviewCategoryEnum {
+    Services = "Services",
+    Hospitality = "Hospitality",
+    Transfer = "Transfer",
+    Etc = "Etc"
 }
 /**
  *
@@ -12366,10 +13374,10 @@ export interface UpdateHospitalCommand {
     countryName?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof UpdateHospitalCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: UpdateHospitalCommandMarketingTypeEnum;
     /**
      *
      * @type {boolean}
@@ -12486,6 +13494,15 @@ export interface UpdateHospitalCommand {
     auditableEntity?: AuditableEntity;
 }
 /**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateHospitalCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
+}
+/**
  *
  * @export
  * @interface UpdateHospitalReviewCommand
@@ -12505,16 +13522,26 @@ export interface UpdateHospitalReviewCommand {
     recommended?: boolean;
     /**
      *
-     * @type {ReviewCategory}
+     * @type {string}
      * @memberof UpdateHospitalReviewCommand
      */
-    reviewCategory?: ReviewCategory;
+    reviewCategory?: UpdateHospitalReviewCommandReviewCategoryEnum;
     /**
      *
      * @type {number}
      * @memberof UpdateHospitalReviewCommand
      */
     rate?: number;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateHospitalReviewCommandReviewCategoryEnum {
+    Services = "Services",
+    Hospitality = "Hospitality",
+    Transfer = "Transfer",
+    Etc = "Etc"
 }
 /**
  *
@@ -12573,10 +13600,10 @@ export interface UpdateManagerCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof UpdateManagerCommand
      */
-    gender?: Gender;
+    gender?: UpdateManagerCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -12595,6 +13622,17 @@ export interface UpdateManagerCommand {
      * @memberof UpdateManagerCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateManagerCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -12634,10 +13672,10 @@ export interface UpdatePartnerCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof UpdatePartnerCommand
      */
-    gender?: Gender;
+    gender?: UpdatePartnerCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -12656,6 +13694,17 @@ export interface UpdatePartnerCommand {
      * @memberof UpdatePartnerCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdatePartnerCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -12695,10 +13744,10 @@ export interface UpdatePatientCommand {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof UpdatePatientCommand
      */
-    gender?: Gender;
+    gender?: UpdatePatientCommandGenderEnum;
     /**
      *
      * @type {Date}
@@ -12717,6 +13766,17 @@ export interface UpdatePatientCommand {
      * @memberof UpdatePatientCommand
      */
     locations?: Array<UserLocationViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdatePatientCommandGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -12738,22 +13798,43 @@ export interface UpdateQuestionCommand {
     body?: string;
     /**
      *
-     * @type {QuestionType}
+     * @type {string}
      * @memberof UpdateQuestionCommand
      */
-    questionType?: QuestionType;
+    questionType?: UpdateQuestionCommandQuestionTypeEnum;
     /**
      *
-     * @type {QuestionStatus}
+     * @type {string}
      * @memberof UpdateQuestionCommand
      */
-    questionStatus?: QuestionStatus;
+    questionStatus?: UpdateQuestionCommandQuestionStatusEnum;
     /**
      *
      * @type {Array<MediaViewModel>}
      * @memberof UpdateQuestionCommand
      */
     medias?: Array<MediaViewModel>;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateQuestionCommandQuestionTypeEnum {
+    General = "General",
+    Health = "Health",
+    Treatment = "Treatment",
+    Travel = "Travel",
+    Consult = "Consult"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateQuestionCommandQuestionStatusEnum {
+    New = "New",
+    Answered = "Answered",
+    Replied = "Replied",
+    Archived = "Archived"
 }
 /**
  *
@@ -12879,16 +13960,16 @@ export interface UpdateServiceCommand {
     specialtyName?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof UpdateServiceCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: UpdateServiceCommandMarketingTypeEnum;
     /**
      *
-     * @type {Procedure}
+     * @type {string}
      * @memberof UpdateServiceCommand
      */
-    procedure?: Procedure;
+    procedure?: UpdateServiceCommandProcedureEnum;
     /**
      *
      * @type {number}
@@ -12919,6 +14000,23 @@ export interface UpdateServiceCommand {
      * @memberof UpdateServiceCommand
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateServiceCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateServiceCommandProcedureEnum {
+    Treatment = "Treatment",
+    Diagnostic = "Diagnostic"
 }
 /**
  *
@@ -13051,10 +14149,10 @@ export interface UpdateSpecialtyTypeCommand {
     description?: string;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof UpdateSpecialtyTypeCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: UpdateSpecialtyTypeCommandMarketingTypeEnum;
     /**
      *
      * @type {number}
@@ -13079,6 +14177,15 @@ export interface UpdateSpecialtyTypeCommand {
      * @memberof UpdateSpecialtyTypeCommand
      */
     created?: Date;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateSpecialtyTypeCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -13118,10 +14225,19 @@ export interface UpdateYoutubeCommand {
     youtubeTags?: Array<YoutubeTagItemViewModel>;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof UpdateYoutubeCommand
      */
-    marketingType?: MarketingType;
+    marketingType?: UpdateYoutubeCommandMarketingTypeEnum;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UpdateYoutubeCommandMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -13185,10 +14301,10 @@ export interface User {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof User
      */
-    gender?: Gender;
+    gender?: UserGenderEnum;
     /**
      *
      * @type {Date}
@@ -13237,6 +14353,17 @@ export interface User {
      * @memberof User
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UserGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -13300,10 +14427,10 @@ export interface UserItemViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof UserItemViewModel
      */
-    gender?: Gender;
+    gender?: UserItemViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -13316,6 +14443,17 @@ export interface UserItemViewModel {
      * @memberof UserItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UserItemViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -13411,17 +14549,16 @@ export interface UserLocation {
     address?: string;
     /**
      *
-     * @type {UserLocationType}
+     * @type {string}
      * @memberof UserLocation
      */
-    locationType?: UserLocationType;
+    locationType?: UserLocationLocationTypeEnum;
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum UserLocationType {
+    * @export
+    * @enum {string}
+    */
+export declare enum UserLocationLocationTypeEnum {
     LivesIn = "LivesIn",
     BirthPlace = "BirthPlace"
 }
@@ -13433,10 +14570,10 @@ export declare enum UserLocationType {
 export interface UserLocationViewModel {
     /**
      *
-     * @type {UserLocationType}
+     * @type {string}
      * @memberof UserLocationViewModel
      */
-    locationType?: UserLocationType;
+    locationType?: UserLocationViewModelLocationTypeEnum;
     /**
      *
      * @type {number}
@@ -13485,6 +14622,14 @@ export interface UserLocationViewModel {
      * @memberof UserLocationViewModel
      */
     address?: string;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum UserLocationViewModelLocationTypeEnum {
+    LivesIn = "LivesIn",
+    BirthPlace = "BirthPlace"
 }
 /**
  *
@@ -13566,10 +14711,10 @@ export interface UserViewModel {
     photoThumbnail?: string;
     /**
      *
-     * @type {Gender}
+     * @type {string}
      * @memberof UserViewModel
      */
-    gender?: Gender;
+    gender?: UserViewModelGenderEnum;
     /**
      *
      * @type {Date}
@@ -13584,13 +14729,15 @@ export interface UserViewModel {
     auditableEntity?: AuditableEntity;
 }
 /**
- *
- * @export
- * @enum {string}
- */
-export declare enum VendorType {
-    Stripe = "Stripe",
-    WeChat = "WeChat"
+    * @export
+    * @enum {string}
+    */
+export declare enum UserViewModelGenderEnum {
+    NotSpecified = "NotSpecified",
+    Male = "Male",
+    Female = "Female",
+    NonBinary = "NonBinary",
+    PreferNotToSay = "PreferNotToSay"
 }
 /**
  *
@@ -13642,16 +14789,25 @@ export interface Youtube {
     youtubeTags?: Array<YoutubeTag>;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof Youtube
      */
-    marketingType?: MarketingType;
+    marketingType?: YoutubeMarketingTypeEnum;
     /**
      *
      * @type {AuditableEntity}
      * @memberof Youtube
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum YoutubeMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -13697,16 +14853,25 @@ export interface YoutubeItemViewModel {
     youtubeTags?: Array<YoutubeTagItemViewModel>;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof YoutubeItemViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: YoutubeItemViewModelMarketingTypeEnum;
     /**
      *
      * @type {AuditableEntity}
      * @memberof YoutubeItemViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum YoutubeItemViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -13814,16 +14979,25 @@ export interface YoutubeViewModel {
     youtubeTags?: Array<YoutubeTagItemViewModel>;
     /**
      *
-     * @type {MarketingType}
+     * @type {string}
      * @memberof YoutubeViewModel
      */
-    marketingType?: MarketingType;
+    marketingType?: YoutubeViewModelMarketingTypeEnum;
     /**
      *
      * @type {AuditableEntity}
      * @memberof YoutubeViewModel
      */
     auditableEntity?: AuditableEntity;
+}
+/**
+    * @export
+    * @enum {string}
+    */
+export declare enum YoutubeViewModelMarketingTypeEnum {
+    Both = "Both",
+    GeneralHealth = "GeneralHealth",
+    Beauty = "Beauty"
 }
 /**
  *
@@ -14029,8 +15203,8 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [id]
      * @param {string} [title]
      * @param {string} [description]
-     * @param {object} [status]
-     * @param {object} [marketingType]
+     * @param {'Draft' | 'Active' | 'Archived'} [status]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [userId]
      * @param {string} [userName]
      * @param {string} [hospitalId]
@@ -14045,7 +15219,7 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, marketingType?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: "Draft" | "Active" | "Archived" | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
      * @summary Get article by slug.
@@ -14103,8 +15277,8 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [id]
      * @param {string} [title]
      * @param {string} [description]
-     * @param {object} [status]
-     * @param {object} [marketingType]
+     * @param {'Draft' | 'Active' | 'Archived'} [status]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [userId]
      * @param {string} [userName]
      * @param {string} [hospitalId]
@@ -14119,7 +15293,7 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, marketingType?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticlesViewModel>;
+    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: "Draft" | "Active" | "Archived" | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticlesViewModel>;
     /**
      *
      * @summary Get article by slug.
@@ -14177,8 +15351,8 @@ export declare const ArticlesApiFactory: (configuration?: Configuration | undefi
      * @param {string} [id]
      * @param {string} [title]
      * @param {string} [description]
-     * @param {object} [status]
-     * @param {object} [marketingType]
+     * @param {'Draft' | 'Active' | 'Archived'} [status]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [userId]
      * @param {string} [userName]
      * @param {string} [hospitalId]
@@ -14193,7 +15367,7 @@ export declare const ArticlesApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: object | undefined, marketingType?: object | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ArticlesViewModel>;
+    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: "Draft" | "Active" | "Archived" | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ArticlesViewModel>;
     /**
      *
      * @summary Get article by slug.
@@ -14253,8 +15427,8 @@ export declare class ArticlesApi extends BaseAPI {
      * @param {string} [id]
      * @param {string} [title]
      * @param {string} [description]
-     * @param {object} [status]
-     * @param {object} [marketingType]
+     * @param {'Draft' | 'Active' | 'Archived'} [status]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [userId]
      * @param {string} [userName]
      * @param {string} [hospitalId]
@@ -14270,7 +15444,7 @@ export declare class ArticlesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: object, marketingType?: object, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel>;
+    apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: 'Draft' | 'Active' | 'Archived', marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel>;
     /**
      *
      * @summary Get article by slug.
@@ -14400,7 +15574,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
      * @param {boolean} [isCompleted]
-     * @param {object} [status]
+     * @param {'New' | 'Rejected' | 'Approved' | 'Paid' | 'Canceled' | 'RefundRequested' | 'Refunded'} [status]
      * @param {string} [dealPackageId]
      * @param {number} [page]
      * @param {number} [limit]
@@ -14409,7 +15583,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: object | undefined, dealPackageId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: "New" | "Rejected" | "Approved" | "Paid" | "Canceled" | "RefundRequested" | "Refunded" | undefined, dealPackageId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
      * @summary Create booking.
@@ -14498,7 +15672,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
      * @param {boolean} [isCompleted]
-     * @param {object} [status]
+     * @param {'New' | 'Rejected' | 'Approved' | 'Paid' | 'Canceled' | 'RefundRequested' | 'Refunded'} [status]
      * @param {string} [dealPackageId]
      * @param {number} [page]
      * @param {number} [limit]
@@ -14507,7 +15681,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: object | undefined, dealPackageId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BookingsViewModel>;
+    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: "New" | "Rejected" | "Approved" | "Paid" | "Canceled" | "RefundRequested" | "Refunded" | undefined, dealPackageId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BookingsViewModel>;
     /**
      *
      * @summary Create booking.
@@ -14596,7 +15770,7 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
      * @param {boolean} [isCompleted]
-     * @param {object} [status]
+     * @param {'New' | 'Rejected' | 'Approved' | 'Paid' | 'Canceled' | 'RefundRequested' | 'Refunded'} [status]
      * @param {string} [dealPackageId]
      * @param {number} [page]
      * @param {number} [limit]
@@ -14605,7 +15779,7 @@ export declare const BookingsApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: object | undefined, dealPackageId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<BookingsViewModel>;
+    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: "New" | "Rejected" | "Approved" | "Paid" | "Canceled" | "RefundRequested" | "Refunded" | undefined, dealPackageId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<BookingsViewModel>;
     /**
      *
      * @summary Create booking.
@@ -14704,7 +15878,7 @@ export declare class BookingsApi extends BaseAPI {
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
      * @param {boolean} [isCompleted]
-     * @param {object} [status]
+     * @param {'New' | 'Rejected' | 'Approved' | 'Paid' | 'Canceled' | 'RefundRequested' | 'Refunded'} [status]
      * @param {string} [dealPackageId]
      * @param {number} [page]
      * @param {number} [limit]
@@ -14714,7 +15888,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, status?: object, dealPackageId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<BookingsViewModel>;
+    apiV1BookingsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, status?: 'New' | 'Rejected' | 'Approved' | 'Paid' | 'Canceled' | 'RefundRequested' | 'Refunded', dealPackageId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<BookingsViewModel>;
     /**
      *
      * @summary Create booking.
@@ -14762,7 +15936,7 @@ export declare const CHAdminsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -14772,7 +15946,7 @@ export declare const CHAdminsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1ChadminsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        POST /api/v1/chadmins      {          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
      * @summary Create cloud hospital admin user.
@@ -14818,7 +15992,7 @@ export declare const CHAdminsApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -14828,7 +16002,7 @@ export declare const CHAdminsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHAdminsViewModel>;
+    apiV1ChadminsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHAdminsViewModel>;
     /**
      * Sample request:        POST /api/v1/chadmins      {          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
      * @summary Create cloud hospital admin user.
@@ -14874,7 +16048,7 @@ export declare const CHAdminsApiFactory: (configuration?: Configuration | undefi
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -14884,7 +16058,7 @@ export declare const CHAdminsApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<CHAdminsViewModel>;
+    apiV1ChadminsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<CHAdminsViewModel>;
     /**
      * Sample request:        POST /api/v1/chadmins      {          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
      * @summary Create cloud hospital admin user.
@@ -14935,7 +16109,7 @@ export declare class CHAdminsApi extends BaseAPI {
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -14946,7 +16120,7 @@ export declare class CHAdminsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHAdminsApi
      */
-    apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CHAdminsViewModel>;
+    apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: 'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay', dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CHAdminsViewModel>;
     /**
      * Sample request:        POST /api/v1/chadmins      {          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
      * @summary Create cloud hospital admin user.
@@ -14994,7 +16168,7 @@ export declare const CHManagersApiAxiosParamCreator: (configuration?: Configurat
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -15004,7 +16178,7 @@ export declare const CHManagersApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1ChmanagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        POST /api/v1/chmanagers      {          \"userName\": \"chmanager\",          \"email\": \"chmanger@icloudhospital.com\",          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [             {             \"locationType\": \"LivesIn\",             \"latitude\": 0,             \"longitude\": 0,             \"country\": \"string\",             \"state\": \"string\",             \"county\": \"string\",             \"city\": \"string\",             \"zipCode\": \"string\",             \"address\": \"string\"             }          ]       }
      * @summary Create cloud hospital manager.
@@ -15051,7 +16225,7 @@ export declare const CHManagersApiFp: (configuration?: Configuration | undefined
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -15061,7 +16235,7 @@ export declare const CHManagersApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHManagersViewModel>;
+    apiV1ChmanagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHManagersViewModel>;
     /**
      * Sample request:        POST /api/v1/chmanagers      {          \"userName\": \"chmanager\",          \"email\": \"chmanger@icloudhospital.com\",          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [             {             \"locationType\": \"LivesIn\",             \"latitude\": 0,             \"longitude\": 0,             \"country\": \"string\",             \"state\": \"string\",             \"county\": \"string\",             \"city\": \"string\",             \"zipCode\": \"string\",             \"address\": \"string\"             }          ]       }
      * @summary Create cloud hospital manager.
@@ -15108,7 +16282,7 @@ export declare const CHManagersApiFactory: (configuration?: Configuration | unde
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -15118,7 +16292,7 @@ export declare const CHManagersApiFactory: (configuration?: Configuration | unde
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<CHManagersViewModel>;
+    apiV1ChmanagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<CHManagersViewModel>;
     /**
      * Sample request:        POST /api/v1/chmanagers      {          \"userName\": \"chmanager\",          \"email\": \"chmanger@icloudhospital.com\",          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [             {             \"locationType\": \"LivesIn\",             \"latitude\": 0,             \"longitude\": 0,             \"country\": \"string\",             \"state\": \"string\",             \"county\": \"string\",             \"city\": \"string\",             \"zipCode\": \"string\",             \"address\": \"string\"             }          ]       }
      * @summary Create cloud hospital manager.
@@ -15170,7 +16344,7 @@ export declare class CHManagersApi extends BaseAPI {
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -15181,7 +16355,7 @@ export declare class CHManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHManagersApi
      */
-    apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CHManagersViewModel>;
+    apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: 'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay', dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CHManagersViewModel>;
     /**
      * Sample request:        POST /api/v1/chmanagers      {          \"userName\": \"chmanager\",          \"email\": \"chmanger@icloudhospital.com\",          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [             {             \"locationType\": \"LivesIn\",             \"latitude\": 0,             \"longitude\": 0,             \"country\": \"string\",             \"state\": \"string\",             \"county\": \"string\",             \"city\": \"string\",             \"zipCode\": \"string\",             \"address\": \"string\"             }          ]       }
      * @summary Create cloud hospital manager.
@@ -15262,7 +16436,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
      * @param {boolean} [isCompleted]
-     * @param {object} [status]
+     * @param {'New' | 'Rejected' | 'Approved' | 'Paid' | 'Canceled' | 'RefundRequested' | 'Refunded'} [status]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -15270,7 +16444,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: "New" | "Rejected" | "Approved" | "Paid" | "Canceled" | "RefundRequested" | "Refunded" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
      * @summary Create consultation.
@@ -15351,7 +16525,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
      * @param {boolean} [isCompleted]
-     * @param {object} [status]
+     * @param {'New' | 'Rejected' | 'Approved' | 'Paid' | 'Canceled' | 'RefundRequested' | 'Refunded'} [status]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -15359,7 +16533,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ConsultationsViewModel>;
+    apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: "New" | "Rejected" | "Approved" | "Paid" | "Canceled" | "RefundRequested" | "Refunded" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ConsultationsViewModel>;
     /**
      *
      * @summary Create consultation.
@@ -15440,7 +16614,7 @@ export declare const ConsultationsApiFactory: (configuration?: Configuration | u
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
      * @param {boolean} [isCompleted]
-     * @param {object} [status]
+     * @param {'New' | 'Rejected' | 'Approved' | 'Paid' | 'Canceled' | 'RefundRequested' | 'Refunded'} [status]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -15448,7 +16622,7 @@ export declare const ConsultationsApiFactory: (configuration?: Configuration | u
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ConsultationsViewModel>;
+    apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: "New" | "Rejected" | "Approved" | "Paid" | "Canceled" | "RefundRequested" | "Refunded" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ConsultationsViewModel>;
     /**
      *
      * @summary Create consultation.
@@ -15538,7 +16712,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @param {string} [searchString]
      * @param {boolean} [isOpen]
      * @param {boolean} [isCompleted]
-     * @param {object} [status]
+     * @param {'New' | 'Rejected' | 'Approved' | 'Paid' | 'Canceled' | 'RefundRequested' | 'Refunded'} [status]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -15547,7 +16721,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, status?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ConsultationsViewModel>;
+    apiV1ConsultationsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, status?: 'New' | 'Rejected' | 'Approved' | 'Paid' | 'Canceled' | 'RefundRequested' | 'Refunded', page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ConsultationsViewModel>;
     /**
      *
      * @summary Create consultation.
@@ -16028,7 +17202,7 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @summary Get all deals.
      * @param {string} [id]
      * @param {string} [name]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
@@ -16041,7 +17215,7 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
      * @summary Create deal.
@@ -16094,7 +17268,7 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @summary Get all deals.
      * @param {string} [id]
      * @param {string} [name]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
@@ -16107,7 +17281,7 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealsViewModel>;
+    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealsViewModel>;
     /**
      *
      * @summary Create deal.
@@ -16160,7 +17334,7 @@ export declare const DealsApiFactory: (configuration?: Configuration | undefined
      * @summary Get all deals.
      * @param {string} [id]
      * @param {string} [name]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
@@ -16173,7 +17347,7 @@ export declare const DealsApiFactory: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: object | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DealsViewModel>;
+    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DealsViewModel>;
     /**
      *
      * @summary Create deal.
@@ -16231,7 +17405,7 @@ export declare class DealsApi extends BaseAPI {
      * @summary Get all deals.
      * @param {string} [id]
      * @param {string} [name]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
@@ -16245,7 +17419,7 @@ export declare class DealsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealsApi
      */
-    apiV1DealsGet(id?: string, name?: string, marketingType?: object, countryId?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealsViewModel>;
+    apiV1DealsGet(id?: string, name?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', countryId?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealsViewModel>;
     /**
      *
      * @summary Create deal.
@@ -17010,7 +18184,7 @@ export declare const DoctorReviewsApiAxiosParamCreator: (configuration?: Configu
      * @param {string} [patientName]
      * @param {string} [body]
      * @param {boolean} [recommended]
-     * @param {object} [reviewCategory]
+     * @param {'Services' | 'Hospitality' | 'Transfer' | 'Etc'} [reviewCategory]
      * @param {number} [rate]
      * @param {Date} [created]
      * @param {number} [page]
@@ -17020,7 +18194,7 @@ export declare const DoctorReviewsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: "Services" | "Hospitality" | "Transfer" | "Etc" | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * DoctorReviewsApi - functional programming interface
@@ -17074,7 +18248,7 @@ export declare const DoctorReviewsApiFp: (configuration?: Configuration | undefi
      * @param {string} [patientName]
      * @param {string} [body]
      * @param {boolean} [recommended]
-     * @param {object} [reviewCategory]
+     * @param {'Services' | 'Hospitality' | 'Transfer' | 'Etc'} [reviewCategory]
      * @param {number} [rate]
      * @param {Date} [created]
      * @param {number} [page]
@@ -17084,7 +18258,7 @@ export declare const DoctorReviewsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReviewsViewModel>;
+    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: "Services" | "Hospitality" | "Transfer" | "Etc" | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReviewsViewModel>;
 };
 /**
  * DoctorReviewsApi - factory interface
@@ -17138,7 +18312,7 @@ export declare const DoctorReviewsApiFactory: (configuration?: Configuration | u
      * @param {string} [patientName]
      * @param {string} [body]
      * @param {boolean} [recommended]
-     * @param {object} [reviewCategory]
+     * @param {'Services' | 'Hospitality' | 'Transfer' | 'Etc'} [reviewCategory]
      * @param {number} [rate]
      * @param {Date} [created]
      * @param {number} [page]
@@ -17148,7 +18322,7 @@ export declare const DoctorReviewsApiFactory: (configuration?: Configuration | u
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DoctorReviewsViewModel>;
+    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: "Services" | "Hospitality" | "Transfer" | "Etc" | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DoctorReviewsViewModel>;
 };
 /**
  * DoctorReviewsApi - object-oriented interface
@@ -17208,7 +18382,7 @@ export declare class DoctorReviewsApi extends BaseAPI {
      * @param {string} [patientName]
      * @param {string} [body]
      * @param {boolean} [recommended]
-     * @param {object} [reviewCategory]
+     * @param {'Services' | 'Hospitality' | 'Transfer' | 'Etc'} [reviewCategory]
      * @param {number} [rate]
      * @param {Date} [created]
      * @param {number} [page]
@@ -17219,7 +18393,7 @@ export declare class DoctorReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorReviewsApi
      */
-    apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorReviewsViewModel>;
+    apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: 'Services' | 'Hospitality' | 'Transfer' | 'Etc', rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorReviewsViewModel>;
 }
 /**
  * DoctorSpecialtiesApi - axios parameter creator
@@ -17360,7 +18534,7 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @summary Get all hospital doctors.
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {boolean} [consultationEnabled]
@@ -17369,7 +18543,7 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -17379,7 +18553,7 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsGet(countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, consultationEnabled?: boolean | undefined, exceptDoctorId?: string | undefined, exceptDoctorIds?: string[] | undefined, id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1DoctorsGet(countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, consultationEnabled?: boolean | undefined, exceptDoctorId?: string | undefined, exceptDoctorIds?: string[] | undefined, id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -17432,7 +18606,7 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @summary Get all hospital doctors.
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {boolean} [consultationEnabled]
@@ -17441,7 +18615,7 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -17451,7 +18625,7 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsGet(countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, consultationEnabled?: boolean | undefined, exceptDoctorId?: string | undefined, exceptDoctorIds?: string[] | undefined, id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorsViewModel>;
+    apiV1DoctorsGet(countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, consultationEnabled?: boolean | undefined, exceptDoctorId?: string | undefined, exceptDoctorIds?: string[] | undefined, id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorsViewModel>;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -17504,7 +18678,7 @@ export declare const DoctorsApiFactory: (configuration?: Configuration | undefin
      * @summary Get all hospital doctors.
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {boolean} [consultationEnabled]
@@ -17513,7 +18687,7 @@ export declare const DoctorsApiFactory: (configuration?: Configuration | undefin
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -17523,7 +18697,7 @@ export declare const DoctorsApiFactory: (configuration?: Configuration | undefin
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsGet(countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, consultationEnabled?: boolean | undefined, exceptDoctorId?: string | undefined, exceptDoctorIds?: string[] | undefined, id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DoctorsViewModel>;
+    apiV1DoctorsGet(countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, consultationEnabled?: boolean | undefined, exceptDoctorId?: string | undefined, exceptDoctorIds?: string[] | undefined, id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DoctorsViewModel>;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -17581,7 +18755,7 @@ export declare class DoctorsApi extends BaseAPI {
      * @summary Get all hospital doctors.
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {boolean} [consultationEnabled]
@@ -17590,7 +18764,7 @@ export declare class DoctorsApi extends BaseAPI {
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -17601,7 +18775,7 @@ export declare class DoctorsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: object, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, exceptDoctorId?: string, exceptDoctorIds?: Array<string>, id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorsViewModel>;
+    apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, exceptDoctorId?: string, exceptDoctorIds?: Array<string>, id?: string, fullname?: string, email?: string, gender?: 'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay', dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorsViewModel>;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -17920,7 +19094,7 @@ export declare const HospitalReviewsApiAxiosParamCreator: (configuration?: Confi
      * @param {string} [hospitalName]
      * @param {string} [body]
      * @param {boolean} [recommended]
-     * @param {object} [reviewCategory]
+     * @param {'Services' | 'Hospitality' | 'Transfer' | 'Etc'} [reviewCategory]
      * @param {number} [rate]
      * @param {Date} [created]
      * @param {number} [page]
@@ -17930,7 +19104,7 @@ export declare const HospitalReviewsApiAxiosParamCreator: (configuration?: Confi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: "Services" | "Hospitality" | "Transfer" | "Etc" | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * HospitalReviewsApi - functional programming interface
@@ -17984,7 +19158,7 @@ export declare const HospitalReviewsApiFp: (configuration?: Configuration | unde
      * @param {string} [hospitalName]
      * @param {string} [body]
      * @param {boolean} [recommended]
-     * @param {object} [reviewCategory]
+     * @param {'Services' | 'Hospitality' | 'Transfer' | 'Etc'} [reviewCategory]
      * @param {number} [rate]
      * @param {Date} [created]
      * @param {number} [page]
@@ -17994,7 +19168,7 @@ export declare const HospitalReviewsApiFp: (configuration?: Configuration | unde
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReviewsViewModel>;
+    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: "Services" | "Hospitality" | "Transfer" | "Etc" | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReviewsViewModel>;
 };
 /**
  * HospitalReviewsApi - factory interface
@@ -18048,7 +19222,7 @@ export declare const HospitalReviewsApiFactory: (configuration?: Configuration |
      * @param {string} [hospitalName]
      * @param {string} [body]
      * @param {boolean} [recommended]
-     * @param {object} [reviewCategory]
+     * @param {'Services' | 'Hospitality' | 'Transfer' | 'Etc'} [reviewCategory]
      * @param {number} [rate]
      * @param {Date} [created]
      * @param {number} [page]
@@ -18058,7 +19232,7 @@ export declare const HospitalReviewsApiFactory: (configuration?: Configuration |
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: object | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalReviewsViewModel>;
+    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: "Services" | "Hospitality" | "Transfer" | "Etc" | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalReviewsViewModel>;
 };
 /**
  * HospitalReviewsApi - object-oriented interface
@@ -18118,7 +19292,7 @@ export declare class HospitalReviewsApi extends BaseAPI {
      * @param {string} [hospitalName]
      * @param {string} [body]
      * @param {boolean} [recommended]
-     * @param {object} [reviewCategory]
+     * @param {'Services' | 'Hospitality' | 'Transfer' | 'Etc'} [reviewCategory]
      * @param {number} [rate]
      * @param {Date} [created]
      * @param {number} [page]
@@ -18129,7 +19303,7 @@ export declare class HospitalReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalReviewsApi
      */
-    apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: object, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalReviewsViewModel>;
+    apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: 'Services' | 'Hospitality' | 'Transfer' | 'Etc', rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalReviewsViewModel>;
 }
 /**
  * HospitalSpecialtiesApi - axios parameter creator
@@ -18172,7 +19346,7 @@ export declare const HospitalSpecialtiesApiAxiosParamCreator: (configuration?: C
      * @param {string} [specialtyId]
      * @param {string} [specialtyName]
      * @param {string} [specialtyTypeId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -18181,7 +19355,7 @@ export declare const HospitalSpecialtiesApiAxiosParamCreator: (configuration?: C
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsSpecialtiesGet(hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyName?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsSpecialtiesGet(hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyName?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * HospitalSpecialtiesApi - functional programming interface
@@ -18224,7 +19398,7 @@ export declare const HospitalSpecialtiesApiFp: (configuration?: Configuration | 
      * @param {string} [specialtyId]
      * @param {string} [specialtyName]
      * @param {string} [specialtyTypeId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -18233,7 +19407,7 @@ export declare const HospitalSpecialtiesApiFp: (configuration?: Configuration | 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsSpecialtiesGet(hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyName?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalSpecialtiesViewModel>;
+    apiV1HospitalsSpecialtiesGet(hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyName?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalSpecialtiesViewModel>;
 };
 /**
  * HospitalSpecialtiesApi - factory interface
@@ -18276,7 +19450,7 @@ export declare const HospitalSpecialtiesApiFactory: (configuration?: Configurati
      * @param {string} [specialtyId]
      * @param {string} [specialtyName]
      * @param {string} [specialtyTypeId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -18285,7 +19459,7 @@ export declare const HospitalSpecialtiesApiFactory: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsSpecialtiesGet(hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyName?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalSpecialtiesViewModel>;
+    apiV1HospitalsSpecialtiesGet(hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyName?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalSpecialtiesViewModel>;
 };
 /**
  * HospitalSpecialtiesApi - object-oriented interface
@@ -18333,7 +19507,7 @@ export declare class HospitalSpecialtiesApi extends BaseAPI {
      * @param {string} [specialtyId]
      * @param {string} [specialtyName]
      * @param {string} [specialtyTypeId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -18343,7 +19517,7 @@ export declare class HospitalSpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalSpecialtiesApi
      */
-    apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalSpecialtiesViewModel>;
+    apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalSpecialtiesViewModel>;
 }
 /**
  * HospitalsApi - axios parameter creator
@@ -18357,7 +19531,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyId]
      * @param {string} [serviceId]
@@ -18370,7 +19544,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
@@ -18379,7 +19553,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyId]
      * @param {string} [serviceId]
@@ -18392,7 +19566,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -18447,7 +19621,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyId]
      * @param {string} [serviceId]
@@ -18460,7 +19634,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
@@ -18469,7 +19643,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyId]
      * @param {string} [serviceId]
@@ -18482,7 +19656,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -18537,7 +19711,7 @@ export declare const HospitalsApiFactory: (configuration?: Configuration | undef
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyId]
      * @param {string} [serviceId]
@@ -18550,7 +19724,7 @@ export declare const HospitalsApiFactory: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
@@ -18559,7 +19733,7 @@ export declare const HospitalsApiFactory: (configuration?: Configuration | undef
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyId]
      * @param {string} [serviceId]
@@ -18572,7 +19746,7 @@ export declare const HospitalsApiFactory: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: object | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -18629,7 +19803,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyId]
      * @param {string} [serviceId]
@@ -18643,7 +19817,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
@@ -18652,7 +19826,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @param {string} [description]
      * @param {string} [countryId]
      * @param {Date} [created]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyId]
      * @param {string} [serviceId]
@@ -18666,7 +19840,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: object, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -18831,7 +20005,7 @@ export declare const ManagersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -18842,7 +20016,7 @@ export declare const ManagersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): RequestArgs;
+    apiV1ManagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        DELETE /api/v1/managers/1
      * @summary Delete hospital manager.
@@ -18888,7 +20062,7 @@ export declare const ManagersApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -18899,7 +20073,7 @@ export declare const ManagersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ManagersViewModel>;
+    apiV1ManagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ManagersViewModel>;
     /**
      * Sample request:        DELETE /api/v1/managers/1
      * @summary Delete hospital manager.
@@ -18945,7 +20119,7 @@ export declare const ManagersApiFactory: (configuration?: Configuration | undefi
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -18956,7 +20130,7 @@ export declare const ManagersApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): AxiosPromise<ManagersViewModel>;
+    apiV1ManagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): AxiosPromise<ManagersViewModel>;
     /**
      * Sample request:        DELETE /api/v1/managers/1
      * @summary Delete hospital manager.
@@ -19004,7 +20178,7 @@ export declare class ManagersApi extends BaseAPI {
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -19016,7 +20190,7 @@ export declare class ManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManagersApi
      */
-    apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): AxiosPromise<ManagersViewModel>;
+    apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: 'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay', dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): AxiosPromise<ManagersViewModel>;
     /**
      * Sample request:        DELETE /api/v1/managers/1
      * @summary Delete hospital manager.
@@ -19117,7 +20291,7 @@ export declare const PartnersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -19127,7 +20301,7 @@ export declare const PartnersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1PartnersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        DELETE /api/v1/partners/1
      * @summary Delete patner.
@@ -19173,7 +20347,7 @@ export declare const PartnersApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -19183,7 +20357,7 @@ export declare const PartnersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PartnersViewModel>;
+    apiV1PartnersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PartnersViewModel>;
     /**
      * Sample request:        DELETE /api/v1/partners/1
      * @summary Delete patner.
@@ -19229,7 +20403,7 @@ export declare const PartnersApiFactory: (configuration?: Configuration | undefi
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -19239,7 +20413,7 @@ export declare const PartnersApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<PartnersViewModel>;
+    apiV1PartnersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<PartnersViewModel>;
     /**
      * Sample request:        DELETE /api/v1/partners/1
      * @summary Delete patner.
@@ -19287,7 +20461,7 @@ export declare class PartnersApi extends BaseAPI {
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -19298,7 +20472,7 @@ export declare class PartnersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PartnersApi
      */
-    apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<PartnersViewModel>;
+    apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: 'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay', dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<PartnersViewModel>;
     /**
      * Sample request:        DELETE /api/v1/partners/1
      * @summary Delete patner.
@@ -19348,7 +20522,7 @@ export declare const PatientsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -19358,7 +20532,7 @@ export declare const PatientsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1PatientsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        DELETE /api/v1/patients/1
      * @summary Delete patient.
@@ -19404,7 +20578,7 @@ export declare const PatientsApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -19414,7 +20588,7 @@ export declare const PatientsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PatientsViewModel>;
+    apiV1PatientsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PatientsViewModel>;
     /**
      * Sample request:        DELETE /api/v1/patients/1
      * @summary Delete patient.
@@ -19460,7 +20634,7 @@ export declare const PatientsApiFactory: (configuration?: Configuration | undefi
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -19470,7 +20644,7 @@ export declare const PatientsApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: object | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<PatientsViewModel>;
+    apiV1PatientsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: "NotSpecified" | "Male" | "Female" | "NonBinary" | "PreferNotToSay" | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<PatientsViewModel>;
     /**
      * Sample request:        DELETE /api/v1/patients/1
      * @summary Delete patient.
@@ -19518,7 +20692,7 @@ export declare class PatientsApi extends BaseAPI {
      * @param {string} [id]
      * @param {string} [fullname]
      * @param {string} [email]
-     * @param {object} [gender]
+     * @param {'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay'} [gender]
      * @param {Date} [dateOfBirth]
      * @param {Date} [created]
      * @param {number} [page]
@@ -19529,7 +20703,7 @@ export declare class PatientsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PatientsApi
      */
-    apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: object, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<PatientsViewModel>;
+    apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: 'NotSpecified' | 'Male' | 'Female' | 'NonBinary' | 'PreferNotToSay', dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<PatientsViewModel>;
     /**
      * Sample request:        DELETE /api/v1/patients/1
      * @summary Delete patient.
@@ -19973,8 +21147,8 @@ export declare const QuestionsApiAxiosParamCreator: (configuration?: Configurati
      * @param {string} [title]
      * @param {string} [hospitalId]
      * @param {string} [patientId]
-     * @param {object} [questionType]
-     * @param {object} [questionStatus]
+     * @param {'General' | 'Health' | 'Treatment' | 'Travel' | 'Consult'} [questionType]
+     * @param {'New' | 'Answered' | 'Replied' | 'Archived'} [questionStatus]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -19982,7 +21156,7 @@ export declare const QuestionsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsQuestionsGet(id?: string | undefined, title?: string | undefined, hospitalId?: string | undefined, patientId?: string | undefined, questionType?: object | undefined, questionStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsQuestionsGet(id?: string | undefined, title?: string | undefined, hospitalId?: string | undefined, patientId?: string | undefined, questionType?: "General" | "Health" | "Treatment" | "Travel" | "Consult" | undefined, questionStatus?: "Archived" | "New" | "Answered" | "Replied" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * QuestionsApi - functional programming interface
@@ -20033,8 +21207,8 @@ export declare const QuestionsApiFp: (configuration?: Configuration | undefined)
      * @param {string} [title]
      * @param {string} [hospitalId]
      * @param {string} [patientId]
-     * @param {object} [questionType]
-     * @param {object} [questionStatus]
+     * @param {'General' | 'Health' | 'Treatment' | 'Travel' | 'Consult'} [questionType]
+     * @param {'New' | 'Answered' | 'Replied' | 'Archived'} [questionStatus]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20042,7 +21216,7 @@ export declare const QuestionsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsQuestionsGet(id?: string | undefined, title?: string | undefined, hospitalId?: string | undefined, patientId?: string | undefined, questionType?: object | undefined, questionStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionsViewModel>;
+    apiV1HospitalsQuestionsGet(id?: string | undefined, title?: string | undefined, hospitalId?: string | undefined, patientId?: string | undefined, questionType?: "General" | "Health" | "Treatment" | "Travel" | "Consult" | undefined, questionStatus?: "Archived" | "New" | "Answered" | "Replied" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionsViewModel>;
 };
 /**
  * QuestionsApi - factory interface
@@ -20093,8 +21267,8 @@ export declare const QuestionsApiFactory: (configuration?: Configuration | undef
      * @param {string} [title]
      * @param {string} [hospitalId]
      * @param {string} [patientId]
-     * @param {object} [questionType]
-     * @param {object} [questionStatus]
+     * @param {'General' | 'Health' | 'Treatment' | 'Travel' | 'Consult'} [questionType]
+     * @param {'New' | 'Answered' | 'Replied' | 'Archived'} [questionStatus]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20102,7 +21276,7 @@ export declare const QuestionsApiFactory: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsQuestionsGet(id?: string | undefined, title?: string | undefined, hospitalId?: string | undefined, patientId?: string | undefined, questionType?: object | undefined, questionStatus?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<QuestionsViewModel>;
+    apiV1HospitalsQuestionsGet(id?: string | undefined, title?: string | undefined, hospitalId?: string | undefined, patientId?: string | undefined, questionType?: "General" | "Health" | "Treatment" | "Travel" | "Consult" | undefined, questionStatus?: "Archived" | "New" | "Answered" | "Replied" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<QuestionsViewModel>;
 };
 /**
  * QuestionsApi - object-oriented interface
@@ -20159,8 +21333,8 @@ export declare class QuestionsApi extends BaseAPI {
      * @param {string} [title]
      * @param {string} [hospitalId]
      * @param {string} [patientId]
-     * @param {object} [questionType]
-     * @param {object} [questionStatus]
+     * @param {'General' | 'Health' | 'Treatment' | 'Travel' | 'Consult'} [questionType]
+     * @param {'New' | 'Answered' | 'Replied' | 'Archived'} [questionStatus]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20169,7 +21343,7 @@ export declare class QuestionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionsApi
      */
-    apiV1HospitalsQuestionsGet(id?: string, title?: string, hospitalId?: string, patientId?: string, questionType?: object, questionStatus?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<QuestionsViewModel>;
+    apiV1HospitalsQuestionsGet(id?: string, title?: string, hospitalId?: string, patientId?: string, questionType?: 'General' | 'Health' | 'Treatment' | 'Travel' | 'Consult', questionStatus?: 'New' | 'Answered' | 'Replied' | 'Archived', page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<QuestionsViewModel>;
 }
 /**
  * SearchApi - axios parameter creator
@@ -20182,7 +21356,7 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20190,14 +21364,14 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchDealsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchDealsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20205,14 +21379,14 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchDoctorsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchDoctorsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20220,14 +21394,14 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchEquipmentsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchEquipmentsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20235,14 +21409,14 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchGetcountGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchGetcountGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20250,14 +21424,14 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchHospitalsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchHospitalsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20265,7 +21439,7 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchSpecialtiesGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchSpecialtiesGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * SearchApi - functional programming interface
@@ -20278,7 +21452,7 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20286,14 +21460,14 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchDealsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealSearchResultViewModel>;
+    apiV1SearchDealsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20301,14 +21475,14 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchDoctorsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorSearchResultViewModel>;
+    apiV1SearchDoctorsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20316,14 +21490,14 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchEquipmentsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EquipmentSearchResultViewModel>;
+    apiV1SearchEquipmentsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EquipmentSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20331,14 +21505,14 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchGetcountGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<AzureSearchViewModel>;
+    apiV1SearchGetcountGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<AzureSearchViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20346,14 +21520,14 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchHospitalsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalSearchResultViewModel>;
+    apiV1SearchHospitalsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20361,7 +21535,7 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchSpecialtiesGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtySearchResultViewModel>;
+    apiV1SearchSpecialtiesGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtySearchResultViewModel>;
 };
 /**
  * SearchApi - factory interface
@@ -20374,7 +21548,7 @@ export declare const SearchApiFactory: (configuration?: Configuration | undefine
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20382,14 +21556,14 @@ export declare const SearchApiFactory: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchDealsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DealSearchResultViewModel>;
+    apiV1SearchDealsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DealSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20397,14 +21571,14 @@ export declare const SearchApiFactory: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchDoctorsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DoctorSearchResultViewModel>;
+    apiV1SearchDoctorsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<DoctorSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20412,14 +21586,14 @@ export declare const SearchApiFactory: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchEquipmentsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<EquipmentSearchResultViewModel>;
+    apiV1SearchEquipmentsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<EquipmentSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20427,14 +21601,14 @@ export declare const SearchApiFactory: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchGetcountGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<AzureSearchViewModel>;
+    apiV1SearchGetcountGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<AzureSearchViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20442,14 +21616,14 @@ export declare const SearchApiFactory: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchHospitalsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalSearchResultViewModel>;
+    apiV1SearchHospitalsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<HospitalSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20457,7 +21631,7 @@ export declare const SearchApiFactory: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchSpecialtiesGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: object | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<SpecialtySearchResultViewModel>;
+    apiV1SearchSpecialtiesGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<SpecialtySearchResultViewModel>;
 };
 /**
  * SearchApi - object-oriented interface
@@ -20472,7 +21646,7 @@ export declare class SearchApi extends BaseAPI {
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20481,14 +21655,14 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealSearchResultViewModel>;
+    apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20497,14 +21671,14 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorSearchResultViewModel>;
+    apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20513,14 +21687,14 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<EquipmentSearchResultViewModel>;
+    apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<EquipmentSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20529,14 +21703,14 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<AzureSearchViewModel>;
+    apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<AzureSearchViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20545,14 +21719,14 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalSearchResultViewModel>;
+    apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalSearchResultViewModel>;
     /**
      *
      * @param {string} [searchTerm]
      * @param {boolean} [countOnly]
      * @param {string} [countryId]
      * @param {string} [hospitalId]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {number} [page]
      * @param {number} [limit]
      * @param {Date} [lastRetrieved]
@@ -20561,7 +21735,7 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: object, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtySearchResultViewModel>;
+    apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtySearchResultViewModel>;
 }
 /**
  * ServiceCategoriesApi - axios parameter creator
@@ -20849,8 +22023,8 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyTypeName]
-     * @param {object} [marketingType]
-     * @param {object} [procedure]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
+     * @param {'Treatment' | 'Diagnostic'} [procedure]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -20859,7 +22033,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, procedure?: "Treatment" | "Diagnostic" | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
 };
 /**
  * ServicesApi - functional programming interface
@@ -20928,8 +22102,8 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyTypeName]
-     * @param {object} [marketingType]
-     * @param {object} [procedure]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
+     * @param {'Treatment' | 'Diagnostic'} [procedure]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -20938,7 +22112,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, procedure?: "Treatment" | "Diagnostic" | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>;
 };
 /**
  * ServicesApi - factory interface
@@ -21007,8 +22181,8 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyTypeName]
-     * @param {object} [marketingType]
-     * @param {object} [procedure]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
+     * @param {'Treatment' | 'Diagnostic'} [procedure]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -21017,7 +22191,7 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: object | undefined, procedure?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, procedure?: "Treatment" | "Diagnostic" | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ServicesViewModel>;
 };
 /**
  * ServicesApi - object-oriented interface
@@ -21093,8 +22267,8 @@ export declare class ServicesApi extends BaseAPI {
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyTypeName]
-     * @param {object} [marketingType]
-     * @param {object} [procedure]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
+     * @param {'Treatment' | 'Diagnostic'} [procedure]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -21104,7 +22278,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: object, procedure?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', procedure?: 'Treatment' | 'Diagnostic', created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel>;
 }
 /**
  * SpecialtiesApi - axios parameter creator
@@ -21600,7 +22774,7 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      * @param {string} [id]
      * @param {string} [name]
      * @param {string} [description]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -21609,7 +22783,7 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
@@ -21664,7 +22838,7 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      * @param {string} [id]
      * @param {string} [name]
      * @param {string} [description]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -21673,7 +22847,7 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypesViewModel>;
+    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypesViewModel>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
@@ -21728,7 +22902,7 @@ export declare const SpecialtyTypesApiFactory: (configuration?: Configuration | 
      * @param {string} [id]
      * @param {string} [name]
      * @param {string} [description]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -21737,7 +22911,7 @@ export declare const SpecialtyTypesApiFactory: (configuration?: Configuration | 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: object | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<SpecialtyTypesViewModel>;
+    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<SpecialtyTypesViewModel>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
@@ -21794,7 +22968,7 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      * @param {string} [id]
      * @param {string} [name]
      * @param {string} [description]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {Date} [created]
      * @param {number} [page]
      * @param {number} [limit]
@@ -21804,7 +22978,7 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypesApi
      */
-    apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: object, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtyTypesViewModel>;
+    apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtyTypesViewModel>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
@@ -21865,7 +23039,7 @@ export declare const YoutubesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [title]
      * @param {string} [normalizedTitle]
      * @param {string} [description]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [tag]
      * @param {number} [page]
      * @param {number} [limit]
@@ -21874,7 +23048,7 @@ export declare const YoutubesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesGet(id?: string | undefined, title?: string | undefined, normalizedTitle?: string | undefined, description?: string | undefined, marketingType?: object | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1YoutubesGet(id?: string | undefined, title?: string | undefined, normalizedTitle?: string | undefined, description?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
     /**
      * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an youtube.
@@ -21929,7 +23103,7 @@ export declare const YoutubesApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [title]
      * @param {string} [normalizedTitle]
      * @param {string} [description]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [tag]
      * @param {number} [page]
      * @param {number} [limit]
@@ -21938,7 +23112,7 @@ export declare const YoutubesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesGet(id?: string | undefined, title?: string | undefined, normalizedTitle?: string | undefined, description?: string | undefined, marketingType?: object | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<YoutubesViewModel>;
+    apiV1YoutubesGet(id?: string | undefined, title?: string | undefined, normalizedTitle?: string | undefined, description?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<YoutubesViewModel>;
     /**
      * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an youtube.
@@ -21993,7 +23167,7 @@ export declare const YoutubesApiFactory: (configuration?: Configuration | undefi
      * @param {string} [title]
      * @param {string} [normalizedTitle]
      * @param {string} [description]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [tag]
      * @param {number} [page]
      * @param {number} [limit]
@@ -22002,7 +23176,7 @@ export declare const YoutubesApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesGet(id?: string | undefined, title?: string | undefined, normalizedTitle?: string | undefined, description?: string | undefined, marketingType?: object | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<YoutubesViewModel>;
+    apiV1YoutubesGet(id?: string | undefined, title?: string | undefined, normalizedTitle?: string | undefined, description?: string | undefined, marketingType?: "Both" | "GeneralHealth" | "Beauty" | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<YoutubesViewModel>;
     /**
      * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an youtube.
@@ -22059,7 +23233,7 @@ export declare class YoutubesApi extends BaseAPI {
      * @param {string} [title]
      * @param {string} [normalizedTitle]
      * @param {string} [description]
-     * @param {object} [marketingType]
+     * @param {'Both' | 'GeneralHealth' | 'Beauty'} [marketingType]
      * @param {string} [tag]
      * @param {number} [page]
      * @param {number} [limit]
@@ -22069,7 +23243,7 @@ export declare class YoutubesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof YoutubesApi
      */
-    apiV1YoutubesGet(id?: string, title?: string, normalizedTitle?: string, description?: string, marketingType?: object, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<YoutubesViewModel>;
+    apiV1YoutubesGet(id?: string, title?: string, normalizedTitle?: string, description?: string, marketingType?: 'Both' | 'GeneralHealth' | 'Beauty', tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<YoutubesViewModel>;
     /**
      * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an youtube.

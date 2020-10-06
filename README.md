@@ -14,6 +14,6 @@ let result = new CountriesApi(config)
   .apiV1CountriesGet()
   .then(d => console.log(d.data.items.map(t => t.name)));
 !!!
-openapi-generator generate -g typescript-axios -o src -i https://api-int.icloudhospital.com/swagger/v1/swagger.json --skip-validate-spec
+openapi-generator generate -g typescript-axios -o src -i https://api-int.icloudhospital.com/swagger/v1/swagger.json
 
 npx tsc
