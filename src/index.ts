@@ -1,4 +1,5 @@
-// tslint:disable
+/* tslint:disable */
+/* eslint-disable */
 /**
  * Swagger UI - Cloud Hospital Api-INT
  * Cloud Hospital application with Swagger, Swashbuckle, and API versioning.
@@ -14,3 +15,4 @@
 
 export * from "./api";
 export * from "./configuration";
+

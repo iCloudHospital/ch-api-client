@@ -10,10 +10,10 @@
  * Do not edit the class manually.
  */
 export interface ConfigurationParameters {
-    apiKey?: string | ((name: string) => string);
+    apiKey?: string | Promise<string> | ((name: string) => string) | ((name: string) => Promise<string>);
     username?: string;
     password?: string;
-    accessToken?: string | ((name?: string, scopes?: string[]) => string);
+    accessToken?: string | Promise<string> | ((name?: string, scopes?: string[]) => string) | ((name?: string, scopes?: string[]) => Promise<string>);
     basePath?: string;
     baseOptions?: any;
 }
@@ -23,7 +23,7 @@ export declare class Configuration {
      * @param name security name
      * @memberof Configuration
      */
-    apiKey?: string | ((name: string) => string);
+    apiKey?: string | Promise<string> | ((name: string) => string) | ((name: string) => Promise<string>);
     /**
      * parameter for basic security
      *
@@ -44,7 +44,7 @@ export declare class Configuration {
      * @param scopes oauth2 scope
      * @memberof Configuration
      */
-    accessToken?: string | ((name?: string, scopes?: string[]) => string);
+    accessToken?: string | Promise<string> | ((name?: string, scopes?: string[]) => string) | ((name?: string, scopes?: string[]) => Promise<string>);
     /**
      * override base path
      *

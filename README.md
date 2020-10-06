@@ -14,6 +14,9 @@ let result = new CountriesApi(config)
   .apiV1CountriesGet()
   .then(d => console.log(d.data.items.map(t => t.name)));
 !!!
-openapi-generator generate -g typescript-axios -o src -i https://api-int.icloudhospital.com/swagger/v1/swagger.json
 
+!!! update openapi-generator to beta2
+npm install @openapitools/openapi-generator-cli@cli-5.0.0-beta2 -g
+
+openapi-generator generate -g typescript-axios -o src -i https://api-int.icloudhospital.com/swagger/v1/swagger.json --skip-validate-spec --type-mappings=DateTime=Date
 npx tsc
