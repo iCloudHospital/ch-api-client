@@ -863,6 +863,12 @@ export interface Booking {
     payment?: Payment | null;
     /**
      * 
+     * @type {string}
+     * @memberof Booking
+     */
+    timeZone?: string | null;
+    /**
+     * 
      * @type {Array<ChangeLog>}
      * @memberof Booking
      */
@@ -1024,6 +1030,12 @@ export interface BookingItemViewModel {
      * @memberof BookingItemViewModel
      */
     applicationFee?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingItemViewModel
+     */
+    timeZone?: string | null;
     /**
      * 
      * @type {BookingStatus}
@@ -1208,6 +1220,12 @@ export interface BookingViewModel {
      * @memberof BookingViewModel
      */
     applicationFee?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BookingViewModel
+     */
+    timeZone?: string | null;
     /**
      * 
      * @type {BookingStatus}
@@ -1928,6 +1946,12 @@ export interface Consultation {
     payment?: Payment | null;
     /**
      * 
+     * @type {string}
+     * @memberof Consultation
+     */
+    timeZone?: string | null;
+    /**
+     * 
      * @type {Array<ChangeLog>}
      * @memberof Consultation
      */
@@ -2131,6 +2155,12 @@ export interface ConsultationItemViewModel {
      * @memberof ConsultationItemViewModel
      */
     applicationFee?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConsultationItemViewModel
+     */
+    timeZone?: string | null;
     /**
      * 
      * @type {ConsultationStatus}
@@ -2368,6 +2398,12 @@ export interface ConsultationViewModel {
      * @memberof ConsultationViewModel
      */
     applicationFee?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConsultationViewModel
+     */
+    timeZone?: string | null;
     /**
      * 
      * @type {ConsultationStatus}
@@ -2759,6 +2795,12 @@ export interface CreateBookingCommand {
      * @memberof CreateBookingCommand
      */
     comment?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateBookingCommand
+     */
+    timeZone?: string | null;
 }
 /**
  * 
@@ -3014,6 +3056,12 @@ export interface CreateConsultationCommand {
      * @memberof CreateConsultationCommand
      */
     approximateDateEnd?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof CreateConsultationCommand
+     */
+    timeZone?: string | null;
 }
 /**
  * 
@@ -11656,6 +11704,12 @@ export interface UpdateBookingCommand {
      * @memberof UpdateBookingCommand
      */
     comment?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateBookingCommand
+     */
+    timeZone?: string | null;
 }
 /**
  * 
@@ -11869,6 +11923,12 @@ export interface UpdateConsultationCommand {
      * @memberof UpdateConsultationCommand
      */
     approximateDateEnd?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof UpdateConsultationCommand
+     */
+    timeZone?: string | null;
 }
 /**
  * 
