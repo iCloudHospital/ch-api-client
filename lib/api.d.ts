@@ -4018,6 +4018,12 @@ export interface CreateSpecialtyCommand {
      * @memberof CreateSpecialtyCommand
      */
     description?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateSpecialtyCommand
+     */
+    content?: string | null;
 }
 /**
  *
@@ -4062,6 +4068,12 @@ export interface CreateSpecialtyTypeCommand {
      * @memberof CreateSpecialtyTypeCommand
      */
     description?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CreateSpecialtyTypeCommand
+     */
+    content?: string | null;
     /**
      *
      * @type {MarketingType}
@@ -10986,13 +10998,19 @@ export interface Specialty {
      * @type {string}
      * @memberof Specialty
      */
+    slug?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof Specialty
+     */
     description?: string | null;
     /**
      *
      * @type {string}
      * @memberof Specialty
      */
-    slug?: string | null;
+    content?: string | null;
     /**
      *
      * @type {string}
@@ -11054,6 +11072,12 @@ export interface SpecialtyItemViewModel {
      * @memberof SpecialtyItemViewModel
      */
     description?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SpecialtyItemViewModel
+     */
+    content?: string | null;
     /**
      *
      * @type {string}
@@ -11133,6 +11157,12 @@ export interface SpecialtySearchViewModel {
      * @type {string}
      * @memberof SpecialtySearchViewModel
      */
+    content?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SpecialtySearchViewModel
+     */
     specialtyTypeId?: string | null;
     /**
      *
@@ -11194,13 +11224,19 @@ export interface SpecialtyType {
      * @type {string}
      * @memberof SpecialtyType
      */
+    slug?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SpecialtyType
+     */
     description?: string | null;
     /**
      *
      * @type {string}
      * @memberof SpecialtyType
      */
-    slug?: string | null;
+    content?: string | null;
     /**
      *
      * @type {MarketingType}
@@ -11363,6 +11399,12 @@ export interface SpecialtyTypeItemViewModel {
     description?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof SpecialtyTypeItemViewModel
+     */
+    content?: string | null;
+    /**
+     *
      * @type {MarketingType}
      * @memberof SpecialtyTypeItemViewModel
      */
@@ -11422,6 +11464,12 @@ export interface SpecialtyTypeViewModel {
      * @memberof SpecialtyTypeViewModel
      */
     description?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SpecialtyTypeViewModel
+     */
+    content?: string | null;
     /**
      *
      * @type {MarketingType}
@@ -11502,6 +11550,12 @@ export interface SpecialtyViewModel {
      * @memberof SpecialtyViewModel
      */
     description?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof SpecialtyViewModel
+     */
+    content?: string | null;
     /**
      *
      * @type {string}
@@ -13004,6 +13058,12 @@ export interface UpdateSpecialtyCommand {
      * @type {string}
      * @memberof UpdateSpecialtyCommand
      */
+    content?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateSpecialtyCommand
+     */
     name?: string | null;
     /**
      *
@@ -13091,6 +13151,12 @@ export interface UpdateSpecialtyTypeCategoryCommand {
  * @interface UpdateSpecialtyTypeCommand
  */
 export interface UpdateSpecialtyTypeCommand {
+    /**
+     *
+     * @type {string}
+     * @memberof UpdateSpecialtyTypeCommand
+     */
+    content?: string | null;
     /**
      *
      * @type {string}
