@@ -18,5 +18,5 @@ let result = new CountriesApi(config)
 !!! update openapi-generator to beta2
 npm install @openapitools/openapi-generator-cli@cli-5.0.0-beta2 -g
 
-openapi-generator generate -g typescript-axios -o src -i https://api-int.icloudhospital.com/swagger/v1/swagger.json --skip-validate-spec --type-mappings=DateTime=Date
+openapi-generator-cli generate -g typescript-axios -o src -i https://api-int.icloudhospital.com/swagger/v1/swagger.json --skip-validate-spec --type-mappings=DateTime=Date
 npx tsc

@@ -1335,6 +1335,18 @@ export interface CHAdminItemViewModel {
     dateOfBirth?: Date | null;
     /**
      *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminItemViewModel
+     */
+    communicationUserId?: string | null;
+    /**
+     *
      * @type {AuditableEntity}
      * @memberof CHAdminItemViewModel
      */
@@ -1430,6 +1442,18 @@ export interface CHAdminViewModel {
      * @memberof CHAdminViewModel
      */
     dateOfBirth?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CHAdminViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {AuditableEntity}
@@ -1530,6 +1554,18 @@ export interface CHManagerItemViewModel {
     dateOfBirth?: Date | null;
     /**
      *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerItemViewModel
+     */
+    communicationUserId?: string | null;
+    /**
+     *
      * @type {AuditableEntity}
      * @memberof CHManagerItemViewModel
      */
@@ -1625,6 +1661,18 @@ export interface CHManagerViewModel {
      * @memberof CHManagerViewModel
      */
     dateOfBirth?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof CHManagerViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {AuditableEntity}
@@ -5358,6 +5406,12 @@ export interface Doctor {
     timeZone?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof Doctor
+     */
+    communicationUserId?: string | null;
+    /**
+     *
      * @type {Array<Device>}
      * @memberof Doctor
      */
@@ -5966,6 +6020,18 @@ export interface DoctorItemViewModel {
      * @memberof DoctorItemViewModel
      */
     dateOfBirth?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorItemViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {AuditableEntity}
@@ -6644,6 +6710,18 @@ export interface DoctorViewModel {
      * @memberof DoctorViewModel
      */
     dateOfBirth?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof DoctorViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {AuditableEntity}
@@ -8504,6 +8582,12 @@ export interface Manager {
     timeZone?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof Manager
+     */
+    communicationUserId?: string | null;
+    /**
+     *
      * @type {Array<Device>}
      * @memberof Manager
      */
@@ -8733,6 +8817,18 @@ export interface ManagerViewModel {
      * @memberof ManagerViewModel
      */
     dateOfBirth?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ManagerViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ManagerViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {AuditableEntity}
@@ -9068,6 +9164,18 @@ export interface PartnerItemViewModel {
     dateOfBirth?: Date | null;
     /**
      *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerItemViewModel
+     */
+    communicationUserId?: string | null;
+    /**
+     *
      * @type {AuditableEntity}
      * @memberof PartnerItemViewModel
      */
@@ -9175,6 +9283,18 @@ export interface PartnerViewModel {
      * @memberof PartnerViewModel
      */
     dateOfBirth?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof PartnerViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {AuditableEntity}
@@ -9341,6 +9461,12 @@ export interface Patient {
     timeZone?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof Patient
+     */
+    communicationUserId?: string | null;
+    /**
+     *
      * @type {Array<Device>}
      * @memberof Patient
      */
@@ -9448,6 +9574,18 @@ export interface PatientItemViewModel {
      * @memberof PatientItemViewModel
      */
     dateOfBirth?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof PatientItemViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof PatientItemViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {AuditableEntity}
@@ -9563,6 +9701,18 @@ export interface PatientViewModel {
      * @memberof PatientViewModel
      */
     dateOfBirth?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof PatientViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof PatientViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {AuditableEntity}
@@ -13329,6 +13479,12 @@ export interface User {
     timeZone?: string | null;
     /**
      *
+     * @type {string}
+     * @memberof User
+     */
+    communicationUserId?: string | null;
+    /**
+     *
      * @type {Array<Device>}
      * @memberof User
      */
@@ -13436,6 +13592,18 @@ export interface UserItemViewModel {
      * @memberof UserItemViewModel
      */
     dateOfBirth?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof UserItemViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof UserItemViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {AuditableEntity}
@@ -13702,6 +13870,18 @@ export interface UserViewModel {
      * @memberof UserViewModel
      */
     dateOfBirth?: Date | null;
+    /**
+     *
+     * @type {string}
+     * @memberof UserViewModel
+     */
+    timeZone?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof UserViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {AuditableEntity}
@@ -13983,7 +14163,7 @@ export declare const AffiliationsApiAxiosParamCreator: (configuration?: Configur
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDoctorsDoctorIdDelete(hospitalId: string, doctorId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdDoctorsDoctorIdDelete: (hospitalId: string, doctorId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/doctors/1
      * @summary Link a doctor to a hospital.
@@ -13992,7 +14172,7 @@ export declare const AffiliationsApiAxiosParamCreator: (configuration?: Configur
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDoctorsDoctorIdPost(hospitalId: string, doctorId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdDoctorsDoctorIdPost: (hospitalId: string, doctorId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/managers/1
      * @summary Remove link between the manager and the hospital.
@@ -14001,7 +14181,7 @@ export declare const AffiliationsApiAxiosParamCreator: (configuration?: Configur
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdManagersManagerIdDelete(hospitalId: string, managerId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdManagersManagerIdDelete: (hospitalId: string, managerId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/managers/1
      * @summary Link a manager to a hospital.
@@ -14010,7 +14190,7 @@ export declare const AffiliationsApiAxiosParamCreator: (configuration?: Configur
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdManagersManagerIdPost(hospitalId: string, managerId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdManagersManagerIdPost: (hospitalId: string, managerId: string, options?: any) => Promise<RequestArgs>;
 };
 /**
  * AffiliationsApi - functional programming interface
@@ -14025,7 +14205,7 @@ export declare const AffiliationsApiFp: (configuration?: Configuration | undefin
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDoctorsDoctorIdDelete(hospitalId: string, doctorId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdDoctorsDoctorIdDelete(hospitalId: string, doctorId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/doctors/1
      * @summary Link a doctor to a hospital.
@@ -14034,7 +14214,7 @@ export declare const AffiliationsApiFp: (configuration?: Configuration | undefin
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDoctorsDoctorIdPost(hospitalId: string, doctorId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorAffiliationViewModel>;
+    apiV1HospitalsHospitalIdDoctorsDoctorIdPost(hospitalId: string, doctorId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorAffiliationViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/managers/1
      * @summary Remove link between the manager and the hospital.
@@ -14043,7 +14223,7 @@ export declare const AffiliationsApiFp: (configuration?: Configuration | undefin
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdManagersManagerIdDelete(hospitalId: string, managerId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdManagersManagerIdDelete(hospitalId: string, managerId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/managers/1
      * @summary Link a manager to a hospital.
@@ -14052,7 +14232,7 @@ export declare const AffiliationsApiFp: (configuration?: Configuration | undefin
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdManagersManagerIdPost(hospitalId: string, managerId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ManagerAffiliationViewModel>;
+    apiV1HospitalsHospitalIdManagersManagerIdPost(hospitalId: string, managerId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ManagerAffiliationViewModel>>;
 };
 /**
  * AffiliationsApi - factory interface
@@ -14112,7 +14292,7 @@ export declare class AffiliationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AffiliationsApi
      */
-    apiV1HospitalsHospitalIdDoctorsDoctorIdDelete(hospitalId: string, doctorId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdDoctorsDoctorIdDelete(hospitalId: string, doctorId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/doctors/1
      * @summary Link a doctor to a hospital.
@@ -14122,7 +14302,7 @@ export declare class AffiliationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AffiliationsApi
      */
-    apiV1HospitalsHospitalIdDoctorsDoctorIdPost(hospitalId: string, doctorId: string, options?: any): AxiosPromise<DoctorAffiliationViewModel>;
+    apiV1HospitalsHospitalIdDoctorsDoctorIdPost(hospitalId: string, doctorId: string, options?: any): Promise<import("axios").AxiosResponse<DoctorAffiliationViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/managers/1
      * @summary Remove link between the manager and the hospital.
@@ -14132,7 +14312,7 @@ export declare class AffiliationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AffiliationsApi
      */
-    apiV1HospitalsHospitalIdManagersManagerIdDelete(hospitalId: string, managerId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdManagersManagerIdDelete(hospitalId: string, managerId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/managers/1
      * @summary Link a manager to a hospital.
@@ -14142,7 +14322,7 @@ export declare class AffiliationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof AffiliationsApi
      */
-    apiV1HospitalsHospitalIdManagersManagerIdPost(hospitalId: string, managerId: string, options?: any): AxiosPromise<ManagerAffiliationViewModel>;
+    apiV1HospitalsHospitalIdManagersManagerIdPost(hospitalId: string, managerId: string, options?: any): Promise<import("axios").AxiosResponse<ManagerAffiliationViewModel>>;
 }
 /**
  * ArticlesApi - axios parameter creator
@@ -14171,7 +14351,7 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: ArticleStatus | undefined, marketingType?: MarketingType | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsArticlesGet: (id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: ArticleStatus | undefined, marketingType?: MarketingType | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get article by slug.
@@ -14179,7 +14359,7 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    apiV1HospitalsArticlesSlugsSlugGet: (slug: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.
@@ -14188,7 +14368,7 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdArticlesArticleIdDelete(hospitalId: string, articleId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdArticlesArticleIdDelete: (hospitalId: string, articleId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/articles/1
      * @summary Get article.
@@ -14197,7 +14377,7 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdArticlesArticleIdGet(hospitalId: string, articleId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdArticlesArticleIdGet: (hospitalId: string, articleId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/articles/1      {          \"title\": \"Samsung Hospital Article\",          \"description\": \"This is an article.\",          \"body\": \"updated article body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"articletag1\",              \"order\": 0            },            {              \"value\": \"articletag2\",              \"order\": 0            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Update article.
@@ -14207,7 +14387,7 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdArticlesArticleIdPut(hospitalId: string, articleId: string, updateArticleCommand?: UpdateArticleCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdArticlesArticleIdPut: (hospitalId: string, articleId: string, updateArticleCommand?: UpdateArticleCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/articles      {          \"title\": \"Samsung Hospital Article\",          \"description\": \"This is an article.\",          \"body\": \"article body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an article.
@@ -14216,7 +14396,7 @@ export declare const ArticlesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, createArticleCommand?: CreateArticleCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdArticlesPost: (hospitalId: string, createArticleCommand?: CreateArticleCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * ArticlesApi - functional programming interface
@@ -14245,7 +14425,7 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: ArticleStatus | undefined, marketingType?: MarketingType | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticlesViewModel>;
+    apiV1HospitalsArticlesGet(id?: string | undefined, title?: string | undefined, description?: string | undefined, status?: ArticleStatus | undefined, marketingType?: MarketingType | undefined, userId?: string | undefined, userName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, countryId?: string | undefined, tag?: string | undefined, exceptHospitalId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticlesViewModel>>;
     /**
      *
      * @summary Get article by slug.
@@ -14253,7 +14433,7 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticleViewModel>;
+    apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticleViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.
@@ -14262,7 +14442,7 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdArticlesArticleIdDelete(hospitalId: string, articleId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdArticlesArticleIdDelete(hospitalId: string, articleId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/articles/1
      * @summary Get article.
@@ -14271,7 +14451,7 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdArticlesArticleIdGet(hospitalId: string, articleId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticleViewModel>;
+    apiV1HospitalsHospitalIdArticlesArticleIdGet(hospitalId: string, articleId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ArticleViewModel>>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/articles/1      {          \"title\": \"Samsung Hospital Article\",          \"description\": \"This is an article.\",          \"body\": \"updated article body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"articletag1\",              \"order\": 0            },            {              \"value\": \"articletag2\",              \"order\": 0            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Update article.
@@ -14281,7 +14461,7 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdArticlesArticleIdPut(hospitalId: string, articleId: string, updateArticleCommand?: UpdateArticleCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdArticlesArticleIdPut(hospitalId: string, articleId: string, updateArticleCommand?: UpdateArticleCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/articles      {          \"title\": \"Samsung Hospital Article\",          \"description\": \"This is an article.\",          \"body\": \"article body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an article.
@@ -14290,7 +14470,7 @@ export declare const ArticlesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, createArticleCommand?: CreateArticleCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, createArticleCommand?: CreateArticleCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * ArticlesApi - factory interface
@@ -14396,7 +14576,7 @@ export declare class ArticlesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: ArticleStatus, marketingType?: MarketingType, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ArticlesViewModel>;
+    apiV1HospitalsArticlesGet(id?: string, title?: string, description?: string, status?: ArticleStatus, marketingType?: MarketingType, userId?: string, userName?: string, hospitalId?: string, hospitalName?: string, countryId?: string, tag?: string, exceptHospitalId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<ArticlesViewModel>>;
     /**
      *
      * @summary Get article by slug.
@@ -14405,7 +14585,7 @@ export declare class ArticlesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): AxiosPromise<ArticleViewModel>;
+    apiV1HospitalsArticlesSlugsSlugGet(slug: string, options?: any): Promise<import("axios").AxiosResponse<ArticleViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/articles/1
      * @summary Delete article.
@@ -14415,7 +14595,7 @@ export declare class ArticlesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    apiV1HospitalsHospitalIdArticlesArticleIdDelete(hospitalId: string, articleId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdArticlesArticleIdDelete(hospitalId: string, articleId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/articles/1
      * @summary Get article.
@@ -14425,7 +14605,7 @@ export declare class ArticlesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    apiV1HospitalsHospitalIdArticlesArticleIdGet(hospitalId: string, articleId: string, options?: any): AxiosPromise<ArticleViewModel>;
+    apiV1HospitalsHospitalIdArticlesArticleIdGet(hospitalId: string, articleId: string, options?: any): Promise<import("axios").AxiosResponse<ArticleViewModel>>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/articles/1      {          \"title\": \"Samsung Hospital Article\",          \"description\": \"This is an article.\",          \"body\": \"updated article body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"articletag1\",              \"order\": 0            },            {              \"value\": \"articletag2\",              \"order\": 0            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Update article.
@@ -14436,7 +14616,7 @@ export declare class ArticlesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    apiV1HospitalsHospitalIdArticlesArticleIdPut(hospitalId: string, articleId: string, updateArticleCommand?: UpdateArticleCommand, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdArticlesArticleIdPut(hospitalId: string, articleId: string, updateArticleCommand?: UpdateArticleCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/articles      {          \"title\": \"Samsung Hospital Article\",          \"description\": \"This is an article.\",          \"body\": \"article body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an article.
@@ -14446,7 +14626,7 @@ export declare class ArticlesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ArticlesApi
      */
-    apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, createArticleCommand?: CreateArticleCommand, options?: any): AxiosPromise<string>;
+    apiV1HospitalsHospitalIdArticlesPost(hospitalId: string, createArticleCommand?: CreateArticleCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
 }
 /**
  * BookingsApi - axios parameter creator
@@ -14461,7 +14641,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdApprovePost(bookingId: string, approveBookingCommand?: ApproveBookingCommand | undefined, options?: any): RequestArgs;
+    apiV1BookingsBookingIdApprovePost: (bookingId: string, approveBookingCommand?: ApproveBookingCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Cancel booking.
@@ -14469,7 +14649,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdCancelPost(bookingId: string, options?: any): RequestArgs;
+    apiV1BookingsBookingIdCancelPost: (bookingId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Delete booking.
@@ -14477,7 +14657,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): RequestArgs;
+    apiV1BookingsBookingIdDelete: (bookingId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get booking.
@@ -14485,7 +14665,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdGet(bookingId: string, options?: any): RequestArgs;
+    apiV1BookingsBookingIdGet: (bookingId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Mark as Paid booking.
@@ -14493,7 +14673,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): RequestArgs;
+    apiV1BookingsBookingIdPaidPost: (bookingId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Pay booking.
@@ -14501,7 +14681,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): RequestArgs;
+    apiV1BookingsBookingIdPayPost: (bookingId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Update booking.
@@ -14510,7 +14690,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdPut(bookingId: string, updateBookingCommand?: UpdateBookingCommand | undefined, options?: any): RequestArgs;
+    apiV1BookingsBookingIdPut: (bookingId: string, updateBookingCommand?: UpdateBookingCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Reject booking.
@@ -14519,7 +14699,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdRejectPost(bookingId: string, rejectBookingCommand?: RejectBookingCommand | undefined, options?: any): RequestArgs;
+    apiV1BookingsBookingIdRejectPost: (bookingId: string, rejectBookingCommand?: RejectBookingCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get all bookings.
@@ -14535,7 +14715,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: BookingStatus | undefined, dealPackageId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1BookingsGet: (searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: BookingStatus | undefined, dealPackageId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Create booking.
@@ -14544,7 +14724,7 @@ export declare const BookingsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsRequestIdPost(requestId: string, createBookingCommand?: CreateBookingCommand | undefined, options?: any): RequestArgs;
+    apiV1BookingsRequestIdPost: (requestId: string, createBookingCommand?: CreateBookingCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * BookingsApi - functional programming interface
@@ -14559,7 +14739,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdApprovePost(bookingId: string, approveBookingCommand?: ApproveBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1BookingsBookingIdApprovePost(bookingId: string, approveBookingCommand?: ApproveBookingCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Cancel booking.
@@ -14567,7 +14747,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdCancelPost(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1BookingsBookingIdCancelPost(bookingId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Delete booking.
@@ -14575,7 +14755,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Get booking.
@@ -14583,7 +14763,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdGet(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BookingViewModel>;
+    apiV1BookingsBookingIdGet(bookingId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BookingViewModel>>;
     /**
      *
      * @summary Mark as Paid booking.
@@ -14591,7 +14771,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Pay booking.
@@ -14599,7 +14779,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Update booking.
@@ -14608,7 +14788,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdPut(bookingId: string, updateBookingCommand?: UpdateBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1BookingsBookingIdPut(bookingId: string, updateBookingCommand?: UpdateBookingCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Reject booking.
@@ -14617,7 +14797,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsBookingIdRejectPost(bookingId: string, rejectBookingCommand?: RejectBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1BookingsBookingIdRejectPost(bookingId: string, rejectBookingCommand?: RejectBookingCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Get all bookings.
@@ -14633,7 +14813,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: BookingStatus | undefined, dealPackageId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BookingsViewModel>;
+    apiV1BookingsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: BookingStatus | undefined, dealPackageId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BookingsViewModel>>;
     /**
      *
      * @summary Create booking.
@@ -14642,7 +14822,7 @@ export declare const BookingsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1BookingsRequestIdPost(requestId: string, createBookingCommand?: CreateBookingCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1BookingsRequestIdPost(requestId: string, createBookingCommand?: CreateBookingCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * BookingsApi - factory interface
@@ -14758,7 +14938,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdApprovePost(bookingId: string, approveBookingCommand?: ApproveBookingCommand, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdApprovePost(bookingId: string, approveBookingCommand?: ApproveBookingCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Cancel booking.
@@ -14767,7 +14947,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdCancelPost(bookingId: string, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdCancelPost(bookingId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Delete booking.
@@ -14776,7 +14956,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdDelete(bookingId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Get booking.
@@ -14785,7 +14965,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdGet(bookingId: string, options?: any): AxiosPromise<BookingViewModel>;
+    apiV1BookingsBookingIdGet(bookingId: string, options?: any): Promise<import("axios").AxiosResponse<BookingViewModel>>;
     /**
      *
      * @summary Mark as Paid booking.
@@ -14794,7 +14974,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): AxiosPromise<string>;
+    apiV1BookingsBookingIdPaidPost(bookingId: string, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Pay booking.
@@ -14803,7 +14983,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): AxiosPromise<string>;
+    apiV1BookingsBookingIdPayPost(bookingId: string, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Update booking.
@@ -14813,7 +14993,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdPut(bookingId: string, updateBookingCommand?: UpdateBookingCommand, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdPut(bookingId: string, updateBookingCommand?: UpdateBookingCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Reject booking.
@@ -14823,7 +15003,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsBookingIdRejectPost(bookingId: string, rejectBookingCommand?: RejectBookingCommand, options?: any): AxiosPromise<boolean>;
+    apiV1BookingsBookingIdRejectPost(bookingId: string, rejectBookingCommand?: RejectBookingCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Get all bookings.
@@ -14840,7 +15020,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, status?: BookingStatus, dealPackageId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<BookingsViewModel>;
+    apiV1BookingsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, status?: BookingStatus, dealPackageId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<BookingsViewModel>>;
     /**
      *
      * @summary Create booking.
@@ -14850,7 +15030,7 @@ export declare class BookingsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof BookingsApi
      */
-    apiV1BookingsRequestIdPost(requestId: string, createBookingCommand?: CreateBookingCommand, options?: any): AxiosPromise<string>;
+    apiV1BookingsRequestIdPost(requestId: string, createBookingCommand?: CreateBookingCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
 }
 /**
  * CHAdminsApi - axios parameter creator
@@ -14864,7 +15044,7 @@ export declare const CHAdminsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsChAdminIdDelete(chAdminId: string, options?: any): RequestArgs;
+    apiV1ChadminsChAdminIdDelete: (chAdminId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/chadmins/1
      * @summary Get cloud hospital admin user by id.
@@ -14872,7 +15052,7 @@ export declare const CHAdminsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsChAdminIdGet(chAdminId: string, options?: any): RequestArgs;
+    apiV1ChadminsChAdminIdGet: (chAdminId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/chadmins/1      {          \"email\": \"adminupdate@icloudhospital.com\",          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
      * @summary Update cloud hospital admin user.
@@ -14881,7 +15061,7 @@ export declare const CHAdminsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsChAdminIdPut(chAdminId: string, updateCHAdminCommand?: UpdateCHAdminCommand | undefined, options?: any): RequestArgs;
+    apiV1ChadminsChAdminIdPut: (chAdminId: string, updateCHAdminCommand?: UpdateCHAdminCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/chadmin      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"admin\"      }
      * @summary Get cloud hospital admin users.
@@ -14898,7 +15078,7 @@ export declare const CHAdminsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1ChadminsGet: (id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/chadmins      {          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
      * @summary Create cloud hospital admin user.
@@ -14906,7 +15086,7 @@ export declare const CHAdminsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsPost(createCHAdminCommand?: CreateCHAdminCommand | undefined, options?: any): RequestArgs;
+    apiV1ChadminsPost: (createCHAdminCommand?: CreateCHAdminCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * CHAdminsApi - functional programming interface
@@ -14920,7 +15100,7 @@ export declare const CHAdminsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsChAdminIdDelete(chAdminId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ChadminsChAdminIdDelete(chAdminId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/chadmins/1
      * @summary Get cloud hospital admin user by id.
@@ -14928,7 +15108,7 @@ export declare const CHAdminsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsChAdminIdGet(chAdminId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHAdminViewModel>;
+    apiV1ChadminsChAdminIdGet(chAdminId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHAdminViewModel>>;
     /**
      * Sample request:        PUT /api/v1/chadmins/1      {          \"email\": \"adminupdate@icloudhospital.com\",          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
      * @summary Update cloud hospital admin user.
@@ -14937,7 +15117,7 @@ export declare const CHAdminsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsChAdminIdPut(chAdminId: string, updateCHAdminCommand?: UpdateCHAdminCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ChadminsChAdminIdPut(chAdminId: string, updateCHAdminCommand?: UpdateCHAdminCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/chadmin      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"admin\"      }
      * @summary Get cloud hospital admin users.
@@ -14954,7 +15134,7 @@ export declare const CHAdminsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHAdminsViewModel>;
+    apiV1ChadminsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHAdminsViewModel>>;
     /**
      * Sample request:        POST /api/v1/chadmins      {          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
      * @summary Create cloud hospital admin user.
@@ -14962,7 +15142,7 @@ export declare const CHAdminsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChadminsPost(createCHAdminCommand?: CreateCHAdminCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1ChadminsPost(createCHAdminCommand?: CreateCHAdminCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * CHAdminsApi - factory interface
@@ -15035,7 +15215,7 @@ export declare class CHAdminsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHAdminsApi
      */
-    apiV1ChadminsChAdminIdDelete(chAdminId: string, options?: any): AxiosPromise<boolean>;
+    apiV1ChadminsChAdminIdDelete(chAdminId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/chadmins/1
      * @summary Get cloud hospital admin user by id.
@@ -15044,7 +15224,7 @@ export declare class CHAdminsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHAdminsApi
      */
-    apiV1ChadminsChAdminIdGet(chAdminId: string, options?: any): AxiosPromise<CHAdminViewModel>;
+    apiV1ChadminsChAdminIdGet(chAdminId: string, options?: any): Promise<import("axios").AxiosResponse<CHAdminViewModel>>;
     /**
      * Sample request:        PUT /api/v1/chadmins/1      {          \"email\": \"adminupdate@icloudhospital.com\",          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
      * @summary Update cloud hospital admin user.
@@ -15054,7 +15234,7 @@ export declare class CHAdminsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHAdminsApi
      */
-    apiV1ChadminsChAdminIdPut(chAdminId: string, updateCHAdminCommand?: UpdateCHAdminCommand, options?: any): AxiosPromise<boolean>;
+    apiV1ChadminsChAdminIdPut(chAdminId: string, updateCHAdminCommand?: UpdateCHAdminCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/chadmin      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"admin\"      }
      * @summary Get cloud hospital admin users.
@@ -15072,7 +15252,7 @@ export declare class CHAdminsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHAdminsApi
      */
-    apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CHAdminsViewModel>;
+    apiV1ChadminsGet(id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<CHAdminsViewModel>>;
     /**
      * Sample request:        POST /api/v1/chadmins      {          \"firstName\": \"Cloud\",          \"lastName\": \"Hospital\",          \"photo\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"photoThumbnail\": \"https://cloudhospitalblob.blob.core.windows.net/assets/Cloud_Hospital_Logo_blue.png\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T09:09:19.082Z\",          \"locations\": [              {                  \"locationType\": \"LivesIn\",                  \"latitude\": 0,                  \"longitude\": 0,                  \"country\": \"string\",                  \"state\": \"string\",                  \"county\": \"string\",                  \"city\": \"string\",                  \"zipCode\": \"string\",                  \"address\": \"string\"              }          ]      }
      * @summary Create cloud hospital admin user.
@@ -15081,7 +15261,7 @@ export declare class CHAdminsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHAdminsApi
      */
-    apiV1ChadminsPost(createCHAdminCommand?: CreateCHAdminCommand, options?: any): AxiosPromise<string>;
+    apiV1ChadminsPost(createCHAdminCommand?: CreateCHAdminCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
 }
 /**
  * CHManagersApi - axios parameter creator
@@ -15095,7 +15275,7 @@ export declare const CHManagersApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersChManagerIdDelete(chManagerId: string, options?: any): RequestArgs;
+    apiV1ChmanagersChManagerIdDelete: (chManagerId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/chmanagers/1
      * @summary Get cloud hospital manager.
@@ -15104,7 +15284,7 @@ export declare const CHManagersApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersChManagerIdGet(managerId: string, chManagerId: string, options?: any): RequestArgs;
+    apiV1ChmanagersChManagerIdGet: (managerId: string, chManagerId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/chmanagers/1      {          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"locations\": [          {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"              }          ]      }
      * @summary Update cloud hospital manager.
@@ -15113,7 +15293,7 @@ export declare const CHManagersApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersChManagerIdPut(chManagerId: string, updateCHManagerCommand?: UpdateCHManagerCommand | undefined, options?: any): RequestArgs;
+    apiV1ChmanagersChManagerIdPut: (chManagerId: string, updateCHManagerCommand?: UpdateCHManagerCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/chmanagers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"chmanager\"      }
      * @summary Get cloud hospital managers.
@@ -15130,7 +15310,7 @@ export declare const CHManagersApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1ChmanagersGet: (id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/chmanagers      {          \"userName\": \"chmanager\",          \"email\": \"chmanger@icloudhospital.com\",          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [             {             \"locationType\": \"LivesIn\",             \"latitude\": 0,             \"longitude\": 0,             \"country\": \"string\",             \"state\": \"string\",             \"county\": \"string\",             \"city\": \"string\",             \"zipCode\": \"string\",             \"address\": \"string\"             }          ]       }
      * @summary Create cloud hospital manager.
@@ -15138,7 +15318,7 @@ export declare const CHManagersApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersPost(createCHManagerCommand?: CreateCHManagerCommand | undefined, options?: any): RequestArgs;
+    apiV1ChmanagersPost: (createCHManagerCommand?: CreateCHManagerCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * CHManagersApi - functional programming interface
@@ -15152,7 +15332,7 @@ export declare const CHManagersApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersChManagerIdDelete(chManagerId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ChmanagersChManagerIdDelete(chManagerId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/chmanagers/1
      * @summary Get cloud hospital manager.
@@ -15161,7 +15341,7 @@ export declare const CHManagersApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersChManagerIdGet(managerId: string, chManagerId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHManagerViewModel>;
+    apiV1ChmanagersChManagerIdGet(managerId: string, chManagerId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHManagerViewModel>>;
     /**
      * Sample request:        PUT /api/v1/chmanagers/1      {          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"locations\": [          {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"              }          ]      }
      * @summary Update cloud hospital manager.
@@ -15170,7 +15350,7 @@ export declare const CHManagersApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersChManagerIdPut(chManagerId: string, updateCHManagerCommand?: UpdateCHManagerCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ChmanagersChManagerIdPut(chManagerId: string, updateCHManagerCommand?: UpdateCHManagerCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/chmanagers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"chmanager\"      }
      * @summary Get cloud hospital managers.
@@ -15187,7 +15367,7 @@ export declare const CHManagersApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHManagersViewModel>;
+    apiV1ChmanagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CHManagersViewModel>>;
     /**
      * Sample request:        POST /api/v1/chmanagers      {          \"userName\": \"chmanager\",          \"email\": \"chmanger@icloudhospital.com\",          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [             {             \"locationType\": \"LivesIn\",             \"latitude\": 0,             \"longitude\": 0,             \"country\": \"string\",             \"state\": \"string\",             \"county\": \"string\",             \"city\": \"string\",             \"zipCode\": \"string\",             \"address\": \"string\"             }          ]       }
      * @summary Create cloud hospital manager.
@@ -15195,7 +15375,7 @@ export declare const CHManagersApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ChmanagersPost(createCHManagerCommand?: CreateCHManagerCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1ChmanagersPost(createCHManagerCommand?: CreateCHManagerCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * CHManagersApi - factory interface
@@ -15269,7 +15449,7 @@ export declare class CHManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHManagersApi
      */
-    apiV1ChmanagersChManagerIdDelete(chManagerId: string, options?: any): AxiosPromise<boolean>;
+    apiV1ChmanagersChManagerIdDelete(chManagerId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/chmanagers/1
      * @summary Get cloud hospital manager.
@@ -15279,7 +15459,7 @@ export declare class CHManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHManagersApi
      */
-    apiV1ChmanagersChManagerIdGet(managerId: string, chManagerId: string, options?: any): AxiosPromise<CHManagerViewModel>;
+    apiV1ChmanagersChManagerIdGet(managerId: string, chManagerId: string, options?: any): Promise<import("axios").AxiosResponse<CHManagerViewModel>>;
     /**
      * Sample request:        PUT /api/v1/chmanagers/1      {          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"locations\": [          {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"              }          ]      }
      * @summary Update cloud hospital manager.
@@ -15289,7 +15469,7 @@ export declare class CHManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHManagersApi
      */
-    apiV1ChmanagersChManagerIdPut(chManagerId: string, updateCHManagerCommand?: UpdateCHManagerCommand, options?: any): AxiosPromise<boolean>;
+    apiV1ChmanagersChManagerIdPut(chManagerId: string, updateCHManagerCommand?: UpdateCHManagerCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/chmanagers      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"chmanager\"      }
      * @summary Get cloud hospital managers.
@@ -15307,7 +15487,7 @@ export declare class CHManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHManagersApi
      */
-    apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CHManagersViewModel>;
+    apiV1ChmanagersGet(id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<CHManagersViewModel>>;
     /**
      * Sample request:        POST /api/v1/chmanagers      {          \"userName\": \"chmanager\",          \"email\": \"chmanger@icloudhospital.com\",          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [             {             \"locationType\": \"LivesIn\",             \"latitude\": 0,             \"longitude\": 0,             \"country\": \"string\",             \"state\": \"string\",             \"county\": \"string\",             \"city\": \"string\",             \"zipCode\": \"string\",             \"address\": \"string\"             }          ]       }
      * @summary Create cloud hospital manager.
@@ -15316,7 +15496,191 @@ export declare class CHManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CHManagersApi
      */
-    apiV1ChmanagersPost(createCHManagerCommand?: CreateCHManagerCommand, options?: any): AxiosPromise<string>;
+    apiV1ChmanagersPost(createCHManagerCommand?: CreateCHManagerCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
+}
+/**
+ * CommunicationsApi - axios parameter creator
+ * @export
+ */
+export declare const CommunicationsApiAxiosParamCreator: (configuration?: Configuration | undefined) => {
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsDelete: (options?: any) => Promise<RequestArgs>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGet: (options?: any) => Promise<RequestArgs>;
+    /**
+     *
+     * @param {string} communicationUserId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGuestCommunicationUserIdDelete: (communicationUserId: string, options?: any) => Promise<RequestArgs>;
+    /**
+     *
+     * @param {string} communicationUserId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGuestCommunicationUserIdPost: (communicationUserId: string, options?: any) => Promise<RequestArgs>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGuestGet: (options?: any) => Promise<RequestArgs>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsPost: (options?: any) => Promise<RequestArgs>;
+};
+/**
+ * CommunicationsApi - functional programming interface
+ * @export
+ */
+export declare const CommunicationsApiFp: (configuration?: Configuration | undefined) => {
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsDelete(options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGet(options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     *
+     * @param {string} communicationUserId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     *
+     * @param {string} communicationUserId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGuestCommunicationUserIdPost(communicationUserId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGuestGet(options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsPost(options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
+};
+/**
+ * CommunicationsApi - factory interface
+ * @export
+ */
+export declare const CommunicationsApiFactory: (configuration?: Configuration | undefined, basePath?: string | undefined, axios?: AxiosInstance | undefined) => {
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsDelete(options?: any): AxiosPromise<void>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGet(options?: any): AxiosPromise<void>;
+    /**
+     *
+     * @param {string} communicationUserId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): AxiosPromise<void>;
+    /**
+     *
+     * @param {string} communicationUserId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGuestCommunicationUserIdPost(communicationUserId: string, options?: any): AxiosPromise<void>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsGuestGet(options?: any): AxiosPromise<void>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    apiV1CommunicationsPost(options?: any): AxiosPromise<void>;
+};
+/**
+ * CommunicationsApi - object-oriented interface
+ * @export
+ * @class CommunicationsApi
+ * @extends {BaseAPI}
+ */
+export declare class CommunicationsApi extends BaseAPI {
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CommunicationsApi
+     */
+    apiV1CommunicationsDelete(options?: any): Promise<import("axios").AxiosResponse<void>>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CommunicationsApi
+     */
+    apiV1CommunicationsGet(options?: any): Promise<import("axios").AxiosResponse<void>>;
+    /**
+     *
+     * @param {string} communicationUserId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CommunicationsApi
+     */
+    apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): Promise<import("axios").AxiosResponse<void>>;
+    /**
+     *
+     * @param {string} communicationUserId
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CommunicationsApi
+     */
+    apiV1CommunicationsGuestCommunicationUserIdPost(communicationUserId: string, options?: any): Promise<import("axios").AxiosResponse<void>>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CommunicationsApi
+     */
+    apiV1CommunicationsGuestGet(options?: any): Promise<import("axios").AxiosResponse<void>>;
+    /**
+     *
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof CommunicationsApi
+     */
+    apiV1CommunicationsPost(options?: any): Promise<import("axios").AxiosResponse<void>>;
 }
 /**
  * ConsultationsApi - axios parameter creator
@@ -15331,7 +15695,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdApprovePost(consultationId: string, approveConsultationCommand?: ApproveConsultationCommand | undefined, options?: any): RequestArgs;
+    apiV1ConsultationsConsultationIdApprovePost: (consultationId: string, approveConsultationCommand?: ApproveConsultationCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Cancel consultation.
@@ -15339,7 +15703,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdCancelPost(consultationId: string, options?: any): RequestArgs;
+    apiV1ConsultationsConsultationIdCancelPost: (consultationId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Delete consultation.
@@ -15347,7 +15711,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdDelete(consultationId: string, options?: any): RequestArgs;
+    apiV1ConsultationsConsultationIdDelete: (consultationId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get consultation.
@@ -15355,7 +15719,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): RequestArgs;
+    apiV1ConsultationsConsultationIdGet: (consultationId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Pay consultation.
@@ -15363,7 +15727,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): RequestArgs;
+    apiV1ConsultationsConsultationIdPayPost: (consultationId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Update consultation.
@@ -15372,7 +15736,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdPut(consultationId: string, updateConsultationCommand?: UpdateConsultationCommand | undefined, options?: any): RequestArgs;
+    apiV1ConsultationsConsultationIdPut: (consultationId: string, updateConsultationCommand?: UpdateConsultationCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Reject consultation.
@@ -15381,7 +15745,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdRejectPost(consultationId: string, rejectConsultationCommand?: RejectConsultationCommand | undefined, options?: any): RequestArgs;
+    apiV1ConsultationsConsultationIdRejectPost: (consultationId: string, rejectConsultationCommand?: RejectConsultationCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get all consultations.
@@ -15396,7 +15760,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: ConsultationStatus | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1ConsultationsGet: (searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: ConsultationStatus | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Create consultation.
@@ -15405,7 +15769,7 @@ export declare const ConsultationsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsRequestIdPost(requestId: string, createConsultationCommand?: CreateConsultationCommand | undefined, options?: any): RequestArgs;
+    apiV1ConsultationsRequestIdPost: (requestId: string, createConsultationCommand?: CreateConsultationCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * ConsultationsApi - functional programming interface
@@ -15420,7 +15784,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdApprovePost(consultationId: string, approveConsultationCommand?: ApproveConsultationCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ConsultationsConsultationIdApprovePost(consultationId: string, approveConsultationCommand?: ApproveConsultationCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Cancel consultation.
@@ -15428,7 +15792,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdCancelPost(consultationId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ConsultationsConsultationIdCancelPost(consultationId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Delete consultation.
@@ -15436,7 +15800,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdDelete(consultationId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ConsultationsConsultationIdDelete(consultationId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Get consultation.
@@ -15444,7 +15808,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ConsultationViewModel>;
+    apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ConsultationViewModel>>;
     /**
      *
      * @summary Pay consultation.
@@ -15452,7 +15816,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Update consultation.
@@ -15461,7 +15825,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdPut(consultationId: string, updateConsultationCommand?: UpdateConsultationCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ConsultationsConsultationIdPut(consultationId: string, updateConsultationCommand?: UpdateConsultationCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Reject consultation.
@@ -15470,7 +15834,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsConsultationIdRejectPost(consultationId: string, rejectConsultationCommand?: RejectConsultationCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ConsultationsConsultationIdRejectPost(consultationId: string, rejectConsultationCommand?: RejectConsultationCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Get all consultations.
@@ -15485,7 +15849,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: ConsultationStatus | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ConsultationsViewModel>;
+    apiV1ConsultationsGet(searchString?: string | undefined, isOpen?: boolean | undefined, isCompleted?: boolean | undefined, status?: ConsultationStatus | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ConsultationsViewModel>>;
     /**
      *
      * @summary Create consultation.
@@ -15494,7 +15858,7 @@ export declare const ConsultationsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ConsultationsRequestIdPost(requestId: string, createConsultationCommand?: CreateConsultationCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1ConsultationsRequestIdPost(requestId: string, createConsultationCommand?: CreateConsultationCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * ConsultationsApi - factory interface
@@ -15601,7 +15965,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsConsultationIdApprovePost(consultationId: string, approveConsultationCommand?: ApproveConsultationCommand, options?: any): AxiosPromise<boolean>;
+    apiV1ConsultationsConsultationIdApprovePost(consultationId: string, approveConsultationCommand?: ApproveConsultationCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Cancel consultation.
@@ -15610,7 +15974,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsConsultationIdCancelPost(consultationId: string, options?: any): AxiosPromise<boolean>;
+    apiV1ConsultationsConsultationIdCancelPost(consultationId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Delete consultation.
@@ -15619,7 +15983,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsConsultationIdDelete(consultationId: string, options?: any): AxiosPromise<boolean>;
+    apiV1ConsultationsConsultationIdDelete(consultationId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Get consultation.
@@ -15628,7 +15992,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): AxiosPromise<ConsultationViewModel>;
+    apiV1ConsultationsConsultationIdGet(consultationId: string, options?: any): Promise<import("axios").AxiosResponse<ConsultationViewModel>>;
     /**
      *
      * @summary Pay consultation.
@@ -15637,7 +16001,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): AxiosPromise<string>;
+    apiV1ConsultationsConsultationIdPayPost(consultationId: string, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Update consultation.
@@ -15647,7 +16011,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsConsultationIdPut(consultationId: string, updateConsultationCommand?: UpdateConsultationCommand, options?: any): AxiosPromise<boolean>;
+    apiV1ConsultationsConsultationIdPut(consultationId: string, updateConsultationCommand?: UpdateConsultationCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Reject consultation.
@@ -15657,7 +16021,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsConsultationIdRejectPost(consultationId: string, rejectConsultationCommand?: RejectConsultationCommand, options?: any): AxiosPromise<boolean>;
+    apiV1ConsultationsConsultationIdRejectPost(consultationId: string, rejectConsultationCommand?: RejectConsultationCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Get all consultations.
@@ -15673,7 +16037,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, status?: ConsultationStatus, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ConsultationsViewModel>;
+    apiV1ConsultationsGet(searchString?: string, isOpen?: boolean, isCompleted?: boolean, status?: ConsultationStatus, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<ConsultationsViewModel>>;
     /**
      *
      * @summary Create consultation.
@@ -15683,7 +16047,7 @@ export declare class ConsultationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ConsultationsApi
      */
-    apiV1ConsultationsRequestIdPost(requestId: string, createConsultationCommand?: CreateConsultationCommand, options?: any): AxiosPromise<string>;
+    apiV1ConsultationsRequestIdPost(requestId: string, createConsultationCommand?: CreateConsultationCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
 }
 /**
  * CountriesApi - axios parameter creator
@@ -15697,7 +16061,7 @@ export declare const CountriesApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesCountryIdDelete(countryId: string, options?: any): RequestArgs;
+    apiV1CountriesCountryIdDelete: (countryId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/countries/1
      * @summary Get country.
@@ -15705,7 +16069,7 @@ export declare const CountriesApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesCountryIdGet(countryId: string, options?: any): RequestArgs;
+    apiV1CountriesCountryIdGet: (countryId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/countries/1      {          \"name\": \"USA\",          \"description\": \"United States of America\"          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SouthKorea.png\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SouthKorea.png\"              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": 1,              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],      }
      * @summary Update country.
@@ -15714,7 +16078,7 @@ export declare const CountriesApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesCountryIdPut(countryId: string, updateCountryCommand?: UpdateCountryCommand | undefined, options?: any): RequestArgs;
+    apiV1CountriesCountryIdPut: (countryId: string, updateCountryCommand?: UpdateCountryCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/countries      {          \"countryPageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          }      }
      * @summary Get all countries.
@@ -15729,7 +16093,7 @@ export declare const CountriesApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, createdDate?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1CountriesGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, createdDate?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/countries      {          \"name\": \"Korea\",          \"description\": \"Republic of Korea\",          \"medias\": [              {                  \"mediaType\": \"Photo\",                  \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SouthKorea.png\",                  \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SouthKorea.png\",                  \"description\": \"string\"              }          ]      }
      * @summary Create a country.
@@ -15737,7 +16101,7 @@ export declare const CountriesApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesPost(createCountryCommand?: CreateCountryCommand | undefined, options?: any): RequestArgs;
+    apiV1CountriesPost: (createCountryCommand?: CreateCountryCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get country by slug.
@@ -15745,7 +16109,7 @@ export declare const CountriesApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    apiV1CountriesSlugsSlugGet: (slug: string, options?: any) => Promise<RequestArgs>;
 };
 /**
  * CountriesApi - functional programming interface
@@ -15759,7 +16123,7 @@ export declare const CountriesApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesCountryIdDelete(countryId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1CountriesCountryIdDelete(countryId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/countries/1
      * @summary Get country.
@@ -15767,7 +16131,7 @@ export declare const CountriesApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesCountryIdGet(countryId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CountryViewModel>;
+    apiV1CountriesCountryIdGet(countryId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CountryViewModel>>;
     /**
      * Sample request:        PUT /api/v1/countries/1      {          \"name\": \"USA\",          \"description\": \"United States of America\"          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SouthKorea.png\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SouthKorea.png\"              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": 1,              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],      }
      * @summary Update country.
@@ -15776,7 +16140,7 @@ export declare const CountriesApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesCountryIdPut(countryId: string, updateCountryCommand?: UpdateCountryCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1CountriesCountryIdPut(countryId: string, updateCountryCommand?: UpdateCountryCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/countries      {          \"countryPageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          }      }
      * @summary Get all countries.
@@ -15791,7 +16155,7 @@ export declare const CountriesApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, createdDate?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CountriesViewModel>;
+    apiV1CountriesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, createdDate?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CountriesViewModel>>;
     /**
      * Sample request:        POST /api/v1/countries      {          \"name\": \"Korea\",          \"description\": \"Republic of Korea\",          \"medias\": [              {                  \"mediaType\": \"Photo\",                  \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SouthKorea.png\",                  \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SouthKorea.png\",                  \"description\": \"string\"              }          ]      }
      * @summary Create a country.
@@ -15799,7 +16163,7 @@ export declare const CountriesApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesPost(createCountryCommand?: CreateCountryCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1CountriesPost(createCountryCommand?: CreateCountryCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Get country by slug.
@@ -15807,7 +16171,7 @@ export declare const CountriesApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1CountriesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CountryViewModel>;
+    apiV1CountriesSlugsSlugGet(slug: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CountryViewModel>>;
 };
 /**
  * CountriesApi - factory interface
@@ -15886,7 +16250,7 @@ export declare class CountriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CountriesApi
      */
-    apiV1CountriesCountryIdDelete(countryId: string, options?: any): AxiosPromise<boolean>;
+    apiV1CountriesCountryIdDelete(countryId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/countries/1
      * @summary Get country.
@@ -15895,7 +16259,7 @@ export declare class CountriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CountriesApi
      */
-    apiV1CountriesCountryIdGet(countryId: string, options?: any): AxiosPromise<CountryViewModel>;
+    apiV1CountriesCountryIdGet(countryId: string, options?: any): Promise<import("axios").AxiosResponse<CountryViewModel>>;
     /**
      * Sample request:        PUT /api/v1/countries/1      {          \"name\": \"USA\",          \"description\": \"United States of America\"          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SouthKorea.png\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SouthKorea.png\"              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": 1,              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],      }
      * @summary Update country.
@@ -15905,7 +16269,7 @@ export declare class CountriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CountriesApi
      */
-    apiV1CountriesCountryIdPut(countryId: string, updateCountryCommand?: UpdateCountryCommand, options?: any): AxiosPromise<boolean>;
+    apiV1CountriesCountryIdPut(countryId: string, updateCountryCommand?: UpdateCountryCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/countries      {          \"countryPageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          }      }
      * @summary Get all countries.
@@ -15921,7 +16285,7 @@ export declare class CountriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CountriesApi
      */
-    apiV1CountriesGet(id?: string, name?: string, description?: string, createdDate?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<CountriesViewModel>;
+    apiV1CountriesGet(id?: string, name?: string, description?: string, createdDate?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<CountriesViewModel>>;
     /**
      * Sample request:        POST /api/v1/countries      {          \"name\": \"Korea\",          \"description\": \"Republic of Korea\",          \"medias\": [              {                  \"mediaType\": \"Photo\",                  \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SouthKorea.png\",                  \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SouthKorea.png\",                  \"description\": \"string\"              }          ]      }
      * @summary Create a country.
@@ -15930,7 +16294,7 @@ export declare class CountriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CountriesApi
      */
-    apiV1CountriesPost(createCountryCommand?: CreateCountryCommand, options?: any): AxiosPromise<string>;
+    apiV1CountriesPost(createCountryCommand?: CreateCountryCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Get country by slug.
@@ -15939,7 +16303,7 @@ export declare class CountriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CountriesApi
      */
-    apiV1CountriesSlugsSlugGet(slug: string, options?: any): AxiosPromise<CountryViewModel>;
+    apiV1CountriesSlugsSlugGet(slug: string, options?: any): Promise<import("axios").AxiosResponse<CountryViewModel>>;
 }
 /**
  * DealPackagesApi - axios parameter creator
@@ -15954,7 +16318,7 @@ export declare const DealPackagesApiAxiosParamCreator: (configuration?: Configur
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdPackagesPackageIdDelete(dealId: string, packageId: string, options?: any): RequestArgs;
+    apiV1DealsDealIdPackagesPackageIdDelete: (dealId: string, packageId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get deal package.
@@ -15963,7 +16327,7 @@ export declare const DealPackagesApiAxiosParamCreator: (configuration?: Configur
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdPackagesPackageIdGet(dealId: string, packageId: string, options?: any): RequestArgs;
+    apiV1DealsDealIdPackagesPackageIdGet: (dealId: string, packageId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Update deal package.
@@ -15973,7 +16337,7 @@ export declare const DealPackagesApiAxiosParamCreator: (configuration?: Configur
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdPackagesPackageIdPut(dealId: string, packageId: string, updateDealPackageCommand?: UpdateDealPackageCommand | undefined, options?: any): RequestArgs;
+    apiV1DealsDealIdPackagesPackageIdPut: (dealId: string, packageId: string, updateDealPackageCommand?: UpdateDealPackageCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Create deal package.
@@ -15982,7 +16346,7 @@ export declare const DealPackagesApiAxiosParamCreator: (configuration?: Configur
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdPackagesPost(dealId: string, createDealPackageCommand?: CreateDealPackageCommand | undefined, options?: any): RequestArgs;
+    apiV1DealsDealIdPackagesPost: (dealId: string, createDealPackageCommand?: CreateDealPackageCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * DealPackagesApi - functional programming interface
@@ -15997,7 +16361,7 @@ export declare const DealPackagesApiFp: (configuration?: Configuration | undefin
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdPackagesPackageIdDelete(dealId: string, packageId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DealsDealIdPackagesPackageIdDelete(dealId: string, packageId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Get deal package.
@@ -16006,7 +16370,7 @@ export declare const DealPackagesApiFp: (configuration?: Configuration | undefin
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdPackagesPackageIdGet(dealId: string, packageId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealPackageViewModel>;
+    apiV1DealsDealIdPackagesPackageIdGet(dealId: string, packageId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealPackageViewModel>>;
     /**
      *
      * @summary Update deal package.
@@ -16016,7 +16380,7 @@ export declare const DealPackagesApiFp: (configuration?: Configuration | undefin
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdPackagesPackageIdPut(dealId: string, packageId: string, updateDealPackageCommand?: UpdateDealPackageCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DealsDealIdPackagesPackageIdPut(dealId: string, packageId: string, updateDealPackageCommand?: UpdateDealPackageCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Create deal package.
@@ -16025,7 +16389,7 @@ export declare const DealPackagesApiFp: (configuration?: Configuration | undefin
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdPackagesPost(dealId: string, createDealPackageCommand?: CreateDealPackageCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1DealsDealIdPackagesPost(dealId: string, createDealPackageCommand?: CreateDealPackageCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * DealPackagesApi - factory interface
@@ -16086,7 +16450,7 @@ export declare class DealPackagesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealPackagesApi
      */
-    apiV1DealsDealIdPackagesPackageIdDelete(dealId: string, packageId: string, options?: any): AxiosPromise<boolean>;
+    apiV1DealsDealIdPackagesPackageIdDelete(dealId: string, packageId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Get deal package.
@@ -16096,7 +16460,7 @@ export declare class DealPackagesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealPackagesApi
      */
-    apiV1DealsDealIdPackagesPackageIdGet(dealId: string, packageId: string, options?: any): AxiosPromise<DealPackageViewModel>;
+    apiV1DealsDealIdPackagesPackageIdGet(dealId: string, packageId: string, options?: any): Promise<import("axios").AxiosResponse<DealPackageViewModel>>;
     /**
      *
      * @summary Update deal package.
@@ -16107,7 +16471,7 @@ export declare class DealPackagesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealPackagesApi
      */
-    apiV1DealsDealIdPackagesPackageIdPut(dealId: string, packageId: string, updateDealPackageCommand?: UpdateDealPackageCommand, options?: any): AxiosPromise<boolean>;
+    apiV1DealsDealIdPackagesPackageIdPut(dealId: string, packageId: string, updateDealPackageCommand?: UpdateDealPackageCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Create deal package.
@@ -16117,7 +16481,7 @@ export declare class DealPackagesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealPackagesApi
      */
-    apiV1DealsDealIdPackagesPost(dealId: string, createDealPackageCommand?: CreateDealPackageCommand, options?: any): AxiosPromise<string>;
+    apiV1DealsDealIdPackagesPost(dealId: string, createDealPackageCommand?: CreateDealPackageCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
 }
 /**
  * DealsApi - axios parameter creator
@@ -16131,7 +16495,7 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdDelete(dealId: string, options?: any): RequestArgs;
+    apiV1DealsDealIdDelete: (dealId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get deal.
@@ -16139,7 +16503,7 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdGet(dealId: string, options?: any): RequestArgs;
+    apiV1DealsDealIdGet: (dealId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Update deal.
@@ -16148,7 +16512,7 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdPut(dealId: string, updateDealCommand?: UpdateDealCommand | undefined, options?: any): RequestArgs;
+    apiV1DealsDealIdPut: (dealId: string, updateDealCommand?: UpdateDealCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get all deals.
@@ -16167,7 +16531,7 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: MarketingType | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1DealsGet: (id?: string | undefined, name?: string | undefined, marketingType?: MarketingType | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Create deal.
@@ -16175,7 +16539,7 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsPost(createDealCommand?: CreateDealCommand | undefined, options?: any): RequestArgs;
+    apiV1DealsPost: (createDealCommand?: CreateDealCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get deal by slug.
@@ -16183,7 +16547,7 @@ export declare const DealsApiAxiosParamCreator: (configuration?: Configuration |
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    apiV1DealsSlugsSlugGet: (slug: string, options?: any) => Promise<RequestArgs>;
 };
 /**
  * DealsApi - functional programming interface
@@ -16197,7 +16561,7 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdDelete(dealId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DealsDealIdDelete(dealId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Get deal.
@@ -16205,7 +16569,7 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdGet(dealId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealViewModel>;
+    apiV1DealsDealIdGet(dealId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealViewModel>>;
     /**
      *
      * @summary Update deal.
@@ -16214,7 +16578,7 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsDealIdPut(dealId: string, updateDealCommand?: UpdateDealCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DealsDealIdPut(dealId: string, updateDealCommand?: UpdateDealCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Get all deals.
@@ -16233,7 +16597,7 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: MarketingType | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealsViewModel>;
+    apiV1DealsGet(id?: string | undefined, name?: string | undefined, marketingType?: MarketingType | undefined, countryId?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealsViewModel>>;
     /**
      *
      * @summary Create deal.
@@ -16241,7 +16605,7 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsPost(createDealCommand?: CreateDealCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1DealsPost(createDealCommand?: CreateDealCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Get deal by slug.
@@ -16249,7 +16613,7 @@ export declare const DealsApiFp: (configuration?: Configuration | undefined) => 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DealsSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealViewModel>;
+    apiV1DealsSlugsSlugGet(slug: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealViewModel>>;
 };
 /**
  * DealsApi - factory interface
@@ -16332,7 +16696,7 @@ export declare class DealsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealsApi
      */
-    apiV1DealsDealIdDelete(dealId: string, options?: any): AxiosPromise<boolean>;
+    apiV1DealsDealIdDelete(dealId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Get deal.
@@ -16341,7 +16705,7 @@ export declare class DealsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealsApi
      */
-    apiV1DealsDealIdGet(dealId: string, options?: any): AxiosPromise<DealViewModel>;
+    apiV1DealsDealIdGet(dealId: string, options?: any): Promise<import("axios").AxiosResponse<DealViewModel>>;
     /**
      *
      * @summary Update deal.
@@ -16351,7 +16715,7 @@ export declare class DealsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealsApi
      */
-    apiV1DealsDealIdPut(dealId: string, updateDealCommand?: UpdateDealCommand, options?: any): AxiosPromise<boolean>;
+    apiV1DealsDealIdPut(dealId: string, updateDealCommand?: UpdateDealCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Get all deals.
@@ -16371,7 +16735,7 @@ export declare class DealsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealsApi
      */
-    apiV1DealsGet(id?: string, name?: string, marketingType?: MarketingType, countryId?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealsViewModel>;
+    apiV1DealsGet(id?: string, name?: string, marketingType?: MarketingType, countryId?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<DealsViewModel>>;
     /**
      *
      * @summary Create deal.
@@ -16380,7 +16744,7 @@ export declare class DealsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealsApi
      */
-    apiV1DealsPost(createDealCommand?: CreateDealCommand, options?: any): AxiosPromise<string>;
+    apiV1DealsPost(createDealCommand?: CreateDealCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Get deal by slug.
@@ -16389,7 +16753,7 @@ export declare class DealsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DealsApi
      */
-    apiV1DealsSlugsSlugGet(slug: string, options?: any): AxiosPromise<DealViewModel>;
+    apiV1DealsSlugsSlugGet(slug: string, options?: any): Promise<import("axios").AxiosResponse<DealViewModel>>;
 }
 /**
  * DepartmentApi - axios parameter creator
@@ -16411,7 +16775,7 @@ export declare const DepartmentApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsDepartmentsGet(id?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, name?: string | undefined, additionalInfo?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsDepartmentsGet: (id?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, name?: string | undefined, additionalInfo?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/departments/1
      * @summary Delete department.
@@ -16420,7 +16784,7 @@ export declare const DepartmentApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdDelete(hospitalId: string, departmentId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdDelete: (hospitalId: string, departmentId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/departments/1
      * @summary Get department.
@@ -16429,7 +16793,7 @@ export declare const DepartmentApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdGet(hospitalId: string, departmentId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdGet: (hospitalId: string, departmentId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/departments/1
      * @summary Create department.
@@ -16439,7 +16803,7 @@ export declare const DepartmentApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPost(hospitalId: string, departmentId: string, createDepartmentCommand?: CreateDepartmentCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPost: (hospitalId: string, departmentId: string, createDepartmentCommand?: CreateDepartmentCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:
      * @summary Update department.
@@ -16449,7 +16813,7 @@ export declare const DepartmentApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, updateDepartmentCommand?: UpdateDepartmentCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut: (hospitalId: string, departmentId: string, updateDepartmentCommand?: UpdateDepartmentCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * DepartmentApi - functional programming interface
@@ -16471,7 +16835,7 @@ export declare const DepartmentApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsDepartmentsGet(id?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, name?: string | undefined, additionalInfo?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DepartmentsViewModel>;
+    apiV1HospitalsDepartmentsGet(id?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, name?: string | undefined, additionalInfo?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DepartmentsViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/departments/1
      * @summary Delete department.
@@ -16480,7 +16844,7 @@ export declare const DepartmentApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdDelete(hospitalId: string, departmentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdDelete(hospitalId: string, departmentId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/departments/1
      * @summary Get department.
@@ -16489,7 +16853,7 @@ export declare const DepartmentApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdGet(hospitalId: string, departmentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DepartmentViewModel>;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdGet(hospitalId: string, departmentId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DepartmentViewModel>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/departments/1
      * @summary Create department.
@@ -16499,7 +16863,7 @@ export declare const DepartmentApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPost(hospitalId: string, departmentId: string, createDepartmentCommand?: CreateDepartmentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Department>;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPost(hospitalId: string, departmentId: string, createDepartmentCommand?: CreateDepartmentCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<Department>>;
     /**
      * Sample request:
      * @summary Update department.
@@ -16509,7 +16873,7 @@ export declare const DepartmentApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, updateDepartmentCommand?: UpdateDepartmentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, updateDepartmentCommand?: UpdateDepartmentCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
 };
 /**
  * DepartmentApi - factory interface
@@ -16594,7 +16958,7 @@ export declare class DepartmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DepartmentApi
      */
-    apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DepartmentsViewModel>;
+    apiV1HospitalsDepartmentsGet(id?: string, hospitalId?: string, hospitalName?: string, name?: string, additionalInfo?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<DepartmentsViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/departments/1
      * @summary Delete department.
@@ -16604,7 +16968,7 @@ export declare class DepartmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DepartmentApi
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdDelete(hospitalId: string, departmentId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdDelete(hospitalId: string, departmentId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/departments/1
      * @summary Get department.
@@ -16614,7 +16978,7 @@ export declare class DepartmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DepartmentApi
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdGet(hospitalId: string, departmentId: string, options?: any): AxiosPromise<DepartmentViewModel>;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdGet(hospitalId: string, departmentId: string, options?: any): Promise<import("axios").AxiosResponse<DepartmentViewModel>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/departments/1
      * @summary Create department.
@@ -16625,7 +16989,7 @@ export declare class DepartmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DepartmentApi
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPost(hospitalId: string, departmentId: string, createDepartmentCommand?: CreateDepartmentCommand, options?: any): AxiosPromise<Department>;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPost(hospitalId: string, departmentId: string, createDepartmentCommand?: CreateDepartmentCommand, options?: any): Promise<import("axios").AxiosResponse<Department>>;
     /**
      * Sample request:
      * @summary Update department.
@@ -16636,7 +17000,7 @@ export declare class DepartmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DepartmentApi
      */
-    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, updateDepartmentCommand?: UpdateDepartmentCommand, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdDepartmentsDepartmentIdPut(hospitalId: string, departmentId: string, updateDepartmentCommand?: UpdateDepartmentCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
 }
 /**
  * DevicesApi - axios parameter creator
@@ -16650,7 +17014,7 @@ export declare const DevicesApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): RequestArgs;
+    apiV1DevicesDeviceIdDelete: (deviceId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get device.
@@ -16658,7 +17022,7 @@ export declare const DevicesApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DevicesDeviceIdGet(deviceId: string, options?: any): RequestArgs;
+    apiV1DevicesDeviceIdGet: (deviceId: string, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Create device login.
@@ -16667,7 +17031,7 @@ export declare const DevicesApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DevicesDeviceIdLoginsPost(deviceId: string, createDeviceLoginCommand?: CreateDeviceLoginCommand | undefined, options?: any): RequestArgs;
+    apiV1DevicesDeviceIdLoginsPost: (deviceId: string, createDeviceLoginCommand?: CreateDeviceLoginCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Update device.
@@ -16676,7 +17040,7 @@ export declare const DevicesApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DevicesDeviceIdPut(deviceId: string, updateDeviceCommand?: UpdateDeviceCommand | undefined, options?: any): RequestArgs;
+    apiV1DevicesDeviceIdPut: (deviceId: string, updateDeviceCommand?: UpdateDeviceCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Create device.
@@ -16684,7 +17048,7 @@ export declare const DevicesApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DevicesPost(createDeviceCommand?: CreateDeviceCommand | undefined, options?: any): RequestArgs;
+    apiV1DevicesPost: (createDeviceCommand?: CreateDeviceCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * DevicesApi - functional programming interface
@@ -16698,7 +17062,7 @@ export declare const DevicesApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Get device.
@@ -16706,7 +17070,7 @@ export declare const DevicesApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DevicesDeviceIdGet(deviceId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DeviceViewModel>;
+    apiV1DevicesDeviceIdGet(deviceId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DeviceViewModel>>;
     /**
      *
      * @summary Create device login.
@@ -16715,7 +17079,7 @@ export declare const DevicesApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DevicesDeviceIdLoginsPost(deviceId: string, createDeviceLoginCommand?: CreateDeviceLoginCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1DevicesDeviceIdLoginsPost(deviceId: string, createDeviceLoginCommand?: CreateDeviceLoginCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Update device.
@@ -16724,7 +17088,7 @@ export declare const DevicesApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DevicesDeviceIdPut(deviceId: string, updateDeviceCommand?: UpdateDeviceCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DevicesDeviceIdPut(deviceId: string, updateDeviceCommand?: UpdateDeviceCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Create device.
@@ -16732,7 +17096,7 @@ export declare const DevicesApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DevicesPost(createDeviceCommand?: CreateDeviceCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1DevicesPost(createDeviceCommand?: CreateDeviceCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * DevicesApi - factory interface
@@ -16797,7 +17161,7 @@ export declare class DevicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DevicesApi
      */
-    apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): AxiosPromise<boolean>;
+    apiV1DevicesDeviceIdDelete(deviceId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Get device.
@@ -16806,7 +17170,7 @@ export declare class DevicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DevicesApi
      */
-    apiV1DevicesDeviceIdGet(deviceId: string, options?: any): AxiosPromise<DeviceViewModel>;
+    apiV1DevicesDeviceIdGet(deviceId: string, options?: any): Promise<import("axios").AxiosResponse<DeviceViewModel>>;
     /**
      *
      * @summary Create device login.
@@ -16816,7 +17180,7 @@ export declare class DevicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DevicesApi
      */
-    apiV1DevicesDeviceIdLoginsPost(deviceId: string, createDeviceLoginCommand?: CreateDeviceLoginCommand, options?: any): AxiosPromise<string>;
+    apiV1DevicesDeviceIdLoginsPost(deviceId: string, createDeviceLoginCommand?: CreateDeviceLoginCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Update device.
@@ -16826,7 +17190,7 @@ export declare class DevicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DevicesApi
      */
-    apiV1DevicesDeviceIdPut(deviceId: string, updateDeviceCommand?: UpdateDeviceCommand, options?: any): AxiosPromise<boolean>;
+    apiV1DevicesDeviceIdPut(deviceId: string, updateDeviceCommand?: UpdateDeviceCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Create device.
@@ -16835,7 +17199,7 @@ export declare class DevicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DevicesApi
      */
-    apiV1DevicesPost(createDeviceCommand?: CreateDeviceCommand, options?: any): AxiosPromise<string>;
+    apiV1DevicesPost(createDeviceCommand?: CreateDeviceCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
 }
 /**
  * DoctorCertificatesApi - axios parameter creator
@@ -16858,7 +17222,7 @@ export declare const DoctorCertificatesApiAxiosParamCreator: (configuration?: Co
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsCertificatesGet(id?: string | undefined, doctorId?: string | undefined, doctorName?: string | undefined, certificate?: string | undefined, activeFrom?: Date | undefined, activeTo?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1DoctorsCertificatesGet: (id?: string | undefined, doctorId?: string | undefined, doctorName?: string | undefined, certificate?: string | undefined, activeFrom?: Date | undefined, activeTo?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/doctors/1/certificates/1
      * @summary Delete certificate.
@@ -16867,7 +17231,7 @@ export declare const DoctorCertificatesApiAxiosParamCreator: (configuration?: Co
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdCertificatesCertificateIdDelete(doctorId: string, certificateId: string, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdCertificatesCertificateIdDelete: (doctorId: string, certificateId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/doctors/1/certificates/1
      * @summary Get certificate.
@@ -16876,7 +17240,7 @@ export declare const DoctorCertificatesApiAxiosParamCreator: (configuration?: Co
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdCertificatesCertificateIdGet(doctorId: string, certificateId: string, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdCertificatesCertificateIdGet: (doctorId: string, certificateId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:
      * @summary Update department.
@@ -16886,7 +17250,7 @@ export declare const DoctorCertificatesApiAxiosParamCreator: (configuration?: Co
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdCertificatesCertificateIdPut(doctorId: string, certificateId: string, updateDoctorCertificateCommand?: UpdateDoctorCertificateCommand | undefined, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdCertificatesCertificateIdPut: (doctorId: string, certificateId: string, updateDoctorCertificateCommand?: UpdateDoctorCertificateCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/doctors/1/certificates/1
      * @summary Create certificate.
@@ -16895,7 +17259,7 @@ export declare const DoctorCertificatesApiAxiosParamCreator: (configuration?: Co
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdCertificatesPost(doctorId: string, createDoctorCertificateCommand?: CreateDoctorCertificateCommand | undefined, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdCertificatesPost: (doctorId: string, createDoctorCertificateCommand?: CreateDoctorCertificateCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * DoctorCertificatesApi - functional programming interface
@@ -16918,7 +17282,7 @@ export declare const DoctorCertificatesApiFp: (configuration?: Configuration | u
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsCertificatesGet(id?: string | undefined, doctorId?: string | undefined, doctorName?: string | undefined, certificate?: string | undefined, activeFrom?: Date | undefined, activeTo?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorCertificatesViewModel>;
+    apiV1DoctorsCertificatesGet(id?: string | undefined, doctorId?: string | undefined, doctorName?: string | undefined, certificate?: string | undefined, activeFrom?: Date | undefined, activeTo?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorCertificatesViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/doctors/1/certificates/1
      * @summary Delete certificate.
@@ -16927,7 +17291,7 @@ export declare const DoctorCertificatesApiFp: (configuration?: Configuration | u
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdCertificatesCertificateIdDelete(doctorId: string, certificateId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdCertificatesCertificateIdDelete(doctorId: string, certificateId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/doctors/1/certificates/1
      * @summary Get certificate.
@@ -16936,7 +17300,7 @@ export declare const DoctorCertificatesApiFp: (configuration?: Configuration | u
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdCertificatesCertificateIdGet(doctorId: string, certificateId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorCertificateViewModel>;
+    apiV1DoctorsDoctorIdCertificatesCertificateIdGet(doctorId: string, certificateId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorCertificateViewModel>>;
     /**
      * Sample request:
      * @summary Update department.
@@ -16946,7 +17310,7 @@ export declare const DoctorCertificatesApiFp: (configuration?: Configuration | u
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdCertificatesCertificateIdPut(doctorId: string, certificateId: string, updateDoctorCertificateCommand?: UpdateDoctorCertificateCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdCertificatesCertificateIdPut(doctorId: string, certificateId: string, updateDoctorCertificateCommand?: UpdateDoctorCertificateCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/doctors/1/certificates/1
      * @summary Create certificate.
@@ -16955,7 +17319,7 @@ export declare const DoctorCertificatesApiFp: (configuration?: Configuration | u
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdCertificatesPost(doctorId: string, createDoctorCertificateCommand?: CreateDoctorCertificateCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorCertificate>;
+    apiV1DoctorsDoctorIdCertificatesPost(doctorId: string, createDoctorCertificateCommand?: CreateDoctorCertificateCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorCertificate>>;
 };
 /**
  * DoctorCertificatesApi - factory interface
@@ -17041,7 +17405,7 @@ export declare class DoctorCertificatesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorCertificatesApi
      */
-    apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: Date, activeTo?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorCertificatesViewModel>;
+    apiV1DoctorsCertificatesGet(id?: string, doctorId?: string, doctorName?: string, certificate?: string, activeFrom?: Date, activeTo?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<DoctorCertificatesViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/doctors/1/certificates/1
      * @summary Delete certificate.
@@ -17051,7 +17415,7 @@ export declare class DoctorCertificatesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorCertificatesApi
      */
-    apiV1DoctorsDoctorIdCertificatesCertificateIdDelete(doctorId: string, certificateId: string, options?: any): AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdCertificatesCertificateIdDelete(doctorId: string, certificateId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/doctors/1/certificates/1
      * @summary Get certificate.
@@ -17061,7 +17425,7 @@ export declare class DoctorCertificatesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorCertificatesApi
      */
-    apiV1DoctorsDoctorIdCertificatesCertificateIdGet(doctorId: string, certificateId: string, options?: any): AxiosPromise<DoctorCertificateViewModel>;
+    apiV1DoctorsDoctorIdCertificatesCertificateIdGet(doctorId: string, certificateId: string, options?: any): Promise<import("axios").AxiosResponse<DoctorCertificateViewModel>>;
     /**
      * Sample request:
      * @summary Update department.
@@ -17072,7 +17436,7 @@ export declare class DoctorCertificatesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorCertificatesApi
      */
-    apiV1DoctorsDoctorIdCertificatesCertificateIdPut(doctorId: string, certificateId: string, updateDoctorCertificateCommand?: UpdateDoctorCertificateCommand, options?: any): AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdCertificatesCertificateIdPut(doctorId: string, certificateId: string, updateDoctorCertificateCommand?: UpdateDoctorCertificateCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/doctors/1/certificates/1
      * @summary Create certificate.
@@ -17082,7 +17446,7 @@ export declare class DoctorCertificatesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorCertificatesApi
      */
-    apiV1DoctorsDoctorIdCertificatesPost(doctorId: string, createDoctorCertificateCommand?: CreateDoctorCertificateCommand, options?: any): AxiosPromise<DoctorCertificate>;
+    apiV1DoctorsDoctorIdCertificatesPost(doctorId: string, createDoctorCertificateCommand?: CreateDoctorCertificateCommand, options?: any): Promise<import("axios").AxiosResponse<DoctorCertificate>>;
 }
 /**
  * DoctorReviewsApi - axios parameter creator
@@ -17097,7 +17461,7 @@ export declare const DoctorReviewsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdReviewsPatientIdDelete(doctorId: string, patientId: string, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdReviewsPatientIdDelete: (doctorId: string, patientId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/doctors/1/reviews/1
      * @summary Get review.
@@ -17106,7 +17470,7 @@ export declare const DoctorReviewsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdReviewsPatientIdGet(doctorId: string, patientId: string, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdReviewsPatientIdGet: (doctorId: string, patientId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:
      * @summary Update review.
@@ -17116,7 +17480,7 @@ export declare const DoctorReviewsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdReviewsPatientIdPut(doctorId: string, patientId: string, updateDoctorReviewCommand?: UpdateDoctorReviewCommand | undefined, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdReviewsPatientIdPut: (doctorId: string, patientId: string, updateDoctorReviewCommand?: UpdateDoctorReviewCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/doctors/1/reviews/1
      * @summary Create review.
@@ -17126,7 +17490,7 @@ export declare const DoctorReviewsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdReviewsPost(doctorId: string, patientId: string, createDoctorReviewCommand?: CreateDoctorReviewCommand | undefined, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdReviewsPost: (doctorId: string, patientId: string, createDoctorReviewCommand?: CreateDoctorReviewCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/doctors/reviews
      * @summary Get all reviews.
@@ -17146,7 +17510,7 @@ export declare const DoctorReviewsApiAxiosParamCreator: (configuration?: Configu
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: ReviewCategory | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1DoctorsReviewsGet: (doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: ReviewCategory | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * DoctorReviewsApi - functional programming interface
@@ -17161,7 +17525,7 @@ export declare const DoctorReviewsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdReviewsPatientIdDelete(doctorId: string, patientId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdReviewsPatientIdDelete(doctorId: string, patientId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/doctors/1/reviews/1
      * @summary Get review.
@@ -17170,7 +17534,7 @@ export declare const DoctorReviewsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdReviewsPatientIdGet(doctorId: string, patientId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReviewViewModel>;
+    apiV1DoctorsDoctorIdReviewsPatientIdGet(doctorId: string, patientId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReviewViewModel>>;
     /**
      * Sample request:
      * @summary Update review.
@@ -17180,7 +17544,7 @@ export declare const DoctorReviewsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdReviewsPatientIdPut(doctorId: string, patientId: string, updateDoctorReviewCommand?: UpdateDoctorReviewCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdReviewsPatientIdPut(doctorId: string, patientId: string, updateDoctorReviewCommand?: UpdateDoctorReviewCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/doctors/1/reviews/1
      * @summary Create review.
@@ -17190,7 +17554,7 @@ export declare const DoctorReviewsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdReviewsPost(doctorId: string, patientId: string, createDoctorReviewCommand?: CreateDoctorReviewCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReview>;
+    apiV1DoctorsDoctorIdReviewsPost(doctorId: string, patientId: string, createDoctorReviewCommand?: CreateDoctorReviewCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReview>>;
     /**
      * Sample request:        GET /api/v1/doctors/reviews
      * @summary Get all reviews.
@@ -17210,7 +17574,7 @@ export declare const DoctorReviewsApiFp: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: ReviewCategory | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReviewsViewModel>;
+    apiV1DoctorsReviewsGet(doctorId?: string | undefined, doctorName?: string | undefined, patientId?: string | undefined, patientName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: ReviewCategory | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorReviewsViewModel>>;
 };
 /**
  * DoctorReviewsApi - factory interface
@@ -17292,7 +17656,7 @@ export declare class DoctorReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorReviewsApi
      */
-    apiV1DoctorsDoctorIdReviewsPatientIdDelete(doctorId: string, patientId: string, options?: any): AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdReviewsPatientIdDelete(doctorId: string, patientId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/doctors/1/reviews/1
      * @summary Get review.
@@ -17302,7 +17666,7 @@ export declare class DoctorReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorReviewsApi
      */
-    apiV1DoctorsDoctorIdReviewsPatientIdGet(doctorId: string, patientId: string, options?: any): AxiosPromise<DoctorReviewViewModel>;
+    apiV1DoctorsDoctorIdReviewsPatientIdGet(doctorId: string, patientId: string, options?: any): Promise<import("axios").AxiosResponse<DoctorReviewViewModel>>;
     /**
      * Sample request:
      * @summary Update review.
@@ -17313,7 +17677,7 @@ export declare class DoctorReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorReviewsApi
      */
-    apiV1DoctorsDoctorIdReviewsPatientIdPut(doctorId: string, patientId: string, updateDoctorReviewCommand?: UpdateDoctorReviewCommand, options?: any): AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdReviewsPatientIdPut(doctorId: string, patientId: string, updateDoctorReviewCommand?: UpdateDoctorReviewCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/doctors/1/reviews/1
      * @summary Create review.
@@ -17324,7 +17688,7 @@ export declare class DoctorReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorReviewsApi
      */
-    apiV1DoctorsDoctorIdReviewsPost(doctorId: string, patientId: string, createDoctorReviewCommand?: CreateDoctorReviewCommand, options?: any): AxiosPromise<DoctorReview>;
+    apiV1DoctorsDoctorIdReviewsPost(doctorId: string, patientId: string, createDoctorReviewCommand?: CreateDoctorReviewCommand, options?: any): Promise<import("axios").AxiosResponse<DoctorReview>>;
     /**
      * Sample request:        GET /api/v1/doctors/reviews
      * @summary Get all reviews.
@@ -17345,7 +17709,7 @@ export declare class DoctorReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorReviewsApi
      */
-    apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: ReviewCategory, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorReviewsViewModel>;
+    apiV1DoctorsReviewsGet(doctorId?: string, doctorName?: string, patientId?: string, patientName?: string, body?: string, recommended?: boolean, reviewCategory?: ReviewCategory, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<DoctorReviewsViewModel>>;
 }
 /**
  * DoctorSpecialtiesApi - axios parameter creator
@@ -17360,7 +17724,7 @@ export declare const DoctorSpecialtiesApiAxiosParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdSpecialtySpecialtyIdPost(doctorId: string, specialtyId: string, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdSpecialtySpecialtyIdPost: (doctorId: string, specialtyId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/doctors/1/specialty/1
      * @summary Remove link between the doctor and the specialty.
@@ -17370,7 +17734,7 @@ export declare const DoctorSpecialtiesApiAxiosParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsHospitalIdDoctorsDoctorIdDelete(doctorId: string, specailtyId: string, hospitalId: string, options?: any): RequestArgs;
+    apiV1DoctorsHospitalIdDoctorsDoctorIdDelete: (doctorId: string, specailtyId: string, hospitalId: string, options?: any) => Promise<RequestArgs>;
 };
 /**
  * DoctorSpecialtiesApi - functional programming interface
@@ -17385,7 +17749,7 @@ export declare const DoctorSpecialtiesApiFp: (configuration?: Configuration | un
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdSpecialtySpecialtyIdPost(doctorId: string, specialtyId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorSpecialtyViewModel>;
+    apiV1DoctorsDoctorIdSpecialtySpecialtyIdPost(doctorId: string, specialtyId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorSpecialtyViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/doctors/1/specialty/1
      * @summary Remove link between the doctor and the specialty.
@@ -17395,7 +17759,7 @@ export declare const DoctorSpecialtiesApiFp: (configuration?: Configuration | un
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsHospitalIdDoctorsDoctorIdDelete(doctorId: string, specailtyId: string, hospitalId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DoctorsHospitalIdDoctorsDoctorIdDelete(doctorId: string, specailtyId: string, hospitalId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
 };
 /**
  * DoctorSpecialtiesApi - factory interface
@@ -17438,7 +17802,7 @@ export declare class DoctorSpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorSpecialtiesApi
      */
-    apiV1DoctorsDoctorIdSpecialtySpecialtyIdPost(doctorId: string, specialtyId: string, options?: any): AxiosPromise<DoctorSpecialtyViewModel>;
+    apiV1DoctorsDoctorIdSpecialtySpecialtyIdPost(doctorId: string, specialtyId: string, options?: any): Promise<import("axios").AxiosResponse<DoctorSpecialtyViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/doctors/1/specialty/1
      * @summary Remove link between the doctor and the specialty.
@@ -17449,7 +17813,7 @@ export declare class DoctorSpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorSpecialtiesApi
      */
-    apiV1DoctorsHospitalIdDoctorsDoctorIdDelete(doctorId: string, specailtyId: string, hospitalId: string, options?: any): AxiosPromise<boolean>;
+    apiV1DoctorsHospitalIdDoctorsDoctorIdDelete(doctorId: string, specailtyId: string, hospitalId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
 }
 /**
  * DoctorsApi - axios parameter creator
@@ -17463,7 +17827,7 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdDelete(doctorId: string, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdDelete: (doctorId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/doctors/1
      * @summary Get hospital doctor.
@@ -17471,7 +17835,7 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdGet(doctorId: string, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdGet: (doctorId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/doctors/1      {          \"firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update hospital doctor.
@@ -17480,7 +17844,7 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdPut(doctorId: string, updateDoctorCommand?: UpdateDoctorCommand | undefined, options?: any): RequestArgs;
+    apiV1DoctorsDoctorIdPut: (doctorId: string, updateDoctorCommand?: UpdateDoctorCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get all hospital doctors.
@@ -17505,7 +17869,7 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsGet(countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, consultationEnabled?: boolean | undefined, exceptDoctorId?: string | undefined, exceptDoctorIds?: string[] | undefined, id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1DoctorsGet: (countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, consultationEnabled?: boolean | undefined, exceptDoctorId?: string | undefined, exceptDoctorIds?: string[] | undefined, id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -17513,7 +17877,7 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsPost(createDoctorCommand?: CreateDoctorCommand | undefined, options?: any): RequestArgs;
+    apiV1DoctorsPost: (createDoctorCommand?: CreateDoctorCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get hospital doctor by slug.
@@ -17521,7 +17885,7 @@ export declare const DoctorsApiAxiosParamCreator: (configuration?: Configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    apiV1DoctorsSlugsSlugGet: (slug: string, options?: any) => Promise<RequestArgs>;
 };
 /**
  * DoctorsApi - functional programming interface
@@ -17535,7 +17899,7 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdDelete(doctorId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdDelete(doctorId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/doctors/1
      * @summary Get hospital doctor.
@@ -17543,7 +17907,7 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdGet(doctorId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorViewModel>;
+    apiV1DoctorsDoctorIdGet(doctorId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorViewModel>>;
     /**
      * Sample request:        PUT /api/v1/doctors/1      {          \"firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update hospital doctor.
@@ -17552,7 +17916,7 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsDoctorIdPut(doctorId: string, updateDoctorCommand?: UpdateDoctorCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdPut(doctorId: string, updateDoctorCommand?: UpdateDoctorCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @summary Get all hospital doctors.
@@ -17577,7 +17941,7 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsGet(countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, consultationEnabled?: boolean | undefined, exceptDoctorId?: string | undefined, exceptDoctorIds?: string[] | undefined, id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorsViewModel>;
+    apiV1DoctorsGet(countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, consultationEnabled?: boolean | undefined, exceptDoctorId?: string | undefined, exceptDoctorIds?: string[] | undefined, id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorsViewModel>>;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -17585,7 +17949,7 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsPost(createDoctorCommand?: CreateDoctorCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1DoctorsPost(createDoctorCommand?: CreateDoctorCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Get hospital doctor by slug.
@@ -17593,7 +17957,7 @@ export declare const DoctorsApiFp: (configuration?: Configuration | undefined) =
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1DoctorsSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorViewModel>;
+    apiV1DoctorsSlugsSlugGet(slug: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorViewModel>>;
 };
 /**
  * DoctorsApi - factory interface
@@ -17682,7 +18046,7 @@ export declare class DoctorsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    apiV1DoctorsDoctorIdDelete(doctorId: string, options?: any): AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdDelete(doctorId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/doctors/1
      * @summary Get hospital doctor.
@@ -17691,7 +18055,7 @@ export declare class DoctorsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    apiV1DoctorsDoctorIdGet(doctorId: string, options?: any): AxiosPromise<DoctorViewModel>;
+    apiV1DoctorsDoctorIdGet(doctorId: string, options?: any): Promise<import("axios").AxiosResponse<DoctorViewModel>>;
     /**
      * Sample request:        PUT /api/v1/doctors/1      {          \"firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update hospital doctor.
@@ -17701,7 +18065,7 @@ export declare class DoctorsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    apiV1DoctorsDoctorIdPut(doctorId: string, updateDoctorCommand?: UpdateDoctorCommand, options?: any): AxiosPromise<boolean>;
+    apiV1DoctorsDoctorIdPut(doctorId: string, updateDoctorCommand?: UpdateDoctorCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @summary Get all hospital doctors.
@@ -17727,7 +18091,7 @@ export declare class DoctorsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: MarketingType, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, exceptDoctorId?: string, exceptDoctorIds?: Array<string>, id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorsViewModel>;
+    apiV1DoctorsGet(countryId?: string, hospitalId?: string, marketingType?: MarketingType, specialtyId?: string, specialtyTypeId?: string, consultationEnabled?: boolean, exceptDoctorId?: string, exceptDoctorIds?: Array<string>, id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<DoctorsViewModel>>;
     /**
      * Sample request:        POST /api/v1/doctors      {          \"userName\": \"cloudDoctor\",          \"email\": \"doctor@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"doctor\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T17:57:32.048Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital doctor.
@@ -17736,7 +18100,7 @@ export declare class DoctorsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    apiV1DoctorsPost(createDoctorCommand?: CreateDoctorCommand, options?: any): AxiosPromise<string>;
+    apiV1DoctorsPost(createDoctorCommand?: CreateDoctorCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Get hospital doctor by slug.
@@ -17745,7 +18109,7 @@ export declare class DoctorsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof DoctorsApi
      */
-    apiV1DoctorsSlugsSlugGet(slug: string, options?: any): AxiosPromise<DoctorViewModel>;
+    apiV1DoctorsSlugsSlugGet(slug: string, options?: any): Promise<import("axios").AxiosResponse<DoctorViewModel>>;
 }
 /**
  * EquipmentsApi - axios parameter creator
@@ -17768,7 +18132,7 @@ export declare const EquipmentsApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsEquipmentsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsEquipmentsGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/equipments/1
      * @summary Delete equipment.
@@ -17777,7 +18141,7 @@ export declare const EquipmentsApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdDelete(hospitalId: string, equipmentId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdDelete: (hospitalId: string, equipmentId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/equipments/1
      * @summary Get equipment.
@@ -17786,7 +18150,7 @@ export declare const EquipmentsApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: string, equipmentId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet: (hospitalId: string, equipmentId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/equipments/1      {          \"description\": \"Upgraded medical equipment\"      }
      * @summary Update equipment.
@@ -17796,7 +18160,7 @@ export declare const EquipmentsApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdPut(hospitalId: string, equipmentId: string, updateEquipmentCommand?: UpdateEquipmentCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdPut: (hospitalId: string, equipmentId: string, updateEquipmentCommand?: UpdateEquipmentCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/equipments      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical equipment\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
      * @summary Create an equipment and add to a hospital.
@@ -17805,7 +18169,7 @@ export declare const EquipmentsApiAxiosParamCreator: (configuration?: Configurat
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsPost(hospitalId: string, createEquipmentCommand?: CreateEquipmentCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdEquipmentsPost: (hospitalId: string, createEquipmentCommand?: CreateEquipmentCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * EquipmentsApi - functional programming interface
@@ -17828,7 +18192,7 @@ export declare const EquipmentsApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsEquipmentsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EquipmentsViewModel>;
+    apiV1HospitalsEquipmentsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EquipmentsViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/equipments/1
      * @summary Delete equipment.
@@ -17837,7 +18201,7 @@ export declare const EquipmentsApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdDelete(hospitalId: string, equipmentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdDelete(hospitalId: string, equipmentId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/equipments/1
      * @summary Get equipment.
@@ -17846,7 +18210,7 @@ export declare const EquipmentsApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: string, equipmentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EquipmentViewModel>;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: string, equipmentId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EquipmentViewModel>>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/equipments/1      {          \"description\": \"Upgraded medical equipment\"      }
      * @summary Update equipment.
@@ -17856,7 +18220,7 @@ export declare const EquipmentsApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdPut(hospitalId: string, equipmentId: string, updateEquipmentCommand?: UpdateEquipmentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdPut(hospitalId: string, equipmentId: string, updateEquipmentCommand?: UpdateEquipmentCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/equipments      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical equipment\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
      * @summary Create an equipment and add to a hospital.
@@ -17865,7 +18229,7 @@ export declare const EquipmentsApiFp: (configuration?: Configuration | undefined
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdEquipmentsPost(hospitalId: string, createEquipmentCommand?: CreateEquipmentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1HospitalsHospitalIdEquipmentsPost(hospitalId: string, createEquipmentCommand?: CreateEquipmentCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * EquipmentsApi - factory interface
@@ -17951,7 +18315,7 @@ export declare class EquipmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EquipmentsApi
      */
-    apiV1HospitalsEquipmentsGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<EquipmentsViewModel>;
+    apiV1HospitalsEquipmentsGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<EquipmentsViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/equipments/1
      * @summary Delete equipment.
@@ -17961,7 +18325,7 @@ export declare class EquipmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EquipmentsApi
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdDelete(hospitalId: string, equipmentId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdDelete(hospitalId: string, equipmentId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/equipments/1
      * @summary Get equipment.
@@ -17971,7 +18335,7 @@ export declare class EquipmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EquipmentsApi
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: string, equipmentId: string, options?: any): AxiosPromise<EquipmentViewModel>;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdGet(hospitalId: string, equipmentId: string, options?: any): Promise<import("axios").AxiosResponse<EquipmentViewModel>>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/equipments/1      {          \"description\": \"Upgraded medical equipment\"      }
      * @summary Update equipment.
@@ -17982,7 +18346,7 @@ export declare class EquipmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EquipmentsApi
      */
-    apiV1HospitalsHospitalIdEquipmentsEquipmentIdPut(hospitalId: string, equipmentId: string, updateEquipmentCommand?: UpdateEquipmentCommand, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdEquipmentsEquipmentIdPut(hospitalId: string, equipmentId: string, updateEquipmentCommand?: UpdateEquipmentCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/equipments      {          \"name\": \"Afroasia ltd\",          \"description\": \"Medical equipment\",          \"medias\": [            {              \"mediaType\": 0,              \"url\": \"imageurl\",              \"description\": \"string\",                      \"order\": 0            }          ]      }
      * @summary Create an equipment and add to a hospital.
@@ -17992,7 +18356,7 @@ export declare class EquipmentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof EquipmentsApi
      */
-    apiV1HospitalsHospitalIdEquipmentsPost(hospitalId: string, createEquipmentCommand?: CreateEquipmentCommand, options?: any): AxiosPromise<string>;
+    apiV1HospitalsHospitalIdEquipmentsPost(hospitalId: string, createEquipmentCommand?: CreateEquipmentCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
 }
 /**
  * HospitalReviewsApi - axios parameter creator
@@ -18007,7 +18371,7 @@ export declare const HospitalReviewsApiAxiosParamCreator: (configuration?: Confi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdReviewsPatientIdDelete(hospitalId: string, patientId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdReviewsPatientIdDelete: (hospitalId: string, patientId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/reviews/1
      * @summary Get review.
@@ -18016,7 +18380,7 @@ export declare const HospitalReviewsApiAxiosParamCreator: (configuration?: Confi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdReviewsPatientIdGet(hospitalId: string, patientId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdReviewsPatientIdGet: (hospitalId: string, patientId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:
      * @summary Update review.
@@ -18026,7 +18390,7 @@ export declare const HospitalReviewsApiAxiosParamCreator: (configuration?: Confi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdReviewsPatientIdPut(hospitalId: string, patientId: string, updateHospitalReviewCommand?: UpdateHospitalReviewCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdReviewsPatientIdPut: (hospitalId: string, patientId: string, updateHospitalReviewCommand?: UpdateHospitalReviewCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/reviews/1
      * @summary Create review.
@@ -18036,7 +18400,7 @@ export declare const HospitalReviewsApiAxiosParamCreator: (configuration?: Confi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdReviewsPost(hospitalId: string, patientId: string, createHospitalReviewCommand?: CreateHospitalReviewCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdReviewsPost: (hospitalId: string, patientId: string, createHospitalReviewCommand?: CreateHospitalReviewCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/reviews
      * @summary Get all reviews.
@@ -18056,7 +18420,7 @@ export declare const HospitalReviewsApiAxiosParamCreator: (configuration?: Confi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: ReviewCategory | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsReviewsGet: (patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: ReviewCategory | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * HospitalReviewsApi - functional programming interface
@@ -18071,7 +18435,7 @@ export declare const HospitalReviewsApiFp: (configuration?: Configuration | unde
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdReviewsPatientIdDelete(hospitalId: string, patientId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdReviewsPatientIdDelete(hospitalId: string, patientId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/reviews/1
      * @summary Get review.
@@ -18080,7 +18444,7 @@ export declare const HospitalReviewsApiFp: (configuration?: Configuration | unde
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdReviewsPatientIdGet(hospitalId: string, patientId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReviewViewModel>;
+    apiV1HospitalsHospitalIdReviewsPatientIdGet(hospitalId: string, patientId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReviewViewModel>>;
     /**
      * Sample request:
      * @summary Update review.
@@ -18090,7 +18454,7 @@ export declare const HospitalReviewsApiFp: (configuration?: Configuration | unde
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdReviewsPatientIdPut(hospitalId: string, patientId: string, updateHospitalReviewCommand?: UpdateHospitalReviewCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdReviewsPatientIdPut(hospitalId: string, patientId: string, updateHospitalReviewCommand?: UpdateHospitalReviewCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/reviews/1
      * @summary Create review.
@@ -18100,7 +18464,7 @@ export declare const HospitalReviewsApiFp: (configuration?: Configuration | unde
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdReviewsPost(hospitalId: string, patientId: string, createHospitalReviewCommand?: CreateHospitalReviewCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReview>;
+    apiV1HospitalsHospitalIdReviewsPost(hospitalId: string, patientId: string, createHospitalReviewCommand?: CreateHospitalReviewCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReview>>;
     /**
      * Sample request:        GET /api/v1/hospitals/reviews
      * @summary Get all reviews.
@@ -18120,7 +18484,7 @@ export declare const HospitalReviewsApiFp: (configuration?: Configuration | unde
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: ReviewCategory | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReviewsViewModel>;
+    apiV1HospitalsReviewsGet(patientId?: string | undefined, patientName?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, body?: string | undefined, recommended?: boolean | undefined, reviewCategory?: ReviewCategory | undefined, rate?: number | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalReviewsViewModel>>;
 };
 /**
  * HospitalReviewsApi - factory interface
@@ -18202,7 +18566,7 @@ export declare class HospitalReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalReviewsApi
      */
-    apiV1HospitalsHospitalIdReviewsPatientIdDelete(hospitalId: string, patientId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdReviewsPatientIdDelete(hospitalId: string, patientId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/reviews/1
      * @summary Get review.
@@ -18212,7 +18576,7 @@ export declare class HospitalReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalReviewsApi
      */
-    apiV1HospitalsHospitalIdReviewsPatientIdGet(hospitalId: string, patientId: string, options?: any): AxiosPromise<HospitalReviewViewModel>;
+    apiV1HospitalsHospitalIdReviewsPatientIdGet(hospitalId: string, patientId: string, options?: any): Promise<import("axios").AxiosResponse<HospitalReviewViewModel>>;
     /**
      * Sample request:
      * @summary Update review.
@@ -18223,7 +18587,7 @@ export declare class HospitalReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalReviewsApi
      */
-    apiV1HospitalsHospitalIdReviewsPatientIdPut(hospitalId: string, patientId: string, updateHospitalReviewCommand?: UpdateHospitalReviewCommand, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdReviewsPatientIdPut(hospitalId: string, patientId: string, updateHospitalReviewCommand?: UpdateHospitalReviewCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/reviews/1
      * @summary Create review.
@@ -18234,7 +18598,7 @@ export declare class HospitalReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalReviewsApi
      */
-    apiV1HospitalsHospitalIdReviewsPost(hospitalId: string, patientId: string, createHospitalReviewCommand?: CreateHospitalReviewCommand, options?: any): AxiosPromise<HospitalReview>;
+    apiV1HospitalsHospitalIdReviewsPost(hospitalId: string, patientId: string, createHospitalReviewCommand?: CreateHospitalReviewCommand, options?: any): Promise<import("axios").AxiosResponse<HospitalReview>>;
     /**
      * Sample request:        GET /api/v1/hospitals/reviews
      * @summary Get all reviews.
@@ -18255,7 +18619,7 @@ export declare class HospitalReviewsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalReviewsApi
      */
-    apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: ReviewCategory, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalReviewsViewModel>;
+    apiV1HospitalsReviewsGet(patientId?: string, patientName?: string, hospitalId?: string, hospitalName?: string, body?: string, recommended?: boolean, reviewCategory?: ReviewCategory, rate?: number, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<HospitalReviewsViewModel>>;
 }
 /**
  * HospitalSpecialtiesApi - axios parameter creator
@@ -18270,7 +18634,7 @@ export declare const HospitalSpecialtiesApiAxiosParamCreator: (configuration?: C
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdDelete(hospitalId: string, specialtyId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdDelete: (hospitalId: string, specialtyId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/specialties/1
      * @summary Create hospitalSpecialty.
@@ -18279,7 +18643,7 @@ export declare const HospitalSpecialtiesApiAxiosParamCreator: (configuration?: C
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdPost(hospitalId: string, specialtyId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdPost: (hospitalId: string, specialtyId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/specialtysequence      {          \"specialtyType\": \"Endocrinology\",          \"hospitalSpecialtySequence\": [14, 30, 5, 7]      }
      * @summary Update hospitalSpecialty sequence.
@@ -18289,7 +18653,7 @@ export declare const HospitalSpecialtiesApiAxiosParamCreator: (configuration?: C
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtysequencePut(hospitalId: string, specialtyTypeId: string, updateHospitalSpecialtySequenceCommand?: UpdateHospitalSpecialtySequenceCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdSpecialtysequencePut: (hospitalId: string, specialtyTypeId: string, updateHospitalSpecialtySequenceCommand?: UpdateHospitalSpecialtySequenceCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/specialties
      * @summary Get all hospitalSpecialties.
@@ -18307,7 +18671,7 @@ export declare const HospitalSpecialtiesApiAxiosParamCreator: (configuration?: C
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsSpecialtiesGet(hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyName?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: MarketingType | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsSpecialtiesGet: (hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyName?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: MarketingType | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * HospitalSpecialtiesApi - functional programming interface
@@ -18322,7 +18686,7 @@ export declare const HospitalSpecialtiesApiFp: (configuration?: Configuration | 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdDelete(hospitalId: string, specialtyId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdDelete(hospitalId: string, specialtyId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/specialties/1
      * @summary Create hospitalSpecialty.
@@ -18331,7 +18695,7 @@ export declare const HospitalSpecialtiesApiFp: (configuration?: Configuration | 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdPost(hospitalId: string, specialtyId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalSpecialtyViewModel>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdPost(hospitalId: string, specialtyId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalSpecialtyViewModel>>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/specialtysequence      {          \"specialtyType\": \"Endocrinology\",          \"hospitalSpecialtySequence\": [14, 30, 5, 7]      }
      * @summary Update hospitalSpecialty sequence.
@@ -18341,7 +18705,7 @@ export declare const HospitalSpecialtiesApiFp: (configuration?: Configuration | 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtysequencePut(hospitalId: string, specialtyTypeId: string, updateHospitalSpecialtySequenceCommand?: UpdateHospitalSpecialtySequenceCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdSpecialtysequencePut(hospitalId: string, specialtyTypeId: string, updateHospitalSpecialtySequenceCommand?: UpdateHospitalSpecialtySequenceCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/specialties
      * @summary Get all hospitalSpecialties.
@@ -18359,7 +18723,7 @@ export declare const HospitalSpecialtiesApiFp: (configuration?: Configuration | 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsSpecialtiesGet(hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyName?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: MarketingType | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalSpecialtiesViewModel>;
+    apiV1HospitalsSpecialtiesGet(hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyName?: string | undefined, specialtyTypeId?: string | undefined, marketingType?: MarketingType | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalSpecialtiesViewModel>>;
 };
 /**
  * HospitalSpecialtiesApi - factory interface
@@ -18429,7 +18793,7 @@ export declare class HospitalSpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalSpecialtiesApi
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdDelete(hospitalId: string, specialtyId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdDelete(hospitalId: string, specialtyId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals/1/specialties/1
      * @summary Create hospitalSpecialty.
@@ -18439,7 +18803,7 @@ export declare class HospitalSpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalSpecialtiesApi
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdPost(hospitalId: string, specialtyId: string, options?: any): AxiosPromise<HospitalSpecialtyViewModel>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdPost(hospitalId: string, specialtyId: string, options?: any): Promise<import("axios").AxiosResponse<HospitalSpecialtyViewModel>>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/specialtysequence      {          \"specialtyType\": \"Endocrinology\",          \"hospitalSpecialtySequence\": [14, 30, 5, 7]      }
      * @summary Update hospitalSpecialty sequence.
@@ -18450,7 +18814,7 @@ export declare class HospitalSpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalSpecialtiesApi
      */
-    apiV1HospitalsHospitalIdSpecialtysequencePut(hospitalId: string, specialtyTypeId: string, updateHospitalSpecialtySequenceCommand?: UpdateHospitalSpecialtySequenceCommand, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdSpecialtysequencePut(hospitalId: string, specialtyTypeId: string, updateHospitalSpecialtySequenceCommand?: UpdateHospitalSpecialtySequenceCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/specialties
      * @summary Get all hospitalSpecialties.
@@ -18469,7 +18833,7 @@ export declare class HospitalSpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalSpecialtiesApi
      */
-    apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: MarketingType, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalSpecialtiesViewModel>;
+    apiV1HospitalsSpecialtiesGet(hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyName?: string, specialtyTypeId?: string, marketingType?: MarketingType, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<HospitalSpecialtiesViewModel>>;
 }
 /**
  * HospitalsApi - axios parameter creator
@@ -18496,7 +18860,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: MarketingType | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsCurrentGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: MarketingType | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
@@ -18518,7 +18882,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: MarketingType | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: MarketingType | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -18526,7 +18890,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDelete(hospitalId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdDelete: (hospitalId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/1
      * @summary Get hospita.
@@ -18534,7 +18898,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdGet(hospitalId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdGet: (hospitalId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationsPerYear\": 44,          \"foundationYear\": 2012,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
      * @summary Update hospital.
@@ -18543,7 +18907,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdPut(hospitalId: string, updateHospitalCommand?: UpdateHospitalCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdPut: (hospitalId: string, updateHospitalCommand?: UpdateHospitalCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationsPerYear\": 34,          \"foundationYear\": 2012,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
      * @summary Create a hospital.
@@ -18551,7 +18915,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsPost(createHospitalCommand?: CreateHospitalCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsPost: (createHospitalCommand?: CreateHospitalCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get hospital by slug.
@@ -18559,7 +18923,7 @@ export declare const HospitalsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    apiV1HospitalsSlugsSlugGet: (slug: string, options?: any) => Promise<RequestArgs>;
 };
 /**
  * HospitalsApi - functional programming interface
@@ -18586,7 +18950,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: MarketingType | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsCurrentGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: MarketingType | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>>;
     /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
@@ -18608,7 +18972,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: MarketingType | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, countryId?: string | undefined, created?: Date | undefined, marketingType?: MarketingType | undefined, specialtyTypeId?: string | undefined, specialtyId?: string | undefined, serviceId?: string | undefined, exceptHospitalId?: string | undefined, showHidden?: boolean | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalsViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -18616,7 +18980,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdDelete(hospitalId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdDelete(hospitalId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1
      * @summary Get hospita.
@@ -18624,7 +18988,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdGet(hospitalId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalViewModel>;
+    apiV1HospitalsHospitalIdGet(hospitalId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalViewModel>>;
     /**
      * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationsPerYear\": 44,          \"foundationYear\": 2012,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
      * @summary Update hospital.
@@ -18633,7 +18997,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdPut(hospitalId: string, updateHospitalCommand?: UpdateHospitalCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdPut(hospitalId: string, updateHospitalCommand?: UpdateHospitalCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationsPerYear\": 34,          \"foundationYear\": 2012,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
      * @summary Create a hospital.
@@ -18641,7 +19005,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsPost(createHospitalCommand?: CreateHospitalCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1HospitalsPost(createHospitalCommand?: CreateHospitalCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Get hospital by slug.
@@ -18649,7 +19013,7 @@ export declare const HospitalsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalViewModel>;
+    apiV1HospitalsSlugsSlugGet(slug: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalViewModel>>;
 };
 /**
  * HospitalsApi - factory interface
@@ -18769,7 +19133,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: MarketingType, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsCurrentGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: MarketingType, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<HospitalsViewModel>>;
     /**
      * Sample request:        GET /api/v1/hospitals      {          \"pageQueryFilter\": {              \"page\": 1,              \"limit\": 20,              \"lastRetrived\": \"2020-02-05T08:40\"          },          \"searchString\": \"Samsung\"      }
      * @summary Get all hospitals.
@@ -18792,7 +19156,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: MarketingType, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalsViewModel>;
+    apiV1HospitalsGet(id?: string, name?: string, description?: string, countryId?: string, created?: Date, marketingType?: MarketingType, specialtyTypeId?: string, specialtyId?: string, serviceId?: string, exceptHospitalId?: string, showHidden?: boolean, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<HospitalsViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1
      * @summary Delete hospital.
@@ -18801,7 +19165,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    apiV1HospitalsHospitalIdDelete(hospitalId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdDelete(hospitalId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1
      * @summary Get hospita.
@@ -18810,7 +19174,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    apiV1HospitalsHospitalIdGet(hospitalId: string, options?: any): AxiosPromise<HospitalViewModel>;
+    apiV1HospitalsHospitalIdGet(hospitalId: string, options?: any): Promise<import("axios").AxiosResponse<HospitalViewModel>>;
     /**
      * Sameple request:        PUT /api/v1/hospitals      {          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 2436,          \"operationsPerYear\": 44,          \"foundationYear\": 2012,          \"departmentsCount\": 200,          \"medicalStaffCount\": 1200,      }
      * @summary Update hospital.
@@ -18820,7 +19184,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    apiV1HospitalsHospitalIdPut(hospitalId: string, updateHospitalCommand?: UpdateHospitalCommand, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdPut(hospitalId: string, updateHospitalCommand?: UpdateHospitalCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/hospitals      {          \"name\": \"Samsung Medical Center\",          \"description\": \"Comprehensive Cancer Center in Seoul, South Korea is nationally ranked in 1 adult specialty.\",          \"logo\": \"http://www.samsunghospital.com/home/main/index.do\",          \"overview\": \"Overview of Samsung Medical Center\",          \"bedsCount\": 1436,          \"operationsPerYear\": 34,          \"foundationYear\": 2012,          \"departmentsCount\": 20,          \"medicalStaffCount\": 600,          \"countryId\": 1,          \"awards\": [            {              \"name\": \"Award1\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            },            {              \"name\": \"Award2\",              \"image\": \"string\",              \"date\": \"2020-02-05T09:29:19.240Z\"            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"https://cloudhospitalblob.blob.core.windows.net/imagecontainer/SamsungMedicalCenter.jpg\",              \"thumbnailUrl\": \"https://cloudhospitalblob.blob.core.windows.net/thumbnailcontainer/SamsungMedicalCenter.jpg\",              \"description\": \"string\",              \"order\": 0            },            {              \"mediaType\": \"Video\",              \"url\": \"string\",              \"description\": \"string\",              \"order\": 1            }          ],          \"location\": {            \"latitude\": 37.4881568,            \"longitude\": 127.0855952,            \"country\": \"Korea\",            \"state\": \"string\",            \"county\": \"Gangnamgu\",            \"city\": \"Seoul\",            \"zipCode\": \"12345\",            \"address\": \"Il-won ro 81\"          }      }
      * @summary Create a hospital.
@@ -18829,7 +19193,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    apiV1HospitalsPost(createHospitalCommand?: CreateHospitalCommand, options?: any): AxiosPromise<string>;
+    apiV1HospitalsPost(createHospitalCommand?: CreateHospitalCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Get hospital by slug.
@@ -18838,7 +19202,7 @@ export declare class HospitalsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof HospitalsApi
      */
-    apiV1HospitalsSlugsSlugGet(slug: string, options?: any): AxiosPromise<HospitalViewModel>;
+    apiV1HospitalsSlugsSlugGet(slug: string, options?: any): Promise<import("axios").AxiosResponse<HospitalViewModel>>;
 }
 /**
  * IdentityApi - axios parameter creator
@@ -18851,7 +19215,7 @@ export declare const IdentityApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1IdentityGet(options?: any): RequestArgs;
+    apiV1IdentityGet: (options?: any) => Promise<RequestArgs>;
 };
 /**
  * IdentityApi - functional programming interface
@@ -18864,7 +19228,7 @@ export declare const IdentityApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1IdentityGet(options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>;
+    apiV1IdentityGet(options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
 };
 /**
  * IdentityApi - factory interface
@@ -18893,7 +19257,7 @@ export declare class IdentityApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof IdentityApi
      */
-    apiV1IdentityGet(options?: any): AxiosPromise<void>;
+    apiV1IdentityGet(options?: any): Promise<import("axios").AxiosResponse<void>>;
 }
 /**
  * ImagesApi - axios parameter creator
@@ -18905,7 +19269,7 @@ export declare const ImagesApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ImagesPost(options?: any): RequestArgs;
+    apiV1ImagesPost: (options?: any) => Promise<RequestArgs>;
 };
 /**
  * ImagesApi - functional programming interface
@@ -18917,7 +19281,7 @@ export declare const ImagesApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ImagesPost(options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>;
+    apiV1ImagesPost(options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
 };
 /**
  * ImagesApi - factory interface
@@ -18944,7 +19308,7 @@ export declare class ImagesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ImagesApi
      */
-    apiV1ImagesPost(options?: any): AxiosPromise<void>;
+    apiV1ImagesPost(options?: any): Promise<import("axios").AxiosResponse<void>>;
 }
 /**
  * ManagersApi - axios parameter creator
@@ -18968,7 +19332,7 @@ export declare const ManagersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): RequestArgs;
+    apiV1ManagersGet: (id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/managers/1
      * @summary Delete hospital manager.
@@ -18976,7 +19340,7 @@ export declare const ManagersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersManagerIdDelete(managerId: string, options?: any): RequestArgs;
+    apiV1ManagersManagerIdDelete: (managerId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/managers/1
      * @summary Get hospital manager.
@@ -18984,7 +19348,7 @@ export declare const ManagersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersManagerIdGet(managerId: string, options?: any): RequestArgs;
+    apiV1ManagersManagerIdGet: (managerId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/managers/1      {          \"firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update hospital manager.
@@ -18993,7 +19357,7 @@ export declare const ManagersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersManagerIdPut(managerId: string, updateManagerCommand?: UpdateManagerCommand | undefined, options?: any): RequestArgs;
+    apiV1ManagersManagerIdPut: (managerId: string, updateManagerCommand?: UpdateManagerCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/managers      {          \"userName\": \"manager\",          \"email\": \"manger@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital manager.
@@ -19001,7 +19365,7 @@ export declare const ManagersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersPost(createManagerCommand?: CreateManagerCommand | undefined, options?: any): RequestArgs;
+    apiV1ManagersPost: (createManagerCommand?: CreateManagerCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * ManagersApi - functional programming interface
@@ -19025,7 +19389,7 @@ export declare const ManagersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ManagersViewModel>;
+    apiV1ManagersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, hospitalId?: string | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ManagersViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/managers/1
      * @summary Delete hospital manager.
@@ -19033,7 +19397,7 @@ export declare const ManagersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersManagerIdDelete(managerId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ManagersManagerIdDelete(managerId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/managers/1
      * @summary Get hospital manager.
@@ -19041,7 +19405,7 @@ export declare const ManagersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersManagerIdGet(managerId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ManagerViewModel>;
+    apiV1ManagersManagerIdGet(managerId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ManagerViewModel>>;
     /**
      * Sample request:        PUT /api/v1/managers/1      {          \"firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update hospital manager.
@@ -19050,7 +19414,7 @@ export declare const ManagersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersManagerIdPut(managerId: string, updateManagerCommand?: UpdateManagerCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ManagersManagerIdPut(managerId: string, updateManagerCommand?: UpdateManagerCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/managers      {          \"userName\": \"manager\",          \"email\": \"manger@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital manager.
@@ -19058,7 +19422,7 @@ export declare const ManagersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ManagersPost(createManagerCommand?: CreateManagerCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1ManagersPost(createManagerCommand?: CreateManagerCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * ManagersApi - factory interface
@@ -19142,7 +19506,7 @@ export declare class ManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManagersApi
      */
-    apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): AxiosPromise<ManagersViewModel>;
+    apiV1ManagersGet(id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, hospitalId?: string, options?: any): Promise<import("axios").AxiosResponse<ManagersViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/managers/1
      * @summary Delete hospital manager.
@@ -19151,7 +19515,7 @@ export declare class ManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManagersApi
      */
-    apiV1ManagersManagerIdDelete(managerId: string, options?: any): AxiosPromise<boolean>;
+    apiV1ManagersManagerIdDelete(managerId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/managers/1
      * @summary Get hospital manager.
@@ -19160,7 +19524,7 @@ export declare class ManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManagersApi
      */
-    apiV1ManagersManagerIdGet(managerId: string, options?: any): AxiosPromise<ManagerViewModel>;
+    apiV1ManagersManagerIdGet(managerId: string, options?: any): Promise<import("axios").AxiosResponse<ManagerViewModel>>;
     /**
      * Sample request:        PUT /api/v1/managers/1      {          \"firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update hospital manager.
@@ -19170,7 +19534,7 @@ export declare class ManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManagersApi
      */
-    apiV1ManagersManagerIdPut(managerId: string, updateManagerCommand?: UpdateManagerCommand, options?: any): AxiosPromise<boolean>;
+    apiV1ManagersManagerIdPut(managerId: string, updateManagerCommand?: UpdateManagerCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/managers      {          \"userName\": \"manager\",          \"email\": \"manger@icloudhospital.com\",          \"hospitalId\": 1,          \"firstName\": \"cloud\",          \"lastName\": \"manager\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T15:28:09.897Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create hospital manager.
@@ -19179,7 +19543,7 @@ export declare class ManagersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ManagersApi
      */
-    apiV1ManagersPost(createManagerCommand?: CreateManagerCommand, options?: any): AxiosPromise<string>;
+    apiV1ManagersPost(createManagerCommand?: CreateManagerCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
 }
 /**
  * MoviesApi - axios parameter creator
@@ -19191,7 +19555,7 @@ export declare const MoviesApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1MoviesPost(options?: any): RequestArgs;
+    apiV1MoviesPost: (options?: any) => Promise<RequestArgs>;
 };
 /**
  * MoviesApi - functional programming interface
@@ -19203,7 +19567,7 @@ export declare const MoviesApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1MoviesPost(options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>;
+    apiV1MoviesPost(options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<void>>;
 };
 /**
  * MoviesApi - factory interface
@@ -19230,7 +19594,7 @@ export declare class MoviesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof MoviesApi
      */
-    apiV1MoviesPost(options?: any): AxiosPromise<void>;
+    apiV1MoviesPost(options?: any): Promise<import("axios").AxiosResponse<void>>;
 }
 /**
  * PartnersApi - axios parameter creator
@@ -19253,7 +19617,7 @@ export declare const PartnersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1PartnersGet: (id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/partners/1
      * @summary Delete patner.
@@ -19261,7 +19625,7 @@ export declare const PartnersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersPartnerIdDelete(partnerId: string, options?: any): RequestArgs;
+    apiV1PartnersPartnerIdDelete: (partnerId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/patners/1
      * @summary Get partner.
@@ -19269,7 +19633,7 @@ export declare const PartnersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersPartnerIdGet(partnerId: string, options?: any): RequestArgs;
+    apiV1PartnersPartnerIdGet: (partnerId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/patners/1      {          firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update partner.
@@ -19278,7 +19642,7 @@ export declare const PartnersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersPartnerIdPut(partnerId: string, updatePartnerCommand?: UpdatePartnerCommand | undefined, options?: any): RequestArgs;
+    apiV1PartnersPartnerIdPut: (partnerId: string, updatePartnerCommand?: UpdatePartnerCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/partners      {          \"userName\": \"string\",          \"email\": \"string\",          \"firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T18:04:18.025Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create partner.
@@ -19286,7 +19650,7 @@ export declare const PartnersApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersPost(createPartnerCommand?: CreatePartnerCommand | undefined, options?: any): RequestArgs;
+    apiV1PartnersPost: (createPartnerCommand?: CreatePartnerCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * PartnersApi - functional programming interface
@@ -19309,7 +19673,7 @@ export declare const PartnersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PartnersViewModel>;
+    apiV1PartnersGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PartnersViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/partners/1
      * @summary Delete patner.
@@ -19317,7 +19681,7 @@ export declare const PartnersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersPartnerIdDelete(partnerId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1PartnersPartnerIdDelete(partnerId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/patners/1
      * @summary Get partner.
@@ -19325,7 +19689,7 @@ export declare const PartnersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersPartnerIdGet(partnerId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PartnerViewModel>;
+    apiV1PartnersPartnerIdGet(partnerId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PartnerViewModel>>;
     /**
      * Sample request:        PUT /api/v1/patners/1      {          firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update partner.
@@ -19334,7 +19698,7 @@ export declare const PartnersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersPartnerIdPut(partnerId: string, updatePartnerCommand?: UpdatePartnerCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1PartnersPartnerIdPut(partnerId: string, updatePartnerCommand?: UpdatePartnerCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/partners      {          \"userName\": \"string\",          \"email\": \"string\",          \"firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T18:04:18.025Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create partner.
@@ -19342,7 +19706,7 @@ export declare const PartnersApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PartnersPost(createPartnerCommand?: CreatePartnerCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1PartnersPost(createPartnerCommand?: CreatePartnerCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * PartnersApi - factory interface
@@ -19424,7 +19788,7 @@ export declare class PartnersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PartnersApi
      */
-    apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<PartnersViewModel>;
+    apiV1PartnersGet(id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<PartnersViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/partners/1
      * @summary Delete patner.
@@ -19433,7 +19797,7 @@ export declare class PartnersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PartnersApi
      */
-    apiV1PartnersPartnerIdDelete(partnerId: string, options?: any): AxiosPromise<boolean>;
+    apiV1PartnersPartnerIdDelete(partnerId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/patners/1
      * @summary Get partner.
@@ -19442,7 +19806,7 @@ export declare class PartnersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PartnersApi
      */
-    apiV1PartnersPartnerIdGet(partnerId: string, options?: any): AxiosPromise<PartnerViewModel>;
+    apiV1PartnersPartnerIdGet(partnerId: string, options?: any): Promise<import("axios").AxiosResponse<PartnerViewModel>>;
     /**
      * Sample request:        PUT /api/v1/patners/1      {          firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update partner.
@@ -19452,7 +19816,7 @@ export declare class PartnersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PartnersApi
      */
-    apiV1PartnersPartnerIdPut(partnerId: string, updatePartnerCommand?: UpdatePartnerCommand, options?: any): AxiosPromise<boolean>;
+    apiV1PartnersPartnerIdPut(partnerId: string, updatePartnerCommand?: UpdatePartnerCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/partners      {          \"userName\": \"string\",          \"email\": \"string\",          \"firstName\": \"string\",          \"lastName\": \"string\",          \"photo\": \"string\",          \"photoThumbnail\": \"string\",          \"gender\": \"NotSpecified\",          \"dateOfBirth\": \"2020-02-22T18:04:18.025Z\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create partner.
@@ -19461,7 +19825,7 @@ export declare class PartnersApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PartnersApi
      */
-    apiV1PartnersPost(createPartnerCommand?: CreatePartnerCommand, options?: any): AxiosPromise<string>;
+    apiV1PartnersPost(createPartnerCommand?: CreatePartnerCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
 }
 /**
  * PatientsApi - axios parameter creator
@@ -19484,7 +19848,7 @@ export declare const PatientsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1PatientsGet: (id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/patients/1
      * @summary Delete patient.
@@ -19492,7 +19856,7 @@ export declare const PatientsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsPatientIdDelete(patientId: string, options?: any): RequestArgs;
+    apiV1PatientsPatientIdDelete: (patientId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/patients/1
      * @summary Get patient.
@@ -19500,7 +19864,7 @@ export declare const PatientsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsPatientIdGet(patientId: string, options?: any): RequestArgs;
+    apiV1PatientsPatientIdGet: (patientId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/patients/1      {          \"referralCode\": \"string\",          \"firstName\": \"patient\",          \"lastName\": \"cloud\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update patient.
@@ -19509,7 +19873,7 @@ export declare const PatientsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsPatientIdPut(patientId: string, updatePatientCommand?: UpdatePatientCommand | undefined, options?: any): RequestArgs;
+    apiV1PatientsPatientIdPut: (patientId: string, updatePatientCommand?: UpdatePatientCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/patients      {          \"referralCode\": \"123456\",          \"email\": \"patient@icloudhospital.com\",          \"firstName\": \"patient\",          \"lastName\": \"cloud\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create patient.
@@ -19517,7 +19881,7 @@ export declare const PatientsApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsPost(createPatientCommand?: CreatePatientCommand | undefined, options?: any): RequestArgs;
+    apiV1PatientsPost: (createPatientCommand?: CreatePatientCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * PatientsApi - functional programming interface
@@ -19540,7 +19904,7 @@ export declare const PatientsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PatientsViewModel>;
+    apiV1PatientsGet(id?: string | undefined, fullname?: string | undefined, email?: string | undefined, gender?: Gender | undefined, dateOfBirth?: Date | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PatientsViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/patients/1
      * @summary Delete patient.
@@ -19548,7 +19912,7 @@ export declare const PatientsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsPatientIdDelete(patientId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1PatientsPatientIdDelete(patientId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/patients/1
      * @summary Get patient.
@@ -19556,7 +19920,7 @@ export declare const PatientsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsPatientIdGet(patientId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PatientViewModel>;
+    apiV1PatientsPatientIdGet(patientId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<PatientViewModel>>;
     /**
      * Sample request:        PUT /api/v1/patients/1      {          \"referralCode\": \"string\",          \"firstName\": \"patient\",          \"lastName\": \"cloud\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update patient.
@@ -19565,7 +19929,7 @@ export declare const PatientsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsPatientIdPut(patientId: string, updatePatientCommand?: UpdatePatientCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1PatientsPatientIdPut(patientId: string, updatePatientCommand?: UpdatePatientCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        POST /api/v1/patients      {          \"referralCode\": \"123456\",          \"email\": \"patient@icloudhospital.com\",          \"firstName\": \"patient\",          \"lastName\": \"cloud\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create patient.
@@ -19573,7 +19937,7 @@ export declare const PatientsApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1PatientsPost(createPatientCommand?: CreatePatientCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1PatientsPost(createPatientCommand?: CreatePatientCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
 };
 /**
  * PatientsApi - factory interface
@@ -19655,7 +20019,7 @@ export declare class PatientsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PatientsApi
      */
-    apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<PatientsViewModel>;
+    apiV1PatientsGet(id?: string, fullname?: string, email?: string, gender?: Gender, dateOfBirth?: Date, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<PatientsViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/patients/1
      * @summary Delete patient.
@@ -19664,7 +20028,7 @@ export declare class PatientsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PatientsApi
      */
-    apiV1PatientsPatientIdDelete(patientId: string, options?: any): AxiosPromise<boolean>;
+    apiV1PatientsPatientIdDelete(patientId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/patients/1
      * @summary Get patient.
@@ -19673,7 +20037,7 @@ export declare class PatientsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PatientsApi
      */
-    apiV1PatientsPatientIdGet(patientId: string, options?: any): AxiosPromise<PatientViewModel>;
+    apiV1PatientsPatientIdGet(patientId: string, options?: any): Promise<import("axios").AxiosResponse<PatientViewModel>>;
     /**
      * Sample request:        PUT /api/v1/patients/1      {          \"referralCode\": \"string\",          \"firstName\": \"patient\",          \"lastName\": \"cloud\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Update patient.
@@ -19683,7 +20047,7 @@ export declare class PatientsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PatientsApi
      */
-    apiV1PatientsPatientIdPut(patientId: string, updatePatientCommand?: UpdatePatientCommand, options?: any): AxiosPromise<boolean>;
+    apiV1PatientsPatientIdPut(patientId: string, updatePatientCommand?: UpdatePatientCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        POST /api/v1/patients      {          \"referralCode\": \"123456\",          \"email\": \"patient@icloudhospital.com\",          \"firstName\": \"patient\",          \"lastName\": \"cloud\",          \"photo\": \"string\",          \"locations\": [            {              \"locationType\": \"LivesIn\",              \"latitude\": 0,              \"longitude\": 0,              \"country\": \"string\",              \"state\": \"string\",              \"county\": \"string\",              \"city\": \"string\",              \"zipCode\": \"string\",              \"address\": \"string\"            }          ]      }
      * @summary Create patient.
@@ -19692,7 +20056,7 @@ export declare class PatientsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof PatientsApi
      */
-    apiV1PatientsPost(createPatientCommand?: CreatePatientCommand, options?: any): AxiosPromise<string>;
+    apiV1PatientsPost(createPatientCommand?: CreatePatientCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
 }
 /**
  * ProfilesApi - axios parameter creator
@@ -19706,21 +20070,21 @@ export declare const ProfilesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ProfilesChangeemailPost(changeEmailCommand?: ChangeEmailCommand | undefined, options?: any): RequestArgs;
+    apiV1ProfilesChangeemailPost: (changeEmailCommand?: ChangeEmailCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @param {ConfirmEmailCommand} [confirmEmailCommand]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ProfilesConfirmemailPost(confirmEmailCommand?: ConfirmEmailCommand | undefined, options?: any): RequestArgs;
+    apiV1ProfilesConfirmemailPost: (confirmEmailCommand?: ConfirmEmailCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/profiles
      * @summary Get current user\'s profile.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ProfilesGet(options?: any): RequestArgs;
+    apiV1ProfilesGet: (options?: any) => Promise<RequestArgs>;
 };
 /**
  * ProfilesApi - functional programming interface
@@ -19734,21 +20098,21 @@ export declare const ProfilesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ProfilesChangeemailPost(changeEmailCommand?: ChangeEmailCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ProfilesChangeemailPost(changeEmailCommand?: ChangeEmailCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      *
      * @param {ConfirmEmailCommand} [confirmEmailCommand]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ProfilesConfirmemailPost(confirmEmailCommand?: ConfirmEmailCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ProfilesConfirmemailPost(confirmEmailCommand?: ConfirmEmailCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/profiles
      * @summary Get current user\'s profile.
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ProfilesGet(options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<UserViewModel>;
+    apiV1ProfilesGet(options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<UserViewModel>>;
 };
 /**
  * ProfilesApi - factory interface
@@ -19793,7 +20157,7 @@ export declare class ProfilesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    apiV1ProfilesChangeemailPost(changeEmailCommand?: ChangeEmailCommand, options?: any): AxiosPromise<boolean>;
+    apiV1ProfilesChangeemailPost(changeEmailCommand?: ChangeEmailCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      *
      * @param {ConfirmEmailCommand} [confirmEmailCommand]
@@ -19801,7 +20165,7 @@ export declare class ProfilesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    apiV1ProfilesConfirmemailPost(confirmEmailCommand?: ConfirmEmailCommand, options?: any): AxiosPromise<boolean>;
+    apiV1ProfilesConfirmemailPost(confirmEmailCommand?: ConfirmEmailCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/profiles
      * @summary Get current user\'s profile.
@@ -19809,7 +20173,7 @@ export declare class ProfilesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ProfilesApi
      */
-    apiV1ProfilesGet(options?: any): AxiosPromise<UserViewModel>;
+    apiV1ProfilesGet(options?: any): Promise<import("axios").AxiosResponse<UserViewModel>>;
 }
 /**
  * QuestionCommentsApi - axios parameter creator
@@ -19830,7 +20194,7 @@ export declare const QuestionCommentsApiAxiosParamCreator: (configuration?: Conf
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestionIdQuestioncommentsGet(questionId: string, id?: string | undefined, userId?: string | undefined, questionId2?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1QuestionsQuestionIdQuestioncommentsGet: (questionId: string, id?: string | undefined, userId?: string | undefined, questionId2?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/questions/1/questionComment      {          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an questionComment.
@@ -19839,7 +20203,7 @@ export declare const QuestionCommentsApiAxiosParamCreator: (configuration?: Conf
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestionIdQuestioncommentsPost(questionId: string, createQuestionCommentCommand?: CreateQuestionCommentCommand | undefined, options?: any): RequestArgs;
+    apiV1QuestionsQuestionIdQuestioncommentsPost: (questionId: string, createQuestionCommentCommand?: CreateQuestionCommentCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/questions/1/questionComments/1
      * @summary Delete questionComment.
@@ -19848,7 +20212,7 @@ export declare const QuestionCommentsApiAxiosParamCreator: (configuration?: Conf
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(questionId: string, questionCommentId: string, options?: any): RequestArgs;
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete: (questionId: string, questionCommentId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/questionComment/1
      * @summary Get questionComment.
@@ -19857,7 +20221,7 @@ export declare const QuestionCommentsApiAxiosParamCreator: (configuration?: Conf
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(questionId: string, questionCommentId: string, options?: any): RequestArgs;
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet: (questionId: string, questionCommentId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
      * @summary Update questionComment.
@@ -19867,7 +20231,7 @@ export declare const QuestionCommentsApiAxiosParamCreator: (configuration?: Conf
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(questionId: string, questionCommentId: string, updateQuestionCommentCommand?: UpdateQuestionCommentCommand | undefined, options?: any): RequestArgs;
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut: (questionId: string, questionCommentId: string, updateQuestionCommentCommand?: UpdateQuestionCommentCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * QuestionCommentsApi - functional programming interface
@@ -19888,7 +20252,7 @@ export declare const QuestionCommentsApiFp: (configuration?: Configuration | und
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestionIdQuestioncommentsGet(questionId: string, id?: string | undefined, userId?: string | undefined, questionId2?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionCommentsViewModel>;
+    apiV1QuestionsQuestionIdQuestioncommentsGet(questionId: string, id?: string | undefined, userId?: string | undefined, questionId2?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionCommentsViewModel>>;
     /**
      * Sample request:        POST /api/v1/questions/1/questionComment      {          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an questionComment.
@@ -19897,7 +20261,7 @@ export declare const QuestionCommentsApiFp: (configuration?: Configuration | und
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestionIdQuestioncommentsPost(questionId: string, createQuestionCommentCommand?: CreateQuestionCommentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1QuestionsQuestionIdQuestioncommentsPost(questionId: string, createQuestionCommentCommand?: CreateQuestionCommentCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      * Sample request:        DELETE /api/v1/questions/1/questionComments/1
      * @summary Delete questionComment.
@@ -19906,7 +20270,7 @@ export declare const QuestionCommentsApiFp: (configuration?: Configuration | und
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(questionId: string, questionCommentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(questionId: string, questionCommentId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/questionComment/1
      * @summary Get questionComment.
@@ -19915,7 +20279,7 @@ export declare const QuestionCommentsApiFp: (configuration?: Configuration | und
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(questionId: string, questionCommentId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionCommentViewModel>;
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(questionId: string, questionCommentId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionCommentViewModel>>;
     /**
      * Sample request:        PUT /api/v1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
      * @summary Update questionComment.
@@ -19925,7 +20289,7 @@ export declare const QuestionCommentsApiFp: (configuration?: Configuration | und
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(questionId: string, questionCommentId: string, updateQuestionCommentCommand?: UpdateQuestionCommentCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(questionId: string, questionCommentId: string, updateQuestionCommentCommand?: UpdateQuestionCommentCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
 };
 /**
  * QuestionCommentsApi - factory interface
@@ -20007,7 +20371,7 @@ export declare class QuestionCommentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionCommentsApi
      */
-    apiV1QuestionsQuestionIdQuestioncommentsGet(questionId: string, id?: string, userId?: string, questionId2?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<QuestionCommentsViewModel>;
+    apiV1QuestionsQuestionIdQuestioncommentsGet(questionId: string, id?: string, userId?: string, questionId2?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<QuestionCommentsViewModel>>;
     /**
      * Sample request:        POST /api/v1/questions/1/questionComment      {          \"description\": \"This is a questionComment.\",          \"body\": \"questionComment body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an questionComment.
@@ -20017,7 +20381,7 @@ export declare class QuestionCommentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionCommentsApi
      */
-    apiV1QuestionsQuestionIdQuestioncommentsPost(questionId: string, createQuestionCommentCommand?: CreateQuestionCommentCommand, options?: any): AxiosPromise<string>;
+    apiV1QuestionsQuestionIdQuestioncommentsPost(questionId: string, createQuestionCommentCommand?: CreateQuestionCommentCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      * Sample request:        DELETE /api/v1/questions/1/questionComments/1
      * @summary Delete questionComment.
@@ -20027,7 +20391,7 @@ export declare class QuestionCommentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionCommentsApi
      */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(questionId: string, questionCommentId: string, options?: any): AxiosPromise<boolean>;
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdDelete(questionId: string, questionCommentId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/questionComment/1
      * @summary Get questionComment.
@@ -20037,7 +20401,7 @@ export declare class QuestionCommentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionCommentsApi
      */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(questionId: string, questionCommentId: string, options?: any): AxiosPromise<QuestionCommentViewModel>;
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdGet(questionId: string, questionCommentId: string, options?: any): Promise<import("axios").AxiosResponse<QuestionCommentViewModel>>;
     /**
      * Sample request:        PUT /api/v1/questions/1/questionComments/1      {          \"QuestionTitle\": \"Question title\",          \"body\": \"updated questionComment body here\"      }
      * @summary Update questionComment.
@@ -20048,7 +20412,7 @@ export declare class QuestionCommentsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionCommentsApi
      */
-    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(questionId: string, questionCommentId: string, updateQuestionCommentCommand?: UpdateQuestionCommentCommand, options?: any): AxiosPromise<boolean>;
+    apiV1QuestionsQuestionIdQuestioncommentsQuestionCommentIdPut(questionId: string, questionCommentId: string, updateQuestionCommentCommand?: UpdateQuestionCommentCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
 }
 /**
  * QuestionsApi - axios parameter creator
@@ -20063,7 +20427,7 @@ export declare const QuestionsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdQuestionsPost(hospitalId: string, createQuestionCommand?: CreateQuestionCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdQuestionsPost: (hospitalId: string, createQuestionCommand?: CreateQuestionCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/questions/1
      * @summary Delete question.
@@ -20072,7 +20436,7 @@ export declare const QuestionsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId: string, questionId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdQuestionsQuestionIdDelete: (hospitalId: string, questionId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/questions/1
      * @summary Get question.
@@ -20081,7 +20445,7 @@ export declare const QuestionsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId: string, questionId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdQuestionsQuestionIdGet: (hospitalId: string, questionId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/questions/1      {          \"title\": \"Samsung Hospital\",          \"description\": \"This is an question.\",          \"body\": \"updated question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,        ///                   \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Update question.
@@ -20091,7 +20455,7 @@ export declare const QuestionsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId: string, questionId: string, updateQuestionCommand?: UpdateQuestionCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdQuestionsQuestionIdPut: (hospitalId: string, questionId: string, updateQuestionCommand?: UpdateQuestionCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/questions
      * @summary Get all questions.
@@ -20108,7 +20472,7 @@ export declare const QuestionsApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsQuestionsGet(id?: string | undefined, title?: string | undefined, hospitalId?: string | undefined, patientId?: string | undefined, questionType?: QuestionType | undefined, questionStatus?: QuestionStatus | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsQuestionsGet: (id?: string | undefined, title?: string | undefined, hospitalId?: string | undefined, patientId?: string | undefined, questionType?: QuestionType | undefined, questionStatus?: QuestionStatus | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * QuestionsApi - functional programming interface
@@ -20123,7 +20487,7 @@ export declare const QuestionsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdQuestionsPost(hospitalId: string, createQuestionCommand?: CreateQuestionCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1HospitalsHospitalIdQuestionsPost(hospitalId: string, createQuestionCommand?: CreateQuestionCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/questions/1
      * @summary Delete question.
@@ -20132,7 +20496,7 @@ export declare const QuestionsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId: string, questionId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId: string, questionId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/questions/1
      * @summary Get question.
@@ -20141,7 +20505,7 @@ export declare const QuestionsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId: string, questionId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionViewModel>;
+    apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId: string, questionId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionViewModel>>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/questions/1      {          \"title\": \"Samsung Hospital\",          \"description\": \"This is an question.\",          \"body\": \"updated question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,        ///                   \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Update question.
@@ -20151,7 +20515,7 @@ export declare const QuestionsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId: string, questionId: string, updateQuestionCommand?: UpdateQuestionCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId: string, questionId: string, updateQuestionCommand?: UpdateQuestionCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/questions
      * @summary Get all questions.
@@ -20168,7 +20532,7 @@ export declare const QuestionsApiFp: (configuration?: Configuration | undefined)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsQuestionsGet(id?: string | undefined, title?: string | undefined, hospitalId?: string | undefined, patientId?: string | undefined, questionType?: QuestionType | undefined, questionStatus?: QuestionStatus | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionsViewModel>;
+    apiV1HospitalsQuestionsGet(id?: string | undefined, title?: string | undefined, hospitalId?: string | undefined, patientId?: string | undefined, questionType?: QuestionType | undefined, questionStatus?: QuestionStatus | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<QuestionsViewModel>>;
 };
 /**
  * QuestionsApi - factory interface
@@ -20246,7 +20610,7 @@ export declare class QuestionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionsApi
      */
-    apiV1HospitalsHospitalIdQuestionsPost(hospitalId: string, createQuestionCommand?: CreateQuestionCommand, options?: any): AxiosPromise<string>;
+    apiV1HospitalsHospitalIdQuestionsPost(hospitalId: string, createQuestionCommand?: CreateQuestionCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/questions/1
      * @summary Delete question.
@@ -20256,7 +20620,7 @@ export declare class QuestionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionsApi
      */
-    apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId: string, questionId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdQuestionsQuestionIdDelete(hospitalId: string, questionId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/questions/1
      * @summary Get question.
@@ -20266,7 +20630,7 @@ export declare class QuestionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionsApi
      */
-    apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId: string, questionId: string, options?: any): AxiosPromise<QuestionViewModel>;
+    apiV1HospitalsHospitalIdQuestionsQuestionIdGet(hospitalId: string, questionId: string, options?: any): Promise<import("axios").AxiosResponse<QuestionViewModel>>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/questions/1      {          \"title\": \"Samsung Hospital\",          \"description\": \"This is an question.\",          \"body\": \"updated question body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,        ///                   \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Update question.
@@ -20277,7 +20641,7 @@ export declare class QuestionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionsApi
      */
-    apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId: string, questionId: string, updateQuestionCommand?: UpdateQuestionCommand, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdQuestionsQuestionIdPut(hospitalId: string, questionId: string, updateQuestionCommand?: UpdateQuestionCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/questions
      * @summary Get all questions.
@@ -20295,7 +20659,7 @@ export declare class QuestionsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof QuestionsApi
      */
-    apiV1HospitalsQuestionsGet(id?: string, title?: string, hospitalId?: string, patientId?: string, questionType?: QuestionType, questionStatus?: QuestionStatus, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<QuestionsViewModel>;
+    apiV1HospitalsQuestionsGet(id?: string, title?: string, hospitalId?: string, patientId?: string, questionType?: QuestionType, questionStatus?: QuestionStatus, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<QuestionsViewModel>>;
 }
 /**
  * SearchApi - axios parameter creator
@@ -20316,7 +20680,7 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchDealsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchDealsGet: (searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20331,7 +20695,7 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchDoctorsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchDoctorsGet: (searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20346,7 +20710,7 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchEquipmentsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchEquipmentsGet: (searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20361,7 +20725,7 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchGetcountGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchGetcountGet: (searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20376,7 +20740,7 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchHospitalsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchHospitalsGet: (searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20391,7 +20755,7 @@ export declare const SearchApiAxiosParamCreator: (configuration?: Configuration 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchSpecialtiesGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SearchSpecialtiesGet: (searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * SearchApi - functional programming interface
@@ -20412,7 +20776,7 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchDealsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealSearchResultViewModel>;
+    apiV1SearchDealsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DealSearchResultViewModel>>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20427,7 +20791,7 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchDoctorsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorSearchResultViewModel>;
+    apiV1SearchDoctorsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<DoctorSearchResultViewModel>>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20442,7 +20806,7 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchEquipmentsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EquipmentSearchResultViewModel>;
+    apiV1SearchEquipmentsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<EquipmentSearchResultViewModel>>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20457,7 +20821,7 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchGetcountGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<AzureSearchViewModel>;
+    apiV1SearchGetcountGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<AzureSearchViewModel>>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20472,7 +20836,7 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchHospitalsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalSearchResultViewModel>;
+    apiV1SearchHospitalsGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<HospitalSearchResultViewModel>>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20487,7 +20851,7 @@ export declare const SearchApiFp: (configuration?: Configuration | undefined) =>
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SearchSpecialtiesGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtySearchResultViewModel>;
+    apiV1SearchSpecialtiesGet(searchTerm?: string | undefined, countOnly?: boolean | undefined, countryId?: string | undefined, hospitalId?: string | undefined, marketingType?: MarketingType | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtySearchResultViewModel>>;
 };
 /**
  * SearchApi - factory interface
@@ -20607,7 +20971,7 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DealSearchResultViewModel>;
+    apiV1SearchDealsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<DealSearchResultViewModel>>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20623,7 +20987,7 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<DoctorSearchResultViewModel>;
+    apiV1SearchDoctorsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<DoctorSearchResultViewModel>>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20639,7 +21003,7 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<EquipmentSearchResultViewModel>;
+    apiV1SearchEquipmentsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<EquipmentSearchResultViewModel>>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20655,7 +21019,7 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<AzureSearchViewModel>;
+    apiV1SearchGetcountGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<AzureSearchViewModel>>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20671,7 +21035,7 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<HospitalSearchResultViewModel>;
+    apiV1SearchHospitalsGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<HospitalSearchResultViewModel>>;
     /**
      *
      * @param {string} [searchTerm]
@@ -20687,7 +21051,7 @@ export declare class SearchApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SearchApi
      */
-    apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtySearchResultViewModel>;
+    apiV1SearchSpecialtiesGet(searchTerm?: string, countOnly?: boolean, countryId?: string, hospitalId?: string, marketingType?: MarketingType, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<SpecialtySearchResultViewModel>>;
 }
 /**
  * ServiceCategoriesApi - axios parameter creator
@@ -20707,7 +21071,7 @@ export declare const ServiceCategoriesApiAxiosParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ServicecategoriesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1ServicecategoriesGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/ServiceCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Create ServiceCategory.
@@ -20715,7 +21079,7 @@ export declare const ServiceCategoriesApiAxiosParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ServicecategoriesPost(createServiceCategoryCommand?: CreateServiceCategoryCommand | undefined, options?: any): RequestArgs;
+    apiV1ServicecategoriesPost: (createServiceCategoryCommand?: CreateServiceCategoryCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/ServiceCategories/1
      * @summary Delete ServiceCategory.
@@ -20723,7 +21087,7 @@ export declare const ServiceCategoriesApiAxiosParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId: string, options?: any): RequestArgs;
+    apiV1ServicecategoriesServiceCategoryIdDelete: (serviceCategoryId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/ServiceCategories/1
      * @summary Get ServiceCategory.
@@ -20731,7 +21095,7 @@ export declare const ServiceCategoriesApiAxiosParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId: string, options?: any): RequestArgs;
+    apiV1ServicecategoriesServiceCategoryIdGet: (serviceCategoryId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/ServiceCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Update ServiceCategory
@@ -20740,7 +21104,7 @@ export declare const ServiceCategoriesApiAxiosParamCreator: (configuration?: Con
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId: string, updateServiceCategoryCommand?: UpdateServiceCategoryCommand | undefined, options?: any): RequestArgs;
+    apiV1ServicecategoriesServiceCategoryIdPut: (serviceCategoryId: string, updateServiceCategoryCommand?: UpdateServiceCategoryCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * ServiceCategoriesApi - functional programming interface
@@ -20760,7 +21124,7 @@ export declare const ServiceCategoriesApiFp: (configuration?: Configuration | un
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ServicecategoriesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServiceCategoriesViewModel>;
+    apiV1ServicecategoriesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServiceCategoriesViewModel>>;
     /**
      * Sample request:        POST /api/v1/ServiceCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Create ServiceCategory.
@@ -20768,7 +21132,7 @@ export declare const ServiceCategoriesApiFp: (configuration?: Configuration | un
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ServicecategoriesPost(createServiceCategoryCommand?: CreateServiceCategoryCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1ServicecategoriesPost(createServiceCategoryCommand?: CreateServiceCategoryCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      * Sample request:        DELETE /api/v1/ServiceCategories/1
      * @summary Delete ServiceCategory.
@@ -20776,7 +21140,7 @@ export declare const ServiceCategoriesApiFp: (configuration?: Configuration | un
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/ServiceCategories/1
      * @summary Get ServiceCategory.
@@ -20784,7 +21148,7 @@ export declare const ServiceCategoriesApiFp: (configuration?: Configuration | un
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServiceCategoryViewModel>;
+    apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServiceCategoryViewModel>>;
     /**
      * Sample request:        PUT /api/v1/ServiceCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Update ServiceCategory
@@ -20793,7 +21157,7 @@ export declare const ServiceCategoriesApiFp: (configuration?: Configuration | un
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId: string, updateServiceCategoryCommand?: UpdateServiceCategoryCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId: string, updateServiceCategoryCommand?: UpdateServiceCategoryCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
 };
 /**
  * ServiceCategoriesApi - factory interface
@@ -20869,7 +21233,7 @@ export declare class ServiceCategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceCategoriesApi
      */
-    apiV1ServicecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServiceCategoriesViewModel>;
+    apiV1ServicecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<ServiceCategoriesViewModel>>;
     /**
      * Sample request:        POST /api/v1/ServiceCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Create ServiceCategory.
@@ -20878,7 +21242,7 @@ export declare class ServiceCategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceCategoriesApi
      */
-    apiV1ServicecategoriesPost(createServiceCategoryCommand?: CreateServiceCategoryCommand, options?: any): AxiosPromise<string>;
+    apiV1ServicecategoriesPost(createServiceCategoryCommand?: CreateServiceCategoryCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      * Sample request:        DELETE /api/v1/ServiceCategories/1
      * @summary Delete ServiceCategory.
@@ -20887,7 +21251,7 @@ export declare class ServiceCategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceCategoriesApi
      */
-    apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId: string, options?: any): AxiosPromise<boolean>;
+    apiV1ServicecategoriesServiceCategoryIdDelete(serviceCategoryId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/ServiceCategories/1
      * @summary Get ServiceCategory.
@@ -20896,7 +21260,7 @@ export declare class ServiceCategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceCategoriesApi
      */
-    apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId: string, options?: any): AxiosPromise<ServiceCategoryViewModel>;
+    apiV1ServicecategoriesServiceCategoryIdGet(serviceCategoryId: string, options?: any): Promise<import("axios").AxiosResponse<ServiceCategoryViewModel>>;
     /**
      * Sample request:        PUT /api/v1/ServiceCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Update ServiceCategory
@@ -20906,7 +21270,7 @@ export declare class ServiceCategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServiceCategoriesApi
      */
-    apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId: string, updateServiceCategoryCommand?: UpdateServiceCategoryCommand, options?: any): AxiosPromise<boolean>;
+    apiV1ServicecategoriesServiceCategoryIdPut(serviceCategoryId: string, updateServiceCategoryCommand?: UpdateServiceCategoryCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
 }
 /**
  * ServicesApi - axios parameter creator
@@ -20922,7 +21286,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesPost(hospitalId: string, specialtyId: string, createServiceCommand?: CreateServiceCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesPost: (hospitalId: string, specialtyId: string, createServiceCommand?: CreateServiceCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/specialties/1/services/1
      * @summary Delete service.
@@ -20932,7 +21296,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdDelete(hospitalId: string, specialtyId: string, serviceId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdDelete: (hospitalId: string, specialtyId: string, serviceId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/specialties/1/services/1
      * @summary Get service.
@@ -20942,7 +21306,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: string, specialtyId: string, serviceId: string, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet: (hospitalId: string, specialtyId: string, serviceId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/specialties/1/services/1      {          \"name\": \"Extended analysis of blood\",          \"description\": \"Extended analysis of blood description.\",          \"minPrice\": 1000,          \"maxPrice\": 2600,          \"priceReuqest\": false      }
      * @summary Update service.
@@ -20953,7 +21317,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdPut(hospitalId: string, specialtyId: string, serviceId: string, updateServiceCommand?: UpdateServiceCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdPut: (hospitalId: string, specialtyId: string, serviceId: string, updateServiceCommand?: UpdateServiceCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Smaple request:        PUT /api/v1/hospitals/1/specialties/1/servicesquence      {          \"serviceSequence\": [1, 3, 5]      }
      * @summary Update service sequence.
@@ -20963,7 +21327,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, updateServiceSequenceCommand?: UpdateServiceSequenceCommand | undefined, options?: any): RequestArgs;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut: (hospitalId: string, specialtyId: string, updateServiceSequenceCommand?: UpdateServiceSequenceCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/hospitals/services
      * @summary Get all services.
@@ -20985,7 +21349,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: MarketingType | undefined, procedure?: Procedure | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1HospitalsServicesGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: MarketingType | undefined, procedure?: Procedure | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * ServicesApi - functional programming interface
@@ -21001,7 +21365,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesPost(hospitalId: string, specialtyId: string, createServiceCommand?: CreateServiceCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesPost(hospitalId: string, specialtyId: string, createServiceCommand?: CreateServiceCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/specialties/1/services/1
      * @summary Delete service.
@@ -21011,7 +21375,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdDelete(hospitalId: string, specialtyId: string, serviceId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdDelete(hospitalId: string, specialtyId: string, serviceId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/specialties/1/services/1
      * @summary Get service.
@@ -21021,7 +21385,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: string, specialtyId: string, serviceId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServiceViewModel>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: string, specialtyId: string, serviceId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServiceViewModel>>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/specialties/1/services/1      {          \"name\": \"Extended analysis of blood\",          \"description\": \"Extended analysis of blood description.\",          \"minPrice\": 1000,          \"maxPrice\": 2600,          \"priceReuqest\": false      }
      * @summary Update service.
@@ -21032,7 +21396,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdPut(hospitalId: string, specialtyId: string, serviceId: string, updateServiceCommand?: UpdateServiceCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdPut(hospitalId: string, specialtyId: string, serviceId: string, updateServiceCommand?: UpdateServiceCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Smaple request:        PUT /api/v1/hospitals/1/specialties/1/servicesquence      {          \"serviceSequence\": [1, 3, 5]      }
      * @summary Update service sequence.
@@ -21042,7 +21406,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, updateServiceSequenceCommand?: UpdateServiceSequenceCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, updateServiceSequenceCommand?: UpdateServiceSequenceCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/services
      * @summary Get all services.
@@ -21064,7 +21428,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: MarketingType | undefined, procedure?: Procedure | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: MarketingType | undefined, procedure?: Procedure | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>>;
 };
 /**
  * ServicesApi - factory interface
@@ -21162,7 +21526,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesPost(hospitalId: string, specialtyId: string, createServiceCommand?: CreateServiceCommand, options?: any): AxiosPromise<string>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesPost(hospitalId: string, specialtyId: string, createServiceCommand?: CreateServiceCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      * Sample request:        DELETE /api/v1/hospitals/1/specialties/1/services/1
      * @summary Delete service.
@@ -21173,7 +21537,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdDelete(hospitalId: string, specialtyId: string, serviceId: string, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdDelete(hospitalId: string, specialtyId: string, serviceId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/1/specialties/1/services/1
      * @summary Get service.
@@ -21184,7 +21548,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: string, specialtyId: string, serviceId: string, options?: any): AxiosPromise<ServiceViewModel>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdGet(hospitalId: string, specialtyId: string, serviceId: string, options?: any): Promise<import("axios").AxiosResponse<ServiceViewModel>>;
     /**
      * Sample request:        PUT /api/v1/hospitals/1/specialties/1/services/1      {          \"name\": \"Extended analysis of blood\",          \"description\": \"Extended analysis of blood description.\",          \"minPrice\": 1000,          \"maxPrice\": 2600,          \"priceReuqest\": false      }
      * @summary Update service.
@@ -21196,7 +21560,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdPut(hospitalId: string, specialtyId: string, serviceId: string, updateServiceCommand?: UpdateServiceCommand, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesServiceIdPut(hospitalId: string, specialtyId: string, serviceId: string, updateServiceCommand?: UpdateServiceCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Smaple request:        PUT /api/v1/hospitals/1/specialties/1/servicesquence      {          \"serviceSequence\": [1, 3, 5]      }
      * @summary Update service sequence.
@@ -21207,7 +21571,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, updateServiceSequenceCommand?: UpdateServiceSequenceCommand, options?: any): AxiosPromise<boolean>;
+    apiV1HospitalsHospitalIdSpecialtiesSpecialtyIdServicesquencePut(hospitalId: string, specialtyId: string, updateServiceSequenceCommand?: UpdateServiceSequenceCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/hospitals/services
      * @summary Get all services.
@@ -21230,7 +21594,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<ServicesViewModel>>;
 }
 /**
  * SpecialtiesApi - axios parameter creator
@@ -21252,7 +21616,7 @@ export declare const SpecialtiesApiAxiosParamCreator: (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, specialtyTypeId?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SpecialtiesGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, specialtyTypeId?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/specialties      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyType\": \"Cardiology\"      }
      * @summary Create specialty.
@@ -21261,7 +21625,7 @@ export declare const SpecialtiesApiAxiosParamCreator: (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesPost(specialtyTypeId?: string | undefined, createSpecialtyCommand?: CreateSpecialtyCommand | undefined, options?: any): RequestArgs;
+    apiV1SpecialtiesPost: (specialtyTypeId?: string | undefined, createSpecialtyCommand?: CreateSpecialtyCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get specialty by slug.
@@ -21269,7 +21633,7 @@ export declare const SpecialtiesApiAxiosParamCreator: (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    apiV1SpecialtiesSlugsSlugGet: (slug: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/specialties/1
      * @summary Delete specialty.
@@ -21277,7 +21641,7 @@ export declare const SpecialtiesApiAxiosParamCreator: (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesSpecialtyIdDelete(specialtyId: string, options?: any): RequestArgs;
+    apiV1SpecialtiesSpecialtyIdDelete: (specialtyId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/specialties/1
      * @summary Get specialty.
@@ -21285,7 +21649,7 @@ export declare const SpecialtiesApiAxiosParamCreator: (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesSpecialtyIdGet(specialtyId: string, options?: any): RequestArgs;
+    apiV1SpecialtiesSpecialtyIdGet: (specialtyId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/specialties/1      {          \"name\": \"Dilated cardiomyopathy\",          \"description\": \"Dilated cardiomyopathy\"      }
      * @summary Update specialty
@@ -21294,7 +21658,7 @@ export declare const SpecialtiesApiAxiosParamCreator: (configuration?: Configura
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesSpecialtyIdPut(specialtyId: string, updateSpecialtyCommand?: UpdateSpecialtyCommand | undefined, options?: any): RequestArgs;
+    apiV1SpecialtiesSpecialtyIdPut: (specialtyId: string, updateSpecialtyCommand?: UpdateSpecialtyCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * SpecialtiesApi - functional programming interface
@@ -21316,7 +21680,7 @@ export declare const SpecialtiesApiFp: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, specialtyTypeId?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtiesViewModel>;
+    apiV1SpecialtiesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, specialtyTypeId?: string | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtiesViewModel>>;
     /**
      * Sample request:        POST /api/v1/specialties      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyType\": \"Cardiology\"      }
      * @summary Create specialty.
@@ -21325,7 +21689,7 @@ export declare const SpecialtiesApiFp: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesPost(specialtyTypeId?: string | undefined, createSpecialtyCommand?: CreateSpecialtyCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1SpecialtiesPost(specialtyTypeId?: string | undefined, createSpecialtyCommand?: CreateSpecialtyCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Get specialty by slug.
@@ -21333,7 +21697,7 @@ export declare const SpecialtiesApiFp: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyViewModel>;
+    apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/specialties/1
      * @summary Delete specialty.
@@ -21341,7 +21705,7 @@ export declare const SpecialtiesApiFp: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesSpecialtyIdDelete(specialtyId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1SpecialtiesSpecialtyIdDelete(specialtyId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/specialties/1
      * @summary Get specialty.
@@ -21349,7 +21713,7 @@ export declare const SpecialtiesApiFp: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesSpecialtyIdGet(specialtyId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyViewModel>;
+    apiV1SpecialtiesSpecialtyIdGet(specialtyId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyViewModel>>;
     /**
      * Sample request:        PUT /api/v1/specialties/1      {          \"name\": \"Dilated cardiomyopathy\",          \"description\": \"Dilated cardiomyopathy\"      }
      * @summary Update specialty
@@ -21358,7 +21722,7 @@ export declare const SpecialtiesApiFp: (configuration?: Configuration | undefine
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtiesSpecialtyIdPut(specialtyId: string, updateSpecialtyCommand?: UpdateSpecialtyCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1SpecialtiesSpecialtyIdPut(specialtyId: string, updateSpecialtyCommand?: UpdateSpecialtyCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
 };
 /**
  * SpecialtiesApi - factory interface
@@ -21447,7 +21811,7 @@ export declare class SpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtiesApi
      */
-    apiV1SpecialtiesGet(id?: string, name?: string, description?: string, specialtyTypeId?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtiesViewModel>;
+    apiV1SpecialtiesGet(id?: string, name?: string, description?: string, specialtyTypeId?: string, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<SpecialtiesViewModel>>;
     /**
      * Sample request:        POST /api/v1/specialties      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyType\": \"Cardiology\"      }
      * @summary Create specialty.
@@ -21457,7 +21821,7 @@ export declare class SpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtiesApi
      */
-    apiV1SpecialtiesPost(specialtyTypeId?: string, createSpecialtyCommand?: CreateSpecialtyCommand, options?: any): AxiosPromise<string>;
+    apiV1SpecialtiesPost(specialtyTypeId?: string, createSpecialtyCommand?: CreateSpecialtyCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Get specialty by slug.
@@ -21466,7 +21830,7 @@ export declare class SpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtiesApi
      */
-    apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): AxiosPromise<SpecialtyViewModel>;
+    apiV1SpecialtiesSlugsSlugGet(slug: string, options?: any): Promise<import("axios").AxiosResponse<SpecialtyViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/specialties/1
      * @summary Delete specialty.
@@ -21475,7 +21839,7 @@ export declare class SpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtiesApi
      */
-    apiV1SpecialtiesSpecialtyIdDelete(specialtyId: string, options?: any): AxiosPromise<boolean>;
+    apiV1SpecialtiesSpecialtyIdDelete(specialtyId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/specialties/1
      * @summary Get specialty.
@@ -21484,7 +21848,7 @@ export declare class SpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtiesApi
      */
-    apiV1SpecialtiesSpecialtyIdGet(specialtyId: string, options?: any): AxiosPromise<SpecialtyViewModel>;
+    apiV1SpecialtiesSpecialtyIdGet(specialtyId: string, options?: any): Promise<import("axios").AxiosResponse<SpecialtyViewModel>>;
     /**
      * Sample request:        PUT /api/v1/specialties/1      {          \"name\": \"Dilated cardiomyopathy\",          \"description\": \"Dilated cardiomyopathy\"      }
      * @summary Update specialty
@@ -21494,7 +21858,7 @@ export declare class SpecialtiesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtiesApi
      */
-    apiV1SpecialtiesSpecialtyIdPut(specialtyId: string, updateSpecialtyCommand?: UpdateSpecialtyCommand, options?: any): AxiosPromise<boolean>;
+    apiV1SpecialtiesSpecialtyIdPut(specialtyId: string, updateSpecialtyCommand?: UpdateSpecialtyCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
 }
 /**
  * SpecialtyTypeCategoriesApi - axios parameter creator
@@ -21514,7 +21878,7 @@ export declare const SpecialtyTypeCategoriesApiAxiosParamCreator: (configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypecategoriesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SpecialtytypecategoriesGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypeCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Create specialtyTypeCategory.
@@ -21522,7 +21886,7 @@ export declare const SpecialtyTypeCategoriesApiAxiosParamCreator: (configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypecategoriesPost(createSpecialtyTypeCategoryCommand?: CreateSpecialtyTypeCategoryCommand | undefined, options?: any): RequestArgs;
+    apiV1SpecialtytypecategoriesPost: (createSpecialtyTypeCategoryCommand?: CreateSpecialtyTypeCategoryCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/SpecialtyTypeCategories/1
      * @summary Delete specialtyTypeCategory.
@@ -21530,7 +21894,7 @@ export declare const SpecialtyTypeCategoriesApiAxiosParamCreator: (configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId: string, options?: any): RequestArgs;
+    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete: (specialtyTypeCategoryId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/SpecialtyTypeCategories/1
      * @summary Get specialtyTypeCategory.
@@ -21538,7 +21902,7 @@ export declare const SpecialtyTypeCategoriesApiAxiosParamCreator: (configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId: string, options?: any): RequestArgs;
+    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet: (specialtyTypeCategoryId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/SpecialtyTypeCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Update specialtyTypeCategory
@@ -21547,7 +21911,7 @@ export declare const SpecialtyTypeCategoriesApiAxiosParamCreator: (configuration
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId: string, updateSpecialtyTypeCategoryCommand?: UpdateSpecialtyTypeCategoryCommand | undefined, options?: any): RequestArgs;
+    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut: (specialtyTypeCategoryId: string, updateSpecialtyTypeCategoryCommand?: UpdateSpecialtyTypeCategoryCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * SpecialtyTypeCategoriesApi - functional programming interface
@@ -21567,7 +21931,7 @@ export declare const SpecialtyTypeCategoriesApiFp: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypecategoriesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypeCategoriesViewModel>;
+    apiV1SpecialtytypecategoriesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypeCategoriesViewModel>>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypeCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Create specialtyTypeCategory.
@@ -21575,7 +21939,7 @@ export declare const SpecialtyTypeCategoriesApiFp: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypecategoriesPost(createSpecialtyTypeCategoryCommand?: CreateSpecialtyTypeCategoryCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1SpecialtytypecategoriesPost(createSpecialtyTypeCategoryCommand?: CreateSpecialtyTypeCategoryCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      * Sample request:        DELETE /api/v1/SpecialtyTypeCategories/1
      * @summary Delete specialtyTypeCategory.
@@ -21583,7 +21947,7 @@ export declare const SpecialtyTypeCategoriesApiFp: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/SpecialtyTypeCategories/1
      * @summary Get specialtyTypeCategory.
@@ -21591,7 +21955,7 @@ export declare const SpecialtyTypeCategoriesApiFp: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypeCategoryViewModel>;
+    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypeCategoryViewModel>>;
     /**
      * Sample request:        PUT /api/v1/SpecialtyTypeCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Update specialtyTypeCategory
@@ -21600,7 +21964,7 @@ export declare const SpecialtyTypeCategoriesApiFp: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId: string, updateSpecialtyTypeCategoryCommand?: UpdateSpecialtyTypeCategoryCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId: string, updateSpecialtyTypeCategoryCommand?: UpdateSpecialtyTypeCategoryCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
 };
 /**
  * SpecialtyTypeCategoriesApi - factory interface
@@ -21676,7 +22040,7 @@ export declare class SpecialtyTypeCategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypeCategoriesApi
      */
-    apiV1SpecialtytypecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtyTypeCategoriesViewModel>;
+    apiV1SpecialtytypecategoriesGet(id?: string, name?: string, description?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<SpecialtyTypeCategoriesViewModel>>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypeCategories      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Create specialtyTypeCategory.
@@ -21685,7 +22049,7 @@ export declare class SpecialtyTypeCategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypeCategoriesApi
      */
-    apiV1SpecialtytypecategoriesPost(createSpecialtyTypeCategoryCommand?: CreateSpecialtyTypeCategoryCommand, options?: any): AxiosPromise<string>;
+    apiV1SpecialtytypecategoriesPost(createSpecialtyTypeCategoryCommand?: CreateSpecialtyTypeCategoryCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      * Sample request:        DELETE /api/v1/SpecialtyTypeCategories/1
      * @summary Delete specialtyTypeCategory.
@@ -21694,7 +22058,7 @@ export declare class SpecialtyTypeCategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypeCategoriesApi
      */
-    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId: string, options?: any): AxiosPromise<boolean>;
+    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdDelete(specialtyTypeCategoryId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/SpecialtyTypeCategories/1
      * @summary Get specialtyTypeCategory.
@@ -21703,7 +22067,7 @@ export declare class SpecialtyTypeCategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypeCategoriesApi
      */
-    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId: string, options?: any): AxiosPromise<SpecialtyTypeCategoryViewModel>;
+    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdGet(specialtyTypeCategoryId: string, options?: any): Promise<import("axios").AxiosResponse<SpecialtyTypeCategoryViewModel>>;
     /**
      * Sample request:        PUT /api/v1/SpecialtyTypeCategories/1      {          \"name\": \"Adults\",          \"description\": \"There are so many “-ologists“ that they can be hard to keep straight. However, this list could be a handy reference. This is not meant to be an exhaustive and all-inclusive list of what a specialist does, but it should provide you with a basic overview.\"      }
      * @summary Update specialtyTypeCategory
@@ -21713,7 +22077,7 @@ export declare class SpecialtyTypeCategoriesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypeCategoriesApi
      */
-    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId: string, updateSpecialtyTypeCategoryCommand?: UpdateSpecialtyTypeCategoryCommand, options?: any): AxiosPromise<boolean>;
+    apiV1SpecialtytypecategoriesSpecialtyTypeCategoryIdPut(specialtyTypeCategoryId: string, updateSpecialtyTypeCategoryCommand?: UpdateSpecialtyTypeCategoryCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
 }
 /**
  * SpecialtyTypesApi - axios parameter creator
@@ -21735,7 +22099,7 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: MarketingType | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1SpecialtytypesGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: MarketingType | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
@@ -21744,7 +22108,7 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesPost(specialtyTypeId?: string | undefined, createSpecialtyTypeCommand?: CreateSpecialtyTypeCommand | undefined, options?: any): RequestArgs;
+    apiV1SpecialtytypesPost: (specialtyTypeId?: string | undefined, createSpecialtyTypeCommand?: CreateSpecialtyTypeCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get specialtyType by slug.
@@ -21752,7 +22116,7 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    apiV1SpecialtytypesSlugsSlugGet: (slug: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/SpecialtyTypes/1
      * @summary Delete specialtyType.
@@ -21760,7 +22124,7 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesSpecialtyTypeIdDelete(specialtyTypeId: string, options?: any): RequestArgs;
+    apiV1SpecialtytypesSpecialtyTypeIdDelete: (specialtyTypeId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/SpecialtyTypes/1
      * @summary Get specialtyType.
@@ -21768,7 +22132,7 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesSpecialtyTypeIdGet(specialtyTypeId: string, options?: any): RequestArgs;
+    apiV1SpecialtytypesSpecialtyTypeIdGet: (specialtyTypeId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/SpecialtyTypes/1      {          \"name\": \"Dilated cardiomyopathy\",          \"description\": \"Dilated cardiomyopathy\"      }
      * @summary Update specialtyType
@@ -21777,7 +22141,7 @@ export declare const SpecialtyTypesApiAxiosParamCreator: (configuration?: Config
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesSpecialtyTypeIdPut(specialtyTypeId: string, updateSpecialtyTypeCommand?: UpdateSpecialtyTypeCommand | undefined, options?: any): RequestArgs;
+    apiV1SpecialtytypesSpecialtyTypeIdPut: (specialtyTypeId: string, updateSpecialtyTypeCommand?: UpdateSpecialtyTypeCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * SpecialtyTypesApi - functional programming interface
@@ -21799,7 +22163,7 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: MarketingType | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypesViewModel>;
+    apiV1SpecialtytypesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, marketingType?: MarketingType | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypesViewModel>>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
@@ -21808,7 +22172,7 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesPost(specialtyTypeId?: string | undefined, createSpecialtyTypeCommand?: CreateSpecialtyTypeCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1SpecialtytypesPost(specialtyTypeId?: string | undefined, createSpecialtyTypeCommand?: CreateSpecialtyTypeCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Get specialtyType by slug.
@@ -21816,7 +22180,7 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypeViewModel>;
+    apiV1SpecialtytypesSlugsSlugGet(slug: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypeViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/SpecialtyTypes/1
      * @summary Delete specialtyType.
@@ -21824,7 +22188,7 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesSpecialtyTypeIdDelete(specialtyTypeId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1SpecialtytypesSpecialtyTypeIdDelete(specialtyTypeId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/SpecialtyTypes/1
      * @summary Get specialtyType.
@@ -21832,7 +22196,7 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesSpecialtyTypeIdGet(specialtyTypeId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypeViewModel>;
+    apiV1SpecialtytypesSpecialtyTypeIdGet(specialtyTypeId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<SpecialtyTypeViewModel>>;
     /**
      * Sample request:        PUT /api/v1/SpecialtyTypes/1      {          \"name\": \"Dilated cardiomyopathy\",          \"description\": \"Dilated cardiomyopathy\"      }
      * @summary Update specialtyType
@@ -21841,7 +22205,7 @@ export declare const SpecialtyTypesApiFp: (configuration?: Configuration | undef
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1SpecialtytypesSpecialtyTypeIdPut(specialtyTypeId: string, updateSpecialtyTypeCommand?: UpdateSpecialtyTypeCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1SpecialtytypesSpecialtyTypeIdPut(specialtyTypeId: string, updateSpecialtyTypeCommand?: UpdateSpecialtyTypeCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
 };
 /**
  * SpecialtyTypesApi - factory interface
@@ -21930,7 +22294,7 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypesApi
      */
-    apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: MarketingType, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<SpecialtyTypesViewModel>;
+    apiV1SpecialtytypesGet(id?: string, name?: string, description?: string, marketingType?: MarketingType, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<SpecialtyTypesViewModel>>;
     /**
      * Sample request:        POST /api/v1/SpecialtyTypes      {          \"name\": \"Coronary artery disease\",          \"description\": \"Coronary artery disease\",          \"specialtyTypeType\": \"Cardiology\"      }
      * @summary Create specialtyType.
@@ -21940,7 +22304,7 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypesApi
      */
-    apiV1SpecialtytypesPost(specialtyTypeId?: string, createSpecialtyTypeCommand?: CreateSpecialtyTypeCommand, options?: any): AxiosPromise<string>;
+    apiV1SpecialtytypesPost(specialtyTypeId?: string, createSpecialtyTypeCommand?: CreateSpecialtyTypeCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Get specialtyType by slug.
@@ -21949,7 +22313,7 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypesApi
      */
-    apiV1SpecialtytypesSlugsSlugGet(slug: string, options?: any): AxiosPromise<SpecialtyTypeViewModel>;
+    apiV1SpecialtytypesSlugsSlugGet(slug: string, options?: any): Promise<import("axios").AxiosResponse<SpecialtyTypeViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/SpecialtyTypes/1
      * @summary Delete specialtyType.
@@ -21958,7 +22322,7 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypesApi
      */
-    apiV1SpecialtytypesSpecialtyTypeIdDelete(specialtyTypeId: string, options?: any): AxiosPromise<boolean>;
+    apiV1SpecialtytypesSpecialtyTypeIdDelete(specialtyTypeId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/SpecialtyTypes/1
      * @summary Get specialtyType.
@@ -21967,7 +22331,7 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypesApi
      */
-    apiV1SpecialtytypesSpecialtyTypeIdGet(specialtyTypeId: string, options?: any): AxiosPromise<SpecialtyTypeViewModel>;
+    apiV1SpecialtytypesSpecialtyTypeIdGet(specialtyTypeId: string, options?: any): Promise<import("axios").AxiosResponse<SpecialtyTypeViewModel>>;
     /**
      * Sample request:        PUT /api/v1/SpecialtyTypes/1      {          \"name\": \"Dilated cardiomyopathy\",          \"description\": \"Dilated cardiomyopathy\"      }
      * @summary Update specialtyType
@@ -21977,7 +22341,7 @@ export declare class SpecialtyTypesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof SpecialtyTypesApi
      */
-    apiV1SpecialtytypesSpecialtyTypeIdPut(specialtyTypeId: string, updateSpecialtyTypeCommand?: UpdateSpecialtyTypeCommand, options?: any): AxiosPromise<boolean>;
+    apiV1SpecialtytypesSpecialtyTypeIdPut(specialtyTypeId: string, updateSpecialtyTypeCommand?: UpdateSpecialtyTypeCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
 }
 /**
  * YoutubesApi - axios parameter creator
@@ -22000,7 +22364,7 @@ export declare const YoutubesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesGet(id?: string | undefined, title?: string | undefined, normalizedTitle?: string | undefined, description?: string | undefined, marketingType?: MarketingType | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): RequestArgs;
+    apiV1YoutubesGet: (id?: string | undefined, title?: string | undefined, normalizedTitle?: string | undefined, description?: string | undefined, marketingType?: MarketingType | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an youtube.
@@ -22008,7 +22372,7 @@ export declare const YoutubesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesPost(createYoutubeCommand?: CreateYoutubeCommand | undefined, options?: any): RequestArgs;
+    apiV1YoutubesPost: (createYoutubeCommand?: CreateYoutubeCommand | undefined, options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Get youtube by slug.
@@ -22016,7 +22380,7 @@ export declare const YoutubesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesSlugsSlugGet(slug: string, options?: any): RequestArgs;
+    apiV1YoutubesSlugsSlugGet: (slug: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        DELETE /api/v1/youtubes/1
      * @summary Delete youtube.
@@ -22024,7 +22388,7 @@ export declare const YoutubesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesYoutubeIdDelete(youtubeId: string, options?: any): RequestArgs;
+    apiV1YoutubesYoutubeIdDelete: (youtubeId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        GET /api/v1/youtubes/1
      * @summary Get youtube.
@@ -22032,7 +22396,7 @@ export declare const YoutubesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesYoutubeIdGet(youtubeId: string, options?: any): RequestArgs;
+    apiV1YoutubesYoutubeIdGet: (youtubeId: string, options?: any) => Promise<RequestArgs>;
     /**
      * Sample request:        PUT /api/v1/youtubes/1      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",                  \"tags\": [            {              \"value\": \"youtubetag1\",              \"order\": 0            },            {              \"value\": \"youtubetag2\",              \"order\": 0            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Update youtube.
@@ -22041,7 +22405,7 @@ export declare const YoutubesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesYoutubeIdPut(youtubeId: string, updateYoutubeCommand?: UpdateYoutubeCommand | undefined, options?: any): RequestArgs;
+    apiV1YoutubesYoutubeIdPut: (youtubeId: string, updateYoutubeCommand?: UpdateYoutubeCommand | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * YoutubesApi - functional programming interface
@@ -22064,7 +22428,7 @@ export declare const YoutubesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesGet(id?: string | undefined, title?: string | undefined, normalizedTitle?: string | undefined, description?: string | undefined, marketingType?: MarketingType | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<YoutubesViewModel>;
+    apiV1YoutubesGet(id?: string | undefined, title?: string | undefined, normalizedTitle?: string | undefined, description?: string | undefined, marketingType?: MarketingType | undefined, tag?: string | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<YoutubesViewModel>>;
     /**
      * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an youtube.
@@ -22072,7 +22436,7 @@ export declare const YoutubesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesPost(createYoutubeCommand?: CreateYoutubeCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>;
+    apiV1YoutubesPost(createYoutubeCommand?: CreateYoutubeCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<string>>;
     /**
      *
      * @summary Get youtube by slug.
@@ -22080,7 +22444,7 @@ export declare const YoutubesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesSlugsSlugGet(slug: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<YoutubeViewModel>;
+    apiV1YoutubesSlugsSlugGet(slug: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<YoutubeViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/youtubes/1
      * @summary Delete youtube.
@@ -22088,7 +22452,7 @@ export declare const YoutubesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesYoutubeIdDelete(youtubeId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1YoutubesYoutubeIdDelete(youtubeId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
     /**
      * Sample request:        GET /api/v1/youtubes/1
      * @summary Get youtube.
@@ -22096,7 +22460,7 @@ export declare const YoutubesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesYoutubeIdGet(youtubeId: string, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<YoutubeViewModel>;
+    apiV1YoutubesYoutubeIdGet(youtubeId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<YoutubeViewModel>>;
     /**
      * Sample request:        PUT /api/v1/youtubes/1      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",                  \"tags\": [            {              \"value\": \"youtubetag1\",              \"order\": 0            },            {              \"value\": \"youtubetag2\",              \"order\": 0            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Update youtube.
@@ -22105,7 +22469,7 @@ export declare const YoutubesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1YoutubesYoutubeIdPut(youtubeId: string, updateYoutubeCommand?: UpdateYoutubeCommand | undefined, options?: any): (axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>;
+    apiV1YoutubesYoutubeIdPut(youtubeId: string, updateYoutubeCommand?: UpdateYoutubeCommand | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<boolean>>;
 };
 /**
  * YoutubesApi - factory interface
@@ -22195,7 +22559,7 @@ export declare class YoutubesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof YoutubesApi
      */
-    apiV1YoutubesGet(id?: string, title?: string, normalizedTitle?: string, description?: string, marketingType?: MarketingType, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<YoutubesViewModel>;
+    apiV1YoutubesGet(id?: string, title?: string, normalizedTitle?: string, description?: string, marketingType?: MarketingType, tag?: string, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<YoutubesViewModel>>;
     /**
      * Sample request:        POST /api/v1/youtubes      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",          \"body\": \"youtube body here\",          \"status\": \"Draft\",          \"hospitalId\": 1,          \"tags\": [            {              \"value\": \"string\",              \"order\": 0              }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Create an youtube.
@@ -22204,7 +22568,7 @@ export declare class YoutubesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof YoutubesApi
      */
-    apiV1YoutubesPost(createYoutubeCommand?: CreateYoutubeCommand, options?: any): AxiosPromise<string>;
+    apiV1YoutubesPost(createYoutubeCommand?: CreateYoutubeCommand, options?: any): Promise<import("axios").AxiosResponse<string>>;
     /**
      *
      * @summary Get youtube by slug.
@@ -22213,7 +22577,7 @@ export declare class YoutubesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof YoutubesApi
      */
-    apiV1YoutubesSlugsSlugGet(slug: string, options?: any): AxiosPromise<YoutubeViewModel>;
+    apiV1YoutubesSlugsSlugGet(slug: string, options?: any): Promise<import("axios").AxiosResponse<YoutubeViewModel>>;
     /**
      * Sample request:        DELETE /api/v1/youtubes/1
      * @summary Delete youtube.
@@ -22222,7 +22586,7 @@ export declare class YoutubesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof YoutubesApi
      */
-    apiV1YoutubesYoutubeIdDelete(youtubeId: string, options?: any): AxiosPromise<boolean>;
+    apiV1YoutubesYoutubeIdDelete(youtubeId: string, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
     /**
      * Sample request:        GET /api/v1/youtubes/1
      * @summary Get youtube.
@@ -22231,7 +22595,7 @@ export declare class YoutubesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof YoutubesApi
      */
-    apiV1YoutubesYoutubeIdGet(youtubeId: string, options?: any): AxiosPromise<YoutubeViewModel>;
+    apiV1YoutubesYoutubeIdGet(youtubeId: string, options?: any): Promise<import("axios").AxiosResponse<YoutubeViewModel>>;
     /**
      * Sample request:        PUT /api/v1/youtubes/1      {          \"title\": \"Samsung Hospital Youtube\",          \"description\": \"This is an youtube.\",                  \"tags\": [            {              \"value\": \"youtubetag1\",              \"order\": 0            },            {              \"value\": \"youtubetag2\",              \"order\": 0            }          ],          \"medias\": [            {              \"mediaType\": \"Photo\",              \"url\": \"string\",              \"thumbnailUrl\": \"string\",              \"description\": \"string\",              \"order\": 0            }          ]      }
      * @summary Update youtube.
@@ -22241,5 +22605,5 @@ export declare class YoutubesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof YoutubesApi
      */
-    apiV1YoutubesYoutubeIdPut(youtubeId: string, updateYoutubeCommand?: UpdateYoutubeCommand, options?: any): AxiosPromise<boolean>;
+    apiV1YoutubesYoutubeIdPut(youtubeId: string, updateYoutubeCommand?: UpdateYoutubeCommand, options?: any): Promise<import("axios").AxiosResponse<boolean>>;
 }
