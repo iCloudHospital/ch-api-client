@@ -1766,6 +1766,31 @@ export enum ChargeStatus {
 /**
  * 
  * @export
+ * @interface CommunicationUserTokenModel
+ */
+export interface CommunicationUserTokenModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof CommunicationUserTokenModel
+     */
+    token?: string | null;
+    /**
+     * 
+     * @type {Date}
+     * @memberof CommunicationUserTokenModel
+     */
+    expiresOn?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof CommunicationUserTokenModel
+     */
+    communicationUserId?: string | null;
+}
+/**
+ * 
+ * @export
  * @interface ConfirmEmailCommand
  */
 export interface ConfirmEmailCommand {
@@ -17363,10 +17388,10 @@ export const CommunicationsApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CommunicationsGuestCommunicationUserIdPost: async (communicationUserId: string, options: any = {}): Promise<RequestArgs> => {
+        apiV1CommunicationsGuestCommunicationUserIdPut: async (communicationUserId: string, options: any = {}): Promise<RequestArgs> => {
             // verify required parameter 'communicationUserId' is not null or undefined
             if (communicationUserId === null || communicationUserId === undefined) {
-                throw new RequiredError('communicationUserId','Required parameter communicationUserId was null or undefined when calling apiV1CommunicationsGuestCommunicationUserIdPost.');
+                throw new RequiredError('communicationUserId','Required parameter communicationUserId was null or undefined when calling apiV1CommunicationsGuestCommunicationUserIdPut.');
             }
             const localVarPath = `/api/v1/communications/guest/{communicationUserId}`
                 .replace(`{${"communicationUserId"}}`, encodeURIComponent(String(communicationUserId)));
@@ -17375,7 +17400,7 @@ export const CommunicationsApiAxiosParamCreator = function (configuration?: Conf
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -17426,14 +17451,14 @@ export const CommunicationsApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CommunicationsPost: async (options: any = {}): Promise<RequestArgs> => {
+        apiV1CommunicationsPut: async (options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/communications`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -17473,7 +17498,7 @@ export const CommunicationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiV1CommunicationsDelete(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async apiV1CommunicationsDelete(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>> {
             const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsDelete(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -17485,7 +17510,7 @@ export const CommunicationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiV1CommunicationsGet(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async apiV1CommunicationsGet(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationUserTokenModel>> {
             const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsGet(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -17498,7 +17523,7 @@ export const CommunicationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>> {
             const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -17511,8 +17536,8 @@ export const CommunicationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiV1CommunicationsGuestCommunicationUserIdPost(communicationUserId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsGuestCommunicationUserIdPost(communicationUserId, options);
+        async apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationUserTokenModel>> {
+            const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -17523,7 +17548,7 @@ export const CommunicationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiV1CommunicationsGuestGet(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async apiV1CommunicationsGuestGet(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationUserTokenModel>> {
             const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsGuestGet(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -17535,8 +17560,8 @@ export const CommunicationsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiV1CommunicationsPost(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsPost(options);
+        async apiV1CommunicationsPut(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationUserTokenModel>> {
+            const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsPut(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -17556,7 +17581,7 @@ export const CommunicationsApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CommunicationsDelete(options?: any): AxiosPromise<void> {
+        apiV1CommunicationsDelete(options?: any): AxiosPromise<number> {
             return CommunicationsApiFp(configuration).apiV1CommunicationsDelete(options).then((request) => request(axios, basePath));
         },
         /**
@@ -17564,7 +17589,7 @@ export const CommunicationsApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CommunicationsGet(options?: any): AxiosPromise<void> {
+        apiV1CommunicationsGet(options?: any): AxiosPromise<CommunicationUserTokenModel> {
             return CommunicationsApiFp(configuration).apiV1CommunicationsGet(options).then((request) => request(axios, basePath));
         },
         /**
@@ -17573,7 +17598,7 @@ export const CommunicationsApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): AxiosPromise<void> {
+        apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): AxiosPromise<number> {
             return CommunicationsApiFp(configuration).apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -17582,15 +17607,15 @@ export const CommunicationsApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CommunicationsGuestCommunicationUserIdPost(communicationUserId: string, options?: any): AxiosPromise<void> {
-            return CommunicationsApiFp(configuration).apiV1CommunicationsGuestCommunicationUserIdPost(communicationUserId, options).then((request) => request(axios, basePath));
+        apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId: string, options?: any): AxiosPromise<CommunicationUserTokenModel> {
+            return CommunicationsApiFp(configuration).apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CommunicationsGuestGet(options?: any): AxiosPromise<void> {
+        apiV1CommunicationsGuestGet(options?: any): AxiosPromise<CommunicationUserTokenModel> {
             return CommunicationsApiFp(configuration).apiV1CommunicationsGuestGet(options).then((request) => request(axios, basePath));
         },
         /**
@@ -17598,8 +17623,8 @@ export const CommunicationsApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CommunicationsPost(options?: any): AxiosPromise<void> {
-            return CommunicationsApiFp(configuration).apiV1CommunicationsPost(options).then((request) => request(axios, basePath));
+        apiV1CommunicationsPut(options?: any): AxiosPromise<CommunicationUserTokenModel> {
+            return CommunicationsApiFp(configuration).apiV1CommunicationsPut(options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -17649,8 +17674,8 @@ export class CommunicationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CommunicationsApi
      */
-    public apiV1CommunicationsGuestCommunicationUserIdPost(communicationUserId: string, options?: any) {
-        return CommunicationsApiFp(this.configuration).apiV1CommunicationsGuestCommunicationUserIdPost(communicationUserId, options).then((request) => request(this.axios, this.basePath));
+    public apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId: string, options?: any) {
+        return CommunicationsApiFp(this.configuration).apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -17669,8 +17694,8 @@ export class CommunicationsApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof CommunicationsApi
      */
-    public apiV1CommunicationsPost(options?: any) {
-        return CommunicationsApiFp(this.configuration).apiV1CommunicationsPost(options).then((request) => request(this.axios, this.basePath));
+    public apiV1CommunicationsPut(options?: any) {
+        return CommunicationsApiFp(this.configuration).apiV1CommunicationsPut(options).then((request) => request(this.axios, this.basePath));
     }
 
 }
