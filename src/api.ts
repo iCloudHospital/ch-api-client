@@ -30332,6 +30332,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {string} [description] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
+         * @param {string} [hospitalSlug] 
          * @param {string} [specialtyId] 
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyTypeName] 
@@ -30345,7 +30346,7 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsServicesGet: async (id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): Promise<RequestArgs> => {
+        apiV1HospitalsServicesGet: async (id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, hospitalSlug?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options: any = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/v1/hospitals/services`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -30374,6 +30375,10 @@ export const ServicesApiAxiosParamCreator = function (configuration?: Configurat
 
             if (hospitalName !== undefined) {
                 localVarQueryParameter['HospitalName'] = hospitalName;
+            }
+
+            if (hospitalSlug !== undefined) {
+                localVarQueryParameter['HospitalSlug'] = hospitalSlug;
             }
 
             if (specialtyId !== undefined) {
@@ -30531,6 +30536,7 @@ export const ServicesApiFp = function(configuration?: Configuration) {
          * @param {string} [description] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
+         * @param {string} [hospitalSlug] 
          * @param {string} [specialtyId] 
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyTypeName] 
@@ -30544,8 +30550,8 @@ export const ServicesApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesViewModel>> {
-            const localVarAxiosArgs = await ServicesApiAxiosParamCreator(configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options);
+        async apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, hospitalSlug?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ServicesViewModel>> {
+            const localVarAxiosArgs = await ServicesApiAxiosParamCreator(configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, hospitalSlug, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -30629,6 +30635,7 @@ export const ServicesApiFactory = function (configuration?: Configuration, baseP
          * @param {string} [description] 
          * @param {string} [hospitalId] 
          * @param {string} [hospitalName] 
+         * @param {string} [hospitalSlug] 
          * @param {string} [specialtyId] 
          * @param {string} [specialtyTypeId] 
          * @param {string} [specialtyTypeName] 
@@ -30642,8 +30649,8 @@ export const ServicesApiFactory = function (configuration?: Configuration, baseP
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel> {
-            return ServicesApiFp(configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options).then((request) => request(axios, basePath));
+        apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, hospitalSlug?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): AxiosPromise<ServicesViewModel> {
+            return ServicesApiFp(configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, hospitalSlug, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -30734,6 +30741,7 @@ export class ServicesApi extends BaseAPI {
      * @param {string} [description] 
      * @param {string} [hospitalId] 
      * @param {string} [hospitalName] 
+     * @param {string} [hospitalSlug] 
      * @param {string} [specialtyId] 
      * @param {string} [specialtyTypeId] 
      * @param {string} [specialtyTypeName] 
@@ -30748,8 +30756,8 @@ export class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    public apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
-        return ServicesApiFp(this.configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options).then((request) => request(this.axios, this.basePath));
+    public apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, hospitalSlug?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any) {
+        return ServicesApiFp(this.configuration).apiV1HospitalsServicesGet(id, name, description, hospitalId, hospitalName, hospitalSlug, specialtyId, specialtyTypeId, specialtyTypeName, marketingType, procedure, created, page, limit, lastRetrieved, current, options).then((request) => request(this.axios, this.basePath));
     }
 
 }

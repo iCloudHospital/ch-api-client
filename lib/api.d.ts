@@ -21361,6 +21361,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {string} [description]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {string} [hospitalSlug]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyTypeName]
@@ -21374,7 +21375,7 @@ export declare const ServicesApiAxiosParamCreator: (configuration?: Configuratio
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: MarketingType | undefined, procedure?: Procedure | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
+    apiV1HospitalsServicesGet: (id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, hospitalSlug?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: MarketingType | undefined, procedure?: Procedure | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any) => Promise<RequestArgs>;
 };
 /**
  * ServicesApi - functional programming interface
@@ -21440,6 +21441,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {string} [description]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {string} [hospitalSlug]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyTypeName]
@@ -21453,7 +21455,7 @@ export declare const ServicesApiFp: (configuration?: Configuration | undefined) 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: MarketingType | undefined, procedure?: Procedure | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, hospitalSlug?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: MarketingType | undefined, procedure?: Procedure | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ServicesViewModel>>;
 };
 /**
  * ServicesApi - factory interface
@@ -21519,6 +21521,7 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @param {string} [description]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {string} [hospitalSlug]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyTypeName]
@@ -21532,7 +21535,7 @@ export declare const ServicesApiFactory: (configuration?: Configuration | undefi
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: MarketingType | undefined, procedure?: Procedure | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ServicesViewModel>;
+    apiV1HospitalsServicesGet(id?: string | undefined, name?: string | undefined, description?: string | undefined, hospitalId?: string | undefined, hospitalName?: string | undefined, hospitalSlug?: string | undefined, specialtyId?: string | undefined, specialtyTypeId?: string | undefined, specialtyTypeName?: string | undefined, marketingType?: MarketingType | undefined, procedure?: Procedure | undefined, created?: Date | undefined, page?: number | undefined, limit?: number | undefined, lastRetrieved?: Date | undefined, current?: boolean | undefined, options?: any): AxiosPromise<ServicesViewModel>;
 };
 /**
  * ServicesApi - object-oriented interface
@@ -21605,6 +21608,7 @@ export declare class ServicesApi extends BaseAPI {
      * @param {string} [description]
      * @param {string} [hospitalId]
      * @param {string} [hospitalName]
+     * @param {string} [hospitalSlug]
      * @param {string} [specialtyId]
      * @param {string} [specialtyTypeId]
      * @param {string} [specialtyTypeName]
@@ -21619,7 +21623,7 @@ export declare class ServicesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ServicesApi
      */
-    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<ServicesViewModel>>;
+    apiV1HospitalsServicesGet(id?: string, name?: string, description?: string, hospitalId?: string, hospitalName?: string, hospitalSlug?: string, specialtyId?: string, specialtyTypeId?: string, specialtyTypeName?: string, marketingType?: MarketingType, procedure?: Procedure, created?: Date, page?: number, limit?: number, lastRetrieved?: Date, current?: boolean, options?: any): Promise<import("axios").AxiosResponse<ServicesViewModel>>;
 }
 /**
  * SpecialtiesApi - axios parameter creator
