@@ -17419,11 +17419,17 @@ export const CommunicationsApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * 
+         * @param {string} consultationId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CommunicationsGuestGet: async (options: any = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/v1/communications/guest`;
+        apiV1CommunicationsGuestConsultationIdGet: async (consultationId: string, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'consultationId' is not null or undefined
+            if (consultationId === null || consultationId === undefined) {
+                throw new RequiredError('consultationId','Required parameter consultationId was null or undefined when calling apiV1CommunicationsGuestConsultationIdGet.');
+            }
+            const localVarPath = `/api/v1/communications/guest/{consultationId}`
+                .replace(`{${"consultationId"}}`, encodeURIComponent(String(consultationId)));
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
             if (configuration) {
@@ -17545,11 +17551,12 @@ export const CommunicationsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @param {string} consultationId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiV1CommunicationsGuestGet(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationUserTokenModel>> {
-            const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsGuestGet(options);
+        async apiV1CommunicationsGuestConsultationIdGet(consultationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationUserTokenModel>> {
+            const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsGuestConsultationIdGet(consultationId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -17612,11 +17619,12 @@ export const CommunicationsApiFactory = function (configuration?: Configuration,
         },
         /**
          * 
+         * @param {string} consultationId 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiV1CommunicationsGuestGet(options?: any): AxiosPromise<CommunicationUserTokenModel> {
-            return CommunicationsApiFp(configuration).apiV1CommunicationsGuestGet(options).then((request) => request(axios, basePath));
+        apiV1CommunicationsGuestConsultationIdGet(consultationId: string, options?: any): AxiosPromise<CommunicationUserTokenModel> {
+            return CommunicationsApiFp(configuration).apiV1CommunicationsGuestConsultationIdGet(consultationId, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -17680,12 +17688,13 @@ export class CommunicationsApi extends BaseAPI {
 
     /**
      * 
+     * @param {string} consultationId 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof CommunicationsApi
      */
-    public apiV1CommunicationsGuestGet(options?: any) {
-        return CommunicationsApiFp(this.configuration).apiV1CommunicationsGuestGet(options).then((request) => request(this.axios, this.basePath));
+    public apiV1CommunicationsGuestConsultationIdGet(consultationId: string, options?: any) {
+        return CommunicationsApiFp(this.configuration).apiV1CommunicationsGuestConsultationIdGet(consultationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
