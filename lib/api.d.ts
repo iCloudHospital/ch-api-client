@@ -2067,6 +2067,12 @@ export interface ConsultationItemViewModel {
      * @type {string}
      * @memberof ConsultationItemViewModel
      */
+    communicationUserId?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConsultationItemViewModel
+     */
     hospitalId?: string;
     /**
      *
@@ -2303,6 +2309,12 @@ export interface ConsultationViewModel {
      * @memberof ConsultationViewModel
      */
     patientName?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof ConsultationViewModel
+     */
+    communicationUserId?: string | null;
     /**
      *
      * @type {string}
@@ -15542,27 +15554,6 @@ export declare const CommunicationsApiAxiosParamCreator: (configuration?: Config
     apiV1CommunicationsGet: (options?: any) => Promise<RequestArgs>;
     /**
      *
-     * @param {string} communicationUserId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1CommunicationsGuestCommunicationUserIdDelete: (communicationUserId: string, options?: any) => Promise<RequestArgs>;
-    /**
-     *
-     * @param {string} communicationUserId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1CommunicationsGuestCommunicationUserIdPut: (communicationUserId: string, options?: any) => Promise<RequestArgs>;
-    /**
-     *
-     * @param {string} consultationId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1CommunicationsGuestConsultationIdGet: (consultationId: string, options?: any) => Promise<RequestArgs>;
-    /**
-     *
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -15587,27 +15578,6 @@ export declare const CommunicationsApiFp: (configuration?: Configuration | undef
     apiV1CommunicationsGet(options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CommunicationUserTokenModel>>;
     /**
      *
-     * @param {string} communicationUserId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<number>>;
-    /**
-     *
-     * @param {string} communicationUserId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CommunicationUserTokenModel>>;
-    /**
-     *
-     * @param {string} consultationId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1CommunicationsGuestConsultationIdGet(consultationId: string, options?: any): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<CommunicationUserTokenModel>>;
-    /**
-     *
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
@@ -15630,27 +15600,6 @@ export declare const CommunicationsApiFactory: (configuration?: Configuration | 
      * @throws {RequiredError}
      */
     apiV1CommunicationsGet(options?: any): AxiosPromise<CommunicationUserTokenModel>;
-    /**
-     *
-     * @param {string} communicationUserId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): AxiosPromise<number>;
-    /**
-     *
-     * @param {string} communicationUserId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId: string, options?: any): AxiosPromise<CommunicationUserTokenModel>;
-    /**
-     *
-     * @param {string} consultationId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    apiV1CommunicationsGuestConsultationIdGet(consultationId: string, options?: any): AxiosPromise<CommunicationUserTokenModel>;
     /**
      *
      * @param {*} [options] Override http request option.
@@ -15679,30 +15628,6 @@ export declare class CommunicationsApi extends BaseAPI {
      * @memberof CommunicationsApi
      */
     apiV1CommunicationsGet(options?: any): Promise<import("axios").AxiosResponse<CommunicationUserTokenModel>>;
-    /**
-     *
-     * @param {string} communicationUserId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof CommunicationsApi
-     */
-    apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): Promise<import("axios").AxiosResponse<number>>;
-    /**
-     *
-     * @param {string} communicationUserId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof CommunicationsApi
-     */
-    apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId: string, options?: any): Promise<import("axios").AxiosResponse<CommunicationUserTokenModel>>;
-    /**
-     *
-     * @param {string} consultationId
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof CommunicationsApi
-     */
-    apiV1CommunicationsGuestConsultationIdGet(consultationId: string, options?: any): Promise<import("axios").AxiosResponse<CommunicationUserTokenModel>>;
     /**
      *
      * @param {*} [options] Override http request option.

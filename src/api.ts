@@ -2077,6 +2077,12 @@ export interface ConsultationItemViewModel {
      * @type {string}
      * @memberof ConsultationItemViewModel
      */
+    communicationUserId?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConsultationItemViewModel
+     */
     hospitalId?: string;
     /**
      * 
@@ -2315,6 +2321,12 @@ export interface ConsultationViewModel {
      * @memberof ConsultationViewModel
      */
     patientName?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof ConsultationViewModel
+     */
+    communicationUserId?: string | null;
     /**
      * 
      * @type {string}
@@ -17349,111 +17361,6 @@ export const CommunicationsApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * 
-         * @param {string} communicationUserId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1CommunicationsGuestCommunicationUserIdDelete: async (communicationUserId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'communicationUserId' is not null or undefined
-            if (communicationUserId === null || communicationUserId === undefined) {
-                throw new RequiredError('communicationUserId','Required parameter communicationUserId was null or undefined when calling apiV1CommunicationsGuestCommunicationUserIdDelete.');
-            }
-            const localVarPath = `/api/v1/communications/guest/{communicationUserId}`
-                .replace(`{${"communicationUserId"}}`, encodeURIComponent(String(communicationUserId)));
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {string} communicationUserId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1CommunicationsGuestCommunicationUserIdPut: async (communicationUserId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'communicationUserId' is not null or undefined
-            if (communicationUserId === null || communicationUserId === undefined) {
-                throw new RequiredError('communicationUserId','Required parameter communicationUserId was null or undefined when calling apiV1CommunicationsGuestCommunicationUserIdPut.');
-            }
-            const localVarPath = `/api/v1/communications/guest/{communicationUserId}`
-                .replace(`{${"communicationUserId"}}`, encodeURIComponent(String(communicationUserId)));
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @param {string} consultationId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1CommunicationsGuestConsultationIdGet: async (consultationId: string, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'consultationId' is not null or undefined
-            if (consultationId === null || consultationId === undefined) {
-                throw new RequiredError('consultationId','Required parameter consultationId was null or undefined when calling apiV1CommunicationsGuestConsultationIdGet.');
-            }
-            const localVarPath = `/api/v1/communications/guest/{consultationId}`
-                .replace(`{${"consultationId"}}`, encodeURIComponent(String(consultationId)));
-            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            delete localVarUrlObj.search;
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-
-            return {
-                url: globalImportUrl.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -17525,45 +17432,6 @@ export const CommunicationsApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @param {string} communicationUserId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>> {
-            const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * 
-         * @param {string} communicationUserId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationUserTokenModel>> {
-            const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * 
-         * @param {string} consultationId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async apiV1CommunicationsGuestConsultationIdGet(consultationId: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationUserTokenModel>> {
-            const localVarAxiosArgs = await CommunicationsApiAxiosParamCreator(configuration).apiV1CommunicationsGuestConsultationIdGet(consultationId, options);
-            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
-                return axios.request(axiosRequestArgs);
-            };
-        },
-        /**
-         * 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -17601,33 +17469,6 @@ export const CommunicationsApiFactory = function (configuration?: Configuration,
         },
         /**
          * 
-         * @param {string} communicationUserId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any): AxiosPromise<number> {
-            return CommunicationsApiFp(configuration).apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {string} communicationUserId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId: string, options?: any): AxiosPromise<CommunicationUserTokenModel> {
-            return CommunicationsApiFp(configuration).apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @param {string} consultationId 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        apiV1CommunicationsGuestConsultationIdGet(consultationId: string, options?: any): AxiosPromise<CommunicationUserTokenModel> {
-            return CommunicationsApiFp(configuration).apiV1CommunicationsGuestConsultationIdGet(consultationId, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -17662,39 +17503,6 @@ export class CommunicationsApi extends BaseAPI {
      */
     public apiV1CommunicationsGet(options?: any) {
         return CommunicationsApiFp(this.configuration).apiV1CommunicationsGet(options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {string} communicationUserId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof CommunicationsApi
-     */
-    public apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId: string, options?: any) {
-        return CommunicationsApiFp(this.configuration).apiV1CommunicationsGuestCommunicationUserIdDelete(communicationUserId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {string} communicationUserId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof CommunicationsApi
-     */
-    public apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId: string, options?: any) {
-        return CommunicationsApiFp(this.configuration).apiV1CommunicationsGuestCommunicationUserIdPut(communicationUserId, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @param {string} consultationId 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof CommunicationsApi
-     */
-    public apiV1CommunicationsGuestConsultationIdGet(consultationId: string, options?: any) {
-        return CommunicationsApiFp(this.configuration).apiV1CommunicationsGuestConsultationIdGet(consultationId, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
